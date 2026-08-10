@@ -34,9 +34,13 @@ return [
     */
 
     'security' => [
+        'login_max_attempts' => (int) env('LOGIN_RATE_LIMIT_MAX_ATTEMPTS', 5),
+        'login_decay_minutes' => (int) env('LOGIN_RATE_LIMIT_DECAY_MINUTES', 15),
+        'password_reset_expiry_minutes' => (int) env('PASSWORD_RESET_EXPIRY_MINUTES', 60),
+        'reauthorize_timeout_minutes' => (int) env('REAUTHORIZE_TIMEOUT_MINUTES', 30),
         'max_login_attempts' => (int) env('MAX_LOGIN_ATTEMPTS', 5),
         'lockout_duration_minutes' => (int) env('LOCKOUT_DURATION_MINUTES', 15),
-        'password_min_length' => (int) env('PASSWORD_MIN_LENGTH', 8),
+        'password_min_length' => (int) env('PASSWORD_MIN_LENGTH', 12),
         'session_regeneration_interval' => (int) env('SESSION_REGENERATION_INTERVAL', 120),
     ],
 
@@ -70,9 +74,6 @@ return [
     |--------------------------------------------------------------------------
     | Seed Configuration
     |--------------------------------------------------------------------------
-    |
-    | Controls the admin seeder behavior. Only runs in local environment.
-    |
     */
 
     'seed' => [

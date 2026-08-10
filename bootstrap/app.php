@@ -21,9 +21,14 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
+            'active' => \App\Http\Middleware\EnsureUserIsActive::class,
             'ensure_user_is_active' => \App\Http\Middleware\EnsureUserIsActive::class,
             'check_permission' => \App\Http\Middleware\CheckPermission::class,
         ]);
+
+        $middleware->redirectGuestsTo(function () {
+            return route('auth.login');
+        });
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
