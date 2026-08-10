@@ -6,7 +6,10 @@ use App\Models\Permission;
 use App\Models\Role;
 use App\Observers\PermissionObserver;
 use App\Observers\RoleObserver;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -46,5 +49,9 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('analytics.view', fn ($user) => $user->hasPermission('analytics.view'));
         Gate::define('settings.view', fn ($user) => $user->hasPermission('settings.view'));
         Gate::define('settings.manage', fn ($user) => $user->hasPermission('settings.manage'));
+
+        RateLimiter::for('api-public', function (Request $request) {
+            return Limit::perMinute(60)->by($request->ip());
+        });
     }
 }

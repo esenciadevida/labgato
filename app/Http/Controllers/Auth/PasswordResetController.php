@@ -61,7 +61,6 @@ class PasswordResetController extends Controller
         if ($status === Password::PASSWORD_RESET) {
             $auditLog->log(
                 action: 'auth.password.reset_success',
-                request: $request,
             );
 
             return redirect()->route('auth.login')->with('status', 'Password reset successfully. You may now log in.');

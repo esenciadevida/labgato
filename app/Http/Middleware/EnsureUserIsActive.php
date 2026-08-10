@@ -15,7 +15,6 @@ class EnsureUserIsActive
             $auditLog = app(AuditLogService::class);
             $auditLog->log(
                 action: 'auth.session.blocked_inactive',
-                request: $request,
             );
 
             auth()->logout();

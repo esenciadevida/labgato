@@ -45,7 +45,6 @@ class LoginController extends Controller
 
             $auditLog->log(
                 action: 'auth.login.failed',
-                request: $request,
             );
 
             throw ValidationException::withMessages([
@@ -60,7 +59,6 @@ class LoginController extends Controller
 
             $auditLog->log(
                 action: 'auth.login.failed_inactive',
-                request: $request,
             );
 
             throw ValidationException::withMessages([
@@ -76,7 +74,6 @@ class LoginController extends Controller
 
         $auditLog->log(
             action: 'auth.login.success',
-            request: $request,
         );
 
         return redirect()->intended(route('admin.dashboard'));
@@ -86,7 +83,6 @@ class LoginController extends Controller
     {
         $auditLog->log(
             action: 'auth.logout',
-            request: $request,
         );
 
         Auth::logout();
