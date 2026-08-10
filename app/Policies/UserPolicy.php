@@ -8,26 +8,44 @@ class UserPolicy
 {
     public function viewAny(User $user): bool
     {
-        return $user->hasPermission('view-users');
+        return $user->hasPermission('users.view');
     }
 
     public function view(User $user, User $model): bool
     {
-        return $user->hasPermission('view-users');
+        return $user->hasPermission('users.view');
     }
 
     public function create(User $user): bool
     {
-        return $user->hasPermission('create-users');
+        return $user->hasPermission('users.create');
     }
 
     public function update(User $user, User $model): bool
     {
-        return $user->hasPermission('edit-users');
+        if ($this->modifySuperAdministrator($user, $model)) {
+            return false;
+        }
+
+        return $user->hasPermission('users.edit');
     }
 
     public function delete(User $user, User $model): bool
     {
-        return $user->hasPermission('delete-users');
+        if ($this->modifySuperAdministrator($user, $model)) {
+            return false;
+        }
+
+        return $user->hasPermission('users.delete');
+    }
+
+    public function assignRoles(User $user): bool
+    {
+        return $user->hasPermission('users.assign-roles');
+    }
+
+    public function modifySuperAdministrator(User $user, User $target): bool
+    {
+        return ! $user->isSuperAdministrator() && $target->isSuperAdministrator();
     }
 }

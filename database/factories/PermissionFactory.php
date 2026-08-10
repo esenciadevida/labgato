@@ -20,7 +20,7 @@ class PermissionFactory extends Factory
         $name = "{$module}.{$action}";
 
         return [
-            'name' => ucfirst($module) . ' ' . ucfirst($action),
+            'name' => ucfirst($module).' '.ucfirst($action),
             'slug' => $name,
             'group' => Str::headline($module),
         ];

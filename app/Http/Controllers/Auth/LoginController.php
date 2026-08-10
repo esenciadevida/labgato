@@ -24,13 +24,13 @@ class LoginController extends Controller
         ]);
 
         $email = strtolower($request->email);
-        $throttleKey = $email . '|' . $request->ip();
+        $throttleKey = $email.'|'.$request->ip();
         $maxAttempts = config('labgato.security.login_max_attempts', 5);
         $decayMinutes = config('labgato.security.login_decay_minutes', 15);
 
         if (Cache::get("login_attempts_{$throttleKey}", 0) >= $maxAttempts) {
             throw ValidationException::withMessages([
-                'email' => ['Too many failed attempts. Please try again in ' . $decayMinutes . ' minutes.'],
+                'email' => ['Too many failed attempts. Please try again in '.$decayMinutes.' minutes.'],
             ]);
         }
 

@@ -28,6 +28,16 @@ class Role extends Model
         return $this->belongsToMany(Permission::class);
     }
 
+    public function hasPermission(string $permissionSlug): bool
+    {
+        return $this->permissions->contains('slug', $permissionSlug);
+    }
+
+    public function isSystemRole(): bool
+    {
+        return $this->is_system_role;
+    }
+
     protected static function booted(): void
     {
         static::deleting(function (Role $role) {

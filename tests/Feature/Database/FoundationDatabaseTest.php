@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Database;
 
+use App\Models\AuditLog;
 use App\Models\Category;
 use App\Models\Permission;
 use App\Models\Role;
@@ -73,14 +74,14 @@ class FoundationDatabaseTest extends TestCase
 
     public function test_audit_log_does_not_use_updated_at(): void
     {
-        $auditLog = \App\Models\AuditLog::factory()->create([
+        $auditLog = AuditLog::factory()->create([
             'created_at' => now(),
         ]);
 
         $this->assertNull($auditLog->updated_at);
         $this->assertNotNull($auditLog->created_at);
 
-        $this->assertEquals(null, \App\Models\AuditLog::UPDATED_AT);
+        $this->assertEquals(null, AuditLog::UPDATED_AT);
     }
 
     public function test_role_permission_seeder_is_idempotent(): void

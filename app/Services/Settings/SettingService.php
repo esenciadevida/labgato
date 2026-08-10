@@ -22,6 +22,7 @@ class SettingService
         foreach ($keys as $key) {
             $settings[$key] = $this->get($key);
         }
+
         return $settings;
     }
 }

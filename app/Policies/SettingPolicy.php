@@ -8,11 +8,11 @@ class SettingPolicy
 {
     public function viewAny(User $user): bool
     {
-        return $user->hasPermission('view-settings');
+        return $user->hasPermission('settings.view');
     }
 
     public function update(User $user): bool
     {
-        return $user->hasPermission('manage-settings');
+        return $user->hasPermission('settings.manage');
     }
 }

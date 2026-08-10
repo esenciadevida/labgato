@@ -4,6 +4,7 @@ namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Tests\TestCase;
 
@@ -44,7 +45,7 @@ class PasswordResetTest extends TestCase
         $this->assertGuest();
 
         $user->refresh();
-        $this->assertTrue(\Illuminate\Support\Facades\Hash::check('NewPassword1234', $user->password));
+        $this->assertTrue(Hash::check('NewPassword1234', $user->password));
     }
 
     public function test_password_reset_requires_minimum_length(): void
