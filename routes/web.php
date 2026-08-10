@@ -2,9 +2,14 @@
 
 use App\Http\Controllers\PublicSite\HomeController;
 use App\Http\Controllers\PublicSite\LegalController;
+use App\Http\Controllers\PublicSite\SearchController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/search', SearchController::class)
+    ->middleware('throttle:search')
+    ->name('public.search');
 
 Route::prefix('legal')->name('legal.')->group(function () {
     Route::get('/privacy-policy', [LegalController::class, 'privacyPolicy'])->name('privacy-policy');

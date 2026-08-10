@@ -9,7 +9,10 @@
         <p class="text-xl sm:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
             Your professional laboratory toolkit. Essential tools, calculators, reference ranges, and knowledge resources for laboratory professionals.
         </p>
-        <div class="flex justify-center">
+        <div class="flex justify-center gap-4">
+            <a href="{{ route('public.search') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-400 transition-colors">
+                Search Tools
+            </a>
             <a href="#resources" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 transition-colors">
                 Explore Resources
             </a>

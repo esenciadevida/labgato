@@ -53,5 +53,10 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('api-public', function (Request $request) {
             return Limit::perMinute(60)->by($request->ip());
         });
+
+        RateLimiter::for('search', function (Request $request) {
+            return Limit::perMinute((int) config('labgato.search.rate_limit_per_minute', 15))
+                ->by($request->user()?->id ?: $request->ip());
+        });
     }
 }

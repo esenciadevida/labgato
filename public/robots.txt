@@ -6,5 +6,7 @@ Disallow: /auth
 Disallow: /auth/
 Disallow: /api
 Disallow: /api/
+Disallow: /search
+Disallow: /search/
 
 Sitemap: {{ config('app.url', 'https://localhost') }}/sitemap.xml

@@ -8,6 +8,7 @@
     <x-public.meta
         :title="$pageTitle ?? config('app.name')"
         :description="$metaDescription ?? config('app.name') . ' - Professional Laboratory Toolkit'"
+        :noindex="$metaNoindex ?? false"
     />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head')

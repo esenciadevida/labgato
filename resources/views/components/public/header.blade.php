@@ -11,6 +11,7 @@
 
             <nav class="hidden md:flex items-center space-x-1" aria-label="Main navigation">
                 <x-public.navigation href="{{ route('home') }}" :active="$currentRoute === 'home'">Home</x-public.navigation>
+                <x-public.navigation href="{{ route('public.search') }}" :active="$currentRoute === 'public.search'">Search</x-public.navigation>
             </nav>
 
             <button
@@ -41,6 +42,7 @@
     >
         <nav class="px-4 py-3 space-y-1" aria-label="Mobile navigation">
             <a href="{{ route('home') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 @if($currentRoute === 'home') bg-gray-100 text-gray-900 @endif">Home</a>
+            <a href="{{ route('public.search') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 @if($currentRoute === 'public.search') bg-gray-100 text-gray-900 @endif">Search</a>
         </nav>
     </div>
 </header>

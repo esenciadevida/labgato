@@ -72,6 +72,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Search Configuration
+    |--------------------------------------------------------------------------
+    */
+
+    'search' => [
+        'per_page' => (int) env('SEARCH_PER_PAGE', 10),
+        'rate_limit_per_minute' => (int) env('SEARCH_RATE_LIMIT_PER_MINUTE', 30),
+        'log_queries' => env('SEARCH_QUERY_LOGGING', true),
+        'log_ip' => env('SEARCH_QUERY_LOG_IP', false),
+        'max_query_length' => env('SEARCH_MAX_QUERY_LENGTH', 255),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Seed Configuration
     |--------------------------------------------------------------------------
     */
