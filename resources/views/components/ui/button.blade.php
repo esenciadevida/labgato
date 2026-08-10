@@ -1,4 +1,4 @@
-@props(['variant' => 'primary', 'size' => 'md'])
+@props(['variant' => 'primary', 'size' => 'md', 'type' => 'button', 'href' => null, 'disabled' => false])
 
 @php
 $classes = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
@@ -13,8 +13,21 @@ $classes .= match($size) {
     'md' => ' px-4 py-2 text-sm',
     'lg' => ' px-6 py-3 text-base',
 };
+if ($disabled) {
+    $classes .= ' opacity-50 cursor-not-allowed';
+}
 @endphp
 
-<button {{ $attributes->merge(['class' => $classes]) }}>
-    {{ $slot }}
-</button>
+@if($href && !$disabled)
+    <a href="{{ $href }}" {{ $attributes->merge(['class' => $classes]) }}>
+        {{ $slot }}
+    </a>
+@else
+    <button
+        type="{{ $type }}"
+        @if($disabled) disabled @endif
+        {{ $attributes->merge(['class' => $classes]) }}
+    >
+        {{ $slot }}
+    </button>
+@endif
