@@ -56,12 +56,22 @@
         @endif
 
         {{-- Taxonomy --}}
-        @if(Auth::user()->hasPermission('taxonomy.view'))
+        @if(Auth::user()->hasAnyPermission(['taxonomy.view', 'taxonomy.manage']))
             <div>
                 <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Taxonomy</div>
                 <ul class="mt-1 space-y-1">
-                    <x-admin.navigation-item label="Categories" href="#" permission="taxonomy.view" />
-                    <x-admin.navigation-item label="Tags" href="#" permission="taxonomy.view" />
+                    <x-admin.navigation-item
+                        label="Categories"
+                        href="{{ route('admin.categories.index') }}"
+                        :active="str_starts_with($currentRoute, 'admin.categories')"
+                        permission="taxonomy.view"
+                    />
+                    <x-admin.navigation-item
+                        label="Tags"
+                        href="{{ route('admin.tags.index') }}"
+                        :active="str_starts_with($currentRoute, 'admin.tags')"
+                        permission="taxonomy.view"
+                    />
                 </ul>
             </div>
         @endif

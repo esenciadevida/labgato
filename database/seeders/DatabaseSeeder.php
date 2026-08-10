@@ -17,5 +17,11 @@ class DatabaseSeeder extends Seeder
                 AdminUserSeeder::class,
             ]);
         }
+
+        if (config('labgato.seed.categories.enabled')) {
+            $this->call([
+                LaboratoryCategorySeeder::class,
+            ]);
+        }
     }
 }

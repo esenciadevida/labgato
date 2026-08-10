@@ -82,6 +82,9 @@ return [
             'email' => env('LABGATO_ADMIN_EMAIL'),
             'password' => env('LABGATO_ADMIN_PASSWORD'),
         ],
+        'categories' => [
+            'enabled' => env('LABGATO_SEED_CATEGORIES', false),
+        ],
     ],
 
 ];

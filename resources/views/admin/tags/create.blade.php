@@ -1,0 +1,52 @@
+@extends('layouts.admin')
+
+@section('title', 'New Tag - ' . config('app.name'))
+
+@section('header', 'New Tag')
+
+@section('content')
+<div class="mx-auto max-w-2xl">
+    <form method="POST" action="{{ route('admin.tags.store') }}" class="space-y-6">
+        @csrf
+
+        <x-ui.card>
+            <div class="space-y-4" x-data="{ slug: '' }">
+                <div>
+                    <x-form.label for="name" required>Name</x-form.label>
+                    <x-ui.input
+                        id="name"
+                        name="name"
+                        value="{{ old('name') }}"
+                        :error="$errors->first('name')"
+                        aria-required="true"
+                        @input="if (slug === '') slug = $event.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')"
+                    />
+                    <p class="mt-1 text-xs text-gray-500">Tags are normalized to lowercase.</p>
+                </div>
+
+                <div>
+                    <x-form.label for="slug" required>Slug</x-form.label>
+                    <x-ui.input
+                        id="slug"
+                        name="slug"
+                        x-model="slug"
+                        value="{{ old('slug') }}"
+                        :error="$errors->first('slug')"
+                        aria-required="true"
+                    />
+                    <p class="mt-1 text-xs text-gray-500">Auto-generated from the name. Leave blank to generate.</p>
+                </div>
+            </div>
+        </x-ui.card>
+
+        <div class="flex items-center justify-end gap-3">
+            <x-ui.button href="{{ route('admin.tags.index') }}" variant="ghost">
+                Cancel
+            </x-ui.button>
+            <x-ui.button type="submit">
+                Create Tag
+            </x-ui.button>
+        </div>
+    </form>
+</div>
+@endsection
