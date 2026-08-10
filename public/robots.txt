@@ -1,6 +1,10 @@
 User-agent: *
+Allow: /
 Disallow: /admin
+Disallow: /admin/
 Disallow: /auth
+Disallow: /auth/
 Disallow: /api
+Disallow: /api/
 
-Sitemap: {{ config('app.url') }}/sitemap.xml
+Sitemap: {{ config('app.url', 'https://localhost') }}/sitemap.xml
