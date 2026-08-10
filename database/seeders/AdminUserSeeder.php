@@ -11,15 +11,32 @@ class AdminUserSeeder extends Seeder
 {
     public function run(): void
     {
-        $admin = User::create([
-            'name' => 'Admin',
-            'email' => 'admin@labgato.com',
-            'password' => Hash::make('password'),
-            'is_active' => true,
-        ]);
+        if (! config('labgato.seed.admin.enabled')) {
+            return;
+        }
 
-        $superAdminRole = Role::where('name', 'super-admin')->first();
-        if ($superAdminRole) {
+        if (app()->environment() !== 'local') {
+            return;
+        }
+
+        $email = config('labgato.seed.admin.email');
+        $password = config('labgato.seed.admin.password');
+
+        if (! $email || ! $password) {
+            return;
+        }
+
+        $admin = User::firstOrCreate(
+            ['email' => $email],
+            [
+                'name' => 'Admin',
+                'password' => Hash::make($password),
+                'is_active' => true,
+            ]
+        );
+
+        $superAdminRole = Role::where('slug', 'super-administrator')->first();
+        if ($superAdminRole && ! $admin->roles->contains($superAdminRole)) {
             $admin->roles()->attach($superAdminRole);
         }
     }

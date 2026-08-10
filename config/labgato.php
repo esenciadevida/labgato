@@ -6,10 +6,6 @@ return [
     |--------------------------------------------------------------------------
     | AI Feature Flag
     |--------------------------------------------------------------------------
-    |
-    | Master switch for AI features across the application.
-    | When false, all AI-related routes, services, and UI elements are disabled.
-    |
     */
 
     'ai_enabled' => (bool) env('AI_ENABLED', false),
@@ -18,9 +14,6 @@ return [
     |--------------------------------------------------------------------------
     | Upload Configuration
     |--------------------------------------------------------------------------
-    |
-    | Maximum file upload sizes and allowed MIME types.
-    |
     */
 
     'uploads' => [
@@ -38,9 +31,6 @@ return [
     |--------------------------------------------------------------------------
     | Security Configuration
     |--------------------------------------------------------------------------
-    |
-    | Security-related settings for the application.
-    |
     */
 
     'security' => [
@@ -54,9 +44,6 @@ return [
     |--------------------------------------------------------------------------
     | Feature Flags
     |--------------------------------------------------------------------------
-    |
-    | Toggle individual features on or off.
-    |
     */
 
     'features' => [
@@ -73,13 +60,27 @@ return [
     |--------------------------------------------------------------------------
     | Pagination
     |--------------------------------------------------------------------------
-    |
-    | Default pagination settings.
-    |
     */
 
     'pagination' => [
         'per_page' => (int) env('PAGINATION_PER_PAGE', 20),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Seed Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Controls the admin seeder behavior. Only runs in local environment.
+    |
+    */
+
+    'seed' => [
+        'admin' => [
+            'enabled' => env('LABGATO_SEED_ADMIN', false),
+            'email' => env('LABGATO_ADMIN_EMAIL'),
+            'password' => env('LABGATO_ADMIN_PASSWORD'),
+        ],
     ],
 
 ];

@@ -9,29 +9,26 @@ class AuditLog extends Model
 {
     use HasFactory;
 
+    const UPDATED_AT = null;
+
     protected $fillable = [
         'user_id',
         'action',
-        'subject_type',
-        'subject_id',
-        'old_values',
-        'new_values',
+        'resource_type',
+        'resource_id',
+        'changes',
         'ip_address',
         'user_agent',
+        'created_at',
     ];
 
     protected $casts = [
-        'old_values' => 'array',
-        'new_values' => 'array',
+        'changes' => 'array',
+        'created_at' => 'datetime',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function subject()
-    {
-        return $this->morphTo();
     }
 }

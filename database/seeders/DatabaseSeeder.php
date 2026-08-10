@@ -10,7 +10,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RolePermissionSeeder::class,
-            AdminUserSeeder::class,
         ]);
+
+        if (app()->environment('local') && config('labgato.seed.admin.enabled')) {
+            $this->call([
+                AdminUserSeeder::class,
+            ]);
+        }
     }
 }

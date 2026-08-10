@@ -11,7 +11,9 @@ return new class extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('display_name');
+            $table->string('slug')->unique();
+            $table->text('description')->nullable();
+            $table->boolean('is_system_role')->default(false);
             $table->timestamps();
         });
     }

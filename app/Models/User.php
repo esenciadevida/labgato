@@ -15,6 +15,7 @@ class User extends Authenticatable
         'email',
         'password',
         'is_active',
+        'last_login_at',
     ];
 
     protected $hidden = [
@@ -28,36 +29,12 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'is_active' => 'boolean',
+            'last_login_at' => 'datetime',
         ];
     }
 
     public function roles()
     {
         return $this->belongsToMany(Role::class);
-    }
-
-    public function hasRole(string $role): bool
-    {
-        return $this->roles->contains('name', $role);
-    }
-
-    public function hasPermission(string $permission): bool
-    {
-        foreach ($this->roles as $role) {
-            if ($role->permissions->contains('name', $permission)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public function hasAnyPermission(array $permissions): bool
-    {
-        foreach ($this->roles as $role) {
-            if ($role->permissions->whereIn('name', $permissions)->isNotEmpty()) {
-                return true;
-            }
-        }
-        return false;
     }
 }
