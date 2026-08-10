@@ -8,6 +8,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('public.home');
+        $pageTitle = 'Professional Laboratory Toolkit';
+        $metaDescription = 'LabGato provides laboratory professionals with essential tools, calculators, reference ranges, SOPs, and knowledge resources.';
+
+        return view('public.home', compact('pageTitle', 'metaDescription'));
     }
 }

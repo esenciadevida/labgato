@@ -6,23 +6,38 @@ use App\Http\Controllers\Controller;
 
 class LegalController extends Controller
 {
-    public function privacy()
+    public function privacyPolicy()
     {
-        return view('legal.privacy-policy');
+        $pageTitle = 'Privacy Policy';
+
+        return view('legal.privacy-policy', compact('pageTitle'));
     }
 
-    public function terms()
+    public function termsOfService()
     {
-        return view('legal.terms-of-service');
+        $pageTitle = 'Terms of Service';
+
+        return view('legal.terms-of-service', compact('pageTitle'));
     }
 
     public function disclaimer()
     {
-        return view('legal.disclaimer');
+        $pageTitle = 'Disclaimer';
+
+        return view('legal.disclaimer', compact('pageTitle'));
     }
 
-    public function accessibility()
+    public function accessibilityStatement()
     {
-        return view('legal.accessibility-statement');
+        $pageTitle = 'Accessibility Statement';
+
+        return view('legal.accessibility-statement', compact('pageTitle'));
+    }
+
+    public function cookiePolicy()
+    {
+        $pageTitle = 'Cookie Policy';
+
+        return view('legal.cookie-policy', compact('pageTitle'));
     }
 }

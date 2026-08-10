@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/privacy', [LegalController::class, 'privacy'])->name('legal.privacy');
-Route::get('/terms', [LegalController::class, 'terms'])->name('legal.terms');
-Route::get('/disclaimer', [LegalController::class, 'disclaimer'])->name('legal.disclaimer');
-Route::get('/accessibility', [LegalController::class, 'accessibility'])->name('legal.accessibility');
+Route::prefix('legal')->name('legal.')->group(function () {
+    Route::get('/privacy-policy', [LegalController::class, 'privacyPolicy'])->name('privacy-policy');
+    Route::get('/terms-of-service', [LegalController::class, 'termsOfService'])->name('terms-of-service');
+    Route::get('/disclaimer', [LegalController::class, 'disclaimer'])->name('disclaimer');
+    Route::get('/accessibility-statement', [LegalController::class, 'accessibilityStatement'])->name('accessibility-statement');
+    Route::get('/cookie-policy', [LegalController::class, 'cookiePolicy'])->name('cookie-policy');
+});
