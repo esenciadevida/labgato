@@ -7,17 +7,17 @@
     <title>@yield('title', 'Login - ' . config('app.name'))</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="font-sans antialiased bg-gray-50 flex items-center justify-center min-h-screen">
+<body class="font-sans antialiased bg-neutral-50 flex items-center justify-center min-h-screen">
     <div class="w-full max-w-md px-4">
         @if(session('status'))
-            <div class="mb-4 rounded-md bg-green-50 p-4" role="status">
-                <p class="text-sm text-green-800">{{ session('status') }}</p>
+            <div class="mb-4 rounded-md bg-success-50 p-4" role="status">
+                <p class="text-sm text-success-600">{{ session('status') }}</p>
             </div>
         @endif
 
         @if(session('error'))
-            <div class="mb-4 rounded-md bg-red-50 p-4" role="alert">
-                <p class="text-sm text-red-800">{{ session('error') }}</p>
+            <div class="mb-4 rounded-md bg-danger-50 p-4" role="alert">
+                <p class="text-sm text-danger-600">{{ session('error') }}</p>
             </div>
         @endif
 

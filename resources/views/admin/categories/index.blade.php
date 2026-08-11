@@ -50,7 +50,7 @@
             </x-ui.empty-state>
         @else
             <div class="overflow-x-auto">
-                <ul class="divide-y divide-gray-200">
+                <ul class="divide-y divide-neutral-200">
                     @include('admin.categories._tree', ['nodes' => $tree, 'depth' => 0])
                 </ul>
             </div>

@@ -5,18 +5,18 @@
 <aside
     x-data
     :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
-    class="fixed inset-y-0 left-0 z-40 w-64 bg-gray-900 text-white flex flex-col transition-transform duration-200 ease-in-out lg:static lg:translate-x-0"
+    class="fixed inset-y-0 left-0 z-40 w-64 bg-white border-r border-neutral-200 flex flex-col transition-transform duration-200 ease-in-out lg:static lg:translate-x-0"
     @keydown.escape.window="sidebarOpen = false"
     role="navigation"
     aria-label="Admin navigation"
 >
-    <div class="flex items-center justify-between p-4 border-b border-gray-800">
-        <a href="{{ route('admin.dashboard') }}" class="text-xl font-bold text-white">
+    <div class="flex items-center justify-between p-4 border-b border-neutral-200">
+        <a href="{{ route('admin.dashboard') }}" class="text-xl font-bold text-neutral-900">
             LabGato
         </a>
         <button
             @click="sidebarOpen = false"
-            class="lg:hidden p-1 rounded text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+            class="lg:hidden p-1 rounded text-neutral-400 hover:text-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
             aria-label="Close navigation"
         >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@
         {{-- Content --}}
         @if(Auth::user()->hasAnyPermission(['tools.view', 'calculators.view', 'reference-ranges.view', 'sops.view', 'interpretation.view', 'knowledge.view']))
             <div>
-                <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Content</div>
+                <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">Content</div>
                 <ul class="mt-1 space-y-1">
                     <x-admin.navigation-item label="Tools" href="#" permission="tools.view" />
                     <x-admin.navigation-item
@@ -63,7 +63,7 @@
         {{-- Taxonomy --}}
         @if(Auth::user()->hasAnyPermission(['taxonomy.view', 'taxonomy.manage']))
             <div>
-                <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Taxonomy</div>
+                <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">Taxonomy</div>
                 <ul class="mt-1 space-y-1">
                     <x-admin.navigation-item
                         label="Categories"
@@ -84,7 +84,7 @@
         {{-- Users & Roles --}}
         @if(Auth::user()->hasAnyPermission(['users.view', 'roles.view']))
             <div>
-                <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Users & Roles</div>
+                <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">Users & Roles</div>
                 <ul class="mt-1 space-y-1">
                     <x-admin.navigation-item label="Users" href="#" permission="users.view" />
                     <x-admin.navigation-item label="Roles" href="#" permission="roles.view" />
@@ -95,7 +95,7 @@
         {{-- System --}}
         @if(Auth::user()->hasAnyPermission(['settings.view', 'audit-logs.view', 'analytics.view']))
             <div>
-                <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-500">System</div>
+                <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">System</div>
                 <ul class="mt-1 space-y-1">
                     <x-admin.navigation-item label="Settings" href="#" permission="settings.view" />
                     <x-admin.navigation-item label="Audit Logs" href="#" permission="audit-logs.view" />

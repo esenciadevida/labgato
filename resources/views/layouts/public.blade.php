@@ -14,8 +14,8 @@
     @livewireStyles
     @stack('head')
 </head>
-<body class="font-sans antialiased bg-gray-50 flex flex-col min-h-screen">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+<body class="font-sans antialiased bg-neutral-50 flex flex-col min-h-screen">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500">
         Skip to main content
     </a>
 

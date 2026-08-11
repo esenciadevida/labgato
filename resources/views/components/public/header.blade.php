@@ -2,10 +2,10 @@
     $currentRoute = request()->route()->getName();
 @endphp
 
-<header class="bg-white shadow-sm sticky top-0 z-40" x-data="{ mobileMenuOpen: false }">
+<header class="bg-white border-b border-neutral-200 sticky top-0 z-40" x-data="{ mobileMenuOpen: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <a href="{{ route('home') }}" class="text-xl font-bold text-gray-900">
+            <a href="{{ route('home') }}" class="text-xl font-bold text-neutral-900">
                 LabGato
             </a>
 
@@ -16,7 +16,7 @@
 
             <button
                 @click="mobileMenuOpen = !mobileMenuOpen"
-                class="md:hidden p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="md:hidden p-2 rounded-md text-neutral-500 hover:text-neutral-700 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
                 :aria-expanded="mobileMenuOpen"
                 aria-label="Toggle navigation menu"
             >
@@ -37,12 +37,12 @@
         x-transition:leave="transition ease-in duration-150"
         x-transition:leave-start="opacity-100 translate-y-0"
         x-transition:leave-end="opacity-0 -translate-y-1"
-        class="md:hidden border-t border-gray-200"
+        class="md:hidden border-t border-neutral-200"
         @click.outside="mobileMenuOpen = false"
     >
         <nav class="px-4 py-3 space-y-1" aria-label="Mobile navigation">
-            <a href="{{ route('home') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 @if($currentRoute === 'home') bg-gray-100 text-gray-900 @endif">Home</a>
-            <a href="{{ route('public.search') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 @if($currentRoute === 'public.search') bg-gray-100 text-gray-900 @endif">Search</a>
+            <a href="{{ route('home') }}" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-primary-500 @if($currentRoute === 'home') bg-neutral-100 text-neutral-900 @endif">Home</a>
+            <a href="{{ route('public.search') }}" class="block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-primary-500 @if($currentRoute === 'public.search') bg-neutral-100 text-neutral-900 @endif">Search</a>
         </nav>
     </div>
 </header>

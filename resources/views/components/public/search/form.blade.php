@@ -10,7 +10,7 @@
 
     <div class="flex flex-col gap-3">
         <div class="relative">
-            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
             <input
@@ -19,7 +19,7 @@
                 name="q"
                 value="{{ old('q', $q) }}"
                 placeholder="{{ $placeholder }}"
-                class="w-full pl-10 pr-4 py-2.5 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                class="w-full pl-10 pr-4 py-2.5 rounded-md border border-neutral-300 bg-white shadow-card text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 autocomplete="off"
                 maxlength="255"
             >
@@ -31,7 +31,7 @@
                 <select
                     id="search-type"
                     name="type"
-                    class="w-full rounded-md border-gray-300 shadow-sm text-sm focus:border-blue-500 focus:ring-blue-500"
+                    class="w-full rounded-md border border-neutral-300 bg-white shadow-card text-sm focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 >
                     @foreach(['all' => 'All Types', 'calculator' => 'Calculators', 'tool' => 'Tools'] as $value => $label)
                         <option value="{{ $value }}" @selected($type === $value)>{{ $label }}</option>
@@ -44,7 +44,7 @@
                 <select
                     id="search-category"
                     name="category"
-                    class="w-full rounded-md border-gray-300 shadow-sm text-sm focus:border-blue-500 focus:ring-blue-500"
+                    class="w-full rounded-md border border-neutral-300 bg-white shadow-card text-sm focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 >
                     <option value="">All Categories</option>
                     @foreach($categories as $category)
@@ -60,7 +60,7 @@
                 <select
                     id="search-tag"
                     name="tag"
-                    class="w-full rounded-md border-gray-300 shadow-sm text-sm focus:border-blue-500 focus:ring-blue-500"
+                    class="w-full rounded-md border border-neutral-300 bg-white shadow-card text-sm focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 >
                     <option value="">All Tags</option>
                     @foreach($tags as $tag)
@@ -72,7 +72,7 @@
             </div>
 
             <div>
-                <button type="submit" class="w-full inline-flex items-center justify-center px-5 py-2.5 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                <button type="submit" class="w-full inline-flex items-center justify-center px-5 py-2.5 border border-transparent rounded-md shadow-card text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors">
                     Search
                 </button>
             </div>

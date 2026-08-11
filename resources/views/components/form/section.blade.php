@@ -4,10 +4,10 @@
     @if($title || $description)
         <div>
             @if($title)
-                <h3 class="text-base font-semibold text-gray-900">{{ $title }}</h3>
+                <h3 class="text-lg font-medium text-neutral-900">{{ $title }}</h3>
             @endif
             @if($description)
-                <p class="mt-1 text-sm text-gray-500">{{ $description }}</p>
+                <p class="mt-1 text-sm text-neutral-500">{{ $description }}</p>
             @endif
         </div>
     @endif

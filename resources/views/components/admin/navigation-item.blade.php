@@ -5,10 +5,10 @@
         @if($href)
             <a href="{{ $href }}"
                {{ $attributes->merge([
-                   'class' => 'flex items-center gap-3 px-3 py-2 text-sm rounded-md transition-colors ' .
+                   'class' => 'flex items-center gap-3 px-3 py-2 text-sm rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ' .
                        ($active
-                           ? 'bg-gray-800 text-white font-medium'
-                           : 'text-gray-400 hover:text-white hover:bg-gray-800/50')
+                           ? 'bg-primary-50 text-primary-700 font-medium'
+                           : 'text-neutral-700 hover:bg-neutral-50')
                ]) }}
                @if($active) aria-current="page" @endif>
                 @if($slot->isNotEmpty())
@@ -17,7 +17,7 @@
                 <span>{{ $label }}</span>
             </a>
         @else
-            <div {{ $attributes->merge(['class' => 'px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-500']) }}>
+            <div {{ $attributes->merge(['class' => 'px-3 py-2 text-xs font-semibold uppercase tracking-wider text-neutral-500']) }}>
                 {{ $label }}
             </div>
         @endif

@@ -23,7 +23,7 @@
                 aria-label="Search calculators"
             />
 
-            <select name="status" class="rounded-md border-gray-300 shadow-sm text-sm focus:border-blue-500 focus:ring-blue-500" aria-label="Filter by status">
+            <select name="status" class="rounded-md border border-neutral-300 bg-white shadow-card text-sm focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20" aria-label="Filter by status">
                 <option value="">All statuses</option>
                 @foreach(\App\Enums\ResourceStatus::cases() as $statusOption)
                     <option value="{{ $statusOption->value }}" @selected($status === $statusOption->value)>
@@ -32,7 +32,7 @@
                 @endforeach
             </select>
 
-            <select name="category" class="rounded-md border-gray-300 shadow-sm text-sm focus:border-blue-500 focus:ring-blue-500" aria-label="Filter by category">
+            <select name="category" class="rounded-md border border-neutral-300 bg-white shadow-card text-sm focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20" aria-label="Filter by category">
                 <option value="">All categories</option>
                 @foreach(\App\Models\Category::query()->where('is_active', true)->orderBy('name')->get() as $category)
                     <option value="{{ $category->id }}" @selected((string) $categoryId === (string) $category->id)>
@@ -69,36 +69,37 @@
             </x-ui.empty-state>
         @else
             <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
+                <table class="min-w-full divide-y divide-neutral-200">
+                    <thead class="bg-neutral-50">
                         <tr>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Name</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Status</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Categories</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Created</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Updated</th>
-                            <th scope="col" class="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider text-gray-500">Actions</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-500">Name</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-500">Status</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-500">Categories</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-500">Created</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-500">Updated</th>
+                            <th scope="col" class="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider text-neutral-500">Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-200 bg-white">
+                    <tbody class="divide-y divide-neutral-200 bg-white">
                         @foreach($calculators as $calculator)
                             <tr>
-                                <td class="px-4 py-3 text-sm font-medium text-gray-900">{{ $calculator->name }}</td>
+                                <td class="px-4 py-3 text-sm font-medium text-neutral-900">{{ $calculator->name }}</td>
                                 <td class="px-4 py-3 text-sm">
                                     <x-ui.badge :variant="match($calculator->status->color()) {
                                         'green' => 'success',
                                         'red' => 'danger',
                                         'yellow' => 'warning',
+                                        'blue' => 'info',
                                         default => 'default',
                                     }">
                                         {{ $calculator->status->label() }}
                                     </x-ui.badge>
                                 </td>
-                                <td class="px-4 py-3 text-sm text-gray-500">
+                                <td class="px-4 py-3 text-sm text-neutral-500">
                                     {{ $calculator->categories->pluck('name')->implode(', ') ?: '—' }}
                                 </td>
-                                <td class="px-4 py-3 text-sm text-gray-500">{{ $calculator->created_at?->format('M j, Y') ?? '—' }}</td>
-                                <td class="px-4 py-3 text-sm text-gray-500">{{ $calculator->updated_at?->format('M j, Y') ?? '—' }}</td>
+                                <td class="px-4 py-3 text-sm text-neutral-500">{{ $calculator->created_at?->format('M j, Y') ?? '—' }}</td>
+                                <td class="px-4 py-3 text-sm text-neutral-500">{{ $calculator->updated_at?->format('M j, Y') ?? '—' }}</td>
                                 <td class="px-4 py-3 text-right">
                                     @can('update', $calculator)
                                         <div class="inline-flex items-center gap-2">
@@ -124,7 +125,7 @@
             </div>
 
             @if($calculators->hasPages())
-                <div class="border-t border-gray-200 px-4 py-3">
+                <div class="border-t border-neutral-200 px-4 py-3">
                     {{ $calculators->links() }}
                 </div>
             @endif

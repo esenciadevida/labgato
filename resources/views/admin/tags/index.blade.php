@@ -50,19 +50,19 @@
             </x-ui.empty-state>
         @else
             <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
+                <table class="min-w-full divide-y divide-neutral-200">
+                    <thead class="bg-neutral-50">
                         <tr>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Name</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Slug</th>
-                            <th scope="col" class="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider text-gray-500">Actions</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-500">Name</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-500">Slug</th>
+                            <th scope="col" class="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider text-neutral-500">Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-200 bg-white">
+                    <tbody class="divide-y divide-neutral-200 bg-white">
                         @foreach($tags as $tag)
                             <tr>
-                                <td class="px-4 py-3 text-sm font-medium text-gray-900">{{ $tag->name }}</td>
-                                <td class="px-4 py-3 text-sm text-gray-500"><code>{{ $tag->slug }}</code></td>
+                                <td class="px-4 py-3 text-sm font-medium text-neutral-900">{{ $tag->name }}</td>
+                                <td class="px-4 py-3 text-sm text-neutral-500"><code>{{ $tag->slug }}</code></td>
                                 <td class="px-4 py-3 text-right">
                                     @can('manage', $tag)
                                         <div class="inline-flex items-center gap-2">
@@ -86,7 +86,7 @@
             </div>
 
             @if($tags->hasPages())
-                <div class="border-t border-gray-200 px-4 py-3">
+                <div class="border-t border-neutral-200 px-4 py-3">
                     {{ $tags->links() }}
                 </div>
             @endif

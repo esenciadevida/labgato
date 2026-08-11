@@ -37,7 +37,7 @@
                     value="{{ old('slug', $calculator?->slug) }}"
                     :error="$errors->first('slug')"
                 />
-                <p class="mt-1 text-xs text-gray-500">Auto-generated from the name if left blank.</p>
+                <p class="mt-1 text-xs text-neutral-500">Auto-generated from the name if left blank.</p>
             </div>
 
             <div>
@@ -99,7 +99,7 @@
                     class="font-mono text-xs"
                 >{{ old('input_schema', $calculator ? json_encode($calculator->input_schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) : '') }}</x-ui.textarea>
                 <x-form.error for="input_schema" />
-                <p class="mt-1 text-xs text-gray-500">
+                <p class="mt-1 text-xs text-neutral-500">
                     JSON array of fields. Each field requires key, label, and type (number, select, or text). Number fields may define unit, min, max, step, and required.
                 </p>
             </div>
@@ -113,7 +113,7 @@
                     class="font-mono text-xs"
                 >{{ old('output_schema', $calculator ? json_encode($calculator->output_schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) : '') }}</x-ui.textarea>
                 <x-form.error for="output_schema" />
-                <p class="mt-1 text-xs text-gray-500">
+                <p class="mt-1 text-xs text-neutral-500">
                     JSON array of output fields. Each field requires key and label, and may define unit, rounding (none, round_up, round_down, round_half_up), and precision (0-10).
                 </p>
             </div>
@@ -140,7 +140,7 @@
                     :selected="old('categories', $calculator?->categories->pluck('id')->all() ?? [])"
                 />
                 @error('categories')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-1 text-sm text-danger-600">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -150,7 +150,7 @@
                     :selected="old('tags', $calculator?->tags->pluck('id')->all() ?? [])"
                 />
                 @error('tags')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-1 text-sm text-danger-600">{{ $message }}</p>
                 @enderror
             </div>
         </x-form.section>
