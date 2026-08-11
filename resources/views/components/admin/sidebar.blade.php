@@ -46,7 +46,12 @@
                 <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Content</div>
                 <ul class="mt-1 space-y-1">
                     <x-admin.navigation-item label="Tools" href="#" permission="tools.view" />
-                    <x-admin.navigation-item label="Calculators" href="#" permission="calculators.view" />
+                    <x-admin.navigation-item
+                        label="Calculators"
+                        href="{{ route('admin.calculators.index') }}"
+                        :active="str_starts_with($currentRoute, 'admin.calculators')"
+                        permission="calculators.view"
+                    />
                     <x-admin.navigation-item label="Reference Ranges" href="#" permission="reference-ranges.view" />
                     <x-admin.navigation-item label="SOPs" href="#" permission="sops.view" />
                     <x-admin.navigation-item label="Interpretation" href="#" permission="interpretation.view" />

@@ -99,6 +99,9 @@ return [
         'categories' => [
             'enabled' => env('LABGATO_SEED_CATEGORIES', false),
         ],
+        'calculators' => [
+            'enabled' => env('LABGATO_SEED_CALCULATORS', false),
+        ],
     ],
 
 ];

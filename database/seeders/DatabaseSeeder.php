@@ -23,5 +23,11 @@ class DatabaseSeeder extends Seeder
                 LaboratoryCategorySeeder::class,
             ]);
         }
+
+        if (config('labgato.seed.calculators.enabled')) {
+            $this->call([
+                CalculatorSeeder::class,
+            ]);
+        }
     }
 }

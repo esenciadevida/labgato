@@ -11,6 +11,7 @@
         :noindex="$metaNoindex ?? false"
     />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
     @stack('head')
 </head>
 <body class="font-sans antialiased bg-gray-50 flex flex-col min-h-screen">
@@ -27,5 +28,6 @@
     <x-public.footer />
 
     @stack('scripts')
+    @livewireScripts
 </body>
 </html>

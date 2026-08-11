@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
+use App\Models\Calculator;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Observers\PermissionObserver;
 use App\Observers\RoleObserver;
+use App\Services\SearchService;
+use App\Support\SearchResult;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -20,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
-    public function boot(): void
+    public function boot(SearchService $searchService): void
     {
         Route::bind('passwordResetToken', function (string $value) {
             return $value;
@@ -57,6 +60,33 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('search', function (Request $request) {
             return Limit::perMinute((int) config('labgato.search.rate_limit_per_minute', 15))
                 ->by($request->user()?->id ?: $request->ip());
+        });
+
+        $searchService->registerProvider('calculator', function (string $query, array $filters) {
+            return Calculator::query()
+                ->published()
+                ->with(['categories', 'tags'])
+                ->search($query)
+                ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
+                    $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
+                })
+                ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
+                    $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
+                })
+                ->orderByDesc('published_at')
+                ->limit(50)
+                ->get()
+                ->map(function (Calculator $calculator) {
+                    return new SearchResult(
+                        type: 'calculator',
+                        title: $calculator->name,
+                        url: route('public.calculators.show', $calculator->slug),
+                        description: $calculator->short_description,
+                        categoryName: $calculator->categories->first()?->name,
+                        tags: $calculator->tags->pluck('name')->all(),
+                        publishedAt: $calculator->published_at,
+                    );
+                });
         });
     }
 }
