@@ -71,18 +71,30 @@
     <div
         x-cloak
         x-show="open"
+        @click="open = false"
+        class="fixed inset-0 z-40 bg-slate-900/40 sm:hidden"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        x-cloak
+        x-show="open"
         x-transition:enter="transition ease-out duration-100"
-        x-transition:enter-start="opacity-0 scale-95"
-        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:enter-start="opacity-0 translate-y-6 sm:translate-y-0 sm:scale-95"
+        x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
         x-transition:leave="transition ease-in duration-75"
-        x-transition:leave-start="opacity-100 scale-100"
-        x-transition:leave-end="opacity-0 scale-95"
+        x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+        x-transition:leave-end="opacity-0 translate-y-6 sm:translate-y-0 sm:scale-95"
         @click.outside="open = false"
-        class="absolute right-0 mt-2 w-96 max-w-[calc(100vw-2rem)] bg-white dark:bg-slate-800 rounded-lg shadow-pop ring-1 ring-black ring-opacity-5 dark:ring-slate-700 z-50 overflow-hidden"
+        class="fixed inset-x-0 bottom-0 z-50 sm:absolute sm:inset-x-auto sm:right-0 sm:bottom-auto sm:mt-2 sm:w-96 flex max-h-[85vh] sm:max-h-none flex-col bg-white dark:bg-slate-800 rounded-t-2xl sm:rounded-lg shadow-pop ring-1 ring-black ring-opacity-5 dark:ring-slate-700 overflow-hidden sm:max-w-[calc(100vw-2rem)]"
         role="dialog"
         aria-label="Notifications panel"
     >
-        <div class="flex items-center justify-between px-4 py-3 border-b border-slate-200 dark:border-slate-700">
+        <div class="sm:hidden flex justify-center pt-2.5">
+            <span class="h-1.5 w-10 rounded-full bg-slate-300 dark:bg-slate-600" aria-hidden="true"></span>
+        </div>
+
+        <div class="shrink-0 flex items-center justify-between px-4 py-3 border-b border-slate-200 dark:border-slate-700">
             <span class="text-sm font-semibold text-slate-900 dark:text-slate-100">Notifications</span>
             <div class="flex items-center gap-3">
                 <button
@@ -94,10 +106,20 @@
                 >
                     Mark all as read
                 </button>
+                <button
+                    type="button"
+                    @click="open = false"
+                    class="sm:hidden inline-flex items-center justify-center rounded-lg p-1.5 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                    aria-label="Close notifications"
+                >
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
             </div>
         </div>
 
-        <div class="max-h-96 overflow-y-auto">
+        <div class="flex-1 min-h-0 overflow-y-auto sm:max-h-96">
             @forelse($recent as $notification)
                 <div id="notification-{{ $notification->id }}" data-unread-dot class="{{ $notification->read_at === null ? 'bg-primary-50/50 dark:bg-primary-900/20' : '' }}">
                     <x-notifications.item :notification="$notification" />
@@ -112,7 +134,7 @@
             @endforelse
         </div>
 
-        <div class="border-t border-slate-200 dark:border-slate-700">
+        <div class="shrink-0 border-t border-slate-200 dark:border-slate-700">
             <a
                 href="{{ route('notifications.index') }}"
                 class="block px-4 py-2.5 text-center text-sm font-medium text-primary-700 hover:bg-slate-50 dark:text-primary-400 dark:hover:bg-slate-700 transition-colors"

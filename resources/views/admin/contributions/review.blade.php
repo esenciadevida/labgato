@@ -154,16 +154,17 @@
         x-cloak
         x-show="rejectOpen"
         x-transition.opacity
-        class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4"
+        class="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60"
         role="dialog"
         aria-modal="true"
         aria-labelledby="reject-dialog-title"
         @keydown.escape.window="rejectOpen = false"
     >
-        <div
-            class="w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl dark:bg-slate-800"
-            @click.outside="rejectOpen = false"
-        >
+        <div class="flex min-h-full items-center justify-center p-4">
+            <div
+                class="w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl dark:bg-slate-800"
+                @click.outside="rejectOpen = false"
+            >
             <h2 id="reject-dialog-title" class="text-lg font-semibold text-slate-900 dark:text-slate-100">
                 Reject contribution
             </h2>
@@ -188,7 +189,7 @@
                     </x-ui.button>
                 </div>
             </form>
+            </div>
         </div>
     </div>
-</div>
 @endsection

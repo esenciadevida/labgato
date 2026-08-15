@@ -132,28 +132,30 @@
         AI-generated content inserted. Please review for scientific accuracy and edit as needed before saving.
     </div>
 
-    <div x-show="confirmOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div x-show="confirmOpen" x-cloak class="fixed inset-0 z-50 overflow-y-auto">
         <div class="absolute inset-0 bg-slate-900/50" @click="confirmOpen = false"></div>
-        <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="{{ $confirmTitle }}"
-            class="relative w-full max-w-md rounded-lg bg-white p-6 shadow-xl dark:bg-slate-800"
-        >
-            <h3 id="{{ $confirmTitle }}" class="text-lg font-semibold text-slate-900 dark:text-slate-100">Replace existing text?</h3>
-            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">This will replace your existing text with AI-generated content. Are you sure you want to continue?</p>
-            <div class="mt-5 flex justify-end gap-3">
-                <button
-                    x-ref="confirmCancel"
-                    type="button"
-                    class="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:text-slate-200 dark:hover:bg-slate-700"
-                    @click="confirmOpen = false"
-                >Cancel</button>
-                <button
-                    type="button"
-                    class="inline-flex items-center rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    @click="start()"
-                >Replace Text</button>
+        <div class="flex min-h-full items-center justify-center p-4">
+            <div
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="{{ $confirmTitle }}"
+                class="relative w-full max-w-md max-h-full overflow-y-auto rounded-lg bg-white p-6 shadow-xl dark:bg-slate-800"
+            >
+                <h3 id="{{ $confirmTitle }}" class="text-lg font-semibold text-slate-900 dark:text-slate-100">Replace existing text?</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">This will replace your existing text with AI-generated content. Are you sure you want to continue?</p>
+                <div class="mt-5 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+                    <button
+                        x-ref="confirmCancel"
+                        type="button"
+                        class="inline-flex min-h-[44px] items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:text-slate-200 dark:hover:bg-slate-700"
+                        @click="confirmOpen = false"
+                    >Cancel</button>
+                    <button
+                        type="button"
+                        class="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                        @click="start()"
+                    >Replace Text</button>
+                </div>
             </div>
         </div>
     </div>

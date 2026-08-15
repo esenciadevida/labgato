@@ -30,7 +30,7 @@
     x-show="open"
     x-cloak
     @keydown.escape.window="close()"
-    class="fixed inset-0 z-[90] flex items-center justify-center p-4"
+    class="fixed inset-0 z-[90] overflow-y-auto"
     role="dialog"
     aria-modal="true"
     aria-label="{{ $popup->title ?: 'Announcement' }}"
@@ -39,14 +39,15 @@
     <div
         x-show="open"
         @click="close()"
-        class="absolute inset-0 bg-slate-950/45 backdrop-blur-sm"
+        class="fixed inset-0 bg-slate-950/45 backdrop-blur-sm"
     ></div>
 
     {{-- Card --}}
-    <div
-        x-show="open"
-        class="relative w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-700 dark:bg-slate-900"
-    >
+    <div class="flex min-h-full items-center justify-center p-4">
+        <div
+            x-show="open"
+            class="relative w-full max-w-md max-h-full overflow-y-auto rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-700 dark:bg-slate-900"
+        >
         {{-- Close button (always visible + functional) --}}
         <button
             @click="close()"
@@ -75,6 +76,7 @@
                 {{ $popup->cta_text }}
             </a>
         @endif
+        </div>
     </div>
 </div>
 @endif
