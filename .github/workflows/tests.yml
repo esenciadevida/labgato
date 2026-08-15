@@ -8,7 +8,7 @@ on:
 
 jobs:
   laravel-tests:
-    name: PHP 8.3 & MySQL Tests
+    name: PHP 8.4 & MySQL Tests
     runs-on: ubuntu-latest
 
     # Spin up a real MySQL 8.0 database for testing
@@ -27,11 +27,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Setup PHP with required extensions (project requires PHP ^8.3, see composer.json)
+      # 2. Setup PHP with required extensions
+      #    The locked dependencies (laravel/framework v13, symfony v8.1) require PHP >= 8.4.1.
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version: '8.4'
           extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, dom, filter, gd, zip, bcmath
           coverage: none
 
