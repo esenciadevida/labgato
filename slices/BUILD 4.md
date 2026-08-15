@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── app/
 │   ├── Models/
 │   │   ├── User.php
@@ -38,10 +38,10 @@ labgato/
             └── PrivilegeEscalationTest.php
 
 
-            IMPLEMENTATION PROMPT ID: LABGATO-SLICE1-BUILD4
+            IMPLEMENTATION PROMPT ID: LABGOTO-SLICE1-BUILD4
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
 
 Build 1, Build 2, and Build 3 are complete. Administrator authentication, session security, password reset, and active-user enforcement are implemented.
 
@@ -79,7 +79,7 @@ FILES TO INSPECT:
 - app/Http/Middleware/EnsureUserIsActive.php
 - bootstrap/app.php
 - config/cache.php
-- config/labgato.php
+- config/LABGOTO.php
 - tests/Feature/Auth/
 
 FILES TO CREATE:

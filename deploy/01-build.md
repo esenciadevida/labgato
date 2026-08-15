@@ -31,7 +31,7 @@ npm run build
 
 ```bash
 # Create a tar.gz archive (excluding development files)
-tar -czf labgato-production.tar.gz \
+tar -czf Labgoto-production.tar.gz \
   --exclude='node_modules' \
   --exclude='.git' \
   --exclude='.env' \

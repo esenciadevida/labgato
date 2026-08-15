@@ -4,9 +4,9 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The decision to follow the new directive.
-- The decision that LabGato is the renamed continuation of MLS Toolkit.
+- The decision that LABGOTO is the renamed continuation of MLS Toolkit.
 - The Hostinger PHP 8.4 hosting constraint.
 - The absence of provided existing documentation or implementation.
 
@@ -31,7 +31,7 @@ This document defines:
 
 This document affects:
 
-- All future LabGato documentation.
+- All future LABGOTO documentation.
 - All future architectural decisions.
 - All future implementation prompts.
 - All future phase planning.
@@ -52,7 +52,7 @@ Its implementation impact is:
 
 # 1. Project Identity
 
-Project Name: LabGato
+Project Name: LABGOTO
 
 Previous Name: MLS Toolkit
 
@@ -64,11 +64,11 @@ Documentation Phase: Phase 01 — Product Foundation and Master Architecture
 
 Current Document: 01_Project_Charter.md
 
-LabGato is the renamed continuation of MLS Toolkit.
+LABGOTO is the renamed continuation of MLS Toolkit.
 
-All previously approved MLS Toolkit decisions remain valid as LabGato decisions unless explicitly changed through the approved change-control process.
+All previously approved MLS Toolkit decisions remain valid as LABGOTO decisions unless explicitly changed through the approved change-control process.
 
-LabGato must not be merged with:
+LABGOTO must not be merged with:
 
 - SMEvolve
 - unrelated laboratory management systems
@@ -82,7 +82,7 @@ LabGato must not be merged with:
 
 # 2. Product Purpose
 
-LabGato is a professional digital toolkit/workspace designed primarily for:
+LABGOTO is a professional digital toolkit/workspace designed primarily for:
 
 - Medical Laboratory Scientists
 - Medical Laboratory Science Students
@@ -110,13 +110,13 @@ The goal is to make laboratory work and learning:
 - More accessible
 - More practical
 
-LabGato should feel like a serious professional laboratory product, not a generic content website and not a decorative AI chatbot.
+LABGOTO should feel like a serious professional laboratory product, not a generic content website and not a decorative AI chatbot.
 
 ---
 
 # 3. Approved Product Direction
 
-LabGato must be built as one coherent system.
+LABGOTO must be built as one coherent system.
 
 The system must follow this sequence:
 
@@ -154,9 +154,9 @@ A feature is not complete merely because a frontend page exists.
 
 ---
 
-# 4. What LabGato Is Not
+# 4. What LABGOTO Is Not
 
-LabGato is not:
+LABGOTO is not:
 
 - A Laboratory Information System
 - A hospital management system
@@ -170,7 +170,7 @@ LabGato is not:
 - Simply an educational website
 - Simply a calculator website
 
-LabGato does not currently include:
+LABGOTO does not currently include:
 
 - Patient accounts
 - Doctor portals
@@ -188,7 +188,7 @@ These may only be added through an approved architectural change request.
 
 # 5. Core Product Areas
 
-The approved LabGato architecture must support the following resource types, subject to detailed requirements in later documents.
+The approved LABGOTO architecture must support the following resource types, subject to detailed requirements in later documents.
 
 ## 5.1 Laboratory Tools
 
@@ -301,7 +301,7 @@ Search architecture must be defined in a later phase.
 
 ## 5.8 AI
 
-Controlled AI assistance based on approved LabGato information.
+Controlled AI assistance based on approved LABGOTO information.
 
 AI must only be introduced after the underlying resource architecture is sufficiently mature.
 
@@ -343,7 +343,7 @@ The exact admin module list must follow approved architecture.
 
 # 6. Development Philosophy
 
-LabGato must be developed according to the following principles.
+LABGOTO must be developed according to the following principles.
 
 ## 6.1 Documentation First
 
@@ -409,7 +409,7 @@ Do not resolve major architectural conflicts through guesswork.
 
 Security is a first-class architecture concern.
 
-LabGato must implement appropriate:
+LABGOTO must implement appropriate:
 
 - Authentication security
 - Authorization security
@@ -430,7 +430,7 @@ All authorization must be enforced server-side.
 
 ## 6.6 Accessibility by Default
 
-LabGato should target WCAG 2.2 AA where practical and applicable.
+LABGOTO should target WCAG 2.2 AA where practical and applicable.
 
 Important interactions must work with:
 
@@ -461,7 +461,7 @@ Sitemap and robots configuration must be intentional.
 
 ## 6.8 Professional UI
 
-LabGato must avoid generic AI-style UI.
+LABGOTO must avoid generic AI-style UI.
 
 Avoid:
 
@@ -540,7 +540,7 @@ Detailed deployment constraints will be documented in:
 
 # 8. Governance Rules
 
-LabGato must follow the approved source-of-truth hierarchy.
+LABGOTO must follow the approved source-of-truth hierarchy.
 
 ## 8.1 Source-of-Truth Hierarchy
 
@@ -620,7 +620,7 @@ If a document does not directly produce code, the implementation prompt must des
 
 At the time of this document:
 
-- Existing LabGato documentation: Not provided
+- Existing LABGOTO documentation: Not provided
 - Existing MLS Toolkit documentation: Not provided
 - Existing file tree: Not provided
 - Existing implementation: Not provided
@@ -630,7 +630,7 @@ At the time of this document:
 
 Therefore, the working assumption is:
 
-Greenfield documentation reset under the new LabGato master directive.
+Greenfield documentation reset under the new LABGOTO master directive.
 
 This assumption must be verified in:
 
@@ -646,7 +646,7 @@ If existing project assets are discovered, this document and the current-state a
 
 Decision:
 
-Adopt the new LabGato Master Software Project directive as the controlling product directive.
+Adopt the new LABGOTO Master Software Project directive as the controlling product directive.
 
 Status:
 
@@ -654,7 +654,7 @@ Approved.
 
 Impact:
 
-LabGato is defined as the renamed continuation of MLS Toolkit.
+LABGOTO is defined as the renamed continuation of MLS Toolkit.
 
 ## Decision D-0002
 
@@ -668,7 +668,7 @@ Approved.
 
 Impact:
 
-Quote Wizard, lead generation, business packages, and laboratory business website scope are not part of the current LabGato scope unless explicitly re-added through a formal change request.
+Quote Wizard, lead generation, business packages, and laboratory business website scope are not part of the current LABGOTO scope unless explicitly re-added through a formal change request.
 
 ## Decision D-0003
 
@@ -716,7 +716,7 @@ AI is deferred until tools, references, SOPs, knowledge, search, and admin found
 
 # 11. Success Criteria
 
-LabGato will be considered successful when it provides:
+LABGOTO will be considered successful when it provides:
 
 - Useful laboratory tools
 - Validated calculators
@@ -775,8 +775,8 @@ The next document is:
 
 ## Decisions Established
 
-- LabGato follows the new master directive.
-- LabGato is the renamed continuation of MLS Toolkit.
+- LABGOTO follows the new master directive.
+- LABGOTO is the renamed continuation of MLS Toolkit.
 - Previous quote/lead/business website scope is superseded.
 - Hostinger PHP 8.4 is a deployment constraint.
 - AI is deferred until underlying architecture is mature.
@@ -784,7 +784,7 @@ The next document is:
 
 ## Dependencies
 
-- Approved LabGato master directive.
+- Approved LABGOTO master directive.
 - User approval of new directive.
 - Approved Phase 01 file tree.
 - Hostinger hosting constraint.
@@ -796,12 +796,12 @@ This document creates:
 
 01_Product_Foundation_and_Master_Architecture/01_Project_Charter.md
 
-It affects all future LabGato documentation files.
+It affects all future LABGOTO documentation files.
 
 ## Open Questions
 
 1. Does any existing MLS Toolkit documentation or code exist?
-2. Does any existing LabGato documentation or code exist?
+2. Does any existing LABGOTO documentation or code exist?
 3. What is the approved final technology stack?
 4. Are public user accounts required in the MVP?
 5. Are administrator accounts the only required accounts initially?
@@ -829,17 +829,17 @@ It affects all future LabGato documentation files.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC01
+LABGOTO-PHASE01-DOC01
 
 ## Context
 
-LabGato has adopted the new master directive. The previous quote/lead/business platform scope is superseded. The project requires a controlled documentation foundation before application implementation begins.
+LABGOTO has adopted the new master directive. The previous quote/lead/business platform scope is superseded. The project requires a controlled documentation foundation before application implementation begins.
 
 This prompt implements the documentation outcome of the Project Charter.
 
 ## Objective
 
-Create the official LabGato Project Charter document inside the approved documentation structure.
+Create the official LABGOTO Project Charter document inside the approved documentation structure.
 
 After this prompt is completed, the repository should contain the approved Phase 01 folder and the first charter document.
 
@@ -847,8 +847,8 @@ After this prompt is completed, the repository should contain the approved Phase
 
 Relevant approved decisions:
 
-- LabGato is the renamed continuation of MLS Toolkit.
-- LabGato is a professional laboratory toolkit.
+- LABGOTO is the renamed continuation of MLS Toolkit.
+- LABGOTO is a professional laboratory toolkit.
 - The previous quote/lead scope is superseded.
 - Documentation must be phase-controlled.
 - File trees must be approved before phase writing.
@@ -953,7 +953,7 @@ This implementation is complete when:
 
 - The Project Charter file exists.
 - The file matches the approved Phase 01 file tree.
-- The file records the new LabGato directive as authoritative.
+- The file records the new LABGOTO directive as authoritative.
 - The file records the previous quote/lead scope as superseded.
 - The file records the Hostinger PHP 8.4 constraint.
 - The file includes the document completion check.

@@ -42,7 +42,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Foundation Build Order for LabGato.
+This document establishes the Foundation Build Order for LABGOTO.
 
 The Application Foundation (Slice 1) is the bedrock of the platform. Building features like Calculators or Reference Ranges before the authentication, RBAC, and layout foundations are stable will result in rework and technical debt.
 
@@ -73,7 +73,7 @@ Do not build resource-specific CRUD (e.g., Calculators) until Steps 1 through 5 
 **Tasks**:
 1. Create a new Laravel project using the latest stable version compatible with PHP 8.4.
 2. Configure `.env` and `.env.example` according to the Environment and Configuration document.
-3. Set up `config/labgato.php` for custom application settings.
+3. Set up `config/LABGOTO.php` for custom application settings.
 4. Configure `config/database.php`, `config/session.php`, `config/cache.php`, and `config/queue.php` to use database drivers.
 5. Initialize Git repository and commit the initial Laravel skeleton.
 6. Configure Vite, Tailwind CSS, and Alpine.js. Verify local asset compilation.
@@ -266,7 +266,7 @@ It serves as the execution plan for the first development sprint.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC13
+LABGOTO-PHASE02-DOC13
 
 ## Context
 
@@ -276,7 +276,7 @@ This prompt implements the documentation outcome of the Foundation Build Order d
 
 ## Objective
 
-Create the official LabGato Foundation Build Order document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Foundation Build Order document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, Phase 02 documentation is fully drafted and ready for final review and repository commit.
 

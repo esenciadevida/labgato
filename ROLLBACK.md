@@ -1,4 +1,4 @@
-# LabGato Rollback Plan
+# Labgoto Rollback Plan
 
 Use this plan if a release fails verification or introduces a critical issue. Act quickly, communicate clearly, and verify the rollback afterwards.
 

@@ -15,7 +15,7 @@ This document depends on:
 
 This document defines:
 
-- The search strategy for LabGato resources.
+- The search strategy for LABGOTO resources.
 - The MySQL-based search indexing and querying approach.
 - The search query parameters and filtering rules.
 - The search results page architecture.
@@ -49,9 +49,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Search Implementation architecture for LabGato.
+This document establishes the Search Implementation architecture for LABGOTO.
 
-Search is the primary discovery mechanism for laboratory professionals seeking specific calculators, tools, or reference information. Because LabGato is deployed on Hostinger shared hosting, the search strategy must be efficient, database-driven, and free of external dependencies like Elasticsearch or Meilisearch.
+Search is the primary discovery mechanism for laboratory professionals seeking specific calculators, tools, or reference information. Because LABGOTO is deployed on Hostinger shared hosting, the search strategy must be efficient, database-driven, and free of external dependencies like Elasticsearch or Meilisearch.
 
 ---
 
@@ -59,7 +59,7 @@ Search is the primary discovery mechanism for laboratory professionals seeking s
 
 ## 2.1 MySQL-Based Search
 
-LabGato will use **MySQL Full-Text Search** or optimized `LIKE` queries for the MVP.
+LABGOTO will use **MySQL Full-Text Search** or optimized `LIKE` queries for the MVP.
 
 - **Full-Text Search**: Preferred for better relevance ranking and performance on large text fields.
 - **LIKE Queries**: Acceptable fallback for simple searches or if Full-Text indexes are not supported.
@@ -318,7 +318,7 @@ The Admin Portal should display:
 
 ## Decisions Established
 
-- LabGato uses MySQL Full-Text Search or LIKE queries for MVP.
+- LABGOTO uses MySQL Full-Text Search or LIKE queries for MVP.
 - External search engines are excluded.
 - Search covers published resources only.
 - Search results pages are noindex.
@@ -355,17 +355,17 @@ It dictates the implementation of the SearchService, search routes, search resul
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE03-DOC05
+LABGOTO-PHASE03-DOC05
 
 ## Context
 
-LabGato requires a performant, shared-hosting-compatible search strategy. This document defines the MySQL-based search architecture, query parameters, results page, and analytics.
+LABGOTO requires a performant, shared-hosting-compatible search strategy. This document defines the MySQL-based search architecture, query parameters, results page, and analytics.
 
 This prompt implements the documentation outcome of the Search Implementation document.
 
 ## Objective
 
-Create the official LabGato Search Implementation document inside the approved Phase 03 documentation structure.
+Create the official LABGOTO Search Implementation document inside the approved Phase 03 documentation structure.
 
 After this prompt is completed, the repository will have a binding specification for resource discovery.
 

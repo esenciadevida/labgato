@@ -34,7 +34,7 @@ return new class extends Migration
 
         if (in_array(Schema::getConnection()->getDriverName(), ['mysql', 'mariadb'])) {
             Schema::table('calculators', function (Blueprint $table) {
-                $table->fullText(['name', 'short_description']);
+                $table->fullText(['name', 'short_description'], 'calculators_ft');
             });
         }
     }

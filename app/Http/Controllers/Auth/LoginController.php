@@ -25,8 +25,8 @@ class LoginController extends Controller
 
         $email = strtolower($request->email);
         $throttleKey = $email.'|'.$request->ip();
-        $maxAttempts = config('labgato.security.login_max_attempts', 5);
-        $decayMinutes = config('labgato.security.login_decay_minutes', 15);
+        $maxAttempts = config('labgoto.security.login_max_attempts', 5);
+        $decayMinutes = config('labgoto.security.login_decay_minutes', 15);
 
         if (Cache::get("login_attempts_{$throttleKey}", 0) >= $maxAttempts) {
             throw ValidationException::withMessages([
@@ -63,6 +63,18 @@ class LoginController extends Controller
 
             throw ValidationException::withMessages([
                 'email' => ['The provided credentials do not match our records.'],
+            ]);
+        }
+
+        if (! $user->isAdmin()) {
+            Auth::logout();
+
+            $auditLog->log(
+                action: 'auth.login.rejected_member',
+            );
+
+            return redirect()->route('login')->withErrors([
+                'email' => 'Please use the member login page.',
             ]);
         }
 

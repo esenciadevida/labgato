@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── app/
 │   ├── Contracts/
 │   │   └── CalculatorInterface.php
@@ -79,10 +79,10 @@ labgato/
                 ├── AnionGapCalculatorTest.php
                 └── CalculatorServiceTest.php
 
-IMPLEMENTATION PROMPT ID: LABGATO-PHASE03-BUILD12
+IMPLEMENTATION PROMPT ID: LABGOTO-PHASE03-BUILD12
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
 
 Slice 1 Application Foundation is complete. Build 10 Taxonomy Admin Module is complete. Build 11 Search Implementation is complete. Phase 03 Resource Architecture is approved.
 
@@ -922,7 +922,7 @@ Admin calculator forms must:
 SEO REQUIREMENTS:
 
 Calculator listing page must:
-- Have title: Calculators | LabGato
+- Have title: Calculators | LABGOTO
 - Have meta description.
 - Use canonical URL.
 - Use noindex for filtered pages or canonical to base listing.

@@ -49,7 +49,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Database Foundation for LabGato.
+This document establishes the Database Foundation for LABGOTO.
 
 Before any laboratory resource (Calculator, Tool, Reference Range, etc.) can be built, the platform requires a stable database foundation for:
 
@@ -737,17 +737,17 @@ It directly dictates the structure of all foundation migrations and models.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC03
+LABGOTO-PHASE02-DOC03
 
 ## Context
 
-LabGato requires a stable database foundation before any feature can be built. This document defines the core schema for access control, system entities, taxonomy, and framework infrastructure.
+LABGOTO requires a stable database foundation before any feature can be built. This document defines the core schema for access control, system entities, taxonomy, and framework infrastructure.
 
 This prompt implements the documentation outcome of the Database Foundation document.
 
 ## Objective
 
-Create the official LabGato Database Foundation document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Database Foundation document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository will have a binding schema definition for the foundation tables.
 
@@ -755,7 +755,7 @@ After this prompt is completed, the repository will have a binding schema defini
 
 Relevant approved decisions:
 
-- LabGato uses MySQL/MariaDB.
+- LABGOTO uses MySQL/MariaDB.
 - Sessions, cache, and queues use database drivers.
 - Audit logs are immutable.
 - RBAC uses roles and permissions.

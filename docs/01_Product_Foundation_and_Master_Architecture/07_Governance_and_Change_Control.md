@@ -4,7 +4,7 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Product Scope and Non-Goals document.
 - The approved Glossary.
@@ -32,7 +32,7 @@ This document affects:
 - Every future architectural decision.
 - How the AI assistant behaves when faced with missing information or conflicting requirements.
 - How the human project owner reviews and approves changes.
-- The integrity of the entire LabGato system over time.
+- The integrity of the entire LABGOTO system over time.
 
 ## Implementation Impact
 
@@ -40,7 +40,7 @@ This document does not directly implement application code.
 
 Its implementation impact is:
 
-- Establishes the strict rules of engagement for building LabGato.
+- Establishes the strict rules of engagement for building LABGOTO.
 - Prevents silent architectural degradation.
 - Prevents scope creep.
 - Ensures that every change to the system is deliberate, documented, and approved.
@@ -49,9 +49,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the governance and change control framework for LabGato.
+This document establishes the governance and change control framework for LABGOTO.
 
-Because LabGato is a complex, multi-layered software product, it requires strict rules to ensure that documentation, code, database design, and UI remain consistent over time.
+Because LABGOTO is a complex, multi-layered software product, it requires strict rules to ensure that documentation, code, database design, and UI remain consistent over time.
 
 Without governance, small undocumented changes eventually lead to a fragmented, unmaintainable system.
 
@@ -123,7 +123,7 @@ Any proposed change to approved scope, architecture, database design, API struct
 
 Every Change Request must include:
 
-- **Change ID:** A unique identifier (e.g., `LABGATO-CR-0001`).
+- **Change ID:** A unique identifier (e.g., `LABGOTO-CR-0001`).
 - **Existing Decision:** What is currently approved and documented.
 - **Proposed Change:** What is being suggested.
 - **Reason:** Why the change is needed.
@@ -147,7 +147,7 @@ Once approved, the Change Request must be recorded in the project's Decision Log
 
 # 5. Documentation Phase Rules
 
-LabGato is built through structured documentation phases.
+LABGOTO is built through structured documentation phases.
 
 ## 5.1 Phase Initiation
 
@@ -185,7 +185,7 @@ A phase is only complete when:
 
 # 6. Document Structure Rules
 
-Every architectural and feature document in LabGato must follow a strict structure to ensure consistency and traceability.
+Every architectural and feature document in LABGOTO must follow a strict structure to ensure consistency and traceability.
 
 ## 6.1 Mandatory Header Sections
 
@@ -241,7 +241,7 @@ A decision can only be reversed through a formal Change Request. The original de
 
 # 8. AI Behavior Constraints
 
-The AI assisting with LabGato must operate under strict constraints to protect the architecture.
+The AI assisting with LABGOTO must operate under strict constraints to protect the architecture.
 
 ## 8.1 No Architectural Guessing
 
@@ -310,7 +310,7 @@ If a user prompt requests a feature outside the approved scope, the AI must:
 
 ## Dependencies
 
-- Approved LabGato Master Directive.
+- Approved LABGOTO Master Directive.
 - Approved Project Charter.
 - Approved Product Scope and Non-Goals.
 - Approved Glossary.
@@ -339,17 +339,17 @@ It governs the creation and modification of all future files in the project.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC07
+LABGOTO-PHASE01-DOC07
 
 ## Context
 
-LabGato requires a strict governance framework to ensure that the AI assistant and human developers maintain architectural integrity over time. This document establishes the rules for decision-making, conflict resolution, and change control.
+LABGOTO requires a strict governance framework to ensure that the AI assistant and human developers maintain architectural integrity over time. This document establishes the rules for decision-making, conflict resolution, and change control.
 
 This prompt implements the documentation outcome of the Governance and Change Control document.
 
 ## Objective
 
-Create the official LabGato Governance and Change Control document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Governance and Change Control document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, the repository will have a binding set of rules that govern all future documentation and implementation work.
 

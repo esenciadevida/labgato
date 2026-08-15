@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── app/
 │   ├── Contracts/
 │   │   └── Searchable.php
@@ -41,10 +41,10 @@ labgato/
         └── Services/
             └── SearchServiceTest.php
 
-IMPLEMENTATION PROMPT ID: LABGATO-PHASE03-BUILD11
+IMPLEMENTATION PROMPT ID: LABGOTO-PHASE03-BUILD11
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
 
 Slice 1 Application Foundation is complete. Build 10 Taxonomy Admin Module is complete. Phase 03 Resource Architecture is approved.
 
@@ -76,7 +76,7 @@ FILES TO INSPECT:
 - resources/views/layouts/public.blade.php
 - resources/views/components/public/
 - resources/views/public/home.blade.php
-- config/labgato.php
+- config/LABGOTO.php
 - public/robots.txt
 - tests/Feature/PublicSite/
 
@@ -98,7 +98,7 @@ FILES TO CREATE:
 FILES TO MODIFY:
 - routes/web.php
 - app/Providers/AppServiceProvider.php
-- config/labgato.php
+- config/LABGOTO.php
 - resources/views/components/public/header.blade.php if a search link or icon is appropriate
 - resources/views/public/home.blade.php if the home page search placeholder should link to the search page
 
@@ -276,7 +276,7 @@ Rules:
 - IP logging should be controlled by configuration.
 - Default IP logging should be disabled unless explicitly enabled.
 
-Add to config/labgato.php:
+Add to config/LABGOTO.php:
 
 'search' => [
     'rate_limit_per_minute' => env('SEARCH_RATE_LIMIT_PER_MINUTE', 30),

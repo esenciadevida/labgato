@@ -46,7 +46,7 @@ class AdminLayoutTest extends TestCase
         $response = $this->actingAs($user)->get(route('admin.dashboard'));
 
         $response->assertStatus(200);
-        $response->assertSee('LabGato');
+        $response->assertSee('Labgoto');
     }
 
     public function test_admin_layout_includes_skip_link(): void

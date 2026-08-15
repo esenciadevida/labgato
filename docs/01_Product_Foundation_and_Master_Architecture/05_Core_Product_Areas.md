@@ -4,11 +4,11 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Product Scope and Non-Goals document.
 - The approved Target Users and Journeys document.
-- The decision that LabGato is a professional laboratory toolkit.
+- The decision that LABGOTO is a professional laboratory toolkit.
 
 ## Defines
 
@@ -48,7 +48,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document details the approved core product areas of LabGato.
+This document details the approved core product areas of LABGOTO.
 
 While the Product Scope document defines what is included and excluded at a high level, this document defines the internal mechanics, data requirements, and quality constraints for each specific resource type.
 
@@ -201,7 +201,7 @@ SOP Resources provide structured, version-controlled procedural documentation fo
 
 ## 5.3 Restrictions
 
-- SOPs are reference materials. LabGato does not enforce real-world laboratory compliance; it only provides the documented reference.
+- SOPs are reference materials. LABGOTO does not enforce real-world laboratory compliance; it only provides the documented reference.
 - File uploads for SOP attachments must be strictly validated for type and size.
 
 ---
@@ -259,7 +259,7 @@ Knowledge and Education resources encompass general laboratory science articles,
 
 # 8. Search
 
-Search is the central discovery engine across all approved LabGato resources.
+Search is the central discovery engine across all approved LABGOTO resources.
 
 ## 8.1 Functional Requirements
 
@@ -283,8 +283,8 @@ AI Assistance is a planned feature that must only be implemented after the core 
 ## 9.1 Functional Requirements
 
 - Must act as a controlled laboratory assistant.
-- Must only use approved LabGato content (Knowledge Base) as its source of truth.
-- Must cite the specific LabGato resource it used to generate an answer.
+- Must only use approved LABGOTO content (Knowledge Base) as its source of truth.
+- Must cite the specific LABGOTO resource it used to generate an answer.
 - Must refuse to answer questions outside its approved scope.
 
 ## 9.2 Restrictions
@@ -299,7 +299,7 @@ AI Assistance is a planned feature that must only be implemented after the core 
 
 # 10. Admin Portal
 
-The Admin Portal is the secure, internal workspace for managing the entire LabGato platform.
+The Admin Portal is the secure, internal workspace for managing the entire LABGOTO platform.
 
 ## 10.1 Functional Requirements
 
@@ -373,7 +373,7 @@ The core product areas must not exist in isolation. They must be interconnected 
 
 ## Dependencies
 
-- Approved LabGato master directive.
+- Approved LABGOTO master directive.
 - Approved Project Charter.
 - Approved Product Scope and Non-Goals.
 - Approved Target Users and Journeys.
@@ -408,17 +408,17 @@ It directly dictates the structure of the future Core Content Model (Document 11
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC05
+LABGOTO-PHASE01-DOC05
 
 ## Context
 
-LabGato requires a detailed definition of its core product areas to ensure the database schema, admin interfaces, and public pages are built correctly. This document translates the high-level scope into specific functional and data requirements for each resource type.
+LABGOTO requires a detailed definition of its core product areas to ensure the database schema, admin interfaces, and public pages are built correctly. This document translates the high-level scope into specific functional and data requirements for each resource type.
 
 This prompt implements the documentation outcome of the Core Product Areas document.
 
 ## Objective
 
-Create the official LabGato Core Product Areas document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Core Product Areas document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, the repository will have a clear blueprint of the data attributes and functional rules for Tools, Calculators, References, SOPs, Interpretations, and Knowledge resources.
 
@@ -426,7 +426,7 @@ After this prompt is completed, the repository will have a clear blueprint of th
 
 Relevant approved decisions:
 
-- LabGato is a professional laboratory toolkit.
+- LABGOTO is a professional laboratory toolkit.
 - Calculators must be strictly validated and tested.
 - SOPs require document control metadata.
 - AI is deferred and strictly controlled.

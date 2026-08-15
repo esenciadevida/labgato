@@ -11,7 +11,7 @@ class AdminUserSeeder extends Seeder
 {
     public function run(): void
     {
-        if (! config('labgato.seed.admin.enabled')) {
+        if (! config('labgoto.seed.admin.enabled')) {
             return;
         }
 
@@ -19,8 +19,8 @@ class AdminUserSeeder extends Seeder
             return;
         }
 
-        $email = config('labgato.seed.admin.email');
-        $password = config('labgato.seed.admin.password');
+        $email = config('labgoto.seed.admin.email');
+        $password = config('labgoto.seed.admin.password');
 
         if (! $email || ! $password) {
             return;
@@ -32,8 +32,13 @@ class AdminUserSeeder extends Seeder
                 'name' => 'Admin',
                 'password' => Hash::make($password),
                 'is_active' => true,
+                'user_type' => 'admin',
             ]
         );
+
+        if ($admin->user_type !== 'admin') {
+            $admin->update(['user_type' => 'admin']);
+        }
 
         $superAdminRole = Role::where('slug', 'super-administrator')->first();
         if ($superAdminRole && ! $admin->roles->contains($superAdminRole)) {

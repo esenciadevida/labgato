@@ -9,32 +9,46 @@ class RobotsTxtTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_robots_txt_file_exists(): void
+    public function test_robots_txt_is_served_as_plain_text(): void
     {
-        $this->assertFileExists(public_path('robots.txt'));
+        $response = $this->get('/robots.txt');
+
+        $response->assertOk();
+        $this->assertStringStartsWith('text/plain', $response->headers->get('Content-Type'));
     }
 
     public function test_robots_txt_disallows_admin(): void
     {
-        $content = file_get_contents(public_path('robots.txt'));
-        $this->assertStringContainsString('Disallow: /admin', $content);
+        $this->get('/robots.txt')
+            ->assertOk()
+            ->assertSee('Disallow: /admin', false);
     }
 
     public function test_robots_txt_disallows_auth(): void
     {
-        $content = file_get_contents(public_path('robots.txt'));
-        $this->assertStringContainsString('Disallow: /auth', $content);
+        $this->get('/robots.txt')
+            ->assertOk()
+            ->assertSee('Disallow: /auth', false);
     }
 
     public function test_robots_txt_disallows_api(): void
     {
-        $content = file_get_contents(public_path('robots.txt'));
-        $this->assertStringContainsString('Disallow: /api', $content);
+        $this->get('/robots.txt')
+            ->assertOk()
+            ->assertSee('Disallow: /api', false);
     }
 
-    public function test_robots_txt_includes_sitemap(): void
+    public function test_robots_txt_disallows_search(): void
     {
-        $content = file_get_contents(public_path('robots.txt'));
-        $this->assertStringContainsString('Sitemap:', $content);
+        $this->get('/robots.txt')
+            ->assertOk()
+            ->assertSee('Disallow: /search', false);
+    }
+
+    public function test_robots_txt_includes_sitemap_reference(): void
+    {
+        $this->get('/robots.txt')
+            ->assertOk()
+            ->assertSee('Sitemap: '.config('app.url').'/sitemap.xml', false);
     }
 }

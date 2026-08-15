@@ -13,7 +13,7 @@ This document depends on:
 
 This document defines:
 
-- The taxonomy strategy for LabGato resources.
+- The taxonomy strategy for LABGOTO resources.
 - The Category model architecture and hierarchical rules.
 - The Tag model architecture and flat labeling rules.
 - The explicit pivot table strategy for resource relationships.
@@ -50,7 +50,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Taxonomy Implementation architecture for LabGato.
+This document establishes the Taxonomy Implementation architecture for LABGOTO.
 
 Taxonomy (Categories and Tags) is the primary mechanism for organizing, filtering, and discovering laboratory resources. A consistent taxonomy strategy ensures that a Hematology Calculator and a Hematology SOP can be logically grouped, while still maintaining strict database integrity and query performance on the Hostinger shared hosting environment.
 
@@ -60,7 +60,7 @@ Taxonomy (Categories and Tags) is the primary mechanism for organizing, filterin
 
 ## 2.1 Explicit Pivot Tables vs. Polymorphic Relations
 
-LabGato will use **explicit pivot tables** for resource taxonomy relationships, rather than Laravel's polymorphic `morphToMany` relationships.
+LABGOTO will use **explicit pivot tables** for resource taxonomy relationships, rather than Laravel's polymorphic `morphToMany` relationships.
 
 Reasons:
 - Explicit foreign keys enforce stricter database integrity.
@@ -256,7 +256,7 @@ When a user navigates via a category, the breadcrumb should reflect the hierarch
 
 ## Decisions Established
 
-- LabGato uses explicit pivot tables for taxonomy, not polymorphic relations.
+- LABGOTO uses explicit pivot tables for taxonomy, not polymorphic relations.
 - Categories support hierarchy; Tags are flat.
 - Tag names are normalized to lowercase.
 - Inactive categories are hidden from public filters and assignment UIs.
@@ -293,17 +293,17 @@ It dictates the implementation of taxonomy models, pivot migrations, admin CRUD,
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE03-DOC02
+LABGOTO-PHASE03-DOC02
 
 ## Context
 
-LabGato requires a robust taxonomy system to organize and filter laboratory resources. This document defines the architecture for Categories and Tags, including explicit pivot tables, hierarchical rules, admin management, and public filtering.
+LABGOTO requires a robust taxonomy system to organize and filter laboratory resources. This document defines the architecture for Categories and Tags, including explicit pivot tables, hierarchical rules, admin management, and public filtering.
 
 This prompt implements the documentation outcome of the Taxonomy Implementation document.
 
 ## Objective
 
-Create the official LabGato Taxonomy Implementation document inside the approved Phase 03 documentation structure.
+Create the official LABGOTO Taxonomy Implementation document inside the approved Phase 03 documentation structure.
 
 After this prompt is completed, the repository will have a binding specification for how resources are classified and discovered.
 

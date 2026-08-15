@@ -50,9 +50,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Logging, Audit, and Error Handling architecture for LabGato.
+This document establishes the Logging, Audit, and Error Handling architecture for LABGOTO.
 
-Reliable logging is essential for debugging, security monitoring, and administrative accountability. Because LabGato handles scientific resources and administrative controls, it must maintain a clear audit trail while strictly protecting sensitive data from being written to log files.
+Reliable logging is essential for debugging, security monitoring, and administrative accountability. Because LABGOTO handles scientific resources and administrative controls, it must maintain a clear audit trail while strictly protecting sensitive data from being written to log files.
 
 ---
 
@@ -60,7 +60,7 @@ Reliable logging is essential for debugging, security monitoring, and administra
 
 ## 2.1 Logging Channels
 
-LabGato will use Laravel's built-in logging system.
+LABGOTO will use Laravel's built-in logging system.
 
 Approved primary channel:
 
@@ -310,17 +310,17 @@ It dictates the implementation of the Exception Handler, the AuditLogService, an
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC09
+LABGOTO-PHASE02-DOC09
 
 ## Context
 
-LabGato requires a robust logging and error handling system to ensure security, traceability, and safe production behavior. This document defines how application logs, audit trails, and global exceptions are managed within the constraints of shared hosting.
+LABGOTO requires a robust logging and error handling system to ensure security, traceability, and safe production behavior. This document defines how application logs, audit trails, and global exceptions are managed within the constraints of shared hosting.
 
 This prompt implements the documentation outcome of the Logging, Audit, and Error Handling document.
 
 ## Objective
 
-Create the official LabGato Logging, Audit, and Error Handling document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Logging, Audit, and Error Handling document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository will have a binding specification for error handling and audit trails.
 

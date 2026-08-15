@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── app/
 │   └── Http/
 │       └── Controllers/
@@ -41,10 +41,10 @@ labgato/
             └── ErrorPagesTest.php
 
 
-IMPLEMENTATION PROMPT ID: LABGATO-SLICE1-BUILD6
+IMPLEMENTATION PROMPT ID: LABGOTO-SLICE1-BUILD6
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
 
 Build 1 through Build 5 are complete. The Laravel foundation, database schema, authentication, RBAC, and Admin Portal foundation are implemented.
 
@@ -74,7 +74,7 @@ FILES TO INSPECT:
 - resources/views/components/ui/
 - routes/web.php
 - config/app.php
-- config/labgato.php
+- config/LABGOTO.php
 - public/robots.txt
 - tests/Feature/
 
@@ -167,7 +167,7 @@ PUBLIC HEADER REQUIREMENTS:
 Create resources/views/components/public/header.blade.php.
 
 Header must include:
-- LabGato logo or site name.
+- LABGOTO logo or site name.
 - Primary navigation menu.
 - Mobile navigation toggle.
 
@@ -257,10 +257,10 @@ Create resources/views/public/home.blade.php.
 
 Home page requirements:
 - Use public layout.
-- Display hero section with LabGato value proposition.
+- Display hero section with LABGOTO value proposition.
 - Display search placeholder area if practical.
 - Display resource category grid with placeholder cards for future modules.
-- Display brief explanation of LabGato purpose.
+- Display brief explanation of LABGOTO purpose.
 - Do not display fake statistics.
 - Do not display fake testimonials.
 - Do not display fake resource counts.
@@ -304,8 +304,8 @@ Legal pages must:
 - Include clear page title.
 - Include last updated date placeholder.
 - Include honest placeholder legal content.
-- Include disclaimer that LabGato is not a diagnostic tool.
-- Include disclaimer that LabGato does not replace professional clinical judgment.
+- Include disclaimer that LABGOTO is not a diagnostic tool.
+- Include disclaimer that LABGOTO does not replace professional clinical judgment.
 - Be accessible and readable.
 
 Do not fabricate legal compliance claims.

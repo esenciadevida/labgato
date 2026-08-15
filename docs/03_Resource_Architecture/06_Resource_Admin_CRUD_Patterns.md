@@ -48,7 +48,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Resource Admin CRUD Patterns for LabGato.
+This document establishes the Resource Admin CRUD Patterns for LABGOTO.
 
 Every resource type (Calculators, Tools, Reference Ranges, etc.) requires administrative management. To ensure consistency, security, and maintainability, all resource admin modules must follow the same CRUD patterns.
 
@@ -391,17 +391,17 @@ It dictates the implementation of all future resource admin controllers, views, 
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE03-DOC06
+LABGOTO-PHASE03-DOC06
 
 ## Context
 
-LabGato requires consistent, reusable CRUD patterns for all resource admin modules. This document defines the standard patterns for listing, creation, editing, deletion, and archiving.
+LABGOTO requires consistent, reusable CRUD patterns for all resource admin modules. This document defines the standard patterns for listing, creation, editing, deletion, and archiving.
 
 This prompt implements the documentation outcome of the Resource Admin CRUD Patterns document.
 
 ## Objective
 
-Create the official LabGato Resource Admin CRUD Patterns document inside the approved Phase 03 documentation structure.
+Create the official LABGOTO Resource Admin CRUD Patterns document inside the approved Phase 03 documentation structure.
 
 After this prompt is completed, the repository will have a binding specification for resource admin management.
 

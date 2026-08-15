@@ -14,7 +14,7 @@ This document depends on:
 
 This document defines:
 
-- The authentication scope for LabGato.
+- The authentication scope for LABGOTO.
 - The administrator login flow and security rules.
 - The session management and protection strategy.
 - The password reset flow and security rules.
@@ -49,9 +49,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Authentication and Session Security architecture for LabGato.
+This document establishes the Authentication and Session Security architecture for LABGOTO.
 
-Because LabGato includes a powerful Admin Portal capable of managing scientific content, system settings, and user roles, authentication must be treated as a critical security boundary.
+Because LABGOTO includes a powerful Admin Portal capable of managing scientific content, system settings, and user roles, authentication must be treated as a critical security boundary.
 
 This document ensures that only authorized administrators can access the system, that their sessions are securely managed, and that authentication mechanisms respect the constraints of the Hostinger shared hosting environment.
 
@@ -69,7 +69,7 @@ The system must provide secure authentication for administrative users to access
 
 Excluded from current scope.
 
-LabGato does not currently include public user accounts, patient portals, or student login areas.
+LABGOTO does not currently include public user accounts, patient portals, or student login areas.
 
 Therefore:
 
@@ -136,7 +136,7 @@ However, the authentication architecture must not preclude the addition of MFA (
 
 # 4. Session Security
 
-Because LabGato is deployed on Hostinger shared hosting, Redis is unavailable. Sessions must be stored in the database.
+Because LABGOTO is deployed on Hostinger shared hosting, Redis is unavailable. Sessions must be stored in the database.
 
 ## 4.1 Session Driver
 
@@ -345,17 +345,17 @@ It directly dictates the implementation of authentication controllers, middlewar
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC04
+LABGOTO-PHASE02-DOC04
 
 ## Context
 
-LabGato requires a secure authentication and session management system to protect the Admin Portal. This document defines the rules for admin login, session security, password resets, and route protection, specifically tailored for a database-driven session environment on shared hosting.
+LABGOTO requires a secure authentication and session management system to protect the Admin Portal. This document defines the rules for admin login, session security, password resets, and route protection, specifically tailored for a database-driven session environment on shared hosting.
 
 This prompt implements the documentation outcome of the Authentication and Session Security document.
 
 ## Objective
 
-Create the official LabGato Authentication and Session Security document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Authentication and Session Security document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository will have a binding security specification for the authentication system.
 
@@ -363,7 +363,7 @@ After this prompt is completed, the repository will have a binding security spec
 
 Relevant approved decisions:
 
-- LabGato uses Laravel.
+- LABGOTO uses Laravel.
 - Sessions are stored in the database.
 - Public user accounts are out of scope.
 - Admin routes must be protected by auth and active-status middleware.

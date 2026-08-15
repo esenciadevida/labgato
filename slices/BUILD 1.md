@@ -1,7 +1,7 @@
-IMPLEMENTATION PROMPT ID: LABGATO-SLICE1-BUILD1
+IMPLEMENTATION PROMPT ID: LABGOTO-SLICE1-BUILD1
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting. Phase 01 and Phase 02 documentation are approved. We are now implementing Slice 1: Application Foundation.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting. Phase 01 and Phase 02 documentation are approved. We are now implementing Slice 1: Application Foundation.
 
 OBJECTIVE:
 Initialize the Laravel project and configure the environment for local development and Hostinger compatibility.
@@ -24,7 +24,7 @@ FILES TO CREATE:
 - tailwind.config.js
 - postcss.config.js
 - .env.example
-- config/labgato.php
+- config/LABGOTO.php
 - public/.htaccess
 - public/robots.txt
 - resources/css/app.css
@@ -48,7 +48,7 @@ FILES TO MODIFY:
 TASKS:
 1. Create a new Laravel project using the latest stable version compatible with PHP 8.4.
 2. Configure .env.example with the following required variables:
-   - APP_NAME="LabGato"
+   - APP_NAME="LABGOTO"
    - APP_ENV=local
    - APP_DEBUG=true
    - APP_URL=http://localhost
@@ -58,7 +58,7 @@ TASKS:
    - QUEUE_CONNECTION=database
    - AI_ENABLED=false
    - LOG_CHANNEL=stack
-3. Create config/labgato.php with placeholder configuration for AI, uploads, security, and feature flags.
+3. Create config/LABGOTO.php with placeholder configuration for AI, uploads, security, and feature flags.
 4. Configure config/session.php to use the database driver and secure cookie settings.
 5. Configure config/cache.php to use the database driver.
 6. Configure config/queue.php to use the database driver.
@@ -101,13 +101,13 @@ TESTING:
 DEFINITION OF DONE:
 - Laravel project boots locally without errors.
 - .env.example contains all required variables.
-- config/labgato.php exists.
+- config/LABGOTO.php exists.
 - Tailwind CSS and Alpine.js compile successfully.
 - Route files exist and are registered.
 - Git repository initialized with initial commit.
 - No secrets committed.
 
-labgato/
+LABGOTO/
 ├── app/
 │   ├── Enums/
 │   │   └── ResourceStatus.php
@@ -164,7 +164,7 @@ labgato/
 │   ├── cache.php
 │   ├── database.php
 │   ├── filesystems.php
-│   ├── labgato.php
+│   ├── LABGOTO.php
 │   ├── logging.php
 │   ├── mail.php
 │   ├── queue.php

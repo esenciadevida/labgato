@@ -32,10 +32,10 @@ If SSH is not available:
 
 ```bash
 # Export database locally
-mysqldump -u username -p database_name > labgato_backup.sql
+mysqldump -u username -p database_name > LABGOTO_backup.sql
 
 # Import via phpMyAdmin or MySQL CLI
-mysql -u username -p database_name < labgato_backup.sql
+mysql -u username -p database_name < LABGOTO_backup.sql
 ```
 
 ## Verify Migrations

@@ -10,23 +10,49 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RolePermissionSeeder::class,
+            SettingsSeeder::class,
         ]);
 
-        if (app()->environment('local') && config('labgato.seed.admin.enabled')) {
+        if (app()->environment('local') && config('labgoto.seed.admin.enabled')) {
             $this->call([
                 AdminUserSeeder::class,
             ]);
         }
 
-        if (config('labgato.seed.categories.enabled')) {
+        if (config('labgoto.seed.categories.enabled')) {
             $this->call([
                 LaboratoryCategorySeeder::class,
             ]);
         }
 
-        if (config('labgato.seed.calculators.enabled')) {
+        if (config('labgoto.seed.master_calculators.enabled')) {
             $this->call([
-                CalculatorSeeder::class,
+                MasterCalculatorSeeder::class,
+            ]);
+        }
+
+        if (config('labgoto.seed.master_tools.enabled')) {
+            $this->call([
+                MasterToolSeeder::class,
+            ]);
+        }
+
+        if (config('labgoto.seed.reference_ranges.enabled')) {
+            $this->call([
+                ReferenceRangeSeeder::class,
+                ReferenceRangeDataSeeder::class,
+            ]);
+        }
+
+        if (config('labgoto.seed.interpretation.enabled')) {
+            $this->call([
+                InterpretationResourceSeeder::class,
+            ]);
+        }
+
+        if (config('labgoto.seed.knowledge.enabled')) {
+            $this->call([
+                MasterKnowledgeSeeder::class,
             ]);
         }
     }

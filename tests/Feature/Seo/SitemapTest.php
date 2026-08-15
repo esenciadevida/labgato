@@ -54,4 +54,15 @@ class SitemapTest extends TestCase
         $content = file_get_contents(public_path('sitemap.xml'));
         $this->assertStringNotContainsString('/api', $content);
     }
+
+    public function test_sitemap_is_lazily_generated_when_missing(): void
+    {
+        @unlink(public_path('sitemap.xml'));
+
+        $this->get('/sitemap.xml')
+            ->assertOk()
+            ->assertHeader('Content-Type', 'application/xml');
+
+        $this->assertFileExists(public_path('sitemap.xml'));
+    }
 }

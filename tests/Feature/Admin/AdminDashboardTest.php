@@ -33,27 +33,17 @@ class AdminDashboardTest extends TestCase
         $response->assertSee($user->name);
     }
 
-    public function test_dashboard_displays_honest_counts(): void
+    public function test_dashboard_displays_real_kpi_metrics(): void
     {
         $user = $this->createUserWithPermission('dashboard.view');
 
         $response = $this->actingAs($user)->get(route('admin.dashboard'));
 
         $response->assertStatus(200);
-        $response->assertSee('Administrators');
-        $response->assertSee('Roles');
-        $response->assertSee('Permissions');
-    }
-
-    public function test_dashboard_displays_empty_recent_activity_when_no_audit_logs_exist(): void
-    {
-        $user = $this->createUserWithPermission('dashboard.view');
-
-        $response = $this->actingAs($user)->get(route('admin.dashboard'));
-
-        $response->assertStatus(200);
-        $response->assertSee('No recent activity');
-        $response->assertSee('No recent activity recorded yet.');
+        $response->assertSee('Published Resources');
+        $response->assertSee('Pending Review');
+        $response->assertSee('Searches Today');
+        $response->assertSee('AI Usage Today');
     }
 
     public function test_dashboard_does_not_display_fake_statistics(): void

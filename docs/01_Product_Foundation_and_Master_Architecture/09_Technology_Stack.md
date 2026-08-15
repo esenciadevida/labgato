@@ -4,7 +4,7 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Current State Assessment.
 - The approved Product Scope and Non-Goals document.
@@ -50,7 +50,7 @@ This document does not directly implement application code.
 
 Its implementation impact is:
 
-- Establishes the approved technical foundation for LabGato.
+- Establishes the approved technical foundation for LABGOTO.
 - Ensures the architecture remains compatible with Hostinger shared hosting.
 - Prevents introduction of incompatible infrastructure such as Redis, Node servers, or long-running workers.
 - Guides the selection of packages, drivers, and build tools.
@@ -60,11 +60,11 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the official technology stack for LabGato.
+This document establishes the official technology stack for LABGOTO.
 
 The stack must satisfy the following requirements:
 
-- It must support the approved LabGato product scope.
+- It must support the approved LABGOTO product scope.
 - It must run reliably on Hostinger PHP/HTML hosting.
 - It must support PHP 8.4.
 - It must avoid technologies that require unavailable server capabilities.
@@ -79,7 +79,7 @@ This stack is selected for professional laboratory resource management, not for 
 
 # 2. Technology Stack Summary
 
-The approved initial LabGato technology stack is:
+The approved initial LABGOTO technology stack is:
 
 - Language: PHP 8.4
 - Backend Framework: Laravel, latest stable version compatible with PHP 8.4
@@ -168,7 +168,7 @@ Laravel will provide:
 
 ## 3.3 API Approach
 
-LabGato may use Laravel routes and controllers for both server-rendered pages and JSON endpoints.
+LABGOTO may use Laravel routes and controllers for both server-rendered pages and JSON endpoints.
 
 Rules:
 
@@ -565,7 +565,7 @@ Rules:
 - Groq must be accessed through a provider-independent adapter.
 - The application must not be tightly coupled to Groq.
 - API keys must remain server-side.
-- AI responses must be controlled by approved LabGato knowledge.
+- AI responses must be controlled by approved LABGOTO knowledge.
 - AI must not invent information.
 - AI must not act as the authorization layer.
 - AI must be rate-limited.
@@ -589,7 +589,7 @@ Streaming may be evaluated later if hosting supports it and a change request is 
 
 ## 11.3 AI Knowledge Source
 
-AI must use approved LabGato data only.
+AI must use approved LABGOTO data only.
 
 Possible approved sources include:
 
@@ -741,7 +741,7 @@ Production must use:
 
 # 15. Excluded Technologies
 
-The following technologies are excluded from the current LabGato stack because of hosting constraints and scope decisions:
+The following technologies are excluded from the current LABGOTO stack because of hosting constraints and scope decisions:
 
 - Redis
 - Memcached
@@ -932,7 +932,7 @@ The following items must be verified before or during technical foundation imple
 
 ## Dependencies
 
-- Approved LabGato master directive.
+- Approved LABGOTO master directive.
 - Approved Project Charter.
 - Approved Deployment Constraints.
 - Approved Product Scope and Non-Goals.
@@ -975,17 +975,17 @@ It affects all future backend, frontend, database, API, AI, testing, and deploym
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC09
+LABGOTO-PHASE01-DOC09
 
 ## Context
 
-LabGato requires an approved technology stack that is compatible with Hostinger PHP 8.4 shared hosting and the approved product scope. This document establishes the backend, frontend, database, queue, cache, session, AI, search, logging, testing, and deployment technology direction.
+LABGOTO requires an approved technology stack that is compatible with Hostinger PHP 8.4 shared hosting and the approved product scope. This document establishes the backend, frontend, database, queue, cache, session, AI, search, logging, testing, and deployment technology direction.
 
 This prompt implements the documentation outcome of the Technology Stack document.
 
 ## Objective
 
-Create the official LabGato Technology Stack document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Technology Stack document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, the repository should contain the approved technical foundation for future architecture and implementation work.
 
@@ -993,7 +993,7 @@ After this prompt is completed, the repository should contain the approved techn
 
 Relevant approved decisions:
 
-- LabGato follows the new master directive.
+- LABGOTO follows the new master directive.
 - Hostinger PHP 8.4 is the deployment constraint.
 - Laravel will work on the hosting environment.
 - Shared hosting limitations must be respected.

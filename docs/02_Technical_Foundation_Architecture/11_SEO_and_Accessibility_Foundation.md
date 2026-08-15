@@ -48,11 +48,11 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the SEO and Accessibility Foundation for LabGato.
+This document establishes the SEO and Accessibility Foundation for LABGOTO.
 
-As a professional toolkit for laboratory scientists and students, LabGato must be easily discoverable by search engines and fully accessible to all users, including those using screen readers or keyboard-only navigation. 
+As a professional toolkit for laboratory scientists and students, LABGOTO must be easily discoverable by search engines and fully accessible to all users, including those using screen readers or keyboard-only navigation. 
 
-Because LabGato uses server-side rendering (Blade) with progressive enhancement (Alpine.js/Livewire), it is uniquely positioned to achieve excellent SEO and accessibility out of the box, provided strict foundational rules are followed.
+Because LABGOTO uses server-side rendering (Blade) with progressive enhancement (Alpine.js/Livewire), it is uniquely positioned to achieve excellent SEO and accessibility out of the box, provided strict foundational rules are followed.
 
 ---
 
@@ -64,7 +64,7 @@ Every public page must include a standardized `<head>` section managed by a dedi
 
 Required meta tags:
 
-- `<title>`: Unique, descriptive, and under 60 characters where possible. Format: `[Page Title] | LabGato`.
+- `<title>`: Unique, descriptive, and under 60 characters where possible. Format: `[Page Title] | LABGOTO`.
 - `<meta name="description">`: Unique, compelling summary under 160 characters.
 - `<link rel="canonical">`: Absolute URL to prevent duplicate content issues.
 - `<meta name="robots">`: `index, follow` for public resources; `noindex, nofollow` for admin, auth, and search result pages.
@@ -79,7 +79,7 @@ Required OG tags:
 - `og:description`
 - `og:url`
 - `og:type` (e.g., `website`, `article`)
-- `og:image` (Fallback to a default LabGato branding image if no specific resource image exists).
+- `og:image` (Fallback to a default LABGOTO branding image if no specific resource image exists).
 
 ## 2.3 Heading Hierarchy
 
@@ -119,7 +119,7 @@ Initial approved schemas:
 
 # 3. Accessibility (a11y) Foundation Strategy
 
-LabGato targets **WCAG 2.2 Level AA** compliance for all public and administrative interfaces.
+LABGOTO targets **WCAG 2.2 Level AA** compliance for all public and administrative interfaces.
 
 ## 3.1 Semantic HTML
 
@@ -185,7 +185,7 @@ Generating a sitemap on shared hosting can cause CPU spikes if the database is q
 
 ## 5.2 Client-Side Rendering
 
-Because LabGato avoids heavy client-side JS frameworks (like React/Vue SPAs) in favor of Blade and Livewire, SEO is inherently protected from the "empty DOM" problem. No additional SSR (Server-Side Rendering) infrastructure is required.
+Because LABGOTO avoids heavy client-side JS frameworks (like React/Vue SPAs) in favor of Blade and Livewire, SEO is inherently protected from the "empty DOM" problem. No additional SSR (Server-Side Rendering) infrastructure is required.
 
 ---
 
@@ -258,17 +258,17 @@ It dictates the HTML structure, meta tag implementation, and accessibility attri
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC11
+LABGOTO-PHASE02-DOC11
 
 ## Context
 
-LabGato must be discoverable by search engines and fully accessible to all users, including those using assistive technologies. This document defines the strict SEO and WCAG 2.2 AA baseline rules that govern all public and administrative interfaces.
+LABGOTO must be discoverable by search engines and fully accessible to all users, including those using assistive technologies. This document defines the strict SEO and WCAG 2.2 AA baseline rules that govern all public and administrative interfaces.
 
 This prompt implements the documentation outcome of the SEO and Accessibility Foundation document.
 
 ## Objective
 
-Create the official LabGato SEO and Accessibility Foundation document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO SEO and Accessibility Foundation document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository will have a binding specification for HTML semantics, meta tags, and accessibility behaviors.
 
@@ -276,7 +276,7 @@ After this prompt is completed, the repository will have a binding specification
 
 Relevant approved decisions:
 
-- LabGato uses server-side rendered Blade views.
+- LABGOTO uses server-side rendered Blade views.
 - Target accessibility standard is WCAG 2.2 AA.
 - Sitemap generation must respect shared hosting CPU limits.
 - Livewire components must manage focus and announce dynamic updates.

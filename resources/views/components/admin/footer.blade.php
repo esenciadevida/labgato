@@ -1,12 +1,6 @@
-<footer class="bg-white border-t border-neutral-200 px-4 sm:px-6 py-4">
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-neutral-500">
-        <div class="flex items-center gap-2">
-            <span class="font-medium text-neutral-700">LabGato</span>
-            <span>&middot;</span>
-            <span>{{ app()->environment('local') ? 'Local' : 'Production' }}</span>
-        </div>
-        <div>
-            &copy; {{ date('Y') }} LabGato. All rights reserved.
-        </div>
+<footer class="bg-white border-t border-slate-200 px-4 sm:px-6 py-4 dark:bg-slate-800 dark:border-slate-700">
+    <div class="flex items-center justify-center sm:justify-between gap-2 text-sm text-slate-500 dark:text-slate-400">
+        <div class="hidden sm:block">&copy; {{ date('Y') }} Labgoto. All rights reserved.</div>
+        <div class="sm:hidden text-center">&copy; {{ date('Y') }} Labgoto. All rights reserved.</div>
     </div>
 </footer>

@@ -4,10 +4,10 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Current State Assessment.
-- The decision that LabGato is the renamed continuation of MLS Toolkit.
+- The decision that LABGOTO is the renamed continuation of MLS Toolkit.
 - The decision to supersede the previous laboratory business/quote/lead-generation brief.
 - The Hostinger PHP 8.4 hosting constraint.
 
@@ -15,7 +15,7 @@ This document depends on:
 
 This document defines:
 
-- The approved product scope for LabGato.
+- The approved product scope for LABGOTO.
 - The current scope boundaries.
 - The approved resource categories.
 - The approved functional boundaries.
@@ -55,11 +55,11 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document defines the official scope of LabGato.
+This document defines the official scope of LABGOTO.
 
 It exists to ensure that future documentation, design, development, testing, and deployment remain aligned with the approved product definition.
 
-LabGato must be built as a controlled professional laboratory toolkit.
+LABGOTO must be built as a controlled professional laboratory toolkit.
 
 It must not expand into unrelated healthcare, clinical, business, or patient-management systems without an approved architectural change request.
 
@@ -67,7 +67,7 @@ It must not expand into unrelated healthcare, clinical, business, or patient-man
 
 # 2. Approved Product Scope
 
-LabGato is approved as a digital toolkit/workspace for laboratory professionals and related users.
+LABGOTO is approved as a digital toolkit/workspace for laboratory professionals and related users.
 
 The approved scope includes resources and utilities that support:
 
@@ -112,13 +112,13 @@ The final user account model must be documented in later architecture documents.
 
 # 4. Approved Resource Scope
 
-LabGato may include the following approved resource types.
+LABGOTO may include the following approved resource types.
 
 Each resource type must be documented separately before implementation.
 
 ## 4.1 Laboratory Tools
 
-Approved as part of LabGato.
+Approved as part of LABGOTO.
 
 Laboratory tools are interactive utilities that support practical laboratory tasks.
 
@@ -126,7 +126,7 @@ The exact tools must be defined and approved before implementation.
 
 ## 4.2 Calculators
 
-Approved as part of LabGato.
+Approved as part of LABGOTO.
 
 Calculators are validated laboratory calculation utilities.
 
@@ -145,7 +145,7 @@ Calculators must not execute arbitrary code.
 
 ## 4.3 Reference Ranges
 
-Approved as part of LabGato.
+Approved as part of LABGOTO.
 
 Reference ranges are structured laboratory reference records.
 
@@ -169,7 +169,7 @@ The final reference range architecture must be documented before implementation.
 
 ## 4.4 SOP Resources
 
-Approved as part of LabGato.
+Approved as part of LABGOTO.
 
 SOP resources are laboratory procedure and reference resources.
 
@@ -189,7 +189,7 @@ The final SOP architecture must be documented before implementation.
 
 ## 4.5 Result Interpretation Resources
 
-Approved as part of LabGato.
+Approved as part of LABGOTO.
 
 Result interpretation resources are educational and reference-oriented materials.
 
@@ -199,7 +199,7 @@ They must not function as diagnostic decision engines.
 
 ## 4.6 Knowledge and Education Resources
 
-Approved as part of LabGato.
+Approved as part of LABGOTO.
 
 Knowledge and education resources may include:
 
@@ -214,9 +214,9 @@ The final content model must be documented before implementation.
 
 ## 4.7 Search
 
-Approved as part of LabGato.
+Approved as part of LABGOTO.
 
-Search must provide controlled discovery across approved LabGato resources.
+Search must provide controlled discovery across approved LABGOTO resources.
 
 Search may include:
 
@@ -252,7 +252,7 @@ AI must not override backend security rules.
 
 ## 4.9 Admin Portal
 
-Approved as part of LabGato.
+Approved as part of LABGOTO.
 
 The Admin Portal must be a serious internal application.
 
@@ -264,11 +264,11 @@ The exact admin modules must follow later approved documentation.
 
 # 5. Functional Scope
 
-The following functional areas are within the general scope of LabGato, subject to detailed architecture.
+The following functional areas are within the general scope of LABGOTO, subject to detailed architecture.
 
 ## 5.1 Public Resource Discovery
 
-LabGato may provide public pages for approved resources.
+LABGOTO may provide public pages for approved resources.
 
 These may include:
 
@@ -394,7 +394,7 @@ Admin and private areas must not be indexable.
 
 Accessibility is within scope.
 
-LabGato should target WCAG 2.2 AA where practical and applicable.
+LABGOTO should target WCAG 2.2 AA where practical and applicable.
 
 Accessibility must be considered for:
 
@@ -487,7 +487,7 @@ These may be added or reused only if provided and verified.
 
 # 7. MVP Direction
 
-The LabGato MVP should be small, complete, and useful.
+The LABGOTO MVP should be small, complete, and useful.
 
 The MVP should not attempt to deliver every approved resource type at once.
 
@@ -544,7 +544,7 @@ The following are explicit non-goals unless formally approved through a change r
 
 ## 9.1 Laboratory Information System
 
-LabGato is not a Laboratory Information System.
+LABGOTO is not a Laboratory Information System.
 
 It must not include:
 
@@ -559,7 +559,7 @@ It must not include:
 
 ## 9.2 Hospital Management System
 
-LabGato is not a hospital management system.
+LABGOTO is not a hospital management system.
 
 It must not include:
 
@@ -573,7 +573,7 @@ It must not include:
 
 ## 9.3 Patient Management System
 
-LabGato is not a patient management system.
+LABGOTO is not a patient management system.
 
 It must not include:
 
@@ -586,7 +586,7 @@ It must not include:
 
 ## 9.4 Patient Result Portal
 
-LabGato is not a patient result portal unless explicitly added later.
+LABGOTO is not a patient result portal unless explicitly added later.
 
 It must not include:
 
@@ -598,7 +598,7 @@ It must not include:
 
 ## 9.5 Diagnostic Decision Engine
 
-LabGato is not a diagnostic decision engine.
+LABGOTO is not a diagnostic decision engine.
 
 It must not:
 
@@ -612,7 +612,7 @@ Educational interpretation resources may exist, but they must be clearly educati
 
 ## 9.6 Generic Healthcare Website
 
-LabGato is not a generic healthcare website.
+LABGOTO is not a generic healthcare website.
 
 It should not become:
 
@@ -624,19 +624,19 @@ It should not become:
 
 ## 9.7 Simply a Blog
 
-LabGato may include educational content, but it is not simply a blog.
+LABGOTO may include educational content, but it is not simply a blog.
 
 Content must support the laboratory toolkit purpose.
 
 ## 9.8 Simply an Educational Website
 
-LabGato may include educational resources, but it is not simply an educational website.
+LABGOTO may include educational resources, but it is not simply an educational website.
 
 It must also support practical laboratory tools, references, calculators, SOP resources, and professional utilities.
 
 ## 9.9 Simply a Calculator Website
 
-LabGato may include calculators, but it is not simply a calculator website.
+LABGOTO may include calculators, but it is not simply a calculator website.
 
 It must support a broader laboratory resource architecture.
 
@@ -656,7 +656,7 @@ The previous Quote Wizard concept belonged to the superseded laboratory business
 
 Excluded.
 
-Lead capture, lead management, and sales pipeline features are not part of the current LabGato scope.
+Lead capture, lead management, and sales pipeline features are not part of the current LABGOTO scope.
 
 ## 10.3 Business Website Packages
 
@@ -705,7 +705,7 @@ This includes:
 
 Excluded.
 
-LabGato must not allow entry, validation, or delivery of clinical patient results unless explicitly approved through a future architectural change.
+LABGOTO must not allow entry, validation, or delivery of clinical patient results unless explicitly approved through a future architectural change.
 
 ## 10.10 Multi-Tenant Laboratory Management
 
@@ -717,7 +717,7 @@ Multi-tenant laboratory management is not part of the current scope.
 
 Excluded.
 
-AI features must remain controlled, knowledge-bound, and aligned with the approved LabGato resource architecture.
+AI features must remain controlled, knowledge-bound, and aligned with the approved LABGOTO resource architecture.
 
 Unrestricted chatbot behavior is excluded.
 
@@ -725,7 +725,7 @@ Unrestricted chatbot behavior is excluded.
 
 # 11. Content Boundaries
 
-LabGato content must remain appropriate to its purpose.
+LABGOTO content must remain appropriate to its purpose.
 
 Allowed content includes:
 
@@ -751,7 +751,7 @@ Content must not:
 
 # 12. User Experience Boundaries
 
-LabGato must feel like a professional scientific product.
+LABGOTO must feel like a professional scientific product.
 
 The UI should be:
 
@@ -825,7 +825,7 @@ Scope changes must not be implemented silently.
 
 A feature may be considered for implementation only if:
 
-- It aligns with the approved LabGato purpose.
+- It aligns with the approved LABGOTO purpose.
 - It is included in an approved document.
 - It has a clear user or administrative need.
 - It does not violate the non-goals.
@@ -880,7 +880,7 @@ These may only return if approved through a formal change request.
 
 ## Decisions Established
 
-- LabGato is a professional laboratory toolkit.
+- LABGOTO is a professional laboratory toolkit.
 - The previous quote/lead/business scope is excluded unless re-approved.
 - AI is future controlled functionality, not initial core build.
 - Public user accounts are not confirmed by default.
@@ -890,7 +890,7 @@ These may only return if approved through a formal change request.
 
 ## Dependencies
 
-- Approved LabGato master directive.
+- Approved LABGOTO master directive.
 - Approved Project Charter.
 - Approved Current State Assessment.
 - Approved Phase 01 file tree.
@@ -934,17 +934,17 @@ It affects all future requirements, architecture, and implementation documents.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC03
+LABGOTO-PHASE01-DOC03
 
 ## Context
 
-LabGato has adopted the new master directive. The previous quote/lead/business platform scope is superseded. The project requires an official scope document to control future feature development.
+LABGOTO has adopted the new master directive. The previous quote/lead/business platform scope is superseded. The project requires an official scope document to control future feature development.
 
 This prompt implements the documentation outcome of the Product Scope and Non-Goals document.
 
 ## Objective
 
-Create the official LabGato Product Scope and Non-Goals document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Product Scope and Non-Goals document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, the repository should contain a clear scope boundary for all future documentation and implementation work.
 
@@ -952,8 +952,8 @@ After this prompt is completed, the repository should contain a clear scope boun
 
 Relevant approved decisions:
 
-- LabGato is a professional laboratory toolkit.
-- LabGato is the renamed continuation of MLS Toolkit.
+- LABGOTO is a professional laboratory toolkit.
+- LABGOTO is the renamed continuation of MLS Toolkit.
 - The previous quote/lead scope is superseded.
 - AI is deferred until the resource architecture is sufficiently mature.
 - Documentation must control implementation.

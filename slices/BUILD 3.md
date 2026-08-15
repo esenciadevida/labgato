@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── app/
 │   ├── Http/
 │   │   ├── Controllers/
@@ -43,13 +43,13 @@ labgato/
 │   └── app.php
 └── config/
     ├── auth.php
-    ├── labgato.php
+    ├── LABGOTO.php
     └── session.php
 
-    IMPLEMENTATION PROMPT ID: LABGATO-SLICE1-BUILD3
+    IMPLEMENTATION PROMPT ID: LABGOTO-SLICE1-BUILD3
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
 
 Build 1 is complete. Build 2 is complete. The foundation database schema, models, factories, and seeders exist.
 
@@ -62,7 +62,7 @@ Implement secure administrator authentication, session protection, login throttl
 
 EXISTING ARCHITECTURE:
 Relevant approved decisions:
-- LabGato uses Laravel session-based authentication for administrators.
+- LABGOTO uses Laravel session-based authentication for administrators.
 - Public user authentication is excluded.
 - Sessions use the database driver.
 - Session cookies must be secure in production.
@@ -86,7 +86,7 @@ FILES TO INSPECT:
 - bootstrap/app.php
 - config/auth.php
 - config/session.php
-- config/labgato.php
+- config/LABGOTO.php
 - resources/views/layouts/
 - tests/Feature/
 
@@ -115,7 +115,7 @@ FILES TO MODIFY:
 - bootstrap/app.php
 - config/auth.php
 - config/session.php
-- config/labgato.php
+- config/LABGOTO.php
 - app/Providers/AppServiceProvider.php
 - app/Models/User.php if required for password reset notification URL behavior
 
@@ -238,9 +238,9 @@ Behavior:
 - Increment attempts on failed login.
 - Clear attempts on successful login.
 - Block further attempts until decay time expires.
-- Store throttling configuration in config/labgato.php.
+- Store throttling configuration in config/LABGOTO.php.
 
-Add to config/labgato.php if missing:
+Add to config/LABGOTO.php if missing:
 
 'security' => [
     'login_max_attempts' => env('LOGIN_RATE_LIMIT_MAX_ATTEMPTS', 5),

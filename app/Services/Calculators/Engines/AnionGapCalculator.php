@@ -2,31 +2,37 @@
 
 namespace App\Services\Calculators\Engines;
 
-use App\Contracts\CalculatorInterface;
 use InvalidArgumentException;
 
-class AnionGapCalculator implements CalculatorInterface
+class AnionGapCalculator extends AbstractFormulaCalculator
 {
-    private const REQUIRED_INPUTS = ['sodium', 'chloride', 'bicarbonate'];
-
     public function calculate(array $inputs): array
     {
-        foreach (self::REQUIRED_INPUTS as $key) {
-            if (! array_key_exists($key, $inputs)) {
-                throw new InvalidArgumentException("Missing required input: {$key}.");
-            }
+        $values = $this->numericValues($inputs, 'sodium', 'chloride', 'bicarbonate');
 
-            if (! is_numeric($inputs[$key])) {
-                throw new InvalidArgumentException("Input '{$key}' must be numeric.");
-            }
+        $potassiumMode = $inputs['potassium_mode'] ?? 'without';
+
+        if (! in_array($potassiumMode, ['without', 'with'], true)) {
+            throw new InvalidArgumentException('Invalid potassium mode.');
         }
 
-        $sodium = (float) $inputs['sodium'];
-        $chloride = (float) $inputs['chloride'];
-        $bicarbonate = (float) $inputs['bicarbonate'];
+        if ($potassiumMode === 'with') {
+            $values['potassium'] = $this->numericValues($inputs, 'potassium')['potassium'];
+        }
 
-        return [
-            'anion_gap' => $sodium - ($chloride + $bicarbonate),
-        ];
+        $anionGap = $values['sodium'] - ($values['chloride'] + $values['bicarbonate']);
+
+        if ($potassiumMode === 'with') {
+            $anionGap += $values['potassium'];
+        }
+
+        $outputs = ['anion_gap' => $anionGap];
+
+        if (($inputs['albumin_corrected'] ?? 'no') === 'yes') {
+            $albumin = $this->numericValues($inputs, 'albumin')['albumin'];
+            $outputs['corrected_anion_gap'] = $anionGap + 2.5 * (4 - $albumin);
+        }
+
+        return $outputs;
     }
 }

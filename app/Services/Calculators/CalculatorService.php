@@ -4,17 +4,123 @@ namespace App\Services\Calculators;
 
 use App\Contracts\CalculatorInterface;
 use App\Models\Calculator;
+use App\Services\Calculators\Engines\AbsoluteEosinophilCountCalculator;
+use App\Services\Calculators\Engines\AbsoluteLymphocyteCountCalculator;
+use App\Services\Calculators\Engines\AlbuminGlobulinRatioCalculator;
+use App\Services\Calculators\Engines\AncCalculator;
 use App\Services\Calculators\Engines\AnionGapCalculator;
+use App\Services\Calculators\Engines\ApriCalculator;
+use App\Services\Calculators\Engines\BicarbonateGapCalculator;
+use App\Services\Calculators\Engines\BilirubinRatioCalculator;
+use App\Services\Calculators\Engines\BunCreatinineRatioCalculator;
+use App\Services\Calculators\Engines\CkdEpi2009Calculator;
+use App\Services\Calculators\Engines\CkdEpi2021Calculator;
+use App\Services\Calculators\Engines\CockcroftGaultCalculator;
+use App\Services\Calculators\Engines\CorrectedCalciumCalculator;
+use App\Services\Calculators\Engines\CorrectedChlorideCalculator;
+use App\Services\Calculators\Engines\CorrectedReticulocyteCountCalculator;
+use App\Services\Calculators\Engines\CorrectedSodiumCalculator;
+use App\Services\Calculators\Engines\CorrectedTotalProteinCalculator;
+use App\Services\Calculators\Engines\CorrectedWbcCalculator;
+use App\Services\Calculators\Engines\DeltaGapCalculator;
+use App\Services\Calculators\Engines\DeltaRatioCalculator;
+use App\Services\Calculators\Engines\DeRitisRatioCalculator;
+use App\Services\Calculators\Engines\EnglandFraserIndexCalculator;
+use App\Services\Calculators\Engines\Fib4Calculator;
+use App\Services\Calculators\Engines\FractionalExcretionOfPotassiumCalculator;
+use App\Services\Calculators\Engines\FractionalExcretionOfSodiumCalculator;
+use App\Services\Calculators\Engines\FractionalExcretionOfUreaCalculator;
+use App\Services\Calculators\Engines\FractionalExcretionOfUricAcidCalculator;
+use App\Services\Calculators\Engines\FreeWaterClearanceCalculator;
+use App\Services\Calculators\Engines\GlobulinCalculator;
+use App\Services\Calculators\Engines\GreenKingIndexCalculator;
+use App\Services\Calculators\Engines\MchCalculator;
+use App\Services\Calculators\Engines\MchcCalculator;
+use App\Services\Calculators\Engines\McvCalculator;
+use App\Services\Calculators\Engines\MentzerIndexCalculator;
+use App\Services\Calculators\Engines\MonocyteLymphocyteRatioCalculator;
+use App\Services\Calculators\Engines\NafldFibrosisScoreCalculator;
+use App\Services\Calculators\Engines\NeutrophilLymphocyteRatioCalculator;
+use App\Services\Calculators\Engines\OsmolalGapCalculator;
+use App\Services\Calculators\Engines\OsmolarClearanceCalculator;
+use App\Services\Calculators\Engines\PlateletLymphocyteRatioCalculator;
+use App\Services\Calculators\Engines\RbcIndicesCalculator;
+use App\Services\Calculators\Engines\RdwCalculator;
+use App\Services\Calculators\Engines\RdwIndexCalculator;
+use App\Services\Calculators\Engines\RenalFailureIndexCalculator;
+use App\Services\Calculators\Engines\ReticulocyteIndexCalculator;
+use App\Services\Calculators\Engines\ReticulocyteProductionIndexCalculator;
+use App\Services\Calculators\Engines\SerumOsmolalityCalculator;
+use App\Services\Calculators\Engines\ShineLalIndexCalculator;
+use App\Services\Calculators\Engines\SrivastavaIndexCalculator;
+use App\Services\Calculators\Engines\StrongIonDifferenceCalculator;
+use App\Services\Calculators\Engines\SystemicImmuneInflammationIndexCalculator;
+use App\Services\Calculators\Engines\UrineAnionGapCalculator;
+use App\Services\ReferenceRangeService;
 use App\Support\NumberFormatter;
-use InvalidArgumentException;
 
 class CalculatorService
 {
     private const ALLOWED_ENGINES = [
+        CorrectedWbcCalculator::class => 'Corrected WBC for Nucleated RBCs Calculator',
+        AncCalculator::class => 'Absolute Neutrophil Count Calculator',
+        AbsoluteLymphocyteCountCalculator::class => 'Absolute Lymphocyte Count Calculator',
+        AbsoluteEosinophilCountCalculator::class => 'Absolute Eosinophil Count Calculator',
+        RbcIndicesCalculator::class => 'RBC Indices Calculator',
+        McvCalculator::class => 'MCV Calculator',
+        MchCalculator::class => 'MCH Calculator',
+        MchcCalculator::class => 'MCHC Calculator',
+        RdwCalculator::class => 'RDW-CV Calculator',
+        ReticulocyteProductionIndexCalculator::class => 'Reticulocyte Production Index',
+        CorrectedReticulocyteCountCalculator::class => 'Corrected Reticulocyte Count Calculator',
+        ReticulocyteIndexCalculator::class => 'Reticulocyte Index Calculator',
+        MentzerIndexCalculator::class => 'Mentzer Index Calculator',
+        RdwIndexCalculator::class => 'RDW Index Calculator',
+        EnglandFraserIndexCalculator::class => 'England & Fraser Index Calculator',
+        GreenKingIndexCalculator::class => 'Green & King Index Calculator',
+        SrivastavaIndexCalculator::class => 'Srivastava Index Calculator',
+        ShineLalIndexCalculator::class => 'Shine & Lal Index Calculator',
+        PlateletLymphocyteRatioCalculator::class => 'Platelet-to-Lymphocyte Ratio Calculator',
+        NeutrophilLymphocyteRatioCalculator::class => 'Neutrophil-to-Lymphocyte Ratio Calculator',
+        MonocyteLymphocyteRatioCalculator::class => 'Monocyte-to-Lymphocyte Ratio Calculator',
+        SystemicImmuneInflammationIndexCalculator::class => 'Systemic Immune-Inflammation Index Calculator',
         AnionGapCalculator::class => 'Anion Gap Calculator',
+        DeltaGapCalculator::class => 'Delta Gap Calculator',
+        DeltaRatioCalculator::class => 'Delta Ratio Calculator',
+        CorrectedSodiumCalculator::class => 'Corrected Sodium for Hyperglycemia Calculator',
+        CorrectedCalciumCalculator::class => 'Corrected Calcium Calculator',
+        CkdEpi2021Calculator::class => 'Estimated GFR (CKD-EPI 2021) Calculator',
+        CkdEpi2009Calculator::class => 'Estimated GFR (CKD-EPI 2009) Calculator',
+        CockcroftGaultCalculator::class => 'Creatinine Clearance (Cockcroft-Gault) Calculator',
+        BunCreatinineRatioCalculator::class => 'BUN/Creatinine Ratio Calculator',
+        FractionalExcretionOfSodiumCalculator::class => 'Fractional Excretion of Sodium (FENa) Calculator',
+        FractionalExcretionOfUreaCalculator::class => 'Fractional Excretion of Urea (FEUrea) Calculator',
+        FractionalExcretionOfPotassiumCalculator::class => 'Fractional Excretion of Potassium (FEK) Calculator',
+        FractionalExcretionOfUricAcidCalculator::class => 'Fractional Excretion of Uric Acid (FEUA) Calculator',
+        RenalFailureIndexCalculator::class => 'Renal Failure Index Calculator',
+        FreeWaterClearanceCalculator::class => 'Free Water Clearance Calculator',
+        OsmolarClearanceCalculator::class => 'Osmolar Clearance Calculator',
+        SerumOsmolalityCalculator::class => 'Estimated Serum Osmolality Calculator',
+        OsmolalGapCalculator::class => 'Osmolal Gap Calculator',
+        UrineAnionGapCalculator::class => 'Urine Anion Gap Calculator',
+        StrongIonDifferenceCalculator::class => 'Strong Ion Difference Calculator',
+        CorrectedChlorideCalculator::class => 'Corrected Chloride Calculator',
+        BicarbonateGapCalculator::class => 'Bicarbonate Gap Calculator',
+        DeRitisRatioCalculator::class => 'AST/ALT Ratio (De Ritis Ratio) Calculator',
+        AlbuminGlobulinRatioCalculator::class => 'Albumin/Globulin Ratio Calculator',
+        GlobulinCalculator::class => 'Globulin Calculator',
+        CorrectedTotalProteinCalculator::class => 'Corrected Total Protein Calculator',
+        BilirubinRatioCalculator::class => 'Bilirubin Ratio Calculator',
+        ApriCalculator::class => 'APRI Score Calculator',
+        Fib4Calculator::class => 'FIB-4 Index Calculator',
+        NafldFibrosisScoreCalculator::class => 'NAFLD Fibrosis Score Calculator',
     ];
 
     private const ENGINE_TYPE = 'php_class';
+
+    public function __construct(
+        private readonly ReferenceRangeService $referenceRanges,
+    ) {}
 
     public function availableEngines(): array
     {
@@ -29,22 +135,45 @@ class CalculatorService
     public function resolveEngine(Calculator $calculator): CalculatorInterface
     {
         if ($calculator->engine !== self::ENGINE_TYPE) {
-            throw new InvalidArgumentException('Unsupported engine type: '.$calculator->engine);
+            throw new \InvalidArgumentException('Unsupported engine type: '.$calculator->engine);
         }
 
-        if (! isset(self::ALLOWED_ENGINES[$calculator->engine_reference])) {
-            throw new InvalidArgumentException('Calculator engine is not registered.');
-        }
+        $engineClass = $this->resolveEngineClass($calculator);
 
-        $engineClass = $calculator->engine_reference;
+        if ($engineClass === null) {
+            throw new \InvalidArgumentException('Calculator engine is not registered.');
+        }
 
         $engine = app($engineClass);
 
         if (! $engine instanceof CalculatorInterface) {
-            throw new InvalidArgumentException('Calculator engine does not implement CalculatorInterface.');
+            throw new \InvalidArgumentException('Calculator engine does not implement CalculatorInterface.');
         }
 
         return $engine;
+    }
+
+    private function resolveEngineClass(Calculator $calculator): ?string
+    {
+        if ($calculator->engine === self::ENGINE_TYPE) {
+            return isset(self::ALLOWED_ENGINES[$calculator->engine_reference])
+                ? $calculator->engine_reference
+                : null;
+        }
+
+        foreach ([$calculator->engine_reference, $calculator->engine] as $reference) {
+            if (isset(self::ALLOWED_ENGINES[$reference])) {
+                return $reference;
+            }
+
+            $class = array_search($reference, self::ALLOWED_ENGINES, true);
+
+            if ($class !== false) {
+                return $class;
+            }
+        }
+
+        return null;
     }
 
     public function validateInputs(array $inputSchema, array $inputs): array
@@ -82,7 +211,7 @@ class CalculatorService
             }
 
             if ($type === 'select' && isset($field['options']) && is_array($field['options'])) {
-                $allowed = array_column($field['options'], 'value');
+                $allowed = $this->allowedSelectValues($field['options']);
                 if (! in_array((string) $value, $allowed)) {
                     $errors[$key][] = "{$label} contains an invalid selection.";
                 }
@@ -102,6 +231,14 @@ class CalculatorService
         }
 
         return $errors;
+    }
+
+    private function allowedSelectValues(array $options): array
+    {
+        return array_map(
+            static fn ($option): string => is_array($option) ? (string) ($option['value'] ?? '') : (string) $option,
+            $options,
+        );
     }
 
     public function run(Calculator $calculator, array $inputs): array
@@ -145,8 +282,9 @@ class CalculatorService
                 continue;
             }
 
+            $rawValue = (float) $rawOutputs[$key];
             $formatter = app(NumberFormatter::class);
-            $value = $formatter->format($rawOutputs[$key], [
+            $value = $formatter->format($rawValue, [
                 'rounding' => $field['rounding'] ?? 'none',
                 'precision' => $field['precision'] ?? 0,
             ]);
@@ -155,9 +293,33 @@ class CalculatorService
                 'label' => $field['label'] ?? $key,
                 'unit' => $field['unit'] ?? null,
                 'value' => $value,
+                'reference' => $this->resolveReference($field, $rawValue),
             ];
         }
 
         return ['outputs' => $outputs, 'errors' => []];
+    }
+
+    private function resolveReference(array $field, float $value): ?array
+    {
+        $parameterKey = $field['reference_key'] ?? null;
+
+        if (! is_string($parameterKey) || $parameterKey === '') {
+            return null;
+        }
+
+        $range = $this->referenceRanges->forParameter($parameterKey);
+
+        if ($range === null) {
+            return null;
+        }
+
+        return [
+            'display' => $range->referenceDisplay(),
+            'flag' => $this->referenceRanges->evaluate($value, (string) ($field['unit'] ?? ''), $range),
+            'url' => $range->published_at !== null
+                ? route('public.reference-ranges.show', $range->slug)
+                : null,
+        ];
     }
 }

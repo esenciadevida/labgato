@@ -4,7 +4,7 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Product Scope and Non-Goals document.
 - The approved Target Users and Journeys document.
@@ -16,7 +16,7 @@ This document depends on:
 
 This document defines:
 
-- The high-level entities required to support LabGato.
+- The high-level entities required to support LABGOTO.
 - The primary attributes for each entity.
 - The relationships between entities.
 - The content lifecycle states.
@@ -51,7 +51,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Core Content Model for LabGato.
+This document establishes the Core Content Model for LABGOTO.
 
 The Content Model defines the "nouns" of the system: the things that administrators create, manage, and publish, and the things that users consume.
 
@@ -61,7 +61,7 @@ A strong Content Model ensures that calculators, reference ranges, SOPs, and kno
 
 # 2. Core Entity Overview
 
-The LabGato Content Model is divided into four groups:
+The LABGOTO Content Model is divided into four groups:
 
 1.  **Access Entities:** Users, Roles, and Permissions.
 2.  **Taxonomy Entities:** Categories and Tags.
@@ -460,7 +460,7 @@ Transitions between states must be authorized and logged.
 
 ## Dependencies
 
-- Approved LabGato Master Directive.
+- Approved LABGOTO Master Directive.
 - Approved Core Product Areas.
 - Approved Information Architecture.
 - Approved Technology Stack.
@@ -493,17 +493,17 @@ It directly dictates the structure of future Eloquent models and database migrat
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC11
+LABGOTO-PHASE01-DOC11
 
 ## Context
 
-LabGato requires a structured Content Model to ensure that all laboratory resources, users, and system entities are organized consistently. This document defines the high-level entities, attributes, and relationships that will guide the database architecture.
+LABGOTO requires a structured Content Model to ensure that all laboratory resources, users, and system entities are organized consistently. This document defines the high-level entities, attributes, and relationships that will guide the database architecture.
 
 This prompt implements the documentation outcome of the Core Content Model document.
 
 ## Objective
 
-Create the official LabGato Core Content Model document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Core Content Model document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, the repository will have a binding conceptual data model for the platform.
 
@@ -511,7 +511,7 @@ After this prompt is completed, the repository will have a binding conceptual da
 
 Relevant approved decisions:
 
-- LabGato is a professional laboratory toolkit.
+- LABGOTO is a professional laboratory toolkit.
 - Resources must support lifecycle states.
 - Audit logs must be immutable.
 - Taxonomy must support categories and tags.

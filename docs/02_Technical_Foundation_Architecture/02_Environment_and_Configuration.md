@@ -14,7 +14,7 @@ This document depends on:
 
 This document defines:
 
-- The environment strategy for LabGato.
+- The environment strategy for LABGOTO.
 - The required environment variables.
 - The configuration file structure.
 - The separation between static configuration and dynamic settings.
@@ -49,17 +49,17 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the environment and configuration architecture for LabGato.
+This document establishes the environment and configuration architecture for LABGOTO.
 
 A secure and maintainable application requires strict separation between code and configuration. Environment variables must be used for sensitive or environment-specific values, while configuration files must provide safe defaults and structured access.
 
-This document ensures that LabGato can be developed locally, tested safely, and deployed securely to Hostinger without exposing secrets or relying on unsupported infrastructure.
+This document ensures that LABGOTO can be developed locally, tested safely, and deployed securely to Hostinger without exposing secrets or relying on unsupported infrastructure.
 
 ---
 
 # 2. Environment Strategy
 
-LabGato must support the following environments:
+LABGOTO must support the following environments:
 
 ## 2.1 Local Development
 
@@ -101,7 +101,7 @@ If Hostinger does not support a staging environment, the deployment process must
 
 Purpose:
 
-- Live LabGato platform.
+- Live LABGOTO platform.
 
 Rules:
 
@@ -123,7 +123,7 @@ The following environment variables must be supported.
 
 APP_NAME
 - The name of the application.
-- Example: LabGato
+- Example: LABGOTO
 
 APP_ENV
 - The environment name.
@@ -339,9 +339,9 @@ The following standard Laravel configuration files must be used:
 
 ## 4.2 Custom Configuration File
 
-A custom configuration file must be added for LabGato-specific settings:
+A custom configuration file must be added for LABGOTO-specific settings:
 
-config/labgato.php
+config/LABGOTO.php
 
 This file may contain:
 
@@ -377,7 +377,7 @@ Application code must not call env() directly.
 
 Application code must use:
 
-config('labgato.ai.enabled')
+config('LABGOTO.ai.enabled')
 config('database.default')
 config('session.driver')
 
@@ -387,7 +387,7 @@ This ensures that configuration caching works correctly in production.
 
 # 5. Static Configuration vs Dynamic Settings
 
-LabGato must distinguish between static configuration and dynamic settings.
+LABGOTO must distinguish between static configuration and dynamic settings.
 
 ## 5.1 Static Configuration
 
@@ -682,7 +682,7 @@ Required tests include:
 
 ## Decisions Established
 
-- LabGato supports local, staging, and production environments.
+- LABGOTO supports local, staging, and production environments.
 - Secrets must never be committed or exposed.
 - Static configuration uses environment variables and config files.
 - Dynamic settings use the database settings table.
@@ -728,17 +728,17 @@ It affects future configuration files, environment templates, deployment procedu
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC02
+LABGOTO-PHASE02-DOC02
 
 ## Context
 
-LabGato requires a secure environment and configuration architecture to support local development, staging verification, and Hostinger production deployment. This document defines environment variables, configuration rules, secret handling, and shared hosting constraints.
+LABGOTO requires a secure environment and configuration architecture to support local development, staging verification, and Hostinger production deployment. This document defines environment variables, configuration rules, secret handling, and shared hosting constraints.
 
 This prompt implements the documentation outcome of the Environment and Configuration document.
 
 ## Objective
 
-Create the official LabGato Environment and Configuration document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Environment and Configuration document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository should contain the approved configuration foundation for future implementation.
 
@@ -746,8 +746,8 @@ After this prompt is completed, the repository should contain the approved confi
 
 Relevant approved decisions:
 
-- LabGato uses Laravel.
-- LabGato uses Hostinger PHP 8.4 shared hosting.
+- LABGOTO uses Laravel.
+- LABGOTO uses Hostinger PHP 8.4 shared hosting.
 - Session, cache, and queue drivers are database-driven where practical.
 - AI is disabled by default.
 - Secrets must never be committed or exposed.

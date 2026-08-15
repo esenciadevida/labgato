@@ -11,6 +11,11 @@ class RoleObserver
         private PermissionCacheService $permissionCache,
     ) {}
 
+    public function created(Role $role): void
+    {
+        $this->permissionCache->invalidateAllUsersWithRole($role->id);
+    }
+
     public function updated(Role $role): void
     {
         $this->permissionCache->invalidateAllUsersWithRole($role->id);

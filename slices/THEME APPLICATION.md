@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── tailwind.config.js
 ├── resources/
 │   ├── css/
@@ -41,17 +41,17 @@ labgato/
 │       │   ├── admin.blade.php
 │       │   └── auth.blade.php
 
-IMPLEMENTATION PROMPT ID: LABGATO-THEME-APPLICATION
+IMPLEMENTATION PROMPT ID: LABGOTO-THEME-APPLICATION
 
 CONTEXT:
-LabGato uses Tailwind CSS, Alpine.js, and Livewire. UI components were built in Build 5 and Build 6 using default Tailwind colors. The Design System and UI Theme document is now approved.
+LABGOTO uses Tailwind CSS, Alpine.js, and Livewire. UI components were built in Build 5 and Build 6 using default Tailwind colors. The Design System and UI Theme document is now approved.
 
 We are now applying the approved theme to the codebase.
 
-This step does NOT add new features. It updates Tailwind configuration and restyles existing components to use the LabGato design tokens.
+This step does NOT add new features. It updates Tailwind configuration and restyles existing components to use the LABGOTO design tokens.
 
 OBJECTIVE:
-Apply the approved LabGato design tokens to tailwind.config.js and update all existing UI, admin, and public components to use the theme consistently.
+Apply the approved LABGOTO design tokens to tailwind.config.js and update all existing UI, admin, and public components to use the theme consistently.
 
 EXISTING ARCHITECTURE:
 Relevant approved decisions:

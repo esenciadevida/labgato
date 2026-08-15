@@ -49,11 +49,11 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Calculators Architecture for LabGato.
+This document establishes the Calculators Architecture for LABGOTO.
 
 Calculators are high-value, high-risk resources. A calculation error can lead to professional mistakes. Therefore, the architecture must prioritize mathematical accuracy, input validation, and security over arbitrary flexibility.
 
-LabGato calculators must never execute raw PHP, JavaScript, or database-stored code snippets directly. All calculation logic must be encapsulated in safe, tested, and version-controlled services.
+LABGOTO calculators must never execute raw PHP, JavaScript, or database-stored code snippets directly. All calculation logic must be encapsulated in safe, tested, and version-controlled services.
 
 ---
 
@@ -195,7 +195,7 @@ The calculation engine must apply these rules strictly before returning the resu
 
 # 5. Calculation Engine Strategy
 
-To ensure security and testability, LabGato will use a **Code-Based Calculation Engine** for the MVP.
+To ensure security and testability, LABGOTO will use a **Code-Based Calculation Engine** for the MVP.
 
 ## 5.1 Engine Types
 
@@ -412,17 +412,17 @@ It dictates the implementation of the calculators table, Calculator model, Calcu
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE03-DOC03
+LABGOTO-PHASE03-DOC03
 
 ## Context
 
-LabGato requires a secure and accurate architecture for laboratory calculators. This document defines the data model, schema structure, safe calculation engine, and testing requirements.
+LABGOTO requires a secure and accurate architecture for laboratory calculators. This document defines the data model, schema structure, safe calculation engine, and testing requirements.
 
 This prompt implements the documentation outcome of the Calculators Architecture document.
 
 ## Objective
 
-Create the official LabGato Calculators Architecture document inside the approved Phase 03 documentation structure.
+Create the official LABGOTO Calculators Architecture document inside the approved Phase 03 documentation structure.
 
 After this prompt is completed, the repository will have a binding specification for the first resource vertical slice.
 

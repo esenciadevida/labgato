@@ -17,6 +17,8 @@ class LaboratoryCategorySeeder extends Seeder
             ['name' => 'Immunology', 'sort_order' => 40],
             ['name' => 'Blood Bank / Transfusion Medicine', 'sort_order' => 50],
             ['name' => 'Urinalysis and Body Fluids', 'sort_order' => 60],
+            ['name' => 'Renal', 'sort_order' => 65],
+            ['name' => 'Fluids, Electrolytes & Acid-Base', 'sort_order' => 68],
             ['name' => 'Laboratory Quality Assurance', 'sort_order' => 70],
             ['name' => 'Phlebotomy / Specimen Collection', 'sort_order' => 80],
         ];

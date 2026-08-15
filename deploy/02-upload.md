@@ -22,7 +22,7 @@ sftp your_username@your_host
 cd public_html
 
 # Upload archive
-put labgato-production.tar.gz
+put Labgoto-production.tar.gz
 
 # Extract on server
 # (use SSH if available, or File Manager)
@@ -33,7 +33,7 @@ put labgato-production.tar.gz
 ```bash
 # Clone repository on server
 cd public_html
-git clone https://github.com/your-repo/labgato.git .
+git clone https://github.com/your-repo/Labgoto.git .
 
 # Checkout production branch
 git checkout main

@@ -50,7 +50,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Laboratory Tools Architecture for LabGato.
+This document establishes the Laboratory Tools Architecture for LABGOTO.
 
 Laboratory Tools are practical, interactive utilities used for daily laboratory operations, preparation, and general calculations that do not necessarily involve direct patient diagnostic formulas. Examples include unit converters, dilution helpers, and centrifugation calculators.
 
@@ -192,7 +192,7 @@ The tool engine must apply these formatting rules before returning the result.
 
 # 5. Tool Engine Strategy
 
-To ensure security and testability, LabGato will use a **Code-Based Tool Engine** for the MVP.
+To ensure security and testability, LABGOTO will use a **Code-Based Tool Engine** for the MVP.
 
 ## 5.1 Engine Types
 
@@ -409,17 +409,17 @@ It dictates the implementation of the laboratory_tools table, LaboratoryTool mod
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE03-DOC04
+LABGOTO-PHASE03-DOC04
 
 ## Context
 
-LabGato requires a secure and accurate architecture for laboratory tools. This document defines the data model, schema structure, safe tool engine, and testing requirements.
+LABGOTO requires a secure and accurate architecture for laboratory tools. This document defines the data model, schema structure, safe tool engine, and testing requirements.
 
 This prompt implements the documentation outcome of the Laboratory Tools Architecture document.
 
 ## Objective
 
-Create the official LabGato Laboratory Tools Architecture document inside the approved Phase 03 documentation structure.
+Create the official LABGOTO Laboratory Tools Architecture document inside the approved Phase 03 documentation structure.
 
 After this prompt is completed, the repository will have a binding specification for the second resource vertical slice.
 

@@ -42,7 +42,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Resource Build Order for LabGato.
+This document establishes the Resource Build Order for LABGOTO.
 
 With the application foundation (Slice 1) complete and the resource architecture (Phase 03) documented, we must now build the actual features. Building resources out of order (e.g., building the Calculator UI before the Taxonomy Admin module exists) will result in blocked work and technical debt.
 
@@ -207,7 +207,7 @@ It serves as the execution plan for the next major development cycle.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE03-DOC09
+LABGOTO-PHASE03-DOC09
 
 ## Context
 
@@ -217,7 +217,7 @@ This prompt implements the documentation outcome of the Resource Build Order doc
 
 ## Objective
 
-Create the official LabGato Resource Build Order document inside the approved Phase 03 documentation structure.
+Create the official LABGOTO Resource Build Order document inside the approved Phase 03 documentation structure.
 
 After this prompt is completed, Phase 03 documentation is fully drafted and ready for final review and repository commit.
 

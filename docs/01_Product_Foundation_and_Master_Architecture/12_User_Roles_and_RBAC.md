@@ -4,7 +4,7 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Product Scope and Non-Goals document.
 - The approved Target Users and Journeys document.
@@ -16,7 +16,7 @@ This document depends on:
 
 This document defines:
 
-- The Role-Based Access Control (RBAC) principles for LabGato.
+- The Role-Based Access Control (RBAC) principles for LABGOTO.
 - The initial administrative roles.
 - The permission matrix for each role.
 - The rules for role assignment and management.
@@ -51,9 +51,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the User Roles and RBAC architecture for LabGato.
+This document establishes the User Roles and RBAC architecture for LABGOTO.
 
-Because LabGato includes an Admin Portal that manages scientific content, users, and system settings, it requires a robust authorization model.
+Because LABGOTO includes an Admin Portal that manages scientific content, users, and system settings, it requires a robust authorization model.
 
 The RBAC model ensures that:
 
@@ -66,7 +66,7 @@ The RBAC model ensures that:
 
 # 2. RBAC Principles
 
-The following principles govern the LabGato RBAC model.
+The following principles govern the LABGOTO RBAC model.
 
 ## 2.1 Principle of Least Privilege
 
@@ -113,7 +113,7 @@ All role assignments, permission changes, and administrative actions must be log
 
 # 3. Initial Role Definitions
 
-The following roles are approved for the initial LabGato release.
+The following roles are approved for the initial LABGOTO release.
 
 ## 3.1 Super Administrator
 
@@ -295,7 +295,7 @@ Audit logs must be immutable and protected from unauthorized access.
 
 ## Decisions Established
 
-- LabGato uses Role-Based Access Control.
+- LABGOTO uses Role-Based Access Control.
 - Server-side enforcement is mandatory.
 - Principle of Least Privilege is enforced.
 - Content Manager role does not have delete permissions.
@@ -305,7 +305,7 @@ Audit logs must be immutable and protected from unauthorized access.
 
 ## Dependencies
 
-- Approved LabGato Master Directive.
+- Approved LABGOTO Master Directive.
 - Approved Core Content Model.
 - Approved Information Architecture.
 - Approved Technology Stack.
@@ -336,17 +336,17 @@ It directly dictates the authorization logic for the Admin Portal and the databa
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC12
+LABGOTO-PHASE01-DOC12
 
 ## Context
 
-LabGato requires a robust Role-Based Access Control (RBAC) model to ensure that the Admin Portal is secure and that users have only the access they need. This document defines the initial roles, permissions, and enforcement rules.
+LABGOTO requires a robust Role-Based Access Control (RBAC) model to ensure that the Admin Portal is secure and that users have only the access they need. This document defines the initial roles, permissions, and enforcement rules.
 
 This prompt implements the documentation outcome of the User Roles and RBAC document.
 
 ## Objective
 
-Create the official LabGato User Roles and RBAC document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO User Roles and RBAC document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, the repository will have a binding authorization model for the platform.
 
@@ -354,7 +354,7 @@ After this prompt is completed, the repository will have a binding authorization
 
 Relevant approved decisions:
 
-- LabGato uses Laravel for the backend.
+- LABGOTO uses Laravel for the backend.
 - Authorization must be enforced server-side.
 - The Admin Portal is restricted to authenticated administrators.
 - Audit logs are required for administrative actions.

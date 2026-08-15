@@ -24,7 +24,15 @@ class UserFactory extends Factory
             'is_active' => true,
             'last_login_at' => null,
             'remember_token' => Str::random(10),
+            'user_type' => 'admin',
         ];
+    }
+
+    public function member(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'user_type' => 'member',
+        ]);
     }
 
     public function inactive(): static

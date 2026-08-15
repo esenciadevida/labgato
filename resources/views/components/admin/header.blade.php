@@ -1,54 +1,37 @@
-<header class="bg-white border-b border-neutral-200 sticky top-0 z-30">
+<header class="bg-white border-b border-slate-200 sticky top-0 z-30 dark:bg-slate-900 dark:border-slate-800">
     <div class="flex items-center justify-between px-4 sm:px-6 py-3">
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 min-w-0">
             <button
                 @click="sidebarOpen = !sidebarOpen"
-                class="p-2 rounded-md text-neutral-500 hover:text-neutral-700 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-primary-500 lg:hidden"
+                class="w-10 h-10 flex items-center justify-center rounded-full text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 lg:hidden dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-700"
                 aria-label="Toggle navigation"
             >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
-            <h1 class="text-lg font-semibold text-neutral-900">@yield('header', 'Dashboard')</h1>
-        </div>
-
-        <div x-data="{ open: false }" class="relative">
             <button
-                @click="open = !open"
-                @keydown.escape="open = false"
-                class="flex items-center gap-2 text-sm text-neutral-700 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-md px-2 py-1"
-                aria-haspopup="true"
-                :aria-expanded="open"
+                @click="sidebarCollapsed = !sidebarCollapsed; localStorage.setItem('sidebarCollapsed', sidebarCollapsed)"
+                class="hidden lg:flex w-10 h-10 items-center justify-center rounded-full text-slate-500 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 transition-all duration-200 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-700"
+                :aria-label="sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'"
+                :title="sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'"
             >
-                <span class="hidden sm:inline">{{ Auth::user()->name }}</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                <svg x-show="!sidebarCollapsed" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -rotate-90" x-transition:enter-end="opacity-100 rotate-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 rotate-0" x-transition:leave-end="opacity-0 -rotate-90" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>
+                </svg>
+                <svg x-show="sidebarCollapsed" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 rotate-90" x-transition:enter-end="opacity-100 rotate-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 rotate-0" x-transition:leave-end="opacity-0 -rotate-90" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
                 </svg>
             </button>
+            <h1 class="font-display text-lg font-semibold text-slate-900 dark:text-slate-100 truncate">@yield('header', 'Dashboard')</h1>
+        </div>
 
-            <div
-                x-show="open"
-                @click.outside="open = false"
-                x-transition:enter="transition ease-out duration-100"
-                x-transition:enter-start="opacity-0 scale-95"
-                x-transition:enter-end="opacity-100 scale-100"
-                x-transition:leave="transition ease-in duration-75"
-                x-transition:leave-start="opacity-100 scale-100"
-                x-transition:leave-end="opacity-0 scale-95"
-                class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-card ring-1 ring-black ring-opacity-5 py-1 z-50"
-                role="menu"
-            >
-                <a href="{{ route('home') }}" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-primary-500" role="menuitem">
-                    View public site
-                </a>
-                <form method="POST" action="{{ route('auth.logout') }}">
-                    @csrf
-                    <button type="submit" class="w-full text-left px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-primary-500" role="menuitem">
-                        Logout
-                    </button>
-                </form>
-            </div>
+        <div class="flex items-center gap-3">
+            <x-theme-toggle />
+
+            <x-notifications.panel />
+
+            <x-public.user-dropdown />
         </div>
     </div>
 </header>

@@ -1,6 +1,6 @@
 # Deployment Guide
 
-This directory contains step-by-step deployment documentation for LabGato on Hostinger shared hosting.
+This directory contains step-by-step deployment documentation for Labgoto on Hostinger shared hosting.
 
 ## Deployment Steps
 

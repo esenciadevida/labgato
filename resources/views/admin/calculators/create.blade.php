@@ -10,6 +10,7 @@
         'action' => route('admin.calculators.store'),
         'method' => 'POST',
         'submitLabel' => 'Create Calculator',
+        'statuses' => $statuses,
     ])
 </div>
 @endsection

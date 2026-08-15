@@ -1,7 +1,18 @@
 <?php
 
+use App\Exceptions\Ai\AiException;
+use App\Exceptions\Ai\AiRateLimitException;
+use App\Http\Middleware\AdminInactivityTimeout;
+use App\Http\Middleware\CachePublicPages;
 use App\Http\Middleware\EnsureUserHasPermission;
 use App\Http\Middleware\EnsureUserIsActive;
+use App\Http\Middleware\EnsureUserIsActiveUser;
+use App\Http\Middleware\EnsureUserIsAdmin;
+use App\Http\Middleware\EnsureUserIsMember;
+use App\Http\Middleware\HoneypotProtection;
+use App\Http\Middleware\LimitRequestSize;
+use App\Http\Middleware\SecurityHeaders;
+use App\Support\AiErrorMessage;
 use App\Support\ApiResponse;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -25,12 +36,28 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->group(__DIR__.'/../routes/auth.php');
             Route::middleware('web')
                 ->group(__DIR__.'/../routes/admin.php');
+            Route::middleware('web')
+                ->group(__DIR__.'/../routes/member.php');
         },
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->prepend(LimitRequestSize::class);
+        $middleware->append(SecurityHeaders::class);
+
+        $middleware->web(append: [
+            CachePublicPages::class,
+        ]);
+
+        $middleware->trustProxies(at: env('TRUSTED_PROXIES', '*'));
+
         $middleware->alias([
             'active' => EnsureUserIsActive::class,
+            'active.user' => EnsureUserIsActiveUser::class,
             'ensure_user_is_active' => EnsureUserIsActive::class,
+            'admin' => EnsureUserIsAdmin::class,
+            'admin.inactivity' => AdminInactivityTimeout::class,
+            'honeypot' => HoneypotProtection::class,
+            'member' => EnsureUserIsMember::class,
             'permission' => EnsureUserHasPermission::class,
         ]);
 
@@ -74,5 +101,17 @@ return Application::configure(basePath: dirname(__DIR__))
             if ($request->is('api/*')) {
                 return ApiResponse::forbidden('Invalid signature.');
             }
+        });
+
+        $exceptions->renderable(function (AiException $e, Request $request) {
+            if (! $request->is('api/*')) {
+                return null;
+            }
+
+            if ($e instanceof AiRateLimitException) {
+                return ApiResponse::tooManyRequests(AiErrorMessage::for($e));
+            }
+
+            return ApiResponse::serverError(AiErrorMessage::for($e));
         });
     })->create();

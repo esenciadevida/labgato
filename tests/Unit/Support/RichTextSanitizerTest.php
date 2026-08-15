@@ -1,0 +1,119 @@
+<?php
+
+namespace Tests\Unit\Support;
+
+use App\Support\RichTextSanitizer;
+use PHPUnit\Framework\TestCase;
+
+class RichTextSanitizerTest extends TestCase
+{
+    public function test_removes_script_tags(): void
+    {
+        $html = '<p>Hello</p><script>alert("xss")</script><p>World</p>';
+
+        $result = RichTextSanitizer::sanitize($html);
+
+        $this->assertStringNotContainsString('<script', $result);
+        $this->assertStringNotContainsString('alert', $result);
+        $this->assertStringContainsString('<p>Hello</p>', $result);
+        $this->assertStringContainsString('<p>World</p>', $result);
+    }
+
+    public function test_removes_inline_event_handlers(): void
+    {
+        $html = '<p onclick="alert(1)" onload="evil()">Safe text</p>';
+
+        $result = RichTextSanitizer::sanitize($html);
+
+        $this->assertStringNotContainsString('onclick', $result);
+        $this->assertStringNotContainsString('onload', $result);
+        $this->assertStringContainsString('Safe text', $result);
+    }
+
+    public function test_allows_safe_html_tags(): void
+    {
+        $html = '<h1>Heading</h1><p><strong>Bold</strong> and <em>italic</em></p>'
+            .'<ul><li>One</li></ul><blockquote>Quote</blockquote><pre><code>code()</code></pre>';
+
+        $result = RichTextSanitizer::sanitize($html);
+
+        $this->assertStringContainsString('<h1>Heading</h1>', $result);
+        $this->assertStringContainsString('<strong>Bold</strong>', $result);
+        $this->assertStringContainsString('<em>italic</em>', $result);
+        $this->assertStringContainsString('<ul>', $result);
+        $this->assertStringContainsString('<li>One</li>', $result);
+        $this->assertStringContainsString('<blockquote>', $result);
+        $this->assertStringContainsString('<pre>', $result);
+        $this->assertStringContainsString('<code>code()</code>', $result);
+    }
+
+    public function test_removes_javascript_urls(): void
+    {
+        $html = '<a href="javascript:alert(1)">Click me</a><a href="/relative/path">Relative</a><a href="https://example.com">External</a>';
+
+        $result = RichTextSanitizer::sanitize($html);
+
+        $this->assertStringNotContainsString('javascript:', $result);
+        $this->assertStringContainsString('href="/relative/path"', $result);
+        $this->assertStringContainsString('href="https://example.com"', $result);
+        $this->assertStringContainsString('Click me', $result);
+    }
+
+    public function test_removes_data_uris(): void
+    {
+        $html = '<img src="data:image/svg+xml;base64,PHN2Zz48L3N2Zz4=" alt="bad">';
+
+        $result = RichTextSanitizer::sanitize($html);
+
+        $this->assertStringNotContainsString('data:', $result);
+    }
+
+    public function test_removes_unknown_tags_but_keeps_content(): void
+    {
+        $html = '<p>Keep <iframe src="https://evil.example"></iframe> this</p>';
+
+        $result = RichTextSanitizer::sanitize($html);
+
+        $this->assertStringNotContainsString('<iframe', $result);
+        $this->assertStringContainsString('Keep', $result);
+        $this->assertStringContainsString('this', $result);
+    }
+
+    public function test_removes_script_tags_from_event_handlers_in_attributes(): void
+    {
+        $html = '<a href="#" onclick="document.location=\'javascript:alert(1)\'">Link</a>';
+
+        $result = RichTextSanitizer::sanitize($html);
+
+        $this->assertStringNotContainsString('onclick', $result);
+    }
+
+    public function test_renders_markdown_to_sanitized_html(): void
+    {
+        $markdown = "# Title\n\nA paragraph with **bold** and [a link](https://example.com).\n\n<script>alert(1)</script>";
+
+        $result = RichTextSanitizer::render($markdown);
+
+        $this->assertStringContainsString('<h1>Title</h1>', $result);
+        $this->assertStringContainsString('<strong>bold</strong>', $result);
+        $this->assertStringContainsString('href="https://example.com"', $result);
+        $this->assertStringNotContainsString('<script', $result);
+    }
+
+    public function test_sanitize_svg_removes_script_and_event_handlers(): void
+    {
+        $svg = '<svg xmlns="http://www.w3.org/2000/svg"><script>alert(1)</script><rect onload="evil()" width="10" height="10"/></svg>';
+
+        $result = RichTextSanitizer::sanitizeSvg($svg);
+
+        $this->assertStringNotContainsString('<script', $result);
+        $this->assertStringNotContainsString('onload', $result);
+        $this->assertStringNotContainsString('evil', $result);
+    }
+
+    public function test_sanitize_null_returns_empty_string(): void
+    {
+        $this->assertSame('', RichTextSanitizer::sanitize(null));
+        $this->assertSame('', RichTextSanitizer::sanitize(''));
+    }
+}

@@ -67,18 +67,18 @@ class SearchService
 
     public function logQuery(string $query, int $resultsCount): void
     {
-        if (! config('labgato.search.log_queries')) {
+        if (! config('labgoto.search.log_queries')) {
             return;
         }
 
         try {
             $data = [
-                'query' => Str::limit($query, (int) config('labgato.search.max_query_length', 255), ''),
+                'query' => Str::limit($query, (int) config('labgoto.search.max_query_length', 255), ''),
                 'results_count' => $resultsCount,
                 'user_id' => Auth::id(),
             ];
 
-            if (config('labgato.search.log_ip')) {
+            if (config('labgoto.search.log_ip')) {
                 $data['ip_address'] = request()->ip();
             }
 

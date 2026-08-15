@@ -15,6 +15,8 @@ class CalculatorController extends Controller
 {
     public function index(Request $request)
     {
+        $request->session()->put('intended_listing_url', $request->fullUrl());
+
         $search = trim((string) $request->query('search'));
         $status = trim((string) $request->query('status'));
         $categoryId = $request->query('category');
@@ -25,7 +27,7 @@ class CalculatorController extends Controller
             ->when($status !== '', fn ($query) => $query->where('status', $status))
             ->when($categoryId, fn ($query) => $query->whereHas('categories', fn ($q) => $q->whereKey($categoryId)))
             ->orderByDesc('created_at')
-            ->paginate(config('labgato.pagination.per_page'))
+            ->paginate(config('labgoto.pagination.per_page'))
             ->withQueryString();
 
         return view('admin.calculators.index', compact('calculators', 'search', 'status', 'categoryId'));
@@ -95,7 +97,44 @@ class CalculatorController extends Controller
             app(AuditLogService::class)->logWithSubject('calculators.archived', $calculator, ['status' => $targetStatus->value], $request);
         }
 
-        return redirect()->route('admin.calculators.index')->with('success', 'Calculator updated successfully.');
+        return redirect()->route('admin.calculators.edit', $calculator)->with('success', 'Calculator updated successfully.');
+    }
+
+    public function publish(Request $request, Calculator $calculator)
+    {
+        $previousStatus = $calculator->status;
+
+        if ($calculator->status !== ResourceStatus::PUBLISHED && ! $calculator->status->canTransitionTo(ResourceStatus::PUBLISHED)) {
+            return redirect()->back()->with('error', "Cannot publish from {$calculator->status->label()}.");
+        }
+
+        $calculator->update([
+            'status' => ResourceStatus::PUBLISHED,
+            'published_at' => $calculator->published_at ?? now(),
+            'updated_by' => $request->user()->id,
+        ]);
+
+        app(AuditLogService::class)->logWithSubject('calculators.published', $calculator, ['status' => ResourceStatus::PUBLISHED->value], $request);
+
+        return redirect()->back()->with('success', 'Calculator published successfully.');
+    }
+
+    public function archive(Request $request, Calculator $calculator)
+    {
+        $previousStatus = $calculator->status;
+
+        if ($calculator->status !== ResourceStatus::ARCHIVED && ! $calculator->status->canTransitionTo(ResourceStatus::ARCHIVED)) {
+            return redirect()->back()->with('error', "Cannot archive from {$calculator->status->label()}.");
+        }
+
+        $calculator->update([
+            'status' => ResourceStatus::ARCHIVED,
+            'updated_by' => $request->user()->id,
+        ]);
+
+        app(AuditLogService::class)->logWithSubject('calculators.archived', $calculator, ['status' => ResourceStatus::ARCHIVED->value], $request);
+
+        return redirect()->back()->with('success', 'Calculator archived successfully.');
     }
 
     public function destroy(Request $request, Calculator $calculator)
@@ -105,6 +144,6 @@ class CalculatorController extends Controller
 
         app(AuditLogService::class)->logWithSubject('calculators.deleted', $calculator, $changes, $request);
 
-        return redirect()->route('admin.calculators.index')->with('success', 'Calculator deleted successfully.');
+        return $this->redirectToListing('admin.calculators.index')->with('success', 'Calculator deleted successfully.');
     }
 }

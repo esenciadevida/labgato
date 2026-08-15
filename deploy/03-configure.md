@@ -16,10 +16,14 @@ Open `.env` in a text editor and set the following values:
 ### Application Settings
 
 ```
-APP_NAME="LabGato"
+APP_NAME="Labgoto"
 APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://yourdomain.com
+# Required when nginx (or another proxy) terminates TLS. Needed for the
+# HTTPS redirect and HSTS header to work. Leave unset only if TLS terminates
+# on the PHP server itself.
+TRUSTED_PROXIES=*
 ```
 
 ### Database Settings

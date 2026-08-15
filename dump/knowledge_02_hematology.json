@@ -1,0 +1,349 @@
+{
+  "schemaVersion": "1.1.0",
+  "seedType": "knowledge_hub",
+  "collection": "knowledge_02_hematology",
+  "description": "LabGoTo Knowledge Hub — List 02: Hematology. Expanded educational drafts for editorial and clinical review before publication.",
+  "defaults": {
+    "status": "draft",
+    "authorName": "LabGoTo Editorial Team",
+    "clinicalReviewRequired": true
+  },
+  "records": [
+    {
+      "name": "The Complete Blood Count: Parameters and Indices",
+      "slug": "complete-blood-count-parameters-and-indices",
+      "shortDescription": "A closer look at the individual parameters that make up a complete blood count and how the red-cell indices relate to one another.",
+      "status": "draft",
+      "content": "# The Complete Blood Count: Parameters and Indices\n\n## Overview\n\nThe complete blood count (CBC) is one of the most frequently requested laboratory examinations. It reports several related parameters describing red blood cells, white blood cells, and platelets. Understanding what each parameter measures — and how the parameters relate to one another — is more useful than treating the CBC as a list of isolated numbers.\n\nModern hematology analyzers generate the CBC using a combination of electrical impedance, light scatter, and, in some systems, fluorescence-based cytometry. The underlying measurement principle can influence how a given parameter behaves in the presence of interference, which is one reason understanding basic instrument methodology is useful when troubleshooting an unexpected result.\n\n## Red-cell parameters\n\n- **RBC count:** the number of red blood cells in a defined volume of blood, typically measured directly by impedance or optical methods.\n- **Hemoglobin (Hb):** the concentration of hemoglobin in blood, central to oxygen-carrying capacity, generally measured spectrophotometrically after red-cell lysis.\n- **Hematocrit (Hct/PCV):** the proportion of blood volume occupied by red cells. On most automated analyzers, hematocrit is calculated from RBC count and mean cell volume rather than measured directly, unlike the historical manual spun/microhematocrit method.\n- **MCV (mean corpuscular volume):** average red-cell size, used to classify anemia as microcytic, normocytic, or macrocytic.\n- **MCH (mean corpuscular hemoglobin):** average hemoglobin content per red cell, calculated from hemoglobin and RBC count.\n- **MCHC (mean corpuscular hemoglobin concentration):** average hemoglobin concentration within red cells, calculated from hemoglobin and hematocrit, used to describe hypochromia or hyperchromia.\n- **RDW (red-cell distribution width):** a statistical measure of variation in red-cell size (anisocytosis), derived from the red-cell volume histogram.\n\nThese indices are typically derived mathematically from the primary measured parameters (RBC count, hemoglobin, and hematocrit) rather than measured independently, which is one reason internal consistency checks — for example, confirming that Hct roughly equals three times Hb in the absence of an abnormality — are useful during quality control.\n\n## The red-cell histogram\n\nMany analyzers display a red-cell volume histogram alongside the numeric indices. The shape of this histogram — whether unimodal or bimodal, narrow or widened — can give additional visual information about red-cell population heterogeneity that is not fully captured by RDW alone, and can prompt review when a dual population (for example, following a recent transfusion) is present.\n\n## White-cell parameters\n\nThe white-cell count and differential describe the major circulating leukocyte populations — neutrophils, lymphocytes, monocytes, eosinophils, and basophils — as absolute counts and percentages. Automated differentials use light scatter, impedance, or fluorescence patterns to classify cells into these categories and flag atypical populations or distributions for manual review according to laboratory policy. Absolute counts are generally considered more clinically informative than percentages alone, since a percentage can change even when the underlying absolute count is unchanged, simply because another cell line has increased or decreased.\n\n## Platelet parameters\n\nPlatelet count and, on some analyzers, mean platelet volume (MPV) and platelet distribution width (PDW) provide information relevant to primary hemostasis. Platelet clumping is a recognized preanalytical artifact that can produce a spuriously low automated platelet count, which is one reason blood-film review is used to verify unexpected results. Some analyzers offer an alternative, optical or fluorescence-based platelet count that can help resolve discrepancies caused by interference with the standard impedance-based method.\n\n## Interpreting indices together\n\nA single abnormal parameter is best interpreted alongside the others rather than in isolation. For example, a low MCV together with a low MCH and a widened RDW suggests a different process than a low MCV with a normal RDW. Similarly, a low hemoglobin with a normal or high reticulocyte count suggests a different process than a low hemoglobin with a low reticulocyte count. The specific interpretive framework used in a given laboratory should follow validated procedures and the laboratory's reference information rather than a general rule of thumb.\n\n## Sources of error affecting CBC parameters\n\n- Specimen clotting or inadequate anticoagulant mixing\n- Cold agglutinins affecting RBC count and indices\n- Marked leukocytosis affecting hemoglobin or platelet channels on some analyzers\n- Lipemia or icterus interfering with certain optical measurements\n- Giant or clumped platelets affecting automated platelet counts\n- Delayed analysis allowing cell swelling, lysis, or platelet activation\n- Extreme hyperglycemia or severe hypernatremia affecting red-cell volume and, indirectly, MCV and MCHC\n\n## When results trigger manual review\n\nLaboratories generally define rules — based on instrument flags, delta checks against a patient's previous results, or specific numeric thresholds — for when a CBC result requires manual blood-film review, repeat testing, or further investigation before release. These rules are intended to catch analytical artifacts and clinically significant abnormal populations that automated counting alone might mischaracterize.\n\n## Key points\n\n- The CBC reports several mathematically and biologically related parameters.\n- Most red-cell indices are calculated rather than directly measured, so internal consistency matters.\n- Red-cell indices help classify anemia but should be interpreted alongside clinical information.\n- Automated differential and platelet flags may require blood-film confirmation.\n- Preanalytical and analytical artifacts can affect any CBC parameter.\n- Laboratory-specific reference intervals, delta checks, and interpretive guidance should be used for clinical decisions.\n\n## References\n\n- NCBI. *MeSH: Blood Cell Count*.\n- MedlinePlus. *Blood Count Tests*.\n- ISO 15189:2022. *Medical laboratories — Requirements for quality and competence*.\n",
+      "topicCategory": "Hematology",
+      "difficultyLevel": "beginner",
+      "learningObjectives": [
+        "List the major red-cell, white-cell, and platelet parameters reported on a CBC.",
+        "Explain what MCV, MCH, MCHC, and RDW describe and how they are derived.",
+        "Describe why CBC parameters should be interpreted together rather than in isolation.",
+        "Identify common preanalytical and analytical sources of CBC error.",
+        "Explain the general purpose of manual review rules for CBC results."
+      ],
+      "authorName": "LabGoTo Editorial Team",
+      "readingTimeMinutes": 7,
+      "featuredImage": null,
+      "categories": [
+        "Hematology"
+      ],
+      "tags": [
+        "hematology",
+        "cbc",
+        "rbc-indices",
+        "platelets"
+      ],
+      "seoTitle": "Complete Blood Count Parameters and Indices | LabGoTo",
+      "seoDescription": "Understand the individual parameters of a complete blood count and how red-cell indices relate to one another.",
+      "verification": {
+        "status": "source_verified_educational_draft",
+        "verified": true,
+        "primaryReferences": [
+          {
+            "organization": "NCBI",
+            "title": "MeSH: Blood Cell Count"
+          },
+          {
+            "organization": "MedlinePlus",
+            "title": "Blood Count Tests"
+          }
+        ],
+        "secondaryReferences": [
+          {
+            "organization": "ISO",
+            "title": "ISO 15189:2022 Medical laboratories — Requirements for quality and competence"
+          }
+        ],
+        "lastReviewed": "2026-08-15",
+        "clinicalReviewRequired": true,
+        "imageVerified": false,
+        "publicationApprovalRequired": true
+      }
+    },
+    {
+      "name": "An Educational Overview of Anemia Classification",
+      "slug": "educational-overview-of-anemia-classification",
+      "shortDescription": "An educational overview of how anemia is broadly classified using red-cell size and laboratory findings.",
+      "status": "draft",
+      "content": "# An Educational Overview of Anemia Classification\n\n## Overview\n\nAnemia describes a reduction in hemoglobin, red-cell count, or hematocrit below the expected range for a given population. Anemia is a laboratory and clinical finding with many possible causes, not a single disease. This article provides a general educational framework for how anemia is commonly classified; it is not a diagnostic or treatment guide.\n\n## Classification by red-cell size (morphologic classification)\n\nOne widely used approach classifies anemia using the mean corpuscular volume (MCV):\n\n- **Microcytic anemia** (low MCV): commonly associated with iron deficiency, thalassemia, and anemia of chronic disease, among other causes.\n- **Normocytic anemia** (normal MCV): associated with a wide range of causes, including acute blood loss, some hemolytic processes, chronic disease, and marrow suppression.\n- **Macrocytic anemia** (high MCV): associated with vitamin B12 or folate deficiency, certain liver and thyroid conditions, some medications, and reticulocytosis, among other causes.\n\n### Further subdividing macrocytic anemia\n\nMacrocytic anemia is sometimes further divided based on blood-film appearance:\n\n- **Megaloblastic:** associated with oval macrocytes and hypersegmented neutrophils on the blood film, classically linked to vitamin B12 or folate deficiency.\n- **Non-megaloblastic:** macrocytosis without the classic megaloblastic film changes, associated with causes such as liver disease, hypothyroidism, alcohol use, certain medications, or a high reticulocyte count (since reticulocytes are larger than mature red cells).\n\n## Classification by mechanism\n\nA complementary framework classifies anemia by underlying mechanism:\n\n- **Decreased production:** for example, nutritional deficiency, marrow disorders, or chronic disease affecting erythropoiesis.\n- **Increased destruction (hemolysis):** intrinsic (e.g., membrane, enzyme, or hemoglobin defects) or extrinsic (e.g., immune-mediated, mechanical, or infectious) red-cell disorders leading to shortened red-cell survival.\n- **Blood loss:** acute or chronic, gastrointestinal or otherwise, with iron deficiency often developing over time with chronic loss.\n\n## The role of the reticulocyte count in classification\n\nThe reticulocyte count (or a corrected/calculated index) helps distinguish whether anemia reflects an appropriate bone-marrow response or an inadequate one:\n\n- A **low or inappropriately normal reticulocyte response** in the presence of anemia suggests a production problem.\n- An **elevated reticulocyte response** suggests the marrow is responding appropriately, as would be expected with hemolysis or recent blood loss, once the marrow has had time to respond.\n\nThis distinction is a common next step after initial morphologic classification and is discussed further in LabGoTo's dedicated reticulocyte article.\n\n## Supporting laboratory investigations\n\nDepending on the clinical question, additional testing may include:\n\n- Reticulocyte count, to assess bone-marrow response\n- Peripheral blood film examination for red-cell morphology\n- Iron studies (serum iron, ferritin, transferrin, TIBC/transferrin saturation)\n- Vitamin B12 and folate assessment\n- Hemolysis markers (e.g., haptoglobin, indirect bilirubin, LDH) where relevant\n- Direct antiglobulin test (DAT), where immune-mediated hemolysis is suspected\n- Hemoglobin electrophoresis or related studies where a hemoglobinopathy is suspected\n\nThe appropriate combination of tests depends on the clinical presentation and should follow the requesting clinician's assessment and the laboratory's available test menu.\n\n## Why classification alone is not diagnosis\n\nMorphologic and mechanistic classification narrows the differential but does not by itself establish a specific diagnosis. Overlapping causes, combined deficiencies (for example, concurrent iron and B12 deficiency, which can produce a normal or only mildly abnormal MCV despite two underlying problems), and coexisting conditions are recognized limitations of relying on a single classification scheme.\n\n## Key points\n\n- Anemia is a finding, not a single disease.\n- MCV-based classification (microcytic, normocytic, macrocytic) is a common starting framework.\n- Macrocytic anemia can be further divided into megaloblastic and non-megaloblastic categories.\n- Mechanistic classification considers production, destruction, and loss.\n- The reticulocyte count helps distinguish an appropriate from an inadequate marrow response.\n- Combined deficiencies can mask expected morphologic changes.\n- Laboratory classification supports but does not replace clinical diagnosis.\n\n## References\n\n- NCBI. *MeSH: Anemia*.\n- MedlinePlus. *Anemia*.\n- World Health Organization. *Laboratory Quality Management System: Handbook*.\n",
+      "topicCategory": "Hematology",
+      "difficultyLevel": "intermediate",
+      "learningObjectives": [
+        "Define anemia as a laboratory and clinical finding.",
+        "Describe the morphologic classification of anemia by MCV.",
+        "Differentiate megaloblastic from non-megaloblastic macrocytic anemia.",
+        "Describe the mechanistic classification of anemia.",
+        "Explain how the reticulocyte count contributes to anemia classification.",
+        "Identify common supporting laboratory investigations for anemia.",
+        "Explain why classification alone does not establish a diagnosis."
+      ],
+      "authorName": "LabGoTo Editorial Team",
+      "readingTimeMinutes": 7,
+      "featuredImage": null,
+      "categories": [
+        "Hematology"
+      ],
+      "tags": [
+        "hematology",
+        "anemia",
+        "rbc-indices",
+        "reticulocyte"
+      ],
+      "seoTitle": "Anemia Classification: An Educational Overview | LabGoTo",
+      "seoDescription": "Learn the general framework used to classify anemia by red-cell size and mechanism, and the tests that support evaluation.",
+      "verification": {
+        "status": "source_verified_educational_draft",
+        "verified": true,
+        "primaryReferences": [
+          {
+            "organization": "NCBI",
+            "title": "MeSH: Anemia"
+          },
+          {
+            "organization": "MedlinePlus",
+            "title": "Anemia"
+          }
+        ],
+        "secondaryReferences": [
+          {
+            "organization": "World Health Organization",
+            "title": "Laboratory Quality Management System: Handbook"
+          }
+        ],
+        "lastReviewed": "2026-08-15",
+        "clinicalReviewRequired": true,
+        "imageVerified": false,
+        "publicationApprovalRequired": true
+      }
+    },
+    {
+      "name": "Peripheral Blood Film Examination",
+      "slug": "peripheral-blood-film-examination",
+      "shortDescription": "An introduction to why and how peripheral blood films are examined in the hematology laboratory.",
+      "status": "draft",
+      "content": "# Peripheral Blood Film Examination\n\n## Overview\n\nA peripheral blood film (blood smear) is a thin layer of blood spread on a glass slide, stained, and examined under a microscope. Blood-film examination provides morphological information about red cells, white cells, and platelets that automated cell counters may not fully capture, and remains an important complementary technique even in highly automated hematology laboratories.\n\n## Why blood films are examined\n\nCommon reasons for blood-film review include:\n\n- Instrument-generated flags suggesting an abnormal cell population\n- Unexplained or unexpected changes in CBC parameters\n- Clinical request for morphological assessment\n- Confirmation of automated results, such as a low platelet count that may reflect clumping\n- Investigation of suspected hematologic disorders\n- New patient results outside a defined critical or panic range, according to laboratory policy\n\nLaboratories generally define criteria for when a blood film is reviewed, based on instrument flags, result criteria, delta checks, or clinician request, often summarized in a documented blood-film review policy.\n\n## Film preparation\n\nA well-made film has a gradual transition from a thick to a thin area — sometimes described as having a head, body, and thin \"feathered\" tail — without holes, streaks, or an abrupt straight edge, and is dried and stained according to the laboratory's validated procedure (commonly a Romanowsky-type stain such as Wright or Wright-Giemsa). The feathered edge and monolayer region (where red cells are evenly spaced, not overlapping) are typically the areas examined for morphology and differential counting.\n\n## Systematic examination approach\n\nA systematic approach to film examination commonly includes:\n\n1. Low-power (scanning) review of the film edges and feathered tail for platelet clumps, large or abnormal cells, and overall cellularity.\n2. Assessment of red-cell, white-cell, and platelet distribution and estimated numbers relative to the field.\n3. High-power examination of the monolayer area for detailed red-cell morphology, white-cell differential and morphology, and platelet morphology.\n4. Documentation of findings using standardized terminology and, where applicable, semi-quantitative grading.\n\n## What is assessed on a blood film\n\n### Red blood cells\n\n- Size variation (anisocytosis)\n- Shape variation (poikilocytosis) — for example, target cells, spherocytes, schistocytes, sickle cells, elliptocytes, or teardrop cells (dacrocytes)\n- Color/hemoglobinization (e.g., hypochromia, polychromasia)\n- Inclusions, where present (for example, Howell-Jolly bodies or basophilic stippling)\n- Arrangement, such as rouleaux formation or agglutination\n\n### White blood cells\n\n- Differential count confirmation\n- Morphological features of individual cell lines, such as toxic granulation or left shift in neutrophils\n- Presence of immature or atypical cells, such as blasts or atypical lymphocytes\n- Nuclear and cytoplasmic features relevant to specific conditions\n\n### Platelets\n\n- Estimated platelet number relative to red cells\n- Platelet size and clumping\n- Giant platelets, where present\n\n## Reporting\n\nBlood-film findings are typically reported using standardized descriptive terminology and, where relevant, semi-quantitative grading (for example, 1+ to 4+ for a given morphological feature), according to the laboratory's procedure. Findings are considered alongside the CBC, clinical information, and other laboratory results rather than interpreted in isolation.\n\n## Quality considerations\n\nReliable blood-film examination depends on a well-prepared and well-stained slide, systematic examination technique, staff competency, and, where applicable, correlation with automated results and internal quality-assurance processes such as slide review, image-based verification, or digital morphology systems used to support and standardize interpretation.\n\n## Key points\n\n- Blood-film examination adds morphological information beyond automated cell counts.\n- Films are reviewed based on defined laboratory criteria, including instrument flags and delta checks.\n- A systematic low-to-high-power examination approach helps ensure consistent findings.\n- Red cells, white cells, and platelets are each assessed systematically.\n- Reporting should use standardized terminology and grading where applicable.\n- Blood-film findings are interpreted together with other clinical and laboratory information.\n\n## References\n\n- NCBI. *MeSH: Blood Smear*.\n- MedlinePlus. *Blood Smear*.\n- ISO 15189:2022. *Medical laboratories — Requirements for quality and competence*.\n",
+      "topicCategory": "Hematology",
+      "difficultyLevel": "beginner",
+      "learningObjectives": [
+        "Explain the purpose of peripheral blood-film examination.",
+        "Describe the features of a well-prepared blood film.",
+        "Describe a systematic approach to examining a blood film.",
+        "Identify what is assessed in red cells, white cells, and platelets on a film.",
+        "Describe general quality considerations for blood-film review."
+      ],
+      "authorName": "LabGoTo Editorial Team",
+      "readingTimeMinutes": 7,
+      "featuredImage": null,
+      "categories": [
+        "Hematology"
+      ],
+      "tags": [
+        "hematology",
+        "differential",
+        "microscopy"
+      ],
+      "seoTitle": "Peripheral Blood Film Examination | LabGoTo",
+      "seoDescription": "Learn why and how peripheral blood films are prepared, examined, and reported in the hematology laboratory.",
+      "verification": {
+        "status": "source_verified_educational_draft",
+        "verified": true,
+        "primaryReferences": [
+          {
+            "organization": "NCBI",
+            "title": "MeSH: Blood Smear"
+          },
+          {
+            "organization": "MedlinePlus",
+            "title": "Blood Smear"
+          }
+        ],
+        "secondaryReferences": [
+          {
+            "organization": "ISO",
+            "title": "ISO 15189:2022 Medical laboratories — Requirements for quality and competence"
+          }
+        ],
+        "lastReviewed": "2026-08-15",
+        "clinicalReviewRequired": true,
+        "imageVerified": false,
+        "publicationApprovalRequired": true
+      }
+    },
+    {
+      "name": "The White Blood Cell Differential: An Educational Overview",
+      "slug": "white-blood-cell-differential-educational-overview",
+      "shortDescription": "An educational overview of the major white-cell populations reported on a differential count and general patterns of change.",
+      "status": "draft",
+      "content": "# The White Blood Cell Differential: An Educational Overview\n\n## Overview\n\nThe white blood cell (WBC) differential reports the relative and absolute numbers of the major circulating leukocyte populations. It provides information relevant to infection, inflammation, allergic and hematologic conditions, and marrow disorders, among other processes.\n\n## The five major populations\n\n- **Neutrophils:** typically the most numerous circulating white cell in adults; involved in acute inflammatory and antibacterial responses.\n- **Lymphocytes:** central to adaptive immunity, including B cells, T cells, and natural killer cells, though these subtypes are not distinguished on a standard differential.\n- **Monocytes:** precursors to tissue macrophages and dendritic cells, involved in phagocytosis and antigen presentation.\n- **Eosinophils:** associated with responses to parasitic infection and allergic or hypersensitivity conditions, among other roles.\n- **Basophils:** the least numerous population, involved in certain allergic and inflammatory responses.\n\n## Absolute versus percentage values\n\nA differential can be reported as percentages of the total white-cell count or as absolute counts (percentage multiplied by the total WBC count). Absolute counts are generally more clinically useful, because a percentage change can reflect a shift in a different cell line rather than a true change in the population of interest. For example, a normal total WBC count with a low percentage of neutrophils could still represent a normal absolute neutrophil count if lymphocytes are proportionally increased.\n\n## General patterns\n\n### Neutrophilia and neutropenia\n\nAn increased absolute neutrophil count (neutrophilia) is commonly associated with acute bacterial infection, inflammation, tissue injury, certain medications (such as corticosteroids), and other physiological stress states. A decreased absolute neutrophil count (neutropenia) can be associated with certain infections, marrow suppression, some medications, and other causes, and is clinically important because of its association with infection risk.\n\n### Lymphocytosis and lymphopenia\n\nAn increased lymphocyte count is associated with certain viral infections, some chronic infections, and lymphoproliferative disorders, among other causes. A decreased lymphocyte count can be associated with acute illness, certain infections, some medications, and other conditions.\n\n### Monocytosis\n\nAn increased monocyte count can be seen in certain chronic infections, inflammatory conditions, recovery from marrow suppression, and some hematologic disorders.\n\n### Eosinophilia\n\nAn increased eosinophil count is classically associated with parasitic infection and allergic conditions, but also occurs with certain medications, autoimmune conditions, and some hematologic disorders.\n\n### Basophilia\n\nAn increased basophil count is less common and can be associated with certain allergic conditions and some myeloproliferative disorders.\n\n## The \"left shift\" and immature cells\n\nA \"left shift\" refers to an increased proportion of less mature neutrophil precursors (such as band forms) in the circulation, classically associated with a significant inflammatory or infectious stimulus. The presence of even more immature cells (such as myelocytes, promyelocytes, or blasts) in the peripheral blood is a more significant finding that generally prompts further investigation, including blood-film review.\n\n## Interpreting the differential\n\nDifferential findings are interpreted alongside the total WBC count, red-cell and platelet parameters, blood-film morphology, and the patient's clinical presentation, rather than as an isolated finding. A given differential pattern can have many possible causes, and laboratory findings support, rather than replace, clinical assessment.\n\n## Key points\n\n- The differential reports five major white-cell populations, each with different general roles.\n- Absolute counts are generally more informative than percentages alone.\n- Neutrophils and lymphocytes are the most commonly discussed populations in general differential interpretation.\n- A left shift and circulating immature cells are notable findings that may prompt further review.\n- Differential results should be interpreted together with other CBC parameters and clinical context.\n\n## References\n\n- NCBI. *MeSH: Leukocyte Count*.\n- MedlinePlus. *Blood Differential Test*.\n- ISO 15189:2022. *Medical laboratories — Requirements for quality and competence*.\n",
+      "topicCategory": "Hematology",
+      "difficultyLevel": "intermediate",
+      "learningObjectives": [
+        "Identify the five major white-cell populations reported on a differential.",
+        "Explain why absolute counts are generally more informative than percentages.",
+        "Describe general patterns associated with increases or decreases in each cell line.",
+        "Explain the concept of a left shift and its general significance."
+      ],
+      "authorName": "LabGoTo Editorial Team",
+      "readingTimeMinutes": 7,
+      "featuredImage": null,
+      "categories": [
+        "Hematology"
+      ],
+      "tags": [
+        "hematology",
+        "differential",
+        "wbc"
+      ],
+      "seoTitle": "The White Blood Cell Differential | LabGoTo",
+      "seoDescription": "Learn about the five major white-cell populations, absolute versus percentage reporting, and general differential patterns.",
+      "verification": {
+        "status": "source_verified_educational_draft",
+        "verified": true,
+        "primaryReferences": [
+          {
+            "organization": "NCBI",
+            "title": "MeSH: Leukocyte Count"
+          },
+          {
+            "organization": "MedlinePlus",
+            "title": "Blood Differential Test"
+          }
+        ],
+        "secondaryReferences": [
+          {
+            "organization": "ISO",
+            "title": "ISO 15189:2022 Medical laboratories — Requirements for quality and competence"
+          }
+        ],
+        "lastReviewed": "2026-08-15",
+        "clinicalReviewRequired": true,
+        "imageVerified": false,
+        "publicationApprovalRequired": true
+      }
+    },
+    {
+      "name": "The Reticulocyte Count: An Educational Overview",
+      "slug": "reticulocyte-count-educational-overview",
+      "shortDescription": "An educational overview of reticulocytes, how they are measured, and their general role in evaluating anemia.",
+      "status": "draft",
+      "content": "# The Reticulocyte Count: An Educational Overview\n\n## Overview\n\nReticulocytes are immature red blood cells that still contain residual ribosomal RNA, distinguishing them from fully mature red cells. The reticulocyte count provides information about current bone-marrow erythropoietic activity and is commonly used alongside the CBC in the evaluation of anemia.\n\n## How reticulocytes are identified and measured\n\nReticulocytes can be identified using supravital stains (such as new methylene blue), which precipitate residual RNA into a visible reticular (network-like) pattern, allowing manual microscopic counting. Many laboratories now use automated hematology or flow-based analyzers that identify reticulocytes using fluorescent RNA-binding dyes, providing more precise and reproducible counts than manual methods.\n\n## Reporting the reticulocyte count\n\nReticulocyte results can be reported in several ways:\n\n- **Reticulocyte percentage:** the proportion of red cells that are reticulocytes.\n- **Absolute reticulocyte count:** the actual number of reticulocytes per volume of blood, generally considered more informative than percentage alone, particularly when the total red-cell count is abnormal.\n- **Corrected reticulocyte count / reticulocyte production index:** calculations that adjust the reticulocyte percentage for the degree of anemia and, in some formulas, for the longer maturation time of reticulocytes released early from the marrow, intended to better reflect true marrow output.\n- **Immature reticulocyte fraction (IRF):** a parameter available on some automated analyzers reflecting the proportion of reticulocytes that are relatively more immature, which can provide an earlier indicator of marrow response than the standard reticulocyte count in certain clinical situations, such as early marrow recovery after treatment.\n\n## Why correction matters\n\nA raw reticulocyte percentage can be misleading in the presence of anemia, since the total red-cell count is reduced. A correction accounts for this by adjusting for the patient's hematocrit relative to a normal value, and, in more detailed formulas, for the fact that reticulocytes released prematurely into the circulation during a strong marrow response tend to remain reticulocytes for longer than usual, which can otherwise overestimate marrow output if not accounted for.\n\n## Clinical and laboratory uses\n\n- Distinguishing whether anemia reflects an appropriate marrow response (elevated reticulocyte count, as with hemolysis or recent blood loss) or an inadequate one (low or inappropriately normal reticulocyte count, as with many production-related causes of anemia)\n- Monitoring marrow recovery after chemotherapy, marrow transplantation, or treatment of a nutritional deficiency\n- Supporting evaluation of suspected hemolytic conditions, generally alongside other hemolysis markers\n\n## Preanalytical and analytical considerations\n\n- Reticulocyte counts are typically performed on anticoagulated whole blood and are relatively stable for a defined period under proper storage, though specific stability should follow the laboratory's validated procedure.\n- Manual reticulocyte counting is subject to greater imprecision than automated flow-based methods, given the relatively small number of cells typically counted.\n- Certain conditions, such as the presence of red-cell inclusions or nucleated red cells, can interfere with some counting methods and may require method-specific consideration.\n\n## Key points\n\n- Reticulocytes are immature red cells containing residual RNA, identifiable by specific staining or fluorescent methods.\n- Results can be reported as a percentage, absolute count, corrected count, or immature reticulocyte fraction.\n- Correction for the degree of anemia improves the clinical usefulness of the reticulocyte percentage.\n- The reticulocyte count helps distinguish an appropriate from an inadequate marrow response in anemia.\n- It is also used to monitor marrow recovery after treatment.\n\n## References\n\n- NCBI. *MeSH: Reticulocytes*.\n- MedlinePlus. *Reticulocyte Count*.\n- World Health Organization. *Laboratory Quality Management System: Handbook*.\n",
+      "topicCategory": "Hematology",
+      "difficultyLevel": "intermediate",
+      "learningObjectives": [
+        "Define reticulocytes and explain how they are identified.",
+        "Describe the different ways a reticulocyte count can be reported.",
+        "Explain why correcting the reticulocyte percentage for anemia matters.",
+        "Identify general clinical and laboratory uses of the reticulocyte count."
+      ],
+      "authorName": "LabGoTo Editorial Team",
+      "readingTimeMinutes": 7,
+      "featuredImage": null,
+      "categories": [
+        "Hematology"
+      ],
+      "tags": [
+        "hematology",
+        "reticulocyte",
+        "anemia"
+      ],
+      "seoTitle": "The Reticulocyte Count: An Educational Overview | LabGoTo",
+      "seoDescription": "Learn how reticulocytes are measured, how the reticulocyte count is reported and corrected, and its role in evaluating anemia.",
+      "verification": {
+        "status": "source_verified_educational_draft",
+        "verified": true,
+        "primaryReferences": [
+          {
+            "organization": "NCBI",
+            "title": "MeSH: Reticulocytes"
+          },
+          {
+            "organization": "MedlinePlus",
+            "title": "Reticulocyte Count"
+          }
+        ],
+        "secondaryReferences": [
+          {
+            "organization": "World Health Organization",
+            "title": "Laboratory Quality Management System: Handbook"
+          }
+        ],
+        "lastReviewed": "2026-08-15",
+        "clinicalReviewRequired": true,
+        "imageVerified": false,
+        "publicationApprovalRequired": true
+      }
+    },
+    {
+      "name": "An Introduction to Hemoglobinopathies",
+      "slug": "introduction-to-hemoglobinopathies",
+      "shortDescription": "An educational introduction to hemoglobin variants and thalassemias and the general laboratory approach to their investigation.",
+      "status": "draft",
+      "content": "# An Introduction to Hemoglobinopathies\n\n## Overview\n\nHemoglobinopathies are inherited disorders affecting the structure or production of hemoglobin. They are broadly divided into structural hemoglobin variants (such as hemoglobin S, C, and E) and thalassemias, which involve reduced production of one or more normal globin chains. This is a general educational overview; specific diagnosis and management require specialized clinical and laboratory expertise.\n\n## Normal hemoglobin background\n\nAdult hemoglobin (HbA) is composed of two alpha and two beta globin chains. Smaller amounts of HbA2 (two alpha and two delta chains) and HbF (fetal hemoglobin, two alpha and two gamma chains) are normally present in adults in defined proportions. Hemoglobinopathies can affect the structure of these chains (variants) or their rate of production (thalassemias).\n\n## Structural hemoglobin variants\n\nStructural variants result from a change in the amino acid sequence of a globin chain. Common examples include:\n\n- **Hemoglobin S:** associated with sickle cell disease and sickle cell trait, depending on whether one or two abnormal genes are inherited.\n- **Hemoglobin C:** associated with a generally milder condition, which can also interact with hemoglobin S when co-inherited.\n- **Hemoglobin E:** common in certain populations, can present with mild microcytosis and, when co-inherited with beta thalassemia, a more significant clinical picture.\n\n## Thalassemias\n\nThalassemias involve reduced or absent production of a normal globin chain:\n\n- **Alpha thalassemia:** results from deletion or, less commonly, mutation of one or more of the four alpha-globin genes, with clinical severity generally related to the number of affected genes.\n- **Beta thalassemia:** results from mutations affecting beta-globin gene expression, with clinical severity ranging from a mild trait to a more significant condition, depending on the specific mutations inherited.\n\n## General laboratory approach\n\nInvestigation of a suspected hemoglobinopathy commonly involves a combination of:\n\n- **CBC and red-cell indices:** thalassemias classically show microcytosis, often with a disproportionately low MCV relative to the degree of anemia, and can show a normal or elevated RBC count relative to the hemoglobin level.\n- **Peripheral blood film examination:** may show target cells, and other specific morphological features depending on the condition.\n- **Hemoglobin electrophoresis or high-performance liquid chromatography (HPLC):** separates hemoglobin fractions based on charge or other physicochemical properties, allowing quantification of HbA, HbA2, HbF, and detection of abnormal variants.\n- **Solubility testing:** a rapid screening test historically used to detect hemoglobin S, generally followed by a confirmatory method.\n- **Molecular/genetic testing:** used to characterize specific mutations, particularly relevant for alpha thalassemia (often not fully characterized by electrophoresis alone) and for definitive diagnosis or genetic counseling purposes.\n\n## Why iron studies matter in the differential\n\nBecause both iron deficiency and thalassemia trait can cause microcytic anemia, iron studies are commonly performed alongside hemoglobinopathy investigation to help distinguish between these possibilities, since the two conditions require different management approaches and can, in some cases, coexist.\n\n## Clinical relevance\n\nHemoglobinopathies are relevant to screening programs in some populations, genetic counseling, antenatal care, and the diagnosis and monitoring of affected individuals. Specific testing algorithms, interpretation, and counseling should follow recognized clinical and laboratory guidance and involve appropriately qualified professionals.\n\n## Key points\n\n- Hemoglobinopathies include structural variants (such as HbS, HbC, HbE) and thalassemias (reduced globin chain production).\n- Thalassemias classically cause microcytosis, sometimes disproportionate to the degree of anemia.\n- Hemoglobin electrophoresis or HPLC is a central technique for identifying and quantifying hemoglobin fractions.\n- Molecular testing is particularly important for characterizing alpha thalassemia.\n- Iron studies help distinguish thalassemia trait from iron deficiency, since both cause microcytic anemia.\n\n## References\n\n- NCBI. *MeSH: Hemoglobinopathies*; *MeSH: Thalassemia*.\n- World Health Organization. *Laboratory Quality Management System: Handbook*.\n- ISO 15189:2022. *Medical laboratories — Requirements for quality and competence*.\n",
+      "topicCategory": "Hematology",
+      "difficultyLevel": "advanced",
+      "learningObjectives": [
+        "Distinguish structural hemoglobin variants from thalassemias at a general level.",
+        "Identify common examples of structural hemoglobin variants.",
+        "Describe the general laboratory approach to investigating a suspected hemoglobinopathy.",
+        "Explain why iron studies are relevant when investigating microcytic anemia."
+      ],
+      "authorName": "LabGoTo Editorial Team",
+      "readingTimeMinutes": 7,
+      "featuredImage": null,
+      "categories": [
+        "Hematology"
+      ],
+      "tags": [
+        "hematology",
+        "hemoglobinopathy",
+        "thalassemia",
+        "rbc-indices"
+      ],
+      "seoTitle": "An Introduction to Hemoglobinopathies | LabGoTo",
+      "seoDescription": "Learn the general distinction between hemoglobin variants and thalassemias and the laboratory approach to their investigation.",
+      "verification": {
+        "status": "source_verified_educational_draft",
+        "verified": true,
+        "primaryReferences": [
+          {
+            "organization": "NCBI",
+            "title": "MeSH: Hemoglobinopathies"
+          },
+          {
+            "organization": "NCBI",
+            "title": "MeSH: Thalassemia"
+          }
+        ],
+        "secondaryReferences": [
+          {
+            "organization": "World Health Organization",
+            "title": "Laboratory Quality Management System: Handbook"
+          },
+          {
+            "organization": "ISO",
+            "title": "ISO 15189:2022 Medical laboratories — Requirements for quality and competence"
+          }
+        ],
+        "lastReviewed": "2026-08-15",
+        "clinicalReviewRequired": true,
+        "imageVerified": false,
+        "publicationApprovalRequired": true
+      }
+    }
+  ],
+  "contentPolicy": {
+    "scope": "general laboratory education",
+    "not_a_substitute_for": [
+      "laboratory SOPs",
+      "current manufacturer instructions",
+      "current antimicrobial susceptibility breakpoints",
+      "laboratory-specific reference intervals",
+      "clinical diagnosis or treatment guidance"
+    ],
+    "publicationGate": "clinical_and_editorial_review_required",
+    "externalImages": "not included unless source and rights are verified"
+  }
+}

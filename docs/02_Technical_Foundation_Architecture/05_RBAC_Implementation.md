@@ -54,7 +54,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document defines how Role-Based Access Control will be implemented in LabGato.
+This document defines how Role-Based Access Control will be implemented in LABGOTO.
 
 RBAC is the security boundary for the Admin Portal. It ensures that administrators can only access the modules, actions, and records permitted by their assigned roles.
 
@@ -807,17 +807,17 @@ It affects future auth middleware, policies, gates, models, seeders, admin contr
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC05
+LABGOTO-PHASE02-DOC05
 
 ## Context
 
-LabGato requires a secure server-side RBAC implementation to protect the Admin Portal. This document defines how users, roles, permissions, middleware, policies, gates, seeders, caching, and auditing must work together.
+LABGOTO requires a secure server-side RBAC implementation to protect the Admin Portal. This document defines how users, roles, permissions, middleware, policies, gates, seeders, caching, and auditing must work together.
 
 This prompt implements the documentation outcome of the RBAC Implementation document.
 
 ## Objective
 
-Create the official LabGato RBAC Implementation document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO RBAC Implementation document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository will have the approved authorization implementation architecture.
 
@@ -825,7 +825,7 @@ After this prompt is completed, the repository will have the approved authorizat
 
 Relevant approved decisions:
 
-- LabGato uses Laravel.
+- LABGOTO uses Laravel.
 - Admin authentication is required.
 - Sessions use the database driver.
 - Roles and permissions are stored in the database.

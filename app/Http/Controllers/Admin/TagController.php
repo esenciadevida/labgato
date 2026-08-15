@@ -18,7 +18,7 @@ class TagController extends Controller
         $tags = Tag::query()
             ->when($search !== '', fn ($query) => $query->where('name', 'like', "%{$search}%"))
             ->orderBy('name')
-            ->paginate(config('labgato.pagination.per_page'))
+            ->paginate(config('labgoto.pagination.per_page'))
             ->withQueryString();
 
         return view('admin.tags.index', compact('tags', 'search'));

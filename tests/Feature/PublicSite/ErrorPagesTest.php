@@ -15,7 +15,16 @@ class ErrorPagesTest extends TestCase
 
         $response->assertStatus(404);
         $response->assertSee('Page Not Found');
-        $response->assertSee('does not exist');
+        $response->assertSee('may have moved');
+    }
+
+    public function test_404_page_offers_go_home_and_contact_actions(): void
+    {
+        $response = $this->get('/nonexistent-page-that-does-not-exist');
+
+        $response->assertStatus(404);
+        $response->assertSee('Go Home');
+        $response->assertSee('Contact Support');
     }
 
     public function test_404_page_does_not_expose_stack_trace(): void

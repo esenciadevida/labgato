@@ -30,6 +30,16 @@ class CalculatorRunner extends Component
         $this->outputs = $result['outputs'];
         $this->validationErrors = $result['errors'];
         $this->hasCalculated = true;
+
+        if (empty($this->validationErrors)) {
+            $this->dispatch('labgato:calc-result', [
+                'slug' => $this->calculator->slug,
+                'name' => $this->calculator->name,
+                'inputs' => $this->values,
+                'outputs' => $this->outputs,
+                'timestamp' => now()->toISOString(),
+            ]);
+        }
     }
 
     public function render()

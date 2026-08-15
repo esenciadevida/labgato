@@ -35,7 +35,7 @@
                             :error="$errors->first('slug')"
                             aria-required="true"
                         />
-                        <p class="mt-1 text-xs text-neutral-500">Leave blank to regenerate from the name.</p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Leave blank to regenerate from the name.</p>
                     </div>
                 </div>
 
@@ -72,13 +72,13 @@
                     </div>
 
                     <div class="flex items-end pb-1">
-                        <label class="flex items-center gap-2 text-sm text-neutral-700">
+                        <label class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                             <input
                                 type="checkbox"
                                 name="is_active"
                                 value="1"
                                 @checked(old('is_active', $category->is_active))
-                                class="rounded border-neutral-300 text-primary-600 focus:ring-primary-500"
+                                class="rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600"
                             >
                             Active
                         </label>

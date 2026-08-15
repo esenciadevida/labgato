@@ -1,0 +1,95 @@
+{
+  "schema_version": "2.0",
+  "project": "LabGoTo",
+  "tools": {
+    "seed_file": "LabGoTo_MASTER_Tools_Seed_v2.json",
+    "record_count": 20,
+    "unit_converter_count": 14
+  },
+  "calculators": {
+    "seed_file": "LabGoTo_MASTER_Calculators_Seed_v2.json",
+    "record_count": 16
+  },
+  "calculator_smoke_tests": [
+    {
+      "test": "MCV",
+      "expected": 90,
+      "actual": 90.0,
+      "passed": true
+    },
+    {
+      "test": "MCH",
+      "expected": 30,
+      "actual": 30.0,
+      "passed": true
+    },
+    {
+      "test": "MCHC",
+      "expected": 33.3333333333,
+      "actual": 33.333333333333336,
+      "passed": true
+    },
+    {
+      "test": "ANC",
+      "expected": 4.8,
+      "actual": 4.8,
+      "passed": true
+    },
+    {
+      "test": "Corrected WBC",
+      "expected": 8.3333333333,
+      "actual": 8.333333333333334,
+      "passed": true
+    },
+    {
+      "test": "Anion Gap",
+      "expected": 12,
+      "actual": 12,
+      "passed": true
+    },
+    {
+      "test": "BMI",
+      "expected": 22.8571428571,
+      "actual": 22.857142857142858,
+      "passed": true
+    },
+    {
+      "test": "BSA",
+      "expected": 1.8446619684315546,
+      "actual": 1.8446619684315546,
+      "passed": true
+    },
+    {
+      "test": "Non-HDL",
+      "expected": 150,
+      "actual": 150,
+      "passed": true
+    },
+    {
+      "test": "LDL Friedewald",
+      "expected": 120,
+      "actual": 120.0,
+      "passed": true
+    },
+    {
+      "test": "Corrected Sodium",
+      "expected": 133.2,
+      "actual": 133.2,
+      "passed": true
+    },
+    {
+      "test": "Osmolality",
+      "expected": 290.0,
+      "actual": 290.0,
+      "passed": true
+    },
+    {
+      "test": "Globulin",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    }
+  ],
+  "status": "PASS",
+  "important_note": "Formula correctness tests are mathematical smoke tests. They do not replace clinical validation/review before publication."
+}

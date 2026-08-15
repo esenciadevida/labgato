@@ -4,12 +4,12 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Phase 01 file tree.
-- The decision to follow the new LabGato directive.
+- The decision to follow the new LABGOTO directive.
 - The information currently available in the project conversation.
-- The absence of provided existing LabGato or MLS Toolkit files.
+- The absence of provided existing LABGOTO or MLS Toolkit files.
 
 ## Defines
 
@@ -52,7 +52,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-The purpose of this document is to record the current state of LabGato at the beginning of the new documentation-controlled development cycle.
+The purpose of this document is to record the current state of LABGOTO at the beginning of the new documentation-controlled development cycle.
 
 This assessment exists to prevent the following problems:
 
@@ -76,7 +76,7 @@ Phase 01 — Product Foundation and Master Architecture
 
 Assessment basis:
 
-- The new LabGato master directive.
+- The new LABGOTO master directive.
 - The user instruction to follow the new directive.
 - The hosting constraint provided by the user.
 - The absence of uploaded or pasted project files.
@@ -86,7 +86,7 @@ Assessment basis:
 
 This assessment is based on available conversation context only.
 
-No direct inspection of a LabGato or MLS Toolkit repository has been performed.
+No direct inspection of a LABGOTO or MLS Toolkit repository has been performed.
 
 ---
 
@@ -98,15 +98,15 @@ The following information has been confirmed.
 
 Confirmed:
 
-- LabGato follows the new master directive.
-- LabGato is the renamed continuation of MLS Toolkit.
-- LabGato is a professional laboratory toolkit/workspace.
-- LabGato is not a Laboratory Information System.
-- LabGato is not a hospital management system.
-- LabGato is not a patient management system.
-- LabGato is not a patient result portal unless explicitly added later.
-- LabGato is not a diagnostic decision engine.
-- LabGato is not a generic healthcare website.
+- LABGOTO follows the new master directive.
+- LABGOTO is the renamed continuation of MLS Toolkit.
+- LABGOTO is a professional laboratory toolkit/workspace.
+- LABGOTO is not a Laboratory Information System.
+- LABGOTO is not a hospital management system.
+- LABGOTO is not a patient management system.
+- LABGOTO is not a patient result portal unless explicitly added later.
+- LABGOTO is not a diagnostic decision engine.
+- LABGOTO is not a generic healthcare website.
 
 ## 3.2 Product Areas
 
@@ -167,7 +167,7 @@ Current documentation inventory:
 - Current State Assessment: this document.
 - Other Phase 01 documents: pending.
 - Existing MLS Toolkit documentation: not provided.
-- Existing LabGato documentation: not provided.
+- Existing LABGOTO documentation: not provided.
 - Existing architecture documents: not provided.
 - Existing database documents: not provided.
 - Existing API documents: not provided.
@@ -212,7 +212,7 @@ There is no inspectable existing implementation available in the current convers
 
 # 6. Existing MLS Toolkit Status
 
-LabGato is the renamed continuation of MLS Toolkit.
+LABGOTO is the renamed continuation of MLS Toolkit.
 
 However, no MLS Toolkit assets have been provided.
 
@@ -229,7 +229,7 @@ Missing MLS Toolkit information:
 - MLS Toolkit deployment configuration.
 - MLS Toolkit test coverage.
 
-Until MLS Toolkit assets are provided, LabGato must proceed using the approved new directive and the documented working assumptions.
+Until MLS Toolkit assets are provided, LABGOTO must proceed using the approved new directive and the documented working assumptions.
 
 If MLS Toolkit assets are discovered later, they must be reviewed before further implementation.
 
@@ -279,7 +279,7 @@ Provide existing repository files if they exist.
 
 Assumption:
 
-No existing database schema exists for the current LabGato documentation cycle.
+No existing database schema exists for the current LABGOTO documentation cycle.
 
 Reason:
 
@@ -439,7 +439,7 @@ Provide existing MLS Toolkit files before implementation begins.
 
 Risk:
 
-Previously approved MLS Toolkit decisions may be missing from the new LabGato documentation.
+Previously approved MLS Toolkit decisions may be missing from the new LABGOTO documentation.
 
 Mitigation:
 
@@ -491,7 +491,7 @@ Verify SSH, Git, Composer, cron, PHP extensions, and database access.
 
 Based on the information currently available, the official current-state decision is:
 
-LabGato will proceed as a documentation-controlled reset under the new master directive.
+LABGOTO will proceed as a documentation-controlled reset under the new master directive.
 
 This does not mean previous MLS Toolkit work is abandoned.
 
@@ -641,7 +641,7 @@ Technical foundation architecture has not yet been documented or approved.
 
 ## Decisions Established
 
-- LabGato will proceed as a documentation-controlled reset unless existing MLS Toolkit assets are provided.
+- LABGOTO will proceed as a documentation-controlled reset unless existing MLS Toolkit assets are provided.
 - No existing implementation is assumed to exist.
 - No existing database schema is assumed to exist.
 - No existing documentation is assumed to exist.
@@ -649,7 +649,7 @@ Technical foundation architecture has not yet been documented or approved.
 
 ## Dependencies
 
-- Approved LabGato master directive.
+- Approved LABGOTO master directive.
 - Approved Project Charter.
 - Approved Phase 01 file tree.
 - Available conversation context.
@@ -666,7 +666,7 @@ It affects all future Phase 01 documents.
 ## Open Questions
 
 1. Does any existing MLS Toolkit repository exist?
-2. Does any existing LabGato repository exist?
+2. Does any existing LABGOTO repository exist?
 3. Are there previous architecture documents that must be preserved?
 4. Are there existing database migrations or schema files?
 5. Are there existing admin pages or components?
@@ -679,7 +679,7 @@ It affects all future Phase 01 documents.
 ## TBD Decisions
 
 - TBD: Confirmation of existing MLS Toolkit assets.
-- TBD: Confirmation of existing LabGato assets.
+- TBD: Confirmation of existing LABGOTO assets.
 - TBD: Confirmation of final backend stack.
 - TBD: Confirmation of final frontend stack.
 - TBD: Confirmation of final database engine.
@@ -692,17 +692,17 @@ It affects all future Phase 01 documents.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC02
+LABGOTO-PHASE01-DOC02
 
 ## Context
 
-LabGato has adopted the new master directive. No existing documentation or implementation has been provided. The project requires an official current-state assessment before technical foundation decisions are finalized.
+LABGOTO has adopted the new master directive. No existing documentation or implementation has been provided. The project requires an official current-state assessment before technical foundation decisions are finalized.
 
 This prompt implements the documentation outcome of the Current State Assessment.
 
 ## Objective
 
-Create the official LabGato Current State Assessment document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Current State Assessment document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, the repository should contain a documented baseline of what is known, what is missing, and what must be verified before implementation.
 
@@ -710,8 +710,8 @@ After this prompt is completed, the repository should contain a documented basel
 
 Relevant approved decisions:
 
-- LabGato follows the new master directive.
-- LabGato is the renamed continuation of MLS Toolkit.
+- LABGOTO follows the new master directive.
+- LABGOTO is the renamed continuation of MLS Toolkit.
 - The previous quote/lead/business platform scope is superseded.
 - Documentation must be phase-controlled.
 - Missing decisions must be marked as TBD.
@@ -727,7 +727,7 @@ Inspect, if available:
 - Any existing README.md
 - Any existing project documentation
 - Any existing MLS Toolkit documentation
-- Any existing LabGato documentation
+- Any existing LABGOTO documentation
 - Any existing repository file tree
 
 If no files exist, record that the documentation structure is being initialized.

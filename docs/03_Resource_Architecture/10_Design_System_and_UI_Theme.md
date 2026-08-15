@@ -14,7 +14,7 @@ This document depends on:
 
 This document defines:
 
-- The LabGato design principles.
+- The LABGOTO design principles.
 - The official color system (primary, neutral, semantic).
 - The typography system.
 - The spacing, layout, and container rules.
@@ -41,8 +41,8 @@ This document does not directly implement application code.
 
 Its implementation impact is:
 
-- Establishes a locked, professional visual identity for LabGato.
-- Replaces ad-hoc default Tailwind colors with defined LabGato tokens.
+- Establishes a locked, professional visual identity for LABGOTO.
+- Replaces ad-hoc default Tailwind colors with defined LABGOTO tokens.
 - Ensures consistent, accessible, brand-aligned UI across all future builds.
 - Prevents visual inconsistency as new resource modules are added.
 
@@ -50,11 +50,11 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Design System and UI Theme for LabGato.
+This document establishes the Design System and UI Theme for LABGOTO.
 
 Until now, UI components have used ad-hoc default Tailwind colors. This document locks a professional, scientific, accessible visual identity so that all current and future interfaces are consistent and brand-aligned.
 
-LabGato must look like a trustworthy professional laboratory instrument, not a generic marketing site or a decorative dashboard.
+LABGOTO must look like a trustworthy professional laboratory instrument, not a generic marketing site or a decorative dashboard.
 
 ---
 
@@ -528,17 +528,17 @@ It dictates updates to tailwind.config.js, app.css, and all UI components.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE03-DOC10
+LABGOTO-PHASE03-DOC10
 
 ## Context
 
-LabGato requires a locked, professional design system so all current and future UI is consistent and brand-aligned. This document defines the color palette, typography, spacing, component specs, and Tailwind theme tokens.
+LABGOTO requires a locked, professional design system so all current and future UI is consistent and brand-aligned. This document defines the color palette, typography, spacing, component specs, and Tailwind theme tokens.
 
 This prompt implements the documentation outcome of the Design System and UI Theme document.
 
 ## Objective
 
-Create the official LabGato Design System and UI Theme document inside the approved Phase 03 documentation structure.
+Create the official LABGOTO Design System and UI Theme document inside the approved Phase 03 documentation structure.
 
 After this prompt is completed, the repository will have a binding visual specification for all UI.
 

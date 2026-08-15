@@ -1,0 +1,2 @@
+name,analyte_name,specimen_type,methodology,population_group,age_min,age_max,sex,unit,si_unit,lower_limit,upper_limit,critical_low,critical_high,conversion_factor,source_citation
+"Test Analyte Imported","Test","Serum",,"Adult",,,"any","g/dL",,"11","14","6","18","1","Source"

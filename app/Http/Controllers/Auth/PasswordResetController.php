@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Services\AuditLogService;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 
 class PasswordResetController extends Controller
 {
@@ -23,9 +25,20 @@ class PasswordResetController extends Controller
             'email' => ['required', 'email'],
         ]);
 
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
+        $email = strtolower($request->email);
+        $throttleKey = $email.'|'.$request->ip();
+        $maxRequests = config('labgoto.security.password_reset_max_per_minute', 3);
+
+        if (Cache::get("password_reset_{$throttleKey}", 0) >= $maxRequests) {
+            throw ValidationException::withMessages([
+                'email' => ['Too many password reset requests. Please try again later.'],
+            ]);
+        }
+
+        Password::sendResetLink(['email' => $email]);
+
+        Cache::increment("password_reset_{$throttleKey}");
+        Cache::put("password_reset_{$throttleKey}", Cache::get("password_reset_{$throttleKey}", 0), now()->addMinute());
 
         return back()->with('status', 'If an account with that email exists, a password reset link has been sent.');
     }

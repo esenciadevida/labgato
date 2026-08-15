@@ -15,7 +15,7 @@ This document depends on:
 
 This document defines:
 
-- The testing philosophy and mandatory testing scope for LabGato.
+- The testing philosophy and mandatory testing scope for LABGOTO.
 - The approved testing tools and environment setup.
 - The test directory structure and naming conventions.
 - The database testing strategy (transactions vs. migrations).
@@ -48,9 +48,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Testing Foundation for LabGato.
+This document establishes the Testing Foundation for LABGOTO.
 
-Because LabGato is a professional laboratory toolkit providing calculators, reference ranges, and scientific resources, accuracy and security are paramount. A bug in a calculator or a flaw in RBAC could lead to professional errors or unauthorized access.
+Because LABGOTO is a professional laboratory toolkit providing calculators, reference ranges, and scientific resources, accuracy and security are paramount. A bug in a calculator or a flaw in RBAC could lead to professional errors or unauthorized access.
 
 Testing is not an afterthought; it is a core architectural requirement. No feature is considered complete until it satisfies the testing requirements defined in this document.
 
@@ -224,9 +224,9 @@ Test that Form Requests correctly reject invalid data and accept valid data.
 
 ---
 
-# 8. Calculator and Tool Testing Rules (LabGato Specific)
+# 8. Calculator and Tool Testing Rules (LABGOTO Specific)
 
-Because LabGato provides scientific calculators, mathematical accuracy is a safety requirement.
+Because LABGOTO provides scientific calculators, mathematical accuracy is a safety requirement.
 
 ## 8.1 Expected Result Testing
 
@@ -316,7 +316,7 @@ Tests must NEVER be executed on the Hostinger production or staging server.
 
 Tests must use a local MySQL/MariaDB instance or an in-memory SQLite database (if SQLite compatibility is maintained for the specific features being tested).
 
-Because LabGato relies on MySQL-specific features (e.g., specific JSON operations or full-text search), MySQL is the preferred test database to ensure parity with production.
+Because LABGOTO relies on MySQL-specific features (e.g., specific JSON operations or full-text search), MySQL is the preferred test database to ensure parity with production.
 
 ## 11.3 No External Network Calls
 
@@ -378,17 +378,17 @@ It dictates the testing requirements for all future implementation prompts.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC10
+LABGOTO-PHASE02-DOC10
 
 ## Context
 
-LabGato requires a strict testing foundation to ensure mathematical accuracy for laboratory tools and security for the admin portal. This document defines the rules, structure, and mandatory test types for all future development.
+LABGOTO requires a strict testing foundation to ensure mathematical accuracy for laboratory tools and security for the admin portal. This document defines the rules, structure, and mandatory test types for all future development.
 
 This prompt implements the documentation outcome of the Testing Foundation document.
 
 ## Objective
 
-Create the official LabGato Testing Foundation document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Testing Foundation document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository will have a binding testing specification that governs the Definition of Done for all features.
 
@@ -396,7 +396,7 @@ After this prompt is completed, the repository will have a binding testing speci
 
 Relevant approved decisions:
 
-- LabGato uses Laravel.
+- LABGOTO uses Laravel.
 - Calculators must be mathematically validated.
 - RBAC must prevent privilege escalation.
 - Tests must not run on the production server.

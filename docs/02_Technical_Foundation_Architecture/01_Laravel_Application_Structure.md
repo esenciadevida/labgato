@@ -55,7 +55,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document defines the official Laravel application structure for LabGato.
+This document defines the official Laravel application structure for LABGOTO.
 
 The structure must be:
 
@@ -66,7 +66,7 @@ The structure must be:
 - Testable enough to support automated regression testing.
 - Flexible enough for future AI, search, and analytics features.
 
-LabGato must not become a collection of disconnected pages, controllers, and components.
+LABGOTO must not become a collection of disconnected pages, controllers, and components.
 
 Every file must have a clear responsibility.
 
@@ -74,9 +74,9 @@ Every file must have a clear responsibility.
 
 # 2. Approved Application Layout
 
-The target LabGato repository structure should follow this structure.
+The target LABGOTO repository structure should follow this structure.
 
-labgato/
+LABGOTO/
 ├── app/
 │   ├── Enums/
 │   ├── Models/
@@ -157,7 +157,7 @@ Notes:
 
 # 3. Module Boundaries
 
-LabGato should be mentally organized into modules, even if the first implementation uses a standard Laravel folder structure.
+LABGOTO should be mentally organized into modules, even if the first implementation uses a standard Laravel folder structure.
 
 ## 3.1 Access and Security Module
 
@@ -1003,7 +1003,7 @@ Folder names, module boundaries, and route groups must not be changed without a 
 
 ## Decisions Established
 
-- LabGato will use a structured Laravel application layout.
+- LABGOTO will use a structured Laravel application layout.
 - Admin, public, auth, and API routes will be separated.
 - Business logic will live in services.
 - Authorization will live in policies.
@@ -1048,17 +1048,17 @@ It affects all future backend, frontend, admin, API, and test implementation fil
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC01
+LABGOTO-PHASE02-DOC01
 
 ## Context
 
-LabGato requires an approved Laravel application structure before foundation implementation begins. This document defines the folder structure, module boundaries, code placement rules, naming conventions, and routing organization required to keep the codebase maintainable and Hostinger-compatible.
+LABGOTO requires an approved Laravel application structure before foundation implementation begins. This document defines the folder structure, module boundaries, code placement rules, naming conventions, and routing organization required to keep the codebase maintainable and Hostinger-compatible.
 
 This prompt implements the documentation outcome of the Laravel Application Structure document.
 
 ## Objective
 
-Create the official LabGato Laravel Application Structure document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Laravel Application Structure document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository should contain the approved structural foundation for future Laravel implementation.
 
@@ -1066,9 +1066,9 @@ After this prompt is completed, the repository should contain the approved struc
 
 Relevant approved decisions:
 
-- LabGato uses Laravel.
-- LabGato uses Blade, Tailwind, Alpine.js, and Livewire.
-- LabGato is deployed to Hostinger shared hosting.
+- LABGOTO uses Laravel.
+- LABGOTO uses Blade, Tailwind, Alpine.js, and Livewire.
+- LABGOTO is deployed to Hostinger shared hosting.
 - Admin, public, auth, and API areas must be separated.
 - Business logic must not live in views.
 - AI implementation is deferred.

@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── app/
 │   ├── Http/
 │   │   ├── Controllers/
@@ -32,10 +32,10 @@ labgato/
     └── logs/
         └── .gitignore
 
-IMPLEMENTATION PROMPT ID: LABGATO-SLICE1-BUILD7
+IMPLEMENTATION PROMPT ID: LABGOTO-SLICE1-BUILD7
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
 
 Build 1 through Build 6 are complete. The Laravel foundation, database schema, authentication, RBAC, Admin Portal foundation, and Public Site foundation are implemented.
 
@@ -67,7 +67,7 @@ FILES TO INSPECT:
 - routes/api.php
 - bootstrap/app.php
 - config/logging.php
-- config/labgato.php
+- config/LABGOTO.php
 - app/Services/AuditLogService.php
 - app/Exceptions/ directory if it exists
 - app/Http/Middleware/

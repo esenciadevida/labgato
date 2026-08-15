@@ -96,7 +96,7 @@ class SearchServiceTest extends TestCase
 
     public function test_search_service_logs_query_when_logging_enabled(): void
     {
-        config(['labgato.search.log_queries' => true]);
+        config(['labgoto.search.log_queries' => true]);
 
         $service = app(SearchService::class);
         $service->search('coagulation');
@@ -108,7 +108,7 @@ class SearchServiceTest extends TestCase
 
     public function test_search_service_does_not_log_query_when_logging_disabled(): void
     {
-        config(['labgato.search.log_queries' => false]);
+        config(['labgoto.search.log_queries' => false]);
 
         $service = app(SearchService::class);
         $service->search('coagulation');
@@ -165,7 +165,7 @@ class SearchServiceTest extends TestCase
 
     public function test_search_service_handles_empty_query_without_logging(): void
     {
-        config(['labgato.search.log_queries' => true]);
+        config(['labgoto.search.log_queries' => true]);
 
         $service = app(SearchService::class);
         $service->search('   ');
@@ -175,7 +175,7 @@ class SearchServiceTest extends TestCase
 
     public function test_search_service_sanitizes_query_before_logging(): void
     {
-        config(['labgato.search.log_queries' => true]);
+        config(['labgoto.search.log_queries' => true]);
 
         $service = app(SearchService::class);
         $service->search('  <b>coagulation</b>  ');
@@ -187,7 +187,7 @@ class SearchServiceTest extends TestCase
 
     public function test_search_service_logs_authenticated_user_id(): void
     {
-        config(['labgato.search.log_queries' => true]);
+        config(['labgoto.search.log_queries' => true]);
 
         $user = User::factory()->create();
         $this->actingAs($user);
@@ -203,7 +203,7 @@ class SearchServiceTest extends TestCase
 
     public function test_search_service_truncates_long_queries_when_logging(): void
     {
-        config(['labgato.search.log_queries' => true]);
+        config(['labgoto.search.log_queries' => true]);
 
         $longQuery = str_repeat('a', 400);
 

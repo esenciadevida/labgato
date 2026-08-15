@@ -1,0 +1,1112 @@
+{
+  "schemaVersion": "1.0",
+  "seedType": "tools",
+  "statusPolicy": {
+    "defaultStatus": "draft",
+    "note": "Review and validate each engine, formula, reference, unit mapping, and output before publication."
+  },
+  "categories": [
+    "Hematology",
+    "Clinical Chemistry",
+    "Lipid Panel",
+    "Microbiology",
+    "Immunology",
+    "Thyroid Function",
+    "Blood Bank / Transfusion Medicine",
+    "Coagulation",
+    "Metabolic",
+    "Urinalysis and Body Fluids",
+    "Laboratory Quality Assurance",
+    "Phlebotomy / Specimen Collection"
+  ],
+  "tags": [
+    "acid-base",
+    "ag-ratio",
+    "albumin",
+    "anc",
+    "anemia",
+    "anion-gap",
+    "area",
+    "bmi",
+    "body-mass-index",
+    "body-surface-area",
+    "bsa",
+    "bun",
+    "c1v1-c2v2",
+    "centrifuge",
+    "cholesterol",
+    "ckd-epi",
+    "cockcroft-gault",
+    "concentration",
+    "corrected-wbc",
+    "creatinine-clearance",
+    "density",
+    "differential",
+    "dilution",
+    "dilution-factor",
+    "egfr",
+    "electrolytes",
+    "energy",
+    "flow-rate",
+    "friedewald",
+    "globulin",
+    "hematology",
+    "hyperglycemia",
+    "kidney-function",
+    "laboratory-preparation",
+    "ldl",
+    "length",
+    "lipid-profile",
+    "mass",
+    "mass-concentration",
+    "mch",
+    "mchc",
+    "mcv",
+    "mg-dl",
+    "microscopy",
+    "mmhg",
+    "mmol",
+    "mmol-l",
+    "molar-concentration",
+    "molarity",
+    "mole",
+    "neutrophils",
+    "nrbc",
+    "osmolality",
+    "pressure",
+    "rbc-indices",
+    "rcf",
+    "renal-function",
+    "reticulocyte",
+    "rpi",
+    "rpm",
+    "serial-dilution",
+    "sodium",
+    "solution-preparation",
+    "specimen",
+    "temperature",
+    "time",
+    "unit-converter",
+    "viscosity",
+    "volume"
+  ],
+  "tools": [
+    {
+      "name": "Chemistry Unit Converter",
+      "slug": "chemistry-unit-converter",
+      "shortDescription": "Convert common clinical chemistry measurements between compatible laboratory units.",
+      "formulaDisplay": "",
+      "status": "draft",
+      "engine": "Chemistry Unit Converter",
+      "inputSchema": [
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "fromUnit",
+          "label": "From unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "toUnit",
+          "label": "To unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "Chemistry Unit Converter | LabGoTo",
+      "seoDescription": "Convert common clinical chemistry measurements between compatible laboratory units."
+    },
+    {
+      "name": "Hematology Unit Converter",
+      "slug": "hematology-unit-converter",
+      "shortDescription": "Convert common hematology measurements between compatible laboratory reporting units.",
+      "formulaDisplay": "",
+      "status": "draft",
+      "engine": "Hematology Unit Converter",
+      "inputSchema": [
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "fromUnit",
+          "label": "From unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "toUnit",
+          "label": "To unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Hematology"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "Hematology Unit Converter | LabGoTo",
+      "seoDescription": "Convert common hematology measurements between compatible laboratory reporting units."
+    },
+    {
+      "name": "Serology Unit Converter",
+      "slug": "serology-unit-converter",
+      "shortDescription": "Convert supported serology and immunology measurements between compatible units.",
+      "formulaDisplay": "",
+      "status": "draft",
+      "engine": "Serology Unit Converter",
+      "inputSchema": [
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "fromUnit",
+          "label": "From unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "toUnit",
+          "label": "To unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Immunology"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "Serology Unit Converter | LabGoTo",
+      "seoDescription": "Convert supported serology and immunology measurements between compatible units."
+    },
+    {
+      "name": "Urinalysis Unit Converter",
+      "slug": "urinalysis-unit-converter",
+      "shortDescription": "Convert supported urinalysis measurements between compatible laboratory units.",
+      "formulaDisplay": "",
+      "status": "draft",
+      "engine": "Urinalysis Unit Converter",
+      "inputSchema": [
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "fromUnit",
+          "label": "From unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "toUnit",
+          "label": "To unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Urinalysis and Body Fluids"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "Urinalysis Unit Converter | LabGoTo",
+      "seoDescription": "Convert supported urinalysis measurements between compatible laboratory units."
+    },
+    {
+      "name": "Temperature Converter",
+      "slug": "temperature-converter",
+      "shortDescription": "Convert temperatures between Celsius, Fahrenheit, and Kelvin.",
+      "formulaDisplay": "°C = (°F - 32) × 5/9",
+      "status": "draft",
+      "engine": "Temperature Converter",
+      "inputSchema": [
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "fromUnit",
+          "label": "From unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "toUnit",
+          "label": "To unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Laboratory Quality Assurance",
+        "Phlebotomy / Specimen Collection"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "Temperature Converter | LabGoTo",
+      "seoDescription": "Convert temperatures between Celsius, Fahrenheit, and Kelvin."
+    },
+    {
+      "name": "RPM ↔ RCF Converter",
+      "slug": "rpm--to--rcf-converter",
+      "shortDescription": "Convert centrifuge speed between revolutions per minute and relative centrifugal force.",
+      "formulaDisplay": "RCF = 1.118 × 10⁻⁵ × r × RPM²",
+      "status": "draft",
+      "engine": "RPM ↔ RCF Converter",
+      "inputSchema": [
+        {
+          "key": "mode",
+          "label": "Conversion",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "value",
+          "label": "RPM or RCF",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "radius",
+          "label": "Rotor radius",
+          "type": "number",
+          "unit": "cm",
+          "min": 0.1,
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Laboratory Quality Assurance",
+        "Phlebotomy / Specimen Collection"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "RPM ↔ RCF Converter | LabGoTo",
+      "seoDescription": "Convert centrifuge speed between revolutions per minute and relative centrifugal force."
+    },
+    {
+      "name": "Molarity Converter",
+      "slug": "molarity-converter",
+      "shortDescription": "Convert compatible molar concentration units.",
+      "formulaDisplay": "M = n / V",
+      "status": "draft",
+      "engine": "Molarity Converter",
+      "inputSchema": [
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "fromUnit",
+          "label": "From unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "toUnit",
+          "label": "To unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "Molarity Converter | LabGoTo",
+      "seoDescription": "Convert compatible molar concentration units."
+    },
+    {
+      "name": "Normality Converter",
+      "slug": "normality-converter",
+      "shortDescription": "Convert supported normality concentration units when the equivalent relationship is defined.",
+      "formulaDisplay": "N = equivalents / L",
+      "status": "draft",
+      "engine": "Normality Converter",
+      "inputSchema": [
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "fromUnit",
+          "label": "From unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "toUnit",
+          "label": "To unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "Normality Converter | LabGoTo",
+      "seoDescription": "Convert supported normality concentration units when the equivalent relationship is defined."
+    },
+    {
+      "name": "Molarity ↔ Normality Converter",
+      "slug": "molarity--to--normality-converter",
+      "shortDescription": "Convert between molarity and normality when the reaction equivalent factor is known.",
+      "formulaDisplay": "N = M × n-factor",
+      "status": "draft",
+      "engine": "Molarity ↔ Normality Converter",
+      "inputSchema": [
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "fromUnit",
+          "label": "From unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "toUnit",
+          "label": "To unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "nFactor",
+          "label": "n-factor (equivalents per mole)",
+          "type": "number",
+          "min": 0,
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "Molarity ↔ Normality Converter | LabGoTo",
+      "seoDescription": "Convert between molarity and normality when the reaction equivalent factor is known."
+    },
+    {
+      "name": "Mass ↔ Moles Converter",
+      "slug": "mass--to--moles-converter",
+      "shortDescription": "Convert between mass and amount of substance using molar mass.",
+      "formulaDisplay": "n = m / M",
+      "status": "draft",
+      "engine": "Mass ↔ Moles Converter",
+      "inputSchema": [
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "fromUnit",
+          "label": "From unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "toUnit",
+          "label": "To unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "Mass ↔ Moles Converter | LabGoTo",
+      "seoDescription": "Convert between mass and amount of substance using molar mass."
+    },
+    {
+      "name": "Concentration Converter",
+      "slug": "concentration-converter",
+      "shortDescription": "Convert compatible mass, amount-of-substance, and volume concentration units.",
+      "formulaDisplay": "Concentration = amount / volume",
+      "status": "draft",
+      "engine": "Concentration Converter",
+      "inputSchema": [
+        {
+          "key": "value",
+          "label": "Value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "fromUnit",
+          "label": "From unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "toUnit",
+          "label": "To unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "unit-converter"
+      ],
+      "seoTitle": "Concentration Converter | LabGoTo",
+      "seoDescription": "Convert compatible mass, amount-of-substance, and volume concentration units."
+    },
+    {
+      "name": "Dilution Tool",
+      "slug": "dilution-tool",
+      "shortDescription": "Calculate stock solution and diluent volumes required to prepare a target concentration.",
+      "formulaDisplay": "C₁V₁ = C₂V₂",
+      "status": "draft",
+      "engine": "Dilution Calculator",
+      "inputSchema": [
+        {
+          "key": "stockConcentration",
+          "label": "Stock concentration",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "targetConcentration",
+          "label": "Target concentration",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "finalVolume",
+          "label": "Final volume",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "volumeUnit",
+          "label": "Volume unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "laboratory-preparation"
+      ],
+      "seoTitle": "Dilution Tool | LabGoTo",
+      "seoDescription": "Calculate stock solution and diluent volumes required to prepare a target concentration."
+    },
+    {
+      "name": "Serial Dilution Tool",
+      "slug": "serial-dilution-tool",
+      "shortDescription": "Plan sequential laboratory dilutions and calculate cumulative dilution factors.",
+      "formulaDisplay": "DFₜ = DF₁ × DF₂ × … × DFₙ",
+      "status": "draft",
+      "engine": "Serial Dilution Calculator",
+      "inputSchema": [
+        {
+          "key": "initialConcentration",
+          "label": "Initial concentration",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "numberOfSteps",
+          "label": "Number of dilution steps",
+          "type": "number",
+          "min": 1,
+          "step": 1,
+          "required": true
+        },
+        {
+          "key": "dilutionFactorPerStep",
+          "label": "Dilution factor per step",
+          "type": "number",
+          "min": 1e-06,
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "laboratory-preparation"
+      ],
+      "seoTitle": "Serial Dilution Tool | LabGoTo",
+      "seoDescription": "Plan sequential laboratory dilutions and calculate cumulative dilution factors."
+    },
+    {
+      "name": "C1V1 Tool",
+      "slug": "c1v1-tool",
+      "shortDescription": "Solve or check a laboratory dilution using C₁V₁ = C₂V₂.",
+      "formulaDisplay": "C₁V₁ = C₂V₂",
+      "status": "draft",
+      "engine": "C1V1 Calculator",
+      "inputSchema": [
+        {
+          "key": "c1",
+          "label": "C1",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "v1",
+          "label": "V1",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "c2",
+          "label": "C2",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "v2",
+          "label": "V2",
+          "type": "number",
+          "min": 0,
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "laboratory-preparation"
+      ],
+      "seoTitle": "C1V1 Tool | LabGoTo",
+      "seoDescription": "Solve or check a laboratory dilution using C₁V₁ = C₂V₂."
+    },
+    {
+      "name": "Solution Preparation Tool",
+      "slug": "solution-preparation-tool",
+      "shortDescription": "Determine quantities required to prepare a laboratory solution at a specified concentration and final volume.",
+      "formulaDisplay": "n = M × V",
+      "status": "draft",
+      "engine": "Solution Preparation Calculator",
+      "inputSchema": [
+        {
+          "key": "input",
+          "label": "Input",
+          "type": "number",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "laboratory-preparation"
+      ],
+      "seoTitle": "Solution Preparation Tool | LabGoTo",
+      "seoDescription": "Determine quantities required to prepare a laboratory solution at a specified concentration and final volume."
+    },
+    {
+      "name": "Stock Solution Tool",
+      "slug": "stock-solution-tool",
+      "shortDescription": "Calculate the quantity required to prepare a laboratory stock solution.",
+      "formulaDisplay": "C = amount / volume",
+      "status": "draft",
+      "engine": "Stock Solution Calculator",
+      "inputSchema": [
+        {
+          "key": "concentration",
+          "label": "Target concentration",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "concentrationUnit",
+          "label": "Concentration unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "volume",
+          "label": "Final volume",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "volumeUnit",
+          "label": "Volume unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "amount_g",
+          "label": "Amount of solute required (mass)",
+          "unit": "g",
+          "rounding": "round_half_up",
+          "precision": 4
+        },
+        {
+          "key": "amount_mol",
+          "label": "Amount of solute required (moles)",
+          "unit": "mol",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "laboratory-preparation"
+      ],
+      "seoTitle": "Stock Solution Tool | LabGoTo",
+      "seoDescription": "Calculate the quantity required to prepare a laboratory stock solution."
+    },
+    {
+      "name": "Working Solution Tool",
+      "slug": "working-solution-tool",
+      "shortDescription": "Calculate how to prepare a working solution from a stock solution.",
+      "formulaDisplay": "C₁V₁ = C₂V₂",
+      "status": "draft",
+      "engine": "Working Solution Calculator",
+      "inputSchema": [
+        {
+          "key": "stockConcentration",
+          "label": "Stock concentration",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "targetConcentration",
+          "label": "Target concentration",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "finalVolume",
+          "label": "Final volume",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "volumeUnit",
+          "label": "Volume unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "result",
+          "label": "Result",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "laboratory-preparation"
+      ],
+      "seoTitle": "Working Solution Tool | LabGoTo",
+      "seoDescription": "Calculate how to prepare a working solution from a stock solution."
+    },
+    {
+      "name": "Percentage Solution Tool",
+      "slug": "percentage-solution-tool",
+      "shortDescription": "Prepare common laboratory percentage solutions using w/v, v/v, or w/w conventions.",
+      "formulaDisplay": "% = amount / total quantity × 100",
+      "status": "draft",
+      "engine": "Percentage Solution Calculator",
+      "inputSchema": [
+        {
+          "key": "convention",
+          "label": "Convention",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "amount",
+          "label": "Amount of solute",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "amount_unit",
+          "label": "Solute unit",
+          "type": "select",
+          "required": true
+        },
+        {
+          "key": "totalQuantity",
+          "label": "Total solution quantity",
+          "type": "number",
+          "min": 0,
+          "required": true
+        },
+        {
+          "key": "totalUnit",
+          "label": "Solution unit",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "percentage",
+          "label": "Percentage concentration",
+          "unit": "%",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry"
+      ],
+      "tags": [
+        "laboratory-preparation"
+      ],
+      "seoTitle": "Percentage Solution Tool | LabGoTo",
+      "seoDescription": "Prepare common laboratory percentage solutions using w/v, v/v, or w/w conventions."
+    },
+    {
+      "name": "Buffer Preparation Tool",
+      "slug": "buffer-preparation-tool",
+      "shortDescription": "Assist with preparation of buffer solutions using defined components and target concentration or pH.",
+      "formulaDisplay": "pH = pKₐ + log([A⁻]/[HA])",
+      "status": "draft",
+      "engine": "Buffer Preparation Calculator",
+      "inputSchema": [
+        {
+          "key": "targetPh",
+          "label": "Target pH",
+          "type": "number",
+          "min": 0,
+          "max": 14,
+          "step": 0.01,
+          "required": true
+        },
+        {
+          "key": "pKa",
+          "label": "pKa",
+          "type": "number",
+          "required": true
+        },
+        {
+          "key": "totalConcentration",
+          "label": "Total buffer concentration",
+          "type": "number",
+          "min": 0,
+          "unit": "mol/L",
+          "required": true
+        },
+        {
+          "key": "finalVolume",
+          "label": "Final volume",
+          "type": "number",
+          "min": 0,
+          "unit": "L",
+          "required": true
+        }
+      ],
+      "outputSchema": [
+        {
+          "key": "ratio",
+          "label": "Base/Acid ratio ([A⁻]/[HA])",
+          "rounding": "round_half_up",
+          "precision": 4
+        },
+        {
+          "key": "acid_concentration",
+          "label": "Acid form concentration ([HA])",
+          "unit": "mol/L",
+          "rounding": "round_half_up",
+          "precision": 4
+        },
+        {
+          "key": "base_concentration",
+          "label": "Base form concentration ([A⁻])",
+          "unit": "mol/L",
+          "rounding": "round_half_up",
+          "precision": 4
+        },
+        {
+          "key": "acid_amount",
+          "label": "Acid form (HA) required",
+          "unit": "mol",
+          "rounding": "round_half_up",
+          "precision": 4
+        },
+        {
+          "key": "base_amount",
+          "label": "Base form (A⁻) required",
+          "unit": "mol",
+          "rounding": "round_half_up",
+          "precision": 4
+        }
+      ],
+      "interpretationNotes": "Use compatible units and verify the result against the applicable laboratory procedure or manufacturer instructions. This tool provides calculation/conversion assistance and does not provide clinical diagnosis.",
+      "references": [
+        "Authoritative laboratory reference or manufacturer documentation applicable to the specific method, analyte, reagent, or instrument; source should be attached during clinical/reference review."
+      ],
+      "categories": [
+        "Clinical Chemistry",
+        "Laboratory Quality Assurance"
+      ],
+      "tags": [
+        "laboratory-preparation"
+      ],
+      "seoTitle": "Buffer Preparation Tool | LabGoTo",
+      "seoDescription": "Assist with preparation of buffer solutions using defined components and target concentration or pH."
+    }
+  ]
+}

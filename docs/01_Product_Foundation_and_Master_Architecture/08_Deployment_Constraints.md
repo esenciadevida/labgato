@@ -4,7 +4,7 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Current State Assessment.
 - The confirmed Hostinger PHP 8.4 hosting constraint provided by the project owner.
@@ -48,9 +48,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the strict deployment constraints for LabGato.
+This document establishes the strict deployment constraints for LABGOTO.
 
-Because LabGato will be hosted on a specific shared hosting environment, the software architecture must be designed to thrive within those limitations. Designing a system that requires a VPS, Docker, or long-running background workers will result in a deployment failure.
+Because LABGOTO will be hosted on a specific shared hosting environment, the software architecture must be designed to thrive within those limitations. Designing a system that requires a VPS, Docker, or long-running background workers will result in a deployment failure.
 
 This document ensures that every technical decision made in subsequent phases respects the reality of the production environment.
 
@@ -58,7 +58,7 @@ This document ensures that every technical decision made in subsequent phases re
 
 # 2. Confirmed Hosting Environment
 
-The following hosting parameters are confirmed and approved for LabGato production deployment.
+The following hosting parameters are confirmed and approved for LABGOTO production deployment.
 
 ## 2.1 Hosting Provider
 
@@ -95,17 +95,17 @@ The following limitations must be assumed unless explicitly verified and approve
 ## 3.1 No Guaranteed Redis or Memcached
 
 Shared hosting environments rarely do not provide Redis or Memcached.
-Therefore, LabGato must not rely on Redis for caching, sessions, or queues.
+Therefore, LABGOTO must not rely on Redis for caching, sessions, or queues.
 
 ## 3.2 No Guaranteed Node.js Runtime
 
 The server environment is primarily PHP-focused.
-LabGato must not rely on a persistent Node.js server, Server-Side Rendering (SSR) via Node, or WebSockets powered by Node on the production server.
+LABGOTO must not rely on a persistent Node.js server, Server-Side Rendering (SSR) via Node, or WebSockets powered by Node on the production server.
 
 ## 3.3 No Guaranteed Supervisor or Daemon Workers
 
 Shared hosting does not support long-running background processes.
-LabGato cannot rely on `php artisan queue:work --daemon` running continuously via Supervisor.
+LABGOTO cannot rely on `php artisan queue:work --daemon` running continuously via Supervisor.
 
 ## 3.4 No Guaranteed SSH Access
 
@@ -245,7 +245,7 @@ To maintain compatibility with the approved hosting environment, the following t
 
 ## Decisions Established
 
-- LabGato will be deployed to Hostinger PHP 8.4 shared hosting.
+- LABGOTO will be deployed to Hostinger PHP 8.4 shared hosting.
 - Redis, Node.js, and Supervisor are excluded from the deployment architecture.
 - Frontend assets must be pre-built locally or via CI/CD.
 - Queues must use the database driver or sync driver, triggered via Cron.
@@ -254,7 +254,7 @@ To maintain compatibility with the approved hosting environment, the following t
 
 ## Dependencies
 
-- Approved LabGato Master Directive.
+- Approved LABGOTO Master Directive.
 - Approved Project Charter.
 - Confirmed Hostinger constraint from the project owner.
 
@@ -285,17 +285,17 @@ It directly restricts the choices available in Document 09 (Technology Stack) an
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC08
+LABGOTO-PHASE01-DOC08
 
 ## Context
 
-LabGato must be deployed to a specific shared hosting environment (Hostinger PHP 8.4). This document establishes the strict constraints and strategies required to ensure the application architecture remains compatible with this environment, preventing the selection of infrastructure-heavy tools that would fail in production.
+LABGOTO must be deployed to a specific shared hosting environment (Hostinger PHP 8.4). This document establishes the strict constraints and strategies required to ensure the application architecture remains compatible with this environment, preventing the selection of infrastructure-heavy tools that would fail in production.
 
 This prompt implements the documentation outcome of the Deployment Constraints document.
 
 ## Objective
 
-Create the official LabGato Deployment Constraints document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Deployment Constraints document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, the repository will have a binding set of infrastructure rules that govern all future technology stack and architecture decisions.
 
@@ -303,7 +303,7 @@ After this prompt is completed, the repository will have a binding set of infras
 
 Relevant approved decisions:
 
-- LabGato follows the new master directive.
+- LABGOTO follows the new master directive.
 - Hostinger PHP 8.4 is the confirmed deployment target.
 - Shared hosting limitations must be respected.
 - Documentation controls implementation.

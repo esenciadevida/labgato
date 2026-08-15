@@ -4,7 +4,7 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Product Scope and Non-Goals document.
 - The approved Target Users and Journeys document.
@@ -15,7 +15,7 @@ This document depends on:
 
 This document defines:
 
-- Official LabGato terminology.
+- Official LABGOTO terminology.
 - Approved resource vocabulary.
 - Governance vocabulary.
 - Security vocabulary.
@@ -29,7 +29,7 @@ This document defines:
 
 This document affects:
 
-- All future LabGato documentation.
+- All future LABGOTO documentation.
 - All future naming conventions.
 - Database naming decisions.
 - API naming decisions.
@@ -54,41 +54,41 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This glossary establishes the official vocabulary for LabGato.
+This glossary establishes the official vocabulary for LABGOTO.
 
 All future documentation, implementation prompts, database names, API routes, UI labels, and architectural discussions should use these terms consistently.
 
 If a new term becomes necessary, it must be added through documentation update or an approved change request.
 
-If a term conflicts with an older project term, the latest approved LabGato terminology takes precedence.
+If a term conflicts with an older project term, the latest approved LABGOTO terminology takes precedence.
 
 ---
 
 # 2. Project Identity Terms
 
-## LabGato
+## LABGOTO
 
 The official current project name.
 
-LabGato is a professional digital toolkit/workspace for laboratory professionals and related learners.
+LABGOTO is a professional digital toolkit/workspace for laboratory professionals and related learners.
 
 ## MLS Toolkit
 
 The previous project name.
 
-LabGato is the renamed continuation of MLS Toolkit.
+LABGOTO is the renamed continuation of MLS Toolkit.
 
 Previously approved MLS Toolkit decisions remain valid unless explicitly changed.
 
 ## Professional Laboratory Toolkit
 
-The approved product category for LabGato.
+The approved product category for LABGOTO.
 
 It means the platform provides practical laboratory tools, calculators, reference ranges, SOP resources, interpretation resources, educational resources, search, and controlled AI assistance where approved.
 
 ## Laboratory Professional
 
-A general term for approved professional users of LabGato.
+A general term for approved professional users of LABGOTO.
 
 This includes:
 
@@ -99,7 +99,7 @@ This includes:
 
 ## Laboratory Resource
 
-Any approved content or utility type inside LabGato.
+Any approved content or utility type inside LABGOTO.
 
 Examples include:
 
@@ -223,7 +223,7 @@ Education Resources are part of the broader Knowledge and Education product area
 
 ## Search
 
-The platform feature that allows users to discover approved LabGato resources.
+The platform feature that allows users to discover approved LABGOTO resources.
 
 Search may cover:
 
@@ -238,7 +238,7 @@ Search architecture must be documented separately.
 
 ## AI Assistance
 
-A future controlled feature that helps users discover or understand approved LabGato information.
+A future controlled feature that helps users discover or understand approved LABGOTO information.
 
 AI Assistance must be:
 
@@ -255,7 +255,7 @@ AI Assistance must not act as an authorization layer.
 
 ## Admin Portal
 
-The secure internal area used to manage LabGato.
+The secure internal area used to manage LABGOTO.
 
 The Admin Portal is a serious internal application.
 
@@ -280,7 +280,7 @@ It may manage:
 
 ## Visitor
 
-A user browsing public LabGato pages without authentication.
+A user browsing public LABGOTO pages without authentication.
 
 Visitor access depends on the approved public/private access model for each resource.
 
@@ -343,7 +343,7 @@ Permissions must be enforced server-side.
 
 Role-Based Access Control.
 
-RBAC is the approved authorization model for LabGato.
+RBAC is the approved authorization model for LABGOTO.
 
 It ensures users receive only the permissions necessary for their role.
 
@@ -359,7 +359,7 @@ The security rule that users should receive only the minimum permissions require
 
 The approved authoritative information used to resolve conflicts.
 
-For LabGato, the source-of-truth hierarchy is:
+For LABGOTO, the source-of-truth hierarchy is:
 
 1. Latest approved architectural decision.
 2. Current master architecture.
@@ -406,7 +406,7 @@ A unique identifier for a Change Request.
 
 Example:
 
-LABGATO-CR-0001
+LABGOTO-CR-0001
 
 ## Stop-on-Conflict
 
@@ -481,7 +481,7 @@ A Vertical Slice may include:
 
 The complete checklist that must be satisfied before a feature can be marked complete.
 
-For LabGato, this includes:
+For LABGOTO, this includes:
 
 - Architecture
 - Documentation
@@ -559,7 +559,7 @@ The feature cannot proceed because of a missing decision, conflict, dependency, 
 
 A project state where no existing implementation or documentation has been provided and verified.
 
-LabGato is currently proceeding as a documentation-controlled reset unless existing MLS Toolkit assets are provided.
+LABGOTO is currently proceeding as a documentation-controlled reset unless existing MLS Toolkit assets are provided.
 
 ---
 
@@ -709,7 +709,7 @@ The date when a resource should be reviewed for accuracy and continued relevance
 
 The process of verifying who a user is.
 
-For LabGato, authentication is required for administrators.
+For LABGOTO, authentication is required for administrators.
 
 Public user authentication is TBD unless approved.
 
@@ -772,9 +772,9 @@ The privacy principle of collecting only the data required for the approved purp
 
 Personally Identifiable Information.
 
-LabGato must avoid unnecessary collection of PII.
+LABGOTO must avoid unnecessary collection of PII.
 
-LabGato must not collect patient PII.
+LABGOTO must not collect patient PII.
 
 ## Sensitive Data
 
@@ -874,7 +874,7 @@ The practice of making the platform usable by people with a wide range of abilit
 
 Web Content Accessibility Guidelines.
 
-LabGato should target WCAG 2.2 AA where practical and applicable.
+LABGOTO should target WCAG 2.2 AA where practical and applicable.
 
 ## Keyboard Navigation
 
@@ -984,13 +984,13 @@ Admin, login, and private pages must be non-indexable.
 
 ## Backend
 
-The server-side part of LabGato.
+The server-side part of LABGOTO.
 
 The backend is expected to use Laravel, subject to final technology stack approval.
 
 ## Frontend
 
-The user-facing part of LabGato.
+The user-facing part of LABGOTO.
 
 The frontend approach must be documented and approved.
 
@@ -1002,7 +1002,7 @@ APIs may be used for internal or external communication where approved.
 
 ## Database
 
-The structured data store for LabGato.
+The structured data store for LABGOTO.
 
 MySQL/MariaDB is preferred, subject to final approval.
 
@@ -1052,11 +1052,11 @@ Environment variables must be used for secrets and environment-specific settings
 
 A hosting environment where server resources are shared.
 
-LabGato must be designed to remain compatible with Hostinger shared hosting constraints.
+LABGOTO must be designed to remain compatible with Hostinger shared hosting constraints.
 
 ## Hostinger Constraint
 
-The confirmed deployment constraint that LabGato must run on Hostinger PHP/HTML hosting with PHP 8.4.
+The confirmed deployment constraint that LABGOTO must run on Hostinger PHP/HTML hosting with PHP 8.4.
 
 ## Production
 
@@ -1076,7 +1076,7 @@ The local or development environment.
 
 # 13. Deprecated or Excluded Terms
 
-These terms are excluded from the current LabGato scope unless explicitly re-approved.
+These terms are excluded from the current LABGOTO scope unless explicitly re-approved.
 
 ## Quote Wizard
 
@@ -1088,13 +1088,13 @@ This belonged to the superseded laboratory business/lead-generation scope.
 
 Excluded.
 
-Lead generation is not part of the current LabGato scope.
+Lead generation is not part of the current LABGOTO scope.
 
 ## Lead Management
 
 Excluded.
 
-Lead management is not part of the current LabGato scope.
+Lead management is not part of the current LABGOTO scope.
 
 ## Business Profile
 
@@ -1118,25 +1118,25 @@ Quotation functionality is not part of the current scope.
 
 Excluded.
 
-LabGato is not a patient result portal.
+LABGOTO is not a patient result portal.
 
 ## LIS
 
 Excluded.
 
-LabGato is not a Laboratory Information System.
+LABGOTO is not a Laboratory Information System.
 
 ## Hospital Management System
 
 Excluded.
 
-LabGato is not a hospital management system.
+LABGOTO is not a hospital management system.
 
 ## Diagnostic Engine
 
 Excluded.
 
-LabGato must not function as a diagnostic decision engine.
+LABGOTO must not function as a diagnostic decision engine.
 
 ---
 
@@ -1159,7 +1159,7 @@ LabGato must not function as a diagnostic decision engine.
 
 ## Decisions Established
 
-- LabGato terminology is official for future documentation and implementation.
+- LABGOTO terminology is official for future documentation and implementation.
 - Excluded terms must not be reintroduced without approval.
 - AI terminology is future-oriented and controlled.
 - Public user accounts remain unconfirmed.
@@ -1168,7 +1168,7 @@ LabGato must not function as a diagnostic decision engine.
 
 ## Dependencies
 
-- Approved LabGato master directive.
+- Approved LABGOTO master directive.
 - Approved Project Charter.
 - Approved Product Scope and Non-Goals.
 - Approved Target Users and Journeys.
@@ -1205,25 +1205,25 @@ It affects all future documentation, naming conventions, implementation prompts,
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC06
+LABGOTO-PHASE01-DOC06
 
 ## Context
 
-LabGato requires a controlled vocabulary to prevent ambiguity across documentation, code, UI, database design, and implementation prompts. This glossary defines the official terms for the project.
+LABGOTO requires a controlled vocabulary to prevent ambiguity across documentation, code, UI, database design, and implementation prompts. This glossary defines the official terms for the project.
 
 This prompt implements the documentation outcome of the Glossary document.
 
 ## Objective
 
-Create the official LabGato Glossary document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Glossary document inside the approved Phase 01 documentation structure.
 
-After this prompt is completed, the repository should contain the official vocabulary for LabGato.
+After this prompt is completed, the repository should contain the official vocabulary for LABGOTO.
 
 ## Existing Architecture
 
 Relevant approved decisions:
 
-- LabGato is a professional laboratory toolkit.
+- LABGOTO is a professional laboratory toolkit.
 - The previous quote/lead/business scope is superseded.
 - AI is future controlled functionality.
 - Public user accounts are not confirmed.
@@ -1334,7 +1334,7 @@ This implementation is complete when:
 
 - The Glossary file exists.
 - The file matches the approved Phase 01 file tree.
-- The file defines official LabGato terminology.
+- The file defines official LABGOTO terminology.
 - The file identifies excluded terms.
 - The file includes the document completion check.
 - The file includes the implementation prompt.

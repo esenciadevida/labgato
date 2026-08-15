@@ -6,12 +6,6 @@
 
 @section('content')
 <div class="space-y-6">
-    @if(session('success'))
-        <x-ui.alert type="success">{{ session('success') }}</x-ui.alert>
-    @endif
-    @if(session('error'))
-        <x-ui.alert type="error">{{ session('error') }}</x-ui.alert>
-    @endif
 
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <form method="GET" action="{{ route('admin.categories.index') }}" class="flex gap-2" role="search">
@@ -50,7 +44,7 @@
             </x-ui.empty-state>
         @else
             <div class="overflow-x-auto">
-                <ul class="divide-y divide-neutral-200">
+                <ul class="divide-y divide-slate-200 dark:divide-slate-700">
                     @include('admin.categories._tree', ['nodes' => $tree, 'depth' => 0])
                 </ul>
             </div>

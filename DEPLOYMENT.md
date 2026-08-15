@@ -1,6 +1,6 @@
-# LabGato Deployment Guide
+# Labgoto Deployment Guide
 
-This guide walks you through deploying LabGato to Hostinger shared hosting (PHP 8.4, MySQL/MariaDB).
+This guide walks you through deploying Labgoto to Hostinger shared hosting (PHP 8.4, MySQL/MariaDB).
 
 Each step has a dedicated document in the [deploy/](deploy/) directory. Start with the README there for a quick overview:
 
@@ -39,7 +39,7 @@ See [deploy/01-build.md](deploy/01-build.md) for details.
 Create a production archive that includes the application code and excludes development files:
 
 ```bash
-tar -czf labgato-production.tar.gz \
+tar -czf Labgoto-production.tar.gz \
   --exclude='node_modules' \
   --exclude='.git' \
   --exclude='.env' \
@@ -132,6 +132,8 @@ php artisan event:cache
 php artisan sitemap:generate
 php artisan storage:link
 ```
+
+> These commands should be run **during deployment only**, not during local development. Running them locally bakes in development values (e.g. `APP_URL`, database credentials) and can mask configuration changes.
 
 See [deploy/05-optimize.md](deploy/05-optimize.md) for details.
 

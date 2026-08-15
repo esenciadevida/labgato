@@ -42,25 +42,25 @@
 <fieldset>
     <legend class="sr-only">Categories</legend>
     @if(empty($rows))
-        <p class="text-sm text-neutral-500">No categories available.</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400">No categories available.</p>
     @else
-        <div class="max-h-64 space-y-1 overflow-y-auto rounded-md border border-neutral-200 p-3">
+        <div class="max-h-64 space-y-1 overflow-y-auto rounded-md border border-slate-200 dark:border-slate-700 p-3">
             @foreach($rows as $row)
-                <label class="flex items-center gap-2 text-sm text-neutral-700" style="padding-left: {{ $row['depth'] * 16 }}px;">
+                <label class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300" style="padding-left: {{ $row['depth'] * 16 }}px;">
                     <input
                         type="checkbox"
                         name="{{ $name }}"
                         value="{{ $row['category']->id }}"
                         @checked($row['selected'])
-                        class="rounded border-neutral-300 text-primary-600 focus:ring-primary-500"
+                        class="rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600"
                     >
                     <span>{{ $row['category']->name }}</span>
                     @if(! $row['category']->is_active)
-                        <span class="text-xs text-neutral-400">(inactive)</span>
+                        <span class="text-xs text-slate-400">(inactive)</span>
                     @endif
                 </label>
             @endforeach
         </div>
-        <p class="mt-1 text-xs text-neutral-500">Select one or more categories.</p>
+        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Select one or more categories.</p>
     @endif
 </fieldset>

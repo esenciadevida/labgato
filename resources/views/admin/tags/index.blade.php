@@ -6,12 +6,6 @@
 
 @section('content')
 <div class="space-y-6">
-    @if(session('success'))
-        <x-ui.alert type="success">{{ session('success') }}</x-ui.alert>
-    @endif
-    @if(session('error'))
-        <x-ui.alert type="error">{{ session('error') }}</x-ui.alert>
-    @endif
 
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <form method="GET" action="{{ route('admin.tags.index') }}" class="flex gap-2" role="search">
@@ -50,29 +44,29 @@
             </x-ui.empty-state>
         @else
             <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-neutral-200">
-                    <thead class="bg-neutral-50">
+                <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+                    <thead class="bg-slate-50 dark:bg-slate-700/50">
                         <tr>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-500">Name</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-500">Slug</th>
-                            <th scope="col" class="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider text-neutral-500">Actions</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Name</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Slug</th>
+                            <th scope="col" class="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-neutral-200 bg-white">
+                    <tbody class="divide-y divide-slate-200 bg-white dark:bg-slate-800">
                         @foreach($tags as $tag)
                             <tr>
-                                <td class="px-4 py-3 text-sm font-medium text-neutral-900">{{ $tag->name }}</td>
-                                <td class="px-4 py-3 text-sm text-neutral-500"><code>{{ $tag->slug }}</code></td>
+                                <td scope="row" class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-slate-100">{{ $tag->name }}</td>
+                                <td class="px-4 py-3 text-sm text-slate-500 dark:text-slate-400"><code>{{ $tag->slug }}</code></td>
                                 <td class="px-4 py-3 text-right">
                                     @can('manage', $tag)
                                         <div class="inline-flex items-center gap-2">
                                             <x-ui.button href="{{ route('admin.tags.edit', $tag) }}" variant="secondary" size="sm">
                                                 Edit
                                             </x-ui.button>
-                                            <form method="POST" action="{{ route('admin.tags.destroy', $tag) }}" class="inline-block">
+                                            <form method="POST" action="{{ route('admin.tags.destroy', $tag) }}" class="inline-block" data-confirm="Are you sure you want to delete this tag? This action cannot be undone.">
                                                 @csrf
                                                 @method('DELETE')
-                                                <x-ui.button type="submit" variant="danger" size="sm" onclick="return confirm('Are you sure you want to delete this tag?');">
+                                                <x-ui.button type="submit" variant="danger" size="sm">
                                                     Delete
                                                 </x-ui.button>
                                             </form>
@@ -86,7 +80,7 @@
             </div>
 
             @if($tags->hasPages())
-                <div class="border-t border-neutral-200 px-4 py-3">
+                <div class="border-t border-slate-200 dark:border-slate-700 px-4 py-3">
                     {{ $tags->links() }}
                 </div>
             @endif

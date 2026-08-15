@@ -17,7 +17,7 @@ This document depends on:
 
 This document defines:
 
-- The testing philosophy for LabGato resources.
+- The testing philosophy for LABGOTO resources.
 - The unit testing strategy for calculation and tool logic.
 - The feature testing strategy for admin CRUD operations.
 - The feature testing strategy for public resource pages.
@@ -53,9 +53,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Resource Testing Strategy for LabGato.
+This document establishes the Resource Testing Strategy for LABGOTO.
 
-Resources are the core value of LabGato. A bug in a calculator, a security flaw in admin CRUD, or an inaccessible public page can undermine the platform's professional credibility.
+Resources are the core value of LABGOTO. A bug in a calculator, a security flaw in admin CRUD, or an inaccessible public page can undermine the platform's professional credibility.
 
 This document defines the testing requirements that every resource implementation must satisfy before it can be considered complete.
 
@@ -422,17 +422,17 @@ It dictates the testing requirements for all future resource implementations.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE03-DOC08
+LABGOTO-PHASE03-DOC08
 
 ## Context
 
-LabGato requires a comprehensive testing strategy for all resource implementations. This document defines the testing philosophy, unit/feature/integration/accessibility/performance testing strategies, and CI/regression rules.
+LABGOTO requires a comprehensive testing strategy for all resource implementations. This document defines the testing philosophy, unit/feature/integration/accessibility/performance testing strategies, and CI/regression rules.
 
 This prompt implements the documentation outcome of the Resource Testing Strategy document.
 
 ## Objective
 
-Create the official LabGato Resource Testing Strategy document inside the approved Phase 03 documentation structure.
+Create the official LABGOTO Resource Testing Strategy document inside the approved Phase 03 documentation structure.
 
 After this prompt is completed, the repository will have a binding testing specification for all resource vertical slices.
 

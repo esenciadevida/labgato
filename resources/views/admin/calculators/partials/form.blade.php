@@ -37,7 +37,7 @@
                     value="{{ old('slug', $calculator?->slug) }}"
                     :error="$errors->first('slug')"
                 />
-                <p class="mt-1 text-xs text-neutral-500">Auto-generated from the name if left blank.</p>
+                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Auto-generated from the name if left blank.</p>
             </div>
 
             <div>
@@ -99,7 +99,7 @@
                     class="font-mono text-xs"
                 >{{ old('input_schema', $calculator ? json_encode($calculator->input_schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) : '') }}</x-ui.textarea>
                 <x-form.error for="input_schema" />
-                <p class="mt-1 text-xs text-neutral-500">
+                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
                     JSON array of fields. Each field requires key, label, and type (number, select, or text). Number fields may define unit, min, max, step, and required.
                 </p>
             </div>
@@ -113,7 +113,7 @@
                     class="font-mono text-xs"
                 >{{ old('output_schema', $calculator ? json_encode($calculator->output_schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) : '') }}</x-ui.textarea>
                 <x-form.error for="output_schema" />
-                <p class="mt-1 text-xs text-neutral-500">
+                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
                     JSON array of output fields. Each field requires key and label, and may define unit, rounding (none, round_up, round_down, round_half_up), and precision (0-10).
                 </p>
             </div>

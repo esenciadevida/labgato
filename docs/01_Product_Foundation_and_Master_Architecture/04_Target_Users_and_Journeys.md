@@ -4,12 +4,12 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Product Scope and Non-Goals document.
 - The approved Current State Assessment.
-- The decision that LabGato is a professional laboratory toolkit.
-- The decision that LabGato is not a patient, hospital, or LIS system.
+- The decision that LABGOTO is a professional laboratory toolkit.
+- The decision that LABGOTO is not a patient, hospital, or LIS system.
 
 ## Defines
 
@@ -57,11 +57,11 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document defines the target users of LabGato and the primary journeys those users are expected to take.
+This document defines the target users of LABGOTO and the primary journeys those users are expected to take.
 
 The purpose is to ensure that future pages, tools, calculators, references, SOP resources, knowledge resources, search, admin features, and AI features are designed for the correct audience.
 
-LabGato is designed for laboratory professionals and related learners.
+LABGOTO is designed for laboratory professionals and related learners.
 
 It is not designed for patients, caregivers, doctors seeking patient result access, or public clinical decision-making.
 
@@ -120,7 +120,7 @@ Their expected needs include:
 
 ## 2.4 Other Relevant Laboratory Professionals
 
-Other relevant laboratory professionals may use LabGato where appropriate.
+Other relevant laboratory professionals may use LABGOTO where appropriate.
 
 This category may include, subject to future approval and content relevance:
 
@@ -137,7 +137,7 @@ This category must not be expanded into non-laboratory clinical users unless exp
 
 # 3. Administrative User Groups
 
-LabGato requires administrative users to manage the platform.
+LABGOTO requires administrative users to manage the platform.
 
 Administrative users are not the public audience of the resource content, but they are essential system users.
 
@@ -193,41 +193,41 @@ This role is not fully confirmed until documented in the User Roles and RBAC doc
 
 # 4. Excluded User Groups
 
-The following user groups are excluded from the current LabGato scope unless explicitly approved later.
+The following user groups are excluded from the current LABGOTO scope unless explicitly approved later.
 
 ## 4.1 Patients
 
 Patients are not target users.
 
-LabGato must not be designed as a patient portal.
+LABGOTO must not be designed as a patient portal.
 
 ## 4.2 Caregivers
 
 Caregivers are not target users.
 
-LabGato must not provide caregiver-facing patient tools.
+LABGOTO must not provide caregiver-facing patient tools.
 
 ## 4.3 Doctors Seeking Patient Results
 
 Doctors are not current target users unless explicitly approved later.
 
-LabGato must not provide doctor result access, referral tools, or patient clinical workflows.
+LABGOTO must not provide doctor result access, referral tools, or patient clinical workflows.
 
 ## 4.4 General Public Seeking Personal Medical Advice
 
-The general public may view public educational resources where applicable, but LabGato must not be designed as a personal medical advice platform.
+The general public may view public educational resources where applicable, but LABGOTO must not be designed as a personal medical advice platform.
 
 ## 4.5 Hospital Administrators
 
 Hospital administrators are not target users.
 
-LabGato is not a hospital management system.
+LABGOTO is not a hospital management system.
 
 ---
 
 # 5. User Needs Summary
 
-The following user needs should guide LabGato design.
+The following user needs should guide LABGOTO design.
 
 ## 5.1 Speed
 
@@ -253,13 +253,13 @@ Users should understand where they are and what type of resource they are viewin
 
 ## 5.4 Accessibility
 
-Users should be able to use LabGato with keyboard, mouse, touch, and screen reader support where appropriate.
+Users should be able to use LABGOTO with keyboard, mouse, touch, and screen reader support where appropriate.
 
 Forms, calculators, tables, and navigation must be accessible.
 
 ## 5.5 Mobile Use
 
-Laboratory users may access LabGato on mobile devices.
+Laboratory users may access LABGOTO on mobile devices.
 
 Important journeys must work well on small screens.
 
@@ -296,13 +296,13 @@ This user may access public resources if those resources are approved for public
 
 The final access model must be documented later.
 
-## Journey 6.1 Discover LabGato
+## Journey 6.1 Discover LABGOTO
 
 Steps:
 
-1. The user arrives at LabGato through search, a shared link, or direct access.
-2. The user sees a clear explanation of what LabGato provides.
-3. The user understands that LabGato is a laboratory toolkit.
+1. The user arrives at LABGOTO through search, a shared link, or direct access.
+2. The user sees a clear explanation of what LABGOTO provides.
+3. The user understands that LABGOTO is a laboratory toolkit.
 4. The user sees primary resource areas.
 5. The user chooses a resource area.
 
@@ -494,7 +494,7 @@ Required where account functionality exists.
 
 # 8. Administrator Journeys
 
-Administrators use the Admin Portal to manage LabGato.
+Administrators use the Admin Portal to manage LABGOTO.
 
 ## Journey 8.1 Administrator Login
 
@@ -678,7 +678,7 @@ Failure states:
 
 # 9. Cross-Cutting Journey Requirements
 
-All LabGato journeys must support the following requirements.
+All LABGOTO journeys must support the following requirements.
 
 ## 9.1 Loading States
 
@@ -756,11 +756,11 @@ The following constraints apply to all journeys.
 
 ## 10.1 No Patient Journeys
 
-LabGato must not create patient-facing journeys unless explicitly approved later.
+LABGOTO must not create patient-facing journeys unless explicitly approved later.
 
 ## 10.2 No Diagnostic Journeys
 
-LabGato must not create journeys that claim to diagnose conditions or replace clinical judgment.
+LABGOTO must not create journeys that claim to diagnose conditions or replace clinical judgment.
 
 ## 10.3 No Unapproved AI Journeys
 
@@ -865,7 +865,7 @@ For the first implementation slices, the following journeys should receive prior
 
 ## Decisions Established
 
-- LabGato targets laboratory professionals and related learners.
+- LABGOTO targets laboratory professionals and related learners.
 - Patients are excluded from current scope.
 - Doctors seeking patient results are excluded from current scope.
 - Administrators are required.
@@ -876,7 +876,7 @@ For the first implementation slices, the following journeys should receive prior
 
 ## Dependencies
 
-- Approved LabGato master directive.
+- Approved LABGOTO master directive.
 - Approved Project Charter.
 - Approved Product Scope and Non-Goals.
 - Approved Current State Assessment.
@@ -919,17 +919,17 @@ It affects future information architecture, admin portal, authentication, author
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC04
+LABGOTO-PHASE01-DOC04
 
 ## Context
 
-LabGato has adopted the new master directive. The product requires a clear definition of target users and user journeys before information architecture, page structure, admin design, and feature implementation can proceed.
+LABGOTO has adopted the new master directive. The product requires a clear definition of target users and user journeys before information architecture, page structure, admin design, and feature implementation can proceed.
 
 This prompt implements the documentation outcome of the Target Users and Journeys document.
 
 ## Objective
 
-Create the official LabGato Target Users and Journeys document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Target Users and Journeys document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, the repository should contain an approved user and journey foundation for future architecture documents.
 
@@ -937,8 +937,8 @@ After this prompt is completed, the repository should contain an approved user a
 
 Relevant approved decisions:
 
-- LabGato is a professional laboratory toolkit.
-- LabGato is not a patient, hospital, or LIS system.
+- LABGOTO is a professional laboratory toolkit.
+- LABGOTO is not a patient, hospital, or LIS system.
 - Public user accounts are not confirmed.
 - Administrators are required.
 - AI is deferred until the resource architecture is sufficiently mature.

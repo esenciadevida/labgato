@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── app/
 │   ├── Http/
 │   │   └── Controllers/
@@ -44,10 +44,10 @@ labgato/
             ├── AdminNavigationTest.php
             └── AdminDashboardTest.php
 
-IMPLEMENTATION PROMPT ID: LABGATO-SLICE1-BUILD5
+IMPLEMENTATION PROMPT ID: LABGOTO-SLICE1-BUILD5
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
 
 Build 1 through Build 4 are complete. The Laravel foundation, database schema, authentication, session security, and RBAC system are implemented.
 
@@ -83,7 +83,7 @@ FILES TO INSPECT:
 - resources/views/layouts/
 - resources/views/admin/dashboard.blade.php
 - database/seeders/RolePermissionSeeder.php
-- config/labgato.php
+- config/LABGOTO.php
 
 FILES TO CREATE:
 - resources/views/layouts/admin.blade.php
@@ -155,7 +155,7 @@ ADMIN SIDEBAR REQUIREMENTS:
 Create resources/views/components/admin/sidebar.blade.php.
 
 Sidebar must include:
-- LabGato logo or site name.
+- LABGOTO logo or site name.
 - Primary navigation groups.
 - Active state highlighting.
 - Mobile close button.

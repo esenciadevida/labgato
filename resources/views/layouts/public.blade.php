@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', config('app.name'))</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('assets/LabGoTo_favicon.svg') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/LabGoTo_favicon_32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/LabGoTo_favicon_16.png') }}">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('assets/LabGoTo_favicon_192.png') }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('assets/LabGoTo_favicon_512.png') }}">
+    <x-brand.fonts />
+    <x-theme-script />
     <x-public.meta
         :title="$pageTitle ?? config('app.name')"
         :description="$metaDescription ?? config('app.name') . ' - Professional Laboratory Toolkit'"
@@ -14,8 +20,11 @@
     @livewireStyles
     @stack('head')
 </head>
-<body class="font-sans antialiased bg-neutral-50 flex flex-col min-h-screen">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500">
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased flex flex-col min-h-screen">
+    <div id="top" aria-hidden="true" class="absolute top-0 pointer-events-none"></div>
+    <x-public.announcement-banner />
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-slate-900 focus:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500">
         Skip to main content
     </a>
 
@@ -28,6 +37,10 @@
     <x-public.footer />
 
     @stack('scripts')
-    @livewireScripts
+    @livewireScriptConfig
+    <x-public.popup :popups="app(\App\Services\PublicNoticeService::class)->activePopups()" />
+    <x-public.cookie-consent />
+    <x-ui.flash />
+    <x-ui.confirm />
 </body>
 </html>

@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── app/
 │   └── Models/
 │       ├── User.php
@@ -46,17 +46,17 @@ Laravel already generated default migrations for users, sessions, cache, jobs, f
 If your Laravel version already includes the sessions table inside the users migration, keep that structure and do not create a duplicate sessions migration.
 Migration file names may vary slightly based on Laravel’s default timestamps. Preserve Laravel’s order and naming convention.
 
-IMPLEMENTATION PROMPT ID: LABGATO-SLICE1-BUILD2
+IMPLEMENTATION PROMPT ID: LABGOTO-SLICE1-BUILD2
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
 
 Build 1 is complete. The Laravel application boots, environment configuration exists, and database/session/cache/queue drivers are configured to use the database where practical.
 
 We are now implementing Build 2: Database Foundation & Migrations.
 
 OBJECTIVE:
-Create the foundation database schema, Eloquent models, factories, and seeders for LabGato.
+Create the foundation database schema, Eloquent models, factories, and seeders for LABGOTO.
 
 This build must create the database foundation for:
 - Users
@@ -141,7 +141,7 @@ FILES TO MODIFY:
 - database/migrations/xxxx_create_cache_table.php if not already provided by Laravel
 - database/migrations/xxxx_create_jobs_table.php if not already provided by Laravel
 - database/migrations/xxxx_create_password_reset_tokens_table.php if not already provided by Laravel
-- config/labgato.php
+- config/LABGOTO.php
 - .env.example
 
 DATABASE REQUIREMENTS:
@@ -563,11 +563,11 @@ Rules:
 - It must assign the Super Administrator role to the created user.
 
 Expected configuration values:
-- LABGATO_SEED_ADMIN=false by default
-- LABGATO_ADMIN_EMAIL=
-- LABGATO_ADMIN_PASSWORD=
+- LABGOTO_SEED_ADMIN=false by default
+- LABGOTO_ADMIN_EMAIL=
+- LABGOTO_ADMIN_PASSWORD=
 
-If LABGATO_SEED_ADMIN is not true, the seeder must do nothing.
+If LABGOTO_SEED_ADMIN is not true, the seeder must do nothing.
 
 3. DATABASE SEEDER
 Modify database/seeders/DatabaseSeeder.php.
@@ -580,17 +580,17 @@ ENVIRONMENT REQUIREMENTS:
 
 Modify .env.example and add:
 
-LABGATO_SEED_ADMIN=false
-LABGATO_ADMIN_EMAIL=
-LABGATO_ADMIN_PASSWORD=
+LABGOTO_SEED_ADMIN=false
+LABGOTO_ADMIN_EMAIL=
+LABGOTO_ADMIN_PASSWORD=
 
-Modify config/labgato.php and add:
+Modify config/LABGOTO.php and add:
 
 'seed' => [
     'admin' => [
-        'enabled' => env('LABGATO_SEED_ADMIN', false),
-        'email' => env('LABGATO_ADMIN_EMAIL'),
-        'password' => env('LABGATO_ADMIN_PASSWORD'),
+        'enabled' => env('LABGOTO_SEED_ADMIN', false),
+        'email' => env('LABGOTO_ADMIN_EMAIL'),
+        'password' => env('LABGOTO_ADMIN_PASSWORD'),
     ],
 ],
 

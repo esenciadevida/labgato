@@ -28,4 +28,25 @@ class SearchResult
             'publishedAt' => $this->publishedAt?->format('Y-m-d H:i:s'),
         ];
     }
+
+    /**
+     * Highlight matching terms in text with <mark> tags.
+     */
+    public static function highlight(string $query, string $text): string
+    {
+        $words = array_filter(array_map('trim', explode(' ', $query)));
+        if (empty($words)) {
+            return e($text);
+        }
+
+        $escaped = array_map(function ($word) {
+            return preg_quote($word, '/');
+        }, $words);
+
+        $pattern = '/('.implode('|', $escaped).')/iu';
+
+        return preg_replace_callback($pattern, function ($matches) {
+            return '<mark class="search-highlight">'.e($matches[0]).'</mark>';
+        }, e($text));
+    }
 }

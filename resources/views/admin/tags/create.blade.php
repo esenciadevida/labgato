@@ -21,7 +21,7 @@
                         aria-required="true"
                         @input="if (slug === '') slug = $event.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')"
                     />
-                    <p class="mt-1 text-xs text-neutral-500">Tags are normalized to lowercase.</p>
+                    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Tags are normalized to lowercase.</p>
                 </div>
 
                 <div>
@@ -34,7 +34,7 @@
                         :error="$errors->first('slug')"
                         aria-required="true"
                     />
-                    <p class="mt-1 text-xs text-neutral-500">Auto-generated from the name. Leave blank to generate.</p>
+                    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Auto-generated from the name. Leave blank to generate.</p>
                 </div>
             </div>
         </x-ui.card>

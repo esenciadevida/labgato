@@ -1,0 +1,1496 @@
+{
+  "schema_version": "2.0",
+  "project": "LabGoTo",
+  "record_type": "tool",
+  "title": "LabGoTo Master Tools Seed",
+  "status_policy": "All records are Draft until engine, UI, validation, references, and product review are complete.",
+  "tool_count": 20,
+  "tools": [
+    {
+      "name": "Temperature Unit Converter",
+      "slug": "temperature-unit-converter",
+      "short_description": "Convert temperatures between Celsius, Fahrenheit, and Kelvin.",
+      "formula_display": "°F = (°C × 9/5) + 32; K = °C + 273.15",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "°C",
+              "°F",
+              "K"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "°C",
+              "°F",
+              "K"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "temperature"
+        ]
+      },
+      "seo": {
+        "seo_title": "Temperature Unit Converter | LabGoTo",
+        "seo_description": "Convert temperatures between Celsius, Fahrenheit, and Kelvin. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Mass Unit Converter",
+      "slug": "mass-unit-converter",
+      "short_description": "Convert common laboratory mass units.",
+      "formula_display": "1 g = 1000 mg = 10⁶ µg = 10⁹ ng",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "kg",
+              "g",
+              "mg",
+              "µg",
+              "ng",
+              "pg"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "kg",
+              "g",
+              "mg",
+              "µg",
+              "ng",
+              "pg"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry",
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "mass"
+        ]
+      },
+      "seo": {
+        "seo_title": "Mass Unit Converter | LabGoTo",
+        "seo_description": "Convert common laboratory mass units. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Volume Unit Converter",
+      "slug": "volume-unit-converter",
+      "short_description": "Convert common laboratory volume units.",
+      "formula_display": "1 L = 1000 mL; 1 mL = 1000 µL",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "L",
+              "mL",
+              "µL",
+              "nL",
+              "dL",
+              "cL"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "L",
+              "mL",
+              "µL",
+              "nL",
+              "dL",
+              "cL"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry",
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "volume"
+        ]
+      },
+      "seo": {
+        "seo_title": "Volume Unit Converter | LabGoTo",
+        "seo_description": "Convert common laboratory volume units. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Length Unit Converter",
+      "slug": "length-unit-converter",
+      "short_description": "Convert metric laboratory length units.",
+      "formula_display": "1 m = 100 cm = 1000 mm",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "km",
+              "m",
+              "cm",
+              "mm",
+              "µm",
+              "nm"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "km",
+              "m",
+              "cm",
+              "mm",
+              "µm",
+              "nm"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "length",
+          "microscopy"
+        ]
+      },
+      "seo": {
+        "seo_title": "Length Unit Converter | LabGoTo",
+        "seo_description": "Convert metric laboratory length units. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Time Unit Converter",
+      "slug": "time-unit-converter",
+      "short_description": "Convert time between laboratory-relevant units.",
+      "formula_display": "1 min = 60 s; 1 h = 60 min; 1 d = 24 h",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "ns",
+              "µs",
+              "ms",
+              "s",
+              "min",
+              "h",
+              "d"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "ns",
+              "µs",
+              "ms",
+              "s",
+              "min",
+              "h",
+              "d"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "time"
+        ]
+      },
+      "seo": {
+        "seo_title": "Time Unit Converter | LabGoTo",
+        "seo_description": "Convert time between laboratory-relevant units. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Pressure Unit Converter",
+      "slug": "pressure-unit-converter",
+      "short_description": "Convert pressure between common SI and laboratory units.",
+      "formula_display": "1 atm = 101325 Pa; 1 bar = 100000 Pa",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "Pa",
+              "kPa",
+              "MPa",
+              "bar",
+              "atm",
+              "mmHg",
+              "Torr",
+              "psi"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "Pa",
+              "kPa",
+              "MPa",
+              "bar",
+              "atm",
+              "mmHg",
+              "Torr",
+              "psi"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry",
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "pressure",
+          "mmhg"
+        ]
+      },
+      "seo": {
+        "seo_title": "Pressure Unit Converter | LabGoTo",
+        "seo_description": "Convert pressure between common SI and laboratory units. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Amount of Substance Unit Converter",
+      "slug": "amount-of-substance-unit-converter",
+      "short_description": "Convert amount of substance between molar SI prefixes.",
+      "formula_display": "1 mol = 1000 mmol = 10⁶ µmol = 10⁹ nmol",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "mol",
+              "mmol",
+              "µmol",
+              "nmol",
+              "pmol"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "mol",
+              "mmol",
+              "µmol",
+              "nmol",
+              "pmol"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry"
+        ],
+        "tags": [
+          "unit-converter",
+          "mole",
+          "mmol"
+        ]
+      },
+      "seo": {
+        "seo_title": "Amount of Substance Unit Converter | LabGoTo",
+        "seo_description": "Convert amount of substance between molar SI prefixes. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Molar Concentration Unit Converter",
+      "slug": "molar-concentration-unit-converter",
+      "short_description": "Convert molar concentration units such as mmol/L and µmol/L.",
+      "formula_display": "1 mol/L = 1000 mmol/L = 10⁶ µmol/L",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "mol/L",
+              "mmol/L",
+              "µmol/L",
+              "nmol/L",
+              "pmol/L"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "mol/L",
+              "mmol/L",
+              "µmol/L",
+              "nmol/L",
+              "pmol/L"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry"
+        ],
+        "tags": [
+          "unit-converter",
+          "molar-concentration",
+          "mmol-l"
+        ]
+      },
+      "seo": {
+        "seo_title": "Molar Concentration Unit Converter | LabGoTo",
+        "seo_description": "Convert molar concentration units such as mmol/L and µmol/L. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Mass Concentration Unit Converter",
+      "slug": "mass-concentration-unit-converter",
+      "short_description": "Convert laboratory mass-concentration units such as mg/dL and mg/L.",
+      "formula_display": "1 mg/dL = 10 mg/L",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "g/L",
+              "mg/L",
+              "µg/L",
+              "ng/L",
+              "g/dL",
+              "mg/dL",
+              "µg/dL",
+              "ng/dL"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "g/L",
+              "mg/L",
+              "µg/L",
+              "ng/L",
+              "g/dL",
+              "mg/dL",
+              "µg/dL",
+              "ng/dL"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry"
+        ],
+        "tags": [
+          "unit-converter",
+          "mass-concentration",
+          "mg-dl"
+        ]
+      },
+      "seo": {
+        "seo_title": "Mass Concentration Unit Converter | LabGoTo",
+        "seo_description": "Convert laboratory mass-concentration units such as mg/dL and mg/L. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Area Unit Converter",
+      "slug": "area-unit-converter",
+      "short_description": "Convert common metric and customary area units.",
+      "formula_display": "1 m² = 10,000 cm²",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "m²",
+              "cm²",
+              "mm²",
+              "ft²",
+              "in²"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "m²",
+              "cm²",
+              "mm²",
+              "ft²",
+              "in²"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "area"
+        ]
+      },
+      "seo": {
+        "seo_title": "Area Unit Converter | LabGoTo",
+        "seo_description": "Convert common metric and customary area units. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Energy Unit Converter",
+      "slug": "energy-unit-converter",
+      "short_description": "Convert energy units used in scientific and laboratory contexts.",
+      "formula_display": "1 cal = 4.184 J; 1 kWh = 3.6 MJ",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "J",
+              "kJ",
+              "cal",
+              "kcal",
+              "Wh",
+              "kWh"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "J",
+              "kJ",
+              "cal",
+              "kcal",
+              "Wh",
+              "kWh"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "energy"
+        ]
+      },
+      "seo": {
+        "seo_title": "Energy Unit Converter | LabGoTo",
+        "seo_description": "Convert energy units used in scientific and laboratory contexts. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Density Unit Converter",
+      "slug": "density-unit-converter",
+      "short_description": "Convert density between common laboratory units.",
+      "formula_display": "1 g/mL = 1000 kg/m³",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "kg/m³",
+              "g/mL",
+              "g/L",
+              "mg/mL"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "kg/m³",
+              "g/mL",
+              "g/L",
+              "mg/mL"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry",
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "density"
+        ]
+      },
+      "seo": {
+        "seo_title": "Density Unit Converter | LabGoTo",
+        "seo_description": "Convert density between common laboratory units. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Volume Flow Rate Unit Converter",
+      "slug": "volume-flow-rate-unit-converter",
+      "short_description": "Convert laboratory volume flow-rate units.",
+      "formula_display": "1 L/min = 1000 mL/min",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "L/s",
+              "L/min",
+              "mL/s",
+              "mL/min",
+              "µL/min"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "L/s",
+              "L/min",
+              "mL/s",
+              "mL/min",
+              "µL/min"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "flow-rate"
+        ]
+      },
+      "seo": {
+        "seo_title": "Volume Flow Rate Unit Converter | LabGoTo",
+        "seo_description": "Convert laboratory volume flow-rate units. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Dynamic Viscosity Unit Converter",
+      "slug": "dynamic-viscosity-unit-converter",
+      "short_description": "Convert dynamic viscosity between Pa·s and cP.",
+      "formula_display": "1 mPa·s = 1 cP",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Unit Converter",
+        "input_schema": [
+          {
+            "key": "value",
+            "label": "Value",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "from_unit",
+            "label": "From unit",
+            "type": "select",
+            "options": [
+              "Pa·s",
+              "mPa·s",
+              "µPa·s",
+              "cP"
+            ],
+            "required": true
+          },
+          {
+            "key": "to_unit",
+            "label": "To unit",
+            "type": "select",
+            "options": [
+              "Pa·s",
+              "mPa·s",
+              "µPa·s",
+              "cP"
+            ],
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "converted_value",
+            "label": "Converted value",
+            "unit": "selected",
+            "rounding": "none",
+            "precision": 8
+          }
+        ],
+        "interpretation_notes": "Unit conversion only. It must not provide clinical interpretation. Reject non-finite input and unsupported units.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          },
+          {
+            "title": "NIST Handbook 44, Appendix C — General Tables of Units of Measurement",
+            "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+            "scope": "General measurement-unit conversion tables."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "unit-converter",
+          "viscosity"
+        ]
+      },
+      "seo": {
+        "seo_title": "Dynamic Viscosity Unit Converter | LabGoTo",
+        "seo_description": "Convert dynamic viscosity between Pa·s and cP. Educational laboratory reference tool."
+      }
+    },
+    {
+      "name": "Dilution Calculator",
+      "slug": "dilution-calculator",
+      "short_description": "Calculate stock volume and diluent volume using C₁V₁ = C₂V₂.",
+      "formula_display": "C₁V₁ = C₂V₂",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Dilution Calculator",
+        "input_schema": [
+          {
+            "key": "stock_concentration",
+            "label": "Stock concentration",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "target_concentration",
+            "label": "Target concentration",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "final_volume",
+            "label": "Final volume",
+            "type": "number",
+            "unit": "mL",
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "stock_volume",
+            "label": "Stock volume",
+            "unit": "mL",
+            "rounding": "none",
+            "precision": 3
+          },
+          {
+            "key": "diluent_volume",
+            "label": "Diluent volume",
+            "unit": "mL",
+            "rounding": "none",
+            "precision": 3
+          }
+        ],
+        "interpretation_notes": "Concentration units must be compatible. Target concentration must not exceed stock concentration. Output assumes additive volume approximation.",
+        "references": [
+          {
+            "title": "Thermo Fisher Scientific — Preparing Dilutions",
+            "url": "https://assets.thermofisher.com/TFS-Assets/LSG/Application-Notes/cms_043004.pdf"
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry",
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "dilution",
+          "c1v1-c2v2",
+          "solution-preparation"
+        ]
+      },
+      "seo": {
+        "seo_title": "Dilution Calculator | LabGoTo",
+        "seo_description": "Calculate stock and diluent volumes for laboratory dilutions."
+      }
+    },
+    {
+      "name": "Serial Dilution Planner",
+      "slug": "serial-dilution-planner",
+      "short_description": "Plan repeated dilution steps from an initial concentration.",
+      "formula_display": "Cₙ = C₀ / DFⁿ",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Serial Dilution Planner",
+        "input_schema": [
+          {
+            "key": "initial_concentration",
+            "label": "Initial concentration",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "dilution_factor",
+            "label": "Dilution factor",
+            "type": "number",
+            "required": true
+          },
+          {
+            "key": "number_of_steps",
+            "label": "Number of steps",
+            "type": "number",
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "final_concentration",
+            "label": "Final concentration",
+            "rounding": "none",
+            "precision": 6
+          }
+        ],
+        "interpretation_notes": "Dilution factor must be greater than 1 and number of steps must be a non-negative integer.",
+        "references": [
+          {
+            "title": "CDC — Serial Dilution Laboratory Concepts",
+            "url": "https://www.cdc.gov/laboratory-training/php/courses/"
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry",
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "serial-dilution",
+          "dilution",
+          "laboratory-preparation"
+        ]
+      },
+      "seo": {
+        "seo_title": "Serial Dilution Planner | LabGoTo",
+        "seo_description": "Plan sequential laboratory dilutions."
+      }
+    },
+    {
+      "name": "Molarity Calculator",
+      "slug": "molarity-calculator",
+      "short_description": "Calculate molarity from amount of substance and solution volume.",
+      "formula_display": "M = n / V",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Molarity Calculator",
+        "input_schema": [
+          {
+            "key": "amount",
+            "label": "Amount of substance",
+            "type": "number",
+            "unit": "mol",
+            "required": true
+          },
+          {
+            "key": "volume",
+            "label": "Solution volume",
+            "type": "number",
+            "unit": "L",
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "molarity",
+            "label": "Molarity",
+            "unit": "mol/L",
+            "rounding": "none",
+            "precision": 6
+          }
+        ],
+        "interpretation_notes": "Volume must be positive. This calculator does not infer molecular weight.",
+        "references": [
+          {
+            "title": "NIST SI Units",
+            "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+            "scope": "SI units and prefixes."
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry"
+        ],
+        "tags": [
+          "molarity",
+          "concentration",
+          "solution-preparation"
+        ]
+      },
+      "seo": {
+        "seo_title": "Molarity Calculator | LabGoTo",
+        "seo_description": "Calculate molarity from moles and solution volume."
+      }
+    },
+    {
+      "name": "RCF Calculator",
+      "slug": "rcf-calculator",
+      "short_description": "Calculate relative centrifugal force from rotor radius and speed.",
+      "formula_display": "RCF = 1.118 × 10⁻⁵ × r(cm) × RPM²",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "RCF Calculator",
+        "input_schema": [
+          {
+            "key": "radius",
+            "label": "Rotor radius",
+            "type": "number",
+            "unit": "cm",
+            "required": true
+          },
+          {
+            "key": "rpm",
+            "label": "Rotor speed",
+            "type": "number",
+            "unit": "rpm",
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "rcf",
+            "label": "Relative centrifugal force",
+            "unit": "×g",
+            "rounding": "none",
+            "precision": 2
+          }
+        ],
+        "interpretation_notes": "Use the effective rotor radius specified by the centrifuge manufacturer.",
+        "references": [
+          {
+            "title": "Thermo Fisher Scientific — Centrifuge RCF/RPM guidance",
+            "url": "https://www.thermofisher.com/"
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "centrifuge",
+          "rcf",
+          "rpm"
+        ]
+      },
+      "seo": {
+        "seo_title": "RCF Calculator | LabGoTo",
+        "seo_description": "Calculate relative centrifugal force from RPM and rotor radius."
+      }
+    },
+    {
+      "name": "RPM from RCF Calculator",
+      "slug": "rpm-from-rcf-calculator",
+      "short_description": "Calculate centrifuge RPM required to achieve a target RCF.",
+      "formula_display": "RPM = √(RCF / (1.118 × 10⁻⁵ × r))",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "RPM from RCF",
+        "input_schema": [
+          {
+            "key": "rcf",
+            "label": "Target RCF",
+            "type": "number",
+            "unit": "×g",
+            "required": true
+          },
+          {
+            "key": "radius",
+            "label": "Rotor radius",
+            "type": "number",
+            "unit": "cm",
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "rpm",
+            "label": "Required RPM",
+            "unit": "rpm",
+            "rounding": "none",
+            "precision": 0
+          }
+        ],
+        "interpretation_notes": "Use the actual rotor radius from the centrifuge specification.",
+        "references": [
+          {
+            "title": "Thermo Fisher Scientific — Centrifuge RCF/RPM guidance",
+            "url": "https://www.thermofisher.com/"
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "centrifuge",
+          "rpm",
+          "rcf"
+        ]
+      },
+      "seo": {
+        "seo_title": "RPM from RCF Calculator | LabGoTo",
+        "seo_description": "Calculate required centrifuge speed from RCF and rotor radius."
+      }
+    },
+    {
+      "name": "Specimen Dilution Factor Calculator",
+      "slug": "specimen-dilution-factor",
+      "short_description": "Calculate the total dilution factor from specimen and diluent volumes.",
+      "formula_display": "DF = (Specimen volume + Diluent volume) / Specimen volume",
+      "status": "Draft",
+      "tool_configuration": {
+        "engine": "Dilution Factor",
+        "input_schema": [
+          {
+            "key": "specimen_volume",
+            "label": "Specimen volume",
+            "type": "number",
+            "unit": "mL",
+            "required": true
+          },
+          {
+            "key": "diluent_volume",
+            "label": "Diluent volume",
+            "type": "number",
+            "unit": "mL",
+            "required": true
+          }
+        ],
+        "output_schema": [
+          {
+            "key": "dilution_factor",
+            "label": "Dilution factor",
+            "unit": "×",
+            "rounding": "none",
+            "precision": 3
+          }
+        ],
+        "interpretation_notes": "Volumes must be positive. This assumes complete mixing and additive volumes.",
+        "references": [
+          {
+            "title": "Thermo Fisher Scientific — Preparing Dilutions",
+            "url": "https://assets.thermofisher.com/TFS-Assets/LSG/Application-Notes/cms_043004.pdf"
+          }
+        ]
+      },
+      "taxonomy": {
+        "categories": [
+          "Clinical Chemistry",
+          "Laboratory Quality Assurance"
+        ],
+        "tags": [
+          "dilution-factor",
+          "specimen",
+          "laboratory-preparation"
+        ]
+      },
+      "seo": {
+        "seo_title": "Specimen Dilution Factor Calculator | LabGoTo",
+        "seo_description": "Calculate total specimen dilution factor."
+      }
+    }
+  ],
+  "quality_rules": [
+    "Every tool must have a deterministic engine definition.",
+    "Input and output schemas are data contracts and are never executed directly.",
+    "Medical interpretation must not be inferred from a generic unit converter.",
+    "Unit converters belong under Tools.",
+    "Analyte-dependent conversions requiring molecular weight belong in specialized calculators/tools, not generic unit conversion.",
+    "References must be retained with the record.",
+    "Every production engine must have automated edge-case tests before publication."
+  ],
+  "source_policy": "Use authoritative standards, government references, manufacturer documentation, or peer-reviewed literature. Avoid unsourced formula aggregation."
+}

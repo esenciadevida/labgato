@@ -7,7 +7,7 @@ use App\Models\Calculator;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
-use App\Services\Calculators\Engines\AnionGapCalculator;
+use App\Services\Calculators\Engines\McvCalculator;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -29,27 +29,26 @@ class CalculatorAdminCrudTest extends TestCase
     private function validPayload(array $overrides = []): array
     {
         return array_merge([
-            'name' => 'Anion Gap Calculator',
-            'slug' => 'anion-gap-calculator',
-            'short_description' => 'Calculates the serum anion gap.',
-            'formula_display' => 'Sodium - (Chloride + Bicarbonate)',
+            'name' => 'MCV Calculator',
+            'slug' => 'mcv-calculator',
+            'short_description' => 'Calculates the mean corpuscular volume.',
+            'formula_display' => 'MCV = (Hct × 10) / RBC',
             'status' => ResourceStatus::DRAFT->value,
             'input_schema' => json_encode([
-                ['key' => 'sodium', 'label' => 'Serum Sodium', 'type' => 'number', 'required' => true],
-                ['key' => 'chloride', 'label' => 'Serum Chloride', 'type' => 'number', 'required' => true],
-                ['key' => 'bicarbonate', 'label' => 'Serum Bicarbonate', 'type' => 'number', 'required' => true],
+                ['key' => 'hematocrit', 'label' => 'Hematocrit', 'type' => 'number', 'required' => true],
+                ['key' => 'rbc', 'label' => 'RBC count', 'type' => 'number', 'required' => true],
             ]),
             'output_schema' => json_encode([
-                ['key' => 'anion_gap', 'label' => 'Anion Gap', 'rounding' => 'round_half_up', 'precision' => 1],
+                ['key' => 'mcv', 'label' => 'MCV', 'rounding' => 'round_half_up', 'precision' => 1],
             ]),
             'engine' => 'php_class',
-            'engine_reference' => AnionGapCalculator::class,
+            'engine_reference' => McvCalculator::class,
             'interpretation_notes' => 'Interpretation notes.',
             'references' => 'Clinical reference.',
             'categories' => [],
             'tags' => [],
-            'seo_title' => 'Anion Gap Calculator',
-            'seo_description' => 'Clinical anion gap calculator.',
+            'seo_title' => 'MCV Calculator',
+            'seo_description' => 'Mean corpuscular volume calculator.',
         ], $overrides);
     }
 
@@ -89,8 +88,8 @@ class CalculatorAdminCrudTest extends TestCase
         $response->assertSessionHas('success');
 
         $this->assertDatabaseHas('calculators', [
-            'name' => 'Anion Gap Calculator',
-            'slug' => 'anion-gap-calculator',
+            'name' => 'MCV Calculator',
+            'slug' => 'mcv-calculator',
             'status' => ResourceStatus::DRAFT->value,
             'created_by' => $user->id,
         ]);
@@ -107,7 +106,7 @@ class CalculatorAdminCrudTest extends TestCase
             'status' => ResourceStatus::PUBLISHED->value,
         ]));
 
-        $response->assertRedirect(route('admin.calculators.index'));
+        $response->assertRedirect(route('admin.calculators.edit', $calculator));
         $response->assertSessionHas('success');
 
         $this->assertDatabaseHas('calculators', [

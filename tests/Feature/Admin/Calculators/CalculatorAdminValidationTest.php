@@ -6,7 +6,7 @@ use App\Models\Calculator;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
-use App\Services\Calculators\Engines\AnionGapCalculator;
+use App\Services\Calculators\Engines\McvCalculator;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -28,21 +28,20 @@ class CalculatorAdminValidationTest extends TestCase
     private function validPayload(array $overrides = []): array
     {
         return array_merge([
-            'name' => 'Anion Gap Calculator',
-            'slug' => 'anion-gap-calculator',
-            'short_description' => 'Calculates the serum anion gap.',
-            'formula_display' => 'Sodium - (Chloride + Bicarbonate)',
+            'name' => 'MCV Calculator',
+            'slug' => 'mcv-calculator',
+            'short_description' => 'Calculates the mean corpuscular volume.',
+            'formula_display' => 'MCV = (Hct × 10) / RBC',
             'status' => 'draft',
             'input_schema' => json_encode([
-                ['key' => 'sodium', 'label' => 'Serum Sodium', 'type' => 'number', 'required' => true],
-                ['key' => 'chloride', 'label' => 'Serum Chloride', 'type' => 'number', 'required' => true],
-                ['key' => 'bicarbonate', 'label' => 'Serum Bicarbonate', 'type' => 'number', 'required' => true],
+                ['key' => 'hematocrit', 'label' => 'Hematocrit', 'type' => 'number', 'required' => true],
+                ['key' => 'rbc', 'label' => 'RBC count', 'type' => 'number', 'required' => true],
             ]),
             'output_schema' => json_encode([
-                ['key' => 'anion_gap', 'label' => 'Anion Gap', 'rounding' => 'round_half_up', 'precision' => 1],
+                ['key' => 'mcv', 'label' => 'MCV', 'rounding' => 'round_half_up', 'precision' => 1],
             ]),
             'engine' => 'php_class',
-            'engine_reference' => AnionGapCalculator::class,
+            'engine_reference' => McvCalculator::class,
             'categories' => [],
             'tags' => [],
         ], $overrides);
@@ -65,12 +64,12 @@ class CalculatorAdminValidationTest extends TestCase
 
     public function test_slug_must_be_unique(): void
     {
-        Calculator::factory()->create(['slug' => 'anion-gap-calculator']);
+        Calculator::factory()->create(['slug' => 'mcv-calculator']);
         $user = $this->createUser();
 
         $response = $this->actingAs($user)->post(
             route('admin.calculators.store'),
-            $this->validPayload(['name' => 'Another Calculator', 'slug' => 'anion-gap-calculator'])
+            $this->validPayload(['name' => 'Another Calculator', 'slug' => 'mcv-calculator'])
         );
 
         $response->assertSessionHasErrors('slug');

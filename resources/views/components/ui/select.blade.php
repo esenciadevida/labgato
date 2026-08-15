@@ -2,8 +2,8 @@
 
 <select
     {{ $attributes->merge([
-        'class' => 'block w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 sm:text-sm' .
-            ($disabled ? ' cursor-not-allowed bg-neutral-100 text-neutral-500' : ''),
+        'class' => 'block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 dark:text-slate-100 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/25 sm:text-sm shadow-card dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100' .
+            ($disabled ? ' cursor-not-allowed bg-slate-100 text-slate-500 dark:text-slate-400 shadow-none dark:bg-slate-800 dark:text-slate-500 dark:text-slate-400' : ''),
     ]) }}
     @if($disabled) disabled @endif
 >

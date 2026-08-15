@@ -1,0 +1,2 @@
+name,analyte_name,specimen_type,methodology,population_group,age_min,age_max,sex,unit,si_unit,lower_limit,upper_limit,critical_low,critical_high,conversion_factor,source_citation
+"New Name","Old Analyte","Serum",,"Adult",,,"any","g/L",,"13.8","17.2","7.0","20.0","1","Source"

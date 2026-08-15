@@ -7,19 +7,20 @@ use App\Models\AuditLog;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
+use App\Services\Analytics\AnalyticsDashboardService;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(AnalyticsDashboardService $analyticsService)
     {
-        $adminCount = User::whereHas('roles', function ($query) {
-            $query->where('is_system_role', true);
-        })->count();
+        $data = [
+            'kpis' => $analyticsService->getKpiMetrics(),
+            'resourceGrowth' => $analyticsService->getResourceGrowth(),
+            'searchInsights' => $analyticsService->getSearchInsights(),
+            'aiUtilization' => $analyticsService->getAiUtilization(),
+            'pendingItems' => $analyticsService->getPendingItems(20),
+        ];
 
-        $roleCount = Role::count();
-        $permissionCount = Permission::count();
-        $recentActivity = AuditLog::latest()->take(5)->get();
-
-        return view('admin.dashboard', compact('adminCount', 'roleCount', 'permissionCount', 'recentActivity'));
+        return view('admin.dashboard-advanced', $data);
     }
 }

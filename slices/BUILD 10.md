@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── app/
 │   ├── Http/
 │   │   ├── Controllers/
@@ -41,10 +41,10 @@ labgato/
                 ├── CategoryCrudTest.php
                 └── TagCrudTest.php
 
-IMPLEMENTATION PROMPT ID: LABGATO-PHASE03-BUILD10
+IMPLEMENTATION PROMPT ID: LABGOTO-PHASE03-BUILD10
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
 
 Slice 1 Application Foundation is complete. Phase 03 Resource Architecture is approved.
 

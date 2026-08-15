@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Enums\ResourceStatus;
 use App\Models\Calculator;
-use App\Services\Calculators\Engines\AnionGapCalculator;
+use App\Services\Calculators\Engines\McvCalculator;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -23,50 +23,40 @@ class CalculatorFactory extends Factory
             'name' => $name,
             'slug' => Str::slug($name),
             'short_description' => fake()->sentence(),
-            'formula_display' => 'Sodium - (Chloride + Bicarbonate)',
+            'formula_display' => 'MCV = (Hct × 10) / RBC',
             'input_schema' => [
                 [
-                    'key' => 'sodium',
-                    'label' => 'Serum Sodium',
+                    'key' => 'hematocrit',
+                    'label' => 'Hematocrit',
                     'type' => 'number',
-                    'unit' => 'mEq/L',
+                    'unit' => '%',
                     'required' => true,
-                    'min' => 100,
-                    'max' => 200,
+                    'min' => 10,
+                    'max' => 70,
                     'step' => 0.1,
                 ],
                 [
-                    'key' => 'chloride',
-                    'label' => 'Serum Chloride',
+                    'key' => 'rbc',
+                    'label' => 'RBC count',
                     'type' => 'number',
-                    'unit' => 'mEq/L',
+                    'unit' => '10^12/L',
                     'required' => true,
-                    'min' => 80,
-                    'max' => 150,
-                    'step' => 0.1,
-                ],
-                [
-                    'key' => 'bicarbonate',
-                    'label' => 'Serum Bicarbonate',
-                    'type' => 'number',
-                    'unit' => 'mEq/L',
-                    'required' => true,
-                    'min' => 5,
-                    'max' => 50,
-                    'step' => 0.1,
+                    'min' => 0.5,
+                    'max' => 10,
+                    'step' => 0.01,
                 ],
             ],
             'output_schema' => [
                 [
-                    'key' => 'anion_gap',
-                    'label' => 'Anion Gap',
-                    'unit' => 'mEq/L',
+                    'key' => 'mcv',
+                    'label' => 'MCV',
+                    'unit' => 'fL',
                     'rounding' => 'round_half_up',
                     'precision' => 1,
                 ],
             ],
             'engine' => 'php_class',
-            'engine_reference' => AnionGapCalculator::class,
+            'engine_reference' => McvCalculator::class,
             'interpretation_notes' => fake()->paragraph(),
             'references' => 'Clinical reference documentation.',
             'status' => ResourceStatus::PUBLISHED,

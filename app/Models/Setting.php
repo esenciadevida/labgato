@@ -9,7 +9,14 @@ class Setting extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['key', 'value', 'type'];
+    protected $fillable = ['key', 'value', 'type', 'group', 'label', 'description', 'options'];
+
+    protected function casts(): array
+    {
+        return [
+            'options' => 'array',
+        ];
+    }
 
     public static function getValue(string $key, mixed $default = null): mixed
     {

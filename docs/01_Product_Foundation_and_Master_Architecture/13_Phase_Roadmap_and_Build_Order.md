@@ -5,7 +5,7 @@
 This document depends on:
 
 - All preceding Phase 01 documents (01 through 12).
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved vertical-slice development strategy.
 - The approved documentation-first development philosophy.
 
@@ -14,7 +14,7 @@ This document depends on:
 This document defines:
 
 - The sequence of future documentation phases.
-- The definition of the Minimum Viable Product (MVP) for LabGato.
+- The definition of the Minimum Viable Product (MVP) for LABGOTO.
 - The vertical-slice implementation strategy.
 - The dependency-driven build order for application code.
 - The criteria for completing Phase 01 and transitioning to Phase 02.
@@ -42,9 +42,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the strategic roadmap and build order for LabGato.
+This document establishes the strategic roadmap and build order for LABGOTO.
 
-LabGato is a complex system with interconnected resources, administrative controls, and strict hosting constraints. Building it in a random or disconnected manner will result in technical debt, orphaned pages, and architectural violations.
+LABGOTO is a complex system with interconnected resources, administrative controls, and strict hosting constraints. Building it in a random or disconnected manner will result in technical debt, orphaned pages, and architectural violations.
 
 This roadmap ensures that the project progresses logically from foundation to functional vertical slices, culminating in a stable, secure, and deployable MVP.
 
@@ -99,7 +99,7 @@ Documentation must precede implementation. The following phases are approved to 
 
 # 3. Minimum Viable Product (MVP) Definition
 
-The LabGato MVP is the first fully functional, secure, and deployable version of the platform.
+The LABGOTO MVP is the first fully functional, secure, and deployable version of the platform.
 
 ## 3.1 MVP Inclusions
 
@@ -229,7 +229,7 @@ Phase 01 is officially complete when:
 
 ## Decisions Established
 
-- LabGato will be built in vertical slices, not horizontal layers.
+- LABGOTO will be built in vertical slices, not horizontal layers.
 - AI and Public User Accounts are excluded from the MVP.
 - The first resource vertical slice will establish the pattern for all subsequent resources.
 - Phase 02 will focus strictly on Technical Foundation Architecture.
@@ -237,7 +237,7 @@ Phase 01 is officially complete when:
 ## Dependencies
 
 - All preceding Phase 01 documents.
-- Approved LabGato Master Directive.
+- Approved LABGOTO Master Directive.
 
 ## Files Affected
 
@@ -263,17 +263,17 @@ It serves as the final index and execution plan for the foundation phase.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC13
+LABGOTO-PHASE01-DOC13
 
 ## Context
 
-Phase 01 of LabGato documentation is concluding. This document establishes the roadmap, MVP definition, and build order that will guide the transition from planning to actual application development.
+Phase 01 of LABGOTO documentation is concluding. This document establishes the roadmap, MVP definition, and build order that will guide the transition from planning to actual application development.
 
 This prompt implements the documentation outcome of the Phase Roadmap and Build Order document.
 
 ## Objective
 
-Create the official LabGato Phase Roadmap and Build Order document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Phase Roadmap and Build Order document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, Phase 01 documentation is fully drafted and ready for final review and repository commit.
 

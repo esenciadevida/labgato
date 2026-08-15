@@ -50,7 +50,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Resource Public Page Patterns for LabGato.
+This document establishes the Resource Public Page Patterns for LABGOTO.
 
 Every resource type (Calculators, Tools, Reference Ranges, etc.) requires public-facing pages for discovery and interaction. To ensure consistency, accessibility, and SEO performance, all resource public pages must follow the same patterns.
 
@@ -251,7 +251,7 @@ Include JSON-LD BreadcrumbList structured data.
 
 Resource detail pages must include:
 
-- Title tag: `{Resource Name} | LabGato`
+- Title tag: `{Resource Name} | LABGOTO`
 - Meta description: Use `seo_description` or `short_description`.
 - Canonical URL: Resource detail page URL.
 - Open Graph tags.
@@ -418,17 +418,17 @@ It dictates the implementation of all future resource public controllers, views,
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE03-DOC07
+LABGOTO-PHASE03-DOC07
 
 ## Context
 
-LabGato requires consistent, reusable public page patterns for all resource modules. This document defines the standard patterns for listing pages, detail pages, resource cards, filtering, and SEO.
+LABGOTO requires consistent, reusable public page patterns for all resource modules. This document defines the standard patterns for listing pages, detail pages, resource cards, filtering, and SEO.
 
 This prompt implements the documentation outcome of the Resource Public Page Patterns document.
 
 ## Objective
 
-Create the official LabGato Resource Public Page Patterns document inside the approved Phase 03 documentation structure.
+Create the official LABGOTO Resource Public Page Patterns document inside the approved Phase 03 documentation structure.
 
 After this prompt is completed, the repository will have a binding specification for resource public pages.
 

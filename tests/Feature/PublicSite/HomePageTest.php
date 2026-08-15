@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\PublicSite;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -14,7 +15,7 @@ class HomePageTest extends TestCase
         $response = $this->get(route('home'));
 
         $response->assertStatus(200);
-        $response->assertSee('LabGato');
+        $response->assertSee('Labgoto');
         $response->assertSee('Professional Laboratory Toolkit');
     }
 
@@ -23,7 +24,7 @@ class HomePageTest extends TestCase
         $response = $this->get(route('home'));
 
         $response->assertStatus(200);
-        $response->assertSee('Home');
+        $response->assertSee('Calculators');
     }
 
     public function test_home_page_includes_footer_legal_links(): void
@@ -46,5 +47,17 @@ class HomePageTest extends TestCase
         $response->assertDontSee('Active Users');
         $response->assertDontSee('Tests Completed');
         $response->assertDontSee('statistics');
+    }
+
+    public function test_authenticated_header_wires_notifications_and_user_menu_to_shared_panel_bus(): void
+    {
+        $user = User::factory()->create(['is_active' => true]);
+
+        $response = $this->actingAs($user)->get(route('home'));
+
+        $response->assertOk();
+        $response->assertSee('labgato-open-panel', false);
+        $response->assertSee("detail: 'panel'", false);
+        $response->assertSee("detail: 'dropdown'", false);
     }
 }

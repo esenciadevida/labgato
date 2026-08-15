@@ -4,7 +4,7 @@
 
 This document depends on:
 
-- The approved LabGato Master Software Project directive.
+- The approved LABGOTO Master Software Project directive.
 - The approved Project Charter.
 - The approved Product Scope and Non-Goals document.
 - The approved Target Users and Journeys document.
@@ -54,7 +54,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Information Architecture (IA) for LabGato.
+This document establishes the Information Architecture (IA) for LABGOTO.
 
 The IA defines how content, tools, and administrative features are organized, labeled, and navigated.
 
@@ -64,7 +64,7 @@ A strong IA ensures that laboratory professionals can find calculators, referenc
 
 # 2. Access Model
 
-LabGato is divided into two distinct access zones:
+LABGOTO is divided into two distinct access zones:
 
 1.  **Public Zone:** Accessible to visitors without authentication. Contains approved published resources.
 2.  **Admin Zone:** Accessible only to authenticated administrators. Contains management tools, drafts, and system settings.
@@ -93,7 +93,7 @@ The public site is organized around the core product areas defined in Document 0
 **URL:** `/`
 
 **Purpose:**
-- Introduce LabGato as a professional laboratory toolkit.
+- Introduce LABGOTO as a professional laboratory toolkit.
 - Provide quick access to primary resource categories.
 - Highlight featured or recently updated resources.
 - Provide a prominent search bar.
@@ -409,7 +409,7 @@ The main navigation should provide direct access to core resource areas.
 The footer should provide access to legal and secondary information.
 
 **Items:**
-- About LabGato (optional, can be a Knowledge page)
+- About LABGOTO (optional, can be a Knowledge page)
 - Privacy Policy
 - Terms of Service
 - Disclaimer
@@ -490,7 +490,7 @@ Search results must clearly indicate the resource type.
 
 ## Dependencies
 
-- Approved LabGato Master Directive.
+- Approved LABGOTO Master Directive.
 - Approved Product Scope and Non-Goals.
 - Approved Core Product Areas.
 - Approved Technology Stack.
@@ -522,17 +522,17 @@ It directly dictates the routing structure for the backend and the page hierarch
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE01-DOC10
+LABGOTO-PHASE01-DOC10
 
 ## Context
 
-LabGato requires a clear Information Architecture to ensure that all public resources and administrative features are organized logically and are easy to navigate. This document defines the page structure, URL strategy, and navigation hierarchy.
+LABGOTO requires a clear Information Architecture to ensure that all public resources and administrative features are organized logically and are easy to navigate. This document defines the page structure, URL strategy, and navigation hierarchy.
 
 This prompt implements the documentation outcome of the Information Architecture document.
 
 ## Objective
 
-Create the official LabGato Information Architecture document inside the approved Phase 01 documentation structure.
+Create the official LABGOTO Information Architecture document inside the approved Phase 01 documentation structure.
 
 After this prompt is completed, the repository will have a binding blueprint for routing, navigation, and page hierarchy.
 
@@ -540,7 +540,7 @@ After this prompt is completed, the repository will have a binding blueprint for
 
 Relevant approved decisions:
 
-- LabGato is a professional laboratory toolkit.
+- LABGOTO is a professional laboratory toolkit.
 - Public resources use slug-based URLs.
 - Admin portal uses `/admin` prefix.
 - SEO and accessibility are mandatory.

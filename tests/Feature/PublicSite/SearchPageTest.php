@@ -14,8 +14,8 @@ class SearchPageTest extends TestCase
     {
         parent::setUp();
 
-        config(['labgato.search.log_queries' => true]);
-        config(['labgato.search.rate_limit_per_minute' => 30]);
+        config(['labgoto.search.log_queries' => true]);
+        config(['labgoto.search.rate_limit_per_minute' => 30]);
     }
 
     public function test_search_page_renders_successfully(): void
@@ -23,7 +23,8 @@ class SearchPageTest extends TestCase
         $response = $this->get(route('public.search'));
 
         $response->assertStatus(200);
-        $response->assertSee('Search LabGato');
+        $response->assertSee('Search resources');
+        $response->assertDontSee('Search Labgoto');
         $response->assertSee('search-input');
     }
 

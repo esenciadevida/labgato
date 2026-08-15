@@ -1,12 +1,12 @@
 @props(['type' => 'info'])
 
 @php
-$classes = 'rounded-md p-4';
+$classes = 'rounded-lg p-4';
 $classes .= match($type) {
-    'success' => ' bg-success-50 border border-success-600/20 text-success-600',
-    'error' => ' bg-danger-50 border border-danger-600/20 text-danger-600',
-    'warning' => ' bg-warning-50 border border-warning-600/20 text-warning-600',
-    default => ' bg-info-50 border border-info-600/20 text-info-600',
+    'success' => ' bg-success-50 border border-success-600/20 text-success-700 dark:bg-success-900/20 dark:border-success-600/30 dark:text-success-300',
+    'error' => ' bg-danger-50 border border-danger-600/20 text-danger-700 dark:bg-danger-900/20 dark:border-danger-600/30 dark:text-danger-300',
+    'warning' => ' bg-warning-50 border border-warning-600/20 text-warning-700 dark:bg-warning-900/20 dark:border-warning-600/30 dark:text-warning-300',
+    default => ' bg-info-50 border border-info-600/20 text-info-700 dark:bg-info-900/20 dark:border-info-600/30 dark:text-info-300',
 };
 $role = in_array($type, ['error', 'warning']) ? 'alert' : 'status';
 $icon = match($type) {
@@ -19,7 +19,7 @@ $icon = match($type) {
 
 <div {{ $attributes->merge(['class' => $classes]) }} role="{{ $role }}">
     <div class="flex items-start gap-3">
-        <svg class="mt-0.5 h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <svg class="mt-0.5 h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $icon }}"/>
         </svg>
         <div class="text-sm">{{ $slot }}</div>

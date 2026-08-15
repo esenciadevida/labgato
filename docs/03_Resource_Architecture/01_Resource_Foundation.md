@@ -12,7 +12,7 @@ This document depends on:
 
 This document defines:
 
-- The common resource architecture shared by all LabGato resource types.
+- The common resource architecture shared by all LABGOTO resource types.
 - The approved resource types.
 - The common resource attributes.
 - The resource lifecycle states.
@@ -57,9 +57,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Resource Foundation for LabGato.
+This document establishes the Resource Foundation for LABGOTO.
 
-LabGato supports multiple resource types, each serving a specific laboratory professional need. Despite their differences, all resources share common architectural patterns for lifecycle management, taxonomy, SEO, permissions, and auditing.
+LABGOTO supports multiple resource types, each serving a specific laboratory professional need. Despite their differences, all resources share common architectural patterns for lifecycle management, taxonomy, SEO, permissions, and auditing.
 
 This document defines those shared patterns so that each resource type can be implemented consistently and efficiently.
 
@@ -67,7 +67,7 @@ This document defines those shared patterns so that each resource type can be im
 
 # 2. Approved Resource Types
 
-The following resource types are approved for LabGato.
+The following resource types are approved for LABGOTO.
 
 ## 2.1 Calculators
 
@@ -465,11 +465,11 @@ All public resource pages must follow common SEO patterns.
 
 Format:
 
-{Resource Name} | LabGato
+{Resource Name} | LABGOTO
 
 If custom seo_title is set:
 
-{seo_title} | LabGato
+{seo_title} | LABGOTO
 
 ## 8.2 Meta Description
 
@@ -801,17 +801,17 @@ It affects all future resource architecture documents and implementations.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE03-DOC01
+LABGOTO-PHASE03-DOC01
 
 ## Context
 
-LabGato requires a common resource foundation that all resource types will follow. This document defines the shared architecture for resource lifecycle, relationships, validation, SEO, permissions, and auditing.
+LABGOTO requires a common resource foundation that all resource types will follow. This document defines the shared architecture for resource lifecycle, relationships, validation, SEO, permissions, and auditing.
 
 This prompt implements the documentation outcome of the Resource Foundation document.
 
 ## Objective
 
-Create the official LabGato Resource Foundation document inside the approved Phase 03 documentation structure.
+Create the official LABGOTO Resource Foundation document inside the approved Phase 03 documentation structure.
 
 After this prompt is completed, the repository will have a binding foundation for all resource type implementations.
 
@@ -819,7 +819,7 @@ After this prompt is completed, the repository will have a binding foundation fo
 
 Relevant approved decisions:
 
-- LabGato supports multiple resource types.
+- LABGOTO supports multiple resource types.
 - All resources share common lifecycle states.
 - All resources use categories and tags.
 - All resources follow common SEO and permission patterns.

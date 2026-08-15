@@ -15,7 +15,7 @@ This document depends on:
 
 This document defines:
 
-- The deployment strategy for LabGato on Hostinger shared hosting.
+- The deployment strategy for LABGOTO on Hostinger shared hosting.
 - The environment prerequisites and verification steps.
 - The local/CI build process for frontend and backend assets.
 - The file upload and placement strategy.
@@ -40,7 +40,7 @@ This document does not directly implement application code.
 
 Its implementation impact is:
 
-- Establishes a repeatable, safe, and documented process for deploying LabGato to Hostinger.
+- Establishes a repeatable, safe, and documented process for deploying LABGOTO to Hostinger.
 - Prevents common shared hosting deployment failures (e.g., exposing the `.env` file, missing symlinks, broken migrations).
 - Ensures that frontend assets are pre-built and optimized before upload.
 - Defines how to handle database changes safely in production.
@@ -49,7 +49,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Deployment and Release Process for LabGato.
+This document establishes the Deployment and Release Process for LABGOTO.
 
 Deploying a Laravel application to shared hosting requires careful planning to ensure security, performance, and reliability. Because Hostinger does not provide Docker, Supervisor, or automated CI/CD pipelines by default, the deployment process must be manual or script-assisted, with strict verification steps.
 
@@ -59,7 +59,7 @@ This document ensures that every release is consistent, secure, and reversible.
 
 # 2. Deployment Strategy Overview
 
-LabGato will use a **Pre-Built Artifact Deployment** strategy.
+LABGOTO will use a **Pre-Built Artifact Deployment** strategy.
 
 1.  **Build Locally or in CI**: Compile frontend assets and install backend dependencies.
 2.  **Package**: Create a production-ready archive (zip/tar).
@@ -138,7 +138,7 @@ The build process must be executed on a local machine or CI server with PHP 8.4 
     - `composer.json`
     - `composer.lock`
     - `.env.example` (Do NOT include `.env`)
-2.  Name the archive with the release version (e.g., `labgato-v1.0.0.zip`).
+2.  Name the archive with the release version (e.g., `LABGOTO-v1.0.0.zip`).
 
 ---
 
@@ -148,12 +148,12 @@ The build process must be executed on a local machine or CI server with PHP 8.4 
 
 **Option A: Document Root Mapping (Preferred)**
 If Hostinger allows changing the document root for the domain to a subfolder (e.g., `public/`), use this option.
-- Upload the entire Laravel application to a folder like `labgato-app/`.
-- Point the domain's document root to `labgato-app/public/`.
+- Upload the entire Laravel application to a folder like `LABGOTO-app/`.
+- Point the domain's document root to `LABGOTO-app/public/`.
 
 **Option B: Public HTML Mapping (Fallback)**
 If the document root cannot be changed (fixed to `public_html/`):
-- Upload the Laravel application core (`app/`, `bootstrap/`, `config/`, etc.) to a folder outside `public_html/` (e.g., `labgato-core/`).
+- Upload the Laravel application core (`app/`, `bootstrap/`, `config/`, etc.) to a folder outside `public_html/` (e.g., `LABGOTO-core/`).
 - Upload the contents of `public/` (including `index.php`, `.htaccess`, `build/`) directly into `public_html/`.
 - Edit `public_html/index.php` to point to the correct paths for `bootstrap/app.php` and `vendor/autoload.php`.
 
@@ -310,7 +310,7 @@ If a deployment fails or introduces critical bugs:
 
 ## Decisions Established
 
-- LabGato uses a Pre-Built Artifact Deployment strategy.
+- LABGOTO uses a Pre-Built Artifact Deployment strategy.
 - Frontend assets are built locally/CI and uploaded.
 - Database migrations run via SSH or manual SQL import.
 - Queue workers are triggered via Cron with `--stop-when-empty`.
@@ -349,17 +349,17 @@ It dictates the operational procedure for all future releases.
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC12
+LABGOTO-PHASE02-DOC12
 
 ## Context
 
-LabGato requires a safe, repeatable deployment process for Hostinger shared hosting. This document defines the build, upload, migration, and verification steps required to release the application securely.
+LABGOTO requires a safe, repeatable deployment process for Hostinger shared hosting. This document defines the build, upload, migration, and verification steps required to release the application securely.
 
 This prompt implements the documentation outcome of the Deployment and Release Process document.
 
 ## Objective
 
-Create the official LabGato Deployment and Release Process document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Deployment and Release Process document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository will have a binding operational procedure for all future releases.
 
@@ -367,7 +367,7 @@ After this prompt is completed, the repository will have a binding operational p
 
 Relevant approved decisions:
 
-- LabGato uses Hostinger PHP 8.4 shared hosting.
+- LABGOTO uses Hostinger PHP 8.4 shared hosting.
 - Frontend assets are pre-built locally or in CI.
 - Queue workers are triggered via Cron.
 - Database migrations must be run safely.

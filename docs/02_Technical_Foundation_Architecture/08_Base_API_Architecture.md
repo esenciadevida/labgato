@@ -16,7 +16,7 @@ This document depends on:
 
 This document defines:
 
-- The API scope and strategy for LabGato.
+- The API scope and strategy for LABGOTO.
 - The API URL and routing conventions.
 - The standard JSON response structure.
 - The validation and error handling standards.
@@ -51,9 +51,9 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Base API Architecture for LabGato.
+This document establishes the Base API Architecture for LABGOTO.
 
-While LabGato is primarily a server-rendered application using Blade and Livewire, a well-defined API layer is required for:
+While LABGOTO is primarily a server-rendered application using Blade and Livewire, a well-defined API layer is required for:
 
 - Dynamic search functionality.
 - Interactive calculators and tools that require server-side validation.
@@ -87,7 +87,7 @@ The API should not be used for:
 
 ## 2.3 API Style
 
-LabGato will use a RESTful-style API where appropriate.
+LABGOTO will use a RESTful-style API where appropriate.
 
 - Use standard HTTP methods (GET, POST, PUT, PATCH, DELETE).
 - Use resource-oriented URLs.
@@ -326,7 +326,7 @@ Redis is not available on Hostinger shared hosting.
 
 ## 8.1 Versioning Method
 
-LabGato will use URL versioning.
+LABGOTO will use URL versioning.
 
 Example:
 
@@ -387,7 +387,7 @@ If external integrations are introduced, contract tests should be added to ensur
 
 ## Decisions Established
 
-- LabGato uses a RESTful-style API.
+- LABGOTO uses a RESTful-style API.
 - API routes are prefixed with /api/v1.
 - JSON responses follow a consistent structure.
 - Public endpoints are rate-limited.
@@ -428,17 +428,17 @@ It directly dictates the structure of all future API routes, controllers, and re
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC08
+LABGOTO-PHASE02-DOC08
 
 ## Context
 
-LabGato requires a consistent and secure API foundation for dynamic features, search, and future integrations. This document defines the API structure, response standards, validation, authentication, and rate limiting rules.
+LABGOTO requires a consistent and secure API foundation for dynamic features, search, and future integrations. This document defines the API structure, response standards, validation, authentication, and rate limiting rules.
 
 This prompt implements the documentation outcome of the Base API Architecture document.
 
 ## Objective
 
-Create the official LabGato Base API Architecture document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Base API Architecture document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository will have a binding API specification for future development.
 
@@ -446,7 +446,7 @@ After this prompt is completed, the repository will have a binding API specifica
 
 Relevant approved decisions:
 
-- LabGato uses Laravel.
+- LABGOTO uses Laravel.
 - API routes are prefixed with /api/v1.
 - JSON responses must be consistent.
 - Public endpoints must be rate-limited.

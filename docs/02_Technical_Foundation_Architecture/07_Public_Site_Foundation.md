@@ -49,7 +49,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Public Site Foundation for LabGato.
+This document establishes the Public Site Foundation for LABGOTO.
 
 The public website is the primary interface for laboratory professionals, students, and technicians to access tools, calculators, reference ranges, and educational resources.
 
@@ -106,7 +106,7 @@ The public header must provide clear access to the core product areas.
 
 The header must include:
 
-- LabGato logo or site name.
+- LABGOTO logo or site name.
 - Primary navigation menu.
 - Search access (icon or input).
 - Mobile navigation toggle.
@@ -169,7 +169,7 @@ Permission: Public
 
 ## 5.2 Home Content
 
-The home page must introduce LabGato and provide quick access to resources.
+The home page must introduce LABGOTO and provide quick access to resources.
 
 Initial home page sections may include:
 
@@ -177,7 +177,7 @@ Initial home page sections may include:
 - Search bar.
 - Resource category grid (Tools, Calculators, References, SOPs, Knowledge).
 - Featured or recently updated resources (if data exists).
-- Brief explanation of LabGato's purpose.
+- Brief explanation of LABGOTO's purpose.
 
 ## 5.3 Empty States
 
@@ -222,7 +222,7 @@ For the foundation, static Blade views are acceptable, but the architecture must
 
 ## 6.3 Legal Disclaimers
 
-Legal pages must include clear disclaimers that LabGato is not a diagnostic tool and does not replace professional clinical judgment.
+Legal pages must include clear disclaimers that LABGOTO is not a diagnostic tool and does not replace professional clinical judgment.
 
 ---
 
@@ -424,17 +424,17 @@ It directly dictates the structure of all future public Blade views and componen
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC07
+LABGOTO-PHASE02-DOC07
 
 ## Context
 
-LabGato requires a professional, accessible, and SEO-friendly public website. This document defines the layout, navigation, home page, legal pages, error pages, and resource layout rules that will serve as the foundation for all future public pages.
+LABGOTO requires a professional, accessible, and SEO-friendly public website. This document defines the layout, navigation, home page, legal pages, error pages, and resource layout rules that will serve as the foundation for all future public pages.
 
 This prompt implements the documentation outcome of the Public Site Foundation document.
 
 ## Objective
 
-Create the official LabGato Public Site Foundation document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Public Site Foundation document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository will have a binding UI/UX specification for the public website.
 
@@ -442,7 +442,7 @@ After this prompt is completed, the repository will have a binding UI/UX specifi
 
 Relevant approved decisions:
 
-- LabGato uses Laravel, Blade, Tailwind, and Livewire.
+- LABGOTO uses Laravel, Blade, Tailwind, and Livewire.
 - Public site is accessible to all visitors.
 - Navigation focuses on core resource areas.
 - Accessibility and SEO are mandatory.

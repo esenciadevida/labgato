@@ -23,9 +23,8 @@ class CalculatorExecutionTest extends TestCase
         $calculator = $this->publishedCalculator();
 
         Livewire::test(CalculatorRunner::class, ['calculator' => $calculator])
-            ->assertSee('Serum Sodium')
-            ->assertSee('Serum Chloride')
-            ->assertSee('Serum Bicarbonate')
+            ->assertSee('Hematocrit')
+            ->assertSee('RBC count')
             ->assertSee('Calculate');
     }
 
@@ -34,12 +33,11 @@ class CalculatorExecutionTest extends TestCase
         $calculator = $this->publishedCalculator();
 
         Livewire::test(CalculatorRunner::class, ['calculator' => $calculator])
-            ->set('values.sodium', 140)
-            ->set('values.chloride', 100)
-            ->set('values.bicarbonate', 24)
+            ->set('values.hematocrit', 42)
+            ->set('values.rbc', 5)
             ->call('calculate')
             ->assertSet('hasCalculated', true)
-            ->assertSet('outputs.anion_gap.value', '16.0');
+            ->assertSet('outputs.mcv.value', '84.0');
     }
 
     public function test_invalid_inputs_return_validation_errors(): void
@@ -47,12 +45,11 @@ class CalculatorExecutionTest extends TestCase
         $calculator = $this->publishedCalculator();
 
         Livewire::test(CalculatorRunner::class, ['calculator' => $calculator])
-            ->set('values.sodium', 'not-a-number')
-            ->set('values.chloride', 100)
-            ->set('values.bicarbonate', 24)
+            ->set('values.hematocrit', 'not-a-number')
+            ->set('values.rbc', 5)
             ->call('calculate')
             ->assertSet('hasCalculated', true)
-            ->assertSet('validationErrors.sodium.0', 'Serum Sodium must be a number.');
+            ->assertSet('validationErrors.hematocrit.0', 'Hematocrit must be a number.');
     }
 
     public function test_missing_required_inputs_return_validation_errors(): void
@@ -60,11 +57,10 @@ class CalculatorExecutionTest extends TestCase
         $calculator = $this->publishedCalculator();
 
         Livewire::test(CalculatorRunner::class, ['calculator' => $calculator])
-            ->set('values.sodium', 140)
+            ->set('values.hematocrit', 42)
             ->call('calculate')
             ->assertSet('hasCalculated', true)
-            ->assertSet('validationErrors.chloride.0', 'Serum Chloride is required.')
-            ->assertSet('validationErrors.bicarbonate.0', 'Serum Bicarbonate is required.');
+            ->assertSet('validationErrors.rbc.0', 'RBC count is required.');
     }
 
     public function test_calculation_result_displays_units(): void
@@ -72,12 +68,11 @@ class CalculatorExecutionTest extends TestCase
         $calculator = $this->publishedCalculator();
 
         Livewire::test(CalculatorRunner::class, ['calculator' => $calculator])
-            ->set('values.sodium', 140)
-            ->set('values.chloride', 100)
-            ->set('values.bicarbonate', 24)
+            ->set('values.hematocrit', 42)
+            ->set('values.rbc', 5)
             ->call('calculate')
-            ->assertSee('mEq/L')
-            ->assertSet('outputs.anion_gap.unit', 'mEq/L');
+            ->assertSee('fL')
+            ->assertSet('outputs.mcv.unit', 'fL');
     }
 
     public function test_calculation_failure_displays_safe_error_message(): void
@@ -88,9 +83,8 @@ class CalculatorExecutionTest extends TestCase
         ]);
 
         Livewire::test(CalculatorRunner::class, ['calculator' => $calculator])
-            ->set('values.sodium', 140)
-            ->set('values.chloride', 100)
-            ->set('values.bicarbonate', 24)
+            ->set('values.hematocrit', 42)
+            ->set('values.rbc', 5)
             ->call('calculate')
             ->assertSee('Unable to calculate a result.')
             ->assertDontSee('InvalidArgumentException');

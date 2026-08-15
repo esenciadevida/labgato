@@ -1,4 +1,4 @@
-labgato/
+LABGOTO/
 ├── .env.production.example
 ├── DEPLOYMENT.md
 ├── RELEASE_CHECKLIST.md
@@ -18,10 +18,10 @@ labgato/
     └── logs/
         └── .gitignore
 
-IMPLEMENTATION PROMPT ID: LABGATO-SLICE1-BUILD9
+IMPLEMENTATION PROMPT ID: LABGOTO-SLICE1-BUILD9
 
 CONTEXT:
-LabGato is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
+LABGOTO is a professional laboratory toolkit built with Laravel, Blade, Tailwind CSS, Alpine.js, and Livewire. The project must be compatible with Hostinger PHP 8.4 shared hosting and MySQL/MariaDB.
 
 Build 1 through Build 8 are complete. The Laravel foundation, database schema, authentication, RBAC, Admin Portal foundation, Public Site foundation, API foundation, logging, error handling, testing, SEO, and accessibility verification are implemented.
 
@@ -34,7 +34,7 @@ Prepare the application for deployment to Hostinger shared hosting and execute t
 
 EXISTING ARCHITECTURE:
 Relevant approved decisions:
-- LabGato uses Hostinger PHP 8.4 shared hosting.
+- LABGOTO uses Hostinger PHP 8.4 shared hosting.
 - Frontend assets are pre-built locally or in CI.
 - Queue workers are triggered via Cron.
 - Database migrations must be run safely.
@@ -91,7 +91,7 @@ This file must contain all required production environment variables with safe p
 
 Required variables:
 
-APP_NAME="LabGato"
+APP_NAME="LABGOTO"
 APP_ENV=production
 APP_KEY=
 APP_DEBUG=false
@@ -126,7 +126,7 @@ MAIL_USERNAME=your_smtp_username
 MAIL_PASSWORD=your_smtp_password
 MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=noreply@yourdomain.com
-MAIL_FROM_NAME="LabGato"
+MAIL_FROM_NAME="LABGOTO"
 
 AI_ENABLED=false
 AI_PROVIDER=
@@ -141,12 +141,12 @@ LOGIN_RATE_LIMIT_DECAY_MINUTES=15
 PASSWORD_RESET_EXPIRY_MINUTES=60
 REAUTHORIZE_TIMEOUT_MINUTES=30
 
-SEO_DEFAULT_TITLE="LabGato"
+SEO_DEFAULT_TITLE="LABGOTO"
 SEO_DEFAULT_DESCRIPTION="Professional laboratory toolkit for medical laboratory scientists, students, and technicians."
 SEO_CANONICAL_DOMAIN=https://yourdomain.com
 
 ANALYTICS_ENABLED=false
-LABGATO_SEED_ADMIN=false
+LABGOTO_SEED_ADMIN=false
 
 Rules:
 - Do not include real secrets.

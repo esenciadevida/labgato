@@ -19,12 +19,12 @@ class SearchController extends Controller
         $results = $searchService->search(
             query: (string) $request->input('q'),
             filters: $filters,
-            perPage: (int) config('labgato.search.per_page', 10),
+            perPage: (int) config('labgoto.search.per_page', 10),
         );
 
         $pageTitle = $request->filled('q')
             ? 'Search results for "'.$request->input('q').'"'
-            : 'Search LabGato';
+            : 'Search resources';
 
         return view('public.search', compact('pageTitle', 'results'));
     }

@@ -48,7 +48,7 @@ Its implementation impact is:
 
 # 1. Purpose
 
-This document establishes the Admin Portal Foundation for LabGato.
+This document establishes the Admin Portal Foundation for LABGOTO.
 
 The Admin Portal is a serious internal application. It must be efficient, secure, accessible, and reliable.
 
@@ -73,7 +73,7 @@ The layout must include:
 - A fixed or responsive sidebar for primary navigation.
 - A top header containing the administrator's name, profile menu, and logout action.
 - A main content area with appropriate padding and max-width constraints.
-- A footer with versioning or environment indicators (e.g., "LabGato Admin - Production").
+- A footer with versioning or environment indicators (e.g., "LABGOTO Admin - Production").
 
 ## 2.3 Responsive Behavior
 
@@ -417,17 +417,17 @@ It directly dictates the structure of all future admin Blade views and Livewire 
 
 ## Implementation Prompt ID
 
-LABGATO-PHASE02-DOC06
+LABGOTO-PHASE02-DOC06
 
 ## Context
 
-LabGato requires a professional, accessible, and secure Admin Portal. This document defines the layout, navigation, dashboard, CRUD patterns, and UI component rules that will serve as the foundation for all future administrative modules.
+LABGOTO requires a professional, accessible, and secure Admin Portal. This document defines the layout, navigation, dashboard, CRUD patterns, and UI component rules that will serve as the foundation for all future administrative modules.
 
 This prompt implements the documentation outcome of the Admin Portal Foundation document.
 
 ## Objective
 
-Create the official LabGato Admin Portal Foundation document inside the approved Phase 02 documentation structure.
+Create the official LABGOTO Admin Portal Foundation document inside the approved Phase 02 documentation structure.
 
 After this prompt is completed, the repository will have a binding UI/UX specification for the Admin Portal.
 
@@ -435,7 +435,7 @@ After this prompt is completed, the repository will have a binding UI/UX specifi
 
 Relevant approved decisions:
 
-- LabGato uses Laravel, Blade, Tailwind, and Livewire.
+- LABGOTO uses Laravel, Blade, Tailwind, and Livewire.
 - Admin Portal is restricted to authenticated administrators.
 - Navigation must be permission-based.
 - Fake statistics are prohibited.

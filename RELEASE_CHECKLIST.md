@@ -1,4 +1,4 @@
-# LabGato Release Verification Checklist
+# Labgoto Release Verification Checklist
 
 Use this checklist to verify every release before and after going live. Work through every item and confirm each one before declaring the release successful.
 

@@ -26,7 +26,7 @@ class SearchRequest extends FormRequest
     {
         return [
             'q' => ['nullable', 'string', 'max:255'],
-            'type' => ['nullable', 'string', Rule::in(['all', 'calculator', 'tool'])],
+            'type' => ['nullable', 'string', Rule::in(['all', 'calculator', 'tool', 'reference_range', 'interpretation', 'knowledge', 'sop'])],
             'category' => ['nullable', 'string', 'max:255', Rule::exists('categories', 'slug')->where('is_active', true)],
             'tag' => ['nullable', 'string', 'max:255', Rule::exists('tags', 'slug')],
             'page' => ['nullable', 'integer', 'min:1'],

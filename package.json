@@ -7,11 +7,14 @@
         "dev": "vite"
     },
     "devDependencies": {
+        "@tailwindcss/typography": "^0.5.20",
         "@tailwindcss/vite": "^4.3.3",
-        "alpinejs": "^3.16.0",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^3.1",
         "tailwindcss": "^4.3.3",
         "vite": "^8.0.0"
+    },
+    "dependencies": {
+        "canvas": "^3.2.3"
     }
 }
