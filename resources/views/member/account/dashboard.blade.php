@@ -14,10 +14,6 @@
                     This is your contribution hub. Share laboratory knowledge and track the status of your submissions.
                 </p>
             </div>
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <x-ui.button type="submit" variant="secondary" size="sm">Sign Out</x-ui.button>
-            </form>
         </div>
 
         <x-member.navigation class="mt-8" />

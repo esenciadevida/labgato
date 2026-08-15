@@ -104,12 +104,6 @@
                         @click="mobileMenuOpen = false"
                         class="block px-3 py-2.5 rounded text-sm font-medium min-h-[44px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white"
                     >Recently Viewed</a>
-                    <form method="POST" action="{{ route('logout') }}" class="mt-1">
-                        @csrf
-                        <button type="submit" class="w-full text-left px-3 py-2.5 rounded text-sm font-medium min-h-[44px] text-slate-600 dark:text-slate-300 hover:bg-slate-50 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">
-                            Sign out
-                        </button>
-                    </form>
                 @else
                     <a
                         href="{{ route('login') }}"
