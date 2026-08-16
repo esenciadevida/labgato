@@ -23,7 +23,7 @@ class MemberLoginTest extends TestCase
     {
         $user = User::factory()->member()->create(['is_active' => true]);
 
-        $response = $this->post(route('login'), [
+        $response = $this->post(route('login.submit'), [
             'email' => $user->email,
             'password' => 'password',
         ]);
@@ -39,7 +39,7 @@ class MemberLoginTest extends TestCase
     {
         $user = User::factory()->member()->create();
 
-        $response = $this->post(route('login'), [
+        $response = $this->post(route('login.submit'), [
             'email' => $user->email,
             'password' => 'wrong-password',
         ]);
@@ -52,7 +52,7 @@ class MemberLoginTest extends TestCase
     {
         $user = User::factory()->member()->create(['is_active' => false]);
 
-        $response = $this->post(route('login'), [
+        $response = $this->post(route('login.submit'), [
             'email' => $user->email,
             'password' => 'password',
         ]);
@@ -72,7 +72,7 @@ class MemberLoginTest extends TestCase
             ]);
         }
 
-        $response = $this->post(route('login'), [
+        $response = $this->post(route('login.submit'), [
             'email' => $user->email,
             'password' => 'wrong-password',
         ]);
@@ -85,7 +85,7 @@ class MemberLoginTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->post(route('login'), [
+        $response = $this->post(route('login.submit'), [
             'email' => $user->email,
             'password' => 'password',
         ]);

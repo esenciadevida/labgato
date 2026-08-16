@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', [MemberRegisterController::class, 'showRegistrationForm'])->name('register');
-    Route::post('/register', [MemberRegisterController::class, 'register'])->middleware('honeypot')->name('register');
+    Route::post('/register', [MemberRegisterController::class, 'register'])->middleware('honeypot')->name('register.submit');
     Route::get('/login', [MemberLoginController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [MemberLoginController::class, 'login'])->middleware('honeypot')->name('login');
+    Route::post('/login', [MemberLoginController::class, 'login'])->middleware('honeypot')->name('login.submit');
     Route::get('/auth/google', [SocialAuthController::class, 'redirectToGoogle'])->name('auth.google');
 });
 

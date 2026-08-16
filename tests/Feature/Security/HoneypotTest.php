@@ -11,7 +11,7 @@ class HoneypotTest extends TestCase
 
     public function test_register_with_filled_honeypot_is_blocked(): void
     {
-        $response = $this->from(route('register'))->post(route('register'), [
+        $response = $this->from(route('register'))->post(route('register.submit'), [
             'name' => 'Spam Bot',
             'email' => 'bot@example.com',
             'password' => 'StrongPass1234',
@@ -26,7 +26,7 @@ class HoneypotTest extends TestCase
 
     public function test_register_with_empty_honeypot_allows_registration(): void
     {
-        $response = $this->post(route('register'), [
+        $response = $this->post(route('register.submit'), [
             'name' => 'Jane Member',
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',
@@ -40,7 +40,7 @@ class HoneypotTest extends TestCase
 
     public function test_login_with_filled_honeypot_is_blocked(): void
     {
-        $response = $this->from(route('login'))->post(route('login'), [
+        $response = $this->from(route('login'))->post(route('login.submit'), [
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',
             'website' => 'http://spam.example.com',

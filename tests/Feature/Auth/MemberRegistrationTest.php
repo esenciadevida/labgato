@@ -24,7 +24,7 @@ class MemberRegistrationTest extends TestCase
 
     public function test_member_can_register_with_valid_details(): void
     {
-        $response = $this->post(route('register'), [
+        $response = $this->post(route('register.submit'), [
             'name' => 'Jane Member',
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',
@@ -43,7 +43,7 @@ class MemberRegistrationTest extends TestCase
 
     public function test_registration_requires_valid_password(): void
     {
-        $response = $this->post(route('register'), [
+        $response = $this->post(route('register.submit'), [
             'name' => 'Jane Member',
             'email' => 'jane@example.com',
             'password' => 'short',
@@ -58,7 +58,7 @@ class MemberRegistrationTest extends TestCase
     {
         $existing = User::factory()->create(['email' => 'jane@example.com']);
 
-        $response = $this->post(route('register'), [
+        $response = $this->post(route('register.submit'), [
             'name' => 'Jane Member',
             'email' => $existing->email,
             'password' => 'StrongPass1234',
@@ -74,7 +74,7 @@ class MemberRegistrationTest extends TestCase
 
         config(['labgoto.auth.email_verification' => true]);
 
-        $response = $this->post(route('register'), [
+        $response = $this->post(route('register.submit'), [
             'name' => 'Jane Member',
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',

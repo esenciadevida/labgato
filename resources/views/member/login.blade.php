@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <form method="POST" action="{{ route('login') }}" class="mt-5 space-y-5">
+    <form method="POST" action="{{ route('login.submit') }}" class="mt-5 space-y-5">
         @csrf
 
         <x-ui.honeypot />

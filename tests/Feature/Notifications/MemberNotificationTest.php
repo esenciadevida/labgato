@@ -46,7 +46,7 @@ class MemberNotificationTest extends TestCase
 
     public function test_registration_creates_welcome_notification(): void
     {
-        $this->post(route('register'), [
+        $this->post(route('register.submit'), [
             'name' => 'Jane Member',
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',
@@ -66,7 +66,7 @@ class MemberNotificationTest extends TestCase
     {
         Notification::fake();
 
-        $this->post(route('register'), [
+        $this->post(route('register.submit'), [
             'name' => 'Jane Member',
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',
