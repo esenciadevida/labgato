@@ -4,6 +4,7 @@
     $type = data_get($notification->data, 'type', 'default');
     $message = data_get($notification->data, 'message', 'You have a new notification.');
     $url = data_get($notification->data, 'url');
+    $isUnread = $notification->read_at === null;
     $icon = match ($type) {
         'contribution_approved' => [
             'path' => 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
@@ -26,14 +27,16 @@
             'color' => 'text-slate-600 bg-slate-100 dark:text-slate-400 dark:bg-slate-700',
         ],
     };
+    $accent = $isUnread ? 'border-l-2 border-l-primary-500' : 'border-l-2 border-l-transparent';
 @endphp
 
 @if($url)
     <a
         href="{{ $url }}"
-        class="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors {{ $notification->read_at === null ? 'bg-primary-50/50 dark:bg-primary-900/20' : '' }}"
+        data-notification-item
+        class="group flex items-start gap-3 px-4 py-3 transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/40 {{ $accent }} {{ $isUnread ? 'bg-primary-50/50 dark:bg-primary-900/20' : '' }}"
         x-data="{
-            read: {{ $notification->read_at === null ? 'false' : 'true' }},
+            read: {{ $isUnread ? 'false' : 'true' }},
             async markRead() {
                 if (read) return;
                 try {
@@ -53,9 +56,10 @@
     >
 @else
     <div
-        class="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors {{ $notification->read_at === null ? 'bg-primary-50/50 dark:bg-primary-900/20' : '' }}"
+        data-notification-item
+        class="group flex items-start gap-3 px-4 py-3 transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/40 {{ $accent }} {{ $isUnread ? 'bg-primary-50/50 dark:bg-primary-900/20' : '' }}"
         x-data="{
-            read: {{ $notification->read_at === null ? 'false' : 'true' }},
+            read: {{ $isUnread ? 'false' : 'true' }},
             async markRead() {
                 if (read) return;
                 try {
@@ -71,10 +75,11 @@
                 } catch (e) {}
             }
         }"
+        @click="markRead()"
     >
 @endif
 
-    <div class="flex-shrink-0 mt-0.5">
+    <div class="flex-shrink-0 mt-0.5 transition-transform group-hover:scale-105">
         <div class="h-8 w-8 rounded-full flex items-center justify-center {{ $icon['color'] }}">
             <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $icon['path'] }}"/>
@@ -82,14 +87,14 @@
         </div>
     </div>
     <div class="flex-1 min-w-0">
-        <p class="text-sm text-slate-700 dark:text-slate-200 {{ $notification->read_at === null ? 'font-semibold' : '' }}">
+        <p class="text-sm leading-snug text-slate-700 dark:text-slate-200 {{ $isUnread ? 'font-semibold' : '' }}">
             {{ $message }}
         </p>
         <p class="mt-0.5 text-xs text-slate-400 dark:text-slate-500">
             {{ $notification->created_at->diffForHumans() }}
         </p>
     </div>
-    @if($notification->read_at === null)
+    @if($isUnread)
         <span class="flex-shrink-0 h-2 w-2 rounded-full bg-primary-500 mt-1.5" aria-label="Unread"></span>
     @endif
 

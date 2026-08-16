@@ -58,7 +58,7 @@ return [
         'reauthorize_timeout_minutes' => (int) env('REAUTHORIZE_TIMEOUT_MINUTES', 30),
         'max_login_attempts' => (int) env('MAX_LOGIN_ATTEMPTS', 5),
         'lockout_duration_minutes' => (int) env('LOCKOUT_DURATION_MINUTES', 15),
-        'password_min_length' => (int) env('PASSWORD_MIN_LENGTH', 12),
+        'password_min_length' => (int) env('PASSWORD_MIN_LENGTH', 8),
         'session_regeneration_interval' => (int) env('SESSION_REGENERATION_INTERVAL', 120),
         'admin_inactivity_minutes' => (int) env('ADMIN_INACTIVITY_MINUTES', 30),
     ],

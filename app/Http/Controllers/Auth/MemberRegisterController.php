@@ -25,7 +25,7 @@ class MemberRegisterController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
-            'password' => ['required', 'confirmed', Password::min(config('labgoto.security.password_min_length', 12))->letters()->numbers()],
+            'password' => ['required', 'confirmed', Password::min(config('labgoto.security.password_min_length', 8))->letters()->numbers()],
         ]);
 
         $user = User::create([

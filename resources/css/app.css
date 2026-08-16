@@ -182,6 +182,33 @@
         @apply animate-pulse rounded bg-slate-200 dark:bg-slate-700;
     }
 
+    .scrollbar-slim {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-slate-300) transparent;
+    }
+
+    .scrollbar-slim::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    .scrollbar-slim::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .scrollbar-slim::-webkit-scrollbar-thumb {
+        background-color: var(--color-slate-300);
+        border-radius: 9999px;
+    }
+
+    .dark .scrollbar-slim {
+        scrollbar-color: var(--color-slate-600) transparent;
+    }
+
+    .dark .scrollbar-slim::-webkit-scrollbar-thumb {
+        background-color: var(--color-slate-600);
+    }
+
     @media (prefers-reduced-motion: reduce) {
         .skeleton {
             animation: none;
