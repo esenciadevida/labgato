@@ -9,13 +9,22 @@ use App\Services\Calculators\Engines\AbsoluteLymphocyteCountCalculator;
 use App\Services\Calculators\Engines\AlbuminGlobulinRatioCalculator;
 use App\Services\Calculators\Engines\AncCalculator;
 use App\Services\Calculators\Engines\AnionGapCalculator;
+use App\Services\Calculators\Engines\AntibioticDilutionCalculator;
 use App\Services\Calculators\Engines\ApriCalculator;
+use App\Services\Calculators\Engines\AtherogenicIndexPlasmaCalculator;
+use App\Services\Calculators\Engines\BasalMetabolicRateCalculator;
+use App\Services\Calculators\Engines\BacterialConcentrationCalculator;
 use App\Services\Calculators\Engines\BicarbonateGapCalculator;
 use App\Services\Calculators\Engines\BilirubinRatioCalculator;
+use App\Services\Calculators\Engines\BmiCalculator;
+use App\Services\Calculators\Engines\BodySurfaceAreaCalculator;
 use App\Services\Calculators\Engines\BunCreatinineRatioCalculator;
+use App\Services\Calculators\Engines\BunUreaConverterCalculator;
+use App\Services\Calculators\Engines\CfuPerMlCalculator;
 use App\Services\Calculators\Engines\CkdEpi2009Calculator;
 use App\Services\Calculators\Engines\CkdEpi2021Calculator;
 use App\Services\Calculators\Engines\CockcroftGaultCalculator;
+use App\Services\Calculators\Engines\ColonyCountCalculator;
 use App\Services\Calculators\Engines\CorrectedCalciumCalculator;
 use App\Services\Calculators\Engines\CorrectedChlorideCalculator;
 use App\Services\Calculators\Engines\CorrectedReticulocyteCountCalculator;
@@ -26,6 +35,7 @@ use App\Services\Calculators\Engines\DeltaGapCalculator;
 use App\Services\Calculators\Engines\DeltaRatioCalculator;
 use App\Services\Calculators\Engines\DeRitisRatioCalculator;
 use App\Services\Calculators\Engines\EnglandFraserIndexCalculator;
+use App\Services\Calculators\Engines\EstimatedAverageGlucoseCalculator;
 use App\Services\Calculators\Engines\Fib4Calculator;
 use App\Services\Calculators\Engines\FractionalExcretionOfPotassiumCalculator;
 use App\Services\Calculators\Engines\FractionalExcretionOfSodiumCalculator;
@@ -33,28 +43,42 @@ use App\Services\Calculators\Engines\FractionalExcretionOfUreaCalculator;
 use App\Services\Calculators\Engines\FractionalExcretionOfUricAcidCalculator;
 use App\Services\Calculators\Engines\FreeWaterClearanceCalculator;
 use App\Services\Calculators\Engines\GlobulinCalculator;
+use App\Services\Calculators\Engines\GlucoseUnitConversionCalculator;
 use App\Services\Calculators\Engines\GreenKingIndexCalculator;
+use App\Services\Calculators\Engines\HomaBetaCalculator;
+use App\Services\Calculators\Engines\HomaIrCalculator;
+use App\Services\Calculators\Engines\LdlFriedewaldCalculator;
+use App\Services\Calculators\Engines\LdlHdlRatioCalculator;
+use App\Services\Calculators\Engines\LdlMartinHopkinsCalculator;
+use App\Services\Calculators\Engines\LdlSampsonCalculator;
 use App\Services\Calculators\Engines\MchCalculator;
 use App\Services\Calculators\Engines\MchcCalculator;
+use App\Services\Calculators\Engines\McFarlandTurbidityCalculator;
 use App\Services\Calculators\Engines\McvCalculator;
 use App\Services\Calculators\Engines\MentzerIndexCalculator;
+use App\Services\Calculators\Engines\MicDilutionCalculator;
 use App\Services\Calculators\Engines\MonocyteLymphocyteRatioCalculator;
 use App\Services\Calculators\Engines\NafldFibrosisScoreCalculator;
 use App\Services\Calculators\Engines\NeutrophilLymphocyteRatioCalculator;
+use App\Services\Calculators\Engines\NonHdlCholesterolCalculator;
 use App\Services\Calculators\Engines\OsmolalGapCalculator;
 use App\Services\Calculators\Engines\OsmolarClearanceCalculator;
 use App\Services\Calculators\Engines\PlateletLymphocyteRatioCalculator;
+use App\Services\Calculators\Engines\QuickiCalculator;
 use App\Services\Calculators\Engines\RbcIndicesCalculator;
 use App\Services\Calculators\Engines\RdwCalculator;
 use App\Services\Calculators\Engines\RdwIndexCalculator;
 use App\Services\Calculators\Engines\RenalFailureIndexCalculator;
 use App\Services\Calculators\Engines\ReticulocyteIndexCalculator;
 use App\Services\Calculators\Engines\ReticulocyteProductionIndexCalculator;
+use App\Services\Calculators\Engines\SerialDilutionCalculator;
 use App\Services\Calculators\Engines\SerumOsmolalityCalculator;
 use App\Services\Calculators\Engines\ShineLalIndexCalculator;
 use App\Services\Calculators\Engines\SrivastavaIndexCalculator;
 use App\Services\Calculators\Engines\StrongIonDifferenceCalculator;
 use App\Services\Calculators\Engines\SystemicImmuneInflammationIndexCalculator;
+use App\Services\Calculators\Engines\TotalCholesterolHdlRatioCalculator;
+use App\Services\Calculators\Engines\TriglycerideHdlRatioCalculator;
 use App\Services\Calculators\Engines\UrineAnionGapCalculator;
 use App\Services\ReferenceRangeService;
 use App\Support\NumberFormatter;
@@ -114,6 +138,30 @@ class CalculatorService
         ApriCalculator::class => 'APRI Score Calculator',
         Fib4Calculator::class => 'FIB-4 Index Calculator',
         NafldFibrosisScoreCalculator::class => 'NAFLD Fibrosis Score Calculator',
+        LdlFriedewaldCalculator::class => 'LDL Cholesterol (Friedewald) Calculator',
+        LdlMartinHopkinsCalculator::class => 'LDL Cholesterol (Martin-Hopkins) Calculator',
+        LdlSampsonCalculator::class => 'LDL Cholesterol (Sampson) Calculator',
+        NonHdlCholesterolCalculator::class => 'Non-HDL Cholesterol Calculator',
+        TotalCholesterolHdlRatioCalculator::class => 'Total Cholesterol/HDL Ratio Calculator',
+        LdlHdlRatioCalculator::class => 'LDL/HDL Ratio Calculator',
+        TriglycerideHdlRatioCalculator::class => 'Triglyceride/HDL Ratio Calculator',
+        AtherogenicIndexPlasmaCalculator::class => 'Atherogenic Index of Plasma (AIP) Calculator',
+        BunUreaConverterCalculator::class => 'BUN/Urea Converter',
+        HomaIrCalculator::class => 'HOMA-IR Calculator',
+        HomaBetaCalculator::class => 'HOMA-Beta Calculator',
+        QuickiCalculator::class => 'QUICKI Calculator',
+        EstimatedAverageGlucoseCalculator::class => 'Estimated Average Glucose (eAG) Calculator',
+        GlucoseUnitConversionCalculator::class => 'Glucose Unit Conversion Calculator',
+        BmiCalculator::class => 'Body Mass Index (BMI) Calculator',
+        BodySurfaceAreaCalculator::class => 'Body Surface Area (BSA) Calculator',
+        BasalMetabolicRateCalculator::class => 'Basal Metabolic Rate (BMR) Calculator',
+        McFarlandTurbidityCalculator::class => 'McFarland Turbidity to CFU/mL Calculator',
+        CfuPerMlCalculator::class => 'CFU/mL Calculator',
+        ColonyCountCalculator::class => 'Colony Count Calculator',
+        SerialDilutionCalculator::class => 'Serial Dilution Calculator',
+        BacterialConcentrationCalculator::class => 'Bacterial Concentration (OD600) Calculator',
+        AntibioticDilutionCalculator::class => 'Antibiotic Dilution Calculator',
+        MicDilutionCalculator::class => 'MIC Dilution Calculator',
     ];
 
     private const ENGINE_TYPE = 'php_class';

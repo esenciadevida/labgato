@@ -11,13 +11,22 @@ use App\Services\Calculators\Engines\AbsoluteLymphocyteCountCalculator;
 use App\Services\Calculators\Engines\AlbuminGlobulinRatioCalculator;
 use App\Services\Calculators\Engines\AncCalculator;
 use App\Services\Calculators\Engines\AnionGapCalculator;
+use App\Services\Calculators\Engines\AntibioticDilutionCalculator;
 use App\Services\Calculators\Engines\ApriCalculator;
+use App\Services\Calculators\Engines\AtherogenicIndexPlasmaCalculator;
+use App\Services\Calculators\Engines\BasalMetabolicRateCalculator;
+use App\Services\Calculators\Engines\BacterialConcentrationCalculator;
 use App\Services\Calculators\Engines\BicarbonateGapCalculator;
 use App\Services\Calculators\Engines\BilirubinRatioCalculator;
+use App\Services\Calculators\Engines\BmiCalculator;
+use App\Services\Calculators\Engines\BodySurfaceAreaCalculator;
 use App\Services\Calculators\Engines\BunCreatinineRatioCalculator;
+use App\Services\Calculators\Engines\BunUreaConverterCalculator;
+use App\Services\Calculators\Engines\CfuPerMlCalculator;
 use App\Services\Calculators\Engines\CkdEpi2009Calculator;
 use App\Services\Calculators\Engines\CkdEpi2021Calculator;
 use App\Services\Calculators\Engines\CockcroftGaultCalculator;
+use App\Services\Calculators\Engines\ColonyCountCalculator;
 use App\Services\Calculators\Engines\CorrectedCalciumCalculator;
 use App\Services\Calculators\Engines\CorrectedChlorideCalculator;
 use App\Services\Calculators\Engines\CorrectedReticulocyteCountCalculator;
@@ -28,6 +37,7 @@ use App\Services\Calculators\Engines\DeltaGapCalculator;
 use App\Services\Calculators\Engines\DeltaRatioCalculator;
 use App\Services\Calculators\Engines\DeRitisRatioCalculator;
 use App\Services\Calculators\Engines\EnglandFraserIndexCalculator;
+use App\Services\Calculators\Engines\EstimatedAverageGlucoseCalculator;
 use App\Services\Calculators\Engines\Fib4Calculator;
 use App\Services\Calculators\Engines\FractionalExcretionOfPotassiumCalculator;
 use App\Services\Calculators\Engines\FractionalExcretionOfSodiumCalculator;
@@ -35,28 +45,42 @@ use App\Services\Calculators\Engines\FractionalExcretionOfUreaCalculator;
 use App\Services\Calculators\Engines\FractionalExcretionOfUricAcidCalculator;
 use App\Services\Calculators\Engines\FreeWaterClearanceCalculator;
 use App\Services\Calculators\Engines\GlobulinCalculator;
+use App\Services\Calculators\Engines\GlucoseUnitConversionCalculator;
 use App\Services\Calculators\Engines\GreenKingIndexCalculator;
+use App\Services\Calculators\Engines\HomaBetaCalculator;
+use App\Services\Calculators\Engines\HomaIrCalculator;
+use App\Services\Calculators\Engines\LdlFriedewaldCalculator;
+use App\Services\Calculators\Engines\LdlHdlRatioCalculator;
+use App\Services\Calculators\Engines\LdlMartinHopkinsCalculator;
+use App\Services\Calculators\Engines\LdlSampsonCalculator;
 use App\Services\Calculators\Engines\MchCalculator;
 use App\Services\Calculators\Engines\MchcCalculator;
+use App\Services\Calculators\Engines\McFarlandTurbidityCalculator;
 use App\Services\Calculators\Engines\McvCalculator;
 use App\Services\Calculators\Engines\MentzerIndexCalculator;
+use App\Services\Calculators\Engines\MicDilutionCalculator;
 use App\Services\Calculators\Engines\MonocyteLymphocyteRatioCalculator;
 use App\Services\Calculators\Engines\NafldFibrosisScoreCalculator;
 use App\Services\Calculators\Engines\NeutrophilLymphocyteRatioCalculator;
+use App\Services\Calculators\Engines\NonHdlCholesterolCalculator;
 use App\Services\Calculators\Engines\OsmolalGapCalculator;
 use App\Services\Calculators\Engines\OsmolarClearanceCalculator;
 use App\Services\Calculators\Engines\PlateletLymphocyteRatioCalculator;
+use App\Services\Calculators\Engines\QuickiCalculator;
 use App\Services\Calculators\Engines\RbcIndicesCalculator;
 use App\Services\Calculators\Engines\RdwCalculator;
 use App\Services\Calculators\Engines\RdwIndexCalculator;
 use App\Services\Calculators\Engines\RenalFailureIndexCalculator;
 use App\Services\Calculators\Engines\ReticulocyteIndexCalculator;
 use App\Services\Calculators\Engines\ReticulocyteProductionIndexCalculator;
+use App\Services\Calculators\Engines\SerialDilutionCalculator;
 use App\Services\Calculators\Engines\SerumOsmolalityCalculator;
 use App\Services\Calculators\Engines\ShineLalIndexCalculator;
 use App\Services\Calculators\Engines\SrivastavaIndexCalculator;
 use App\Services\Calculators\Engines\StrongIonDifferenceCalculator;
 use App\Services\Calculators\Engines\SystemicImmuneInflammationIndexCalculator;
+use App\Services\Calculators\Engines\TotalCholesterolHdlRatioCalculator;
+use App\Services\Calculators\Engines\TriglycerideHdlRatioCalculator;
 use App\Services\Calculators\Engines\UrineAnionGapCalculator;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -2962,6 +2986,1222 @@ class MasterCalculatorSeeder extends Seeder
                 'tags' => ['nafld-fibrosis-score', 'nfs', 'fibrosis', 'nafld'],
                 'seo_title' => 'NAFLD Fibrosis Score Calculator | LabGoTo',
                 'seo_description' => 'Calculate the NAFLD fibrosis score to stage liver fibrosis in NAFLD.',
+            ],
+            [
+                'name' => 'LDL Cholesterol (Friedewald) Calculator',
+                'slug' => 'ldl-cholesterol-friedewald-calculator',
+                'short_description' => 'Estimate LDL cholesterol using the Friedewald equation from a standard lipid panel.',
+                'formula_display' => 'LDL = Total Cholesterol − HDL − (Triglycerides / 5)',
+                'engine' => LdlFriedewaldCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'total_cholesterol',
+                        'label' => 'Total cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 50,
+                        'max' => 700,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'hdl',
+                        'label' => 'HDL cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 300,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'triglycerides',
+                        'label' => 'Triglycerides',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 800,
+                        'step' => 1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'ldl',
+                        'label' => 'LDL Cholesterol',
+                        'unit' => 'mg/dL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'Friedewald LDL = TC − HDL − TG/5, valid only when triglycerides are below 400 mg/dL. Optimal LDL is below 100 mg/dL; for most adults with risk factors the target is below 70 mg/dL. Because the formula assumes a fixed TG:VLDL ratio of 5:1, it underestimates LDL when triglycerides are very high. The calculator will not compute a result when triglycerides exceed 400 mg/dL.',
+                'references' => [
+                    ['title' => 'Friedewald, Levy, Fredrickson (1972) — Estimation of the concentration of low-density lipoprotein', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/4337382/'],
+                ],
+                'categories' => ['Lipid Panel'],
+                'tags' => ['ldl', 'friedewald', 'lipid-panel', 'cholesterol'],
+                'seo_title' => 'LDL Cholesterol (Friedewald) Calculator | LabGoTo',
+                'seo_description' => 'Estimate LDL cholesterol from total cholesterol, HDL and triglycerides using the Friedewald equation.',
+            ],
+            [
+                'name' => 'LDL Cholesterol (Martin-Hopkins) Calculator',
+                'slug' => 'ldl-cholesterol-martin-hopkins-calculator',
+                'short_description' => 'Estimate LDL cholesterol with the Martin-Hopkins adjustable factor equation.',
+                'formula_display' => 'LDL = TC − HDL − (TG / adjustable factor)',
+                'engine' => LdlMartinHopkinsCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'total_cholesterol',
+                        'label' => 'Total cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 50,
+                        'max' => 700,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'hdl',
+                        'label' => 'HDL cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 300,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'triglycerides',
+                        'label' => 'Triglycerides',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 800,
+                        'step' => 1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'ldl',
+                        'label' => 'LDL Cholesterol',
+                        'unit' => 'mg/dL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'The Martin-Hopkins method replaces the fixed 5:1 ratio of Friedewald with an adjustable factor selected from a validated table stratified by triglycerides and non-HDL cholesterol, improving accuracy in patients with low LDL or high triglycerides. Optimal LDL is below 100 mg/dL. The method is not reliable when triglycerides exceed 800 mg/dL.',
+                'references' => [
+                    ['title' => 'Martin et al. (2013) — Comparison of a novel method vs the Friedewald equation', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/24103909/'],
+                ],
+                'categories' => ['Lipid Panel'],
+                'tags' => ['ldl', 'martin-hopkins', 'lipid-panel', 'cholesterol'],
+                'seo_title' => 'LDL Cholesterol (Martin-Hopkins) Calculator | LabGoTo',
+                'seo_description' => 'Estimate LDL cholesterol with the Martin-Hopkins adjustable factor method.',
+            ],
+            [
+                'name' => 'LDL Cholesterol (Sampson) Calculator',
+                'slug' => 'ldl-cholesterol-sampson-calculator',
+                'short_description' => 'Estimate LDL cholesterol with the Sampson-NIH equation.',
+                'formula_display' => 'LDL = TC/0.948 − HDL/0.971 − (TG/8.56 + TG × nonHDL/2140 − TG²/16100)/1000',
+                'engine' => LdlSampsonCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'total_cholesterol',
+                        'label' => 'Total cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 50,
+                        'max' => 700,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'hdl',
+                        'label' => 'HDL cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 300,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'triglycerides',
+                        'label' => 'Triglycerides',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 800,
+                        'step' => 1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'ldl',
+                        'label' => 'LDL Cholesterol',
+                        'unit' => 'mg/dL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'The Sampson-NIH equation estimates LDL directly from measured lipids without fasting, performing well across very high triglyceride levels (up to 800 mg/dL). It was derived from nuclear magnetic resonance data. Optimal LDL is below 100 mg/dL.',
+                'references' => [
+                    ['title' => 'Sampson et al. (2020) — A new equation based on the NIH', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/32067591/'],
+                ],
+                'categories' => ['Lipid Panel'],
+                'tags' => ['ldl', 'sampson', 'lipid-panel', 'cholesterol'],
+                'seo_title' => 'LDL Cholesterol (Sampson) Calculator | LabGoTo',
+                'seo_description' => 'Estimate LDL cholesterol with the Sampson-NIH equation from standard lipids.',
+            ],
+            [
+                'name' => 'Non-HDL Cholesterol Calculator',
+                'slug' => 'non-hdl-cholesterol-calculator',
+                'short_description' => 'Calculate non-HDL cholesterol from total cholesterol and HDL.',
+                'formula_display' => 'Non-HDL = Total Cholesterol − HDL',
+                'engine' => NonHdlCholesterolCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'total_cholesterol',
+                        'label' => 'Total cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 50,
+                        'max' => 700,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'hdl',
+                        'label' => 'HDL cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 300,
+                        'step' => 1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'non_hdl',
+                        'label' => 'Non-HDL Cholesterol',
+                        'unit' => 'mg/dL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'Non-HDL cholesterol includes all atherogenic particles (LDL, VLDL, IDL and remnants) and can be calculated without fasting. Desirable is below 130 mg/dL; in high-risk patients the goal is below 100 mg/dL. Non-HDL is often a better risk marker than LDL alone.',
+                'references' => [
+                    ['title' => 'Virani (2011) — Non-HDL cholesterol as a therapeutic target', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/21282660/'],
+                ],
+                'categories' => ['Lipid Panel'],
+                'tags' => ['non-hdl', 'lipid-panel', 'cholesterol', 'atherosclerosis'],
+                'seo_title' => 'Non-HDL Cholesterol Calculator | LabGoTo',
+                'seo_description' => 'Calculate non-HDL cholesterol from total cholesterol and HDL cholesterol.',
+            ],
+            [
+                'name' => 'Total Cholesterol/HDL Ratio Calculator',
+                'slug' => 'total-cholesterol-hdl-ratio-calculator',
+                'short_description' => 'Calculate the total cholesterol to HDL ratio, a cardiovascular risk marker.',
+                'formula_display' => 'Ratio = Total Cholesterol / HDL',
+                'engine' => TotalCholesterolHdlRatioCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'total_cholesterol',
+                        'label' => 'Total cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 50,
+                        'max' => 700,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'hdl',
+                        'label' => 'HDL cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 300,
+                        'step' => 1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'ratio',
+                        'label' => 'TC/HDL Ratio',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'The total cholesterol to HDL ratio reflects the balance between atherogenic and protective lipoproteins. A ratio above 5 (men) or 4.5 (women) indicates elevated cardiovascular risk; ratios below 3.5 are considered low risk. The ratio is not used for treatment targets.',
+                'references' => [
+                    ['title' => 'Castelli (1986) — Lipids and risk of coronary heart disease', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/3716588/'],
+                ],
+                'categories' => ['Lipid Panel'],
+                'tags' => ['tc-hdl-ratio', 'cardiovascular-risk', 'lipid-panel'],
+                'seo_title' => 'Total Cholesterol/HDL Ratio Calculator | LabGoTo',
+                'seo_description' => 'Calculate the total cholesterol to HDL ratio for cardiovascular risk assessment.',
+            ],
+            [
+                'name' => 'LDL/HDL Ratio Calculator',
+                'slug' => 'ldl-hdl-ratio-calculator',
+                'short_description' => 'Calculate the LDL to HDL cholesterol ratio.',
+                'formula_display' => 'Ratio = LDL / HDL',
+                'engine' => LdlHdlRatioCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'ldl',
+                        'label' => 'LDL cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 500,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'hdl',
+                        'label' => 'HDL cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 300,
+                        'step' => 1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'ratio',
+                        'label' => 'LDL/HDL Ratio',
+                        'rounding' => 'round_half_up',
+                        'precision' => 2,
+                    ],
+                ],
+                'interpretation_notes' => 'The LDL/HDL ratio contrasts atherogenic and protective cholesterol. A ratio of about 3.5 (men) or 3.0 (women) is considered low risk; values of 5 or higher indicate high cardiovascular risk. It complements, but does not replace, absolute LDL targets.',
+                'references' => [
+                    ['title' => 'Kinosian et al. (1994) — Cholesterol and coronary heart disease', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/8285444/'],
+                ],
+                'categories' => ['Lipid Panel'],
+                'tags' => ['ldl-hdl-ratio', 'cardiovascular-risk', 'lipid-panel'],
+                'seo_title' => 'LDL/HDL Ratio Calculator | LabGoTo',
+                'seo_description' => 'Calculate the LDL to HDL cholesterol ratio for cardiovascular risk assessment.',
+            ],
+            [
+                'name' => 'Triglyceride/HDL Ratio Calculator',
+                'slug' => 'triglyceride-hdl-ratio-calculator',
+                'short_description' => 'Calculate the triglyceride to HDL ratio, a marker of insulin resistance.',
+                'formula_display' => 'Ratio = Triglycerides / HDL',
+                'engine' => TriglycerideHdlRatioCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'triglycerides',
+                        'label' => 'Triglycerides',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 800,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'hdl',
+                        'label' => 'HDL cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 300,
+                        'step' => 1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'ratio',
+                        'label' => 'TG/HDL Ratio',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'The triglyceride to HDL ratio correlates with insulin resistance and small dense LDL particles. Values above 3.0 (mg/dL units) are associated with metabolic syndrome and elevated cardiovascular risk, while values below 2.0 are generally favorable.',
+                'references' => [
+                    ['title' => 'McLaughlin et al. (2005) — Use of metabolic markers to identify overweight individuals', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/15595815/'],
+                ],
+                'categories' => ['Lipid Panel', 'Metabolic'],
+                'tags' => ['tg-hdl-ratio', 'insulin-resistance', 'lipid-panel'],
+                'seo_title' => 'Triglyceride/HDL Ratio Calculator | LabGoTo',
+                'seo_description' => 'Calculate the triglyceride to HDL ratio as a marker of insulin resistance.',
+            ],
+            [
+                'name' => 'Atherogenic Index of Plasma (AIP) Calculator',
+                'slug' => 'atherogenic-index-of-plasma-calculator',
+                'short_description' => 'Calculate the atherogenic index of plasma from triglycerides and HDL.',
+                'formula_display' => 'AIP = log₁₀(Triglycerides / HDL)',
+                'engine' => AtherogenicIndexPlasmaCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'triglycerides',
+                        'label' => 'Triglycerides',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 800,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'hdl',
+                        'label' => 'HDL cholesterol',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 300,
+                        'step' => 1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'aip',
+                        'label' => 'Atherogenic Index of Plasma',
+                        'rounding' => 'round_half_up',
+                        'precision' => 2,
+                    ],
+                ],
+                'interpretation_notes' => 'AIP = log₁₀(TG/HDL) and is independent of the units used. Values below 0.11 indicate low risk of atherogenesis; 0.11 to 0.21 intermediate; above 0.21 high risk. Higher AIP reflects smaller, denser LDL particles and greater cardiovascular risk.',
+                'references' => [
+                    ['title' => 'Dobiásová & Frohlich (2001) — The plasma parameter log (TG/HDL-C) as an atherogenic index', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/11522180/'],
+                ],
+                'categories' => ['Lipid Panel', 'Cardiovascular Risk'],
+                'tags' => ['aip', 'atherogenic-index', 'lipid-panel', 'cardiovascular-risk'],
+                'seo_title' => 'Atherogenic Index of Plasma (AIP) Calculator | LabGoTo',
+                'seo_description' => 'Calculate the atherogenic index of plasma (AIP) from triglycerides and HDL cholesterol.',
+            ],
+            [
+                'name' => 'BUN/Urea Converter',
+                'slug' => 'bun-urea-converter',
+                'short_description' => 'Convert between blood urea nitrogen (BUN) and urea in different units.',
+                'formula_display' => 'BUN (mg/dL) = Urea (mg/dL) / 2.1428 · Urea (mmol/L) = BUN (mg/dL) × 0.357',
+                'engine' => BunUreaConverterCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'value',
+                        'label' => 'Value',
+                        'type' => 'number',
+                        'required' => true,
+                        'min' => 0.1,
+                        'max' => 1000,
+                        'step' => 0.1,
+                    ],
+                    [
+                        'key' => 'unit',
+                        'label' => 'Input unit',
+                        'type' => 'select',
+                        'required' => true,
+                        'options' => [
+                            ['value' => 'bun_mgdl', 'label' => 'BUN (mg/dL)'],
+                            ['value' => 'urea_mgdl', 'label' => 'Urea (mg/dL)'],
+                            ['value' => 'urea_mmol', 'label' => 'Urea (mmol/L)'],
+                        ],
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'bun_mgdl',
+                        'label' => 'BUN',
+                        'unit' => 'mg/dL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                    [
+                        'key' => 'urea_mgdl',
+                        'label' => 'Urea',
+                        'unit' => 'mg/dL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                    [
+                        'key' => 'urea_mmol',
+                        'label' => 'Urea',
+                        'unit' => 'mmol/L',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'Urea contains two nitrogen atoms; blood urea nitrogen (BUN) is the nitrogen fraction of urea. BUN (mg/dL) = Urea (mg/dL) / 2.1428 and Urea (mmol/L) = BUN (mg/dL) × 0.357. Normal BUN is roughly 7–20 mg/dL (2.5–7.1 mmol/L urea).',
+                'references' => [
+                    ['title' => 'StatPearls — Blood Urea Nitrogen', 'url' => 'https://www.ncbi.nlm.nih.gov/books/NBK513296/'],
+                ],
+                'categories' => ['Clinical Chemistry', 'Renal'],
+                'tags' => ['bun', 'urea', 'converter', 'renal-function'],
+                'seo_title' => 'BUN/Urea Converter | LabGoTo',
+                'seo_description' => 'Convert between blood urea nitrogen (BUN) and urea units quickly.',
+            ],
+            [
+                'name' => 'HOMA-IR Calculator',
+                'slug' => 'homa-ir-calculator',
+                'short_description' => 'Estimate insulin resistance with the HOMA-IR index from fasting glucose and insulin.',
+                'formula_display' => 'HOMA-IR = (Glucose × Insulin) / 405',
+                'engine' => HomaIrCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'fasting_glucose',
+                        'label' => 'Fasting glucose',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 50,
+                        'max' => 500,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'fasting_insulin',
+                        'label' => 'Fasting insulin',
+                        'type' => 'number',
+                        'unit' => 'µU/mL',
+                        'required' => true,
+                        'min' => 0.1,
+                        'max' => 500,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'homa_ir',
+                        'label' => 'HOMA-IR',
+                        'rounding' => 'round_half_up',
+                        'precision' => 2,
+                    ],
+                ],
+                'interpretation_notes' => 'HOMA-IR = fasting glucose (mg/dL) × fasting insulin (µU/mL) / 405. Values above approximately 2.5 indicate insulin resistance, although cutoffs vary by population and assay. It is a research tool; interpretation should always be clinical.',
+                'references' => [
+                    ['title' => 'Matthews et al. (1985) — Homeostasis model assessment', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/3899825/'],
+                ],
+                'categories' => ['Metabolic', 'Endocrinology'],
+                'tags' => ['homa-ir', 'insulin-resistance', 'diabetes', 'glucose-metabolism'],
+                'seo_title' => 'HOMA-IR Calculator | LabGoTo',
+                'seo_description' => 'Estimate insulin resistance using HOMA-IR from fasting glucose and insulin.',
+            ],
+            [
+                'name' => 'HOMA-Beta Calculator',
+                'slug' => 'homa-beta-calculator',
+                'short_description' => 'Estimate pancreatic beta-cell function with the HOMA-%B index.',
+                'formula_display' => 'HOMA-%B = (360 × Insulin) / (Glucose − 63)',
+                'engine' => HomaBetaCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'fasting_glucose',
+                        'label' => 'Fasting glucose',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 64,
+                        'max' => 500,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'fasting_insulin',
+                        'label' => 'Fasting insulin',
+                        'type' => 'number',
+                        'unit' => 'µU/mL',
+                        'required' => true,
+                        'min' => 0.1,
+                        'max' => 500,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'homa_beta',
+                        'label' => 'HOMA-%B',
+                        'unit' => '%',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'HOMA-%B estimates basal beta-cell function using the formula 360 × insulin / (glucose − 63), with glucose in mg/dL and insulin in µU/mL. Healthy adults usually have HOMA-%B around 100%. Low values suggest impaired insulin secretion; the calculator requires fasting glucose above 63 mg/dL.',
+                'references' => [
+                    ['title' => 'Matthews et al. (1985) — Homeostasis model assessment', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/3899825/'],
+                ],
+                'categories' => ['Metabolic', 'Endocrinology'],
+                'tags' => ['homa-beta', 'beta-cell-function', 'diabetes', 'glucose-metabolism'],
+                'seo_title' => 'HOMA-Beta Calculator | LabGoTo',
+                'seo_description' => 'Estimate pancreatic beta-cell function with the HOMA-%B index.',
+            ],
+            [
+                'name' => 'QUICKI Calculator',
+                'slug' => 'quicki-calculator',
+                'short_description' => 'Calculate the Quantitative Insulin Sensitivity Check Index from fasting glucose and insulin.',
+                'formula_display' => 'QUICKI = 1 / (log₁₀ Glucose + log₁₀ Insulin)',
+                'engine' => QuickiCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'fasting_glucose',
+                        'label' => 'Fasting glucose',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 50,
+                        'max' => 500,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'fasting_insulin',
+                        'label' => 'Fasting insulin',
+                        'type' => 'number',
+                        'unit' => 'µU/mL',
+                        'required' => true,
+                        'min' => 0.1,
+                        'max' => 500,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'quicki',
+                        'label' => 'QUICKI',
+                        'rounding' => 'round_half_up',
+                        'precision' => 3,
+                    ],
+                ],
+                'interpretation_notes' => 'QUICKI = 1 / (log₁₀ glucose mg/dL + log₁₀ insulin µU/mL). Higher values indicate greater insulin sensitivity; lower values (typically below 0.34) suggest insulin resistance. QUICKI is less sensitive to fasting insulin assay noise than HOMA-IR.',
+                'references' => [
+                    ['title' => 'Katz et al. (2000) — Quantitative insulin sensitivity check index', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/10858398/'],
+                ],
+                'categories' => ['Metabolic', 'Endocrinology'],
+                'tags' => ['quicki', 'insulin-sensitivity', 'glucose-metabolism'],
+                'seo_title' => 'QUICKI Calculator | LabGoTo',
+                'seo_description' => 'Calculate the Quantitative Insulin Sensitivity Check Index (QUICKI).',
+            ],
+            [
+                'name' => 'Estimated Average Glucose (eAG) Calculator',
+                'slug' => 'estimated-average-glucose-calculator',
+                'short_description' => 'Convert HbA1c into estimated average glucose (eAG).',
+                'formula_display' => 'eAG (mg/dL) = 28.7 × HbA1c − 46.7',
+                'engine' => EstimatedAverageGlucoseCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'hba1c',
+                        'label' => 'HbA1c',
+                        'type' => 'number',
+                        'unit' => '%',
+                        'required' => true,
+                        'min' => 3,
+                        'max' => 20,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'eag_mgdl',
+                        'label' => 'Estimated Average Glucose',
+                        'unit' => 'mg/dL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 0,
+                    ],
+                    [
+                        'key' => 'eag_mmol',
+                        'label' => 'Estimated Average Glucose',
+                        'unit' => 'mmol/L',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'eAG = 28.7 × HbA1c − 46.7 (mg/dL), derived from the ADAG study, and allows the HbA1c to be expressed as average blood glucose. For example, an HbA1c of 7% corresponds to an eAG of about 154 mg/dL (8.6 mmol/L).',
+                'references' => [
+                    ['title' => 'Nathan et al. (2008) — Translating the A1C assay into estimated average glucose', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/18777083/'],
+                ],
+                'categories' => ['Metabolic', 'Endocrinology'],
+                'tags' => ['eag', 'hba1c', 'average-glucose', 'diabetes'],
+                'seo_title' => 'Estimated Average Glucose (eAG) Calculator | LabGoTo',
+                'seo_description' => 'Convert HbA1c to estimated average glucose (eAG) in mg/dL and mmol/L.',
+            ],
+            [
+                'name' => 'Glucose Unit Conversion Calculator',
+                'slug' => 'glucose-unit-conversion-calculator',
+                'short_description' => 'Convert blood glucose between mg/dL and mmol/L.',
+                'formula_display' => 'mg/dL = mmol/L × 18.0182',
+                'engine' => GlucoseUnitConversionCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'value',
+                        'label' => 'Glucose value',
+                        'type' => 'number',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 2000,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'unit',
+                        'label' => 'Input unit',
+                        'type' => 'select',
+                        'required' => true,
+                        'options' => [
+                            ['value' => 'mgdl', 'label' => 'mg/dL'],
+                            ['value' => 'mmol', 'label' => 'mmol/L'],
+                        ],
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'glucose_mgdl',
+                        'label' => 'Glucose',
+                        'unit' => 'mg/dL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                    [
+                        'key' => 'glucose_mmol',
+                        'label' => 'Glucose',
+                        'unit' => 'mmol/L',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'Convert between mg/dL and mmol/L using the molar mass of glucose (180.16 g/mol): 1 mmol/L = 18.0182 mg/dL. Fasting plasma glucose is normal below 100 mg/dL (5.6 mmol/L).',
+                'references' => [
+                    ['title' => 'ADA — Standards of Care in Diabetes', 'url' => 'https://diabetesjournals.org/care/issue/45/Supplement_1'],
+                ],
+                'categories' => ['Clinical Chemistry', 'Metabolic'],
+                'tags' => ['glucose', 'converter', 'mgdl', 'mmol', 'diabetes'],
+                'seo_title' => 'Glucose Unit Conversion Calculator | LabGoTo',
+                'seo_description' => 'Convert blood glucose between mg/dL and mmol/L.',
+            ],
+            [
+                'name' => 'Body Mass Index (BMI) Calculator',
+                'slug' => 'body-mass-index-calculator',
+                'short_description' => 'Calculate BMI from weight and height and classify weight status.',
+                'formula_display' => 'BMI = Weight (kg) / Height (m)²',
+                'engine' => BmiCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'weight',
+                        'label' => 'Weight',
+                        'type' => 'number',
+                        'unit' => 'kg',
+                        'required' => true,
+                        'min' => 20,
+                        'max' => 400,
+                        'step' => 0.1,
+                    ],
+                    [
+                        'key' => 'height',
+                        'label' => 'Height',
+                        'type' => 'number',
+                        'unit' => 'cm',
+                        'required' => true,
+                        'min' => 80,
+                        'max' => 250,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'bmi',
+                        'label' => 'BMI',
+                        'unit' => 'kg/m²',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'WHO classification: underweight < 18.5, normal 18.5–24.9, overweight 25–29.9, obesity class I 30–34.9, class II 35–39.9, class III ≥ 40. BMI does not distinguish fat from muscle and should be interpreted alongside waist circumference in some populations.',
+                'references' => [
+                    ['title' => 'WHO — Body mass index classification', 'url' => 'https://www.who.int/data/nutrition/nlis/info/bmi-classification'],
+                ],
+                'categories' => ['Anthropometry'],
+                'tags' => ['bmi', 'body-mass-index', 'anthropometry', 'obesity'],
+                'seo_title' => 'Body Mass Index (BMI) Calculator | LabGoTo',
+                'seo_description' => 'Calculate your body mass index (BMI) from weight and height.',
+            ],
+            [
+                'name' => 'Body Surface Area (BSA) Calculator',
+                'slug' => 'body-surface-area-calculator',
+                'short_description' => 'Calculate body surface area using the Mosteller formula.',
+                'formula_display' => 'BSA (m²) = √(Height (cm) × Weight (kg) / 3600)',
+                'engine' => BodySurfaceAreaCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'weight',
+                        'label' => 'Weight',
+                        'type' => 'number',
+                        'unit' => 'kg',
+                        'required' => true,
+                        'min' => 2,
+                        'max' => 400,
+                        'step' => 0.1,
+                    ],
+                    [
+                        'key' => 'height',
+                        'label' => 'Height',
+                        'type' => 'number',
+                        'unit' => 'cm',
+                        'required' => true,
+                        'min' => 40,
+                        'max' => 250,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'bsa_mosteller',
+                        'label' => 'Body Surface Area (Mosteller)',
+                        'unit' => 'm²',
+                        'rounding' => 'round_half_up',
+                        'precision' => 2,
+                    ],
+                ],
+                'interpretation_notes' => 'BSA = √(height cm × weight kg / 3600) (Mosteller). Typical adult BSA is 1.6–2.0 m². BSA is used to index cardiac output, glomerular filtration and to dose cytotoxic chemotherapy. The Mosteller formula is accurate for most adult and pediatric body sizes.',
+                'references' => [
+                    ['title' => 'Mosteller (1987) — Simplified calculation of body-surface area', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/3660203/'],
+                ],
+                'categories' => ['Anthropometry'],
+                'tags' => ['bsa', 'body-surface-area', 'anthropometry', 'chemotherapy-dosing'],
+                'seo_title' => 'Body Surface Area (BSA) Calculator | LabGoTo',
+                'seo_description' => 'Calculate body surface area (BSA) with the Mosteller formula.',
+            ],
+            [
+                'name' => 'Basal Metabolic Rate (BMR) Calculator',
+                'slug' => 'basal-metabolic-rate-calculator',
+                'short_description' => 'Estimate basal metabolic rate with the Mifflin-St Jeor equation.',
+                'formula_display' => 'Men: 10W + 6.25H − 5A + 5 · Women: 10W + 6.25H − 5A − 161',
+                'engine' => BasalMetabolicRateCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'weight',
+                        'label' => 'Weight',
+                        'type' => 'number',
+                        'unit' => 'kg',
+                        'required' => true,
+                        'min' => 20,
+                        'max' => 400,
+                        'step' => 0.1,
+                    ],
+                    [
+                        'key' => 'height',
+                        'label' => 'Height',
+                        'type' => 'number',
+                        'unit' => 'cm',
+                        'required' => true,
+                        'min' => 80,
+                        'max' => 250,
+                        'step' => 0.1,
+                    ],
+                    [
+                        'key' => 'age',
+                        'label' => 'Age',
+                        'type' => 'number',
+                        'unit' => 'years',
+                        'required' => true,
+                        'min' => 10,
+                        'max' => 110,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'sex',
+                        'label' => 'Sex',
+                        'type' => 'select',
+                        'required' => true,
+                        'options' => [
+                            ['value' => 'male', 'label' => 'Male'],
+                            ['value' => 'female', 'label' => 'Female'],
+                        ],
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'bmr',
+                        'label' => 'Basal Metabolic Rate',
+                        'unit' => 'kcal/day',
+                        'rounding' => 'round_half_up',
+                        'precision' => 0,
+                    ],
+                ],
+                'interpretation_notes' => 'Mifflin-St Jeor: men BMR = 10W + 6.25H − 5A + 5; women BMR = 10W + 6.25H − 5A − 161 (weight kg, height cm, age years). BMR is the energy needed at rest; total daily needs = BMR × activity factor. It is the most accurate predictive equation for healthy adults.',
+                'references' => [
+                    ['title' => 'Mifflin et al. (1990) — A new predictive equation for resting energy expenditure', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/2305711/'],
+                ],
+                'categories' => ['Anthropometry'],
+                'tags' => ['bmr', 'basal-metabolic-rate', 'nutrition', 'anthropometry'],
+                'seo_title' => 'Basal Metabolic Rate (BMR) Calculator | LabGoTo',
+                'seo_description' => 'Estimate basal metabolic rate (BMR) with the Mifflin-St Jeor equation.',
+            ],
+            [
+                'name' => 'McFarland Turbidity to CFU/mL Calculator',
+                'slug' => 'mcfarland-turbidity-cfu-ml-calculator',
+                'short_description' => 'Convert a McFarland standard reading into an approximate bacterial concentration.',
+                'formula_display' => 'CFU/mL ≈ McFarland × 3 × 10⁸',
+                'engine' => McFarlandTurbidityCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'mcfarland',
+                        'label' => 'McFarland standard',
+                        'type' => 'number',
+                        'required' => true,
+                        'min' => 0.1,
+                        'max' => 10,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'cfu_per_ml',
+                        'label' => 'Estimated Concentration',
+                        'unit' => 'CFU/mL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 2,
+                    ],
+                ],
+                'interpretation_notes' => 'A 1.0 McFarland standard corresponds to approximately 3 × 10⁸ CFU/mL for most bacteria (e.g., Escherichia coli). A 0.5 McFarland standard is commonly used for susceptibility testing and corresponds to roughly 1.5 × 10⁸ CFU/mL. The relationship is organism-dependent and an approximation.',
+                'references' => [
+                    ['title' => 'McFarland (1907) — Nephelometer: an instrument for estimating the number of bacteria', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/17863491/'],
+                ],
+                'categories' => ['Microbiology'],
+                'tags' => ['mcfarland', 'turbidity', 'cfu', 'microbiology'],
+                'seo_title' => 'McFarland Turbidity to CFU/mL Calculator | LabGoTo',
+                'seo_description' => 'Convert a McFarland standard into an approximate CFU/mL bacterial concentration.',
+            ],
+            [
+                'name' => 'CFU/mL Calculator',
+                'slug' => 'cfu-ml-calculator',
+                'short_description' => 'Calculate viable colony-forming units per milliliter from a plate count.',
+                'formula_display' => 'CFU/mL = Colonies × Dilution factor / Volume plated (mL)',
+                'engine' => CfuPerMlCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'colonies',
+                        'label' => 'Number of colonies',
+                        'type' => 'number',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 500,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'dilution_factor',
+                        'label' => 'Dilution factor',
+                        'type' => 'number',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 1000000000,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'volume_plated',
+                        'label' => 'Volume plated',
+                        'type' => 'number',
+                        'unit' => 'mL',
+                        'required' => true,
+                        'min' => 0.001,
+                        'max' => 10,
+                        'step' => 0.001,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'cfu_per_ml',
+                        'label' => 'Concentration',
+                        'unit' => 'CFU/mL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 2,
+                    ],
+                ],
+                'interpretation_notes' => 'CFU/mL = (number of colonies × dilution factor) / volume plated. Count plates with 25–250 colonies for reliable results; multiply by the reciprocal of the dilution (e.g., a 10⁻⁴ dilution has a factor of 10,000) and divide by the volume plated.',
+                'references' => [
+                    ['title' => 'CLSI M02 — Performance Standards for Antimicrobial Disk Susceptibility Tests', 'url' => 'https://clsi.org/standards/products/microbiology/documents/m02/'],
+                ],
+                'categories' => ['Microbiology'],
+                'tags' => ['cfu', 'colony-forming-units', 'microbiology', 'plate-count'],
+                'seo_title' => 'CFU/mL Calculator | LabGoTo',
+                'seo_description' => 'Calculate colony-forming units per milliliter from colonies, dilution and plated volume.',
+            ],
+            [
+                'name' => 'Colony Count Calculator',
+                'slug' => 'colony-count-calculator',
+                'short_description' => 'Predict the expected number of colonies for a given bacterial concentration.',
+                'formula_display' => 'Colonies = CFU/mL × Volume plated (mL) / Dilution factor',
+                'engine' => ColonyCountCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'cfu_per_ml',
+                        'label' => 'Expected concentration',
+                        'type' => 'number',
+                        'unit' => 'CFU/mL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 1000000000000,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'dilution_factor',
+                        'label' => 'Dilution factor',
+                        'type' => 'number',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 1000000000,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'volume_plated',
+                        'label' => 'Volume plated',
+                        'type' => 'number',
+                        'unit' => 'mL',
+                        'required' => true,
+                        'min' => 0.001,
+                        'max' => 10,
+                        'step' => 0.001,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'colonies',
+                        'label' => 'Expected Colonies',
+                        'rounding' => 'round_half_up',
+                        'precision' => 0,
+                    ],
+                ],
+                'interpretation_notes' => 'Colonies = CFU/mL × volume plated / dilution factor. This helps plan the dilution needed to obtain a countable plate (25–250 colonies). For example, a 10⁻⁴ dilution of a 10⁶ CFU/mL suspension plated at 0.1 mL yields about 10 colonies.',
+                'references' => [
+                    ['title' => 'Madigan et al. — Brock Biology of Microorganisms', 'url' => 'https://www.pearson.com/en-us/subject-catalog/p/brock-biology-of-microorganisms.html'],
+                ],
+                'categories' => ['Microbiology'],
+                'tags' => ['colony-count', 'cfu', 'dilution', 'microbiology'],
+                'seo_title' => 'Colony Count Calculator | LabGoTo',
+                'seo_description' => 'Predict expected colony counts for planning bacterial dilutions.',
+            ],
+            [
+                'name' => 'Serial Dilution Calculator',
+                'slug' => 'serial-dilution-calculator',
+                'short_description' => 'Calculate per-tube concentrations for a serial dilution series.',
+                'formula_display' => 'Tube n = Initial concentration / Dilution factorⁿ',
+                'engine' => SerialDilutionCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'initial_concentration',
+                        'label' => 'Initial concentration',
+                        'type' => 'number',
+                        'unit' => 'CFU/mL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 1000000000000,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'dilution_factor',
+                        'label' => 'Dilution factor per step',
+                        'type' => 'number',
+                        'required' => true,
+                        'min' => 2,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'number_of_tubes',
+                        'label' => 'Number of tubes',
+                        'type' => 'select',
+                        'required' => true,
+                        'options' => [
+                            ['value' => '1', 'label' => '1'],
+                            ['value' => '2', 'label' => '2'],
+                            ['value' => '3', 'label' => '3'],
+                            ['value' => '4', 'label' => '4'],
+                            ['value' => '5', 'label' => '5'],
+                            ['value' => '6', 'label' => '6'],
+                        ],
+                    ],
+                ],
+                'output_schema' => [
+                    ['key' => 'tube_1', 'label' => 'Tube 1', 'unit' => 'CFU/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'tube_2', 'label' => 'Tube 2', 'unit' => 'CFU/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'tube_3', 'label' => 'Tube 3', 'unit' => 'CFU/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'tube_4', 'label' => 'Tube 4', 'unit' => 'CFU/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'tube_5', 'label' => 'Tube 5', 'unit' => 'CFU/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'tube_6', 'label' => 'Tube 6', 'unit' => 'CFU/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                ],
+                'interpretation_notes' => 'Each tube reduces the concentration by the dilution factor: tube n = initial / factorⁿ. For a 10-fold serial dilution of a 10⁸ CFU/mL culture, tubes contain 10⁷, 10⁶, 10⁵, 10⁴, 10³ and 10² CFU/mL. Ideal plates come from tubes giving 25–250 colonies.',
+                'references' => [
+                    ['title' => 'CLSI M02 — Performance Standards for Antimicrobial Disk Susceptibility Tests', 'url' => 'https://clsi.org/standards/products/microbiology/documents/m02/'],
+                ],
+                'categories' => ['Microbiology'],
+                'tags' => ['serial-dilution', 'dilution-series', 'microbiology', 'cfu'],
+                'seo_title' => 'Serial Dilution Calculator | LabGoTo',
+                'seo_description' => 'Calculate per-tube concentrations for a serial dilution series.',
+            ],
+            [
+                'name' => 'Bacterial Concentration (OD600) Calculator',
+                'slug' => 'bacterial-concentration-od600-calculator',
+                'short_description' => 'Estimate bacterial concentration from optical density at 600 nm.',
+                'formula_display' => 'CFU/mL = OD600 × Conversion factor',
+                'engine' => BacterialConcentrationCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'od600',
+                        'label' => 'OD600',
+                        'type' => 'number',
+                        'required' => true,
+                        'min' => 0,
+                        'max' => 3,
+                        'step' => 0.01,
+                    ],
+                    [
+                        'key' => 'conversion_factor',
+                        'label' => 'Conversion factor',
+                        'type' => 'number',
+                        'unit' => 'CFU/mL per OD unit',
+                        'required' => true,
+                        'min' => 1000000,
+                        'max' => 10000000000,
+                        'step' => 1000000,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'cfu_per_ml',
+                        'label' => 'Estimated Concentration',
+                        'unit' => 'CFU/mL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 2,
+                    ],
+                ],
+                'interpretation_notes' => 'Concentration = OD600 × conversion factor. Typical factors are about 1 × 10⁸ CFU/mL per OD unit for E. coli grown in LB medium, but this varies with organism, strain, growth phase and spectrophotometer. Calibrate the factor for your own system for accurate results.',
+                'references' => [
+                    ['title' => 'Sambrook & Russell — Molecular Cloning: A Laboratory Manual', 'url' => 'https://www.cshlpress.com/default.tpl?cart=16300081461071758&action=full&--eqskudatarq=6557'],
+                ],
+                'categories' => ['Microbiology'],
+                'tags' => ['od600', 'optical-density', 'bacterial-concentration', 'microbiology'],
+                'seo_title' => 'Bacterial Concentration (OD600) Calculator | LabGoTo',
+                'seo_description' => 'Estimate bacterial concentration in CFU/mL from optical density at 600 nm.',
+            ],
+            [
+                'name' => 'Antibiotic Dilution Calculator',
+                'slug' => 'antibiotic-dilution-calculator',
+                'short_description' => 'Calculate the volume of stock antibiotic needed to prepare a working solution.',
+                'formula_display' => 'C1V1 = C2V2',
+                'engine' => AntibioticDilutionCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'stock_concentration',
+                        'label' => 'Stock concentration',
+                        'type' => 'number',
+                        'unit' => 'µg/mL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 100000,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'desired_concentration',
+                        'label' => 'Desired concentration',
+                        'type' => 'number',
+                        'unit' => 'µg/mL',
+                        'required' => true,
+                        'min' => 0.01,
+                        'max' => 100000,
+                        'step' => 0.01,
+                    ],
+                    [
+                        'key' => 'desired_volume',
+                        'label' => 'Desired final volume',
+                        'type' => 'number',
+                        'unit' => 'mL',
+                        'required' => true,
+                        'min' => 0.1,
+                        'max' => 1000,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'stock_volume',
+                        'label' => 'Volume of stock to add',
+                        'unit' => 'mL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 2,
+                    ],
+                    [
+                        'key' => 'solvent_volume',
+                        'label' => 'Volume of diluent to add',
+                        'unit' => 'mL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 2,
+                    ],
+                ],
+                'interpretation_notes' => 'Using C1V1 = C2V2: stock volume = (desired concentration × desired volume) / stock concentration; the remainder is diluent. The desired concentration cannot exceed the stock concentration. Always account for the final volume in your medium.',
+                'references' => [
+                    ['title' => 'CLSI M07 — Methods for Dilution Antimicrobial Susceptibility Tests', 'url' => 'https://clsi.org/standards/products/microbiology/documents/m07/'],
+                ],
+                'categories' => ['Microbiology'],
+                'tags' => ['antibiotic-dilution', 'c1v1', 'antimicrobial', 'microbiology'],
+                'seo_title' => 'Antibiotic Dilution Calculator | LabGoTo',
+                'seo_description' => 'Calculate stock and diluent volumes to prepare an antibiotic working solution.',
+            ],
+            [
+                'name' => 'MIC Dilution Calculator',
+                'slug' => 'mic-dilution-calculator',
+                'short_description' => 'Calculate two-fold dilution concentrations for MIC susceptibility testing.',
+                'formula_display' => 'Well n = Stock concentration / Dilution factorⁿ',
+                'engine' => MicDilutionCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'stock_concentration',
+                        'label' => 'Stock concentration',
+                        'type' => 'number',
+                        'unit' => 'µg/mL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 100000,
+                        'step' => 1,
+                    ],
+                    [
+                        'key' => 'dilution_factor',
+                        'label' => 'Dilution factor per well',
+                        'type' => 'select',
+                        'required' => true,
+                        'options' => [
+                            ['value' => '2', 'label' => '2-fold'],
+                            ['value' => '3', 'label' => '3-fold'],
+                            ['value' => '10', 'label' => '10-fold'],
+                        ],
+                    ],
+                    [
+                        'key' => 'number_of_wells',
+                        'label' => 'Number of wells',
+                        'type' => 'select',
+                        'required' => true,
+                        'options' => [
+                            ['value' => '1', 'label' => '1'],
+                            ['value' => '2', 'label' => '2'],
+                            ['value' => '3', 'label' => '3'],
+                            ['value' => '4', 'label' => '4'],
+                            ['value' => '5', 'label' => '5'],
+                            ['value' => '6', 'label' => '6'],
+                            ['value' => '7', 'label' => '7'],
+                            ['value' => '8', 'label' => '8'],
+                        ],
+                    ],
+                ],
+                'output_schema' => [
+                    ['key' => 'well_1', 'label' => 'Well 1', 'unit' => 'µg/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'well_2', 'label' => 'Well 2', 'unit' => 'µg/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'well_3', 'label' => 'Well 3', 'unit' => 'µg/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'well_4', 'label' => 'Well 4', 'unit' => 'µg/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'well_5', 'label' => 'Well 5', 'unit' => 'µg/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'well_6', 'label' => 'Well 6', 'unit' => 'µg/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'well_7', 'label' => 'Well 7', 'unit' => 'µg/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                    ['key' => 'well_8', 'label' => 'Well 8', 'unit' => 'µg/mL', 'rounding' => 'round_half_up', 'precision' => 2],
+                ],
+                'interpretation_notes' => 'Broth microdilution MIC testing uses serial two-fold dilutions of the antibiotic. The MIC is the lowest concentration that visibly inhibits growth. For a 2-fold series starting at 128 µg/mL, wells contain 64, 32, 16, 8, 4, 2, 1 and 0.5 µg/mL.',
+                'references' => [
+                    ['title' => 'CLSI M07 — Methods for Dilution Antimicrobial Susceptibility Tests', 'url' => 'https://clsi.org/standards/products/microbiology/documents/m07/'],
+                ],
+                'categories' => ['Microbiology'],
+                'tags' => ['mic', 'minimum-inhibitory-concentration', 'antimicrobial', 'microbiology'],
+                'seo_title' => 'MIC Dilution Calculator | LabGoTo',
+                'seo_description' => 'Calculate two-fold dilution concentrations for minimum inhibitory concentration (MIC) testing.',
             ],
         ];
     }
