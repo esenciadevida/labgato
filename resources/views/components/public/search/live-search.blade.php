@@ -32,7 +32,7 @@
         x-transition:leave="transition ease-in duration-100"
         x-transition:leave-start="opacity-100 translate-y-0"
         x-transition:leave-end="opacity-0 -translate-y-1"
-        class="absolute right-0 top-full z-50 mt-2 w-[min(calc(100vw-2rem),380px)] origin-top-right"
+        class="fixed left-4 right-4 top-20 z-50 sm:absolute sm:right-0 sm:left-auto sm:top-full sm:mt-2 sm:w-[min(calc(100vw-2rem),380px)] origin-top-right"
         role="search"
     >
         <form

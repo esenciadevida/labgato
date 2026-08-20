@@ -117,7 +117,7 @@
         @keydown.escape="close()"
         x-ref="panel"
         tabindex="-1"
-        class="absolute right-0 top-full z-50 mt-2 w-[min(24rem,calc(100vw-2rem))] origin-top-right rounded-2xl outline-none sm:w-96"
+        class="fixed left-4 right-4 top-20 z-50 sm:absolute sm:right-0 sm:left-auto sm:top-full sm:mt-2 sm:w-[min(24rem,calc(100vw-2rem))] origin-top-right rounded-2xl outline-none sm:w-96"
         role="dialog"
         aria-modal="true"
         aria-label="Notifications panel"
