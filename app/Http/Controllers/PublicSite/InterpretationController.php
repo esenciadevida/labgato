@@ -10,39 +10,12 @@ use Illuminate\Http\Request;
 
 class InterpretationController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $query = trim((string) $request->query('q'));
-        $categorySlug = trim((string) $request->query('category'));
-        $tagSlug = trim((string) $request->query('tag'));
-
-        $interpretations = InterpretationResource::query()
-            ->select(['id', 'slug', 'name', 'short_description', 'reading_time_minutes', 'related_analytes'])
-            ->with(['categories', 'tags'])
-            ->published()
-            ->when($query !== '', fn ($q) => $q->search($query))
-            ->when($categorySlug !== '', fn ($q) => $q->whereHas('categories', fn ($c) => $c->where('slug', $categorySlug)))
-            ->when($tagSlug !== '', fn ($q) => $q->whereHas('tags', fn ($t) => $t->where('slug', $tagSlug)))
-            ->orderByDesc('published_at')
-            ->paginate(config('labgoto.pagination.per_page'))
-            ->withQueryString();
-
-        $hasFilters = $query !== '' || $categorySlug !== '' || $tagSlug !== '';
-
-        $pageTitle = 'Interpretations';
-        $metaDescription = 'Browse laboratory result interpretation guides covering common analyte patterns and clinical scenarios.';
-        $metaNoindex = $hasFilters;
-
-        return view('public.interpretation.index', compact(
-            'interpretations',
-            'query',
-            'categorySlug',
-            'tagSlug',
-            'hasFilters',
-            'pageTitle',
-            'metaDescription',
-            'metaNoindex',
-        ));
+        return view('public.interpretation.index', [
+            'pageTitle' => 'Interpretations',
+            'metaDescription' => 'Browse laboratory result interpretation guides covering common analyte patterns and clinical scenarios.',
+        ]);
     }
 
     public function show(Request $request, string $slug)

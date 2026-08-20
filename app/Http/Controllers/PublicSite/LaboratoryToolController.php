@@ -9,39 +9,12 @@ use Illuminate\Http\Request;
 
 class LaboratoryToolController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $categorySlug = trim((string) $request->query('category'));
-        $tagSlug = trim((string) $request->query('tag'));
-        $query = trim((string) $request->query('q'));
-
-        $tools = LaboratoryTool::query()
-            ->select(['id', 'slug', 'name', 'short_description'])
-            ->with(['categories', 'tags'])
-            ->published()
-            ->when($query !== '', fn ($q) => $q->search($query))
-            ->when($categorySlug !== '', fn ($q) => $q->whereHas('categories', fn ($c) => $c->where('slug', $categorySlug)))
-            ->when($tagSlug !== '', fn ($q) => $q->whereHas('tags', fn ($t) => $t->where('slug', $tagSlug)))
-            ->orderByDesc('published_at')
-            ->paginate(config('labgoto.pagination.per_page'))
-            ->withQueryString();
-
-        $hasFilters = $query !== '' || $categorySlug !== '' || $tagSlug !== '';
-
-        $pageTitle = 'Laboratory Tools';
-        $metaDescription = 'Practical laboratory tools for daily operations, including dilution calculations and centrifugation conversions.';
-        $metaNoindex = $hasFilters;
-
-        return view('public.tools.index', compact(
-            'tools',
-            'categorySlug',
-            'tagSlug',
-            'query',
-            'hasFilters',
-            'pageTitle',
-            'metaDescription',
-            'metaNoindex',
-        ));
+        return view('public.tools.index', [
+            'pageTitle' => 'Laboratory Tools',
+            'metaDescription' => 'Practical laboratory tools for daily operations, including dilution calculations and centrifugation conversions.',
+        ]);
     }
 
     public function show(Request $request, string $slug)

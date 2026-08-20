@@ -9,39 +9,12 @@ use Illuminate\Http\Request;
 
 class CalculatorController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $categorySlug = trim((string) $request->query('category'));
-        $tagSlug = trim((string) $request->query('tag'));
-        $query = trim((string) $request->query('q'));
-
-        $calculators = Calculator::query()
-            ->select(['id', 'slug', 'name', 'short_description'])
-            ->with(['categories', 'tags'])
-            ->published()
-            ->when($query !== '', fn ($q) => $q->search($query))
-            ->when($categorySlug !== '', fn ($q) => $q->whereHas('categories', fn ($c) => $c->where('slug', $categorySlug)))
-            ->when($tagSlug !== '', fn ($q) => $q->whereHas('tags', fn ($t) => $t->where('slug', $tagSlug)))
-            ->orderByDesc('published_at')
-            ->paginate(config('labgoto.pagination.per_page'))
-            ->withQueryString();
-
-        $hasFilters = $query !== '' || $categorySlug !== '' || $tagSlug !== '';
-
-        $pageTitle = 'Calculators';
-        $metaDescription = 'Browse clinical calculators for laboratory professionals, including electrolyte and acid-base calculations.';
-        $metaNoindex = $hasFilters;
-
-        return view('public.calculators.index', compact(
-            'calculators',
-            'categorySlug',
-            'tagSlug',
-            'query',
-            'hasFilters',
-            'pageTitle',
-            'metaDescription',
-            'metaNoindex',
-        ));
+        return view('public.calculators.index', [
+            'pageTitle' => 'Calculators',
+            'metaDescription' => 'Browse clinical calculators for laboratory professionals, including electrolyte and acid-base calculations.',
+        ]);
     }
 
     public function show(Request $request, string $slug)

@@ -10,42 +10,12 @@ use Illuminate\Http\Request;
 
 class KnowledgeController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $query = trim((string) $request->query('q'));
-        $categorySlug = trim((string) $request->query('category'));
-        $tagSlug = trim((string) $request->query('tag'));
-        $difficulty = trim((string) $request->query('difficulty'));
-
-        $knowledge = KnowledgeResource::query()
-            ->select(['id', 'slug', 'name', 'short_description', 'topic_category', 'difficulty_level', 'reading_time_minutes'])
-            ->with(['categories', 'tags'])
-            ->published()
-            ->when($query !== '', fn ($q) => $q->search($query))
-            ->when($categorySlug !== '', fn ($q) => $q->whereHas('categories', fn ($c) => $c->where('slug', $categorySlug)))
-            ->when($tagSlug !== '', fn ($q) => $q->whereHas('tags', fn ($t) => $t->where('slug', $tagSlug)))
-            ->when($difficulty !== '', fn ($q) => $q->byDifficulty($difficulty))
-            ->orderByDesc('published_at')
-            ->paginate(config('labgoto.pagination.per_page'))
-            ->withQueryString();
-
-        $hasFilters = $query !== '' || $categorySlug !== '' || $tagSlug !== '' || $difficulty !== '';
-
-        $pageTitle = 'Knowledge Hub';
-        $metaDescription = 'Educational laboratory knowledge resources covering hematology, clinical chemistry, and laboratory practice.';
-        $metaNoindex = $hasFilters;
-
-        return view('public.knowledge.index', compact(
-            'knowledge',
-            'query',
-            'categorySlug',
-            'tagSlug',
-            'difficulty',
-            'hasFilters',
-            'pageTitle',
-            'metaDescription',
-            'metaNoindex',
-        ));
+        return view('public.knowledge.index', [
+            'pageTitle' => 'Knowledge Hub',
+            'metaDescription' => 'Educational laboratory knowledge resources covering hematology, clinical chemistry, and laboratory practice.',
+        ]);
     }
 
     public function show(Request $request, string $slug)

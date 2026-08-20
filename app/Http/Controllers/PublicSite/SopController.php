@@ -10,52 +10,12 @@ use Illuminate\Http\Request;
 
 class SopController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $query = trim((string) $request->query('q'));
-        $categorySlug = trim((string) $request->query('category'));
-        $tagSlug = trim((string) $request->query('tag'));
-        $department = trim((string) $request->query('department'));
-
-        $sops = Sop::query()
-            ->select(['id', 'slug', 'name', 'short_description', 'department', 'version', 'reviewed_date'])
-            ->with(['categories', 'tags'])
-            ->published()
-            ->when($query !== '', fn ($q) => $q->search($query))
-            ->when($categorySlug !== '', fn ($q) => $q->whereHas('categories', fn ($c) => $c->where('slug', $categorySlug)))
-            ->when($tagSlug !== '', fn ($q) => $q->whereHas('tags', fn ($t) => $t->where('slug', $tagSlug)))
-            ->when($department !== '', fn ($q) => $q->where('department', $department))
-            ->orderByDesc('published_at')
-            ->paginate(config('labgoto.pagination.per_page'))
-            ->withQueryString();
-
-        $hasFilters = $query !== '' || $categorySlug !== '' || $tagSlug !== '' || $department !== '';
-
-        $departments = Sop::query()
-            ->published()
-            ->whereNotNull('department')
-            ->where('department', '!=', '')
-            ->selectRaw('DISTINCT department')
-            ->orderBy('department')
-            ->pluck('department')
-            ->all();
-
-        $pageTitle = 'Standard Operating Procedures';
-        $metaDescription = 'Standard operating procedures for laboratory professionals, from specimen collection to instrument quality control.';
-        $metaNoindex = $hasFilters;
-
-        return view('public.sops.index', compact(
-            'sops',
-            'query',
-            'categorySlug',
-            'tagSlug',
-            'department',
-            'departments',
-            'hasFilters',
-            'pageTitle',
-            'metaDescription',
-            'metaNoindex',
-        ));
+        return view('public.sops.index', [
+            'pageTitle' => 'Standard Operating Procedures',
+            'metaDescription' => 'Standard operating procedures for laboratory professionals, from specimen collection to instrument quality control.',
+        ]);
     }
 
     public function show(Request $request, string $slug)

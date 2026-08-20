@@ -9,38 +9,12 @@ use Illuminate\Http\Request;
 
 class ReferenceRangeController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $query = trim((string) $request->query('q'));
-        $categorySlug = trim((string) $request->query('category'));
-
-        $referenceRanges = ReferenceRange::query()
-            ->select(['id', 'slug', 'name', 'analyte_name', 'short_description', 'sex', 'population_group', 'age_min', 'age_max', 'lower_limit', 'upper_limit', 'unit'])
-            ->with(['categories', 'tags'])
-            ->published()
-            ->when($query !== '', fn ($q) => $q->search($query))
-            ->when($categorySlug !== '', fn ($q) => $q->whereHas('categories', fn ($c) => $c->where('slug', $categorySlug)))
-            ->orderBy('analyte_name')
-            ->orderBy('sex')
-            ->orderByDesc('published_at')
-            ->paginate(config('labgoto.pagination.per_page'))
-            ->withQueryString();
-
-        $hasFilters = $query !== '' || $categorySlug !== '';
-
-        $pageTitle = 'Reference Ranges';
-        $metaDescription = 'Browse reference ranges for laboratory analytes, including demographic variations, specimen types, and units of measurement.';
-        $metaNoindex = $hasFilters;
-
-        return view('public.reference-ranges.index', compact(
-            'referenceRanges',
-            'query',
-            'categorySlug',
-            'hasFilters',
-            'pageTitle',
-            'metaDescription',
-            'metaNoindex',
-        ));
+        return view('public.reference-ranges.index', [
+            'pageTitle' => 'Reference Ranges',
+            'metaDescription' => 'Browse reference ranges for laboratory analytes, including demographic variations, specimen types, and units of measurement.',
+        ]);
     }
 
     public function show(Request $request, string $slug)
