@@ -38,7 +38,7 @@ class SettingsSeeder extends Seeder
             ],
             [
                 'key' => 'general.contact_email',
-                'value' => 'contact@labgato.local',
+                'value' => 'contact@labgoto.com',
                 'type' => 'string',
                 'group' => 'general',
                 'label' => 'Contact Email',
@@ -46,7 +46,7 @@ class SettingsSeeder extends Seeder
             ],
             [
                 'key' => 'general.support_email',
-                'value' => 'support@labgato.local',
+                'value' => 'support@labgoto.com',
                 'type' => 'string',
                 'group' => 'general',
                 'label' => 'Support Email',
