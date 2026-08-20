@@ -88,7 +88,7 @@ class MemberLoginController extends Controller
             action: 'auth.login.success',
         );
 
-        return redirect()->intended(route('account.dashboard'));
+        return redirect()->intended(route('home'));
     }
 
     public function logout(Request $request, AuditLogService $auditLog)

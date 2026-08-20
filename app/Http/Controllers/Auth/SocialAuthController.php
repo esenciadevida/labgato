@@ -70,7 +70,7 @@ class SocialAuthController extends Controller
                 resourceId: $user->id,
             );
 
-            return redirect()->route('account.dashboard');
+            return redirect()->route('home');
         }
 
         $user = User::create([
@@ -94,6 +94,6 @@ class SocialAuthController extends Controller
             resourceId: $user->id,
         );
 
-        return redirect()->route('account.dashboard');
+        return redirect()->route('home');
     }
 }
