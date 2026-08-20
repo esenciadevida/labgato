@@ -23,7 +23,13 @@ class SocialAuthController extends Controller
         try {
             $googleUser = Socialite::driver('google')->user();
         } catch (Throwable $e) {
-            Log::warning('Google OAuth callback failed: '.$e->getMessage());
+            Log::warning('Google OAuth callback failed', [
+                'exception' => $e,
+                'class' => get_class($e),
+                'message' => $e->getMessage(),
+                'code' => $e->getCode(),
+                'uri' => request()->fullUrl(),
+            ]);
 
             return redirect()->route('login')->with('error', 'Google sign-in was not completed. Please try again.');
         }
