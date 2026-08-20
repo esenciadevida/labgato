@@ -12,9 +12,9 @@
 
 <header id="site-header" class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm dark:bg-slate-900 dark:border-slate-800" x-data="{ mobileMenuOpen: false }" @keydown.escape.window="mobileMenuOpen = false">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative flex items-center justify-between gap-4 h-20 lg:h-24">
-            <div class="flex items-center shrink-0 mr-2 xl:mr-4">
-                <x-brand.logo size="sm" theme imgClass="!h-6 sm:!h-8 lg:!h-10" />
+        <div class="relative flex items-center justify-between gap-2 sm:gap-4 h-16 sm:h-20 lg:h-24">
+            <div class="flex items-center shrink-0 min-w-0 mr-1 sm:mr-2 xl:mr-4">
+                <x-brand.logo size="sm" theme imgClass="!h-5 sm:!h-8 lg:!h-10" />
             </div>
 
             <nav class="hidden xl:flex items-center gap-1 absolute left-1/2 -translate-x-1/2" aria-label="Main navigation">
@@ -28,7 +28,7 @@
                 @endforeach
             </nav>
 
-            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+            <div class="flex items-center gap-1.5 sm:gap-2 lg:gap-3 shrink-0">
                 <x-public.search.live-search />
 
                 @auth
@@ -50,7 +50,7 @@
 
                 <button
                     @click="mobileMenuOpen = !mobileMenuOpen"
-                    class="xl:hidden w-10 h-10 flex items-center justify-center rounded-full text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-700"
+                    class="xl:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-700"
                     :aria-expanded="mobileMenuOpen"
                     aria-label="Toggle navigation menu"
                 >

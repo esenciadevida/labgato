@@ -36,7 +36,7 @@
             x-transition:leave-start="opacity-100 scale-100"
             x-transition:leave-end="opacity-0 scale-95"
             @click.outside="open = false"
-            class="absolute right-0 top-0 z-50 w-[min(90vw,480px)] rounded-lg border border-slate-200 bg-white shadow-pop dark:border-slate-700 dark:bg-slate-800"
+            class="absolute right-0 top-0 z-50 w-[min(calc(100vw-2rem),480px)] rounded-lg border border-slate-200 bg-white shadow-pop dark:border-slate-700 dark:bg-slate-800"
         >
             <form action="{{ route('public.search') }}" method="GET" role="search" class="flex items-center gap-2">
                 <div class="relative flex-1">

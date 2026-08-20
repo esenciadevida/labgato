@@ -14,7 +14,7 @@
         type="button"
         x-show="!panelOpen"
         @click="openPanel()"
-        class="w-10 h-10 flex items-center justify-center rounded-full text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 transition-colors dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-700"
+        class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 transition-colors dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-700"
         aria-label="Open search"
     >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -32,7 +32,7 @@
         x-transition:leave="transition ease-in duration-100"
         x-transition:leave-start="opacity-100 translate-y-0"
         x-transition:leave-end="opacity-0 -translate-y-1"
-        class="absolute right-0 top-full z-50 mt-2 w-[min(calc(100vw-2rem),380px)]"
+        class="absolute right-0 top-full z-50 mt-2 w-[min(calc(100vw-2rem),380px)] origin-top-right"
         role="search"
     >
         <form
