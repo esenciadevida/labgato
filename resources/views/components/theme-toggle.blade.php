@@ -2,6 +2,7 @@
 
 <div
     x-data="{ isDark: document.documentElement.classList.contains('dark') }"
+    x-cloak
     class="shrink-0 {{ $class }}"
 >
     <button
