@@ -81,12 +81,11 @@ class FacetService
             return collect();
         }
 
+        $idList = $resourceIds->implode(',');
+
         return Tag::query()
             ->select('tags.*')
-            ->selectRaw("COUNT(DISTINCT {$pivot['tag_table']}.{$pivot['tag_fk']}) as count")
-            ->join($pivot['tag_table'], 'tags.id', '=', "{$pivot['tag_table']}.tag_id")
-            ->whereIn("{$pivot['tag_table']}.{$pivot['tag_fk']}", $resourceIds)
-            ->groupBy('tags.id')
+            ->selectRaw("COALESCE((SELECT COUNT(DISTINCT pt.{$pivot['tag_fk']}) FROM {$pivot['tag_table']} pt WHERE pt.tag_id = tags.id AND pt.{$pivot['tag_fk']} IN ({$idList})), 0) as count")
             ->orderBy('tags.name')
             ->get();
     }
