@@ -4,12 +4,17 @@ namespace App\Providers;
 
 use App\Models\Setting;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class SettingServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
+        if (! Schema::hasTable('settings')) {
+            return;
+        }
+
         $settings = Cache::remember('settings.all', 3600, function () {
             return Setting::pluck('value', 'key')->toArray();
         });
