@@ -21,6 +21,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
+            'password_set_at' => now(),
             'is_active' => true,
             'last_login_at' => null,
             'remember_token' => Str::random(10),
@@ -32,6 +33,14 @@ class UserFactory extends Factory
     {
         return $this->state(fn (array $attributes) => [
             'user_type' => 'member',
+        ]);
+    }
+
+    public function googleOnly(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'google_id' => Str::random(21),
+            'password_set_at' => null,
         ]);
     }
 

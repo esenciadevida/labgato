@@ -100,6 +100,7 @@
                     </form>
                 </x-ui.card>
 
+                @if($user->hasCustomPassword())
                 <x-ui.card title="Change Password">
                     <form method="POST" action="{{ route('account.password.update') }}" class="space-y-5">
                         @csrf
@@ -148,9 +149,7 @@
 
                         @if($user->hasGoogleAccount())
                             <p class="text-xs text-slate-400 dark:text-slate-500">
-                                Your account is linked to Google. If you've never set a password, use the
-                                <a href="{{ route('auth.password.request') }}" class="text-primary-600 hover:underline dark:text-primary-400">forgot password</a>
-                                flow to create one.
+                                Your account is linked to Google. Changing your password here won't affect your Google sign-in — you can keep using either method.
                             </p>
                         @endif
 
@@ -164,6 +163,56 @@
                         </div>
                     </form>
                 </x-ui.card>
+                @else
+                <x-ui.card title="Create a Password">
+                    <p class="mb-5 text-sm text-slate-600 dark:text-slate-400">
+                        You signed up using Google and don't have a LabGato password yet. Create one to also
+                        sign in with your email address — your Google sign-in will keep working either way.
+                    </p>
+
+                    <form method="POST" action="{{ route('account.password.update') }}" class="space-y-5">
+                        @csrf
+                        @method('PUT')
+
+                        <div>
+                            <x-form.label for="password" required>New password</x-form.label>
+                            <x-ui.input
+                                id="password"
+                                name="password"
+                                type="password"
+                                :error="$errors->first('password')"
+                                autocomplete="new-password"
+                                aria-required="true"
+                            />
+                            <x-form.error for="password" />
+                            <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">
+                                At least {{ config('labgoto.security.password_min_length', 8) }} characters, with letters and numbers.
+                            </p>
+                        </div>
+
+                        <div>
+                            <x-form.label for="password_confirmation" required>Confirm new password</x-form.label>
+                            <x-ui.input
+                                id="password_confirmation"
+                                name="password_confirmation"
+                                type="password"
+                                autocomplete="new-password"
+                                aria-required="true"
+                            />
+                            <x-form.error for="password_confirmation" />
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-end gap-3 border-t border-slate-100 pt-5 dark:border-slate-700">
+                            <x-ui.button type="submit" variant="primary">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Create Password
+                            </x-ui.button>
+                        </div>
+                    </form>
+                </x-ui.card>
+                @endif
 
                 <x-ui.card title="Account Details">
                     <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">

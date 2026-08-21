@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreUserRequest;
 use App\Http\Requests\Admin\UpdateUserRequest;
+use App\Models\Role;
 use App\Models\User;
 use App\Services\AuditLogService;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class AdministratorController extends Controller
             ->when($search !== '', function ($query) use ($search) {
                 $query->where(function ($q) use ($search) {
                     $q->where('name', 'like', "%{$search}%")
-                      ->orWhere('email', 'like', "%{$search}%");
+                        ->orWhere('email', 'like', "%{$search}%");
                 });
             })
             ->orderBy('name')
@@ -44,7 +45,7 @@ class AdministratorController extends Controller
     {
         $this->authorizeSuperAdmin($request);
 
-        $roles = \App\Models\Role::orderBy('name')->get();
+        $roles = Role::orderBy('name')->get();
 
         return view('admin.administrators.create', compact('roles'));
     }
@@ -58,6 +59,7 @@ class AdministratorController extends Controller
         unset($data['role_id']);
 
         $data['user_type'] = 'admin';
+        $data['password_set_at'] = now();
 
         $administrator = User::create($data);
         $administrator->roles()->attach($roleId);
@@ -71,7 +73,7 @@ class AdministratorController extends Controller
     {
         $this->authorizeSuperAdmin($request);
 
-        $roles = \App\Models\Role::orderBy('name')->get();
+        $roles = Role::orderBy('name')->get();
 
         return view('admin.administrators.edit', compact('administrator', 'roles'));
     }
@@ -86,6 +88,8 @@ class AdministratorController extends Controller
 
         if (empty($data['password'])) {
             unset($data['password'], $data['password_confirmation']);
+        } else {
+            $data['password_set_at'] = now();
         }
 
         $data['user_type'] = 'admin';
@@ -139,6 +143,7 @@ class AdministratorController extends Controller
         );
 
         $message = $newState ? 'Administrator activated successfully.' : 'Administrator deactivated and logged out immediately.';
+
         return redirect()->route('admin.administrators.index')->with('success', $message);
     }
 

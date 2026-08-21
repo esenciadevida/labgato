@@ -32,6 +32,7 @@ class MemberRegisterController extends Controller
             'name' => $request->name,
             'email' => strtolower($request->email),
             'password' => $request->password,
+            'password_set_at' => now(),
             'is_active' => true,
             'user_type' => 'member',
         ]);
@@ -45,7 +46,7 @@ class MemberRegisterController extends Controller
         Auth::login($user);
         $request->session()->regenerate();
 
-        $user->notify(new MemberRegisteredNotification());
+        $user->notify(new MemberRegisteredNotification);
 
         if (! config('labgoto.auth.email_verification', false)) {
             $user->forceFill(['email_verified_at' => now()])->save();

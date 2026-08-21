@@ -2,9 +2,12 @@
 
 namespace Tests\Feature\Member;
 
+use App\Mail\PasswordUpdatedEmail;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class MemberProfileTest extends TestCase
@@ -187,5 +190,73 @@ class MemberProfileTest extends TestCase
         $member->refresh();
 
         $this->assertTrue(Hash::check('OldPass123', $member->password));
+    }
+
+    public function test_google_only_member_can_create_password_without_current_password(): void
+    {
+        Mail::fake();
+
+        $member = User::factory()->member()->googleOnly()->create([
+            'password' => bcrypt(Str::password(32)),
+        ]);
+
+        $this->assertNull($member->password_set_at);
+
+        $this->actingAs($member)
+            ->put(route('account.password.update'), [
+                'password' => 'NewPass456',
+                'password_confirmation' => 'NewPass456',
+            ])
+            ->assertRedirect(route('account.profile'))
+            ->assertSessionHas('success');
+
+        $member->refresh();
+
+        $this->assertTrue(Hash::check('NewPass456', $member->password));
+        $this->assertNotNull($member->password_set_at);
+        $this->assertDatabaseHas('audit_logs', ['action' => 'account.password.set']);
+
+        Mail::assertSent(PasswordUpdatedEmail::class, function (PasswordUpdatedEmail $mail) use ($member) {
+            return $mail->hasTo($member->email) && $mail->created === true;
+        });
+    }
+
+    public function test_google_only_member_sees_create_password_card_on_profile(): void
+    {
+        $member = User::factory()->member()->googleOnly()->create([
+            'password' => bcrypt(Str::password(32)),
+        ]);
+
+        $this->actingAs($member)
+            ->get(route('account.profile'))
+            ->assertOk()
+            ->assertSee('Create a Password')
+            ->assertSee('Create Password')
+            ->assertDontSee('Current password');
+    }
+
+    public function test_after_creating_password_current_password_is_required_for_changes(): void
+    {
+        $member = User::factory()->member()->googleOnly()->create([
+            'password' => bcrypt(Str::password(32)),
+        ]);
+
+        $this->actingAs($member)
+            ->put(route('account.password.update'), [
+                'password' => 'FirstPass123',
+                'password_confirmation' => 'FirstPass123',
+            ])
+            ->assertRedirect(route('account.profile'));
+
+        $this->actingAs($member)
+            ->put(route('account.password.update'), [
+                'password' => 'SecondPass456',
+                'password_confirmation' => 'SecondPass456',
+            ])
+            ->assertSessionHasErrors('current_password');
+
+        $member->refresh();
+
+        $this->assertTrue(Hash::check('FirstPass123', $member->password));
     }
 }

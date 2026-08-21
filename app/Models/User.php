@@ -17,6 +17,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'password_set_at',
         'is_active',
         'last_login_at',
         'user_type',
@@ -44,6 +45,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'password_set_at' => 'datetime',
             'is_active' => 'boolean',
             'last_login_at' => 'datetime',
         ];
@@ -151,6 +153,11 @@ class User extends Authenticatable
     public function hasGoogleAccount(): bool
     {
         return $this->google_id !== null && $this->google_id !== '';
+    }
+
+    public function hasCustomPassword(): bool
+    {
+        return $this->password_set_at !== null;
     }
 
     public function sendPasswordResetNotification($token): void
