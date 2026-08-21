@@ -17,6 +17,7 @@ class SettingsController extends Controller
         'features' => 'Features',
         'content' => 'Content',
         'seo' => 'SEO',
+        'analytics' => 'Analytics',
         'security' => 'Security',
         'ai' => 'AI',
     ];

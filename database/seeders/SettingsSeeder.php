@@ -130,6 +130,24 @@ class SettingsSeeder extends Seeder
                 'label' => 'Default SEO Description',
                 'description' => null,
             ],
+            [
+                'key' => 'seo.google_site_verification',
+                'value' => '',
+                'type' => 'string',
+                'group' => 'seo',
+                'label' => 'Google Site Verification',
+                'description' => 'Paste the content value of the google-site-verification meta tag from Search Console.',
+            ],
+
+            // ANALYTICS
+            [
+                'key' => 'analytics.ga4_measurement_id',
+                'value' => '',
+                'type' => 'string',
+                'group' => 'analytics',
+                'label' => 'GA4 Measurement ID',
+                'description' => 'Paste your Google Analytics 4 Measurement ID (e.g., G-XXXXXXXXXX).',
+            ],
 
             // SECURITY
             [
