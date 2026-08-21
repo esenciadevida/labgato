@@ -18,7 +18,7 @@
     />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-    @php $ga4Id = app(\App\Models\Setting::class)->where('key', 'analytics.ga4_measurement_id')->value('value') ?? ''; @endphp
+    @php $ga4Id = setting('analytics.ga4_measurement_id', ''); @endphp
     @if($ga4Id)
     <script>
         (function() {

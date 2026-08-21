@@ -14,7 +14,7 @@
             } catch (e) {}
             this.visible = false;
             if (value === 'accepted') {
-                @php $ga4Id = app(\App\Models\Setting::class)->where('key', 'analytics.ga4_measurement_id')->value('value') ?? ''; @endphp
+                @php $ga4Id = setting('analytics.ga4_measurement_id', ''); @endphp
                 @if($ga4Id)
                 try {
                     var s = document.createElement('script');

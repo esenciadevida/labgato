@@ -8,6 +8,7 @@ use App\Models\KnowledgeResource;
 use App\Models\User;
 use App\Services\AuditLogService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserManagementController extends Controller
 {
@@ -59,16 +60,22 @@ class UserManagementController extends Controller
     {
         abort_unless($user->isRegularUser(), 404);
 
-        $user->update(['is_active' => ! $user->is_active]);
+        $newState = ! $user->is_active;
+        $user->update(['is_active' => $newState]);
+
+        // Instant session kill: delete all sessions for this user
+        $this->invalidateUserSessions($user);
 
         app(AuditLogService::class)->logWithSubject(
-            $user->is_active ? 'users.activated' : 'users.deactivated',
+            $newState ? 'users.activated' : 'users.deactivated',
             $user,
-            ['is_active' => $user->is_active],
+            ['is_active' => $newState],
             $request
         );
 
-        return redirect()->route('admin.users.index')->with('success', 'User status updated successfully.');
+        $message = $newState ? 'User activated successfully.' : 'User deactivated and logged out immediately.';
+
+        return redirect()->route('admin.users.index')->with('success', $message);
     }
 
     public function destroy(Request $request, User $user)
@@ -79,10 +86,41 @@ class UserManagementController extends Controller
             abort(403, 'Only Super Administrators can delete users.');
         }
 
-        $user->update(['is_active' => false]);
+        // Prevent self-deletion
+        if ($request->user()->id === $user->id) {
+            return redirect()->route('admin.users.index')->with('error', 'You cannot delete your own account.');
+        }
 
-        app(AuditLogService::class)->logWithSubject('users.deactivated', $user, ['is_active' => false], $request);
+        // Instant session kill before deletion
+        $this->invalidateUserSessions($user);
 
-        return redirect()->route('admin.users.index')->with('success', 'User deactivated successfully.');
+        // Nullify foreign keys that reference this user
+        DB::table('sops')->where('contributed_by', $user->id)->update(['contributed_by' => null]);
+        DB::table('knowledge_resources')->where('contributed_by', $user->id)->update(['contributed_by' => null]);
+        DB::table('interpretation_resources')->where('contributed_by', $user->id)->update(['contributed_by' => null]);
+
+        // Hard delete
+        $userName = $user->name;
+        $userEmail = $user->email;
+        $user->delete();
+
+        app(AuditLogService::class)->log(
+            action: 'users.deleted',
+            subject_type: User::class,
+            subject_id: null,
+            properties: ['name' => $userName, 'email' => $userEmail],
+            userId: $request->user()->id,
+        );
+
+        return redirect()->route('admin.users.index')->with('success', "User \"{$userName}\" has been permanently deleted.");
+    }
+
+    protected function invalidateUserSessions(User $user): void
+    {
+        if (config('session.driver') === 'database') {
+            DB::table(config('session.table', 'sessions'))
+                ->where('user_id', $user->id)
+                ->delete();
+        }
     }
 }

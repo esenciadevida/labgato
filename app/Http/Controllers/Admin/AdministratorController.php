@@ -8,6 +8,7 @@ use App\Http\Requests\Admin\UpdateUserRequest;
 use App\Models\User;
 use App\Services\AuditLogService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdministratorController extends Controller
 {
@@ -123,16 +124,22 @@ class AdministratorController extends Controller
             }
         }
 
-        $administrator->update(['is_active' => ! $administrator->is_active]);
+        $newState = ! $administrator->is_active;
+        $administrator->update(['is_active' => $newState]);
+
+        if (! $newState) {
+            $this->invalidateUserSessions($administrator);
+        }
 
         app(AuditLogService::class)->logWithSubject(
-            $administrator->is_active ? 'administrators.activated' : 'administrators.deactivated',
+            $newState ? 'administrators.activated' : 'administrators.deactivated',
             $administrator,
-            ['is_active' => $administrator->is_active],
+            ['is_active' => $newState],
             $request
         );
 
-        return redirect()->route('admin.administrators.index')->with('success', 'Administrator status updated successfully.');
+        $message = $newState ? 'Administrator activated successfully.' : 'Administrator deactivated and logged out immediately.';
+        return redirect()->route('admin.administrators.index')->with('success', $message);
     }
 
     public function destroy(Request $request, User $administrator)
@@ -158,10 +165,20 @@ class AdministratorController extends Controller
             }
         }
 
+        $this->invalidateUserSessions($administrator);
         $administrator->update(['is_active' => false]);
 
         app(AuditLogService::class)->logWithSubject('administrators.deactivated', $administrator, ['is_active' => false], $request);
 
-        return redirect()->route('admin.administrators.index')->with('success', 'Administrator deactivated successfully.');
+        return redirect()->route('admin.administrators.index')->with('success', 'Administrator deactivated and logged out immediately.');
+    }
+
+    protected function invalidateUserSessions(User $user): void
+    {
+        if (config('session.driver') === 'database') {
+            DB::table(config('session.table', 'sessions'))
+                ->where('user_id', $user->id)
+                ->delete();
+        }
     }
 }

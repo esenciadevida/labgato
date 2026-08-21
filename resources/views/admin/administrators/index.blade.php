@@ -63,7 +63,8 @@
                             <td class="px-4 py-3 text-right text-sm whitespace-nowrap">
                                 <a href="{{ route('admin.administrators.edit', $administrator) }}" class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300">Edit</a>
 
-                                <form method="POST" action="{{ route('admin.administrators.toggle-active', $administrator) }}" class="inline">
+                                <form method="POST" action="{{ route('admin.administrators.toggle-active', $administrator) }}" class="inline"
+                                       data-confirm="{{ $administrator->is_active ? 'Deactivate this administrator? They will be logged out immediately.' : 'Reactivate this administrator?' }}">
                                     @csrf
                                     <button type="submit" class="ml-3 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
                                         {{ $administrator->is_active ? 'Deactivate' : 'Activate' }}
@@ -72,7 +73,7 @@
 
                                 @if(! $administrator->is_active)
                                     <form method="POST" action="{{ route('admin.administrators.destroy', $administrator) }}" class="inline"
-                                           data-confirm="Deactivate this administrator? This action cannot be undone.">
+                                           data-confirm="Deactivate this administrator? This will log them out and prevent future logins.">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="ml-3 text-danger-600 hover:text-danger-700 dark:text-danger-400 dark:hover:text-danger-300">Delete</button>

@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use App\Services\AuditLogService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
@@ -33,11 +32,30 @@ class SettingsController extends Controller
         'aws_access_key_id',
     ];
 
+    private const ALLOWED_PREFIXES = [
+        'general.',
+        'features.',
+        'content.',
+        'seo.',
+        'analytics.',
+        'security.',
+        'ai.',
+    ];
+
     private function isSensitiveKey(string $key): bool
     {
         $baseKey = Str::afterLast($key, '.');
-
         return in_array($baseKey, self::SENSITIVE_KEYS, true);
+    }
+
+    private function isAllowedKey(string $key): bool
+    {
+        foreach (self::ALLOWED_PREFIXES as $prefix) {
+            if (str_starts_with($key, $prefix)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function index()
@@ -70,14 +88,14 @@ class SettingsController extends Controller
         ]);
 
         $auditChanges = [];
-        $settings = Setting::all()->keyBy('key');
+        $existingSettings = Setting::all()->keyBy('key');
 
         foreach ($data['settings'] as $key => $value) {
-            if ($this->isSensitiveKey($key)) {
+            if ($this->isSensitiveKey($key) || ! $this->isAllowedKey($key)) {
                 continue;
             }
 
-            $oldValue = $settings[$key]->value ?? null;
+            $oldValue = $existingSettings[$key]->value ?? null;
             $newValue = $value !== null ? (string) $value : null;
 
             if ($oldValue !== $newValue) {
@@ -87,7 +105,13 @@ class SettingsController extends Controller
         }
 
         if (! empty($auditChanges)) {
-            app(AuditLogService::class)->log('settings.updated', 'settings', 1, $auditChanges, auth()->id());
+            app(AuditLogService::class)->log(
+                action: 'settings.updated',
+                subject_type: Setting::class,
+                subject_id: null,
+                properties: $auditChanges,
+                userId: $currentUser->id,
+            );
         }
 
         Cache::forget('settings.all');

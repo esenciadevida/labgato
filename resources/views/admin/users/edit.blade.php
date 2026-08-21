@@ -18,7 +18,8 @@
             @else
                 <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400">Inactive</span>
             @endif
-            <form method="POST" action="{{ route('admin.users.toggle-active', $user) }}">
+            <form method="POST" action="{{ route('admin.users.toggle-active', $user) }}"
+                   data-confirm="{{ $user->is_active ? 'Deactivate this user? They will be logged out immediately and cannot log in until reactivated.' : 'Reactivate this user?' }}">
                 @csrf
                 <x-ui.button type="submit" variant="secondary">
                     {{ $user->is_active ? 'Deactivate' : 'Activate' }}

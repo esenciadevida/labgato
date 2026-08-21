@@ -73,7 +73,8 @@
                                         </svg>
                                     </a>
 
-                                    <form method="POST" action="{{ route('admin.users.toggle-active', $user) }}" class="inline">
+                                    <form method="POST" action="{{ route('admin.users.toggle-active', $user) }}" class="inline"
+                                           data-confirm="{{ $user->is_active ? 'Deactivate this user? They will be logged out immediately and cannot log in until reactivated.' : 'Reactivate this user?' }}">
                                         @csrf
                                         <button
                                             type="submit"
@@ -95,7 +96,7 @@
 
                                     @if(Auth::user()->isSuperAdministrator())
                                         <form method="POST" action="{{ route('admin.users.destroy', $user) }}" class="inline"
-                                               data-confirm="Deactivate this user? This action cannot be undone.">
+                                               data-confirm="Permanently delete this user? This will remove their account and all associated data. This cannot be undone.">
                                             @csrf
                                             @method('DELETE')
                                             <button

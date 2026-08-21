@@ -4,7 +4,7 @@
     $siteName = config('app.name');
     $description = $description ?? $siteName . ' - Professional Laboratory Toolkit';
     $ogImage = $ogImage ?: config('labgoto.seo.default_og_image');
-    $googleVerification = app(\App\Models\Setting::class)->where('key', 'seo.google_site_verification')->value('value') ?? '';
+    $googleVerification = setting('seo.google_site_verification', '');
 @endphp
 
 <title>{{ $title ? $title . ' - ' . $siteName : $siteName }}</title>
