@@ -18,6 +18,26 @@
     />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
+    @php $ga4Id = app(\App\Models\Setting::class)->where('key', 'analytics.ga4_measurement_id')->value('value') ?? ''; @endphp
+    @if($ga4Id)
+    <script>
+        (function() {
+            try {
+                var consent = localStorage.getItem('labgato-cookie-consent');
+                if (consent === 'accepted') {
+                    var s = document.createElement('script');
+                    s.async = true;
+                    s.src = 'https://www.googletagmanager.com/gtag/js?id={{ $ga4Id }}';
+                    document.head.appendChild(s);
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '{{ $ga4Id }}');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    @endif
     @stack('head')
 </head>
 <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased flex flex-col min-h-screen">

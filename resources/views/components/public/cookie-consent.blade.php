@@ -13,6 +13,21 @@
                 localStorage.setItem('labgato-cookie-consent', value);
             } catch (e) {}
             this.visible = false;
+            if (value === 'accepted') {
+                @php $ga4Id = app(\App\Models\Setting::class)->where('key', 'analytics.ga4_measurement_id')->value('value') ?? ''; @endphp
+                @if($ga4Id)
+                try {
+                    var s = document.createElement('script');
+                    s.async = true;
+                    s.src = 'https://www.googletagmanager.com/gtag/js?id={{ $ga4Id }}';
+                    document.head.appendChild(s);
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '{{ $ga4Id }}');
+                } catch(e) {}
+                @endif
+            }
         }
     }"
     x-show="visible"
