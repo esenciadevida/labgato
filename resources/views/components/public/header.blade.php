@@ -30,6 +30,7 @@
 
             <div class="flex items-center gap-1.5 sm:gap-2 lg:gap-3 shrink-0">
                 <x-public.search.live-search />
+                <x-theme-toggle />
 
                 @auth
                     <span class="hidden lg:block w-px h-6 bg-slate-200 dark:bg-slate-700" aria-hidden="true"></span>
@@ -37,7 +38,6 @@
                     <x-public.user-dropdown />
                 @else
                     <span class="hidden lg:block w-px h-6 bg-slate-200 dark:bg-slate-700" aria-hidden="true"></span>
-                    <x-theme-toggle />
                     <div class="hidden sm:flex items-center gap-2">
                         <x-ui.button href="{{ route('login') }}" variant="secondary" size="sm" class="h-10">
                             Sign in

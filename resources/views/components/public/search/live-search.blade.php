@@ -62,7 +62,7 @@
                 :aria-activedescendant="activeIndex >= 0 ? 'live-search-option-' + activeIndex : null"
                 placeholder="Search resources..."
                 autocomplete="off"
-                class="w-full bg-transparent py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none dark:text-slate-100 dark:placeholder-slate-500"
+                class="w-full bg-transparent py-2 text-base sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none dark:text-slate-100 dark:placeholder-slate-500"
             >
             <button
                 type="button"
