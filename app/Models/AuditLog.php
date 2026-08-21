@@ -31,4 +31,16 @@ class AuditLog extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public static function formatAction(string $action): string
+    {
+        return collect(explode('.', $action))
+            ->map(fn ($segment) => str($segment)->replace('_', ' ')->ucfirst())
+            ->implode(' · ');
+    }
+
+    public function getActionLabelAttribute(): string
+    {
+        return static::formatAction($this->action);
+    }
 }

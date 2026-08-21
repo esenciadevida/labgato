@@ -18,7 +18,7 @@
         <x-ui.select name="action" aria-label="Filter by action">
             <option value="">All Actions</option>
             @foreach($actions as $act)
-                <option value="{{ $act }}" @selected($action === $act)>{{ $act }}</option>
+                <option value="{{ $act }}" @selected($action === $act)>{{ \App\Models\AuditLog::formatAction($act) }}</option>
             @endforeach
         </x-ui.select>
         <x-ui.select name="resource_type" aria-label="Filter by resource type">
@@ -63,8 +63,10 @@
                             <td class="px-4 py-3 text-sm text-slate-900 dark:text-slate-100">
                                 {{ $log->user->name ?? 'System' }}
                             </td>
-                            <td class="px-4 py-3 text-sm text-slate-700 dark:text-slate-300">
-                                {{ $log->action }}
+                            <td class="px-4 py-3 text-sm">
+                                <span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700 dark:bg-slate-700 dark:text-slate-200">
+                                    {{ $log->action_label }}
+                                </span>
                             </td>
                             <td class="px-4 py-3 text-sm text-slate-600 dark:text-slate-300">
                                 {{ $log->resource_type ? class_basename($log->resource_type) . ' #' . $log->resource_id : '—' }}

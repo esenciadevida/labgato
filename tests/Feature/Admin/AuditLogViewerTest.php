@@ -46,8 +46,8 @@ class AuditLogViewerTest extends TestCase
         $response = $this->actingAs($user)->get(route('admin.audit-logs.index'));
 
         $response->assertStatus(200);
-        $response->assertDontSee('Edit');
-        $response->assertDontSee('Delete');
+        $response->assertDontSee('>Edit<', false);
+        $response->assertDontSee('>Delete<', false);
     }
 
     public function test_audit_logs_show_masked_sensitive_fields(): void
@@ -78,7 +78,23 @@ class AuditLogViewerTest extends TestCase
         $response = $this->actingAs($user)->get(route('admin.audit-logs.index', ['action' => 'created']));
 
         $response->assertStatus(200);
-        $response->assertSee('created');
+        $response->assertSee('Created');
+    }
+
+    public function test_audit_log_actions_are_displayed_formatted(): void
+    {
+        $user = $this->createUserWithPermissions(['audit-logs.view']);
+        $log = AuditLog::factory()->create(['action' => 'auth.login.success']);
+
+        $index = $this->actingAs($user)->get(route('admin.audit-logs.index'));
+
+        $index->assertStatus(200);
+        $index->assertSee('Auth · Login · Success');
+
+        $show = $this->actingAs($user)->get(route('admin.audit-logs.show', $log));
+
+        $show->assertStatus(200);
+        $show->assertSee('Auth · Login · Success');
     }
 
     public function test_unauthorized_user_cannot_access_audit_logs(): void

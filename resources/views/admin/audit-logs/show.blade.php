@@ -22,11 +22,11 @@
             </div>
             <div>
                 <dt class="text-xs font-medium text-slate-500 uppercase tracking-wider dark:text-slate-400">Action</dt>
-                <dd class="mt-1 text-sm text-slate-900 dark:text-slate-100">{{ $log->action }}</dd>
+                <dd class="mt-1 text-sm text-slate-900 dark:text-slate-100">{{ $log->action_label }}</dd>
             </div>
             <div>
                 <dt class="text-xs font-medium text-slate-500 uppercase tracking-wider dark:text-slate-400">Resource Type</dt>
-                <dd class="mt-1 text-sm text-slate-900 dark:text-slate-100">{{ $log->resource_type ?: '—' }}</dd>
+                <dd class="mt-1 text-sm text-slate-900 dark:text-slate-100">{{ $log->resource_type ? class_basename($log->resource_type) : '—' }}</dd>
             </div>
             <div>
                 <dt class="text-xs font-medium text-slate-500 uppercase tracking-wider dark:text-slate-400">Resource ID</dt>
