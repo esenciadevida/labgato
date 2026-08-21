@@ -87,6 +87,19 @@ class RoleManagementTest extends TestCase
         $response->assertStatus(403);
     }
 
+    public function test_admin_can_delete_custom_role(): void
+    {
+        $user = $this->createUserWithPermissions(['roles.manage']);
+        $role = Role::factory()->create();
+
+        $response = $this->actingAs($user)->delete(route('admin.roles.destroy', $role));
+
+        $response->assertRedirect(route('admin.roles.index'));
+        $response->assertSessionHas('success');
+
+        $this->assertDatabaseMissing('roles', ['id' => $role->id]);
+    }
+
     public function test_cannot_delete_role_with_assigned_users(): void
     {
         $user = $this->createUserWithPermissions(['roles.manage']);

@@ -60,8 +60,19 @@
                                         <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400">Custom</span>
                                     @endif
                                 </td>
-                                <td class="px-4 py-3 text-right text-sm">
+                                <td class="px-4 py-3 text-right text-sm whitespace-nowrap">
                                     <a href="{{ route('admin.roles.edit', $role) }}" class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300">Edit</a>
+
+                                    @can('manage', \App\Models\Role::class)
+                                        @if(! $role->is_system_role)
+                                            <form method="POST" action="{{ route('admin.roles.destroy', $role) }}" class="inline"
+                                                   data-confirm="{{ $role->users_count > 0 ? 'This role has '.$role->users_count.' assigned user(s). Reassign them before deleting.' : 'Delete the "'.$role->name.'" role? This cannot be undone.' }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="ml-3 text-danger-600 hover:text-danger-700 dark:text-danger-400 dark:hover:text-danger-300">Delete</button>
+                                            </form>
+                                        @endif
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach
