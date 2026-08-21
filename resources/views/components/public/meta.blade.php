@@ -4,6 +4,7 @@
     $siteName = config('app.name');
     $description = $description ?? $siteName . ' - Professional Laboratory Toolkit';
     $ogImage = $ogImage ?: config('labgoto.seo.default_og_image');
+    $googleVerification = app(\App\Models\Setting::class)->where('key', 'seo.google_site_verification')->value('value') ?? '';
 @endphp
 
 <title>{{ $title ? $title . ' - ' . $siteName : $siteName }}</title>
@@ -32,4 +33,8 @@
     <meta name="robots" content="noindex, nofollow">
 @else
     <meta name="robots" content="index, follow">
+@endif
+
+@if($googleVerification)
+    <meta name="google-site-verification" content="{{ $googleVerification }}">
 @endif
