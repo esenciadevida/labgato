@@ -8,6 +8,7 @@ use App\Models\ContactMessage;
 use App\Notifications\NewContactMessageNotification;
 use App\Support\AdminNotifier;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 
 class ContactController extends Controller
 {
@@ -31,12 +32,18 @@ class ContactController extends Controller
             'status' => 'new',
         ]);
 
-        AdminNotifier::notifySuperAdmins(new NewContactMessageNotification(
+        $notification = new NewContactMessageNotification(
             $message->name,
             $message->email,
             $message->subject,
             $message->message,
-        ));
+        );
+
+        AdminNotifier::notifySuperAdmins($notification);
+
+        if ($notifyEmail = config('labgoto.contact.notify_email')) {
+            Notification::route('mail', $notifyEmail)->notify($notification);
+        }
 
         return redirect()
             ->route('contact.create')

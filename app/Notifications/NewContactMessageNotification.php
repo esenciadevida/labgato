@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
@@ -15,8 +16,7 @@ class NewContactMessageNotification extends Notification
         public string $email,
         public string $subject,
         public string $message,
-    ) {
-    }
+    ) {}
 
     public function via($notifiable): array
     {
@@ -25,9 +25,12 @@ class NewContactMessageNotification extends Notification
 
     public function toMail($notifiable): MailMessage
     {
+        $recipientName = $notifiable instanceof User ? $notifiable->name : null;
+        $greeting = $recipientName ? 'Hello '.$recipientName.',' : 'Hello,';
+
         return (new MailMessage)
             ->subject('New contact message')
-            ->greeting('Hello '.$notifiable->name.',')
+            ->greeting($greeting)
             ->line('You received a new contact message from '.$this->name.' ('.$this->email.').')
             ->line('Subject: '.$this->subject)
             ->line($this->message)

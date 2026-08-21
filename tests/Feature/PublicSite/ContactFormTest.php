@@ -113,4 +113,26 @@ class ContactFormTest extends TestCase
         Notification::assertSentTo($superAdmin, NewContactMessageNotification::class);
         Notification::assertNotSentTo($plainAdmin, NewContactMessageNotification::class);
     }
+
+    public function test_new_message_is_also_sent_to_the_configured_contact_inbox(): void
+    {
+        Notification::fake();
+        config(['labgoto.contact.notify_email' => 'hello@labgoto.com']);
+
+        $this->post(route('contact.store'), $this->validPayload());
+
+        Notification::assertSentOnDemand(NewContactMessageNotification::class, function (NewContactMessageNotification $notification, array $channels, object $notifiable) {
+            return $notifiable->routes['mail'] === 'hello@labgoto.com';
+        });
+    }
+
+    public function test_no_extra_copy_is_sent_when_contact_notify_email_is_not_configured(): void
+    {
+        Notification::fake();
+        config(['labgoto.contact.notify_email' => null]);
+
+        $this->post(route('contact.store'), $this->validPayload());
+
+        Notification::assertNothingSent();
+    }
 }
