@@ -2,10 +2,12 @@
 
 namespace Tests\Feature\Admin;
 
+use App\Mail\AdminInvitationEmail;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 
 class UserManagementTest extends TestCase
@@ -37,8 +39,10 @@ class UserManagementTest extends TestCase
         $response->assertSee('Users');
     }
 
-    public function test_super_admin_can_create_administrator(): void
+    public function test_super_admin_can_invite_administrator(): void
     {
+        Mail::fake();
+
         $superAdmin = User::factory()->create(['is_active' => true]);
         $superAdminRole = Role::factory()->create(['slug' => 'super-administrator', 'is_system_role' => true]);
         $superAdminRole->permissions()->attach(
@@ -50,20 +54,20 @@ class UserManagementTest extends TestCase
         $response = $this->actingAs($superAdmin)->post(route('admin.administrators.store'), [
             'name' => 'Test Administrator',
             'email' => 'testadmin@example.com',
-            'password' => 'password123',
-            'password_confirmation' => 'password123',
             'role_id' => $role->id,
-            'is_active' => true,
         ]);
 
         $response->assertRedirect(route('admin.administrators.index'));
         $response->assertSessionHas('success');
 
-        $this->assertDatabaseHas('users', [
+        $this->assertDatabaseHas('admin_invitations', [
             'email' => 'testadmin@example.com',
-            'user_type' => 'admin',
-            'is_active' => true,
+            'role_id' => $role->id,
         ]);
+
+        $this->assertDatabaseMissing('users', ['email' => 'testadmin@example.com']);
+
+        Mail::assertSent(AdminInvitationEmail::class);
     }
 
     public function test_admin_can_view_member_user_edit_page(): void

@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StoreUserRequest;
+use App\Http\Requests\Admin\InviteAdministratorRequest;
 use App\Http\Requests\Admin\UpdateUserRequest;
+use App\Mail\AdminInvitationEmail;
+use App\Models\AdminInvitation;
 use App\Models\Role;
 use App\Models\User;
 use App\Services\AuditLogService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class AdministratorController extends Controller
 {
@@ -38,7 +41,12 @@ class AdministratorController extends Controller
             ->paginate(20)
             ->withQueryString();
 
-        return view('admin.administrators.index', compact('administrators', 'search'));
+        $pendingInvitations = AdminInvitation::with('role')
+            ->whereNull('accepted_at')
+            ->orderBy('created_at')
+            ->get();
+
+        return view('admin.administrators.index', compact('administrators', 'search', 'pendingInvitations'));
     }
 
     public function create(Request $request)
@@ -50,23 +58,75 @@ class AdministratorController extends Controller
         return view('admin.administrators.create', compact('roles'));
     }
 
-    public function store(StoreUserRequest $request)
+    public function store(InviteAdministratorRequest $request)
     {
         $this->authorizeSuperAdmin($request);
 
         $data = $request->validated();
-        $roleId = $data['role_id'];
-        unset($data['role_id']);
 
-        $data['user_type'] = 'admin';
-        $data['password_set_at'] = now();
+        [$invitation, $plainToken] = AdminInvitation::issue(
+            $data['name'],
+            $data['email'],
+            (int) $data['role_id'],
+            $request->user()->id
+        );
 
-        $administrator = User::create($data);
-        $administrator->roles()->attach($roleId);
+        Mail::to($invitation->email)->send(new AdminInvitationEmail(
+            $invitation,
+            route('admin.invitation.show', ['token' => $plainToken])
+        ));
 
-        app(AuditLogService::class)->logWithSubject('administrators.created', $administrator, $administrator->toArray(), $request);
+        app(AuditLogService::class)->logWithSubject('administrators.invited', $invitation, [
+            'name' => $invitation->name,
+            'email' => $invitation->email,
+            'role_id' => $invitation->role_id,
+        ], $request);
 
-        return redirect()->route('admin.administrators.index')->with('success', 'Administrator created successfully.');
+        return redirect()->route('admin.administrators.index')
+            ->with('success', "Invitation sent to {$invitation->email}. They will set up their own password via the email link.");
+    }
+
+    public function resend(Request $request, AdminInvitation $invitation)
+    {
+        $this->authorizeSuperAdmin($request);
+
+        if ($invitation->accepted_at) {
+            return redirect()->route('admin.administrators.index')->with('error', 'This invitation was already accepted.');
+        }
+
+        [$invitation, $plainToken] = AdminInvitation::issue(
+            $invitation->name,
+            $invitation->email,
+            $invitation->role_id,
+            $request->user()->id
+        );
+
+        Mail::to($invitation->email)->send(new AdminInvitationEmail(
+            $invitation,
+            route('admin.invitation.show', ['token' => $plainToken]),
+            isResend: true
+        ));
+
+        app(AuditLogService::class)->logWithSubject('administrators.invitation_resent', $invitation, [
+            'email' => $invitation->email,
+        ], $request);
+
+        return redirect()->route('admin.administrators.index')
+            ->with('success', "Invitation resent to {$invitation->email}.");
+    }
+
+    public function revoke(Request $request, AdminInvitation $invitation)
+    {
+        $this->authorizeSuperAdmin($request);
+
+        app(AuditLogService::class)->logWithSubject('administrators.invitation_revoked', $invitation, [
+            'email' => $invitation->email,
+        ], $request);
+
+        $invitation->delete();
+
+        return redirect()->route('admin.administrators.index')
+            ->with('success', 'Invitation revoked.');
     }
 
     public function edit(Request $request, User $administrator)

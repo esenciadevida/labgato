@@ -2,11 +2,13 @@
 
 namespace Tests\Feature\Admin;
 
+use App\Mail\AdminInvitationEmail;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 
 class UserSystemTest extends TestCase
@@ -64,27 +66,33 @@ class UserSystemTest extends TestCase
         $response->assertDontSee('Public Member User');
     }
 
-    public function test_super_admin_can_create_administrator(): void
+    public function test_super_admin_can_invite_administrator(): void
     {
+        Mail::fake();
+
         $superAdmin = $this->superAdmin();
         $role = Role::factory()->create();
 
         $response = $this->actingAs($superAdmin)->post(route('admin.administrators.store'), [
             'name' => 'New Administrator',
             'email' => 'newadmin@example.com',
-            'password' => 'password123',
-            'password_confirmation' => 'password123',
             'role_id' => $role->id,
-            'is_active' => true,
         ]);
 
         $response->assertRedirect(route('admin.administrators.index'));
         $response->assertSessionHas('success');
 
-        $this->assertDatabaseHas('users', [
+        $this->assertDatabaseHas('admin_invitations', [
             'email' => 'newadmin@example.com',
-            'user_type' => 'admin',
+            'role_id' => $role->id,
+            'invited_by' => $superAdmin->id,
         ]);
+
+        $this->assertDatabaseMissing('users', ['email' => 'newadmin@example.com']);
+
+        Mail::assertSent(AdminInvitationEmail::class, function ($mail) {
+            return $mail->hasTo('newadmin@example.com');
+        });
     }
 
     public function test_super_admin_can_edit_administrator(): void

@@ -192,6 +192,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
     Route::middleware('permission:users.create')->group(function () {
         Route::get('/administrators/create', [AdministratorController::class, 'create'])->name('administrators.create');
         Route::post('/administrators', [AdministratorController::class, 'store'])->name('administrators.store');
+        Route::post('/invitations/{invitation}/resend', [AdministratorController::class, 'resend'])->name('administrators.invitations.resend');
+        Route::delete('/invitations/{invitation}', [AdministratorController::class, 'revoke'])->name('administrators.invitations.revoke');
     });
 
     Route::middleware('permission:users.edit')->group(function () {

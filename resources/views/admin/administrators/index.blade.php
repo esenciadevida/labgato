@@ -20,9 +20,56 @@
         </form>
 
         <x-ui.button href="{{ route('admin.administrators.create') }}">
-            Add Administrator
+            Invite Administrator
         </x-ui.button>
     </div>
+
+    @if($pendingInvitations->isNotEmpty())
+        <x-ui.card title="Pending Invitations">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider dark:text-slate-400">Name</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider dark:text-slate-400">Email</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider dark:text-slate-400">Role</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider dark:text-slate-400">Invited</th>
+                            <th class="px-4 py-3 text-right text-xs font-medium text-slate-500 uppercase tracking-wider dark:text-slate-400">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                        @foreach($pendingInvitations as $invitation)
+                            <tr>
+                                <td class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-slate-100">{{ $invitation->name }}</td>
+                                <td class="px-4 py-3 text-sm text-slate-600 dark:text-slate-300">{{ $invitation->email }}</td>
+                                <td class="px-4 py-3 text-sm text-slate-600 dark:text-slate-300">{{ $invitation->role?->name ?? '—' }}</td>
+                                <td class="px-4 py-3 text-sm">
+                                    @if($invitation->isExpired())
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-danger-50 text-danger-700 dark:bg-danger-900/30 dark:text-danger-400">Expired {{ $invitation->expires_at->diffForHumans() }}</span>
+                                    @else
+                                        <span class="text-slate-500 dark:text-slate-400">{{ $invitation->created_at->diffForHumans() }} · expires {{ $invitation->expires_at->diffForHumans() }}</span>
+                                    @endif
+                                </td>
+                                <td class="px-4 py-3 text-right text-sm whitespace-nowrap">
+                                    <form method="POST" action="{{ route('admin.administrators.invitations.resend', $invitation) }}" class="inline">
+                                        @csrf
+                                        <button type="submit" class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300">Resend</button>
+                                    </form>
+
+                                    <form method="POST" action="{{ route('admin.administrators.invitations.revoke', $invitation) }}" class="inline"
+                                           data-confirm="Revoke this invitation? The link will stop working immediately.">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="ml-3 text-danger-600 hover:text-danger-700 dark:text-danger-400 dark:hover:text-danger-300">Revoke</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </x-ui.card>
+    @endif
 
     <x-ui.card>
         <div class="overflow-x-auto">
