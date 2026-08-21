@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Services\AuditLogService;
+use App\Support\SignInAlert;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -70,6 +71,8 @@ class SocialAuthController extends Controller
                 resourceId: $user->id,
             );
 
+            SignInAlert::send($user, request()->ip(), (string) request()->userAgent());
+
             return redirect()->route('home');
         }
 
@@ -93,6 +96,8 @@ class SocialAuthController extends Controller
             resourceType: 'user',
             resourceId: $user->id,
         );
+
+        SignInAlert::send($user, request()->ip(), (string) request()->userAgent());
 
         return redirect()->route('home');
     }

@@ -9,9 +9,11 @@ use App\Services\AuditLogService;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\Rules\Password;
+use Throwable;
 
 class MemberRegisterController extends Controller
 {
@@ -46,7 +48,14 @@ class MemberRegisterController extends Controller
         Auth::login($user);
         $request->session()->regenerate();
 
-        $user->notify(new MemberRegisteredNotification);
+        try {
+            $user->notify(new MemberRegisteredNotification);
+        } catch (Throwable $e) {
+            Log::warning('Welcome notification could not be sent', [
+                'user_id' => $user->id,
+                'exception' => $e->getMessage(),
+            ]);
+        }
 
         if (! config('labgoto.auth.email_verification', false)) {
             $user->forceFill(['email_verified_at' => now()])->save();

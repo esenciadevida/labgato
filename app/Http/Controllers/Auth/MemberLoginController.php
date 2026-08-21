@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Services\AuditLogService;
+use App\Support\SignInAlert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
@@ -87,6 +88,8 @@ class MemberLoginController extends Controller
         $auditLog->log(
             action: 'auth.login.success',
         );
+
+        SignInAlert::send($user, $request->ip(), (string) $request->userAgent());
 
         return redirect()->intended(route('home'));
     }
