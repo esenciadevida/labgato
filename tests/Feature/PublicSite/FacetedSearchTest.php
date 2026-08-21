@@ -92,7 +92,7 @@ class FacetedSearchTest extends TestCase
             ->assertSee('Chemistry')
             ->assertDontSee('Anemia')
             ->assertDontSee('Lipids')
-            ->call('toggleCategory', $hematology->id)
+            ->set('categories', [$hematology->id])
             ->assertSee('Hematocrit')
             ->assertDontSee('Cholesterol');
     }
@@ -110,7 +110,7 @@ class FacetedSearchTest extends TestCase
             ->assertSee('Chem Calc')
             ->assertSee('Heme Calc')
             ->assertSee('Both Calc')
-            ->call('toggleCategory', $cat1->id)
+            ->set('categories', [$cat1->id])
             ->assertSee('Chem Calc')
             ->assertSee('Both Calc')
             ->assertDontSee('Heme Calc');
@@ -167,13 +167,23 @@ class FacetedSearchTest extends TestCase
         $this->createResourceWithFacets('MCV Calculator', ['Hematology']);
 
         Livewire::test(ResourceBrowser::class, ['type' => 'calculator'])
-            ->call('toggleCategory', $cat->id)
+            ->set('categories', [$cat->id])
             ->assertSee('MCV Calculator')
             ->call('clearAll')
             ->assertSet('categories', [])
             ->assertSet('tags', [])
             ->assertSet('search', '')
             ->assertSet('sort', 'newest');
+    }
+
+    public function test_category_checkboxes_are_bound_with_wire_model_so_clear_all_syncs_them(): void
+    {
+        $cat = Category::create(['name' => 'Hematology', 'slug' => 'hematology', 'sort_order' => 1, 'is_active' => true]);
+        $this->createResourceWithFacets('MCV Calculator', ['Hematology']);
+
+        Livewire::test(ResourceBrowser::class, ['type' => 'calculator'])
+            ->assertSee('wire:model.live="categories"', false)
+            ->assertDontSee('toggleCategory');
     }
 
     public function test_remove_chip_removes_filter(): void
@@ -184,7 +194,7 @@ class FacetedSearchTest extends TestCase
         $this->createResourceWithFacets('BMI Calculator');
 
         Livewire::test(ResourceBrowser::class, ['type' => 'calculator'])
-            ->call('toggleCategory', $cat->id)
+            ->set('categories', [$cat->id])
             ->call('removeCategory', $cat->id)
             ->assertSet('categories', []);
     }
@@ -194,7 +204,7 @@ class FacetedSearchTest extends TestCase
         $cat = Category::create(['name' => 'Hematology', 'slug' => 'hematology', 'sort_order' => 1, 'is_active' => true]);
 
         Livewire::test(ResourceBrowser::class, ['type' => 'calculator'])
-            ->call('toggleCategory', $cat->id)
+            ->set('categories', [$cat->id])
             ->assertSee('Hematology');
     }
 

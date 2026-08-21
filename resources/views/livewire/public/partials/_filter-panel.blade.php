@@ -41,8 +41,7 @@
                             <input
                                 type="checkbox"
                                 value="{{ $cat->id }}"
-                                wire:click="toggleCategory({{ $cat->id }})"
-                                @checked(in_array($cat->id, $this->categories))
+                                wire:model.live="categories"
                                 class="w-4 h-4 rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-700"
                                 aria-label="{{ $cat->name }}"
                             >

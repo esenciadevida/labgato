@@ -57,15 +57,6 @@ class ResourceBrowser extends Component
         $this->resetPage();
     }
 
-    public function toggleCategory(int $id): void
-    {
-        if (in_array($id, $this->categories, true)) {
-            $this->categories = array_values(array_diff($this->categories, [$id]));
-        } else {
-            $this->categories[] = $id;
-        }
-    }
-
     public function removeCategory(int $id): void
     {
         $this->categories = array_values(array_diff($this->categories, [$id]));
