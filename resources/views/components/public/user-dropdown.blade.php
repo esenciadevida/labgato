@@ -1,6 +1,5 @@
 @php
     $user = auth()->user();
-    $initials = strtoupper(substr($user->name, 0, 2));
     $isAdministrator = $user && $user->isAdministrator();
     $recentCount = $user ? \App\Models\RecentlyViewed::where('user_id', $user->id)->count() : 0;
 @endphp
@@ -24,9 +23,7 @@
         :aria-expanded="open"
         aria-label="User menu"
     >
-        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-primary-600 text-xs font-semibold text-white">
-            {{ $initials }}
-        </span>
+        <x-public.avatar :name="$user->name" :user-id="$user->id" size="sm" />
     </button>
 
     <div

@@ -41,6 +41,7 @@ Route::prefix('account')->name('account.')->middleware(['member', 'active.user']
     Route::get('/dashboard', [MemberController::class, 'show'])->name('dashboard');
     Route::get('/profile', [MemberController::class, 'profile'])->name('profile');
     Route::put('/profile', [MemberController::class, 'updateProfile'])->name('profile.update');
+    Route::put('/password', [MemberController::class, 'updatePassword'])->name('password.update');
 
     Route::prefix('contributions')->name('contributions.')->group(function () {
         Route::get('/', [ContributionController::class, 'index'])->name('index');

@@ -4,6 +4,7 @@ namespace Tests\Feature\Member;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
 class MemberProfileTest extends TestCase
@@ -36,6 +37,7 @@ class MemberProfileTest extends TestCase
         $response->assertSee('My Profile');
         $response->assertSee($member->email);
         $response->assertSee('Laboratory scientist.');
+        $response->assertSee('Change Password');
         $response->assertSee('Account Details');
     }
 
@@ -104,5 +106,86 @@ class MemberProfileTest extends TestCase
             'id' => $member->id,
             'name' => 'Original Name',
         ]);
+    }
+
+    public function test_member_can_change_their_password(): void
+    {
+        $member = User::factory()->member()->create([
+            'password' => bcrypt('OldPass123'),
+        ]);
+
+        $response = $this->actingAs($member)
+            ->put(route('account.password.update'), [
+                'current_password' => 'OldPass123',
+                'password' => 'NewPass456',
+                'password_confirmation' => 'NewPass456',
+            ]);
+
+        $response->assertRedirect(route('account.profile'))
+            ->assertSessionHas('success');
+
+        $member->refresh();
+
+        $this->assertTrue(Hash::check('NewPass456', $member->password));
+        $this->assertDatabaseHas('audit_logs', ['action' => 'account.password.changed']);
+    }
+
+    public function test_change_password_requires_correct_current_password(): void
+    {
+        $member = User::factory()->member()->create([
+            'password' => bcrypt('OldPass123'),
+        ]);
+
+        $this->actingAs($member)
+            ->from(route('account.profile'))
+            ->put(route('account.password.update'), [
+                'current_password' => 'WrongPass999',
+                'password' => 'NewPass456',
+                'password_confirmation' => 'NewPass456',
+            ])
+            ->assertRedirect(route('account.profile'))
+            ->assertSessionHasErrors('current_password');
+
+        $member->refresh();
+
+        $this->assertTrue(Hash::check('OldPass123', $member->password));
+    }
+
+    public function test_change_password_validates_new_password_strength(): void
+    {
+        $member = User::factory()->member()->create([
+            'password' => bcrypt('OldPass123'),
+        ]);
+
+        $this->actingAs($member)
+            ->put(route('account.password.update'), [
+                'current_password' => 'OldPass123',
+                'password' => 'short',
+                'password_confirmation' => 'short',
+            ])
+            ->assertSessionHasErrors('password');
+
+        $member->refresh();
+
+        $this->assertTrue(Hash::check('OldPass123', $member->password));
+    }
+
+    public function test_change_password_requires_confirmation_match(): void
+    {
+        $member = User::factory()->member()->create([
+            'password' => bcrypt('OldPass123'),
+        ]);
+
+        $this->actingAs($member)
+            ->put(route('account.password.update'), [
+                'current_password' => 'OldPass123',
+                'password' => 'NewPass456',
+                'password_confirmation' => 'Different789',
+            ])
+            ->assertSessionHasErrors('password');
+
+        $member->refresh();
+
+        $this->assertTrue(Hash::check('OldPass123', $member->password));
     }
 }
