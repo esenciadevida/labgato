@@ -122,7 +122,7 @@ return [
     */
 
     'seo' => [
-        'default_og_image' => env('DEFAULT_OG_IMAGE', '/assets/LabGoTo_favicon_512.png'),
+        'default_og_image' => env('DEFAULT_OG_IMAGE', '/assets/LabGoTo_og_banner_1200x630.png'),
     ],
 
     /*

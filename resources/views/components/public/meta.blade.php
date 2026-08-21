@@ -1,4 +1,4 @@
-@props(['title' => null, 'description' => null, 'canonical' => null, 'ogType' => 'website', 'ogImage' => null, 'noindex' => false])
+@props(['title' => null, 'description' => null, 'canonical' => null, 'ogType' => 'website', 'ogImage' => null, 'ogImageWidth' => 1200, 'ogImageHeight' => 630, 'noindex' => false])
 
 @php
     $siteName = config('app.name');
@@ -22,8 +22,8 @@
 <meta property="og:site_name" content="{{ $siteName }}">
 @if($ogImage)
     <meta property="og:image" content="{{ $ogImage }}">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:image:width" content="{{ $ogImageWidth }}">
+    <meta property="og:image:height" content="{{ $ogImageHeight }}">
     <meta property="og:image:alt" content="{{ $title ?? $siteName }}">
 @endif
 
