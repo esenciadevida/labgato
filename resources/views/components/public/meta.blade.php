@@ -4,6 +4,9 @@
     $siteName = config('app.name');
     $description = $description ?? $siteName . ' - Professional Laboratory Toolkit';
     $ogImage = $ogImage ?: config('labgoto.seo.default_og_image');
+    if ($ogImage && !str_starts_with($ogImage, 'http')) {
+        $ogImage = url($ogImage);
+    }
     $googleVerification = setting('seo.google_site_verification', '');
 @endphp
 
@@ -19,6 +22,8 @@
 <meta property="og:site_name" content="{{ $siteName }}">
 @if($ogImage)
     <meta property="og:image" content="{{ $ogImage }}">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
     <meta property="og:image:alt" content="{{ $title ?? $siteName }}">
 @endif
 

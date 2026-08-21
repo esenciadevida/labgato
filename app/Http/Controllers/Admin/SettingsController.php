@@ -107,9 +107,9 @@ class SettingsController extends Controller
         if (! empty($auditChanges)) {
             app(AuditLogService::class)->log(
                 action: 'settings.updated',
-                subject_type: Setting::class,
-                subject_id: null,
-                properties: $auditChanges,
+                resourceType: Setting::class,
+                resourceId: null,
+                changes: $auditChanges,
                 userId: $currentUser->id,
             );
         }

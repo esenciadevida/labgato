@@ -41,6 +41,7 @@
     @stack('head')
 </head>
 <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased flex flex-col min-h-screen">
+    <x-public.schema />
     <div id="top" aria-hidden="true" class="absolute top-0 pointer-events-none"></div>
     <x-public.announcement-banner />
 
