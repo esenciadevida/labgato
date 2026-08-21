@@ -106,9 +106,9 @@ class UserManagementController extends Controller
 
         app(AuditLogService::class)->log(
             action: 'users.deleted',
-            subject_type: User::class,
-            subject_id: null,
-            properties: ['name' => $userName, 'email' => $userEmail],
+            resourceType: User::class,
+            resourceId: null,
+            changes: ['name' => $userName, 'email' => $userEmail],
             userId: $request->user()->id,
         );
 
