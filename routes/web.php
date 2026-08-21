@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Member\MessageController;
 use App\Http\Controllers\PublicSite\CalculatorController;
 use App\Http\Controllers\PublicSite\ContactController;
 use App\Http\Controllers\PublicSite\ContributorController;
@@ -13,7 +14,12 @@ use App\Http\Controllers\PublicSite\ReferenceRangeController;
 use App\Http\Controllers\PublicSite\SearchController;
 use App\Http\Controllers\PublicSite\SeoController;
 use App\Http\Controllers\PublicSite\SopController;
-use App\Http\Controllers\Member\MessageController;
+use App\Mail\ContactReplyMail;
+use App\Mail\ContributionStatusMail;
+use App\Mail\ResetPasswordEmail;
+use App\Mail\SignInNotification;
+use App\Mail\WelcomeEmail;
+use App\Models\ContactMessage;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -78,3 +84,62 @@ Route::prefix('legal')->name('legal.')->group(function () {
     Route::get('/accessibility-statement', [LegalController::class, 'accessibilityStatement'])->name('accessibility-statement');
     Route::get('/cookie-policy', [LegalController::class, 'cookiePolicy'])->name('cookie-policy');
 });
+
+if (! app()->isProduction()) {
+    Route::middleware(['auth', 'active.user', 'member'])
+        ->prefix('dev')
+        ->name('dev.')
+        ->group(function () {
+            Route::get('/email-preview/{template}', function (string $template) {
+                $user = auth()->user();
+
+                $previews = [
+                    'welcome' => fn () => new WelcomeEmail($user),
+                    'sign-in' => fn () => new SignInNotification(
+                        $user,
+                        '127.0.0.1',
+                        'Chrome 126 on macOS',
+                        now()->format('M j, Y g:i A'),
+                    ),
+                    'reset' => fn () => new ResetPasswordEmail(
+                        $user,
+                        url('/reset-password/sample-token?email='.urlencode($user->email)),
+                        '127.0.0.1',
+                        60,
+                    ),
+                    'reply' => fn () => new ContactReplyMail(
+                        (new ContactMessage)->forceFill([
+                            'id' => 1,
+                            'name' => $user->name,
+                            'subject' => 'Question about reference ranges',
+                            'message' => 'Hello, I could not find the reference range for serum osmolality. Could you point me in the right direction?',
+                        ]),
+                        'Thanks for reaching out! You can find it under Reference Ranges > Clinical Chemistry. Let us know if you need anything else.',
+                        'Admin Team',
+                    ),
+                    'approved' => fn () => new ContributionStatusMail(
+                        $user,
+                        'SOP',
+                        'Test SOP',
+                        'approved',
+                        ctaUrl: url('/'),
+                        totalContributions: 12,
+                    ),
+                    'rejected' => fn () => new ContributionStatusMail(
+                        $user,
+                        'SOP',
+                        'Test SOP',
+                        'rejected',
+                        reason: 'Needs more detail in the procedure section before it can be published.',
+                        ctaUrl: url('/account/contributions'),
+                    ),
+                ];
+
+                $factory = $previews[$template] ?? null;
+
+                abort_if($factory === null, 404);
+
+                return $factory();
+            })->name('email-preview');
+        });
+}

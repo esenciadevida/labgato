@@ -3,8 +3,8 @@
 namespace App\Notifications;
 
 use App\Enums\ContributionType;
+use App\Mail\ContributionStatusMail;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 class ContributionApprovedNotification extends Notification
@@ -14,22 +14,24 @@ class ContributionApprovedNotification extends Notification
     public function __construct(
         public ContributionType $type,
         public $resource,
-    ) {
-    }
+    ) {}
 
     public function via($notifiable): array
     {
         return ['database', 'mail'];
     }
 
-    public function toMail($notifiable): MailMessage
+    public function toMail($notifiable): ContributionStatusMail
     {
-        return (new MailMessage)
-            ->subject('Your contribution has been approved')
-            ->greeting('Congratulations!')
-            ->line('Your '.strtolower($this->type->label()).' contribution "'.$this->resource->name.'" has been approved and published.')
-            ->action('View your published contribution', $this->publicUrl())
-            ->line('Thank you for contributing to the LabGato library.');
+        return (new ContributionStatusMail(
+            $notifiable,
+            $this->type->label(),
+            $this->resource->name,
+            'approved',
+            ctaUrl: $this->publicUrl(),
+            totalContributions: $this->totalContributions($notifiable),
+        ))
+            ->to($notifiable->email);
     }
 
     public function toArray($notifiable): array
@@ -39,6 +41,13 @@ class ContributionApprovedNotification extends Notification
             'action_text' => 'View contribution',
             'action_url' => $this->publicUrl(),
         ];
+    }
+
+    private function totalContributions($user): int
+    {
+        return $user->sops()->count()
+            + $user->knowledgeResources()->count()
+            + $user->interpretationResources()->count();
     }
 
     private function publicUrl(): string

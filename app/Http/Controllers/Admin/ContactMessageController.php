@@ -46,9 +46,9 @@ class ContactMessageController extends Controller
         $message->update(['status' => 'replied']);
 
         $notification = new ContactMessageRepliedNotification(
-            $message->subject,
+            $message,
             $validated['reply'],
-            $message->name,
+            $request->user()->name,
         );
 
         if ($message->user_id !== null && $message->user) {

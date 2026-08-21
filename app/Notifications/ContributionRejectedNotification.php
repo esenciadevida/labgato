@@ -3,8 +3,8 @@
 namespace App\Notifications;
 
 use App\Enums\ContributionType;
+use App\Mail\ContributionStatusMail;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 class ContributionRejectedNotification extends Notification
@@ -15,23 +15,24 @@ class ContributionRejectedNotification extends Notification
         public ContributionType $type,
         public $resource,
         public string $reason,
-    ) {
-    }
+    ) {}
 
     public function via($notifiable): array
     {
         return ['database', 'mail'];
     }
 
-    public function toMail($notifiable): MailMessage
+    public function toMail($notifiable): ContributionStatusMail
     {
-        return (new MailMessage)
-            ->subject('Update on your contribution')
-            ->greeting('Hello '.$notifiable->name.',')
-            ->line('Your '.strtolower($this->type->label()).' contribution "'.$this->resource->name.'" was not approved at this time.')
-            ->line('Reason: '.$this->reason)
-            ->line('You can revise your contribution and resubmit it for review.')
-            ->action('Review and resubmit', $this->editUrl());
+        return (new ContributionStatusMail(
+            $notifiable,
+            $this->type->label(),
+            $this->resource->name,
+            'rejected',
+            reason: $this->reason,
+            ctaUrl: $this->editUrl(),
+        ))
+            ->to($notifiable->email);
     }
 
     public function toArray($notifiable): array

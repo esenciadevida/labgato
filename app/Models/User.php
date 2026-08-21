@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPasswordLink;
 use App\Services\PermissionCacheService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -150,6 +151,11 @@ class User extends Authenticatable
     public function hasGoogleAccount(): bool
     {
         return $this->google_id !== null && $this->google_id !== '';
+    }
+
+    public function sendPasswordResetNotification($token): void
+    {
+        $this->notify(new ResetPasswordLink($token));
     }
 
     public static function generateUniqueProfileSlug(string $name): string
