@@ -14,9 +14,9 @@ class UpdateContributionRequest extends FormRequest
     public function rules(): array
     {
         return match ($this->route('type')) {
-            'sop' => (new StoreSopContributionRequest())->rules(),
-            'knowledge' => (new StoreKnowledgeContributionRequest())->rules(),
-            'interpretation' => (new StoreInterpretationContributionRequest())->rules(),
+            'sop' => (new StoreSopContributionRequest)->rules(),
+            'knowledge' => (new StoreKnowledgeContributionRequest)->rules(),
+            'interpretation' => (new StoreInterpretationContributionRequest)->rules(),
             default => [],
         };
     }

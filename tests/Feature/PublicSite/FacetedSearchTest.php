@@ -7,6 +7,7 @@ use App\Models\Calculator;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -23,7 +24,7 @@ class FacetedSearchTest extends TestCase
 
         foreach ($categoryNames as $catName) {
             $category = Category::firstOrCreate(
-                ['slug' => \Illuminate\Support\Str::slug($catName)],
+                ['slug' => Str::slug($catName)],
                 ['name' => $catName, 'sort_order' => 0, 'is_active' => true]
             );
             $calculator->categories()->attach($category);
@@ -31,7 +32,7 @@ class FacetedSearchTest extends TestCase
 
         foreach ($tagNames as $tagName) {
             $tag = Tag::firstOrCreate(
-                ['slug' => \Illuminate\Support\Str::slug($tagName)],
+                ['slug' => Str::slug($tagName)],
                 ['name' => $tagName]
             );
             $calculator->tags()->attach($tag);

@@ -2,10 +2,7 @@
 
 use Spatie\Backup\Notifications\Notifiable;
 use Spatie\Backup\Notifications\Notifications\BackupHasFailedNotification;
-use Spatie\Backup\Notifications\Notifications\BackupWasSuccessfulNotification;
 use Spatie\Backup\Notifications\Notifications\CleanupHasFailedNotification;
-use Spatie\Backup\Notifications\Notifications\CleanupWasSuccessfulNotification;
-use Spatie\Backup\Notifications\Notifications\HealthyBackupWasFoundNotification;
 use Spatie\Backup\Notifications\Notifications\UnhealthyBackupWasFoundNotification;
 use Spatie\Backup\Tasks\Cleanup\Strategies\DefaultStrategy;
 use Spatie\Backup\Tasks\Monitor\HealthChecks\MaximumAgeInDays;
@@ -18,7 +15,7 @@ return [
          * The name of this application. You can use this name to monitor
          * the backups.
          */
-            'name' => env('APP_NAME', 'Labgoto'),
+        'name' => env('APP_NAME', 'Labgoto'),
 
         'source' => [
             'files' => [
@@ -293,7 +290,7 @@ return [
      */
     'monitor_backups' => [
         [
-        'name' => env('APP_NAME', 'Labgoto'),
+            'name' => env('APP_NAME', 'Labgoto'),
             'disks' => ['local'],
             'health_checks' => [
                 MaximumAgeInDays::class => 1,

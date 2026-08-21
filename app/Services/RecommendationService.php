@@ -27,7 +27,7 @@ class RecommendationService
 
         $results = collect();
 
-        if (!empty($categoryIds)) {
+        if (! empty($categoryIds)) {
             $results = $results->merge($this->queryByCategories(Calculator::class, $categoryIds, $excludeIds, $limit));
             $results = $results->merge($this->queryByCategories(LaboratoryTool::class, $categoryIds, $excludeIds, $limit));
             $results = $results->merge($this->queryByCategories(ReferenceRange::class, $categoryIds, $excludeIds, $limit));
@@ -58,7 +58,7 @@ class RecommendationService
 
         foreach ($recent as $item) {
             $model = $this->resolveModel($item->resource_type);
-            if (!$model) {
+            if (! $model) {
                 continue;
             }
 
@@ -81,7 +81,7 @@ class RecommendationService
             ->select(['id', 'slug', 'name', 'short_description', 'published_at'])
             ->published()
             ->whereHas('categories', fn ($q) => $q->whereIn('categories.id', $categoryIds))
-            ->when(!empty($excludeIds), fn ($q) => $q->whereNotIn('id', $excludeIds))
+            ->when(! empty($excludeIds), fn ($q) => $q->whereNotIn('id', $excludeIds))
             ->orderByDesc('published_at')
             ->limit($perType)
             ->get()
@@ -93,7 +93,7 @@ class RecommendationService
         return $modelClass::query()
             ->select(['id', 'slug', 'name', 'short_description', 'published_at'])
             ->published()
-            ->when(!empty($excludeIds), fn ($q) => $q->whereNotIn('id', $excludeIds))
+            ->when(! empty($excludeIds), fn ($q) => $q->whereNotIn('id', $excludeIds))
             ->orderByDesc('published_at')
             ->limit($perType)
             ->get()

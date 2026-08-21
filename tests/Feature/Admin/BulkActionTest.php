@@ -203,7 +203,7 @@ class BulkActionTest extends TestCase
 
         foreach ($resources as $type => $resource) {
             $this->postBulkAction($user, $type, 'publish', [$resource->id])
-                ->assertSessionHas('success', "1 ".str($type)->replace('-', ' ')." published.");
+                ->assertSessionHas('success', '1 '.str($type)->replace('-', ' ').' published.');
         }
 
         foreach ($resources as $resource) {

@@ -10,6 +10,7 @@ use Livewire\WithPagination;
 class ResourceBrowser extends Component
 {
     use WithPagination;
+
     public string $type = '';
 
     #[Url(as: 'q')]

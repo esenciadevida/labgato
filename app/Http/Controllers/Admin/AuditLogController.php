@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AuditLog;
-use App\Services\AuditLogService;
 use Illuminate\Http\Request;
 
 class AuditLogController extends Controller
@@ -22,9 +21,9 @@ class AuditLogController extends Controller
             ->when($search !== '', function ($query) use ($search) {
                 $query->where(function ($q) use ($search) {
                     $q->where('action', 'like', "%{$search}%")
-                      ->orWhereHas('user', function ($q2) use ($search) {
-                          $q2->where('name', 'like', "%{$search}%");
-                      });
+                        ->orWhereHas('user', function ($q2) use ($search) {
+                            $q2->where('name', 'like', "%{$search}%");
+                        });
                 });
             })
             ->when($action !== null && $action !== '', fn ($query) => $query->where('action', $action))

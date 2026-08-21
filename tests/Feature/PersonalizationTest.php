@@ -4,13 +4,10 @@ namespace Tests\Feature;
 
 use App\Models\Calculator;
 use App\Models\Category;
-use App\Models\InterpretationResource;
-use App\Models\KnowledgeResource;
 use App\Models\LaboratoryTool;
-use App\Models\ReferenceRange;
 use App\Models\RecentlyViewed;
-use App\Models\Sop;
 use App\Models\User;
+use App\Services\RecommendationService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -110,7 +107,7 @@ class PersonalizationTest extends TestCase
 
         $other = $this->publishedCalculator($category);
 
-        $service = new \App\Services\RecommendationService();
+        $service = new RecommendationService;
         $results = $service->getRecommendedFor($user, 6);
 
         $this->assertTrue($results->contains('id', $other->id));
@@ -125,7 +122,7 @@ class PersonalizationTest extends TestCase
 
         $this->actingAs($user)->get(route('public.calculators.show', $viewed->slug));
 
-        $service = new \App\Services\RecommendationService();
+        $service = new RecommendationService;
         $results = $service->getRecommendedFor($user, 6);
 
         $this->assertFalse($results->contains('id', $viewed->id));
@@ -138,7 +135,7 @@ class PersonalizationTest extends TestCase
         $category = Category::factory()->create(['is_active' => true]);
         $latest = $this->publishedCalculator($category);
 
-        $service = new \App\Services\RecommendationService();
+        $service = new RecommendationService;
         $results = $service->getRecommendedFor($user, 6);
 
         $this->assertTrue($results->contains('id', $latest->id));

@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Enums\ContributionType;
 use App\Enums\ResourceStatus;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 
 class ContributionService
 {
@@ -105,7 +106,7 @@ class ContributionService
     /**
      * A member's most recently updated contributions (across all resource types).
      */
-    public function recentMemberContributions(int $userId, int $limit = 5): \Illuminate\Support\Collection
+    public function recentMemberContributions(int $userId, int $limit = 5): Collection
     {
         $entries = collect();
 
@@ -136,7 +137,7 @@ class ContributionService
         ];
     }
 
-    private function paginate(\Illuminate\Support\Collection $items): LengthAwarePaginator
+    private function paginate(Collection $items): LengthAwarePaginator
     {
         $perPage = (int) config('labgoto.pagination.per_page');
         $page = LengthAwarePaginator::resolveCurrentPage();

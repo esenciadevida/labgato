@@ -13,6 +13,7 @@ use App\Notifications\NewContributionSubmittedNotification;
 use App\Services\AuditLogService;
 use App\Services\ContributionService;
 use App\Support\AdminNotifier;
+use App\Support\RichTextSanitizer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -235,9 +236,9 @@ class ContributionController extends Controller
     private function rulesFor(ContributionType $type): array
     {
         return match ($type) {
-            ContributionType::SOP => (new StoreSopContributionRequest())->rules(),
-            ContributionType::KNOWLEDGE => (new StoreKnowledgeContributionRequest())->rules(),
-            ContributionType::INTERPRETATION => (new StoreInterpretationContributionRequest())->rules(),
+            ContributionType::SOP => (new StoreSopContributionRequest)->rules(),
+            ContributionType::KNOWLEDGE => (new StoreKnowledgeContributionRequest)->rules(),
+            ContributionType::INTERPRETATION => (new StoreInterpretationContributionRequest)->rules(),
         };
     }
 
@@ -318,7 +319,7 @@ class ContributionController extends Controller
 
     private function renderedContent(ContributionType $type, $resource): string
     {
-        return \App\Support\RichTextSanitizer::render((string) $resource->content);
+        return RichTextSanitizer::render((string) $resource->content);
     }
 
     private function audit(string $action, $resource, Request $request): void

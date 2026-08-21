@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RecentlyViewed;
 use App\Services\RecentlyViewedService;
 use Illuminate\Http\Request;
 
 class RecentlyViewedController extends Controller
 {
-    public function __construct(private readonly RecentlyViewedService $recentlyViewed)
-    {
-    }
+    public function __construct(private readonly RecentlyViewedService $recentlyViewed) {}
 
     public function index(Request $request)
     {
@@ -36,7 +35,7 @@ class RecentlyViewedController extends Controller
 
     public function destroy(Request $request, int $id)
     {
-        $deleted = \App\Models\RecentlyViewed::where('user_id', $request->user()->id)
+        $deleted = RecentlyViewed::where('user_id', $request->user()->id)
             ->where('id', $id)
             ->delete();
 

@@ -4,6 +4,7 @@ namespace Tests\Feature\PublicSite;
 
 use App\Models\Category;
 use App\Models\ReferenceRange;
+use Database\Seeders\ReferenceRangeSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -14,13 +15,13 @@ class ReferenceRangeConversionTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->seed(\Database\Seeders\ReferenceRangeSeeder::class);
+        $this->seed(ReferenceRangeSeeder::class);
     }
 
     public function test_reference_range_detail_shows_unit_toggle_when_conversion_factor_exists(): void
     {
         $category = Category::factory()->create(['slug' => 'chemistry', 'name' => 'Chemistry']);
-        
+
         $range = ReferenceRange::factory()->create([
             'name' => 'Sodium Test',
             'slug' => 'sodium-test',
@@ -43,7 +44,7 @@ class ReferenceRangeConversionTest extends TestCase
     public function test_reference_range_detail_hides_unit_toggle_when_no_conversion_factor(): void
     {
         $category = Category::factory()->create(['slug' => 'hematology', 'name' => 'Hematology']);
-        
+
         $range = ReferenceRange::factory()->create([
             'name' => 'Hemoglobin Test',
             'slug' => 'hemoglobin-test',
@@ -66,7 +67,7 @@ class ReferenceRangeConversionTest extends TestCase
     public function test_reference_range_shows_copy_button(): void
     {
         $category = Category::factory()->create(['slug' => 'chemistry', 'name' => 'Chemistry']);
-        
+
         $range = ReferenceRange::factory()->create([
             'name' => 'Potassium Test',
             'slug' => 'potassium-test',

@@ -4,8 +4,8 @@ namespace Tests\Feature\PublicSite;
 
 use App\Models\Calculator;
 use App\Models\Category;
-use App\Models\KnowledgeResource;
 use App\Models\InterpretationResource;
+use App\Models\KnowledgeResource;
 use App\Models\ReferenceRange;
 use App\Models\Sop;
 use App\Models\User;

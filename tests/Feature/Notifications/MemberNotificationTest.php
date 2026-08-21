@@ -11,6 +11,7 @@ use App\Notifications\ContributionApprovedNotification;
 use App\Notifications\ContributionRejectedNotification;
 use App\Notifications\MemberRegisteredNotification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Str;
 use Tests\TestCase;
@@ -163,7 +164,7 @@ class MemberNotificationTest extends TestCase
         $this->assertDatabaseHas('notifications', ['id' => $notification->id, 'read_at' => null]);
     }
 
-    private function seedNotification(User $user, string $message): \Illuminate\Notifications\DatabaseNotification
+    private function seedNotification(User $user, string $message): DatabaseNotification
     {
         return $user->notifications()->create([
             'id' => Str::uuid(),

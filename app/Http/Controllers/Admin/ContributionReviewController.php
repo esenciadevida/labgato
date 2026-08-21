@@ -9,15 +9,12 @@ use App\Http\Requests\Admin\RejectContributionRequest;
 use App\Http\Requests\Member\StoreInterpretationContributionRequest;
 use App\Http\Requests\Member\StoreKnowledgeContributionRequest;
 use App\Http\Requests\Member\StoreSopContributionRequest;
-use App\Models\Category;
-use App\Models\Tag;
 use App\Notifications\ContributionApprovedNotification;
 use App\Notifications\ContributionRejectedNotification;
 use App\Services\AuditLogService;
 use App\Services\ContributionService;
 use App\Support\RichTextSanitizer;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
 class ContributionReviewController extends Controller
@@ -147,9 +144,9 @@ class ContributionReviewController extends Controller
     private function typeRules(ContributionType $type): array
     {
         return match ($type) {
-            ContributionType::SOP => (new StoreSopContributionRequest())->rules(),
-            ContributionType::KNOWLEDGE => (new StoreKnowledgeContributionRequest())->rules(),
-            ContributionType::INTERPRETATION => (new StoreInterpretationContributionRequest())->rules(),
+            ContributionType::SOP => (new StoreSopContributionRequest)->rules(),
+            ContributionType::KNOWLEDGE => (new StoreKnowledgeContributionRequest)->rules(),
+            ContributionType::INTERPRETATION => (new StoreInterpretationContributionRequest)->rules(),
         };
     }
 

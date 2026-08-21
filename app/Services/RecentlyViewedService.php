@@ -11,7 +11,6 @@ use App\Models\ReferenceRange;
 use App\Models\Sop;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Facades\Route;
 
 class RecentlyViewedService
 {
@@ -37,12 +36,12 @@ class RecentlyViewedService
             ->get()
             ->map(function ($item) {
                 $model = $this->resolveModel($item->resource_type);
-                if (!$model) {
+                if (! $model) {
                     return $item;
                 }
 
                 $record = $model::query()->find($item->resource_id);
-                if (!$record) {
+                if (! $record) {
                     return $item;
                 }
 

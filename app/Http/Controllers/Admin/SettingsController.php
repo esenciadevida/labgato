@@ -45,6 +45,7 @@ class SettingsController extends Controller
     private function isSensitiveKey(string $key): bool
     {
         $baseKey = Str::afterLast($key, '.');
+
         return in_array($baseKey, self::SENSITIVE_KEYS, true);
     }
 
@@ -55,6 +56,7 @@ class SettingsController extends Controller
                 return true;
             }
         }
+
         return false;
     }
 

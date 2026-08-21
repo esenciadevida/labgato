@@ -6,6 +6,7 @@ use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Cache;
 use Tests\TestCase;
 
 class UserSystemTest extends TestCase
@@ -88,7 +89,7 @@ class UserSystemTest extends TestCase
 
     public function test_super_admin_can_edit_administrator(): void
     {
-        \Illuminate\Support\Facades\Cache::flush();
+        Cache::flush();
 
         $superAdmin = $this->superAdmin();
         $administrator = User::factory()->create(['user_type' => 'admin', 'name' => 'Original Name']);

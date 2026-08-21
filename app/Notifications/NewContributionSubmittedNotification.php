@@ -14,8 +14,7 @@ class NewContributionSubmittedNotification extends Notification
     public function __construct(
         public ContributionType $type,
         public $resource,
-    ) {
-    }
+    ) {}
 
     public function via($notifiable): array
     {

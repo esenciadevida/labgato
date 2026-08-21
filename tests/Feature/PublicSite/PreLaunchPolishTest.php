@@ -6,6 +6,7 @@ use App\Enums\ResourceStatus;
 use App\Models\Sop;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Schedule;
 use Tests\TestCase;
 
 class PreLaunchPolishTest extends TestCase
@@ -138,7 +139,7 @@ class PreLaunchPolishTest extends TestCase
 
         $this->artisan('schedule:list')->assertSuccessful();
 
-        $commands = collect(\Illuminate\Support\Facades\Schedule::events())
+        $commands = collect(Schedule::events())
             ->map(fn ($event) => $event->command ?? '')
             ->implode(' ');
 

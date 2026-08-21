@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\SchemaJson;
 use App\Enums\ResourceStatus;
 use App\Models\Traits\HasResourceLifecycle;
 use App\Models\Traits\Searchable;
@@ -36,8 +37,8 @@ class LaboratoryTool extends Model
     protected function casts(): array
     {
         return [
-            'input_schema' => \App\Casts\SchemaJson::class,
-            'output_schema' => \App\Casts\SchemaJson::class,
+            'input_schema' => SchemaJson::class,
+            'output_schema' => SchemaJson::class,
             'status' => ResourceStatus::class,
             'published_at' => 'datetime',
         ];

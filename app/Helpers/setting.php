@@ -23,7 +23,7 @@ if (! function_exists('setting')) {
         }
 
         // Fallback to config if DB doesn't have it
-        $configKey = 'labgoto.' . $key;
+        $configKey = 'labgoto.'.$key;
         if (config()->has($configKey)) {
             return config($configKey);
         }

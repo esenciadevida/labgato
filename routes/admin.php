@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdministratorController;
 use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Admin\AuditLogController;
 use App\Http\Controllers\Admin\BulkActionController;
@@ -19,7 +20,6 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\SopController;
 use App\Http\Controllers\Admin\SopVersionController;
 use App\Http\Controllers\Admin\TagController;
-use App\Http\Controllers\Admin\AdministratorController;
 use App\Http\Controllers\Admin\UserManagementController;
 use Illuminate\Support\Facades\Route;
 

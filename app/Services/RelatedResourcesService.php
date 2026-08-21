@@ -2,10 +2,8 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Collection;
 use App\Models\Resource;
-use App\Models\Category;
-use App\Models\Tag;
+use Illuminate\Support\Collection;
 
 class RelatedResourcesService
 {

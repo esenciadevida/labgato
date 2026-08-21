@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreRoleRequest;
 use App\Http\Requests\Admin\UpdateRoleRequest;
+use App\Models\Permission;
 use App\Models\Role;
 use App\Services\AuditLogService;
 use Illuminate\Http\Request;
@@ -35,7 +36,7 @@ class RoleController extends Controller
 
     public function edit(Role $role)
     {
-        $permissions = \App\Models\Permission::orderBy('group')->orderBy('name')->get();
+        $permissions = Permission::orderBy('group')->orderBy('name')->get();
         $grouped = $permissions->groupBy('group');
 
         return view('admin.roles.edit', compact('role', 'permissions', 'grouped'));

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\DatabaseNotification;
 
 class NotificationController extends Controller
 {

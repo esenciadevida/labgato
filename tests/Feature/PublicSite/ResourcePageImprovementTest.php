@@ -4,7 +4,6 @@ namespace Tests\Feature\PublicSite;
 
 use App\Enums\ResourceStatus;
 use App\Models\Calculator;
-use App\Models\Category;
 use App\Models\InterpretationResource;
 use App\Models\KnowledgeResource;
 use App\Models\LaboratoryTool;
