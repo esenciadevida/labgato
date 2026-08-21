@@ -1,7 +1,6 @@
 @php
     $results = $this->results;
     $categories = $this->availableCategories;
-    $tags = $this->availableTags;
     $total = $this->total;
     $hasActiveFilters = $this->hasActiveFilters;
 @endphp
@@ -18,7 +17,7 @@
             Filters
             @if($hasActiveFilters)
                 <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary-600 text-white text-xs font-semibold">
-                    {{ count($this->categories) + count($this->tags) + ($this->search !== '' ? 1 : 0) }}
+                    {{ count($this->categories) + ($this->search !== '' ? 1 : 0) }}
                 </span>
             @endif
         </button>
@@ -105,15 +104,6 @@
                     </span>
                 @endforeach
 
-                @foreach($tags->whereIn('id', $this->tags) as $tag)
-                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium dark:bg-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-600">
-                        #{{ $tag->name }}
-                        <button wire:click="removeTag({{ $tag->id }})" type="button" class="ml-0.5 p-0.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-600 focus:outline-none focus:ring-1 focus:ring-primary-500" aria-label="Remove {{ $tag->name }} filter">
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                        </button>
-                    </span>
-                @endforeach
-
                 @if($search !== '')
                     <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-medium dark:bg-amber-900/30 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
                         "{{ $search }}"
@@ -123,7 +113,13 @@
                     </span>
                 @endif
 
-                <button wire:click="clearAll" type="button" class="text-xs font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 underline transition-colors">
+                <button
+                    wire:click="clearAll"
+                    wire:loading.attr="disabled"
+                    type="button"
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-slate-300 bg-white text-xs font-medium text-slate-600 hover:border-danger-400 hover:bg-danger-50 hover:text-danger-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-slate-800 dark:border-slate-600 dark:text-slate-300 dark:hover:border-danger-500 dark:hover:bg-danger-900/30 dark:hover:text-danger-400 disabled:opacity-50"
+                >
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                     Clear all
                 </button>
             </div>

@@ -71,7 +71,7 @@ class FacetedSearchTest extends TestCase
             ->assertDontSee('Draft Calc');
     }
 
-    public function test_selecting_category_narrows_available_tags(): void
+    public function test_tags_are_not_shown_in_the_filter_panel(): void
     {
         $hematology = Category::create(['name' => 'Hematology', 'slug' => 'hematology', 'sort_order' => 1, 'is_active' => true]);
         $chemistry = Category::create(['name' => 'Chemistry', 'slug' => 'chemistry', 'sort_order' => 2, 'is_active' => true]);
@@ -90,11 +90,11 @@ class FacetedSearchTest extends TestCase
         Livewire::test(ResourceBrowser::class, ['type' => 'calculator'])
             ->assertSee('Hematology')
             ->assertSee('Chemistry')
-            ->assertSee('Anemia')
-            ->assertSee('Lipids')
+            ->assertDontSee('Anemia')
+            ->assertDontSee('Lipids')
             ->call('toggleCategory', $hematology->id)
-            ->assertSee('Anemia')
-            ->assertDontSee('Lipids');
+            ->assertSee('Hematocrit')
+            ->assertDontSee('Cholesterol');
     }
 
     public function test_multi_select_categories_filter_results(): void
@@ -114,25 +114,6 @@ class FacetedSearchTest extends TestCase
             ->assertSee('Chem Calc')
             ->assertSee('Both Calc')
             ->assertDontSee('Heme Calc');
-    }
-
-    public function test_multi_select_tags_filter_results(): void
-    {
-        $tag1 = Tag::create(['name' => 'Anemia', 'slug' => 'anemia']);
-        $tag2 = Tag::create(['name' => 'Lipids', 'slug' => 'lipids']);
-
-        $this->createResourceWithFacets('Anemia Calc', [], ['Anemia']);
-        $this->createResourceWithFacets('Lipid Calc', [], ['Lipids']);
-        $this->createResourceWithFacets('Both Tags', [], ['Anemia', 'Lipids']);
-
-        Livewire::test(ResourceBrowser::class, ['type' => 'calculator'])
-            ->assertSee('Anemia Calc')
-            ->assertSee('Lipid Calc')
-            ->assertSee('Both Tags')
-            ->call('toggleTag', $tag1->id)
-            ->assertSee('Anemia Calc')
-            ->assertSee('Both Tags')
-            ->assertDontSee('Lipid Calc');
     }
 
     public function test_search_filters_results(): void
@@ -163,18 +144,15 @@ class FacetedSearchTest extends TestCase
     public function test_facet_counts_are_correct(): void
     {
         $cat = Category::create(['name' => 'Hematology', 'slug' => 'hematology', 'sort_order' => 1, 'is_active' => true]);
-        $tag = Tag::create(['name' => 'Anemia', 'slug' => 'anemia']);
 
         $calc1 = Calculator::factory()->create(['name' => 'Calc 1']);
         $calc1->categories()->attach($cat);
-        $calc1->tags()->attach($tag);
 
         $calc2 = Calculator::factory()->create(['name' => 'Calc 2']);
         $calc2->categories()->attach($cat);
 
         Livewire::test(ResourceBrowser::class, ['type' => 'calculator'])
-            ->assertSee('2')  // Hematology count
-            ->assertSee('1'); // Anemia count
+            ->assertSee('2'); // Hematology count
     }
 
     public function test_empty_state_shows_when_no_matches(): void

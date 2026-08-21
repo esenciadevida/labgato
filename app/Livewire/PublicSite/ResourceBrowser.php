@@ -19,7 +19,10 @@ class ResourceBrowser extends Component
     #[Url]
     public array $categories = [];
 
-    #[Url]
+    /**
+     * Retained for FacetService compatibility; tag filtering is no longer
+     * exposed in the public UI.
+     */
     public array $tags = [];
 
     #[Url(as: 'sort')]
@@ -46,12 +49,6 @@ class ResourceBrowser extends Component
 
     public function updatedCategories(): void
     {
-        $this->tags = array_values(array_diff($this->tags, $this->staleTagIds()));
-        $this->resetPage();
-    }
-
-    public function updatedTags(): void
-    {
         $this->resetPage();
     }
 
@@ -69,23 +66,9 @@ class ResourceBrowser extends Component
         }
     }
 
-    public function toggleTag(int $id): void
-    {
-        if (in_array($id, $this->tags, true)) {
-            $this->tags = array_values(array_diff($this->tags, [$id]));
-        } else {
-            $this->tags[] = $id;
-        }
-    }
-
     public function removeCategory(int $id): void
     {
         $this->categories = array_values(array_diff($this->categories, [$id]));
-    }
-
-    public function removeTag(int $id): void
-    {
-        $this->tags = array_values(array_diff($this->tags, [$id]));
     }
 
     public function clearAll(): void
@@ -108,7 +91,7 @@ class ResourceBrowser extends Component
 
     public function getHasActiveFiltersProperty(): bool
     {
-        return $this->search !== '' || $this->categories !== [] || $this->tags !== [] || $this->sort !== 'newest';
+        return $this->search !== '' || $this->categories !== [] || $this->sort !== 'newest';
     }
 
     public function getBaseProperty()
@@ -121,17 +104,12 @@ class ResourceBrowser extends Component
         return app(FacetService::class)->categoriesWithCounts($this->base, $this->modelClass(), $this->tags);
     }
 
-    public function getAvailableTagsProperty()
-    {
-        return app(FacetService::class)->tagsWithCounts($this->base, $this->modelClass(), $this->categories);
-    }
-
     public function getResultsProperty()
     {
         return app(FacetService::class)->results(
             $this->base,
             $this->categories,
-            $this->tags,
+            [],
             $this->sort,
             $this->perPage,
         );
@@ -140,16 +118,6 @@ class ResourceBrowser extends Component
     public function getTotalProperty(): int
     {
         return app(FacetService::class)->totalCount($this->base);
-    }
-
-    private function staleTagIds(): array
-    {
-        $available = app(FacetService::class)
-            ->tagsWithCounts($this->base, $this->modelClass(), $this->categories)
-            ->pluck('id')
-            ->all();
-
-        return array_diff($this->tags, $available);
     }
 
     public function render()
