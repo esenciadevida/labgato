@@ -1,0 +1,25 @@
+{
+    "name": "LabGoTo",
+    "short_name": "LabGoTo",
+    "description": "Professional Laboratory Toolkit - Calculators, Reference Ranges, SOPs, and Knowledge Resources",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2563eb",
+    "orientation": "any",
+    "categories": ["medical", "education", "utilities"],
+    "icons": [
+        {
+            "src": "/assets/LabGoTo_favicon_192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/LabGoTo_favicon_512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

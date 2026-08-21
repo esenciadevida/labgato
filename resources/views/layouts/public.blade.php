@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
     <link rel="icon" type="image/svg+xml" href="{{ asset('assets/LabGoTo_favicon.svg') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/LabGoTo_favicon_32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/LabGoTo_favicon_16.png') }}">
