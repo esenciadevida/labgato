@@ -14,7 +14,7 @@ class SettingsSeeder extends Seeder
             // GENERAL
             [
                 'key' => 'general.site_name',
-                'value' => 'LabGato',
+                'value' => 'Labgoto',
                 'type' => 'string',
                 'group' => 'general',
                 'label' => 'Site Name',
