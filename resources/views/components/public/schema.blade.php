@@ -12,6 +12,12 @@
         '@type' => 'Organization',
         '@id' => $orgId,
         'name' => $siteName,
+        'alternateName' => [
+            'LabGoTo',
+            'Lab Goto',
+            'Lab Go To',
+            'Lab Go',
+        ],
         'url' => $siteUrl,
         'logo' => [
             '@type' => 'ImageObject',
