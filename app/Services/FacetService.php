@@ -61,11 +61,12 @@ class FacetService
         }
 
         $resourceIds = $query->pluck((new $modelClass)->getKeyName());
+        $categoryIdList = $resourceIds->implode(',') ?: '0';
 
         return Category::query()
             ->where('is_active', true)
             ->select('categories.*')
-            ->selectRaw("COALESCE((SELECT COUNT(DISTINCT pc.{$pivot['fk']}) FROM {$pivot['table']} pc WHERE pc.category_id = categories.id AND pc.{$pivot['fk']} IN (".$resourceIds->implode(',').')), 0) as count')
+            ->selectRaw("COALESCE((SELECT COUNT(DISTINCT pc.{$pivot['fk']}) FROM {$pivot['table']} pc WHERE pc.category_id = categories.id AND pc.{$pivot['fk']} IN ({$categoryIdList})), 0) as count")
             ->orderBy('categories.sort_order')
             ->orderBy('categories.name')
             ->get();
