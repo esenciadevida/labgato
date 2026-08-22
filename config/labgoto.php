@@ -133,6 +133,9 @@ return [
 
     'seo' => [
         'default_og_image' => env('DEFAULT_OG_IMAGE', '/assets/LabGoTo_og_banner_1200x630.png'),
+
+        // Comma-separated absolute profile URLs used as sameAs in Organization schema.
+        'social_profiles' => array_values(array_filter(array_map('trim', explode(',', (string) env('SOCIAL_PROFILES', ''))))),
     ],
 
     /*

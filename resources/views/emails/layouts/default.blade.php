@@ -47,7 +47,7 @@
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td align="center" valign="middle" style="padding-right: 12px;">
-                                    <img src="{{ asset('assets/LabGoTo_favicon_192.png') }}" width="36" height="36" alt="LabGato logo" style="display: block; border: 0; outline: none; text-decoration: none;">
+                                    <img src="{{ asset('assets/LabGoTo_favicon_192.png') }}" width="36" height="36" alt="Labgoto logo" style="display: block; border: 0; outline: none; text-decoration: none;">
                                 </td>
                                 <td align="left" valign="middle">
                                     <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em;">LabGato</span>

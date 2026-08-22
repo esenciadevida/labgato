@@ -1,4 +1,4 @@
-# LabGoTo robots.txt
+# Labgoto robots.txt
 # Public pages are fully crawlable; private and utility areas are blocked.
 
 User-agent: *

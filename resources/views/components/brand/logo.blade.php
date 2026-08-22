@@ -13,10 +13,10 @@
     $filterClass = ($dark || $theme) ? 'logo-theme' : '';
 @endphp
 
-<a href="{{ $href ?? route('home') }}" class="inline-flex items-center shrink-0 rounded-md focus:outline-none focus:ring-0 {{ $class }}" aria-label="LabGoTo home">
+<a href="{{ $href ?? route('home') }}" class="inline-flex items-center shrink-0 rounded-md focus:outline-none focus:ring-0 {{ $class }}" aria-label="Labgoto home">
     <img
         src="{{ asset('assets/LabGoTo_logo.svg') }}"
-        alt="LabGoTo"
+        alt="Labgoto"
         class="{{ $height }} w-auto {{ $imgClass }} {{ $filterClass }} shrink-0 object-contain transition-transform duration-150 hover:scale-[1.02] group-hover:scale-[1.05]"
         loading="eager"
     >
