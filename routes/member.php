@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\MemberRegisterController;
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\Member\ContributionController;
 use App\Http\Controllers\Member\MemberController;
+use App\Http\Controllers\Member\OnboardingController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\RecentlyViewedController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,11 @@ Route::prefix('account')->name('account.')->middleware(['member', 'active.user']
     Route::get('/profile', [MemberController::class, 'profile'])->name('profile');
     Route::put('/profile', [MemberController::class, 'updateProfile'])->name('profile.update');
     Route::put('/password', [MemberController::class, 'updatePassword'])->name('password.update');
+
+    Route::prefix('onboarding')->name('onboarding.')->middleware('throttle:30,1')->group(function () {
+        Route::post('/welcome', [OnboardingController::class, 'welcome'])->name('welcome');
+        Route::post('/tour/{key}', [OnboardingController::class, 'completeTour'])->name('tour.complete');
+    });
 
     Route::prefix('contributions')->name('contributions.')->group(function () {
         Route::get('/', [ContributionController::class, 'index'])->name('index');

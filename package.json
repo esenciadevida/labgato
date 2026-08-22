@@ -15,6 +15,7 @@
         "vite": "^8.0.0"
     },
     "dependencies": {
-        "canvas": "^3.2.3"
+        "canvas": "^3.2.3",
+        "driver.js": "^1.8.0"
     }
 }

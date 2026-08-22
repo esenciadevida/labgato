@@ -48,6 +48,8 @@ class User extends Authenticatable
             'password_set_at' => 'datetime',
             'is_active' => 'boolean',
             'last_login_at' => 'datetime',
+            'onboarded_at' => 'datetime',
+            'tour_state' => 'array',
         ];
     }
 
@@ -158,6 +160,41 @@ class User extends Authenticatable
     public function hasCustomPassword(): bool
     {
         return $this->password_set_at !== null;
+    }
+
+    public function hasOnboarded(): bool
+    {
+        return $this->onboarded_at !== null;
+    }
+
+    public function markOnboarded(): void
+    {
+        if ($this->onboarded_at === null) {
+            $this->forceFill(['onboarded_at' => now()])->save();
+        }
+    }
+
+    public function hasCompletedTour(string $key): bool
+    {
+        return ($this->tour_state ?? [])[$key] ?? false;
+    }
+
+    public function completeTour(string $key): void
+    {
+        $state = $this->tour_state ?? [];
+
+        if (($state[$key] ?? false) === true) {
+            return;
+        }
+
+        $state[$key] = true;
+
+        $this->forceFill(['tour_state' => $state])->save();
+    }
+
+    public function needsTour(string $key): bool
+    {
+        return $this->hasOnboarded() && ! $this->hasCompletedTour($key);
     }
 
     public function sendPasswordResetNotification($token): void

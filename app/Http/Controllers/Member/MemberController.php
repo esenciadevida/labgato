@@ -8,6 +8,7 @@ use App\Http\Requests\Member\UpdateProfileRequest;
 use App\Mail\PasswordUpdatedEmail;
 use App\Services\AuditLogService;
 use App\Services\ContributionService;
+use App\Services\OnboardingService;
 use App\Services\RecentlyViewedService;
 use App\Services\RecommendationService;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +22,7 @@ class MemberController extends Controller
         private readonly ContributionService $contributions,
         private readonly RecentlyViewedService $recentlyViewed,
         private readonly RecommendationService $recommendations,
+        private readonly OnboardingService $onboarding,
         private readonly AuditLogService $auditLog,
     ) {}
 
@@ -39,6 +41,8 @@ class MemberController extends Controller
             'recentlyViewed' => $this->recentlyViewed->getRecent($user, 8),
             'recommended' => $this->recommendations->getRecommendedFor($user, 6),
             'greeting' => $greeting,
+            'checklist' => $this->onboarding->checklistFor($user),
+            'tourSteps' => $this->onboarding->dashboardTourSteps(),
         ]);
     }
 

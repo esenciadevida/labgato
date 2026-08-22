@@ -7,7 +7,7 @@
     ];
 @endphp
 
-<nav class="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-4 dark:border-slate-800" aria-label="Member navigation">
+<nav data-tour="navigation" class="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-4 dark:border-slate-800" aria-label="Member navigation">
     @foreach($items as $item)
         @php $active = $currentRoute === $item['route']; @endphp
         <a
