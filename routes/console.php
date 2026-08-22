@@ -11,3 +11,5 @@ Artisan::command('inspire', function () {
 Schedule::command('analytics:aggregate')->dailyAt('01:00')->withoutOverlapping();
 Schedule::command('sitemap:generate')->dailyAt('03:00')->withoutOverlapping();
 Schedule::command('backup:run --only-db')->dailyAt('02:00')->withoutOverlapping()->onOneServer();
+Schedule::command('backup:run')->weeklyOn(0, '04:00')->withoutOverlapping()->onOneServer();
+Schedule::command('content-images:prune --days=7')->dailyAt('03:30')->withoutOverlapping();
