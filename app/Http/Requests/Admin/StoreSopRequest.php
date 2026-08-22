@@ -38,6 +38,8 @@ class StoreSopRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'slug' => ['required', 'string', 'max:255', 'alpha_dash', Rule::unique('sops', 'slug')],
             'short_description' => ['nullable', 'string', 'max:2000'],
+            'featured_image' => ['nullable', 'file', 'mimes:jpeg,jpg,png,webp', 'max:5120'],
+            'remove_featured_image' => ['nullable', 'boolean'],
             'content' => ['required', 'string'],
             'department' => ['nullable', 'string', 'max:255'],
             'version' => ['nullable', 'string', 'max:50'],

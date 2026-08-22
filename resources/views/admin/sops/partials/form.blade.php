@@ -11,7 +11,7 @@
     $oldValue = fn (string $field) => old($field, $sop?->{$field});
 @endphp
 
-<form method="POST" action="{{ $action }}" class="space-y-6" x-data="{ isNewVersion: false }">
+<form method="POST" action="{{ $action }}" enctype="multipart/form-data" class="space-y-6" x-data="{ isNewVersion: false }">
     @csrf
     @if($method !== 'POST')
         @method($method)
@@ -82,8 +82,8 @@
         >
             <div>
                 <x-form.label for="content" required>Content (Markdown)</x-form.label>
-                <x-ui.textarea id="content" name="content" rows="16" :error="$errors->first('content')" aria-required="true">{{ $oldValue('content') }}</x-ui.textarea>
-                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Supports headings, bold, italics, links, lists, blockquotes, code blocks, and images.</p>
+                <x-form.markdown-editor id="content" name="content" type="sop" rows="16" :error="$errors->first('content')" aria-required="true">{{ $oldValue('content') }}</x-form.markdown-editor>
+                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Supports headings, bold, italics, links, lists, blockquotes, code blocks, and images. Paste or drag & drop an image to insert it.</p>
             </div>
         </x-form.section>
     </x-ui.card>
@@ -132,6 +132,32 @@
                 <x-form.label for="mandatory_disclaimer">Mandatory disclaimer</x-form.label>
                 <x-ui.textarea id="mandatory_disclaimer" name="mandatory_disclaimer" rows="3" :error="$errors->first('mandatory_disclaimer')">{{ $oldValue('mandatory_disclaimer') }}</x-ui.textarea>
                 <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Shown as a required disclaimer at the top of the public detail page. Leave blank to use the site default.</p>
+            </div>
+        </x-form.section>
+    </x-ui.card>
+
+    <x-ui.card>
+        <x-form.section
+            title="Featured Image"
+            description="Optional image displayed at the top of the public detail page. Large images are automatically resized and converted to WebP."
+        >
+            <div>
+                @if($sop?->featured_image)
+                    <img
+                        src="{{ \Illuminate\Support\Facades\Storage::url($sop->featured_image) }}"
+                        alt="Current featured image"
+                        class="mb-3 max-h-40 w-auto rounded-lg border border-slate-200 dark:border-slate-700"
+                    >
+                @endif
+                <x-ui.input id="featured_image" name="featured_image" type="file" accept=".jpg,.jpeg,.png,.webp" :error="$errors->first('featured_image')" />
+                <x-form.error for="featured_image" />
+
+                @if($sop?->featured_image)
+                    <label class="mt-3 inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                        <input type="checkbox" name="remove_featured_image" value="1" class="rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600">
+                        Remove current image
+                    </label>
+                @endif
             </div>
         </x-form.section>
     </x-ui.card>

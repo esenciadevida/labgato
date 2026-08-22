@@ -55,14 +55,14 @@
                         ] as $field => $label)
                             <div>
                                 <x-form.label :for="$field">{{ $label }}</x-form.label>
-                                <x-ui.textarea id="{{ $field }}" name="{{ $field }}" rows="4">{{ old($field, $resource->{$field}) }}</x-ui.textarea>
+                                <x-form.markdown-editor :id="$field" :name="$field" type="sop" rows="4">{{ old($field, $resource->{$field}) }}</x-form.markdown-editor>
                                 <x-form.error :for="$field" />
                             </div>
                         @endforeach
                     @else
                         <div>
                             <x-form.label for="content" required>Content (Markdown)</x-form.label>
-                            <x-ui.textarea id="content" name="content" rows="16">{{ old('content', $resource->content) }}</x-ui.textarea>
+                            <x-form.markdown-editor id="content" name="content" :type="$contributionType->value" rows="16">{{ old('content', $resource->content) }}</x-form.markdown-editor>
                             <x-form.error for="content" />
                         </div>
                     @endif

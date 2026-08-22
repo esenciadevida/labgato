@@ -58,6 +58,8 @@ class InterpretationController extends Controller
         $interpretation->categories()->sync($request->input('categories', []));
         $interpretation->tags()->sync($request->input('tags', []));
 
+        app(ContentImageService::class)->syncAttachments((string) $interpretation->content, 'interpretation', $interpretation->id);
+
         app(AuditLogService::class)->logWithSubject('interpretation.created', $interpretation, $interpretation->toArray(), $request);
 
         if ($request->input('save_action') === 'save_and_create') {
@@ -107,6 +109,8 @@ class InterpretationController extends Controller
 
         $interpretation->categories()->sync($request->input('categories', []));
         $interpretation->tags()->sync($request->input('tags', []));
+
+        app(ContentImageService::class)->syncAttachments((string) $interpretation->content, 'interpretation', $interpretation->id);
 
         app(AuditLogService::class)->logWithSubject('interpretation.updated', $interpretation, $interpretation->getChanges(), $request);
 

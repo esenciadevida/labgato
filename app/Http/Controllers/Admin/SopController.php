@@ -8,6 +8,7 @@ use App\Http\Requests\Admin\StoreSopRequest;
 use App\Http\Requests\Admin\UpdateSopRequest;
 use App\Models\Sop;
 use App\Services\AuditLogService;
+use App\Services\ContentImageService;
 use App\Services\SopVersionService;
 use Illuminate\Http\Request;
 
@@ -42,8 +43,14 @@ class SopController extends Controller
 
     public function store(StoreSopRequest $request)
     {
-        $data = $request->validated();
+        $data = collect($request->validated())
+            ->except(['featured_image', 'remove_featured_image'])
+            ->all();
         $data['version'] = ($data['version'] ?? '') ?: '1.0';
+
+        if ($request->hasFile('featured_image')) {
+            $data['featured_image'] = app(ContentImageService::class)->store($request->file('featured_image'));
+        }
 
         $sop = Sop::create([
             ...$data,
@@ -54,6 +61,8 @@ class SopController extends Controller
 
         $sop->categories()->sync($request->input('categories', []));
         $sop->tags()->sync($request->input('tags', []));
+
+        app(ContentImageService::class)->syncAttachments((string) $sop->content, 'sop', $sop->id);
 
         app(SopVersionService::class)->createSnapshot($sop, 'Initial version');
 
@@ -88,8 +97,21 @@ class SopController extends Controller
         $versionService = app(SopVersionService::class);
         $isNewVersion = $request->boolean('is_new_version');
 
-        $data = $request->validated();
-        unset($data['is_new_version'], $data['change_summary']);
+        if ($request->hasFile('featured_image')) {
+            $oldImage = $sop->featured_image;
+            $data['featured_image'] = app(ContentImageService::class)->store($request->file('featured_image'));
+
+            if ($oldImage && $oldImage !== $data['featured_image']) {
+                app(ContentImageService::class)->delete($oldImage);
+            }
+        } elseif ($request->boolean('remove_featured_image') && $sop->featured_image) {
+            app(ContentImageService::class)->delete($sop->featured_image);
+            $data['featured_image'] = null;
+        }
+
+        $data = collect($request->validated())
+            ->except(['is_new_version', 'change_summary', 'featured_image', 'remove_featured_image'])
+            ->all();
 
         if ($isNewVersion) {
             $newVersion = trim((string) ($data['version'] ?? ''));
@@ -107,6 +129,8 @@ class SopController extends Controller
 
         $sop->categories()->sync($request->input('categories', []));
         $sop->tags()->sync($request->input('tags', []));
+
+        app(ContentImageService::class)->syncAttachments((string) $sop->content, 'sop', $sop->id);
 
         if ($isNewVersion) {
             $versionService->createSnapshot($sop, $request->input('change_summary'));
@@ -161,6 +185,8 @@ class SopController extends Controller
     public function destroy(Request $request, Sop $sop)
     {
         $changes = ['name' => $sop->name, 'slug' => $sop->slug];
+
+        app(ContentImageService::class)->delete($sop->featured_image);
         $sop->delete();
 
         app(AuditLogService::class)->logWithSubject('sops.deleted', $sop, $changes, $request);

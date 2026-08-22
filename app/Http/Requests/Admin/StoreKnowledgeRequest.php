@@ -43,7 +43,7 @@ class StoreKnowledgeRequest extends FormRequest
             'difficulty_level' => ['nullable', 'string', 'max:50', Rule::in(['Beginner', 'Intermediate', 'Advanced'])],
             'learning_objectives' => ['nullable', 'string'],
             'author_name' => ['nullable', 'string', 'max:255'],
-            'featured_image' => ['nullable', 'file', 'mimes:jpeg,jpg,png,webp', 'max:2048'],
+            'featured_image' => ['nullable', 'file', 'mimes:jpeg,jpg,png,webp', 'max:5120'],
             'reading_time_minutes' => ['nullable', 'integer', 'min:1', 'max:10000'],
             'status' => ['required', Rule::enum(ResourceStatus::class)],
             'categories' => ['nullable', 'array'],

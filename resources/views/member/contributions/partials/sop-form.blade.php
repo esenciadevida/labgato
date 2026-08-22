@@ -46,19 +46,19 @@
         >
             <div>
                 <x-form.label for="purpose" required>Purpose</x-form.label>
-                <x-ui.textarea id="purpose" name="purpose" rows="4">{{ $oldValue('purpose') }}</x-ui.textarea>
+                <x-form.markdown-editor id="purpose" name="purpose" type="sop" rows="4">{{ $oldValue('purpose') }}</x-form.markdown-editor>
                 <x-form.error for="purpose" />
             </div>
 
             <div>
                 <x-form.label for="scope" required>Scope</x-form.label>
-                <x-ui.textarea id="scope" name="scope" rows="4">{{ $oldValue('scope') }}</x-ui.textarea>
+                <x-form.markdown-editor id="scope" name="scope" type="sop" rows="4">{{ $oldValue('scope') }}</x-form.markdown-editor>
                 <x-form.error for="scope" />
             </div>
 
             <div>
                 <x-form.label for="procedure_content" required>Procedure steps</x-form.label>
-                <x-ui.textarea id="procedure_content" name="procedure_content" rows="16">{{ $oldValue('procedure_content') }}</x-ui.textarea>
+                <x-form.markdown-editor id="procedure_content" name="procedure_content" type="sop" rows="16">{{ $oldValue('procedure_content') }}</x-form.markdown-editor>
                 <x-form.error for="procedure_content" />
             </div>
         </x-form.section>
@@ -71,19 +71,19 @@
         >
             <div>
                 <x-form.label for="quality_control">Quality control</x-form.label>
-                <x-ui.textarea id="quality_control" name="quality_control" rows="4">{{ $oldValue('quality_control') }}</x-ui.textarea>
+                <x-form.markdown-editor id="quality_control" name="quality_control" type="sop" rows="4">{{ $oldValue('quality_control') }}</x-form.markdown-editor>
                 <x-form.error for="quality_control" />
             </div>
 
             <div>
                 <x-form.label for="safety_information">Safety information</x-form.label>
-                <x-ui.textarea id="safety_information" name="safety_information" rows="4">{{ $oldValue('safety_information') }}</x-ui.textarea>
+                <x-form.markdown-editor id="safety_information" name="safety_information" type="sop" rows="4">{{ $oldValue('safety_information') }}</x-form.markdown-editor>
                 <x-form.error for="safety_information" />
             </div>
 
             <div>
                 <x-form.label for="references">References</x-form.label>
-                <x-ui.textarea id="references" name="references" rows="4">{{ $oldValue('references') }}</x-ui.textarea>
+                <x-form.markdown-editor id="references" name="references" type="sop" rows="4">{{ $oldValue('references') }}</x-form.markdown-editor>
                 <x-form.error for="references" />
             </div>
         </x-form.section>

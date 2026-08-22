@@ -12,6 +12,7 @@ use App\Http\Requests\Member\StoreSopContributionRequest;
 use App\Notifications\ContributionApprovedNotification;
 use App\Notifications\ContributionRejectedNotification;
 use App\Services\AuditLogService;
+use App\Services\ContentImageService;
 use App\Services\ContributionService;
 use App\Support\RichTextSanitizer;
 use Illuminate\Http\Request;
@@ -60,6 +61,17 @@ class ContributionReviewController extends Controller
 
         $resource->categories()->sync($validated['categories'] ?? []);
         $resource->tags()->sync($validated['tags'] ?? []);
+
+        app(ContentImageService::class)->syncAttachments(
+            $contributionType === ContributionType::SOP
+                ? array_map(fn (string $field) => (string) $resource->{$field}, [
+                    'purpose', 'scope', 'procedure_content', 'quality_control',
+                    'safety_information', 'references', 'content',
+                ])
+                : [(string) $resource->content],
+            $contributionType->value,
+            $resource->id,
+        );
 
         app(AuditLogService::class)->logWithSubject(
             'contributions.approved',

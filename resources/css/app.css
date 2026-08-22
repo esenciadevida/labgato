@@ -381,7 +381,27 @@
         max-width: 100%;
         height: auto;
         border-radius: 0.5rem;
-        margin: 1em 0;
+    }
+
+    .rich-content figure {
+        margin: 1.25em 0;
+    }
+
+    .rich-content figure img {
+        margin: 0;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 0.08);
+    }
+
+    .rich-content figcaption {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: var(--color-slate-500);
+        text-align: center;
+    }
+
+    .dark .rich-content figcaption {
+        color: var(--color-slate-400);
     }
 
     .rich-content hr {
@@ -634,4 +654,41 @@
     a[href]:after { content: none !important; }
     .bg-primary-950 { background: white !important; color: black !important; }
     .bg-primary-950 * { color: black !important; }
+
+    .rich-content figure,
+    .rich-content table,
+    .rich-content blockquote {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .rich-content img {
+        max-width: 100% !important;
+    }
+
+    .dark .rich-content,
+    .dark .rich-content h1, .dark .rich-content h2, .dark .rich-content h3,
+    .dark .rich-content h4, .dark .rich-content h5, .dark .rich-content h6,
+    .dark .rich-content strong, .dark .rich-content p, .dark .rich-content li {
+        color: black !important;
+    }
+
+    .rich-content figcaption {
+        color: #555 !important;
+    }
+}
+
+.labgoto-tour-popover {
+    max-width: 320px;
+    border-radius: 0.75rem;
+}
+
+.dark .labgoto-tour-popover {
+    --driver-popover-bg: var(--color-slate-800);
+    --driver-popover-border-color: var(--color-slate-700);
+    --driver-popover-title-color: var(--color-slate-100);
+    --driver-popover-description-color: var(--color-slate-300);
+    --driver-popover-close-btn-color: var(--color-slate-400);
+    --driver-popover-progress-color: var(--color-slate-400);
+    --driver-popover-arrow-color: var(--color-slate-800);
 }

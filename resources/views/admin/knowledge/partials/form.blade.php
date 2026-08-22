@@ -82,8 +82,8 @@
                         source-field="short_description"
                     />
                 </div>
-                <x-ui.textarea id="content" name="content" rows="16" :error="$errors->first('content')" aria-required="true">{{ $oldValue('content') }}</x-ui.textarea>
-                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Supports headings, bold, italics, links, lists, blockquotes, code blocks, and images.</p>
+                <x-form.markdown-editor id="content" name="content" type="knowledge" rows="16" :error="$errors->first('content')" aria-required="true">{{ $oldValue('content') }}</x-form.markdown-editor>
+                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Supports headings, bold, italics, links, lists, blockquotes, code blocks, and images. Paste or drag & drop an image to insert it.</p>
             </div>
         </x-form.section>
     </x-ui.card>

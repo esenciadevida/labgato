@@ -9,8 +9,12 @@ use App\Http\Requests\Member\StoreInterpretationContributionRequest;
 use App\Http\Requests\Member\StoreKnowledgeContributionRequest;
 use App\Http\Requests\Member\StoreSopContributionRequest;
 use App\Http\Requests\Member\UpdateContributionRequest;
+use App\Models\InterpretationResource;
+use App\Models\KnowledgeResource;
+use App\Models\Sop;
 use App\Notifications\NewContributionSubmittedNotification;
 use App\Services\AuditLogService;
+use App\Services\ContentImageService;
 use App\Services\ContributionService;
 use App\Support\AdminNotifier;
 use App\Support\RichTextSanitizer;
@@ -63,6 +67,8 @@ class ContributionController extends Controller
             'created_by' => $request->user()->id,
             'updated_by' => $request->user()->id,
         ]);
+
+        $this->syncContentImages($contributionType, $resource);
 
         $this->audit(
             $status === ResourceStatus::UNDER_REVIEW ? 'contributions.submitted' : 'contributions.created',
@@ -126,6 +132,8 @@ class ContributionController extends Controller
         }
 
         $resource->update($data);
+
+        $this->syncContentImages($contributionType, $resource);
 
         $this->audit('contributions.updated', $resource, $request);
 
@@ -240,6 +248,19 @@ class ContributionController extends Controller
             ContributionType::KNOWLEDGE => (new StoreKnowledgeContributionRequest)->rules(),
             ContributionType::INTERPRETATION => (new StoreInterpretationContributionRequest)->rules(),
         };
+    }
+
+    private function syncContentImages(ContributionType $type, Sop|KnowledgeResource|InterpretationResource $resource): void
+    {
+        $fields = $type === ContributionType::SOP
+            ? ['purpose', 'scope', 'procedure_content', 'quality_control', 'safety_information', 'references', 'content']
+            : ['content'];
+
+        app(ContentImageService::class)->syncAttachments(
+            array_map(fn (string $field) => (string) $resource->{$field}, $fields),
+            $type->value,
+            $resource->id,
+        );
     }
 
     private function buildData(ContributionType $type, array $validated): array

@@ -58,6 +58,8 @@ class KnowledgeController extends Controller
         $knowledge->categories()->sync($request->input('categories', []));
         $knowledge->tags()->sync($request->input('tags', []));
 
+        app(ContentImageService::class)->syncAttachments((string) $knowledge->content, 'knowledge', $knowledge->id);
+
         app(AuditLogService::class)->logWithSubject('knowledge.created', $knowledge, $knowledge->toArray(), $request);
 
         if ($request->input('save_action') === 'save_and_create') {
@@ -107,6 +109,8 @@ class KnowledgeController extends Controller
 
         $knowledge->categories()->sync($request->input('categories', []));
         $knowledge->tags()->sync($request->input('tags', []));
+
+        app(ContentImageService::class)->syncAttachments((string) $knowledge->content, 'knowledge', $knowledge->id);
 
         app(AuditLogService::class)->logWithSubject('knowledge.updated', $knowledge, $knowledge->getChanges(), $request);
 

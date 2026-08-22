@@ -31,6 +31,11 @@ class SopController extends Controller
 
         $content = RichTextSanitizer::render($sop->content);
 
+        $revisions = $sop->versions()
+            ->orderByDesc('created_at')
+            ->limit(10)
+            ->get(['version_number', 'change_summary', 'created_at']);
+
         $pageTitle = $sop->effectiveSeoTitle();
         $metaDescription = $sop->effectiveSeoDescription();
 
@@ -42,6 +47,7 @@ class SopController extends Controller
             'sop',
             'related',
             'content',
+            'revisions',
             'pageTitle',
             'metaDescription',
         ));

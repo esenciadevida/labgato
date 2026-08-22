@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\EmailVerificationController;
+use App\Http\Controllers\ContentImageController;
+use App\Http\Controllers\ContentPreviewController;
 use App\Http\Controllers\Member\MessageController;
 use App\Http\Controllers\PublicSite\CalculatorController;
 use App\Http\Controllers\PublicSite\ContactController;
@@ -36,6 +39,14 @@ Route::post('/contact', [ContactController::class, 'store'])->middleware(['honey
 Route::middleware(['auth', 'active.user', 'member'])->group(function () {
     Route::get('/account/messages', [MessageController::class, 'index'])->name('account.messages');
 });
+
+Route::post('/content-images', [ContentImageController::class, 'store'])
+    ->middleware(['auth', 'active.user', 'throttle:60,1'])
+    ->name('content-images.store');
+
+Route::post('/content-preview', ContentPreviewController::class)
+    ->middleware(['auth', 'active.user', 'throttle:120,1'])
+    ->name('content.preview');
 
 Route::get('/contributors/{profile_slug}', [ContributorController::class, 'show'])->name('contributors.show');
 

@@ -46,7 +46,7 @@
         >
             <div>
                 <x-form.label for="content" required>Content (Markdown)</x-form.label>
-                <x-ui.textarea id="content" name="content" rows="16">{{ $oldValue('content') }}</x-ui.textarea>
+                <x-form.markdown-editor id="content" name="content" type="interpretation" rows="16">{{ $oldValue('content') }}</x-form.markdown-editor>
                 <x-form.error for="content" />
             </div>
         </x-form.section>

@@ -10,7 +10,7 @@ class RichTextSanitizer
     private const ALLOWED_TAGS = [
         'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
         'p', 'ul', 'ol', 'li', 'strong', 'em',
-        'a', 'img', 'blockquote', 'code', 'pre',
+        'a', 'img', 'figure', 'figcaption', 'blockquote', 'code', 'pre',
         'table', 'thead', 'tbody', 'tr', 'th', 'td',
         'br', 'hr', 'span', 'div',
     ];
@@ -36,7 +36,7 @@ class RichTextSanitizer
 
     public static function render(string $markdown): string
     {
-        return static::sanitize(static::markdownToHtml($markdown));
+        return static::decorateImages(static::sanitize(static::markdownToHtml($markdown)));
     }
 
     public static function sanitize(?string $html): string
@@ -69,6 +69,14 @@ class RichTextSanitizer
         }
 
         return trim($inner);
+    }
+
+    /**
+     * Force performance-friendly attributes on every rendered image.
+     */
+    private static function decorateImages(string $html): string
+    {
+        return (string) preg_replace('/<img\b(?![^>]*\bloading=)/i', '<img loading="lazy" decoding="async"', $html);
     }
 
     public static function sanitizeSvg(?string $svg): string
@@ -154,8 +162,14 @@ class RichTextSanitizer
                 continue;
             }
 
-            if ($name === 'src' && $tag === 'img') {
-                if (! static::isSafeUrl($attribute->value)) {
+            if ($tag === 'img') {
+                if ($name === 'src' && ! static::isSafeUrl($attribute->value)) {
+                    $node->removeAttribute($attribute->name);
+
+                    continue;
+                }
+
+                if (! in_array($name, ['src', 'alt', 'title'], true)) {
                     $node->removeAttribute($attribute->name);
                 }
 
@@ -277,6 +291,19 @@ class RichTextSanitizer
                 $flushParagraph();
                 $flushList($listType);
                 $html[] = '<hr>';
+
+                continue;
+            }
+
+            if (preg_match('/^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)$/', $trimmed, $m)) {
+                $flushParagraph();
+                $flushList($listType);
+                $html[] = '<figure><img src="'.htmlspecialchars($m[2], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')
+                    .'" alt="'.htmlspecialchars($m[1], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8').'"'
+                    .(! isset($m[3]) || trim($m[3]) === ''
+                        ? '>'
+                        : '><figcaption>'.static::inline(trim($m[3])).'</figcaption>')
+                    .'</figure>';
 
                 continue;
             }
