@@ -115,15 +115,14 @@ class FacetService
             $query->whereHas('tags', fn (Builder $q) => $q->whereIn('tags.id', $tIds));
         }
 
-        $query->orderBy(match ($sort) {
-            'az' => 'name',
-            'za' => 'name',
-            default => 'published_at',
-        }, match ($sort) {
-            'za' => 'desc',
-            'az' => 'asc',
-            default => 'desc',
-        });
+        [$column, $direction] = match ($sort) {
+            'az' => ['name', 'asc'],
+            'za' => ['name', 'desc'],
+            default => ['published_at', 'desc'],
+        };
+
+        $query->orderBy($column, $direction)
+            ->orderBy('id', $direction);
 
         $query->with(['categories', 'tags']);
 

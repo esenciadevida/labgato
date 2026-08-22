@@ -15,8 +15,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        $pageTitle = 'Professional Laboratory Toolkit';
-        $metaDescription = 'Free online calculators, reference ranges, SOPs, and clinical interpretation guides for laboratory professionals and medical technologists.';
+        $pageTitle = 'Lab Calculators, Reference Ranges & SOPs';
+        $metaDescription = 'LabGoTo is a free professional laboratory toolkit with clinical calculators, reference ranges, SOPs, and interpretation guides for laboratory professionals and medical laboratory scientists.';
 
         $recentlyViewed = collect();
         $recommended = collect();

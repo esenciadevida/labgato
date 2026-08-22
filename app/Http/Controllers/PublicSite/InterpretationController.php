@@ -5,6 +5,7 @@ namespace App\Http\Controllers\PublicSite;
 use App\Http\Controllers\Controller;
 use App\Models\InterpretationResource;
 use App\Services\RecentlyViewedService;
+use App\Services\RelatedResourceService;
 use App\Support\RichTextSanitizer;
 use Illuminate\Http\Request;
 
@@ -26,18 +27,12 @@ class InterpretationController extends Controller
             ->where('slug', $slug)
             ->firstOrFail();
 
-        $related = InterpretationResource::query()
-            ->published()
-            ->whereKeyNot($interpretation->id)
-            ->whereHas('categories', fn ($q) => $q->whereIn('categories.id', $interpretation->categories->pluck('id')))
-            ->orderByDesc('published_at')
-            ->limit(5)
-            ->get();
+        $related = app(RelatedResourceService::class)->relatedFor($interpretation);
 
         $content = RichTextSanitizer::render($interpretation->content);
 
-        $pageTitle = $interpretation->seo_title ?: $interpretation->name;
-        $metaDescription = $interpretation->seo_description ?: ($interpretation->short_description ?: "Interpretation guide: {$interpretation->name}.");
+        $pageTitle = $interpretation->effectiveSeoTitle();
+        $metaDescription = $interpretation->effectiveSeoDescription();
 
         if (auth()->check()) {
             app(RecentlyViewedService::class)->track(auth()->user(), 'interpretation', $interpretation->id);

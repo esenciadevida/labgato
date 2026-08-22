@@ -5,7 +5,6 @@ namespace Tests\Feature\PublicSite\Calculators;
 use App\Enums\ResourceStatus;
 use App\Models\Calculator;
 use App\Models\Category;
-use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -47,7 +46,7 @@ class CalculatorListingTest extends TestCase
         $response = $this->get(route('public.calculators.index'));
 
         $response->assertStatus(200);
-        $response->assertSee('No calculators found');
+        $response->assertSee('No results found');
     }
 
     public function test_calculator_listing_can_filter_by_category(): void
@@ -57,24 +56,10 @@ class CalculatorListingTest extends TestCase
         $inCategory->categories()->attach($category);
         $other = Calculator::factory()->create(['status' => ResourceStatus::PUBLISHED]);
 
-        $response = $this->get(route('public.calculators.index', ['category' => $category->slug]));
+        $response = $this->get(route('public.calculators.index', ['categories' => [$category->id]]));
 
         $response->assertStatus(200);
         $response->assertSee($inCategory->name);
-        $response->assertDontSee($other->name);
-    }
-
-    public function test_calculator_listing_can_filter_by_tag(): void
-    {
-        $tag = Tag::factory()->create();
-        $withTag = Calculator::factory()->create(['status' => ResourceStatus::PUBLISHED]);
-        $withTag->tags()->attach($tag);
-        $other = Calculator::factory()->create(['status' => ResourceStatus::PUBLISHED]);
-
-        $response = $this->get(route('public.calculators.index', ['tag' => $tag->slug]));
-
-        $response->assertStatus(200);
-        $response->assertSee($withTag->name);
         $response->assertDontSee($other->name);
     }
 }

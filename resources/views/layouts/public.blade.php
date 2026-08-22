@@ -13,10 +13,18 @@
     <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('assets/LabGoTo_favicon_512.png') }}">
     <x-brand.fonts />
     <x-theme-script />
+    @php
+        $filteredRequest = collect(['q', 'search', 'category', 'categories', 'tags', 'tag', 'sort', 'difficulty', 'department'])
+            ->contains(fn ($key) => request()->query->has($key));
+    @endphp
     <x-public.meta
         :title="$pageTitle ?? config('app.name')"
         :description="$metaDescription ?? config('app.name') . ' - Professional Laboratory Toolkit'"
-        :noindex="$metaNoindex ?? false"
+        :noindex="($metaNoindex ?? false) || $filteredRequest"
+        :ogType="$ogType ?? 'website'"
+        :publishedTime="$publishedTime ?? null"
+        :modifiedTime="$modifiedTime ?? null"
+        :authorName="$authorName ?? null"
     />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles

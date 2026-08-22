@@ -144,6 +144,7 @@ return [
     'seed' => [
         'admin' => [
             'enabled' => env('LABGOTO_SEED_ADMIN', false),
+            'name' => env('LABGOTO_ADMIN_NAME', 'Admin'),
             'email' => env('LABGOTO_ADMIN_EMAIL'),
             'password' => env('LABGOTO_ADMIN_PASSWORD'),
         ],

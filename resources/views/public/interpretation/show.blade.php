@@ -63,9 +63,13 @@
                         </ul>
                     </x-ui.card>
                 @endif
+
+                <x-public.faq-section :faq="$interpretation->faq" />
             </div>
 
             <aside class="lg:col-span-4 space-y-6">
+                <x-public.eeat-trust-box :resource="$interpretation" />
+
                 <x-ui.card>
                     <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Details</h2>
                     <dl class="space-y-3 text-sm">
@@ -119,8 +123,11 @@
     "@type": "MedicalScholarlyArticle",
     "name": "{{ $interpretation->name }}",
     "headline": "{{ $interpretation->name }}",
-    "description": "{{ $interpretation->short_description ?? $interpretation->name }}",
-    "url": "{{ url()->current() }}",
+    "description": "{{ $interpretation->effectiveSeoDescription() }}",
+    "url": "{{ url()->current() }}",@if($interpretation->published_at)
+    "datePublished": "{{ $interpretation->published_at->toIso8601String() }}",@endif
+@if($interpretation->updated_at)
+    "dateModified": "{{ $interpretation->updated_at->toIso8601String() }}",@endif
     "author": @if($interpretation->contributor && $interpretation->contributor->is_active)
     {
         "@type": "Person",

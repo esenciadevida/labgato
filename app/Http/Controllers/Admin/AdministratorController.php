@@ -10,6 +10,7 @@ use App\Models\AdminInvitation;
 use App\Models\Role;
 use App\Models\User;
 use App\Services\AuditLogService;
+use App\Services\PermissionCacheService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -158,6 +159,7 @@ class AdministratorController extends Controller
 
         if ($roleId) {
             $administrator->roles()->sync([$roleId]);
+            app(PermissionCacheService::class)->invalidateUser($administrator->id);
         }
 
         app(AuditLogService::class)->logWithSubject('administrators.updated', $administrator, $administrator->getChanges(), $request);
@@ -190,6 +192,7 @@ class AdministratorController extends Controller
 
         $newState = ! $administrator->is_active;
         $administrator->update(['is_active' => $newState]);
+        app(PermissionCacheService::class)->invalidateUser($administrator->id);
 
         if (! $newState) {
             $this->invalidateUserSessions($administrator);
@@ -214,10 +217,10 @@ class AdministratorController extends Controller
         $current = $request->user();
 
         if ($administrator->id === $current->id) {
-            return redirect()->route('admin.administrators.index')->with('error', 'You cannot deactivate yourself.');
+            return redirect()->route('admin.administrators.index')->with('error', 'You cannot delete yourself.');
         }
 
-        if ($administrator->isSuperAdministrator()) {
+        if ($administrator->isSuperAdministrator() && $administrator->is_active) {
             $activeSuperAdmins = User::administrators()
                 ->whereHas('roles', function ($query) {
                     $query->where('slug', 'super-administrator');
@@ -226,16 +229,22 @@ class AdministratorController extends Controller
                 ->count();
 
             if ($activeSuperAdmins <= 1) {
-                return redirect()->route('admin.administrators.index')->with('error', 'Cannot deactivate the last active Super Administrator.');
+                return redirect()->route('admin.administrators.index')->with('error', 'Cannot delete the last active Super Administrator.');
             }
         }
 
+        app(AuditLogService::class)->logWithSubject('administrators.deleted', $administrator, [
+            'name' => $administrator->name,
+            'email' => $administrator->email,
+            'roles' => $administrator->roles->pluck('name')->all(),
+        ], $request);
+
         $this->invalidateUserSessions($administrator);
-        $administrator->update(['is_active' => false]);
+        $administrator->roles()->detach();
+        $administrator->delete();
 
-        app(AuditLogService::class)->logWithSubject('administrators.deactivated', $administrator, ['is_active' => false], $request);
-
-        return redirect()->route('admin.administrators.index')->with('success', 'Administrator deactivated and logged out immediately.');
+        return redirect()->route('admin.administrators.index')
+            ->with('success', "{$administrator->email} has been permanently deleted.");
     }
 
     protected function invalidateUserSessions(User $user): void

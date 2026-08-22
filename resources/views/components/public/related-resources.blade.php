@@ -39,7 +39,7 @@
             @foreach($resources as $resource)
             <a href="{{ $resource->url ?? ($showRoute ? route($showRoute, $resource->slug) : '#') }}" class="block rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 hover:border-primary-500 transition overflow-hidden">
                 <span class="inline-block max-w-full truncate rounded-full bg-primary-50 dark:bg-primary-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary-700 dark:text-primary-400">
-                    {{ $currentType ?: 'Resource' }}
+                    {{ $resource->type_label ?? ($currentType ?: 'Resource') }}
                 </span>
                 <h3 class="mt-2 font-semibold text-slate-900 dark:text-slate-100 leading-snug line-clamp-2">{{ $resource->title ?? $resource->name }}</h3>
                 @if($resource->short_description)

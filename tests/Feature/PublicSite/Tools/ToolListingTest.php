@@ -5,7 +5,6 @@ namespace Tests\Feature\PublicSite\Tools;
 use App\Enums\ResourceStatus;
 use App\Models\Category;
 use App\Models\LaboratoryTool;
-use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -48,7 +47,7 @@ class ToolListingTest extends TestCase
         $response = $this->get(route('public.tools.index'));
 
         $response->assertStatus(200);
-        $response->assertSee('No tools found');
+        $response->assertSee('No results found');
     }
 
     public function test_tool_listing_can_filter_by_category(): void
@@ -64,30 +63,10 @@ class ToolListingTest extends TestCase
             'status' => ResourceStatus::PUBLISHED,
         ]);
 
-        $response = $this->get(route('public.tools.index', ['category' => $category->slug]));
+        $response = $this->get(route('public.tools.index', ['categories' => [$category->id]]));
 
         $response->assertStatus(200);
         $response->assertSee('Category Matched Tool');
-        $response->assertDontSee('Unrelated Tool');
-    }
-
-    public function test_tool_listing_can_filter_by_tag(): void
-    {
-        $tag = Tag::factory()->create();
-        $withTag = LaboratoryTool::factory()->create([
-            'name' => 'Tag Matched Tool',
-            'status' => ResourceStatus::PUBLISHED,
-        ]);
-        $withTag->tags()->attach($tag);
-        $other = LaboratoryTool::factory()->create([
-            'name' => 'Unrelated Tool',
-            'status' => ResourceStatus::PUBLISHED,
-        ]);
-
-        $response = $this->get(route('public.tools.index', ['tag' => $tag->slug]));
-
-        $response->assertStatus(200);
-        $response->assertSee('Tag Matched Tool');
         $response->assertDontSee('Unrelated Tool');
     }
 

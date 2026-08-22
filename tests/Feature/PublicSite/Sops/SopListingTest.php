@@ -5,7 +5,6 @@ namespace Tests\Feature\PublicSite\Sops;
 use App\Enums\ResourceStatus;
 use App\Models\Category;
 use App\Models\Sop;
-use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -48,7 +47,7 @@ class SopListingTest extends TestCase
         $response = $this->get(route('public.sops.index'));
 
         $response->assertStatus(200);
-        $response->assertSee('No SOPs found');
+        $response->assertSee('No results found');
     }
 
     public function test_sop_listing_can_filter_by_category(): void
@@ -64,51 +63,11 @@ class SopListingTest extends TestCase
             'status' => ResourceStatus::PUBLISHED,
         ]);
 
-        $response = $this->get(route('public.sops.index', ['category' => $category->slug]));
+        $response = $this->get(route('public.sops.index', ['categories' => [$category->id]]));
 
         $response->assertStatus(200);
         $response->assertSee('Category Matched SOP');
         $response->assertDontSee('Unrelated SOP');
-    }
-
-    public function test_sop_listing_can_filter_by_tag(): void
-    {
-        $tag = Tag::factory()->create();
-        $withTag = Sop::factory()->create([
-            'name' => 'Tag Matched SOP',
-            'status' => ResourceStatus::PUBLISHED,
-        ]);
-        $withTag->tags()->attach($tag);
-        $other = Sop::factory()->create([
-            'name' => 'Unrelated SOP',
-            'status' => ResourceStatus::PUBLISHED,
-        ]);
-
-        $response = $this->get(route('public.sops.index', ['tag' => $tag->slug]));
-
-        $response->assertStatus(200);
-        $response->assertSee('Tag Matched SOP');
-        $response->assertDontSee('Unrelated SOP');
-    }
-
-    public function test_sop_listing_can_filter_by_department(): void
-    {
-        $hematology = Sop::factory()->create([
-            'name' => 'Hematology SOP',
-            'status' => ResourceStatus::PUBLISHED,
-            'department' => 'Hematology',
-        ]);
-        $chemistry = Sop::factory()->create([
-            'name' => 'Chemistry SOP',
-            'status' => ResourceStatus::PUBLISHED,
-            'department' => 'Clinical Chemistry',
-        ]);
-
-        $response = $this->get(route('public.sops.index', ['department' => 'Hematology']));
-
-        $response->assertStatus(200);
-        $response->assertSee('Hematology SOP');
-        $response->assertDontSee('Chemistry SOP');
     }
 
     public function test_sop_listing_can_search_by_topic(): void

@@ -48,7 +48,7 @@ class AdminInvitationController extends Controller
         if (User::where('email', $invitation->email)->exists()) {
             $invitation->update(['accepted_at' => now()]);
 
-            return redirect()->route('login')
+            return redirect()->route('auth.login')
                 ->with('error', 'An account with this email already exists. Please sign in instead.');
         }
 
@@ -76,11 +76,13 @@ class AdminInvitationController extends Controller
             $request
         );
 
+        $roleName = $invitation->role?->name ?? 'Administrator';
+
         try {
             Mail::to($administrator->email)->send(new AdminWelcomeEmail(
                 $administrator,
-                $invitation->role?->name ?? 'Administrator',
-                route('login'),
+                $roleName,
+                route('auth.login'),
             ));
         } catch (Throwable $e) {
             Log::warning('Admin welcome email failed for '.$administrator->email.': '.$e->getMessage());
@@ -90,6 +92,6 @@ class AdminInvitationController extends Controller
         $request->session()->regenerate();
 
         return redirect()->route('admin.dashboard')
-            ->with('success', 'Welcome to the team! Your administrator account is ready.');
+            ->with('success', "Welcome to the team, {$administrator->name}! Your account is ready and you have been assigned the {$roleName} role. A confirmation email with your sign-in link has been sent to {$administrator->email}.");
     }
 }

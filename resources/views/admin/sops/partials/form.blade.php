@@ -209,26 +209,7 @@
         </x-form.section>
     </x-ui.card>
 
-    <x-ui.card>
-        <x-form.section title="SEO" description="Optional search engine metadata for the public detail page.">
-            <div>
-                <x-form.label for="seo_title">SEO title</x-form.label>
-                <x-ui.input
-                    id="seo_title"
-                    name="seo_title"
-                    value="{{ $oldValue('seo_title') }}"
-                    :error="$errors->first('seo_title')"
-                    maxlength="70"
-                />
-            </div>
-
-            <div>
-                <x-form.label for="seo_description">SEO description</x-form.label>
-                <x-ui.textarea id="seo_description" name="seo_description" rows="3">{{ $oldValue('seo_description') }}</x-ui.textarea>
-                <x-form.error for="seo_description" />
-            </div>
-        </x-form.section>
-    </x-ui.card>
+    <x-admin.seo-eeat-fields :model="$sop" />
 
     <div class="flex items-center justify-end gap-3">
         <x-ui.button href="{{ route('admin.sops.index') }}" variant="ghost">

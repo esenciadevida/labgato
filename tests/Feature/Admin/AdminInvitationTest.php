@@ -80,7 +80,7 @@ class AdminInvitationTest extends TestCase
         Mail::assertQueued(AdminWelcomeEmail::class, function ($mail) use ($invitation, $role) {
             return $mail->hasTo($invitation->email)
                 && $mail->roleName === $role->name
-                && Str::contains($mail->signInUrl, '/login');
+                && Str::endsWith($mail->signInUrl, '/admin/login');
         });
 
         $admin = User::where('email', $invitation->email)->firstOrFail();

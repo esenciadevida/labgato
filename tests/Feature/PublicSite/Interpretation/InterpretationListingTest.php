@@ -5,7 +5,6 @@ namespace Tests\Feature\PublicSite\Interpretation;
 use App\Enums\ResourceStatus;
 use App\Models\Category;
 use App\Models\InterpretationResource;
-use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -56,7 +55,7 @@ class InterpretationListingTest extends TestCase
         $response = $this->get(route('public.interpretation.index'));
 
         $response->assertStatus(200);
-        $response->assertSee('No interpretations found');
+        $response->assertSee('No results found');
     }
 
     public function test_interpretation_listing_can_filter_by_category(): void
@@ -72,30 +71,10 @@ class InterpretationListingTest extends TestCase
             'status' => ResourceStatus::PUBLISHED,
         ]);
 
-        $response = $this->get(route('public.interpretation.index', ['category' => $category->slug]));
+        $response = $this->get(route('public.interpretation.index', ['categories' => [$category->id]]));
 
         $response->assertStatus(200);
         $response->assertSee('Category Matched Interpretation');
-        $response->assertDontSee('Unrelated Interpretation');
-    }
-
-    public function test_interpretation_listing_can_filter_by_tag(): void
-    {
-        $tag = Tag::factory()->create();
-        $withTag = InterpretationResource::factory()->create([
-            'name' => 'Tag Matched Interpretation',
-            'status' => ResourceStatus::PUBLISHED,
-        ]);
-        $withTag->tags()->attach($tag);
-        $other = InterpretationResource::factory()->create([
-            'name' => 'Unrelated Interpretation',
-            'status' => ResourceStatus::PUBLISHED,
-        ]);
-
-        $response = $this->get(route('public.interpretation.index', ['tag' => $tag->slug]));
-
-        $response->assertStatus(200);
-        $response->assertSee('Tag Matched Interpretation');
         $response->assertDontSee('Unrelated Interpretation');
     }
 

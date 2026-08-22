@@ -7,18 +7,6 @@
         ->take(2)
         ->implode('');
 
-    $palette = [
-        '#0f766e',
-        '#4338ca',
-        '#be123c',
-        '#b45309',
-        '#1d4ed8',
-        '#9d174d',
-        '#047857',
-        '#7c3aed',
-    ];
-    $color = $palette[abs((int) crc32((string) $userId)) % count($palette)];
-
     $sizes = [
         'sm' => 'h-8 w-8 text-xs',
         'md' => 'h-10 w-10 text-sm',
@@ -26,8 +14,7 @@
     ];
 @endphp
 
-<span {{ $attributes->merge(['class' => 'inline-flex items-center justify-center rounded-full font-semibold text-white shrink-0 '.($sizes[$size] ?? $sizes['md'])]) }}
-      style="background-color: {{ $color }}"
+<span {{ $attributes->merge(['class' => 'inline-flex items-center justify-center rounded-full bg-primary-600 font-semibold text-white shrink-0 '.($sizes[$size] ?? $sizes['md'])]) }}
       aria-hidden="true">
     {{ $initials !== '' ? $initials : '?' }}
 </span>

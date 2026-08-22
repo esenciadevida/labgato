@@ -18,7 +18,7 @@ class SecurityHeadersTest extends TestCase
         $response->assertHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
         $response->assertHeader('X-Permitted-Cross-Domain-Policies', 'none');
         $response->assertHeader('Permissions-Policy');
-        $response->assertHeader('Cross-Origin-Opener-Policy', 'same-origin');
+        $response->assertHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
         $response->assertHeader('Cross-Origin-Resource-Policy', 'same-origin');
     }
 
@@ -26,12 +26,12 @@ class SecurityHeadersTest extends TestCase
     {
         $response = $this->get('https://localhost/');
 
-        $response->assertHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+        $response->assertHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
     }
 
     public function test_hsts_is_not_added_on_plain_http(): void
     {
-        $response = $this->get(route('home'));
+        $response = $this->get('http://localhost/');
 
         $response->assertHeaderMissing('Strict-Transport-Security');
     }

@@ -16,7 +16,7 @@ class HomePageTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('Labgoto');
-        $response->assertSee('Professional Laboratory Toolkit');
+        $response->assertSee('Lab Calculators, Reference Ranges & SOPs');
     }
 
     public function test_home_page_includes_public_navigation(): void

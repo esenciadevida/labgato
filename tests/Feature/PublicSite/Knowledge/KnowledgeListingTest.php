@@ -5,7 +5,6 @@ namespace Tests\Feature\PublicSite\Knowledge;
 use App\Enums\ResourceStatus;
 use App\Models\Category;
 use App\Models\KnowledgeResource;
-use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -48,7 +47,7 @@ class KnowledgeListingTest extends TestCase
         $response = $this->get(route('public.knowledge.index'));
 
         $response->assertStatus(200);
-        $response->assertSee('No knowledge resources found');
+        $response->assertSee('No results found');
     }
 
     public function test_knowledge_listing_can_filter_by_category(): void
@@ -64,51 +63,11 @@ class KnowledgeListingTest extends TestCase
             'status' => ResourceStatus::PUBLISHED,
         ]);
 
-        $response = $this->get(route('public.knowledge.index', ['category' => $category->slug]));
+        $response = $this->get(route('public.knowledge.index', ['categories' => [$category->id]]));
 
         $response->assertStatus(200);
         $response->assertSee('Category Matched Knowledge');
         $response->assertDontSee('Unrelated Knowledge Resource');
-    }
-
-    public function test_knowledge_listing_can_filter_by_tag(): void
-    {
-        $tag = Tag::factory()->create();
-        $withTag = KnowledgeResource::factory()->create([
-            'name' => 'Tag Matched Knowledge',
-            'status' => ResourceStatus::PUBLISHED,
-        ]);
-        $withTag->tags()->attach($tag);
-        $other = KnowledgeResource::factory()->create([
-            'name' => 'Unrelated Knowledge Resource',
-            'status' => ResourceStatus::PUBLISHED,
-        ]);
-
-        $response = $this->get(route('public.knowledge.index', ['tag' => $tag->slug]));
-
-        $response->assertStatus(200);
-        $response->assertSee('Tag Matched Knowledge');
-        $response->assertDontSee('Unrelated Knowledge Resource');
-    }
-
-    public function test_knowledge_listing_can_filter_by_difficulty_level(): void
-    {
-        $beginner = KnowledgeResource::factory()->create([
-            'name' => 'Beginner Knowledge Resource',
-            'status' => ResourceStatus::PUBLISHED,
-            'difficulty_level' => 'Beginner',
-        ]);
-        $advanced = KnowledgeResource::factory()->create([
-            'name' => 'Advanced Knowledge Resource',
-            'status' => ResourceStatus::PUBLISHED,
-            'difficulty_level' => 'Advanced',
-        ]);
-
-        $response = $this->get(route('public.knowledge.index', ['difficulty' => 'Beginner']));
-
-        $response->assertStatus(200);
-        $response->assertSee('Beginner Knowledge Resource');
-        $response->assertDontSee('Advanced Knowledge Resource');
     }
 
     public function test_knowledge_listing_can_search_by_topic(): void

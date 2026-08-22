@@ -5,6 +5,7 @@ namespace App\Http\Controllers\PublicSite;
 use App\Http\Controllers\Controller;
 use App\Models\KnowledgeResource;
 use App\Services\RecentlyViewedService;
+use App\Services\RelatedResourceService;
 use App\Support\RichTextSanitizer;
 use Illuminate\Http\Request;
 
@@ -26,24 +27,15 @@ class KnowledgeController extends Controller
             ->where('slug', $slug)
             ->firstOrFail();
 
-        $related = KnowledgeResource::query()
-            ->published()
-            ->whereKeyNot($knowledge->id)
-            ->where(function ($q) use ($knowledge) {
-                $q->where('topic_category', $knowledge->topic_category)
-                    ->orWhere('difficulty_level', $knowledge->difficulty_level);
-            })
-            ->orderByDesc('published_at')
-            ->limit(5)
-            ->get();
+        $related = app(RelatedResourceService::class)->relatedFor($knowledge);
 
         $content = RichTextSanitizer::render($knowledge->content);
         $learningObjectives = $knowledge->learning_objectives
             ? nl2br(e($knowledge->learning_objectives))
             : null;
 
-        $pageTitle = $knowledge->seo_title ?: $knowledge->name;
-        $metaDescription = $knowledge->seo_description ?: ($knowledge->short_description ?: "Knowledge resource: {$knowledge->name}.");
+        $pageTitle = $knowledge->effectiveSeoTitle();
+        $metaDescription = $knowledge->effectiveSeoDescription();
 
         if (auth()->check()) {
             app(RecentlyViewedService::class)->track(auth()->user(), 'knowledge', $knowledge->id);
@@ -56,6 +48,10 @@ class KnowledgeController extends Controller
             'learningObjectives',
             'pageTitle',
             'metaDescription',
-        ));
+        ) + [
+            'ogType' => 'article',
+            'publishedTime' => optional($knowledge->published_at)->toIso8601String(),
+            'authorName' => $knowledge->contributor?->name,
+        ]);
     }
 }

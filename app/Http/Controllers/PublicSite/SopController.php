@@ -5,6 +5,7 @@ namespace App\Http\Controllers\PublicSite;
 use App\Http\Controllers\Controller;
 use App\Models\Sop;
 use App\Services\RecentlyViewedService;
+use App\Services\RelatedResourceService;
 use App\Support\RichTextSanitizer;
 use Illuminate\Http\Request;
 
@@ -26,21 +27,12 @@ class SopController extends Controller
             ->where('slug', $slug)
             ->firstOrFail();
 
-        $related = Sop::query()
-            ->published()
-            ->whereKeyNot($sop->id)
-            ->where(function ($q) use ($sop) {
-                $q->where('department', $sop->department)
-                    ->orWhereHas('categories', fn ($c) => $c->whereIn('categories.id', $sop->categories->pluck('id')));
-            })
-            ->orderByDesc('published_at')
-            ->limit(5)
-            ->get();
+        $related = app(RelatedResourceService::class)->relatedFor($sop);
 
         $content = RichTextSanitizer::render($sop->content);
 
-        $pageTitle = $sop->seo_title ?: $sop->name;
-        $metaDescription = $sop->seo_description ?: ($sop->short_description ?: "Standard operating procedure: {$sop->name}.");
+        $pageTitle = $sop->effectiveSeoTitle();
+        $metaDescription = $sop->effectiveSeoDescription();
 
         if (auth()->check()) {
             app(RecentlyViewedService::class)->track(auth()->user(), 'sop', $sop->id);

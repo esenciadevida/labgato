@@ -8,6 +8,7 @@ use App\Http\Requests\Admin\UpdateRoleRequest;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Services\AuditLogService;
+use App\Services\PermissionCacheService;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -59,6 +60,7 @@ class RoleController extends Controller
 
         $role->update($request->validated());
         $role->permissions()->sync($request->input('permissions', []));
+        app(PermissionCacheService::class)->invalidateAllUsersWithRole($role->id);
 
         app(AuditLogService::class)->logWithSubject('roles.updated', $role, $role->getChanges(), $request);
 

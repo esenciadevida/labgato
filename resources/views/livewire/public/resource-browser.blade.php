@@ -166,7 +166,7 @@
 
                 @if($results->hasPages())
                     <div class="mt-8">
-                        {{ $results->links() }}
+                        {{ $results->links('vendor.pagination.crawlable') }}
                     </div>
                 @endif
             @endif

@@ -34,9 +34,13 @@
                         {!! $content !!}
                     </div>
                 </x-ui.card>
+
+                <x-public.faq-section :faq="$sop->faq" />
         </div>
 
         <aside class="lg:col-span-4 space-y-6">
+                <x-public.eeat-trust-box :resource="$sop" />
+
                 <x-ui.card>
                     <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Details</h2>
                     <dl class="space-y-3 text-sm">
@@ -104,8 +108,11 @@
     "@type": "MedicalScholarlyArticle",
     "name": "{{ $sop->name }}",
     "headline": "{{ $sop->name }}",
-    "description": "{{ $sop->short_description ?? $sop->name }}",
-    "url": "{{ url()->current() }}",
+    "description": "{{ $sop->effectiveSeoDescription() }}",
+    "url": "{{ url()->current() }}",@if($sop->published_at)
+    "datePublished": "{{ $sop->published_at->toIso8601String() }}",@endif
+@if($sop->updated_at)
+    "dateModified": "{{ $sop->updated_at->toIso8601String() }}",@endif
     "author": @if($sop->contributor && $sop->contributor->is_active)
     {
         "@type": "Person",

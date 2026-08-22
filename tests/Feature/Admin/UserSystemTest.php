@@ -219,6 +219,27 @@ class UserSystemTest extends TestCase
         ]);
     }
 
+    public function test_super_admin_can_permanently_delete_administrator(): void
+    {
+        $superAdmin = $this->superAdmin();
+        $role = Role::factory()->create();
+        $administrator = User::factory()->create(['user_type' => 'admin', 'is_active' => true]);
+        $administrator->roles()->attach($role);
+
+        $response = $this->actingAs($superAdmin)
+            ->delete(route('admin.administrators.destroy', $administrator));
+
+        $response->assertRedirect(route('admin.administrators.index'));
+        $response->assertSessionHas('success');
+
+        $this->assertDatabaseMissing('users', ['id' => $administrator->id]);
+        $this->assertDatabaseMissing('role_user', ['user_id' => $administrator->id]);
+        $this->assertDatabaseHas('audit_logs', [
+            'action' => 'administrators.deleted',
+            'resource_id' => $administrator->id,
+        ]);
+    }
+
     public function test_administrator_and_user_scopes_separate_correctly(): void
     {
         User::factory()->count(2)->create(['user_type' => 'admin']);

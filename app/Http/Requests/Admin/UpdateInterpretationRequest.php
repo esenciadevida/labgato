@@ -3,12 +3,15 @@
 namespace App\Http\Requests\Admin;
 
 use App\Enums\ResourceStatus;
+use App\Http\Requests\Admin\Concerns\ValidatesSeoEeat;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class UpdateInterpretationRequest extends FormRequest
 {
+    use ValidatesSeoEeat;
+
     public function authorize(): bool
     {
         return $this->user()?->hasPermission('interpretation.edit') ?? false;
@@ -27,6 +30,8 @@ class UpdateInterpretationRequest extends FormRequest
                 ->values()
                 ->all(),
         ]);
+
+        $this->cleanSeoEeatInput();
     }
 
     public function rules(): array
@@ -52,6 +57,7 @@ class UpdateInterpretationRequest extends FormRequest
             'tags.*' => ['integer', Rule::exists('tags', 'id')],
             'seo_title' => ['nullable', 'string', 'max:70'],
             'seo_description' => ['nullable', 'string', 'max:160'],
+            ...$this->seoEeatRules(),
             'remove_featured_image' => ['nullable', 'boolean'],
         ];
     }

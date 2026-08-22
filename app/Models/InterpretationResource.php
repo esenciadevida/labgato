@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\ResourceStatus;
+use App\Models\Concerns\HasSeoEeat;
 use App\Models\Traits\HasResourceLifecycle;
 use App\Models\Traits\Searchable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,6 +13,7 @@ class InterpretationResource extends Model
 {
     use HasFactory;
     use HasResourceLifecycle;
+    use HasSeoEeat;
     use Searchable;
 
     protected $fillable = [
@@ -33,6 +35,11 @@ class InterpretationResource extends Model
         'rejection_reason',
         'seo_title',
         'seo_description',
+        'focus_keyword',
+        'reviewer_name',
+        'reviewer_credentials',
+        'last_reviewed_at',
+        'faq',
     ];
 
     protected function casts(): array
@@ -41,6 +48,8 @@ class InterpretationResource extends Model
             'related_analytes' => 'array',
             'status' => ResourceStatus::class,
             'published_at' => 'datetime',
+            'last_reviewed_at' => 'date',
+            'faq' => 'array',
         ];
     }
 

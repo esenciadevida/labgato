@@ -23,15 +23,21 @@ class ReferenceRangeDataTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('Albumin');
-        $response->assertSee('Glucose');
-        $response->assertSee('Creatinine');
+        $response->assertSee('TSH');
+        $response->assertSee('LDL');
 
         $pageTwo = $this->get(route('public.reference-ranges.index', ['page' => 2]));
 
         $pageTwo->assertStatus(200);
-        $pageTwo->assertSee('Hemoglobin');
-        $pageTwo->assertSee('LDL');
-        $pageTwo->assertSee('TSH');
+        $pageTwo->assertSee('Glucose');
+        $pageTwo->assertSee('Creatinine');
+        $pageTwo->assertSee('Sodium');
+
+        $pageThree = $this->get(route('public.reference-ranges.index', ['page' => 3]));
+
+        $pageThree->assertStatus(200);
+        $pageThree->assertSee('Hemoglobin');
+        $pageThree->assertSee('WBC');
     }
 
     public function test_reference_range_detail_shows_correct_range_values(): void

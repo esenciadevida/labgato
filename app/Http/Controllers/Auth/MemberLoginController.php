@@ -91,7 +91,7 @@ class MemberLoginController extends Controller
 
         SignInAlert::send($user, $request->ip(), (string) $request->userAgent());
 
-        return redirect()->intended(route('home'));
+        return redirect()->intended(route('account.dashboard'));
     }
 
     public function logout(Request $request, AuditLogService $auditLog)

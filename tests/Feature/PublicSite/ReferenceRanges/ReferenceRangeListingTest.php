@@ -49,7 +49,7 @@ class ReferenceRangeListingTest extends TestCase
         $response = $this->get(route('public.reference-ranges.index'));
 
         $response->assertStatus(200);
-        $response->assertSee('No reference ranges found');
+        $response->assertSee('No results found');
     }
 
     public function test_reference_range_listing_can_filter_by_category(): void
@@ -65,7 +65,7 @@ class ReferenceRangeListingTest extends TestCase
             'status' => ResourceStatus::PUBLISHED,
         ]);
 
-        $response = $this->get(route('public.reference-ranges.index', ['category' => $category->slug]));
+        $response = $this->get(route('public.reference-ranges.index', ['categories' => [$category->id]]));
 
         $response->assertStatus(200);
         $response->assertSee($inCategory->name);

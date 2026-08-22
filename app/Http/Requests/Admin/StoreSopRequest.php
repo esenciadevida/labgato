@@ -3,12 +3,15 @@
 namespace App\Http\Requests\Admin;
 
 use App\Enums\ResourceStatus;
+use App\Http\Requests\Admin\Concerns\ValidatesSeoEeat;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class StoreSopRequest extends FormRequest
 {
+    use ValidatesSeoEeat;
+
     public function authorize(): bool
     {
         return $this->user()?->hasPermission('sops.create') ?? false;
@@ -25,6 +28,8 @@ class StoreSopRequest extends FormRequest
                 ? null
                 : $this->input('reviewed_date'),
         ]);
+
+        $this->cleanSeoEeatInput();
     }
 
     public function rules(): array
@@ -46,6 +51,7 @@ class StoreSopRequest extends FormRequest
             'tags.*' => ['integer', Rule::exists('tags', 'id')],
             'seo_title' => ['nullable', 'string', 'max:70'],
             'seo_description' => ['nullable', 'string', 'max:160'],
+            ...$this->seoEeatRules(),
         ];
     }
 }

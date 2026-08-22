@@ -118,9 +118,9 @@
                                     </button>
                                 </form>
 
-                                @if(! $administrator->is_active)
+                                @if($administrator->id !== auth()->id())
                                     <form method="POST" action="{{ route('admin.administrators.destroy', $administrator) }}" class="inline"
-                                           data-confirm="Deactivate this administrator? This will log them out and prevent future logins.">
+                                           data-confirm="Permanently delete {{ $administrator->email }}? Their account will be removed and they will be logged out immediately. This cannot be undone.">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="ml-3 text-danger-600 hover:text-danger-700 dark:text-danger-400 dark:hover:text-danger-300">Delete</button>

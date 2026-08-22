@@ -32,10 +32,14 @@
                         {!! $content !!}
                     </div>
                 </x-ui.card>
+
+                <x-public.faq-section :faq="$knowledge->faq" />
             </div>
 
             <aside class="lg:col-span-4 space-y-6">
                 <x-public.table-of-contents content-selector="#article-content" />
+
+                <x-public.eeat-trust-box :resource="$knowledge" />
 
                 <x-ui.card>
                     <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Details</h2>
@@ -102,8 +106,11 @@
     "@type": "MedicalScholarlyArticle",
     "name": "{{ $knowledge->name }}",
     "headline": "{{ $knowledge->name }}",
-    "description": "{{ $knowledge->short_description ?? $knowledge->name }}",
-    "url": "{{ url()->current() }}",
+    "description": "{{ $knowledge->effectiveSeoDescription() }}",
+    "url": "{{ url()->current() }}",@if($knowledge->published_at)
+    "datePublished": "{{ $knowledge->published_at->toIso8601String() }}",@endif
+@if($knowledge->updated_at)
+    "dateModified": "{{ $knowledge->updated_at->toIso8601String() }}",@endif
     "author": @if($knowledge->contributor && $knowledge->contributor->is_active)
     {
         "@type": "Person",
