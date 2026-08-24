@@ -1,7 +1,5 @@
 @php
     $currentRoute = request()->route()->getName();
-    $launchLive = \App\Models\LaunchSetting::current()->isLive();
-    $assessmentsActive = str_starts_with($currentRoute, 'assessments') || str_starts_with($currentRoute, 'leaderboard') || str_starts_with($currentRoute, 'certificates');
     $navItems = [
         ['label' => 'Calculators', 'route' => 'public.calculators.index', 'prefix' => 'public.calculators'],
         ['label' => 'Reference Ranges', 'route' => 'public.reference-ranges.index', 'prefix' => 'public.reference-ranges'],
@@ -9,7 +7,6 @@
         ['label' => 'Knowledge', 'route' => 'public.knowledge.index', 'prefix' => 'public.knowledge'],
         ['label' => 'SOPs', 'route' => 'public.sops.index', 'prefix' => 'public.sops'],
         ['label' => 'Tools', 'route' => 'public.tools.index', 'prefix' => 'public.tools'],
-        ['label' => 'Leaderboard', 'route' => 'leaderboard.index', 'prefix' => 'leaderboard'],
     ];
 @endphp
 
@@ -21,37 +18,6 @@
             </div>
 
             <nav class="hidden xl:flex items-center gap-1 absolute left-1/2 -translate-x-1/2" aria-label="Main navigation">
-                @if($launchLive)
-                    <div class="relative" x-data="{ assessmentsOpen: false }" @click.outside="assessmentsOpen = false" @keydown.escape.window="assessmentsOpen = false">
-                        <button
-                            type="button"
-                            @click="assessmentsOpen = !assessmentsOpen"
-                            class="whitespace-nowrap px-3 py-1.5 rounded text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 inline-flex items-center gap-1 {{ $assessmentsActive ? 'text-primary-700 bg-primary-50 dark:text-primary-300 dark:bg-primary-900/30' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700' }}"
-                            :aria-expanded="assessmentsOpen"
-                            aria-haspopup="true"
-                            @if($assessmentsActive) aria-current="page" @endif
-                        >
-                            Assessments
-                            <svg class="w-3.5 h-3.5 transition-transform" :class="assessmentsOpen && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div
-                            x-cloak
-                            x-show="assessmentsOpen"
-                            x-transition:enter="transition ease-out duration-100"
-                            x-transition:enter-start="opacity-0 scale-95"
-                            x-transition:enter-end="opacity-100 scale-100"
-                            x-transition:leave="transition ease-in duration-75"
-                            x-transition:leave-start="opacity-100 scale-100"
-                            x-transition:leave-end="opacity-0 scale-95"
-                            class="absolute left-1/2 -translate-x-1/2 mt-2 w-52 rounded-xl border border-slate-200 bg-white py-1.5 shadow-lg z-50 dark:border-slate-700 dark:bg-slate-800"
-                        >
-                            <a href="{{ route('assessments.index') }}" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white">Assessments Hub</a>
-                            <a href="{{ route('assessments.my-results') }}" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white">My Results</a>
-                            <a href="{{ route('leaderboard.index') }}" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white">Leaderboard</a>
-                            <a href="{{ route('certificates.my') }}" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white">My Certificates</a>
-                        </div>
-                    </div>
-                @endif
                 @foreach($navItems as $item)
                     @php $active = str_starts_with($currentRoute, $item['prefix']); @endphp
                     <a
@@ -110,25 +76,6 @@
         @click.outside="mobileMenuOpen = false"
     >
         <div class="px-4 py-3 space-y-1">
-            @if($launchLive)
-                <div class="px-3 pb-1 pt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">Assessments</div>
-                @php
-                    $assessmentLinks = [
-                        ['label' => 'Assessments Hub', 'route' => 'assessments.index'],
-                        ['label' => 'My Results', 'route' => 'assessments.my-results'],
-                        ['label' => 'Leaderboard', 'route' => 'leaderboard.index'],
-                        ['label' => 'My Certificates', 'route' => 'certificates.my'],
-                    ];
-                @endphp
-                @foreach($assessmentLinks as $link)
-                    <a
-                        href="{{ route($link['route']) }}"
-                        @click="mobileMenuOpen = false"
-                        class="block px-3 py-2.5 rounded text-sm font-medium min-h-[44px] {{ $assessmentsActive ? 'text-primary-700 dark:text-primary-300' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white' }}"
-                    >{{ $link['label'] }}</a>
-                @endforeach
-                <div class="border-t border-slate-200 pt-2 mt-1 dark:border-slate-700"></div>
-            @endif
             @foreach($navItems as $item)
                 @php $active = str_starts_with($currentRoute, $item['prefix']); @endphp
                 <a
