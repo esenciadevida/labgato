@@ -69,12 +69,14 @@ class LaunchController extends Controller
             ];
         }
 
-        return view('launch.dashboard', [
-            'settings' => $settings,
-            'user' => $request->user(),
-            'assessments' => $assessments,
-            'states' => $states,
-        ]);
+        return response()
+            ->view('launch.dashboard', [
+                'settings' => $settings,
+                'user' => $request->user(),
+                'assessments' => $assessments,
+                'states' => $states,
+            ])
+            ->header('Cache-Control', 'private, no-store');
     }
 
     /**
