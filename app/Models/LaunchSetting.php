@@ -35,20 +35,34 @@ class LaunchSetting extends Model
     /**
      * Single-row control table. Cached because the launch wall middleware
      * consults it on every request.
+     *
+     * We deliberately cache a raw attribute array rather than the model:
+     * some shared-hosting PHP configurations interfere with unserializing
+     * cached objects, and arrays keep the cache payload self-contained.
      */
     public static function current(): self
     {
-        return Cache::remember(self::CACHE_KEY, 300, fn () => static::query()->firstOrCreate([], [
-            'timezone' => 'Africa/Lagos',
-            'auto_activate' => true,
-            'registration_open' => true,
-            'challenge_open' => true,
-            'results_status' => 'locked',
-            'answer_review_status' => 'locked',
-            'leaderboard_status' => 'locked',
-            'main_site_status' => 'locked',
-            'launch_at' => now()->addDays(30)->setTimezone('Africa/Lagos')->setTime(20, 0),
-        ]));
+        $attributes = Cache::remember(self::CACHE_KEY, 300, function () {
+            return static::query()->firstOrCreate([], [
+                'timezone' => 'Africa/Lagos',
+                'auto_activate' => true,
+                'registration_open' => true,
+                'challenge_open' => true,
+                'results_status' => 'locked',
+                'answer_review_status' => 'locked',
+                'leaderboard_status' => 'locked',
+                'main_site_status' => 'locked',
+                'launch_at' => now()->addDays(30)->setTimezone('Africa/Lagos')->setTime(20, 0),
+            ])->getAttributes();
+        });
+
+        // Raw attributes bypass $fillable so the primary key survives,
+        // keeping update()/fresh() usable on the reconstructed instance.
+        $model = new static;
+        $model->setRawAttributes($attributes, true);
+        $model->exists = true;
+
+        return $model;
     }
 
     public static function flushCache(): void
