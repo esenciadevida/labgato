@@ -2,6 +2,31 @@
 
 This guide walks you through deploying Labgoto to Hostinger shared hosting (PHP 8.4, MySQL/MariaDB).
 
+## 0. Git-based deployment (current method)
+
+Production is a git remote (`hostinger`, non-bare checkout with `updateInstead`).
+
+```bash
+# 1. Commit locally, then push both remotes
+git push origin main
+git push hostinger main
+
+# 2. Sync built assets - public/build/ is gitignored
+npm run build
+tar -czf "$env:TEMP\labgoto-build.tgz" -C public build
+scp "$env:TEMP\labgoto-build.tgz" hostinger-labgoto:/home/u226366554/
+ssh hostinger-labgoto "cd ~/domains/labgoto.com/public_html && rm -rf public/build && tar -xzf ~/labgoto-build.tgz -C public && rm ~/labgoto-build.tgz"
+
+# 3. Migrate + rebuild caches
+ssh hostinger-labgoto "cd ~/domains/labgoto.com/public_html && /opt/alt/php84/usr/bin/php artisan migrate --force && /opt/alt/php84/usr/bin/php artisan optimize"
+```
+
+**Critical:** the server's default CLI `php` is 8.3 but vendor requires >= 8.4.1.
+Always use `/opt/alt/php84/usr/bin/php` for artisan over SSH.
+
+If `git push hostinger` is rejected with "Working directory has unstaged changes",
+someone edited the server directly - inspect and stash there first; do not discard blindly.
+
 Each step has a dedicated document in the [deploy/](deploy/) directory. Start with the README there for a quick overview:
 
 - [Build Process](deploy/01-build.md)

@@ -1,4 +1,4 @@
-name: LabGato CI
+name: Labgoto CI
 
 on:
   push:
@@ -83,6 +83,9 @@ jobs:
       - name: Run Database Migrations
         run: php artisan migrate --force
 
-      # 8. Run the Test Suite
-      - name: Run Tests
-        run: php artisan test
+      # 8. Run the Test Suite (split; a single full run times out locally)
+      - name: Run Unit Tests
+        run: php artisan test tests/Unit --compact
+
+      - name: Run Feature Tests
+        run: php artisan test tests/Feature --compact
