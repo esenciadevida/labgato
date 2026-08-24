@@ -42,7 +42,10 @@
 
 <form method="POST" action="{{ $action }}" class="space-y-6" x-data="{
     total: {{ (int) $oldValue('total_questions', 10) }},
-    rows: @json($initialRows),
+    rows: [],
+    init() {
+        this.rows = JSON.parse(this.$root.dataset.rows || '[]');
+    },
     rowSum(row) {
         return (parseInt(row.easy) || 0) + (parseInt(row.intermediate) || 0) + (parseInt(row.advanced) || 0);
     },
@@ -50,7 +53,7 @@
     get grandTotal() { return this.included.reduce((sum, r) => sum + (parseInt(r.question_count) || 0), 0); },
     get rowsValid() { return this.included.length > 0 && this.included.every(r => this.rowSum(r) === 100); },
     get totalsValid() { return this.rows.length === 0 || (this.grandTotal === parseInt(this.total)); },
-}">
+}" data-rows="{{ json_encode($initialRows) }}">
     @csrf
     @if($method !== 'POST')
         @method($method)

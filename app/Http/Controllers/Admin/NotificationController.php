@@ -21,12 +21,17 @@ class NotificationController extends Controller
 
     public function clear(Request $request)
     {
-        $request->user()->unreadNotifications()->update(['read_at' => now()]);
-        $request->user()->notifications()->delete();
+        $request->user()->notifications()
+            ->where('data->type', 'contact_message')
+            ->update(['read_at' => now()]);
+
+        $request->user()->notifications()
+            ->where('data->type', 'contact_message')
+            ->delete();
 
         return response()->json([
             'success' => true,
-            'unread_count' => 0,
+            'unread_count' => $request->user()->unreadNotifications()->count(),
         ]);
     }
 }
