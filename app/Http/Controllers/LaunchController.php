@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\PublicSite\HomeController;
+use App\Models\Assessment;
 use App\Models\LaunchSetting;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,8 @@ class LaunchController extends Controller
      */
     public function wall()
     {
+        $this->maybeActivate();
+
         $settings = LaunchSetting::current();
 
         if ($settings->isLive()) {
@@ -35,15 +38,63 @@ class LaunchController extends Controller
 
     public function dashboard(Request $request)
     {
+        $this->maybeActivate();
+
         $settings = LaunchSetting::current();
 
         if ($settings->isLive()) {
             return redirect()->route('home');
         }
 
+        $assessments = Assessment::query()
+            ->where('status', '!=', 'draft')
+            ->orderByRaw("CASE WHEN status = 'open' THEN 0 ELSE 1 END")
+            ->orderByDesc('created_at')
+            ->get();
+
+        $states = [];
+
+        foreach ($assessments as $assessment) {
+            $attempt = $request->user()->examAttempts()
+                ->where('assessment_id', $assessment->id)
+                ->where('mode', 'official')
+                ->orderByDesc('id')
+                ->first();
+
+            $states[$assessment->id] = [
+                'attempt' => $attempt,
+                'canBegin' => $settings->challenge_open
+                    && $assessment->isOpen()
+                    && ($attempt === null || $attempt->status === 'abandoned'),
+            ];
+        }
+
         return view('launch.dashboard', [
             'settings' => $settings,
             'user' => $request->user(),
+            'assessments' => $assessments,
+            'states' => $states,
         ]);
+    }
+
+    /**
+     * Flip the main site live the moment the launch moment passes, so it does
+     * not depend on the scheduler (cron). Idempotent: no-ops unless auto
+     * activation is enabled, the launch time has passed, and the site is still
+     * in pre-launch.
+     */
+    private function maybeActivate(): void
+    {
+        $settings = LaunchSetting::current();
+
+        if (! $settings->auto_activate
+            || $settings->launch_at === null
+            || ! $settings->isPreLaunch()
+            || now()->lt($settings->launch_at)) {
+            return;
+        }
+
+        $settings->update(['main_site_status' => 'open']);
+        LaunchSetting::flushCache();
     }
 }

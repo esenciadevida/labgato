@@ -63,7 +63,7 @@ class LaunchSystemTest extends TestCase
             ->assertOk()
             ->assertSee('Welcome, '.$member->name)
             ->assertSee('You are registered for the Labgoto launch.')
-            ->assertSee('Locked')
+            ->assertSee('Your Challenges')
             ->assertSee('bg-gradient-to-b from-primary-950', false);
     }
 

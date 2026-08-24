@@ -48,7 +48,7 @@
         </p>
 
         <section class="mt-12 w-full max-w-3xl" aria-label="Countdown to launch">
-            <x-launch.countdown :target="$settings->launchAtCarbon()" size="lg" />
+            <x-launch.countdown :target="$settings->launchAtCarbon()" size="lg" reload-on-zero />
         </section>
 
         <div class="mt-12 flex w-full max-w-sm flex-col items-center gap-4 sm:max-w-none sm:flex-row sm:justify-center">

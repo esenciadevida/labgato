@@ -26,46 +26,62 @@
 
             <div class="relative">
                 <div class="flex justify-center">
-                    <x-launch.countdown :target="$settings->launchAtCarbon()" size="lg" />
+                    <x-launch.countdown :target="$settings->launchAtCarbon()" size="lg" reload-on-zero />
                 </div>
 
                 <div class="mt-10 w-full max-w-lg mx-auto">
                     <div class="relative isolate overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-left shadow-[0_18px_50px_-20px_rgb(0_0_0/0.6)] backdrop-blur-md sm:p-7">
                         <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" aria-hidden="true"></div>
 
-                        <h2 class="font-display text-sm font-bold uppercase tracking-[0.2em] text-white/60">ASCPI Challenge</h2>
+                        <h2 class="font-display text-sm font-bold uppercase tracking-[0.2em] text-white/60">Your Challenges</h2>
 
-                        <dl class="mt-5 space-y-4">
-                            <div class="flex items-center justify-between gap-4 border-b border-white/5 pb-4">
-                                <dt class="text-sm text-slate-400">Status</dt>
-                                <dd>
-                                    @if($settings->challenge_open)
-                                        <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-success-300">
-                                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        <div class="mt-5 space-y-3">
+                            @forelse($assessments as $assessment)
+                                @php
+                                    $state = $states[$assessment->id] ?? [];
+                                    $attempt = $state['attempt'] ?? null;
+                                    $attemptStatus = $attempt?->status;
+                                    $canBegin = $state['canBegin'] ?? false;
+                                    $cta = null;
+                                    $statusLabel = 'Opens soon';
+                                    if ($canBegin) {
+                                        $cta = ['label' => 'Start Exam', 'href' => route('assessments.show', $assessment), 'primary' => true];
+                                        $statusLabel = 'Open now';
+                                    } elseif ($attemptStatus === 'in_progress') {
+                                        $cta = ['label' => 'Resume', 'href' => route('exams.show', $attempt), 'primary' => true];
+                                        $statusLabel = 'In progress';
+                                    } elseif (in_array($attemptStatus, ['submitted', 'auto_submitted'], true)) {
+                                        $cta = ['label' => 'View Result', 'href' => route('exams.result', $attempt), 'primary' => false];
+                                        $statusLabel = 'Complete';
+                                    }
+                                @endphp
+                                <div class="flex items-center justify-between gap-4 border-b border-white/5 pb-3 last:border-0 last:pb-0">
+                                    <div class="min-w-0">
+                                        <h3 class="font-display text-sm font-bold text-white">{{ $assessment->title }}</h3>
+                                        <p class="mt-0.5 text-xs text-slate-400">
+                                            {{ ucfirst($assessment->type) }} &middot; {{ $assessment->total_questions }} questions &middot; {{ $assessment->duration_minutes }} min &middot;
+                                            <span class="{{ $canBegin ? 'text-success-300' : 'text-white/60' }}">{{ $statusLabel }}</span>
+                                        </p>
+                                    </div>
+                                    @if($cta)
+                                        <a href="{{ $cta['href'] }}"
+                                           class="shrink-0 inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-semibold transition-colors {{ $cta['primary'] ? 'bg-white text-primary-900 hover:bg-slate-100' : 'border border-white/20 text-white hover:bg-white/10' }}">
+                                            {{ $cta['label'] }}
+                                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
                                             </svg>
-                                            Registered
-                                        </span>
+                                        </a>
                                     @else
-                                        <span class="text-sm font-medium text-slate-400">Challenge opens soon.</span>
+                                        <span class="shrink-0 text-xs font-medium text-white/40">Locked</span>
                                     @endif
-                                </dd>
-                            </div>
-                            <div class="flex items-center justify-between gap-4">
-                                <dt class="text-sm text-slate-400">Result</dt>
-                                <dd>
-                                    <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-white/60">
-                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                                        </svg>
-                                        Locked
-                                    </span>
-                                </dd>
-                            </div>
-                        </dl>
+                                </div>
+                            @empty
+                                <p class="text-sm text-slate-400">Your challenges will appear here when they open.</p>
+                            @endforelse
+                        </div>
 
                         <p class="mt-6 border-t border-white/5 pt-4 text-sm leading-relaxed text-slate-400">
-                            Your result is revealed when Labgoto officially launches.
+                            Results and answers are revealed when Labgoto officially launches.
                         </p>
                     </div>
                 </div>

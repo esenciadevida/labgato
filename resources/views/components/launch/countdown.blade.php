@@ -1,6 +1,7 @@
 @props([
     'target' => null,
     'size' => 'md',
+    'reloadOnZero' => false,
 ])
 
 @php
@@ -33,7 +34,7 @@
 
 <div data-initial-left="{{ $initialLeft }}"
      x-data="{ left: {{ $initialLeft }} }"
-     x-init="if (left > 0) { const tick = setInterval(() => { left--; if (left <= 0) clearInterval(tick); }, 1000); }"
+     x-init="if (left > 0) { const tick = setInterval(() => { left--; if (left <= 0) { clearInterval(tick); @if($reloadOnZero) setTimeout(() => window.location.reload(), 1500); @endif } }, 1000); }"
      role="timer"
      aria-label="{{ $epochTarget > 0 ? 'Countdown to launch' : 'Launch date to be announced' }}"
      {{ $attributes->merge(['class' => 'inline-flex flex-col items-center']) }}
