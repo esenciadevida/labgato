@@ -8,6 +8,7 @@ use App\Http\Controllers\LaunchController;
 use App\Http\Controllers\Member\MessageController;
 use App\Http\Controllers\Assessments\ExamController;
 use App\Http\Controllers\Assessments\IntegrityEventController;
+use App\Http\Controllers\Assessments\ResultController;
 use App\Http\Controllers\PublicSite\CalculatorController;
 use App\Http\Controllers\PublicSite\ContactController;
 use App\Http\Controllers\PublicSite\ContributorController;
@@ -48,6 +49,8 @@ Route::middleware(['auth', 'active.user', 'member'])->group(function () {
 });
 
 Route::middleware(['auth', 'active.user', 'member'])->group(function () {
+    Route::get('/assessments/my-results', [ResultController::class, 'myResults'])->name('assessments.my-results');
+    Route::get('/exam/{attempt}/result', [ResultController::class, 'show'])->name('exams.result');
     Route::get('/assessments/{assessment}', [ExamController::class, 'showIntro'])->name('assessments.show');
     Route::post('/assessments/{assessment}/start', [ExamController::class, 'start'])
         ->middleware('throttle:30,1')

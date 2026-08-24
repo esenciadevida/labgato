@@ -17,7 +17,7 @@
 
         @if($released)
             <div class="mt-8">
-                <a href="{{ url('/results/' . $attempt->id) }}"
+                <a href="{{ route('exams.result', $attempt) }}"
                    class="inline-flex items-center justify-center rounded-lg bg-blue-800 px-8 py-3.5 text-base font-semibold text-white transition hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-700 dark:hover:bg-blue-600">
                     View My Result
                 </a>
