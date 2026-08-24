@@ -6,6 +6,7 @@ use App\Http\Controllers\ContentPreviewController;
 use App\Http\Controllers\CronTickController;
 use App\Http\Controllers\LaunchController;
 use App\Http\Controllers\Member\MessageController;
+use App\Http\Controllers\Assessments\ExamController;
 use App\Http\Controllers\PublicSite\CalculatorController;
 use App\Http\Controllers\PublicSite\ContactController;
 use App\Http\Controllers\PublicSite\ContributorController;
@@ -43,6 +44,22 @@ Route::post('/contact', [ContactController::class, 'store'])->middleware(['honey
 
 Route::middleware(['auth', 'active.user', 'member'])->group(function () {
     Route::get('/account/messages', [MessageController::class, 'index'])->name('account.messages');
+});
+
+Route::middleware(['auth', 'active.user', 'member'])->group(function () {
+    Route::post('/assessments/{assessment}/start', [ExamController::class, 'start'])
+        ->middleware('throttle:30,1')
+        ->name('assessments.start');
+    Route::get('/exam/{attempt}', [ExamController::class, 'show'])->name('exams.show');
+    Route::post('/exam/{attempt}/answers', [ExamController::class, 'saveAnswer'])
+        ->middleware('throttle:120,1')
+        ->name('exams.answers.save');
+    Route::post('/exam/{attempt}/flag', [ExamController::class, 'flag'])
+        ->middleware('throttle:60,1')
+        ->name('exams.flag');
+    Route::post('/exam/{attempt}/submit', [ExamController::class, 'submit'])
+        ->middleware('throttle:30,1')
+        ->name('exams.submit');
 });
 
 Route::post('/content-images', [ContentImageController::class, 'store'])

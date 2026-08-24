@@ -11,7 +11,7 @@ class ExamAttempt extends Model
 {
     public const MODES = ['official', 'practice'];
 
-    public const STATUSES = ['in_progress', 'submitted', 'auto_submitted'];
+    public const STATUSES = ['in_progress', 'submitted', 'auto_submitted', 'abandoned'];
 
     public const INTEGRITY_STATUSES = ['normal', 'review', 'high_risk'];
 
@@ -77,17 +77,45 @@ class ExamAttempt extends Model
             && now()->gt($this->ends_at);
     }
 
+    public function isOfficial(): bool
+    {
+        return $this->mode === 'official';
+    }
+
+    public function isPractice(): bool
+    {
+        return $this->mode === 'practice';
+    }
+
+    /**
+     * Seconds left on the server-authoritative timer.
+     */
     public function remainingSeconds(): int
     {
         if ($this->ends_at === null) {
             return 0;
         }
 
+        if ($this->status !== 'in_progress') {
+            return 0;
+        }
+
         return max(0, now()->diffInSeconds($this->ends_at, false));
     }
 
-    public function isPractice(): bool
+    /**
+     * Frozen display order of option IDs for one question.
+     */
+    public function optionIdsFor(int|string $questionId): array
     {
-        return $this->mode === 'practice';
+        return $this->option_orders[$questionId] ?? [];
+    }
+
+    /**
+     * True when the given question id belongs to the frozen question set.
+     */
+    public function hasQuestion(int|string $questionId): bool
+    {
+        return in_array((int) $questionId, array_map(intval(...), $this->question_ids ?? []), true);
     }
 }
