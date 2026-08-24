@@ -16,6 +16,7 @@ use App\Http\Controllers\PublicSite\HomeController;
 use App\Http\Controllers\PublicSite\InterpretationController;
 use App\Http\Controllers\PublicSite\KnowledgeController;
 use App\Http\Controllers\PublicSite\LaboratoryToolController;
+use App\Http\Controllers\PublicSite\LeaderboardController;
 use App\Http\Controllers\PublicSite\LegalController;
 use App\Http\Controllers\PublicSite\LiveSearchController;
 use App\Http\Controllers\PublicSite\ReferenceRangeController;
@@ -40,6 +41,9 @@ Route::post('/recently-viewed/clear', [HomeController::class, 'clearRecentlyView
 
 Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');
 Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
+
+Route::get('/leaderboard', [LeaderboardController::class, 'index'])->name('leaderboard.index');
+Route::get('/leaderboard/{assessment:slug}', [LeaderboardController::class, 'show'])->name('leaderboard.show');
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactController::class, 'store'])->middleware(['honeypot', 'throttle:contact'])->name('contact.store');

@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\ExamAttempt;
 use App\Models\QuestionOption;
+use Illuminate\Support\Facades\Cache;
 
 class ExamScoringService
 {
@@ -63,6 +64,9 @@ class ExamScoringService
             'status' => $autoSubmitted ? 'auto_submitted' : 'submitted',
             'submitted_at' => $submittedAt,
         ])->save();
+
+        Cache::forget("leaderboard:{$attempt->assessment_id}");
+        Cache::forget('leaderboard:alltime');
 
         return $attempt->fresh();
     }

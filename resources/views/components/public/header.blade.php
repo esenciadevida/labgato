@@ -7,6 +7,7 @@
         ['label' => 'Knowledge', 'route' => 'public.knowledge.index', 'prefix' => 'public.knowledge'],
         ['label' => 'SOPs', 'route' => 'public.sops.index', 'prefix' => 'public.sops'],
         ['label' => 'Tools', 'route' => 'public.tools.index', 'prefix' => 'public.tools'],
+        ['label' => 'Leaderboard', 'route' => 'leaderboard.index', 'prefix' => 'leaderboard'],
     ];
 @endphp
 
