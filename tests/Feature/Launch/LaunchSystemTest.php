@@ -130,7 +130,7 @@ class LaunchSystemTest extends TestCase
     {
         $admin = $this->superAdmin();
 
-        $response = $this->actingAs($admin)->put(route('admin.launch'), [
+        $response = $this->actingAs($admin)->put(route('admin.launch.update'), [
             'launch_date' => '2026-12-01',
             'launch_time' => '18:30',
             'timezone' => 'Africa/Lagos',

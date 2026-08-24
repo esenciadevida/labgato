@@ -29,7 +29,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
 
     Route::middleware('permission:admin.full-access')->group(function () {
         Route::get('/launch', [LaunchControlController::class, 'index'])->name('launch');
-        Route::put('/launch', [LaunchControlController::class, 'update'])->name('launch');
+        Route::put('/launch', [LaunchControlController::class, 'update'])->name('launch.update');
     });
 
     Route::post('/bulk/{type}', [BulkActionController::class, 'process'])->name('bulk');

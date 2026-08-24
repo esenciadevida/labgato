@@ -22,7 +22,7 @@
         </span>
     </div>
 
-    <form method="POST" action="{{ route('admin.launch') }}" class="space-y-6">
+    <form method="POST" action="{{ route('admin.launch.update') }}" class="space-y-6">
         @csrf
         @method('PUT')
 
