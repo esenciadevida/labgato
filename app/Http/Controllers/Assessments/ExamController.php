@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Assessments;
 use App\Http\Controllers\Controller;
 use App\Models\Assessment;
 use App\Models\ExamAttempt;
+use App\Models\LaunchSetting;
+use App\Models\Question;
 use App\Services\ExamEligibilityService;
 use App\Services\ExamGenerationService;
 use App\Services\ExamScoringService;
@@ -41,19 +43,115 @@ class ExamController extends Controller
         return redirect()->route('exams.show', $attempt);
     }
 
+    public function showIntro(Request $request, Assessment $assessment)
+    {
+        $existing = ExamAttempt::query()
+            ->where('user_id', $request->user()->id)
+            ->where('assessment_id', $assessment->id)
+            ->where('mode', 'official')
+            ->orderByDesc('id')
+            ->first();
+
+        if ($existing && $existing->status === 'in_progress') {
+            return redirect()->route('exams.show', $existing);
+        }
+
+        if ($existing && in_array($existing->status, ['submitted', 'auto_submitted'], true)) {
+            return redirect()->route('exams.submitted', $existing);
+        }
+
+        $check = $this->eligibility->canStart($request->user(), $assessment, 'official');
+
+        return view('assessments.show', [
+            'assessment' => $assessment,
+            'blueprints' => $assessment->blueprints()->with('category')->get(),
+            'canBegin' => $check['ok'],
+            'blockReason' => $this->humanReason($check['reason']),
+        ]);
+    }
+
     public function show(Request $request, ExamAttempt $attempt)
     {
         $this->authorizeAttempt($request, $attempt);
 
         if ($attempt->isExpired()) {
-            $attempt = $this->scoring->score($attempt, autoSubmitted: true);
+            $this->scoring->score($attempt, autoSubmitted: true);
+
+            return redirect()->route('exams.submitted', $attempt);
         }
 
-        $attempt->load(['assessment']);
+        if (in_array($attempt->status, ['submitted', 'auto_submitted'], true)) {
+            return redirect()->route('exams.submitted', $attempt);
+        }
 
-        return view('exam.show', [
+        $attempt->load(['assessment', 'answers']);
+
+        $questionIds = array_map(intval(...), $attempt->question_ids ?? []);
+
+        $questions = Question::with(['options', 'category'])
+            ->whereIn('id', $questionIds)
+            ->get()
+            ->sortBy(fn (Question $q) => array_search($q->id, $questionIds, true))
+            ->values()
+            ->map(function (Question $question) use ($attempt) {
+                $frozenOrder = array_map(intval(...), $attempt->optionIdsFor($question->id));
+
+                $options = collect($frozenOrder)
+                    ->map(fn ($optionId) => $question->options->firstWhere('id', $optionId))
+                    ->filter()
+                    ->values()
+                    ->map(fn ($option, $index) => [
+                        'id' => (int) $option->id,
+                        'text' => $option->text,
+                        'letter' => chr(65 + $index),
+                    ])
+                    ->all();
+
+                return [
+                    'id' => (int) $question->id,
+                    'type' => $question->question_type,
+                    'difficulty' => $question->difficulty,
+                    'subject' => $question->category?->name,
+                    'stem' => $question->stem,
+                    'case_text' => $question->case_text,
+                    'image_url' => $question->image_url,
+                    'image_alt' => $question->image_alt,
+                    'options' => $options,
+                ];
+            })
+            ->all();
+
+        return view('assessments.exam', [
             'attempt' => $attempt,
+            'questions' => collect($questions),
+            'answersMap' => $attempt->answers
+                ->filter(fn ($answer) => $answer->selected_option_id !== null)
+                ->mapWithKeys(fn ($answer) => [(int) $answer->question_id => (int) $answer->selected_option_id])
+                ->all(),
+            'flagsMap' => $attempt->answers
+                ->filter(fn ($answer) => $answer->flagged)
+                ->mapWithKeys(fn ($answer) => [(int) $answer->question_id => true])
+                ->all(),
             'remainingSeconds' => $attempt->remainingSeconds(),
+        ]);
+    }
+
+    public function submitted(Request $request, ExamAttempt $attempt)
+    {
+        $this->authorizeAttempt($request, $attempt);
+
+        if ($attempt->status === 'in_progress') {
+            return redirect()->route('exams.show', $attempt);
+        }
+
+        $attempt->load(['assessment.blueprints.category']);
+
+        $released = LaunchSetting::current()->resultsAvailable()
+            && ! $attempt->assessment->isLockedResults();
+
+        return view('assessments.submitted', [
+            'attempt' => $attempt,
+            'released' => $released,
         ]);
     }
 

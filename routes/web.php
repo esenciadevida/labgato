@@ -47,9 +47,11 @@ Route::middleware(['auth', 'active.user', 'member'])->group(function () {
 });
 
 Route::middleware(['auth', 'active.user', 'member'])->group(function () {
+    Route::get('/assessments/{assessment}', [ExamController::class, 'showIntro'])->name('assessments.show');
     Route::post('/assessments/{assessment}/start', [ExamController::class, 'start'])
         ->middleware('throttle:30,1')
         ->name('assessments.start');
+    Route::get('/exam/{attempt}/submitted', [ExamController::class, 'submitted'])->name('exams.submitted');
     Route::get('/exam/{attempt}', [ExamController::class, 'show'])->name('exams.show');
     Route::post('/exam/{attempt}/answers', [ExamController::class, 'saveAnswer'])
         ->middleware('throttle:120,1')
