@@ -12,6 +12,7 @@ use App\Services\OnboardingService;
 use App\Services\RecentlyViewedService;
 use App\Services\RecommendationService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -60,6 +61,30 @@ class MemberController extends Controller
         $user = auth()->user();
 
         $user->update($request->safe()->only(['name', 'bio']));
+
+        $profileData = $request->safe()->except(['name', 'bio', 'photo', 'remove_photo']);
+
+        foreach (['show_country', 'show_institution', 'show_on_leaderboard'] as $flag) {
+            $profileData[$flag] = $request->boolean($flag);
+        }
+
+        $profile = $user->profile;
+
+        if ($request->hasFile('photo')) {
+            if ($profile->photo_path) {
+                Storage::disk('public')->delete($profile->photo_path);
+            }
+            $profileData['photo_path'] = $request->file('photo')->store('profiles', 'public');
+        } elseif ($request->boolean('remove_photo') && $profile->photo_path) {
+            Storage::disk('public')->delete($profile->photo_path);
+            $profileData['photo_path'] = null;
+        }
+
+        $profile = $user->saveProfile($profileData);
+
+        $profile->forceFill([
+            'profile_completed' => $profile->completionPercent() >= 100,
+        ])->save();
 
         $this->auditLog->logWithSubject(
             action: 'profile.updated',

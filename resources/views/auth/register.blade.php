@@ -69,6 +69,28 @@
             autocomplete="new-password"
         />
 
+        <div>
+            <label for="professional_status" class="block text-sm font-medium text-slate-700 dark:text-slate-200">Professional Status</label>
+            <select
+                id="professional_status"
+                name="professional_status"
+                required
+                autocomplete="organization-title"
+                class="input-base mt-1.5 @error('professional_status') input-error @enderror"
+            >
+                <option value="" disabled selected>Select your status</option>
+                @foreach(\App\Models\UserProfile::STATUS_LABELS as $statusValue => $statusLabel)
+                    <option value="{{ $statusValue }}" @selected(old('professional_status') === $statusValue)>{{ $statusLabel }}</option>
+                @endforeach
+            </select>
+            @error('professional_status')
+                <p class="mt-1.5 text-sm text-danger-600 dark:text-danger-400" role="alert">{{ $message }}</p>
+            @enderror
+            <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">
+                You can add more details about your institution or employer after signing up.
+            </p>
+        </div>
+
         <button type="submit" class="w-full inline-flex items-center justify-center rounded-lg bg-primary-600 px-4 py-2.5 text-sm font-semibold text-white shadow-card transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
             Create Account
         </button>

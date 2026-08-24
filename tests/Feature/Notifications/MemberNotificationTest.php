@@ -52,6 +52,7 @@ class MemberNotificationTest extends TestCase
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',
             'password_confirmation' => 'StrongPass1234',
+            'professional_status' => 'student',
         ]);
 
         $user = User::where('email', 'jane@example.com')->firstOrFail();
@@ -72,6 +73,7 @@ class MemberNotificationTest extends TestCase
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',
             'password_confirmation' => 'StrongPass1234',
+            'professional_status' => 'student',
         ]);
 
         $user = User::where('email', 'jane@example.com')->firstOrFail();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserProfile;
 use App\Notifications\MemberRegisteredNotification;
 use App\Services\AuditLogService;
 use Illuminate\Auth\Notifications\VerifyEmail;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Validation\Rule;
 use Throwable;
 
 class MemberRegisterController extends Controller
@@ -28,6 +30,7 @@ class MemberRegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'confirmed', Password::min(config('labgoto.security.password_min_length', 8))->letters()->numbers()],
+            'professional_status' => ['required', Rule::in(UserProfile::STATUSES)],
         ]);
 
         $user = User::create([
@@ -37,6 +40,10 @@ class MemberRegisterController extends Controller
             'password_set_at' => now(),
             'is_active' => true,
             'user_type' => 'member',
+        ]);
+
+        $user->saveProfile([
+            'professional_status' => $request->string('professional_status'),
         ]);
 
         $auditLog->log(
@@ -60,7 +67,8 @@ class MemberRegisterController extends Controller
         if (! config('labgoto.auth.email_verification', false)) {
             $user->forceFill(['email_verified_at' => now()])->save();
 
-            return redirect()->route('account.dashboard');
+            return redirect()->route('account.dashboard')
+                ->with('success', 'Welcome aboard! Complete your profile so the community knows who you are.');
         }
 
         $verificationUrl = URL::temporarySignedRoute(

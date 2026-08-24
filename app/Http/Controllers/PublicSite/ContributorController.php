@@ -20,6 +20,7 @@ class ContributorController extends Controller
         $user = User::query()
             ->where('profile_slug', $profileSlug)
             ->where('is_active', true)
+            ->with('profile')
             ->first();
 
         if ($user === null) {

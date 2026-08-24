@@ -20,12 +20,12 @@
             <div class="lg:col-span-1">
                 <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-800 dark:bg-slate-800">
                     <div class="flex flex-col items-center text-center">
-                        <x-public.avatar :name="$user->name" :user-id="$user->id" size="lg" />
+                        <x-public.avatar :name="$user->profile->display_name ?: $user->name" :src="$user->profile->photo_url" size="lg" />
                         <h2 class="mt-4 font-display text-xl font-bold text-slate-900 dark:text-slate-100">
                             {{ $user->name }}
                         </h2>
                         <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                            {{ $user->isAdmin() ? 'Administrator' : 'Member' }}
+                            {{ $user->isAdmin() ? 'Administrator' : ($user->profile->statusLabel() ?: 'Member') }}
                         </p>
                         @if($user->bio)
                             <p class="mt-4 text-sm text-slate-600 dark:text-slate-300 line-clamp-4">
@@ -55,23 +55,173 @@
 
             <div class="space-y-6 lg:col-span-2">
                 <x-ui.card title="Personal Information">
-                    <form method="POST" action="{{ route('account.profile.update') }}" class="space-y-5">
+                    @php
+                        $profile = $user->profile;
+                        $completion = $profile->completionPercent();
+                    @endphp
+
+                    <div class="mb-6 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-900/50">
+                        <div class="flex items-center justify-between gap-4 text-sm">
+                            <span class="font-medium text-slate-700 dark:text-slate-200">Profile completion</span>
+                            <span class="font-semibold {{ $completion >= 100 ? 'text-success-600 dark:text-success-400' : 'text-slate-500 dark:text-slate-400' }}">{{ $completion }}%</span>
+                        </div>
+                        <div class="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700" role="progressbar" aria-valuenow="{{ $completion }}" aria-valuemin="0" aria-valuemax="100" aria-label="Profile completion">
+                            <div class="h-full rounded-full transition-all {{ $completion >= 100 ? 'bg-success-500' : 'bg-primary-600' }}" style="width: {{ $completion }}%"></div>
+                        </div>
+                        @if($completion < 100)
+                            <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                                A complete profile builds trust and helps you connect with the community.
+                            </p>
+                        @endif
+                    </div>
+
+                    <form method="POST" action="{{ route('account.profile.update') }}" enctype="multipart/form-data"
+                          class="space-y-5"
+                          x-data="{ status: '{{ old('professional_status', $profile->professional_status ?? '') }}', photoPreview: null }">
+
                         @csrf
                         @method('PUT')
 
-                        <div>
-                            <x-form.label for="name" required>Full name</x-form.label>
-                            <x-ui.input
-                                id="name"
-                                name="name"
-                                value="{{ old('name', $user->name) }}"
-                                :error="$errors->first('name')"
-                                autocomplete="name"
-                                aria-required="true"
-                            />
-                            <x-form.error for="name" />
+                        <div class="flex flex-col items-center gap-5 border-b border-slate-100 pb-6 sm:flex-row dark:border-slate-700">
+                            <template x-if="photoPreview">
+                                <img :src="photoPreview" alt="" class="inline-block shrink-0 h-16 w-16 rounded-full object-cover">
+                            </template>
+                            <template x-if="! photoPreview">
+                                <x-public.avatar :name="$profile->display_name ?: $user->name" :src="$profile->photo_url" size="lg" />
+                            </template>
+
+                            <div class="flex-1 text-center sm:text-left">
+                                <x-form.label for="photo">Profile photo</x-form.label>
+                                <input
+                                    id="photo"
+                                    name="photo"
+                                    type="file"
+                                    accept="image/png,image/jpeg,image/webp"
+                                    class="mt-1.5 block w-full cursor-pointer text-sm text-slate-500 file:mr-3 file:cursor-pointer file:rounded-lg file:border-0 file:bg-primary-600 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-primary-700 dark:text-slate-400 dark:file:bg-primary-600 dark:hover:file:bg-primary-700"
+                                    @change="if ($event.target.files[0]) { photoPreview = URL.createObjectURL($event.target.files[0]); document.getElementById('remove_photo').checked = false; }"
+                                >
+                                <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">JPG, PNG, or WebP, up to 2MB.</p>
+                                <x-form.error for="photo" />
+                                @if($profile->photo_path)
+                                    <label class="mt-2 inline-flex items-center gap-2 text-sm text-danger-600 hover:text-danger-700 dark:text-danger-400 cursor-pointer">
+                                        <input type="checkbox" id="remove_photo" name="remove_photo" value="1" class="rounded border-slate-300 text-danger-600 focus:ring-danger-500 dark:border-slate-600 dark:bg-slate-800">
+                                        Remove current photo
+                                    </label>
+                                @endif
+                            </div>
                         </div>
 
+                        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                            <div>
+                                <x-form.label for="display_name">Display name</x-form.label>
+                                <x-ui.input
+                                    id="display_name"
+                                    name="display_name"
+                                    value="{{ old('display_name', $profile->display_name) }}"
+                                    :error="$errors->first('display_name')"
+                                    maxlength="60"
+                                />
+                                <x-form.error for="display_name" />
+                                <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">Shown on your public profile instead of your full name.</p>
+                            </div>
+
+                            <div>
+                                <x-form.label for="country">Country</x-form.label>
+                                <x-ui.input
+                                    id="country"
+                                    name="country"
+                                    value="{{ old('country', $profile->country) }}"
+                                    :error="$errors->first('country')"
+                                    autocomplete="country-name"
+                                    maxlength="100"
+                                />
+                                <x-form.error for="country" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <x-form.label for="professional_status" required>Professional status</x-form.label>
+                            <select
+                                id="professional_status"
+                                name="professional_status"
+                                x-model="status"
+                                class="input-base mt-1.5 @error('professional_status') input-error @enderror"
+                                aria-required="true"
+                            >
+                                <option value="">Select your status</option>
+                                @foreach(\App\Models\UserProfile::STATUS_LABELS as $statusValue => $statusLabel)
+                                    <option value="{{ $statusValue }}" @selected(old('professional_status', $profile->professional_status) === $statusValue)>{{ $statusLabel }}</option>
+                                @endforeach
+                            </select>
+                            <x-form.error for="professional_status" />
+                        </div>
+
+                        <div x-show="['student', 'intern'].includes(status)" x-cloak class="space-y-5 rounded-xl border border-slate-200 p-4 dark:border-slate-700">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Student details</p>
+                            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                                <div>
+                                    <x-form.label for="institution">Institution</x-form.label>
+                                    <x-ui.input id="institution" name="institution" value="{{ old('institution', $profile->institution) }}" :error="$errors->first('institution')" placeholder="e.g. University of Lagos" />
+                                    <x-form.error for="institution" />
+                                </div>
+                                <div>
+                                    <x-form.label for="programme">Programme</x-form.label>
+                                    <x-ui.input id="programme" name="programme" value="{{ old('programme', $profile->programme) }}" :error="$errors->first('programme')" placeholder="e.g. Medical Laboratory Science" />
+                                    <x-form.error for="programme" />
+                                </div>
+                                <div>
+                                    <x-form.label for="level">Level / Year</x-form.label>
+                                    <x-ui.input id="level" name="level" value="{{ old('level', $profile->level) }}" :error="$errors->first('level')" placeholder="e.g. 300 Level" maxlength="150" />
+                                    <x-form.error for="level" />
+                                </div>
+                                <div>
+                                    <x-form.label for="graduation_year">Expected graduation year</x-form.label>
+                                    <x-ui.input id="graduation_year" name="graduation_year" type="number" min="1980" max="{{ now()->year + 10 }}" value="{{ old('graduation_year', $profile->graduation_year) }}" :error="$errors->first('graduation_year')" />
+                                    <x-form.error for="graduation_year" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div x-show="['scientist', 'technician', 'professional', 'researcher', 'lecturer'].includes(status)" x-cloak class="space-y-5 rounded-xl border border-slate-200 p-4 dark:border-slate-700">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Professional details</p>
+                            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                                <div>
+                                    <x-form.label for="employer">Employer</x-form.label>
+                                    <x-ui.input id="employer" name="employer" value="{{ old('employer', $profile->employer) }}" :error="$errors->first('employer')" placeholder="e.g. St. Mary's Teaching Hospital" />
+                                    <x-form.error for="employer" />
+                                </div>
+                                <div>
+                                    <x-form.label for="job_title">Job title</x-form.label>
+                                    <x-ui.input id="job_title" name="job_title" value="{{ old('job_title', $profile->job_title) }}" :error="$errors->first('job_title')" placeholder="e.g. Senior Medical Laboratory Scientist" />
+                                    <x-form.error for="job_title" />
+                                </div>
+                                <div>
+                                    <x-form.label for="years_of_experience">Years of experience</x-form.label>
+                                    <x-ui.input id="years_of_experience" name="years_of_experience" type="number" min="0" max="60" value="{{ old('years_of_experience', $profile->years_of_experience) }}" :error="$errors->first('years_of_experience')" />
+                                    <x-form.error for="years_of_experience" />
+                                </div>
+                                <div>
+                                    <x-form.label for="specialization">Specialization</x-form.label>
+                                    <x-ui.input id="specialization" name="specialization" value="{{ old('specialization', $profile->specialization) }}" :error="$errors->first('specialization')" placeholder="e.g. Clinical Chemistry" />
+                                    <x-form.error for="specialization" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                            <div>
+                                <x-form.label for="name" required>Full name</x-form.label>
+                                <x-ui.input
+                                    id="name"
+                                    name="name"
+                                    value="{{ old('name', $user->name) }}"
+                                    :error="$errors->first('name')"
+                                    autocomplete="name"
+                                    aria-required="true"
+                                />
+                                <x-form.error for="name" />
+                            </div>
+                        </div>
                         <div>
                             <x-form.label for="email">Email address</x-form.label>
                             <x-ui.input id="email" type="email" value="{{ $user->email }}" disabled />
@@ -87,6 +237,26 @@
                             <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">
                                 A short description shown on your public contributor profile.
                             </p>
+                        </div>
+
+                        <div class="rounded-xl border border-slate-200 p-4 dark:border-slate-700">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Privacy</p>
+                            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Choose what is visible on your public contributor profile.</p>
+
+                            <div class="mt-4 space-y-3">
+                                <label class="flex cursor-pointer items-start gap-3">
+                                    <input type="checkbox" name="show_country" value="1" @checked(old('show_country', $profile->show_country)) class="mt-0.5 rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800">
+                                    <span class="text-sm text-slate-700 dark:text-slate-200">Show my country</span>
+                                </label>
+                                <label class="flex cursor-pointer items-start gap-3">
+                                    <input type="checkbox" name="show_institution" value="1" @checked(old('show_institution', $profile->show_institution)) class="mt-0.5 rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800">
+                                    <span class="text-sm text-slate-700 dark:text-slate-200">Show my institution / employer</span>
+                                </label>
+                                <label class="flex cursor-pointer items-start gap-3">
+                                    <input type="checkbox" name="show_on_leaderboard" value="1" @checked(old('show_on_leaderboard', $profile->show_on_leaderboard)) class="mt-0.5 rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800">
+                                    <span class="text-sm text-slate-700 dark:text-slate-200">Include me in leaderboards and rankings</span>
+                                </label>
+                            </div>
                         </div>
 
                         <div class="flex flex-wrap items-center justify-end gap-3 border-t border-slate-100 pt-5 dark:border-slate-700">

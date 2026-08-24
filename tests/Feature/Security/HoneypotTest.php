@@ -31,6 +31,7 @@ class HoneypotTest extends TestCase
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',
             'password_confirmation' => 'StrongPass1234',
+            'professional_status' => 'student',
         ]);
 
         $response->assertRedirect(route('account.dashboard'));

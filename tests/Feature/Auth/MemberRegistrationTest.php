@@ -29,6 +29,7 @@ class MemberRegistrationTest extends TestCase
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',
             'password_confirmation' => 'StrongPass1234',
+            'professional_status' => 'student',
         ]);
 
         $response->assertRedirect(route('account.dashboard'));
@@ -39,6 +40,19 @@ class MemberRegistrationTest extends TestCase
         $this->assertSame('member', $user->user_type);
         $this->assertTrue((bool) $user->is_active);
         $this->assertNotNull($user->email_verified_at);
+    }
+
+    public function test_registration_requires_professional_status(): void
+    {
+        $response = $this->post(route('register.submit'), [
+            'name' => 'Jane Member',
+            'email' => 'jane@example.com',
+            'password' => 'StrongPass1234',
+            'password_confirmation' => 'StrongPass1234',
+        ]);
+
+        $response->assertSessionHasErrors('professional_status');
+        $this->assertGuest();
     }
 
     public function test_registration_requires_valid_password(): void
@@ -79,6 +93,7 @@ class MemberRegistrationTest extends TestCase
             'email' => 'jane@example.com',
             'password' => 'StrongPass1234',
             'password_confirmation' => 'StrongPass1234',
+            'professional_status' => 'student',
         ]);
 
         $response->assertRedirect(route('verification.notice'));

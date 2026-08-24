@@ -33,6 +33,10 @@ class User extends Authenticatable
                 $user->profile_slug = static::generateUniqueProfileSlug($user->name ?? 'contributor');
             }
         });
+
+        static::created(function (User $user) {
+            UserProfile::firstOrCreate(['user_id' => $user->id]);
+        });
     }
 
     protected $hidden = [
@@ -56,6 +60,26 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(UserProfile::class)->withDefault();
+    }
+
+    public function saveProfile(array $attributes): UserProfile
+    {
+        return $this->profile()->updateOrCreate([], $attributes);
+    }
+
+    public function isStudent(): bool
+    {
+        return in_array($this->profile->professional_status, UserProfile::STUDENT_STATUSES, true);
+    }
+
+    public function isProfessional(): bool
+    {
+        return in_array($this->profile->professional_status, UserProfile::PROFESSIONAL_STATUSES, true);
     }
 
     public function sops()

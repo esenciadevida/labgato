@@ -1,15 +1,37 @@
 @extends('layouts.public')
 
 @section('content')
+@php $profile = $user->profile; @endphp
 <section class="py-12">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <header class="flex items-start gap-6">
-            <x-public.avatar :name="$user->name" :user-id="$user->id" size="lg" />
+            <x-public.avatar :name="$profile->display_name ?: $user->name" :src="$profile->photo_url" size="lg" />
             <div>
-                <h1 class="font-display text-3xl font-bold text-slate-900 dark:text-slate-100">{{ $user->name }}</h1>
+                <h1 class="font-display text-3xl font-bold text-slate-900 dark:text-slate-100">{{ $profile->display_name ?: $user->name }}</h1>
+
+                @if($profile->statusLabel())
+                    <p class="mt-2">
+                        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-700 dark:bg-primary-900/40 dark:text-primary-300">{{ $profile->statusLabel() }}</span>
+                    </p>
+                @endif
+
+                @if($profile->show_country && $profile->country)
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">{{ $profile->country }}</p>
+                @endif
+
+                @if($profile->show_institution)
+                    @php
+                        $affiliation = $profile->isStudent()
+                            ? trim(($profile->institution ?? '').($profile->programme ? ' - '.$profile->programme : ''))
+                            : trim(($profile->employer ?? '').($profile->job_title ? ' - '.$profile->job_title : ''));
+                    @endphp
+                    @if($affiliation !== '')
+                        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ $affiliation }}</p>
+                    @endif
+                @endif
 
                 @if($user->bio)
-                    <p class="mt-2 text-slate-600 dark:text-slate-400">{{ $user->bio }}</p>
+                    <p class="mt-3 max-w-2xl text-slate-600 dark:text-slate-400">{{ $user->bio }}</p>
                 @endif
 
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -80,8 +102,11 @@
     "@type": "ProfilePage",
     "mainEntity": {
         "@type": "Person",
-        "name": "{{ $user->name }}",
+        "name": "{{ $profile->display_name ?: $user->name }}",
         "description": "{{ $user->bio }}",
+        @if($profile->show_country && $profile->country)
+        "homeLocation": { "@@type": "Place", "address": "{{ $profile->country }}" },
+        @endif
         "url": "{{ url()->current() }}"
     }
 }
