@@ -73,7 +73,7 @@ class SocialAuthController extends Controller
 
             SignInAlert::send($user, request()->ip(), (string) request()->userAgent());
 
-            return redirect()->route('account.dashboard');
+            return redirect()->to(\App\Support\RedirectTarget::memberHome());
         }
 
         $user = User::create([
@@ -99,6 +99,6 @@ class SocialAuthController extends Controller
 
         SignInAlert::send($user, request()->ip(), (string) request()->userAgent());
 
-        return redirect()->route('account.dashboard');
+        return redirect()->to(\App\Support\RedirectTarget::memberHome());
     }
 }

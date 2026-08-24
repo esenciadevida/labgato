@@ -52,12 +52,11 @@
                         </div>
 
                         <div class="flex shrink-0 items-center gap-3">
-                            @if($actionText = data_get($notification->data, 'action_text'))
-                                @if($actionUrl = data_get($notification->data, 'action_url'))
-                                    <a href="{{ $actionUrl }}" class="text-sm font-medium text-primary-700 hover:text-primary-800 dark:text-primary-400">
-                                        {{ $actionText }}
-                                    </a>
-                                @endif
+                            @php($link = \App\Support\NotificationLink::resolve($notification))
+                            @if($link['href'] && $link['label'])
+                                <a href="{{ $link['href'] }}" class="text-sm font-medium text-primary-700 hover:text-primary-800 dark:text-primary-400">
+                                    {{ $link['label'] }}
+                                </a>
                             @endif
 
                             @if($notification->read_at === null)

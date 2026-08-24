@@ -36,7 +36,8 @@ class LaunchWall
         'auth/google/',
         'email/',
         'verification',
-        'up',
+        'up/',
+        'legal/',
     ];
 
     public function handle(Request $request, Closure $next): Response

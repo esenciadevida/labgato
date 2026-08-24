@@ -37,6 +37,7 @@ class ContactController extends Controller
             $message->email,
             $message->subject,
             $message->message,
+            $message,
         );
 
         AdminNotifier::notifySuperAdmins($notification);

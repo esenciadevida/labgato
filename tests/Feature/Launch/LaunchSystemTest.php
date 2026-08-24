@@ -88,6 +88,36 @@ class LaunchSystemTest extends TestCase
             ->assertSee('Registration opens soon');
     }
 
+    public function test_pre_launch_member_login_lands_on_the_launch_dashboard(): void
+    {
+        $member = User::factory()->member()->create(['is_active' => true]);
+
+        $this->post(route('login.submit'), [
+            'email' => $member->email,
+            'password' => 'password',
+        ])->assertRedirect(route('launch.dashboard'));
+    }
+
+    public function test_pre_launch_registration_lands_on_the_launch_dashboard(): void
+    {
+        $this->post(route('register.submit'), [
+            'name' => 'Early Member',
+            'email' => 'early@example.com',
+            'password' => 'StrongPass1234',
+            'password_confirmation' => 'StrongPass1234',
+            'professional_status' => 'student',
+        ])->assertRedirect(route('launch.dashboard'));
+    }
+
+    public function test_pre_launch_home_redirects_authenticated_members_to_the_launch_dashboard(): void
+    {
+        $member = User::factory()->member()->create(['is_active' => true]);
+
+        $this->actingAs($member)
+            ->get('/')
+            ->assertRedirect(route('launch.dashboard'));
+    }
+
     public function test_live_site_shows_normal_home_and_allows_inner_pages(): void
     {
         LaunchSetting::current()->update(['main_site_status' => 'open']);

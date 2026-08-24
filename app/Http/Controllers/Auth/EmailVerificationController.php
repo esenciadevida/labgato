@@ -15,11 +15,11 @@ class EmailVerificationController extends Controller
     public function notice(Request $request)
     {
         if (! config('labgoto.auth.email_verification', false)) {
-            return redirect()->route('account.dashboard');
+            return redirect()->to(\App\Support\RedirectTarget::memberHome());
         }
 
         if ($request->user()->email_verified_at !== null) {
-            return redirect()->route('account.dashboard');
+            return redirect()->to(\App\Support\RedirectTarget::memberHome());
         }
 
         return view('auth.verify-email');
@@ -43,17 +43,17 @@ class EmailVerificationController extends Controller
             );
         }
 
-        return redirect()->route('account.dashboard')->with('status', 'Your email address has been verified.');
+        return redirect()->to(\App\Support\RedirectTarget::memberHome())->with('status', 'Your email address has been verified.');
     }
 
     public function resend(Request $request, AuditLogService $auditLog)
     {
         if (! config('labgoto.auth.email_verification', false)) {
-            return redirect()->route('account.dashboard');
+            return redirect()->to(\App\Support\RedirectTarget::memberHome());
         }
 
         if ($request->user()->email_verified_at !== null) {
-            return redirect()->route('account.dashboard');
+            return redirect()->to(\App\Support\RedirectTarget::memberHome());
         }
 
         $verificationUrl = URL::temporarySignedRoute(

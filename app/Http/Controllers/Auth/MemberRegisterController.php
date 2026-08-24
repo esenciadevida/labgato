@@ -67,7 +67,7 @@ class MemberRegisterController extends Controller
         if (! config('labgoto.auth.email_verification', false)) {
             $user->forceFill(['email_verified_at' => now()])->save();
 
-            return redirect()->route('account.dashboard')
+            return redirect()->to(\App\Support\RedirectTarget::memberHome())
                 ->with('success', 'Welcome aboard! Complete your profile so the community knows who you are.');
         }
 

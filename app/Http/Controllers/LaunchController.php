@@ -20,6 +20,13 @@ class LaunchController extends Controller
             return app(HomeController::class)->index();
         }
 
+        // Logged-in members have nothing to do on the public countdown -
+        // send them to their waiting room instead of looping them back here
+        // after every login.
+        if (auth()->user() && ! auth()->user()->isAdmin()) {
+            return redirect()->route('launch.dashboard');
+        }
+
         return view('launch.wall', [
             'settings' => $settings,
             'pageTitle' => 'Labgoto is coming',

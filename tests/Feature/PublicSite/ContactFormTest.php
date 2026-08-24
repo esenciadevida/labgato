@@ -8,6 +8,7 @@ use App\Models\Role;
 use App\Models\User;
 use App\Notifications\NewContactMessageNotification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\RateLimiter;
 use Tests\TestCase;
@@ -134,5 +135,24 @@ class ContactFormTest extends TestCase
         $this->post(route('contact.store'), $this->validPayload());
 
         Notification::assertNothingSent();
+    }
+
+    public function test_super_admin_notification_links_directly_to_the_stored_message(): void
+    {
+        Mail::fake();
+
+        $superAdmin = $this->superAdmin();
+
+        $this->post(route('contact.store'), $this->validPayload());
+
+        $notification = $superAdmin->fresh()->unreadNotifications()->first();
+
+        $this->assertNotNull($notification);
+        $this->assertSame('contact_message', data_get($notification, 'data.type'));
+        $this->assertSame('Read', data_get($notification, 'data.action_text'));
+        $this->assertSame(
+            route('admin.contact-messages.show', ContactMessage::firstOrFail()),
+            data_get($notification, 'data.action_url'),
+        );
     }
 }

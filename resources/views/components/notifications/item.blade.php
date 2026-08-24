@@ -1,9 +1,11 @@
 @props(['notification'])
 
 @php
-    $type = data_get($notification->data, 'type', 'default');
+    $resolved = \App\Support\NotificationLink::resolve($notification);
+    $type = $resolved['type'];
     $message = data_get($notification->data, 'message', 'You have a new notification.');
-    $url = data_get($notification->data, 'url');
+    $url = $resolved['href'];
+    $label = $resolved['label'] ?? 'View';
     $isUnread = $notification->read_at === null;
     $icon = match ($type) {
         'contribution_approved' => [
@@ -34,6 +36,7 @@
     <a
         href="{{ $url }}"
         data-notification-item
+        title="{{ $label }}"
         class="group flex items-start gap-3 px-4 py-3 transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/40 {{ $accent }} {{ $isUnread ? 'bg-primary-50/50 dark:bg-primary-900/20' : '' }}"
         x-data="{
             read: {{ $isUnread ? 'false' : 'true' }},

@@ -7,6 +7,7 @@ use App\Models\Role;
 use App\Models\Sop;
 use App\Models\User;
 use App\Notifications\MemberRegisteredNotification;
+use App\Notifications\NewContactMessageNotification;
 use App\Notifications\NewContributionSubmittedNotification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Notification;
@@ -101,5 +102,29 @@ class AdminNotificationTest extends TestCase
         $response->assertOk();
         $response->assertSee('1 unread notifications');
         $response->assertSee('/notifications/read-all');
+    }
+
+    public function test_legacy_contact_message_payload_links_to_the_admin_inbox(): void
+    {
+        $admin = $this->adminWithPermission(Permission::factory()->create(['slug' => 'contact-messages.view']));
+
+        $admin->notifications()->create([
+            'id' => Str::uuid(),
+            'type' => NewContactMessageNotification::class,
+            'data' => [
+                'message' => 'New contact message from Diana Cruz',
+                'action_text' => 'Open admin area',
+                'action_url' => url('/admin'),
+            ],
+        ]);
+
+        $response = $this->actingAs($admin)->get(route('notifications.index'));
+
+        $response->assertOk();
+        $this->assertStringContainsString(
+            'href="'.route('admin.contact-messages.index').'"',
+            $response->getContent(),
+        );
+        $response->assertSee('Read');
     }
 }
