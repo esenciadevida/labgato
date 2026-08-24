@@ -42,9 +42,10 @@
         'urls' => [
             'save' => route('exams.answers.save', $attempt),
             'flag' => route('exams.flag', $attempt),
-            'submit' => route('exams.submit', $attempt),
-            'submitted' => route('exams.submitted', $attempt),
-        ],
+        'submit' => route('exams.submit', $attempt),
+        'submitted' => route('exams.submitted', $attempt),
+        'integrity' => route('exams.integrity.store', $attempt),
+    ],
     ];
 @endphp
 
@@ -197,6 +198,8 @@ function examComponent() {
         submitting: false,
         confirmOpen: false,
         timeUpOpen: false,
+        eventQueue: [],
+        lastEventAt: {},
 
         init: function () {
             var self = this;
@@ -207,8 +210,14 @@ function examComponent() {
 
             this.requestFullscreen();
             this.installDeterrents();
+            this.installIntegrityCapture();
 
             timerInterval = setInterval(function () { self.tick(); }, 1000);
+            setInterval(function () { self.flushEvents(); }, 5000);
+
+            window.addEventListener('pagehide', function () {
+                self.flushEvents(true);
+            });
 
             window.addEventListener('beforeunload', function (event) {
                 if (!self.submitting) {
@@ -436,6 +445,91 @@ function examComponent() {
                     event.preventDefault();
                 }
             });
+        },
+
+        installIntegrityCapture: function () {
+            var self = this;
+
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    self.pushEvent('tab_switch');
+                }
+            });
+
+            window.addEventListener('blur', function () {
+                self.pushEvent('window_blur');
+            });
+
+            document.addEventListener('fullscreenchange', function () {
+                if (!document.fullscreenElement) {
+                    self.pushEvent('fullscreen_exit');
+                }
+            });
+
+            ['copy', 'paste', 'cut'].forEach(function (eventName) {
+                document.addEventListener(eventName, function () {
+                    self.pushEvent(eventName.replace('_attempt', '') + '_attempt');
+                });
+            });
+
+            window.addEventListener('beforeprint', function () {
+                self.pushEvent('print_attempt');
+            });
+
+            document.addEventListener('contextmenu', function () {
+                self.pushEvent('right_click_attempt');
+            });
+        },
+
+        pushEvent: function (type) {
+            if (this.submitting || this.timeUpOpen) {
+                return;
+            }
+
+            var now = Date.now();
+
+            if (this.lastEventAt[type] && (now - this.lastEventAt[type]) < 2000) {
+                return;
+            }
+
+            this.lastEventAt[type] = now;
+            this.eventQueue.push({
+                type: type,
+                q: this.current + 1,
+            });
+
+            if (this.eventQueue.length >= 50) {
+                this.flushEvents();
+            }
+        },
+
+        flushEvents: function (useBeacon) {
+            if (!this.eventQueue.length) {
+                return;
+            }
+
+            var batch = this.eventQueue.splice(0, 50);
+            var payload = JSON.stringify({ events: batch });
+            var csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            if (useBeacon && navigator.sendBeacon) {
+                var blob = new Blob([payload], { type: 'application/json' });
+
+                navigator.sendBeacon(config.urls.integrity, blob);
+
+                return;
+            }
+
+            fetch(config.urls.integrity, {
+                method: 'POST',
+                keepalive: true,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrf,
+                    'Accept': 'application/json',
+                },
+                body: payload,
+            }).catch(function () {});
         },
     };
 }

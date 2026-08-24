@@ -7,6 +7,7 @@ use App\Http\Controllers\CronTickController;
 use App\Http\Controllers\LaunchController;
 use App\Http\Controllers\Member\MessageController;
 use App\Http\Controllers\Assessments\ExamController;
+use App\Http\Controllers\Assessments\IntegrityEventController;
 use App\Http\Controllers\PublicSite\CalculatorController;
 use App\Http\Controllers\PublicSite\ContactController;
 use App\Http\Controllers\PublicSite\ContributorController;
@@ -62,6 +63,9 @@ Route::middleware(['auth', 'active.user', 'member'])->group(function () {
     Route::post('/exam/{attempt}/submit', [ExamController::class, 'submit'])
         ->middleware('throttle:30,1')
         ->name('exams.submit');
+    Route::post('/exam/{attempt}/integrity', [IntegrityEventController::class, 'store'])
+        ->middleware('throttle:120,1')
+        ->name('exams.integrity.store');
 });
 
 Route::post('/content-images', [ContentImageController::class, 'store'])

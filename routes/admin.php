@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\ContributionReviewController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\InterpretationController;
+use App\Http\Controllers\Admin\IntegrityController;
 use App\Http\Controllers\Admin\KnowledgeController;
 use App\Http\Controllers\Admin\LaboratoryToolController;
 use App\Http\Controllers\Admin\LaunchControlController;
@@ -84,6 +85,12 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
         Route::delete('/questions/{question}', [QuestionController::class, 'destroy'])->name('questions.destroy');
         Route::post('/questions/{question}/archive', [QuestionController::class, 'archive'])->name('questions.archive');
         Route::post('/questions/{question}/restore', [QuestionController::class, 'restore'])->name('questions.restore');
+    });
+
+    Route::middleware('permission:integrity.view')->group(function () {
+        Route::get('/integrity', [IntegrityController::class, 'index'])->name('integrity.index');
+        Route::get('/integrity/{attempt}', [IntegrityController::class, 'show'])->name('integrity.show');
+        Route::post('/integrity/{attempt}/status', [IntegrityController::class, 'updateStatus'])->name('integrity.status');
     });
 
     Route::middleware('permission:questions.view')->group(function () {

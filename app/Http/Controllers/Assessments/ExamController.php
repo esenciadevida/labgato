@@ -10,6 +10,7 @@ use App\Models\Question;
 use App\Services\ExamEligibilityService;
 use App\Services\ExamGenerationService;
 use App\Services\ExamScoringService;
+use App\Services\IntegrityService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,7 @@ class ExamController extends Controller
         protected ExamEligibilityService $eligibility,
         protected ExamGenerationService $generation,
         protected ExamScoringService $scoring,
+        protected IntegrityService $integrity,
     ) {
     }
 
@@ -38,7 +40,7 @@ class ExamController extends Controller
             return back()->with('error', $this->humanReason($check['reason']));
         }
 
-        $attempt = $this->generation->startAttempt($request->user(), $assessment, $mode);
+        $attempt = $this->generation->startAttempt($request->user(), $assessment, $mode, $request);
 
         return redirect()->route('exams.show', $attempt);
     }
@@ -73,6 +75,10 @@ class ExamController extends Controller
     public function show(Request $request, ExamAttempt $attempt)
     {
         $this->authorizeAttempt($request, $attempt);
+
+        if ($attempt->status === 'in_progress') {
+            $this->integrity->verifySession($attempt, $request);
+        }
 
         if ($attempt->isExpired()) {
             $this->scoring->score($attempt, autoSubmitted: true);
@@ -158,6 +164,7 @@ class ExamController extends Controller
     public function saveAnswer(Request $request, ExamAttempt $attempt): JsonResponse
     {
         $this->authorizeAttempt($request, $attempt);
+        $this->integrity->verifySession($attempt, $request);
 
         $validated = $request->validate([
             'question_id' => ['required', 'integer'],
@@ -209,6 +216,7 @@ class ExamController extends Controller
     public function flag(Request $request, ExamAttempt $attempt): JsonResponse
     {
         $this->authorizeAttempt($request, $attempt);
+        $this->integrity->verifySession($attempt, $request);
 
         $validated = $request->validate([
             'question_id' => ['required', 'integer'],
@@ -237,6 +245,7 @@ class ExamController extends Controller
     public function submit(Request $request, ExamAttempt $attempt): JsonResponse
     {
         $this->authorizeAttempt($request, $attempt);
+        $this->integrity->verifySession($attempt, $request);
 
         if ($attempt->status !== 'in_progress') {
             $attempt = $attempt->fresh();

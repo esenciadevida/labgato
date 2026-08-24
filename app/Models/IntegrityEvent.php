@@ -7,16 +7,32 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class IntegrityEvent extends Model
 {
-    public const EVENT_TYPES = [
+    public const TYPES = [
         'tab_switch',
         'window_blur',
         'fullscreen_exit',
         'copy_attempt',
         'paste_attempt',
+        'cut_attempt',
         'print_attempt',
-        'contextmenu',
-        'session_conflict',
-        'other',
+        'right_click_attempt',
+        'session_change',
+        'multiple_session',
+        'unusual_timing',
+    ];
+
+    public const WEIGHTS = [
+        'tab_switch' => 1,
+        'window_blur' => 1,
+        'fullscreen_exit' => 1,
+        'right_click_attempt' => 1,
+        'copy_attempt' => 2,
+        'paste_attempt' => 2,
+        'cut_attempt' => 2,
+        'print_attempt' => 2,
+        'session_change' => 5,
+        'multiple_session' => 5,
+        'unusual_timing' => 3,
     ];
 
     protected $fillable = [
@@ -24,6 +40,7 @@ class IntegrityEvent extends Model
         'user_id',
         'event_type',
         'question_number',
+        'weight',
         'metadata',
     ];
 
@@ -31,6 +48,7 @@ class IntegrityEvent extends Model
     {
         return [
             'metadata' => 'array',
+            'weight' => 'integer',
         ];
     }
 
@@ -42,5 +60,10 @@ class IntegrityEvent extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public static function weightFor(string $eventType): int
+    {
+        return self::WEIGHTS[$eventType] ?? 1;
     }
 }

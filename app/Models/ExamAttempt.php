@@ -23,6 +23,7 @@ class ExamAttempt extends Model
         'status',
         'question_ids',
         'option_orders',
+        'session_fingerprint',
         'started_at',
         'ends_at',
         'submitted_at',

@@ -7,18 +7,21 @@ use App\Models\AssessmentBlueprint;
 use App\Models\ExamAttempt;
 use App\Models\Question;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ExamGenerationService
 {
-    public function __construct(protected ExamEligibilityService $eligibility)
-    {
+    public function __construct(
+        protected ExamEligibilityService $eligibility,
+        protected IntegrityService $integrity,
+    ) {
     }
 
     /**
      * Start (or return the already-frozen) attempt for this user + assessment.
      */
-    public function startAttempt(User $user, Assessment $assessment, string $mode = 'official'): ExamAttempt
+    public function startAttempt(User $user, Assessment $assessment, string $mode = 'official', ?Request $request = null): ExamAttempt
     {
         if ($mode === 'official' && $assessment->max_attempts === 1) {
             $existing = $this->eligibility->existingOfficialAttempt($user, $assessment);
@@ -28,7 +31,7 @@ class ExamGenerationService
             }
         }
 
-        return DB::transaction(function () use ($user, $assessment, $mode) {
+        return DB::transaction(function () use ($user, $assessment, $mode, $request) {
             if ($mode === 'official' && $assessment->max_attempts === 1) {
                 $race = $this->eligibility->existingOfficialAttempt($user, $assessment);
 
@@ -54,6 +57,7 @@ class ExamGenerationService
                 'status' => 'in_progress',
                 'question_ids' => $questionIds,
                 'option_orders' => $optionOrders,
+                'session_fingerprint' => $request !== null ? $this->integrity->fingerprint($request) : null,
                 'started_at' => $startedAt,
                 'ends_at' => $startedAt->copy()->addMinutes($assessment->duration_minutes),
             ]);
