@@ -51,6 +51,7 @@ class NewContactMessageNotification extends Notification
     {
         return [
             'type' => 'contact_message',
+            'contact_message_id' => $this->contactMessage?->id,
             'message' => 'New contact message from '.$this->name.' ('.$this->email.') — "'.$this->subject.'"',
             'action_text' => 'Read',
             'action_url' => $this->contactMessage !== null

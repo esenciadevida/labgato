@@ -15,6 +15,7 @@ class LaunchDashboardRenderTest extends TestCase
     {
         $user = User::factory()->member()->create(['is_active' => true]);
         $user->saveProfile(['professional_status' => 'professional']);
+        $user->markOnboarded();
 
         LaunchSetting::query()->firstOrFail()->update(['main_site_status' => 'locked']);
         LaunchSetting::flushCache();
@@ -26,5 +27,6 @@ class LaunchDashboardRenderTest extends TestCase
         $response->assertSee('LabGoTo_favicon', false); // favicon links
         $response->assertSee('Welcome,', false);
         $response->assertSee('ASCPI Challenge', false);
+        $response->assertDontSee('data-tour="navigation"', false); // member nav bar removed
     }
 }

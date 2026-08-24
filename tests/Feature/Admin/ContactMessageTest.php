@@ -7,8 +7,10 @@ use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use App\Notifications\ContactMessageRepliedNotification;
+use App\Notifications\NewContactMessageNotification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class ContactMessageTest extends TestCase
@@ -65,6 +67,48 @@ class ContactMessageTest extends TestCase
         $response->assertOk();
         $response->assertSee('Question about reference ranges');
         $response->assertSee('Jane Doe');
+    }
+
+    public function test_viewing_a_message_marks_its_notification_as_read(): void
+    {
+        $admin = $this->superAdmin();
+        $message = $this->message();
+
+        $admin->notify(new NewContactMessageNotification(
+            $message->name,
+            $message->email,
+            $message->subject,
+            $message->message,
+            $message,
+        ));
+
+        $this->assertSame(1, $admin->unreadNotifications()->count());
+
+        $this->actingAs($admin)->get(route('admin.contact-messages.show', $message))->assertOk();
+
+        $this->assertSame(0, $admin->unreadNotifications()->count());
+    }
+
+    public function test_viewing_a_legacy_message_notification_marks_it_as_read(): void
+    {
+        $admin = $this->superAdmin();
+        $message = $this->message();
+
+        $admin->notifications()->create([
+            'id' => Str::uuid(),
+            'type' => NewContactMessageNotification::class,
+            'data' => [
+                'type' => 'contact_message',
+                'message' => 'Legacy notification without message id',
+                'action_url' => route('admin.contact-messages.show', $message),
+            ],
+        ]);
+
+        $this->assertSame(1, $admin->unreadNotifications()->count());
+
+        $this->actingAs($admin)->get(route('admin.contact-messages.show', $message))->assertOk();
+
+        $this->assertSame(0, $admin->unreadNotifications()->count());
     }
 
     public function test_super_admin_can_reply_to_a_message(): void

@@ -26,9 +26,16 @@ class ContactMessageController extends Controller
         return view('admin.contact-messages.index', compact('messages', 'status'));
     }
 
-    public function show(ContactMessage $message)
+    public function show(Request $request, ContactMessage $message)
     {
         $message->load('replies.admin', 'user');
+
+        $request->user()->notifications()
+            ->where('data->type', 'contact_message')
+            ->where(fn ($query) => $query
+                ->where('data->contact_message_id', $message->id)
+                ->orWhere('data->action_url', 'like', '%'.route('admin.contact-messages.show', $message).'%'))
+            ->update(['read_at' => now()]);
 
         return view('admin.contact-messages.show', compact('message'));
     }

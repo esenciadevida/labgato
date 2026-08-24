@@ -3,7 +3,7 @@
     $metaNoindex = true;
 @endphp
 
-@extends('layouts.member')
+@extends('layouts.public')
 
 @section('content')
 <section class="py-10">
