@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolePermissionSeeder::class,
             SettingsSeeder::class,
+            LaunchSettingSeeder::class,
         ]);
 
         if (app()->environment('local') && config('labgoto.seed.admin.enabled')) {

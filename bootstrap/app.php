@@ -10,6 +10,7 @@ use App\Http\Middleware\EnsureUserIsActiveUser;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use App\Http\Middleware\EnsureUserIsMember;
 use App\Http\Middleware\HoneypotProtection;
+use App\Http\Middleware\LaunchWall;
 use App\Http\Middleware\LimitRequestSize;
 use App\Http\Middleware\SecurityHeaders;
 use App\Support\AiErrorMessage;
@@ -45,6 +46,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->append(SecurityHeaders::class);
 
         $middleware->web(append: [
+            LaunchWall::class,
             CachePublicPages::class,
         ]);
 

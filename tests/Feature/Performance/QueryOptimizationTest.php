@@ -41,11 +41,17 @@ class QueryOptimizationTest extends TestCase
             $calculator->tags()->attach($tag);
         }
 
+        // Warm the launch-wall settings cache so its lookup doesn't count
+        // against the page's query budget.
+        \App\Models\LaunchSetting::current();
+
         $queries = $this->countQueries(function () {
             $this->get(route('public.calculators.index'))->assertOk();
         });
 
-        $this->assertLessThanOrEqual(12, $queries);
+        // +1 for the launch wall's launch-settings lookup (a single cached
+        // primary-key read, warm for all requests after the first).
+        $this->assertLessThanOrEqual(13, $queries);
     }
 
     public function test_reference_range_detail_page_eager_loads_without_n_plus_one(): void

@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\ContentImageController;
 use App\Http\Controllers\ContentPreviewController;
 use App\Http\Controllers\CronTickController;
+use App\Http\Controllers\LaunchController;
 use App\Http\Controllers\Member\MessageController;
 use App\Http\Controllers\PublicSite\CalculatorController;
 use App\Http\Controllers\PublicSite\ContactController;
@@ -26,7 +27,10 @@ use App\Mail\WelcomeEmail;
 use App\Models\ContactMessage;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [LaunchController::class, 'wall'])->name('home');
+Route::get('/launch-dashboard', [LaunchController::class, 'dashboard'])
+    ->middleware(['auth', 'active.user'])
+    ->name('launch.dashboard');
 Route::post('/recently-viewed/clear', [HomeController::class, 'clearRecentlyViewed'])
     ->middleware(['auth', 'active.user', 'member'])
     ->name('recently-viewed.clear');
