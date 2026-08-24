@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Launch;
 
+use App\Models\Assessment;
 use App\Models\LaunchSetting;
 use App\Models\Permission;
 use App\Models\Role;
@@ -65,6 +66,34 @@ class LaunchSystemTest extends TestCase
             ->assertSee('You are registered for the Labgoto launch.')
             ->assertSee('Your Challenges')
             ->assertSee('bg-gradient-to-b from-primary-950', false);
+    }
+
+    public function test_pre_launch_member_can_access_an_open_assessment(): void
+    {
+        $member = User::factory()->member()->create(['is_active' => true]);
+
+        Assessment::create([
+            'title' => 'Engine Smoke Test',
+            'slug' => 'engine-smoke-test',
+            'type' => 'challenge',
+            'status' => 'open',
+            'duration_minutes' => 19,
+            'total_questions' => 20,
+            'max_attempts' => 1,
+            'allow_practice' => true,
+            'certificate_enabled' => true,
+            'pass_percentage' => 70,
+            'opens_at' => null,
+            'closes_at' => null,
+        ]);
+
+        LaunchSetting::query()->firstOrFail()->update(['challenge_open' => true]);
+        LaunchSetting::flushCache();
+
+        $this->actingAs($member)
+            ->get(route('assessments.show', Assessment::where('slug', 'engine-smoke-test')->first()))
+            ->assertOk()
+            ->assertSee('Engine Smoke Test');
     }
 
     public function test_pre_launch_super_admin_can_reach_inner_pages_and_launch_control(): void
