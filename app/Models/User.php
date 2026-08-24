@@ -97,6 +97,16 @@ class User extends Authenticatable
         return $this->hasMany(InterpretationResource::class, 'contributed_by');
     }
 
+    public function examAttempts()
+    {
+        return $this->hasMany(ExamAttempt::class);
+    }
+
+    public function certificates()
+    {
+        return $this->hasMany(Certificate::class);
+    }
+
     public function hasRole(string $roleSlug): bool
     {
         $cacheService = app(PermissionCacheService::class);

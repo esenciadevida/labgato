@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
             RolePermissionSeeder::class,
             SettingsSeeder::class,
             LaunchSettingSeeder::class,
+            QuestionCategorySeeder::class,
+            AssessmentSeeder::class,
         ]);
 
         if (app()->environment('local') && config('labgoto.seed.admin.enabled')) {
