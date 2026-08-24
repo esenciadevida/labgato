@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\PublicSite;
 
 use App\Http\Controllers\Controller;
+use App\Models\Assessment;
+use App\Models\LaunchSetting;
 use App\Services\RecentlyViewedService;
 use App\Services\RecommendationService;
 
@@ -26,11 +28,19 @@ class HomeController extends Controller
             $recommended = $this->recommendations->getRecommendedFor(auth()->user(), 6);
         }
 
+        $assessmentsLive = LaunchSetting::current()->isLive();
+        $flagship = $assessmentsLive
+            ? Assessment::query()->open()->challenges()->orderBy('closes_at')->first()
+                ?? Assessment::query()->open()->orderBy('closes_at')->first()
+            : null;
+
         return view('public.home', compact(
             'pageTitle',
             'metaDescription',
             'recentlyViewed',
             'recommended',
+            'assessmentsLive',
+            'flagship',
         ));
     }
 

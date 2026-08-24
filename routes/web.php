@@ -6,6 +6,7 @@ use App\Http\Controllers\ContentPreviewController;
 use App\Http\Controllers\CronTickController;
 use App\Http\Controllers\LaunchController;
 use App\Http\Controllers\Member\MessageController;
+use App\Http\Controllers\Assessments\AssessmentHubController;
 use App\Http\Controllers\Assessments\CertificateController;
 use App\Http\Controllers\Assessments\ExamController;
 use App\Http\Controllers\Assessments\IntegrityEventController;
@@ -46,6 +47,8 @@ Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
 
 Route::get('/leaderboard', [LeaderboardController::class, 'index'])->name('leaderboard.index');
 Route::get('/leaderboard/{assessment:slug}', [LeaderboardController::class, 'show'])->name('leaderboard.show');
+
+Route::get('/assessments', [AssessmentHubController::class, 'index'])->name('assessments.index');
 
 Route::get('/verify/{code}', [VerifyController::class, 'verify'])->name('certificates.verify');
 Route::get('/share/{code}', [VerifyController::class, 'share'])->name('certificates.share');

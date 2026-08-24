@@ -63,6 +63,7 @@ class RolePermissionSeeder extends Seeder
             'integrity.view' => ['name' => 'View Exam Integrity', 'group' => 'Questions'],
             'certificates.view' => ['name' => 'View Certificates', 'group' => 'Certificates'],
             'certificates.revoke' => ['name' => 'Revoke Certificates', 'group' => 'Certificates'],
+            'assessments.manage' => ['name' => 'Manage Assessments', 'group' => 'Assessments'],
             'contributions.review' => ['name' => 'Review Contributions', 'group' => 'Contributions'],
             'contact-messages.view' => ['name' => 'View Contact Messages', 'group' => 'Contact Messages'],
             'contact-messages.reply' => ['name' => 'Reply to Contact Messages', 'group' => 'Contact Messages'],

@@ -123,6 +123,62 @@
     <x-public.recommended :resources="$recommended" />
 @endif
 
+@if($assessmentsLive)
+    <section id="assessments" class="py-16 sm:py-20 bg-white border-y border-slate-200 dark:bg-slate-800 dark:border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <p class="eyebrow">ASCPi Challenge</p>
+                <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Assessments</h2>
+                <p class="mt-3 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                    Timed challenge exams with a live leaderboard, official results, and verifiable certificates.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                @if($flagship)
+                    <a href="{{ route('assessments.show', $flagship) }}" class="lg:col-span-2 group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0b2545] to-blue-800 p-8 text-white shadow-card transition hover:shadow-card-hover dark:from-slate-900 dark:to-blue-900">
+                        <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-400/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-300">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Open now
+                        </span>
+                        <h3 class="mt-4 font-display text-2xl font-bold">{{ $flagship->title }}</h3>
+                        <p class="mt-2 max-w-xl text-sm leading-relaxed text-blue-100">
+                            {{ $flagship->total_questions ?? $flagship->blueprintQuestionCount() }} questions &middot; {{ $flagship->duration_minutes }} minutes &middot; one attempt.
+                        </p>
+                        <p class="mt-6 inline-flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all">
+                            Take the challenge
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </p>
+                    </a>
+                @else
+                    <a href="{{ route('assessments.index') }}" class="lg:col-span-2 group flex flex-col justify-center rounded-xl bg-gradient-to-br from-[#0b2545] to-blue-800 p-8 text-white shadow-card transition hover:shadow-card-hover dark:from-slate-900 dark:to-blue-900">
+                        <h3 class="font-display text-2xl font-bold">The next challenge is being prepared</h3>
+                        <p class="mt-2 max-w-xl text-sm leading-relaxed text-blue-100">Browse past assessments, leaderboards, and your certificates while you wait.</p>
+                        <p class="mt-6 inline-flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all">
+                            Visit the hub
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </p>
+                    </a>
+                @endif
+
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
+                    <a href="{{ route('leaderboard.index') }}" class="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-primary-300 hover:shadow-card-hover dark:border-slate-600 dark:bg-slate-900 dark:hover:border-primary-700">
+                        <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100">Leaderboard</h3>
+                        <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">See who is leading this month's challenge.</p>
+                        <p class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary-700 dark:text-primary-300">View standings</p>
+                    </a>
+
+                    <a href="{{ route('assessments.index') }}" class="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-primary-300 hover:shadow-card-hover dark:border-slate-600 dark:bg-slate-900 dark:hover:border-primary-700">
+                        <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100">Practice Runs</h3>
+                        <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">Replay challenges unranked after your official attempt.</p>
+                        <p class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary-700 dark:text-primary-300">Open the hub</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+@endif
+
 <section class="py-16 sm:py-20 bg-white border-y border-slate-200 dark:bg-slate-800 dark:border-slate-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="eyebrow">About</p>

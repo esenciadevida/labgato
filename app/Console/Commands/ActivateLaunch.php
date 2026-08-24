@@ -26,6 +26,12 @@ class ActivateLaunch extends Command
         $settings->update(['main_site_status' => 'open']);
         LaunchSetting::flushCache();
 
+        // Assessments already marked "available" release with the launch;
+        // the notifier deduplicates so re-running is harmless.
+        foreach (\App\Models\Assessment::query()->where('results_status', 'available')->get() as $assessment) {
+            app(\App\Services\ResultsReleaseNotifier::class)->notifyReleased($assessment);
+        }
+
         Log::info('Launch activated automatically', ['launch_at' => $settings->launch_at->toIso8601String()]);
 
         $this->info('Launch activated automatically.');

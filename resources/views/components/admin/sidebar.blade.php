@@ -58,7 +58,7 @@
             </x-admin.navigation-item>
         </ul>
 
-        @if(Auth::user()->hasAnyPermission(['admin.full-access', 'questions.view', 'questions.import', 'categories.manage', 'integrity.view', 'certificates.view']))
+        @if(Auth::user()->hasAnyPermission(['admin.full-access', 'assessments.manage', 'questions.view', 'questions.import', 'categories.manage', 'integrity.view', 'certificates.view']))
             <div class="mt-6 pt-4 border-t border-white/10">
                 <div class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/35" x-show="!sidebarCollapsed || sidebarOpen">Assessments</div>
                 <ul class="space-y-0.5">
@@ -70,6 +70,16 @@
                     >
                         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </x-admin.navigation-item>
+                    <x-admin.navigation-item
+                        label="Assessments"
+                        href="{{ route('admin.assessments.index') }}"
+                        :active="str_starts_with($currentRoute, 'admin.assessments')"
+                        permission="assessments.manage"
+                    >
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
                         </svg>
                     </x-admin.navigation-item>
                     <x-admin.navigation-item

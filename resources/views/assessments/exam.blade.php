@@ -78,6 +78,12 @@
     </div>
 </header>
 
+@if($attempt->mode === 'practice')
+    <div class="border-b border-amber-300 bg-amber-50 px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide text-amber-800 dark:border-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+        Practice Run &mdash; not ranked. This attempt does not affect your official score, the leaderboard, or certificates.
+    </div>
+@endif
+
 <main class="mx-auto grid max-w-7xl gap-6 px-4 py-6 lg:grid-cols-[3fr_1fr]">
     <section class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
         <template x-for="(question, index) in questions" :key="question.id">

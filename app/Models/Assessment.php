@@ -96,12 +96,14 @@ class Assessment extends Model
 
     public function scopeOpen($query)
     {
+        $now = now();
+
         return $query->where('status', 'open')
-            ->where(function ($q) {
-                $q->whereNull('opens_at')->orWhere('opens_at', '<=', DB::raw('NOW()'));
+            ->where(function ($q) use ($now) {
+                $q->whereNull('opens_at')->orWhere('opens_at', '<=', $now);
             })
-            ->where(function ($q) {
-                $q->whereNull('closes_at')->orWhere('closes_at', '>=', DB::raw('NOW()'));
+            ->where(function ($q) use ($now) {
+                $q->whereNull('closes_at')->orWhere('closes_at', '>=', $now);
             });
     }
 

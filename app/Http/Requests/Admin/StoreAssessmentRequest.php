@@ -1,0 +1,160 @@
+<?php
+
+namespace App\Http\Requests\Admin;
+
+use App\Models\Assessment;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
+
+class StoreAssessmentRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    protected function prepareForValidation(): void
+    {
+        $slug = $this->input('slug');
+
+        $this->merge([
+            'slug' => filled($slug) ? Str::slug($slug) : Str::slug((string) $this->input('title')),
+        ]);
+
+        $blueprints = collect($this->input('blueprints', []))
+            ->filter(fn ($row) => is_array($row))
+            ->map(fn ($row, $index) => [
+                'question_category_id' => $row['question_category_id'] ?? null,
+                'include' => (int) filled($row['include'] ?? null),
+                'question_count' => (int) ($row['question_count'] ?? 0),
+                'easy_percent' => (int) ($row['easy_percent'] ?? 0),
+                'intermediate_percent' => (int) ($row['intermediate_percent'] ?? 0),
+                'advanced_percent' => (int) ($row['advanced_percent'] ?? 0),
+            ])
+            ->values()
+            ->all();
+
+        $this->merge(['blueprints' => $blueprints]);
+    }
+
+    public function rules(): array
+    {
+        return [
+            'title' => ['required', 'string', 'max:150'],
+            'slug' => ['required', 'string', 'max:150', 'alpha_dash', Rule::unique('assessments', 'slug')],
+            'description' => ['nullable', 'string', 'max:2000'],
+            'type' => ['required', Rule::in(Assessment::TYPES)],
+            'status' => ['required', Rule::in(Assessment::STATUSES)],
+            'duration_minutes' => ['required', 'integer', 'min:10', 'max:600'],
+            'total_questions' => ['required', 'integer', 'min:1', 'max:500'],
+            'opens_at' => ['nullable', 'date'],
+            'closes_at' => ['nullable', 'date', 'after_or_equal:opens_at'],
+            'pass_percentage' => ['nullable', 'numeric', 'min:0', 'max:100'],
+            'one_attempt_only' => ['nullable', 'boolean'],
+            'allow_practice' => ['nullable', 'boolean'],
+            'shuffle_questions' => ['nullable', 'boolean'],
+            'shuffle_options' => ['nullable', 'boolean'],
+            'fullscreen_required' => ['nullable', 'boolean'],
+            'certificate_enabled' => ['nullable', 'boolean'],
+            'results_available' => ['nullable', 'boolean'],
+            'answer_review_available' => ['nullable', 'boolean'],
+            'leaderboard_visible' => ['nullable', 'boolean'],
+            'blueprints' => ['nullable', 'array'],
+            'blueprints.*.question_category_id' => ['nullable', 'integer', 'exists:question_categories,id', 'distinct'],
+            'blueprints.*.include' => ['nullable', 'boolean'],
+            'blueprints.*.question_count' => ['nullable', 'integer', 'min:0', 'max:500'],
+            'blueprints.*.easy_percent' => ['nullable', 'integer', 'min:0', 'max:100'],
+            'blueprints.*.intermediate_percent' => ['nullable', 'integer', 'min:0', 'max:100'],
+            'blueprints.*.advanced_percent' => ['nullable', 'integer', 'min:0', 'max:100'],
+        ];
+    }
+
+    public function withValidator($validator): void
+    {
+        $validator->after(function ($validator) {
+            if ($validator->errors()->isNotEmpty()) {
+                return;
+            }
+
+            $included = collect($this->input('blueprints', []))
+                ->filter(fn (array $row) => (int) $row['include'] === 1);
+
+            foreach ($included as $index => $row) {
+                $sum = (int) $row['easy_percent'] + (int) $row['intermediate_percent'] + (int) $row['advanced_percent'];
+
+                if ($sum !== 100) {
+                    $categoryId = $row['question_category_id'];
+
+                    $validator->errors()->add(
+                        "blueprints.{$index}.easy_percent",
+                        "Difficulty percentages for \"{$this->categoryName($categoryId)}\" must sum to 100 (currently {$sum})."
+                    );
+                }
+            }
+
+            $planned = (int) $included->sum('question_count');
+            $total = (int) $this->input('total_questions');
+
+            if ($planned !== $total) {
+                $validator->errors()->add(
+                    'blueprints',
+                    "Blueprint question counts add up to {$planned}, but the assessment expects {$total}."
+                );
+            }
+        });
+    }
+
+    private function categoryName(?int $categoryId): string
+    {
+        return (string) \App\Models\QuestionCategory::find($categoryId)?->name ?? 'unknown subject';
+    }
+
+    /**
+     * Toggles and status flags mapped onto the real column names.
+     *
+     * @return array<string, mixed>
+     */
+    public function assessmentAttributes(): array
+    {
+        $statusFlag = fn (bool $on) => $on ? 'available' : 'locked';
+
+        return [
+            'title' => $this->input('title'),
+            'slug' => $this->input('slug'),
+            'description' => $this->input('description'),
+            'type' => $this->input('type'),
+            'status' => $this->input('status'),
+            'duration_minutes' => (int) $this->input('duration_minutes'),
+            'total_questions' => (int) $this->input('total_questions'),
+            'opens_at' => $this->filled('opens_at') ? $this->date('opens_at') : null,
+            'closes_at' => $this->filled('closes_at') ? $this->date('closes_at') : null,
+            'pass_percentage' => $this->filled('pass_percentage') ? $this->input('pass_percentage') : null,
+            'max_attempts' => $this->boolean('one_attempt_only') ? 1 : 2,
+            'allow_practice' => $this->boolean('allow_practice'),
+            'shuffle_questions' => $this->boolean('shuffle_questions'),
+            'shuffle_options' => $this->boolean('shuffle_options'),
+            'fullscreen_required' => $this->boolean('fullscreen_required'),
+            'certificate_enabled' => $this->boolean('certificate_enabled'),
+            'results_status' => $statusFlag($this->boolean('results_available')),
+            'answer_review_status' => $statusFlag($this->boolean('answer_review_available')),
+            'leaderboard_status' => $statusFlag($this->boolean('leaderboard_visible')),
+        ];
+    }
+
+    /** @return array<int, array<string, int>> */
+    public function includedBlueprints(): array
+    {
+        return collect($this->input('blueprints', []))
+            ->filter(fn (array $row) => (int) $row['include'] === 1)
+            ->map(fn (array $row) => [
+                'question_category_id' => (int) $row['question_category_id'],
+                'question_count' => max(0, (int) $row['question_count']),
+                'easy_percent' => (int) $row['easy_percent'],
+                'intermediate_percent' => (int) $row['intermediate_percent'],
+                'advanced_percent' => (int) $row['advanced_percent'],
+            ])
+            ->values()
+            ->all();
+    }
+}

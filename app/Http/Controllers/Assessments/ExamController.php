@@ -69,6 +69,7 @@ class ExamController extends Controller
             'blueprints' => $assessment->blueprints()->with('category')->get(),
             'canBegin' => $check['ok'],
             'blockReason' => $this->humanReason($check['reason']),
+            'canPractice' => $this->practiceAvailable($request, $assessment, null),
         ]);
     }
 
@@ -158,7 +159,38 @@ class ExamController extends Controller
         return view('assessments.submitted', [
             'attempt' => $attempt,
             'released' => $released,
+            'canPractice' => $this->practiceAvailable($request, $attempt->assessment, $attempt),
         ]);
+    }
+
+    /**
+     * Practice runs unlock after the site is live, the assessment allows them
+     * and is open, and the member has already banked an official attempt.
+     */
+    private function practiceAvailable(Request $request, Assessment $assessment, ?ExamAttempt $officialAttempt): bool
+    {
+        if (! LaunchSetting::current()->isLive() || ! LaunchSetting::current()->challenge_open) {
+            return false;
+        }
+
+        if (! $assessment->allow_practice || ! $assessment->isOpen()) {
+            return false;
+        }
+
+        if ($request->user() === null) {
+            return false;
+        }
+
+        $submitted = $officialAttempt !== null
+            ? in_array($officialAttempt->status, ['submitted', 'auto_submitted'], true) && $officialAttempt->mode === 'official'
+            : ExamAttempt::query()
+                ->where('user_id', $request->user()->id)
+                ->where('assessment_id', $assessment->id)
+                ->where('mode', 'official')
+                ->whereIn('status', ['submitted', 'auto_submitted'])
+                ->exists();
+
+        return $submitted;
     }
 
     public function saveAnswer(Request $request, ExamAttempt $attempt): JsonResponse

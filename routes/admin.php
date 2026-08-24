@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdministratorController;
 use App\Http\Controllers\Admin\AnnouncementController;
+use App\Http\Controllers\Admin\AssessmentController;
 use App\Http\Controllers\Admin\AuditLogController;
 use App\Http\Controllers\Admin\BulkActionController;
 use App\Http\Controllers\Admin\CalculatorController;
@@ -35,6 +36,15 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
     Route::middleware('permission:admin.full-access')->group(function () {
         Route::get('/launch', [LaunchControlController::class, 'index'])->name('launch');
         Route::put('/launch', [LaunchControlController::class, 'update'])->name('launch.update');
+    });
+
+    Route::middleware('permission:assessments.manage')->group(function () {
+        Route::get('/assessments', [AssessmentController::class, 'index'])->name('assessments.index');
+        Route::get('/assessments/create', [AssessmentController::class, 'create'])->name('assessments.create');
+        Route::post('/assessments', [AssessmentController::class, 'store'])->name('assessments.store');
+        Route::get('/assessments/{assessment}/edit', [AssessmentController::class, 'edit'])->name('assessments.edit');
+        Route::put('/assessments/{assessment}', [AssessmentController::class, 'update'])->name('assessments.update');
+        Route::post('/assessments/{assessment}/status', [AssessmentController::class, 'status'])->name('assessments.status');
     });
 
     Route::post('/bulk/{type}', [BulkActionController::class, 'process'])->name('bulk');

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Assessment;
 use App\Models\LaunchSetting;
+use App\Services\ResultsReleaseNotifier;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -36,6 +38,8 @@ class LaunchControlController extends Controller
             'main_site_status' => ['required', Rule::in(['locked', 'open'])],
         ]);
 
+        $previousResultsStatus = LaunchSetting::current()->results_status;
+
         LaunchSetting::current()->update([
             'launch_at' => \Carbon\Carbon::parse(
                 $validated['launch_date'].' '.$validated['launch_time'],
@@ -53,8 +57,24 @@ class LaunchControlController extends Controller
 
         LaunchSetting::flushCache();
 
+        if ($previousResultsStatus === 'locked' && $validated['results_status'] === 'available') {
+            $this->notifyReleasedAssessments();
+        }
+
         return redirect()->route('admin.launch')
             ->with('success', 'Launch settings updated.');
+    }
+
+    /**
+     * Global results just unlocked; every assessment already flagged
+     * "available" becomes visible to its participants. The notifier is
+     * idempotent, so assessments without participants are no-ops.
+     */
+    private function notifyReleasedAssessments(): void
+    {
+        foreach (Assessment::query()->where('results_status', 'available')->get() as $assessment) {
+            app(ResultsReleaseNotifier::class)->notifyReleased($assessment);
+        }
     }
 
     private function timezoneOptions(): array

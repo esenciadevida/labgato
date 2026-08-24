@@ -34,6 +34,17 @@
             </div>
         @endif
 
+        @if($canPractice ?? false)
+            <form method="POST" action="{{ route('assessments.start', $attempt->assessment) }}" class="mt-4">
+                @csrf
+                <input type="hidden" name="mode" value="practice">
+                <button type="submit" class="inline-flex items-center justify-center rounded-lg border border-slate-300 px-6 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
+                    Start Practice Run
+                </button>
+                <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">Practice runs are not ranked and do not affect your score.</p>
+            </form>
+        @endif
+
         <div class="mt-8 border-t border-slate-200 pt-6 dark:border-slate-700">
             <a href="{{ route('account.dashboard') }}"
                class="inline-flex items-center justify-center rounded-lg border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
