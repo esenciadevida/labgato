@@ -56,17 +56,55 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                 </svg>
             </x-admin.navigation-item>
-            <x-admin.navigation-item
-                label="Launch Control"
-                href="{{ route('admin.launch') }}"
-                :active="str_starts_with($currentRoute, 'admin.launch')"
-                permission="admin.full-access"
-            >
-                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                </svg>
-            </x-admin.navigation-item>
         </ul>
+
+        @if(Auth::user()->hasAnyPermission(['admin.full-access', 'questions.view', 'questions.import', 'categories.manage']))
+            <div class="mt-6 pt-4 border-t border-white/10">
+                <div class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/35" x-show="!sidebarCollapsed || sidebarOpen">Assessments</div>
+                <ul class="space-y-0.5">
+                    <x-admin.navigation-item
+                        label="Launch Control"
+                        href="{{ route('admin.launch') }}"
+                        :active="str_starts_with($currentRoute, 'admin.launch')"
+                        permission="admin.full-access"
+                    >
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </x-admin.navigation-item>
+                    <x-admin.navigation-item
+                        label="Questions"
+                        href="{{ route('admin.questions.index') }}"
+                        :active="str_starts_with($currentRoute, 'admin.questions') && ! str_contains($currentRoute, 'import') && ! str_contains($currentRoute, 'categories')"
+                        permission="questions.view"
+                    >
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/>
+                        </svg>
+                    </x-admin.navigation-item>
+                    <x-admin.navigation-item
+                        label="Import Questions"
+                        href="{{ route('admin.questions.import') }}"
+                        :active="str_starts_with($currentRoute, 'admin.questions.import')"
+                        permission="questions.import"
+                    >
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"/>
+                        </svg>
+                    </x-admin.navigation-item>
+                    <x-admin.navigation-item
+                        label="Subjects"
+                        href="{{ route('admin.question-categories.index') }}"
+                        :active="str_starts_with($currentRoute, 'admin.question-categories')"
+                        permission="categories.manage"
+                    >
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"/>
+                        </svg>
+                    </x-admin.navigation-item>
+                </ul>
+            </div>
+        @endif
 
         @if(Auth::user()->hasAnyPermission(['tools.view', 'calculators.view', 'reference-ranges.view', 'sops.view', 'interpretation.view', 'knowledge.view', 'contributions.review']))
             <div class="mt-6 pt-4 border-t border-white/10">

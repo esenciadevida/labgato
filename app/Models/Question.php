@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Storage;
 
 class Question extends Model
 {
@@ -13,7 +15,7 @@ class Question extends Model
 
     public const DIFFICULTIES = ['easy', 'intermediate', 'advanced'];
 
-    public const STATUSES = ['active', 'inactive', 'archived'];
+    public const STATUSES = ['draft', 'active', 'archived'];
 
     protected $fillable = [
         'question_category_id',
@@ -27,6 +29,25 @@ class Question extends Model
         'reference',
         'status',
     ];
+
+    public function usesImage(): bool
+    {
+        return in_array($this->question_type, ['image', 'text_image'], true);
+    }
+
+    public function getImageUrlAttribute(): ?string
+    {
+        return $this->image_path ? Storage::disk('public')->url($this->image_path) : null;
+    }
+
+    public function usedInExams(): bool
+    {
+        if (! Schema::hasTable('exam_answers')) {
+            return false;
+        }
+
+        return ExamAnswer::where('question_id', $this->id)->exists();
+    }
 
     public function category(): BelongsTo
     {

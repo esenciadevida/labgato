@@ -56,6 +56,10 @@ class RolePermissionSeeder extends Seeder
             'knowledge.publish' => ['name' => 'Publish Knowledge', 'group' => 'Knowledge'],
             'knowledge.delete' => ['name' => 'Delete Knowledge', 'group' => 'Knowledge'],
             'reference-ranges.import' => ['name' => 'Import Reference Ranges CSV', 'group' => 'Reference Ranges'],
+            'questions.view' => ['name' => 'View Questions', 'group' => 'Questions'],
+            'questions.manage' => ['name' => 'Manage Questions', 'group' => 'Questions'],
+            'questions.import' => ['name' => 'Import Questions CSV', 'group' => 'Questions'],
+            'categories.manage' => ['name' => 'Manage Question Subjects', 'group' => 'Questions'],
             'contributions.review' => ['name' => 'Review Contributions', 'group' => 'Contributions'],
             'contact-messages.view' => ['name' => 'View Contact Messages', 'group' => 'Contact Messages'],
             'contact-messages.reply' => ['name' => 'Reply to Contact Messages', 'group' => 'Contact Messages'],
@@ -114,6 +118,10 @@ class RolePermissionSeeder extends Seeder
             $permissionModels['contributions.review'],
             $permissionModels['taxonomy.view'],
             $permissionModels['taxonomy.manage'],
+            $permissionModels['questions.view'],
+            $permissionModels['questions.manage'],
+            $permissionModels['questions.import'],
+            $permissionModels['categories.manage'],
             $permissionModels['analytics.view'],
         ]);
 
@@ -130,6 +138,7 @@ class RolePermissionSeeder extends Seeder
             $permissionModels['interpretation.view'],
             $permissionModels['knowledge.view'],
             $permissionModels['taxonomy.view'],
+            $permissionModels['questions.view'],
             $permissionModels['audit-logs.view'],
             $permissionModels['analytics.view'],
         ]);

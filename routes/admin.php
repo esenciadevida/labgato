@@ -14,6 +14,9 @@ use App\Http\Controllers\Admin\KnowledgeController;
 use App\Http\Controllers\Admin\LaboratoryToolController;
 use App\Http\Controllers\Admin\LaunchControlController;
 use App\Http\Controllers\Admin\PopupController;
+use App\Http\Controllers\Admin\QuestionCategoryController;
+use App\Http\Controllers\Admin\QuestionController;
+use App\Http\Controllers\Admin\QuestionImportController;
 use App\Http\Controllers\Admin\ReferenceRangeController;
 use App\Http\Controllers\Admin\ReferenceRangeImportController;
 use App\Http\Controllers\Admin\RoleController;
@@ -52,6 +55,42 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
 
     Route::middleware('permission:calculators.delete')->group(function () {
         Route::delete('/calculators/{calculator}', [CalculatorController::class, 'destroy'])->name('calculators.destroy');
+    });
+
+    Route::middleware('permission:questions.view')->group(function () {
+        Route::get('/questions', [QuestionController::class, 'index'])->name('questions.index');
+    });
+
+    Route::middleware('permission:questions.import')->group(function () {
+        Route::get('/questions/import', [QuestionImportController::class, 'showImportForm'])->name('questions.import');
+        Route::get('/questions/import/template', [QuestionImportController::class, 'template'])->name('questions.import.template');
+        Route::post('/questions/import/preview', [QuestionImportController::class, 'preview'])->name('questions.import.preview');
+        Route::post('/questions/import', [QuestionImportController::class, 'import'])->name('questions.import.confirm');
+    });
+
+    Route::middleware('permission:categories.manage')->group(function () {
+        Route::get('/questions/subjects', [QuestionCategoryController::class, 'index'])->name('question-categories.index');
+        Route::post('/questions/subjects', [QuestionCategoryController::class, 'store'])->name('question-categories.store');
+        Route::put('/questions/subjects/{category}', [QuestionCategoryController::class, 'update'])->name('question-categories.update');
+        Route::post('/questions/subjects/{category}/toggle', [QuestionCategoryController::class, 'toggle'])->name('question-categories.toggle');
+    });
+
+    Route::middleware('permission:questions.manage')->group(function () {
+        Route::get('/questions/create', [QuestionController::class, 'create'])->name('questions.create');
+        Route::post('/questions', [QuestionController::class, 'store'])->name('questions.store');
+        Route::post('/questions/bulk', [QuestionController::class, 'bulk'])->name('questions.bulk');
+
+        Route::put('/questions/{question}', [QuestionController::class, 'update'])->name('questions.update');
+        Route::delete('/questions/{question}', [QuestionController::class, 'destroy'])->name('questions.destroy');
+        Route::post('/questions/{question}/archive', [QuestionController::class, 'archive'])->name('questions.archive');
+        Route::post('/questions/{question}/restore', [QuestionController::class, 'restore'])->name('questions.restore');
+    });
+
+    Route::middleware('permission:questions.view')->group(function () {
+        Route::get('/questions/{question}', [QuestionController::class, 'show'])->name('questions.show');
+        Route::middleware('permission:questions.manage')->group(function () {
+            Route::get('/questions/{question}/edit', [QuestionController::class, 'edit'])->name('questions.edit');
+        });
     });
 
     Route::middleware('permission:reference-ranges.view')->group(function () {
