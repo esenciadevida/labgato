@@ -58,7 +58,7 @@
             </x-admin.navigation-item>
         </ul>
 
-        @if(Auth::user()->hasAnyPermission(['admin.full-access', 'questions.view', 'questions.import', 'categories.manage', 'integrity.view']))
+        @if(Auth::user()->hasAnyPermission(['admin.full-access', 'questions.view', 'questions.import', 'categories.manage', 'integrity.view', 'certificates.view']))
             <div class="mt-6 pt-4 border-t border-white/10">
                 <div class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/35" x-show="!sidebarCollapsed || sidebarOpen">Assessments</div>
                 <ul class="space-y-0.5">
@@ -110,6 +110,16 @@
                     >
                         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+                        </svg>
+                    </x-admin.navigation-item>
+                    <x-admin.navigation-item
+                        label="Certificates"
+                        href="{{ route('admin.certificates.index') }}"
+                        :active="str_starts_with($currentRoute, 'admin.certificates')"
+                        permission="certificates.view"
+                    >
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h3m4.538 2.539l2.34 2.339a1 1 0 001.707-.707V5.5A2.5 2.5 0 0018 3H6a2.5 2.5 0 00-2.5 2.5v14.671a1 1 0 001.707.707l2.34-2.339A1 1 0 018.25 18.5h7.5a1 1 0 01.788.539z"/>
                         </svg>
                     </x-admin.navigation-item>
                 </ul>

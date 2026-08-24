@@ -204,28 +204,29 @@ class AssessmentSchemaTest extends TestCase
         Certificate::create([
             'user_id' => $user->id,
             'exam_attempt_id' => $attempt->id,
-            'certificate_number' => 'LG-ASCPI-2026-000001',
-            'verification_uuid' => '11111111-1111-4111-8111-111111111111',
-            'title' => 'ASCPI Challenge 2026',
-            'score' => 82,
-            'percentage' => '82.00',
+            'assessment_id' => $assessment->id,
+            'certificate_number' => 'LGT-2026-00001',
+            'verification_code' => 'ABCDEFGH23',
+            'type' => 'achievement',
+            'score_percent' => 82.00,
+            'rank_at_issue' => 1,
             'issued_at' => now(),
         ]);
 
         Certificate::create([
             'user_id' => $user->id,
             'exam_attempt_id' => $revokedAttempt->id,
-            'certificate_number' => 'LG-ASCPI-2026-000002',
-            'verification_uuid' => '22222222-2222-4222-8222-222222222222',
-            'title' => 'ASCPI Challenge 2026',
-            'score' => 90,
-            'percentage' => '90.00',
+            'assessment_id' => $assessment->id,
+            'certificate_number' => 'LGT-2026-00002',
+            'verification_code' => 'JKLMNPQR56',
+            'type' => 'participation',
+            'score_percent' => 90.00,
             'issued_at' => now(),
-            'revoked' => true,
+            'revoked_at' => now(),
         ]);
 
         $this->assertSame(1, Certificate::valid()->count());
-        $this->assertSame('LG-ASCPI-2026-000001', Certificate::valid()->first()->certificate_number);
+        $this->assertSame('LGT-2026-00001', Certificate::valid()->first()->certificate_number);
         $this->assertSame(2, $user->certificates()->count());
         $this->assertSame($attempt->id, $user->certificates()->valid()->first()->exam_attempt_id);
     }

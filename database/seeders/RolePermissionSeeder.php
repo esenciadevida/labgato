@@ -61,6 +61,8 @@ class RolePermissionSeeder extends Seeder
             'questions.import' => ['name' => 'Import Questions CSV', 'group' => 'Questions'],
             'categories.manage' => ['name' => 'Manage Question Subjects', 'group' => 'Questions'],
             'integrity.view' => ['name' => 'View Exam Integrity', 'group' => 'Questions'],
+            'certificates.view' => ['name' => 'View Certificates', 'group' => 'Certificates'],
+            'certificates.revoke' => ['name' => 'Revoke Certificates', 'group' => 'Certificates'],
             'contributions.review' => ['name' => 'Review Contributions', 'group' => 'Contributions'],
             'contact-messages.view' => ['name' => 'View Contact Messages', 'group' => 'Contact Messages'],
             'contact-messages.reply' => ['name' => 'Reply to Contact Messages', 'group' => 'Contact Messages'],

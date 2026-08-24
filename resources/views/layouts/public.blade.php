@@ -22,6 +22,7 @@
         :description="$metaDescription ?? config('app.name') . ' - Professional Laboratory Toolkit'"
         :noindex="($metaNoindex ?? false) || $filteredRequest"
         :ogType="$ogType ?? 'website'"
+        :ogImage="$ogImage ?? null"
         :publishedTime="$publishedTime ?? null"
         :modifiedTime="$modifiedTime ?? null"
         :authorName="$authorName ?? null"

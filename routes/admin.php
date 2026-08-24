@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AuditLogController;
 use App\Http\Controllers\Admin\BulkActionController;
 use App\Http\Controllers\Admin\CalculatorController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CertificateAdminController;
 use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\ContributionReviewController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -91,6 +92,13 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
         Route::get('/integrity', [IntegrityController::class, 'index'])->name('integrity.index');
         Route::get('/integrity/{attempt}', [IntegrityController::class, 'show'])->name('integrity.show');
         Route::post('/integrity/{attempt}/status', [IntegrityController::class, 'updateStatus'])->name('integrity.status');
+    });
+
+    Route::middleware('permission:certificates.view')->group(function () {
+        Route::get('/certificates', [CertificateAdminController::class, 'index'])->name('certificates.index');
+        Route::post('/certificates/{certificate}/revoke', [CertificateAdminController::class, 'revoke'])
+            ->middleware('permission:certificates.revoke')
+            ->name('certificates.revoke');
     });
 
     Route::middleware('permission:questions.view')->group(function () {

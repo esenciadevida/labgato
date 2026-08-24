@@ -6,6 +6,7 @@ use App\Http\Controllers\ContentPreviewController;
 use App\Http\Controllers\CronTickController;
 use App\Http\Controllers\LaunchController;
 use App\Http\Controllers\Member\MessageController;
+use App\Http\Controllers\Assessments\CertificateController;
 use App\Http\Controllers\Assessments\ExamController;
 use App\Http\Controllers\Assessments\IntegrityEventController;
 use App\Http\Controllers\Assessments\ResultController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\PublicSite\ReferenceRangeController;
 use App\Http\Controllers\PublicSite\SearchController;
 use App\Http\Controllers\PublicSite\SeoController;
 use App\Http\Controllers\PublicSite\SopController;
+use App\Http\Controllers\PublicSite\VerifyController;
 use App\Mail\ContactReplyMail;
 use App\Mail\ContributionStatusMail;
 use App\Mail\ResetPasswordEmail;
@@ -45,6 +47,9 @@ Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
 Route::get('/leaderboard', [LeaderboardController::class, 'index'])->name('leaderboard.index');
 Route::get('/leaderboard/{assessment:slug}', [LeaderboardController::class, 'show'])->name('leaderboard.show');
 
+Route::get('/verify/{code}', [VerifyController::class, 'verify'])->name('certificates.verify');
+Route::get('/share/{code}', [VerifyController::class, 'share'])->name('certificates.share');
+
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactController::class, 'store'])->middleware(['honeypot', 'throttle:contact'])->name('contact.store');
 
@@ -54,6 +59,11 @@ Route::middleware(['auth', 'active.user', 'member'])->group(function () {
 
 Route::middleware(['auth', 'active.user', 'member'])->group(function () {
     Route::get('/assessments/my-results', [ResultController::class, 'myResults'])->name('assessments.my-results');
+    Route::get('/assessments/my-certificates', [CertificateController::class, 'myCertificates'])->name('certificates.my');
+    Route::get('/exam/{attempt}/certificate/download', [CertificateController::class, 'download'])
+        ->name('certificates.download');
+    Route::get('/exam/{attempt}/certificate/share', [CertificateController::class, 'shareRedirect'])
+        ->name('certificates.share-redirect');
     Route::get('/exam/{attempt}/result', [ResultController::class, 'show'])->name('exams.result');
     Route::get('/assessments/{assessment}', [ExamController::class, 'showIntro'])->name('assessments.show');
     Route::post('/assessments/{assessment}/start', [ExamController::class, 'start'])

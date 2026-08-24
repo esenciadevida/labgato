@@ -2,6 +2,10 @@
 
 @section('title', 'Result - ' . config('app.name'))
 
+@php
+    $certificateType = app(\App\Services\CertificateService::class)->eligibleType($attempt);
+@endphp
+
 @section('content')
 <main class="mx-auto max-w-4xl px-4 py-10">
     @if(! $released)
@@ -40,6 +44,25 @@
                 @endif
             </div>
         </div>
+
+        @if($certificateType !== null)
+            <div class="mt-6 flex flex-wrap gap-3">
+                <a href="{{ route('certificates.download', $attempt) }}"
+                   class="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                    Download Certificate
+                </a>
+                <a href="{{ route('certificates.share-redirect', $attempt) }}"
+                   class="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 12.684a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                    </svg>
+                    Share My Result
+                </a>
+            </div>
+        @endif
 
         <section class="mt-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
             <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Subject Performance</h2>
