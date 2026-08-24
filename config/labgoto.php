@@ -140,6 +140,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Cron Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Shared secret for the HTTP cron tick endpoint, used when the hosting
+    | panel's scheduler cannot invoke the PHP 8.4 CLI binary directly.
+    |
+    */
+
+    'cron' => [
+        'secret' => env('CRON_SECRET'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Seed Configuration
     |--------------------------------------------------------------------------
     */

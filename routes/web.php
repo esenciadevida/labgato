@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\ContentImageController;
 use App\Http\Controllers\ContentPreviewController;
+use App\Http\Controllers\CronTickController;
 use App\Http\Controllers\Member\MessageController;
 use App\Http\Controllers\PublicSite\CalculatorController;
 use App\Http\Controllers\PublicSite\ContactController;
@@ -87,6 +88,10 @@ Route::prefix('sops')->name('public.sops.')->group(function () {
     Route::get('/', [SopController::class, 'index'])->name('index');
     Route::get('/{slug}', [SopController::class, 'show'])->name('show');
 });
+
+Route::get('/cron/{secret}/{task}', CronTickController::class)
+    ->middleware('throttle:10,1')
+    ->name('cron.tick');
 
 Route::prefix('legal')->name('legal.')->group(function () {
     Route::get('/privacy-policy', [LegalController::class, 'privacyPolicy'])->name('privacy-policy');
