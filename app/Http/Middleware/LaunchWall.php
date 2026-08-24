@@ -38,6 +38,13 @@ class LaunchWall
         'verification',
         'up/',
         'legal/',
+        // Exam hub stays reachable pre-launch so registered members can
+        // take open challenges (access still gated by challenge_open and the
+        // assessment being open, plus the member middleware).
+        'assessments/',
+        'exam/',
+        'leaderboard/',
+        'certificates/',
     ];
 
     public function handle(Request $request, Closure $next): Response
