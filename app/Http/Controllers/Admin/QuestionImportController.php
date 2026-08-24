@@ -72,8 +72,14 @@ class QuestionImportController extends Controller
 
         Session::forget('questions_import');
 
+        $message = "Imported {$result['imported']} question(s) as {$status}.";
+
+        if (! empty($result['warnings'])) {
+            session()->flash('warning', implode(' ', $result['warnings']));
+        }
+
         return redirect()
             ->route('admin.questions.index')
-            ->with('success', "Imported {$result['imported']} question(s) as {$status}.");
+            ->with('success', $message);
     }
 }

@@ -11,6 +11,8 @@ use Database\Seeders\RolePermissionSeeder;
 use Database\Seeders\SettingsSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class QuestionImportTest extends TestCase
@@ -150,5 +152,79 @@ class QuestionImportTest extends TestCase
         $this->assertSame(['First', 'Third'], $options->pluck('text')->all());
         $this->assertTrue((bool) $options[1]->is_correct);
         $this->assertFalse((bool) $options[0]->is_correct);
+    }
+
+    /* ------------------------------------------------------- image columns */
+
+    public function test_template_includes_optional_image_columns(): void
+    {
+        $content = $this->actingAs($this->superAdmin)
+            ->get('/admin/questions/import/template')
+            ->getContent();
+
+        $this->assertStringContainsString(',image_url,image_alt', $content);
+    }
+
+    public function test_image_row_is_downloaded_and_attached_as_text_image(): void
+    {
+        Storage::fake('public');
+        Http::fake([
+            'https://example.com/*' => Http::response(base64_decode(
+                'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=='
+            ), 200, ['Content-Type' => 'image/png']),
+        ]);
+
+        $this->csvWithCategories();
+
+        $header = 'category,type,difficulty,stem,option_a,option_b,option_c,option_d,correct_option,explanation,image_url,image_alt';
+        $csv = implode("\n", [
+            $header,
+            'Hematology,text,easy,Blood film question,One,Two,,D,A,,https://example.com/film.png,A metamyelocyte',
+        ]);
+
+        $this->actingAs($this->superAdmin)
+            ->post('/admin/questions/import/preview', ['file' => $this->uploadFromString($csv)])
+            ->assertSee('1 valid');
+
+        $this->actingAs($this->superAdmin)->post('/admin/questions/import');
+
+        $question = Question::firstOrFail();
+        $this->assertSame('text_image', $question->question_type);
+        $this->assertNotNull($question->image_path);
+        $this->assertSame('A metamyelocyte', $question->image_alt);
+        Storage::disk('public')->assertExists($question->image_path);
+    }
+
+    public function test_invalid_local_image_reference_flags_the_row(): void
+    {
+        Storage::fake('public');
+        $this->csvWithCategories();
+
+        $header = 'category,type,difficulty,stem,option_a,option_b,option_c,option_d,correct_option,explanation,image_url,image_alt';
+        $csv = implode("\n", [
+            $header,
+            'Hematology,text,easy,Bad image row,One,Two,,D,A,,questions/missing.png,',
+        ]);
+
+        $this->actingAs($this->superAdmin)
+            ->post('/admin/questions/import/preview', ['file' => $this->uploadFromString($csv)])
+            ->assertOk()
+            ->assertSee('neither a valid http(s) URL');
+    }
+
+    public function test_calculation_rows_reject_images(): void
+    {
+        $this->csvWithCategories();
+
+        $header = 'category,type,difficulty,stem,option_a,option_b,option_c,option_d,correct_option,explanation,image_url,image_alt';
+        $csv = implode("\n", [
+            $header,
+            'Clinical Chemistry,calculation,easy,Gap math with image,Low,High,,,A,,https://example.com/x.png,',
+        ]);
+
+        $this->actingAs($this->superAdmin)
+            ->post('/admin/questions/import/preview', ['file' => $this->uploadFromString($csv)])
+            ->assertOk()
+            ->assertSee('cannot be combined with image_url');
     }
 }

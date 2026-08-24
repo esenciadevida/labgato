@@ -68,7 +68,7 @@
             </div>
 
             <a
-                href="{{ route('notifications.index') }}"
+                href="{{ auth()->user()?->isAdmin() ? route('admin.notifications.index') : route('notifications.index') }}"
                 role="menuitem"
                 class="block border-t border-slate-100 px-4 py-2.5 text-center text-sm font-medium text-primary-700 hover:bg-slate-50 dark:border-slate-700 dark:text-primary-400 dark:hover:bg-slate-700"
             >View all notifications</a>

@@ -27,10 +27,23 @@ class IntegrityController extends Controller
             ->paginate(25)
             ->withQueryString();
 
+        $counts = ExamAttempt::query()
+            ->selectRaw('count(*) as all_count')
+            ->selectRaw("sum(case when integrity_status = 'normal' then 1 else 0 end) as normal_count")
+            ->selectRaw("sum(case when integrity_status = 'review' then 1 else 0 end) as review_count")
+            ->selectRaw("sum(case when integrity_status = 'high_risk' then 1 else 0 end) as high_risk_count")
+            ->first();
+
         return view('admin.integrity.index', [
             'attempts' => $attempts,
             'status' => $status,
             'search' => $search,
+            'counts' => [
+                '' => (int) ($counts->all_count ?? 0),
+                'normal' => (int) ($counts->normal_count ?? 0),
+                'review' => (int) ($counts->review_count ?? 0),
+                'high_risk' => (int) ($counts->high_risk_count ?? 0),
+            ],
         ]);
     }
 

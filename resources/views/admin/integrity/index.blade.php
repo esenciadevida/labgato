@@ -36,10 +36,11 @@
         <div class="flex flex-wrap gap-1.5">
             @foreach($statusTabs as $tabStatus => $label)
                 <a href="{{ $filterUrl($tabStatus) }}"
-                   class="rounded-lg px-3 py-1.5 text-sm font-medium transition {{ ($status ?? '') === $tabStatus
+                   class="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition {{ ($status ?? '') === $tabStatus
                        ? 'bg-blue-700 text-white dark:bg-blue-600'
                        : 'border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800' }}">
                     {{ $label }}
+                    <span class="rounded-full px-1.5 py-0.5 text-[10px] font-semibold {{ ($status ?? '') === $tabStatus ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400' }}">{{ $counts[$tabStatus] ?? 0 }}</span>
                 </a>
             @endforeach
         </div>
@@ -102,8 +103,13 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="px-4 py-12 text-center text-sm text-slate-500 dark:text-slate-400">
-                                No attempts found.
+                            <td colspan="8" class="px-4 py-12 text-center">
+                                <p class="text-sm font-medium text-slate-600 dark:text-slate-300">
+                                    {{ $search !== '' ? 'No attempts match your search.' : 'No attempts yet.' }}
+                                </p>
+                                <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">
+                                    Attempts appear here as soon as candidates start taking assessments, with integrity events flagged automatically.
+                                </p>
                             </td>
                         </tr>
                     @endforelse

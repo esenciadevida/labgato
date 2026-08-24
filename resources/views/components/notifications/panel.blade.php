@@ -187,7 +187,7 @@
 
             <div class="shrink-0 border-t border-slate-200 bg-slate-50/50 dark:border-slate-700 dark:bg-slate-800/50">
                 <a
-                    href="{{ route('notifications.index') }}"
+                    href="{{ auth()->user()?->isAdmin() ? route('admin.notifications.index') : route('notifications.index') }}"
                     class="flex items-center justify-center gap-1.5 px-4 py-2.5 text-center text-sm font-medium text-primary-700 transition-colors hover:bg-primary-50 dark:text-primary-400 dark:hover:bg-slate-700/60"
                     @click="close()"
                 >

@@ -23,7 +23,7 @@
                     </span>
                     <div>
                         <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-100">Step 1 — Download the template</h3>
-                        <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">The template includes two example rows and the exact column structure.</p>
+                        <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">The template includes three example rows and the exact column structure, including the optional image columns.</p>
                     </div>
                 </div>
 
@@ -108,6 +108,8 @@
                         ['option_a..option_d', 'Option texts — at least A and B required'],
                         ['correct_option', 'Letter of the correct option: A, B, C or D'],
                         ['explanation', 'Optional rationale'],
+                        ['image_url', 'Optional. A public http(s) link to the question image (png, jpg, gif, webp — max 8MB), which is downloaded and attached automatically. Rows with an image should use the text_image or image type; a type of text is upgraded automatically.'],
+                        ['image_alt', 'Optional alt text describing the image for accessibility'],
                     ] as [$column, $hint])
                         <li class="flex items-start gap-2.5">
                             <svg class="mt-0.5 h-4 w-4 shrink-0 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">

@@ -10,6 +10,7 @@ use App\Models\AssessmentBlueprint;
 use App\Models\QuestionCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class AssessmentController extends Controller
 {
@@ -77,12 +78,70 @@ class AssessmentController extends Controller
     public function status(Request $request, Assessment $assessment)
     {
         $validated = $request->validate([
-            'status' => ['required', 'in:scheduled,open,closed,archived'],
+            'status' => ['required', 'in:draft,scheduled,open,closed,archived'],
         ]);
 
         $assessment->update(['status' => $validated['status']]);
 
         return back()->with('success', "Assessment status set to {$validated['status']}.");
+    }
+
+    public function duplicate(Assessment $assessment)
+    {
+        $copy = Assessment::create([
+            ...$assessment->only([
+                'type', 'duration_minutes', 'total_questions', 'pass_percentage',
+                'opens_at', 'closes_at', 'max_attempts', 'allow_practice',
+                'shuffle_questions', 'shuffle_options', 'fullscreen_required',
+                'certificate_enabled',
+            ]),
+            'title' => $assessment->title.' (Copy)',
+            'slug' => $this->uniqueSlug($assessment->slug.'-copy'),
+            'status' => 'draft',
+        ]);
+
+        foreach ($assessment->blueprints as $blueprint) {
+            AssessmentBlueprint::create([
+                ...$blueprint->only(['question_category_id', 'question_count', 'easy_percent', 'intermediate_percent', 'advanced_percent']),
+                'assessment_id' => $copy->id,
+            ]);
+        }
+
+        return redirect()
+            ->route('admin.assessments.edit', $copy)
+            ->with('success', "Duplicated as \"{$copy->title}\". It is a draft - adjust and open it when ready.");
+    }
+
+    public function destroy(Assessment $assessment)
+    {
+        if ($assessment->attempts()->exists()) {
+            return back()->with('error', 'This assessment already has attempts. Archive it instead of deleting.');
+        }
+
+        if ($assessment->status === 'open') {
+            return back()->with('error', 'Close this assessment before deleting it.');
+        }
+
+        $title = $assessment->title;
+        $assessment->blueprints()->delete();
+        $assessment->delete();
+
+        return redirect()
+            ->route('admin.assessments.index')
+            ->with('success', "Assessment \"{$title}\" deleted.");
+    }
+
+    private function uniqueSlug(string $base): string
+    {
+        $slug = Str::slug($base);
+        $candidate = $slug;
+        $suffix = 2;
+
+        while (Assessment::where('slug', $candidate)->exists()) {
+            $candidate = $slug.'-'.$suffix++;
+        }
+
+        return $candidate;
     }
 
     private function syncBlueprints(Assessment $assessment, array $rows): void

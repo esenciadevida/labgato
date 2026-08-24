@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\IntegrityController;
 use App\Http\Controllers\Admin\KnowledgeController;
 use App\Http\Controllers\Admin\LaboratoryToolController;
 use App\Http\Controllers\Admin\LaunchControlController;
+use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\PopupController;
 use App\Http\Controllers\Admin\QuestionCategoryController;
 use App\Http\Controllers\Admin\QuestionController;
@@ -33,6 +34,8 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.user', 'admin.inactivity'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('permission:dashboard.view')->name('dashboard');
 
+    Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
+
     Route::middleware('permission:admin.full-access')->group(function () {
         Route::get('/launch', [LaunchControlController::class, 'index'])->name('launch');
         Route::put('/launch', [LaunchControlController::class, 'update'])->name('launch.update');
@@ -45,6 +48,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
         Route::get('/assessments/{assessment}/edit', [AssessmentController::class, 'edit'])->name('assessments.edit');
         Route::put('/assessments/{assessment}', [AssessmentController::class, 'update'])->name('assessments.update');
         Route::post('/assessments/{assessment}/status', [AssessmentController::class, 'status'])->name('assessments.status');
+        Route::post('/assessments/{assessment}/duplicate', [AssessmentController::class, 'duplicate'])->name('assessments.duplicate');
+        Route::delete('/assessments/{assessment}', [AssessmentController::class, 'destroy'])->name('assessments.destroy');
     });
 
     Route::post('/bulk/{type}', [BulkActionController::class, 'process'])->name('bulk');

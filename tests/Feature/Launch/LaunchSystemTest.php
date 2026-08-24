@@ -61,9 +61,10 @@ class LaunchSystemTest extends TestCase
         $this->actingAs($member)
             ->get(route('launch.dashboard'))
             ->assertOk()
-            ->assertSee('Welcome to Labgoto, '.$member->name)
+            ->assertSee('Welcome, '.$member->name)
             ->assertSee('You are registered for the Labgoto launch.')
-            ->assertSee('Locked');
+            ->assertSee('Locked')
+            ->assertSee('bg-gradient-to-b from-primary-950', false);
     }
 
     public function test_pre_launch_super_admin_can_reach_inner_pages_and_launch_control(): void

@@ -6,6 +6,8 @@ use App\Models\Question;
 use App\Models\QuestionCategory;
 use App\Models\QuestionOption;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class QuestionImportService
 {
@@ -15,7 +17,17 @@ class QuestionImportService
         'correct_option', 'explanation',
     ];
 
+    /**
+     * Extra columns accepted when present but not required, so older CSVs
+     * built from the original template keep importing unchanged.
+     */
+    public const OPTIONAL_COLUMNS = [
+        'image_url', 'image_alt',
+    ];
+
     private const LETTERS = ['a', 'b', 'c', 'd'];
+
+    private const IMAGE_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif', 'webp'];
 
     /**
      * Parse a CSV file and validate every row.
@@ -62,6 +74,13 @@ class QuestionImportService
             ];
         }
 
+        // Optional columns are picked up when the header includes them.
+        foreach (self::OPTIONAL_COLUMNS as $optional) {
+            if (! in_array($optional, $normalized, true)) {
+                $normalized[] = $optional;
+            }
+        }
+
         $categories = QuestionCategory::query()->get(['id', 'name']);
         $rows = [];
 
@@ -76,7 +95,7 @@ class QuestionImportService
 
             $data = [];
 
-            foreach (self::COLUMNS as $column) {
+            foreach (array_merge(self::COLUMNS, self::OPTIONAL_COLUMNS) as $column) {
                 $index = array_search($column, $normalized, true);
                 $value = isset($raw[$index]) ? trim((string) $raw[$index]) : '';
                 $data[$column] = $value === '' ? null : $value;
@@ -140,8 +159,28 @@ class QuestionImportService
             $type = 'text';
         }
 
+        $imageUrl = trim((string) ($data['image_url'] ?? ''));
+
         if (! in_array($type, Question::TYPES, true)) {
             $errors[] = "Invalid type \"{$type}\". Allowed: ".implode(', ', Question::TYPES).'.';
+        }
+
+        // Questions that carry an image must use an image-aware type, and the
+        // reference must be a downloadable URL or a path on the public disk.
+        $imageAlt = (string) ($data['image_alt'] ?? '');
+
+        if ($imageUrl !== '') {
+            if (in_array($type, ['calculation', 'case'], true)) {
+                $errors[] = "Type \"{$type}\" cannot be combined with image_url. Use text_image or image instead.";
+            } elseif (preg_match('#^https?://#i', $imageUrl) !== 1) {
+                if (Storage::disk('public')->exists($imageUrl)) {
+                    $type = $type === 'text' ? 'text_image' : $type;
+                } else {
+                    $errors[] = "Image \"{$imageUrl}\" is neither a valid http(s) URL nor a file in the media library.";
+                }
+            } else {
+                $type = $type === 'text' ? 'text_image' : $type;
+            }
         }
 
         $difficulty = strtolower((string) ($data['difficulty'] ?? ''));
@@ -199,6 +238,8 @@ class QuestionImportService
             'explanation' => (string) ($data['explanation'] ?? '') !== '' ? trim((string) $data['explanation']) : null,
             'options' => $optionTexts,
             'correct_index' => array_search($correctLetter, $letters, true),
+            'image_url' => $imageUrl !== '' ? $imageUrl : null,
+            'image_alt' => $imageAlt !== '' ? $imageAlt : null,
         ];
 
         return [true, [], $normalizedRow];
@@ -208,7 +249,7 @@ class QuestionImportService
     {
         $stream = fopen('php://temp', 'w+');
 
-        fputcsv($stream, self::COLUMNS);
+        fputcsv($stream, [...self::COLUMNS, ...self::OPTIONAL_COLUMNS]);
 
         fputcsv($stream, [
             'Hematology', 'text', 'easy',
@@ -216,6 +257,7 @@ class QuestionImportService
             'Neutrophil series', 'Lymphocyte series', 'Erythroid series', 'Megakaryocytic series',
             'A',
             'Left shift describes an increase in immature neutrophil precursors in the peripheral blood.',
+            '', '',
         ]);
 
         fputcsv($stream, [
@@ -224,6 +266,17 @@ class QuestionImportService
             '3-11 mmol/L', '12-20 mmol/L', '22-28 mmol/L', '30-40 mmol/L',
             'A',
             '',
+            '', '',
+        ]);
+
+        fputcsv($stream, [
+            'Hematology', 'text_image', 'intermediate',
+            'Identify the cell indicated by the arrow in the blood film.',
+            'Band neutrophil', 'Metamyelocyte', 'Myeloblast', 'Promyelocyte',
+            'B',
+            'The cell shows a kidney-shaped nucleus characteristic of a metamyelocyte.',
+            'https://example.com/blood-film-metamyelocyte.png',
+            'Peripheral blood film showing a metamyelocyte',
         ]);
 
         rewind($stream);
@@ -238,8 +291,9 @@ class QuestionImportService
         $status = in_array($asStatus, ['draft', 'active'], true) ? $asStatus : 'draft';
 
         $imported = 0;
+        $warnings = [];
 
-        foreach ($validRows as $row) {
+        foreach ($validRows as $line => $row) {
             $question = Question::create([
                 'question_category_id' => $row['question_category_id'],
                 'question_type' => $row['question_type'],
@@ -248,6 +302,19 @@ class QuestionImportService
                 'explanation' => $row['explanation'],
                 'status' => $status,
             ]);
+
+            if (! empty($row['image_url'])) {
+                $storedPath = $this->storeImportedImage($question, $row['image_url']);
+
+                if ($storedPath !== null) {
+                    $question->forceFill([
+                        'image_path' => $storedPath,
+                        'image_alt' => $row['image_alt'] ?? null,
+                    ])->save();
+                } else {
+                    $warnings[] = "Line {$line}: image could not be fetched from {$row['image_url']}. The question was imported without it - add the image manually.";
+                }
+            }
 
             foreach ($row['options'] as $index => $text) {
                 QuestionOption::create([
@@ -262,6 +329,45 @@ class QuestionImportService
             $imported++;
         }
 
-        return ['imported' => $imported, 'status' => $status];
+        return ['imported' => $imported, 'status' => $status, 'warnings' => $warnings];
+    }
+
+    /**
+     * Fetch an image for an imported question. Remote URLs are downloaded
+     * into storage; values that already point at the public disk are used
+     * as-is. Returns the stored path or null when the image is unusable.
+     */
+    private function storeImportedImage(Question $question, string $reference): ?string
+    {
+        if (preg_match('#^https?://#i', $reference) !== 1) {
+            return Storage::disk('public')->exists($reference) ? $reference : null;
+        }
+
+        try {
+            $response = Http::timeout(15)->maxRedirects(3)->get($reference);
+        } catch (\Throwable) {
+            return null;
+        }
+
+        if (! $response->successful()) {
+            return null;
+        }
+
+        $body = (string) $response->body();
+
+        if ($body === '' || strlen($body) > 8 * 1024 * 1024) {
+            return null;
+        }
+
+        $extension = strtolower(pathinfo(parse_url($reference, PHP_URL_PATH) ?? '', PATHINFO_EXTENSION));
+
+        if (! in_array($extension, self::IMAGE_EXTENSIONS, true)) {
+            $extension = 'png';
+        }
+
+        $filename = uniqid('', true).'.'.$extension;
+        $path = "questions/{$question->id}/{$filename}";
+
+        return Storage::disk('public')->put($path, $body) ? $path : null;
     }
 }
