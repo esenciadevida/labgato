@@ -2,6 +2,12 @@
     $user = auth()->user();
     $unreadCount = $user ? $user->unreadNotifications()->count() : 0;
     $recent = $user ? $user->notifications()->latest()->limit(10)->get() : collect();
+    $isAdmin = $user?->isAdmin() ?? false;
+    $canViewMessages = $isAdmin && ($user->isSuperAdministrator() || $user->hasPermission('contact-messages.view'));
+    $viewAllHref = $canViewMessages
+        ? route('admin.contact-messages.index')
+        : ($isAdmin ? route('admin.notifications.index') : route('notifications.index'));
+    $viewAllClearUrl = $canViewMessages ? route('admin.notifications.clear') : '';
 @endphp
 
 <div x-data="{
@@ -52,6 +58,17 @@
                 }
             }
         } catch (e) {}
+    },
+    async viewAll(clearUrl, redirectUrl) {
+        if (clearUrl) {
+            try {
+                await fetch(clearUrl, {
+                    method: 'POST',
+                    headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}', 'Accept': 'application/json' },
+                });
+            } catch (e) {}
+        }
+        window.location.href = redirectUrl;
     },
     async markAllAsRead() {
         try {
@@ -187,9 +204,13 @@
 
             <div class="shrink-0 border-t border-slate-200 bg-slate-50/50 dark:border-slate-700 dark:bg-slate-800/50">
                 <a
-                    href="{{ auth()->user()?->isAdmin() ? route('admin.notifications.index') : route('notifications.index') }}"
+                    href="{{ $viewAllHref }}"
                     class="flex items-center justify-center gap-1.5 px-4 py-2.5 text-center text-sm font-medium text-primary-700 transition-colors hover:bg-primary-50 dark:text-primary-400 dark:hover:bg-slate-700/60"
-                    @click="close()"
+                    @if($canViewMessages)
+                        @click.prevent="viewAll('{{ $viewAllClearUrl }}', '{{ $viewAllHref }}')"
+                    @else
+                        @click="close()"
+                    @endif
                 >
                     View all notifications
                     <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">

@@ -58,5 +58,11 @@ class DatabaseSeeder extends Seeder
                 MasterKnowledgeSeeder::class,
             ]);
         }
+
+        if (config('labgoto.seed.exam_engine.enabled')) {
+            $this->call([
+                ExamEngineSeeder::class,
+            ]);
+        }
     }
 }

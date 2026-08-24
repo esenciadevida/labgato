@@ -214,7 +214,7 @@
         <x-ui.button href="{{ route('admin.assessments.index') }}" variant="ghost">
             Cancel
         </x-ui.button>
-        <x-ui.button type="submit" :attributes="['x-bind:disabled' => '!rowsValid || !totalsValid']">
+        <x-ui.button type="submit" x-bind:disabled="!rowsValid || !totalsValid">
             {{ $submitLabel }}
         </x-ui.button>
     </div>

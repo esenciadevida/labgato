@@ -57,20 +57,6 @@
                 </svg>
             </x-admin.navigation-item>
 
-            <x-admin.navigation-item
-                label="Notifications"
-                href="{{ route('admin.notifications.index') }}"
-                :active="str_starts_with($currentRoute, 'admin.notifications')"
-            >
-                <span class="relative">
-                    <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1h6z"/>
-                    </svg>
-                    @if(auth()->user()->unreadNotifications()->count() > 0)
-                        <span class="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-danger-400"></span>
-                    @endif
-                </span>
-            </x-admin.navigation-item>
         </ul>
 
         @if(Auth::user()->hasAnyPermission(['admin.full-access', 'assessments.manage', 'questions.view', 'questions.import', 'categories.manage', 'integrity.view', 'certificates.view']))

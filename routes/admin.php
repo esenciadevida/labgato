@@ -35,6 +35,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('permission:dashboard.view')->name('dashboard');
 
     Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
+    Route::post('/notifications/clear', [NotificationController::class, 'clear'])->name('notifications.clear');
 
     Route::middleware('permission:admin.full-access')->group(function () {
         Route::get('/launch', [LaunchControlController::class, 'index'])->name('launch');

@@ -189,6 +189,11 @@ return [
         'knowledge' => [
             'enabled' => env('LABGOTO_SEED_KNOWLEDGE', false),
         ],
+        'exam_engine' => [
+            'enabled' => env('LABGOTO_SEED_EXAM_ENGINE', false),
+            'member_email' => env('LABGOTO_SEED_EXAM_MEMBER_EMAIL', 'demo@labgoto.test'),
+            'member_password' => env('LABGOTO_SEED_EXAM_MEMBER_PASSWORD', 'password'),
+        ],
     ],
 
 ];
