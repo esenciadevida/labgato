@@ -100,11 +100,14 @@ class ResultsService
             ->get()
             ->keyBy(fn ($answer) => (int) $answer->question_id);
 
+        $questions = Question::with(['options', 'category:id,name'])
+            ->whereIn('id', $questionIds)
+            ->get()
+            ->keyBy('id');
+
         return collect($questionIds)
-            ->map(function (int $questionId, int $index) use ($attempt, $answers) {
-                $question = Question::query()
-                    ->with(['options', 'category:id,name'])
-                    ->find($questionId);
+            ->map(function (int $questionId, int $index) use ($attempt, $answers, $questions) {
+                $question = $questions->get($questionId);
 
                 if ($question === null) {
                     return null;

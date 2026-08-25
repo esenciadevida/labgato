@@ -67,7 +67,10 @@ class ExamQuestionBank
                 ['intermediate', 'Which red cell index is used to classify anemia by average red cell size?', ['MCH', 'MCHC', 'MCV', 'RDW'], 2, 'Mean corpuscular volume (MCV) is the average red cell size.'],
                 ['advanced', 'A low ferritin with low serum iron and high total iron-binding capacity (TIBC) is most consistent with which condition?', ['Anemia of chronic disease', 'Iron deficiency anemia', 'Hemochromatosis', 'Sideroblastic anemia'], 1, 'Iron deficiency shows low ferritin/iron and high TIBC.'],
                 ['advanced', 'A Schilling test is used to evaluate absorption of which vitamin?', ['Vitamin K', 'Folic acid', 'Vitamin B12', 'Vitamin D'], 2, 'The Schilling test evaluates intestinal absorption of vitamin B12.'],
-                ['advanced', 'An elevated reticulocyte count most directly reflects what?', ['Increased bone marrow erythropoiesis', 'Presence of hemolysis only', 'Decreased red cell production', 'Iron overload'], 0, 'Reticulocytes reflect the marrow erythropoietic response.'],
+                ['advanced', 'A reticulocyte count is most likely to be elevated in which scenario?', ['Increased marrow response', 'Aplastic anaemia', 'Irradiated marrow', 'Leukostasis'], 0, 'Reticulocytes rise when the marrow responds, e.g. after haemorrhage or haemolysis.'],
+                ['easy', 'What is the approximate normal lifespan of a red blood cell?', ['30 days', '60 days', '120 days', '200 days'], 2, 'Red blood cells survive about 120 days.'],
+                ['intermediate', 'Which stain is used to perform a reticulocyte count?', ['Wright stain', 'New methylene blue', 'Gram stain', 'Prussian blue'], 1, 'Reticulocytes are counted with a supravital stain such as new methylene blue.'],
+                ['advanced', 'An elevated RDW indicates what about the red cell population?', ['Increased size variation (anisocytosis)', 'Uniform normochromia', 'Absolute macrocytosis only', 'Decreased cell count'], 0, 'RDW quantifies variation in red cell size (anisocytosis).'],
             ],
             'clinical-chemistry' => [
                 ['easy', 'What is the reference range for fasting blood glucose?', ['30-50 mg/dL', '70-100 mg/dL', '130-160 mg/dL', '180-220 mg/dL'], 1, 'Fasting plasma glucose is 70-100 mg/dL.'],
@@ -79,6 +82,9 @@ class ExamQuestionBank
                 ['advanced', 'Which cardiac biomarker rises earliest and is most specific after myocardial injury?', ['AST', 'LDH', 'Troponin', 'Myoglobin'], 2, 'Troponin I/T are the most specific and rise early after myocardial injury.'],
                 ['advanced', 'A low serum albumin with a normal total protein most strongly suggests what?', ['Renal protein loss only', 'A monoclonal gammopathy', 'Reduced hepatic synthesis', 'Excess dietary protein'], 2, 'Low albumin with normal total protein points to decreased hepatic synthesis.'],
                 ['advanced', 'The osmolal gap is most useful for detecting poisoning with which agent?', ['Acetaminophen', 'Ethylene glycol', 'Theophylline', 'Iron'], 1, 'An elevated osmolal gap suggests ethylene glycol or methanol ingestion.'],
+                ['easy', 'What is the reference range for serum sodium?', ['120-130 mmol/L', '135-145 mmol/L', '150-160 mmol/L', '90-100 mmol/L'], 1, 'Serum sodium is approximately 135-145 mmol/L.'],
+                ['intermediate', 'Which is the principal buffer system in blood?', ['Phosphate buffer', 'Bicarbonate buffer', 'Protein buffer', 'Ammonia buffer'], 1, 'The bicarbonate/carbonic acid system is the main blood buffer.'],
+                ['advanced', 'Which formula estimates plasma osmolality (mmol/kg)?', ['2Na + glucose/18 + BUN/2.8', 'Na + K + Cl', '2(Na + K) - Cl', 'BUN/18 + glucose/2.8'], 0, 'Estimated osmolality = 2Na + glucose/18 + BUN/2.8.'],
             ],
             'microbiology' => [
                 ['easy', 'Gram-positive cocci arranged in clusters are most consistent with which organism?', ['Streptococcus', 'Staphylococcus', 'Neisseria', 'Escherichia'], 1, 'Staphylococci appear as gram-positive cocci in clusters.'],
@@ -90,6 +96,9 @@ class ExamQuestionBank
                 ['advanced', 'Which is the causative agent of syphilis?', ['Treponema pallidum', 'Borrelia burgdorferi', 'Chlamydia trachomatis', 'Mycoplasma pneumoniae'], 0, 'Syphilis is caused by the spirochete Treponema pallidum.'],
                 ['advanced', 'A positive beta-lactamase (cefinase) test on an isolated organism indicates what?', ['Resistance to vancomycin', 'Penicillin resistance', 'Intrinsic gram-negative nature', 'Beta-hemolytic activity'], 1, 'Positive beta-lactamase indicates penicillin resistance.'],
                 ['advanced', 'Which rapid test detects acid-fast bacilli and is commonly used for TB?', ['Gram stain', 'Ziehl-Neelsen stain', 'India ink', 'KOH prep'], 1, 'The Ziehl-Neelsen (acid-fast) stain detects mycobacteria.'],
+                ['easy', 'Which technique is used to demonstrate bacterial motility?', ['Hanging-drop preparation', 'Gram stain', 'Capsule stain', 'India ink'], 0, 'The hanging-drop preparation assesses bacterial motility.'],
+                ['intermediate', 'Which of the following is catalase-positive?', ['Streptococcus', 'Staphylococcus', 'Clostridium', 'Enterococcus'], 1, 'Staphylococci are catalase-positive; streptococci are catalase-negative.'],
+                ['advanced', 'Which organism produces a spore and is anaerobic?', ['Staphylococcus aureus', 'Clostridium perfringens', 'Escherichia coli', 'Neisseria meningitidis'], 1, 'Clostridium species are spore-forming anaerobes.'],
             ],
             'immunology' => [
                 ['easy', 'Which immunoglobulin is the most abundant antibody in serum?', ['IgA', 'IgM', 'IgG', 'IgE'], 2, 'IgG is the most abundant immunoglobulin in serum.'],
@@ -101,6 +110,9 @@ class ExamQuestionBank
                 ['advanced', 'Which cells directly kill virus-infected cells?', ['CD8 cytotoxic T cells', 'CD4 helper T cells', 'Plasma cells', 'Regulatory T cells'], 0, 'CD8 cytotoxic T lymphocytes kill infected cells.'],
                 ['advanced', 'Which complement component is most abundant and serves as the junction of the pathways?', ['C1', 'C3', 'C5', 'C9'], 1, 'C3 is the most abundant and is where all complement pathways converge.'],
                 ['advanced', 'Which antinuclear antibody pattern is most characteristic of systemic lupus erythematosus?', ['Speckled', 'Homogeneous', 'Nucleolar', 'Centromere'], 1, 'A homogeneous ANA pattern is commonly seen in SLE.'],
+                ['easy', 'Which immunoglobulin is primarily responsible for mucosal immunity?', ['IgG', 'IgA', 'IgM', 'IgE'], 1, 'Secretory IgA defends mucosal surfaces.'],
+                ['intermediate', 'Which immunoglobulin is the first to rise in a primary immune response?', ['IgG', 'IgA', 'IgM', 'IgE'], 2, 'IgM appears first in a primary response.'],
+                ['advanced', 'IgE is most directly associated with which type of hypersensitivity?', ['Type I', 'Type II', 'Type III', 'Type IV'], 0, 'IgE mediates type I (immediate) hypersensitivity.'],
             ],
             'blood-banking-transfusion' => [
                 ['easy', 'Which blood group is the universal red cell donor?', ['AB positive', 'A negative', 'O negative', 'B positive'], 2, 'O negative red cells lack A, B, and Rh antigens.'],
@@ -112,6 +124,9 @@ class ExamQuestionBank
                 ['advanced', 'Which test confirms that patient serum causes red cell agglutination through complement at 37C?', ['Cold panel', 'Anti-human globulin test', 'Coombs control', 'Saline agglutination'], 1, 'IgG alloantibodies are detected with the antiglobulin (Coombs) phase.'],
                 ['advanced', 'Anti-D prophylaxis (RhoGAM) is given to an Rh-negative mother to prevent what?', ['Hemolytic disease of the fetus/newborn', 'ABO incompatibility', 'Kell sensitization', 'Febrile reactions'], 0, 'Anti-D prevents maternal isoimmunization and HDN in subsequent Rh-positive pregnancies.'],
                 ['advanced', 'A discrepancy in forward and reverse blood grouping is most often explained by?', ['ABO antibodies', 'A weak/missing antigen or interfering antibody', 'Platelet clumping', 'Cold complement'], 1, 'Blood group discrepancies arise from weak antigens or unexpected antibodies.'],
+                ['easy', 'Which antigen is the major Rh antigen?', ['C', 'D', 'E', 'c'], 1, 'The D antigen is the major Rh (Rh-positive) antigen.'],
+                ['intermediate', 'The antiglobulin (Coombs) test is used to detect what?', ['Complement only', 'Antibody or complement bound to red cells', 'Platelet antibodies', 'ABO forward discrepancy'], 1, 'The antiglobulin test detects red-cell-bound antibody or complement.'],
+                ['advanced', 'Why is anti-D still a leading cause of haemolytic disease of the newborn?', ['It is IgM', 'It is a potent IgG that crosses the placenta', 'It is not immunogenic', 'It is a cold antibody'], 1, 'Anti-D is a potent IgG that crosses the placenta and sensitises fetal red cells.'],
             ],
             'other' => [
                 ['easy', 'What is the normal specific gravity range of urine?', ['1.005-1.030', '1.050-1.080', '1.000-1.001', '1.040-1.060'], 0, 'Normal urine specific gravity is about 1.005-1.030.'],
@@ -123,6 +138,9 @@ class ExamQuestionBank
                 ['advanced', 'A mixing study that fails to correct a prolonged PT/PTT suggests?', ['A factor deficiency', 'An inhibitor present', 'A reagent error', 'Platelet dysfunction'], 1, 'Failure to correct on mixing indicates an inhibitor.'],
                 ['advanced', 'Which method is used to confirm a specific factor inhibitor in hemophilia A?', ['Bethesda assay', 'D-dimer', 'Wells score', 'Fibrinogen'], 0, 'The Bethesda assay quantifies factor VIII inhibitors.'],
                 ['advanced', 'A 95% reference interval from a healthy population is computed using which method?', ['Mean +/- 1 SD', '2.5th-97.5th percentile', 'Median +/- 1.96 SD of log data', 'Mode +/- 2 SD'], 1, 'Reference intervals are typically the 2.5th-97.5th percentile.'],
+                ['easy', 'Which term means a test is performed immediately on an urgent request?', ['Batch', 'Stat', 'Fasting', 'Timed'], 1, 'A "stat" test is carried out immediately.'],
+                ['intermediate', 'What does a "fasting" specimen require from the patient?', ['Exercise before collection', 'No food eaten for a set period', 'Extra hydration', 'Blood drawn from a vein only'], 1, 'A fasting specimen requires the patient to abstain from food for the specified time.'],
+                ['advanced', 'A Westgard 1_2s rule is violated when what occurs?', ['One control exceeds 2 SD', 'Two controls exceed 1 SD', 'Four controls exceed 1 SD', 'A trending run'], 0, 'The 1_2s rule flags a single control exceeding 2 standard deviations.'],
             ],
         ];
     }

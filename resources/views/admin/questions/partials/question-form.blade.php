@@ -69,8 +69,8 @@
                 <x-form.error for="stem" />
             </div>
 
-            <div class="sm:col-span-2" x-show="usesImage()" x-cloak>
-                <x-form.label for="image">Question image</x-form.label>
+            <div class="sm:col-span-2">
+                <x-form.label for="image">Question image <span class="text-xs font-normal text-slate-400">(optional unless the type is Image/Text &amp; Image)</span></x-form.label>
 
                 @if($question->image_path)
                     <div class="mt-2 flex items-start gap-4" x-show="!removingImage && !previewSrc" x-cloak>

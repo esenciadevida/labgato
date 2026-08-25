@@ -31,13 +31,13 @@ class AssessmentSchemaTest extends TestCase
         $this->assertSame('challenge', $assessment->type);
         $this->assertSame('scheduled', $assessment->status);
         $this->assertSame(150, $assessment->duration_minutes);
-        $this->assertSame(100, $assessment->total_questions);
+        $this->assertSame(54, $assessment->total_questions);
         $this->assertSame('70.00', (string) $assessment->pass_percentage);
 
         $blueprints = $assessment->blueprints;
 
         $this->assertCount(6, $blueprints);
-        $this->assertSame(100, $assessment->blueprintQuestionCount());
+        $this->assertSame(54, $assessment->blueprintQuestionCount());
     }
 
     public function test_question_with_four_options_exposes_correct_option(): void

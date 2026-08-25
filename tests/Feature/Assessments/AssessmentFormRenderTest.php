@@ -21,7 +21,10 @@ class AssessmentFormRenderTest extends TestCase
         $role = Role::factory()->create();
 
         foreach (['assessments.manage', 'dashboard.view'] as $slug) {
-            $role->permissions()->attach(Permission::factory()->create(['slug' => $slug]));
+            $role->permissions()->attach(Permission::factory()->create([
+                'name' => ucfirst(str_replace('.', ' ', $slug)),
+                'slug' => $slug,
+            ]));
         }
 
         $user->roles()->attach($role);
