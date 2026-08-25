@@ -123,9 +123,26 @@ class SettingsController extends Controller
             );
         }
 
+        if (collect($auditChanges)->keys()->contains(fn ($key) => str_starts_with($key, 'certificate.'))) {
+            $this->invalidateCertificatePdfs();
+        }
+
         Cache::forget('settings.all');
 
         return redirect()->route('admin.settings.index')->with('success', 'Settings updated successfully.');
+    }
+
+    /**
+     * Drop cached certificate PDFs so they regenerate with the current template
+     * and signatory settings on the next download.
+     */
+    private function invalidateCertificatePdfs(): void
+    {
+        foreach (Storage::disk('public')->files('certificates') as $file) {
+            if (str_ends_with($file, '.pdf')) {
+                Storage::disk('public')->delete($file);
+            }
+        }
     }
 
     /**

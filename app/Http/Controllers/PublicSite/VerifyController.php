@@ -49,7 +49,12 @@ class VerifyController extends Controller
             abort(404);
         }
 
-        $topPercent = app(\App\Services\ResultsService::class)->topPercent($certificate->attempt);
+        $results = app(\App\Services\ResultsService::class);
+
+        $attempt = $certificate->attempt;
+        $rank = $attempt !== null ? $results->rank($attempt) : null;
+        $topPercent = $attempt !== null ? $results->topPercent($attempt) : 100;
+        $participants = $attempt !== null ? $results->officialAttempts($attempt->assessment)->count() : 0;
 
         $shareText = sprintf(
             'I scored %.1f%% in the %s on LabGOTO',
@@ -69,12 +74,16 @@ class VerifyController extends Controller
         return view('certificates.share', [
             'certificate' => $certificate,
             'holderName' => $this->publicHolderName($certificate),
+            'rank' => $rank,
             'topPercent' => $topPercent,
+            'participants' => $participants,
             'shareText' => $shareText,
             'shareUrl' => $shareUrl,
             'intents' => $intents,
             'pageTitle' => "I scored ".round((float) $certificate->score_percent)."% in the {$certificate->assessment->title} - LabGOTO",
-            'metaDescription' => "Rank #{$certificate->rank_at_issue} · Top {$topPercent}% · Verified on LabGOTO",
+            'metaDescription' => $rank !== null
+                ? "Rank #{$rank} of {$participants} · Top {$topPercent}% · Verified on LabGOTO"
+                : "Verified on LabGOTO",
         ]);
     }
 
