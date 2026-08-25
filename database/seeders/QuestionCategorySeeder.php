@@ -14,7 +14,8 @@ class QuestionCategorySeeder extends Seeder
         ['name' => 'Immunology', 'slug' => 'immunology', 'sort_order' => 4],
         ['name' => 'Blood Banking/Transfusion', 'slug' => 'blood-banking-transfusion', 'sort_order' => 5],
         ['name' => 'Molecular Diagnostics', 'slug' => 'molecular-diagnostics', 'sort_order' => 6],
-        ['name' => 'Other', 'slug' => 'other', 'sort_order' => 7],
+        ['name' => 'Quality Control', 'slug' => 'quality-control', 'sort_order' => 7],
+        ['name' => 'Other', 'slug' => 'other', 'sort_order' => 8],
     ];
 
     public function run(): void
