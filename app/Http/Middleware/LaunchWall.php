@@ -45,6 +45,9 @@ class LaunchWall
         // the QR code on a certificate always resolves, even pre-launch.
         'verify/',
         'share/',
+        // The scheduler tick must be reachable even pre-launch so backups,
+        // auto-submit and auto-activation still run from a Hostinger cron.
+        'cron/',
         // Exam hub stays reachable pre-launch so registered members can
         // take open challenges (access still gated by challenge_open and the
         // assessment being open, plus the member middleware).
