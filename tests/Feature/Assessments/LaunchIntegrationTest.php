@@ -209,15 +209,18 @@ class LaunchIntegrationTest extends TestCase
         $this->assertTrue($assessment->allow_practice);
         $this->assertSame('locked', $assessment->results_status);
 
-        // Counts must match the configured total.
+        // Counts drive the total automatically; a stale total_questions is corrected.
         $badCounts = $payload;
         $badCounts['title'] = 'September Challenge B';
         $badCounts['slug'] = 'september-challenge-b';
-        $badCounts['total_questions'] = 7;
+        $badCounts['total_questions'] = 7; // intentionally wrong - must be overridden
 
         $this->actingAs($this->admin())
             ->post(route('admin.assessments.store'), $badCounts)
-            ->assertSessionHasErrors('blueprints');
+            ->assertRedirect()
+            ->assertSessionHasNoErrors();
+
+        $this->assertSame(6, Assessment::where('slug', 'september-challenge-b')->firstOrFail()->total_questions);
 
         // Difficulty percentages per row must sum to 100.
         $badPercents = $payload;

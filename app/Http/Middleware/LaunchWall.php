@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\LaunchSetting;
+use App\Services\LaunchActivatorService;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -61,6 +62,13 @@ class LaunchWall
     public function handle(Request $request, Closure $next): Response
     {
         $settings = LaunchSetting::current();
+
+        // Lift the wall the moment the launch time passes, so a stalled
+        // scheduler/cron cannot leave visitors locked out after the countdown.
+        if (! $settings->isLive()) {
+            app(LaunchActivatorService::class)->activateIfDue();
+            $settings = LaunchSetting::current();
+        }
 
         if ($settings->isLive()) {
             return $next($request);

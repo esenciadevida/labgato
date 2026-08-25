@@ -185,6 +185,36 @@ class LaunchSystemTest extends TestCase
         $this->assertSame('open', LaunchSetting::current()->fresh()->main_site_status);
     }
 
+    public function test_wall_lifts_on_request_when_launch_moment_passes_without_cron(): void
+    {
+        LaunchSetting::current()->update([
+            'launch_at' => now()->subMinute(),
+            'auto_activate' => true,
+            'main_site_status' => 'locked',
+        ]);
+        LaunchSetting::flushCache();
+
+        // The countdown has ended; an inner page request must self-heal the
+        // wall even if the scheduler (cron) never fired.
+        $this->get('/calculators')->assertOk();
+
+        $this->assertSame('open', LaunchSetting::current()->fresh()->main_site_status);
+    }
+
+    public function test_wall_stays_when_auto_activate_disabled_even_after_moment_passes(): void
+    {
+        LaunchSetting::current()->update([
+            'launch_at' => now()->subMinute(),
+            'auto_activate' => false,
+            'main_site_status' => 'locked',
+        ]);
+        LaunchSetting::flushCache();
+
+        $this->get('/calculators')->assertRedirect('/');
+
+        $this->assertSame('locked', LaunchSetting::current()->fresh()->main_site_status);
+    }
+
     public function test_launch_check_does_not_activate_when_auto_activate_disabled(): void
     {
         LaunchSetting::current()->update([
