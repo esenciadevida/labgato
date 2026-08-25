@@ -38,7 +38,7 @@
                 {{ $question->stem }}
             </p>
 
-            @if($question->image_path)
+            @if($question->image_url)
                 <img src="{{ $question->image_url }}" alt="{{ $question->image_alt ?? 'Question image' }}" class="max-h-96 w-full rounded-lg border border-slate-200 object-contain dark:border-slate-700">
             @endif
 

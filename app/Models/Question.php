@@ -79,7 +79,11 @@ class Question extends Model
 
     public function getImageUrlAttribute(): ?string
     {
-        return $this->image_path ? Storage::disk('public')->url($this->image_path) : null;
+        if ($this->image_path) {
+            return Storage::disk('public')->url($this->image_path);
+        }
+
+        return $this->image_source_url;
     }
 
     public function usedInExams(): bool

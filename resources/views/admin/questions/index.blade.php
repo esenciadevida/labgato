@@ -215,7 +215,7 @@
                                     <td class="px-4 py-3 text-sm text-slate-400">{{ ($questions->currentPage() - 1) * $questions->perPage() + $index + 1 }}</td>
                                     <td class="max-w-md px-4 py-3">
                                         <div class="flex items-center gap-3">
-                                            @if($question->image_path)
+                                            @if($question->image_url)
                                                 <img src="{{ $question->image_url }}" alt="" class="h-9 w-9 shrink-0 rounded object-cover" loading="lazy">
                                             @endif
                                             <a href="{{ route('admin.questions.show', $question) }}" class="line-clamp-2 text-sm text-slate-700 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400">
