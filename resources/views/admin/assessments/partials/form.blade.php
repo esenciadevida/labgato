@@ -117,7 +117,7 @@
 
                 <div>
                     <x-form.label for="total_questions">Total questions (auto)</x-form.label>
-                    <x-ui.input type="number" id="total_questions" name="total_questions" min="1" max="500" :value="grandTotal" readonly aria-readonly="true" />
+                    <x-ui.input type="number" id="total_questions" name="total_questions" min="1" max="500" x-bind:value="grandTotal" readonly aria-readonly="true" />
                     <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Auto-calculated from the blueprint counts below.</p>
                 </div>
             </div>
