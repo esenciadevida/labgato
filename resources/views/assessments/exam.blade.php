@@ -42,10 +42,12 @@
         'urls' => [
             'save' => route('exams.answers.save', $attempt),
             'flag' => route('exams.flag', $attempt),
-        'submit' => route('exams.submit', $attempt),
-        'submitted' => route('exams.submitted', $attempt),
-        'integrity' => route('exams.integrity.store', $attempt),
-    ],
+            'submit' => route('exams.submit', $attempt),
+            'submitted' => route('exams.submitted', $attempt),
+            'integrity' => route('exams.integrity.store', $attempt),
+            'cancel' => route('exams.cancel', $attempt),
+            'intro' => route('assessments.show', $attempt->assessment),
+        ],
     ];
 @endphp
 
@@ -75,6 +77,13 @@
              :class="timerClass"
              x-text="clock">
         </div>
+
+        <button type="button" @click="quitOpen = true"
+                class="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
+                :disabled="submitting">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            <span class="hidden sm:inline">Quit</span>
+        </button>
     </div>
 </header>
 
@@ -187,6 +196,34 @@
     </div>
 </div>
 
+<div x-show="quitOpen" x-cloak class="fixed inset-0 z-40 flex items-center justify-center bg-slate-900/60 p-4" role="dialog" aria-modal="true">
+    <div class="w-full max-w-md rounded-xl border border-slate-200 bg-white p-6 shadow-xl dark:border-slate-700 dark:bg-slate-900" @click.outside="quitOpen = false">
+        <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Quit this exam?</h2>
+        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">
+            Your current attempt will be cancelled and marked as abandoned. You can start a fresh, randomized exam afterward.
+        </p>
+        <div class="mt-6 flex justify-end gap-3">
+            <button type="button" @click="quitOpen = false"
+                    class="rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
+                Keep Going
+            </button>
+            <button type="button" @click="doQuit()" :disabled="submitting"
+                    class="rounded-lg bg-danger-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-danger-700 disabled:opacity-50 dark:bg-danger-500 dark:hover:bg-danger-600">
+                Quit Exam
+            </button>
+        </div>
+    </div>
+</div>
+
+<div x-show="cancelledOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/70 p-4">
+    <div class="w-full max-w-sm rounded-xl border border-slate-200 bg-white p-6 text-center shadow-xl dark:border-slate-700 dark:bg-slate-900">
+        <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Attempt cancelled</h2>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            This attempt was cancelled because the exam window was left. A fresh, randomized exam will start automatically.
+        </p>
+    </div>
+</div>
+
 <script>
 function examComponent() {
     var config = JSON.parse(document.querySelector('script[data-exam-config]').textContent);
@@ -204,6 +241,9 @@ function examComponent() {
         submitting: false,
         confirmOpen: false,
         timeUpOpen: false,
+        quitOpen: false,
+        cancelledOpen: false,
+        cancelledRedirect: config.urls.intro || '/',
         eventQueue: [],
         lastEventAt: {},
 
@@ -415,6 +455,39 @@ function examComponent() {
             window.location.href = config.urls.submitted;
         },
 
+        doQuit: function () {
+            var self = this;
+
+            if (this.submitting) {
+                return;
+            }
+
+            this.submitting = true;
+            this.quitOpen = false;
+
+            fetch(config.urls.cancel, {
+                method: 'POST',
+                headers: this.headers(),
+                body: '{}',
+            }).then(function () {
+                window.location.href = config.urls.intro;
+            }).catch(function () {
+                self.submitting = false;
+                window.location.href = config.urls.intro;
+            });
+        },
+
+        handleCancelled: function (redirect) {
+            clearInterval(timerInterval);
+            this.cancelledOpen = true;
+            this.cancelledRedirect = redirect || config.urls.intro || '/';
+
+            var self = this;
+            setTimeout(function () {
+                window.location.href = self.cancelledRedirect;
+            }, 2500);
+        },
+
         headers: function () {
             return {
                 'Content-Type': 'application/json',
@@ -514,6 +587,7 @@ function examComponent() {
                 return;
             }
 
+            var self = this;
             var batch = this.eventQueue.splice(0, 50);
             var payload = JSON.stringify({ events: batch });
             var csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -535,6 +609,16 @@ function examComponent() {
                     'Accept': 'application/json',
                 },
                 body: payload,
+            }).then(function (response) {
+                if (!response.ok) {
+                    return;
+                }
+
+                response.json().then(function (data) {
+                    if (data && data.cancelled) {
+                        self.handleCancelled(data.redirect);
+                    }
+                });
             }).catch(function () {});
         },
     };

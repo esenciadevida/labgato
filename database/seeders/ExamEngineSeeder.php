@@ -5,9 +5,7 @@ namespace Database\Seeders;
 use App\Models\Assessment;
 use App\Models\AssessmentBlueprint;
 use App\Models\LaunchSetting;
-use App\Models\Question;
 use App\Models\QuestionCategory;
-use App\Models\QuestionOption;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -43,8 +41,9 @@ class ExamEngineSeeder extends Seeder
 
         $this->call(QuestionCategorySeeder::class);
 
+        \App\Support\ExamQuestionBank::seed();
+
         $assessment = $this->ensureAssessment();
-        $this->ensureQuestionBank();
         $this->ensureDemoMember();
 
         $this->command->info('Exam engine test data ready.');
@@ -124,52 +123,7 @@ class ExamEngineSeeder extends Seeder
      */
     private function ensureQuestionBank(): void
     {
-        foreach (self::BLUEPRINT as $slug => $total) {
-            $category = QuestionCategory::where('slug', $slug)->first();
-
-            if ($category === null) {
-                continue;
-            }
-
-            $easy = (int) round($total * 0.30);
-            $advanced = (int) round($total * 0.20);
-            $intermediate = max(0, $total - $easy - $advanced);
-
-            $this->fillDifficulty($category, 'easy', $easy);
-            $this->fillDifficulty($category, 'intermediate', $intermediate);
-            $this->fillDifficulty($category, 'advanced', $advanced);
-        }
-    }
-
-    private function fillDifficulty(QuestionCategory $category, string $difficulty, int $count): void
-    {
-        $count += self::SURPLUS_PER_DIFFICULTY;
-
-        for ($i = 1; $i <= $count; $i++) {
-            $stem = 'Demo '.$category->name.' — '.$difficulty.' question '.str_pad((string) $i, 3, '0', STR_PAD_LEFT);
-
-            $question = Question::firstOrCreate(
-                ['stem' => $stem],
-                [
-                    'question_category_id' => $category->id,
-                    'question_type' => 'text',
-                    'difficulty' => $difficulty,
-                    'status' => 'active',
-                    'explanation' => 'The correct answer is option A.',
-                ]
-            );
-
-            foreach ([['A', 0], ['B', 1], ['C', 2], ['D', 3]] as [$label, $sort]) {
-                QuestionOption::firstOrCreate(
-                    ['question_id' => $question->id, 'label' => $label],
-                    [
-                        'text' => 'Option '.$label,
-                        'is_correct' => $sort === 0,
-                        'sort_order' => $sort,
-                    ]
-                );
-            }
-        }
+        \App\Support\ExamQuestionBank::seed();
     }
 
     private function ensureDemoMember(): void

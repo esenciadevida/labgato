@@ -56,6 +56,42 @@ class IntegrityEventController extends Controller
             );
         }
 
-        return response()->json(null, 204);
+        $cancelled = $this->cancelIfThresholdReached($attempt);
+
+        return response()->json([
+            'cancelled' => $cancelled,
+            'redirect' => $cancelled ? route('assessments.show', $attempt->assessment) : null,
+        ]);
+    }
+
+    /**
+     * Auto-cancel an in-progress attempt once the member has left the page too
+     * many times. Leaving/refreshing the page is treated as an integrity risk:
+     * the attempt is abandoned so they have to restart with a fresh random
+     * question set.
+     */
+    private function cancelIfThresholdReached(ExamAttempt $attempt): bool
+    {
+        if ($attempt->status !== 'in_progress') {
+            return false;
+        }
+
+        $seriousEvents = IntegrityEvent::where('exam_attempt_id', $attempt->id)
+            ->whereIn('event_type', ['tab_switch', 'fullscreen_exit'])
+            ->count();
+
+        $threshold = (int) config('labgoto.integrity.auto_cancel_threshold', 2);
+
+        if ($seriousEvents < $threshold) {
+            return false;
+        }
+
+        $attempt->forceFill([
+            'status' => 'abandoned',
+            'submitted_at' => now(),
+            'integrity_status' => 'high_risk',
+        ])->save();
+
+        return true;
     }
 }

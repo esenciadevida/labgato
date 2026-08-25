@@ -148,8 +148,13 @@ return [
     |
     */
 
-    'cron' => [
-        'secret' => env('CRON_SECRET'),
+    'integrity' => [
+        // Number of "leaving the page" events (tab switch / fullscreen exit)
+        // before an in-progress attempt is auto-cancelled and must be restarted.
+        'auto_cancel_threshold' => env('LABGOTO_INTEGRITY_AUTO_CANCEL_THRESHOLD', 2),
+    ],
+
+    'cron' => [        'secret' => env('CRON_SECRET'),
     ],
 
     /*

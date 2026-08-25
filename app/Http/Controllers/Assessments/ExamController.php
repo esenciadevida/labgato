@@ -13,6 +13,7 @@ use App\Services\ExamScoringService;
 use App\Services\IntegrityService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class ExamController extends Controller
 {
@@ -87,6 +88,10 @@ class ExamController extends Controller
             return redirect()->route('exams.submitted', $attempt);
         }
 
+        if ($attempt->status === 'abandoned') {
+            return redirect()->route('assessments.show', $attempt->assessment);
+        }
+
         if (in_array($attempt->status, ['submitted', 'auto_submitted'], true)) {
             return redirect()->route('exams.submitted', $attempt);
         }
@@ -140,6 +145,33 @@ class ExamController extends Controller
                 ->mapWithKeys(fn ($answer) => [(int) $answer->question_id => true])
                 ->all(),
             'remainingSeconds' => $attempt->remainingSeconds(),
+        ]);
+    }
+
+    /**
+     * Abandon an in-progress attempt (used by the Quit button and by the
+     * integrity auto-cancel). Abandoned attempts do not count against the
+     * member's limited attempts, so they can restart with a fresh random
+     * question set.
+     */
+    public function cancel(Request $request, ExamAttempt $attempt): JsonResponse
+    {
+        $this->authorizeAttempt($request, $attempt);
+
+        if ($attempt->status === 'in_progress') {
+            $attempt->forceFill([
+                'status' => 'abandoned',
+                'submitted_at' => now(),
+                'integrity_status' => 'review',
+            ])->save();
+
+            Cache::forget("leaderboard:{$attempt->assessment_id}");
+            Cache::forget('leaderboard:alltime');
+        }
+
+        return response()->json([
+            'status' => $attempt->fresh()->status,
+            'redirect' => route('assessments.show', $attempt->assessment),
         ]);
     }
 

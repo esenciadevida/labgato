@@ -70,7 +70,7 @@ class IntegrityTest extends TestCase
         ]);
     }
 
-    public function test_endpoint_logs_a_batch_of_events_and_returns_204(): void
+    public function test_endpoint_logs_a_batch_of_events_and_returns_json(): void
     {
         $response = $this->actingAs($this->user)
             ->postJson("/exam/{$this->attempt->id}/integrity", [
@@ -80,7 +80,8 @@ class IntegrityTest extends TestCase
                 ],
             ]);
 
-        $response->assertStatus(204);
+        $response->assertOk();
+        $response->assertJson(['cancelled' => false]);
 
         $this->assertSame(2, IntegrityEvent::where('exam_attempt_id', $this->attempt->id)->count());
 
@@ -103,23 +104,23 @@ class IntegrityTest extends TestCase
 
     public function test_weights_drive_normal_review_and_high_risk_thresholds(): void
     {
-        // Two tab switches = weight 2 → still normal.
+        // Two window blurs = weight 2 → still normal (blur is not a "leave" event).
         $this->actingAs($this->user)->postJson("/exam/{$this->attempt->id}/integrity", [
             'events' => [
-                ['type' => 'tab_switch'],
-                ['type' => 'tab_switch'],
+                ['type' => 'window_blur'],
+                ['type' => 'window_blur'],
             ],
-        ])->assertStatus(204);
+        ])->assertOk()->assertJson(['cancelled' => false]);
 
         $this->assertSame('normal', $this->attempt->fresh()->integrity_status);
 
-        // Two more tab switches (total 4) → review.
+        // Two more window blurs (total 4) → review.
         $this->actingAs($this->user)->postJson("/exam/{$this->attempt->id}/integrity", [
             'events' => [
-                ['type' => 'tab_switch'],
-                ['type' => 'tab_switch'],
+                ['type' => 'window_blur'],
+                ['type' => 'window_blur'],
             ],
-        ])->assertStatus(204);
+        ])->assertOk()->assertJson(['cancelled' => false]);
 
         $this->assertSame('review', $this->attempt->fresh()->integrity_status);
 
@@ -131,7 +132,7 @@ class IntegrityTest extends TestCase
                 ['type' => 'copy_attempt'],
                 ['type' => 'copy_attempt'],
             ],
-        ])->assertStatus(204);
+        ])->assertOk()->assertJson(['cancelled' => false]);
 
         $this->assertSame('high_risk', $this->attempt->fresh()->integrity_status);
     }
@@ -140,7 +141,7 @@ class IntegrityTest extends TestCase
     {
         $this->actingAs($this->user)->postJson("/exam/{$this->attempt->id}/integrity", [
             'events' => [['type' => 'multiple_session']],
-        ])->assertStatus(204);
+        ])->assertOk();
 
         $this->assertSame('high_risk', $this->attempt->fresh()->integrity_status);
     }
@@ -204,6 +205,39 @@ class IntegrityTest extends TestCase
             ->assertSee('tab switch', false)
             ->assertSee('copy attempt', false)
             ->assertSee('Q2');
+    }
+
+    public function test_auto_cancels_attempt_after_repeated_tab_switches(): void
+    {
+        $this->actingAs($this->user)->postJson("/exam/{$this->attempt->id}/integrity", [
+            'events' => [
+                ['type' => 'tab_switch'],
+                ['type' => 'fullscreen_exit'],
+            ],
+        ])->assertOk()
+            ->assertJson([
+                'cancelled' => true,
+                'redirect' => route('assessments.show', $this->attempt->assessment),
+            ]);
+
+        $this->assertSame('abandoned', $this->attempt->fresh()->status);
+        $this->assertSame('high_risk', $this->attempt->fresh()->integrity_status);
+    }
+
+    public function test_cancel_endpoint_abandons_attempt_for_restart(): void
+    {
+        $this->actingAs($this->user)
+            ->postJson("/exam/{$this->attempt->id}/cancel")
+            ->assertOk()
+            ->assertJsonPath('status', 'abandoned');
+
+        $this->assertSame('abandoned', $this->attempt->fresh()->status);
+
+        // Abandoned attempts do not block a fresh randomized run.
+        $this->actingAs($this->user)
+            ->get(route('assessments.show', $this->attempt->assessment))
+            ->assertOk()
+            ->assertDontSee('Start Practice Run');
     }
 
     public function test_manual_override_updates_status(): void

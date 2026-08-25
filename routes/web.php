@@ -83,6 +83,9 @@ Route::middleware(['auth', 'active.user', 'member'])->group(function () {
     Route::post('/exam/{attempt}/submit', [ExamController::class, 'submit'])
         ->middleware('throttle:30,1')
         ->name('exams.submit');
+    Route::post('/exam/{attempt}/cancel', [ExamController::class, 'cancel'])
+        ->middleware('throttle:30,1')
+        ->name('exams.cancel');
     Route::post('/exam/{attempt}/integrity', [IntegrityEventController::class, 'store'])
         ->middleware('throttle:120,1')
         ->name('exams.integrity.store');

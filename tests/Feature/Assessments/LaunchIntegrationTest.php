@@ -297,16 +297,17 @@ class LaunchIntegrationTest extends TestCase
 
     public function test_nav_and_wall_behavior_for_assessments_links(): void
     {
-        $content = $this->get(route('assessments.index'))->assertOk()->getContent();
-
-        $this->assertStringContainsString('Assessments Hub', $content);
-        $this->assertStringContainsString('My Results', $content);
-        $this->assertStringContainsString('My Certificates', $content);
-
-        // Pre-launch the wall intercepts every public page.
+        // The exam links now live in the member profile menu, not the guest nav,
+        // and the exam hub is reachable pre-launch (exempt from the wall).
         $this->lockSite();
 
-        $this->get(route('assessments.index'))->assertRedirect('/');
+        $member = User::factory()->member()->create();
+
+        $this->actingAs($member)->get(route('assessments.index'))->assertOk();
+
+        // Assessment hub page no longer shows the nav dropdown links.
+        $content = $this->get(route('assessments.index'))->assertOk()->getContent();
+        $this->assertStringNotContainsString('Assessments Hub', $content);
 
         LaunchSetting::current()->update(['main_site_status' => 'open']);
         LaunchSetting::flushCache();
@@ -367,12 +368,13 @@ class LaunchIntegrationTest extends TestCase
             ->assertSee('Practice Run')
             ->assertSee('not ranked');
 
-        // Pre-launch the wall blocks new entries entirely.
+        // Pre-launch the exam hub stays reachable (exempt from the wall), so a
+        // fresh practice run is permitted rather than being bounced home.
         $this->lockSite();
 
         $this->actingAs($member)
             ->post(route('assessments.start', $assessment), ['mode' => 'practice'])
-            ->assertRedirect('/');
+            ->assertRedirect();
 
         LaunchSetting::current()->update(['main_site_status' => 'open']);
         LaunchSetting::flushCache();
