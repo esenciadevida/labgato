@@ -48,6 +48,12 @@ class LaunchSystemTest extends TestCase
         $this->get('/share/NOTAREALCODE')->assertNotFound();
     }
 
+    public function test_pre_launch_cron_endpoint_reaches_controller(): void
+    {
+        // A wrong secret must reach the controller (404), not be swallowed by the wall (302).
+        $this->get('/cron/wrongsecret/schedule')->assertNotFound();
+    }
+
     public function test_pre_launch_home_shows_launch_wall(): void
     {
         $this->get('/')

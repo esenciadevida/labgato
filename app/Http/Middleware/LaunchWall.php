@@ -38,6 +38,9 @@ class LaunchWall
         'verification',
         'up/',
         'legal/',
+        // The scheduler (cron) endpoint must always be reachable so scheduled
+        // tasks (backups, exam auto-submit, sitemap) run even pre-launch.
+        'cron/',
         // Certificate verification & sharing must stay publicly reachable so
         // the QR code on a certificate always resolves, even pre-launch.
         'verify/',
