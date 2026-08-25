@@ -19,8 +19,8 @@ class AscpAudit extends Command
         'Microbiology' => ['slugs' => ['microbiology'], 'range' => [17, 22], 'note' => null],
         'Blood Banking' => ['slugs' => ['blood-banking-transfusion'], 'range' => [10, 15], 'note' => null],
         'Immunology' => ['slugs' => ['immunology'], 'range' => [10, 15], 'note' => null],
-        'Urinalysis & Body Fluids' => ['slugs' => ['other'], 'range' => [5, 10], 'note' => 'currently buried in "Other" - split this area out'],
-        'Laboratory Operations' => ['slugs' => ['quality-control', 'biosafety'], 'range' => [5, 10], 'note' => 'split across QC + Biosafety - merge as Lab Ops'],
+        'Urinalysis & Body Fluids' => ['slugs' => ['urinalysis-body-fluids'], 'range' => [5, 10], 'note' => null],
+        'Laboratory Operations' => ['slugs' => ['laboratory-operations'], 'range' => [5, 10], 'note' => 'merged Quality Control + Biosafety + lab pre-analytic/safety/math'],
         'Molecular Diagnostics' => ['slugs' => ['molecular-diagnostics'], 'range' => null, 'note' => 'not a distinct ASCP content area (cross-cutting)'],
     ];
 
