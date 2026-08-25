@@ -40,7 +40,7 @@ class CertificateController extends Controller
 
         $path = $this->certificates->ensurePdf($certificate);
 
-        return Storage::disk('public')->download($path, "{$certificate->certificate_number}.pdf");
+        return Storage::disk('public')->download($path, $this->certificates->filename($certificate));
     }
 
     public function shareRedirect(ExamAttempt $attempt): \Illuminate\Http\RedirectResponse

@@ -7,6 +7,7 @@ use App\Models\Setting;
 use App\Services\AuditLogService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class SettingsController extends Controller
@@ -40,6 +41,7 @@ class SettingsController extends Controller
         'analytics.',
         'security.',
         'ai.',
+        'certificate.',
     ];
 
     private function isSensitiveKey(string $key): bool
@@ -87,10 +89,15 @@ class SettingsController extends Controller
         $data = $request->validate([
             'settings' => ['required', 'array'],
             'settings.*' => ['nullable', 'string'],
+            'certificate_signature' => ['nullable', 'image', 'mimes:png,jpg,jpeg,svg', 'max:2048'],
+            'certificate_signature_remove' => ['nullable', 'in:1'],
         ]);
 
         $auditChanges = [];
         $existingSettings = Setting::all()->keyBy('key');
+
+        // Handle the certificate signature upload/removal before the loop.
+        $signatureChanged = $this->handleSignature($request, $auditChanges);
 
         foreach ($data['settings'] as $key => $value) {
             if ($this->isSensitiveKey($key) || ! $this->isAllowedKey($key)) {
@@ -119,5 +126,33 @@ class SettingsController extends Controller
         Cache::forget('settings.all');
 
         return redirect()->route('admin.settings.index')->with('success', 'Settings updated successfully.');
+    }
+
+    /**
+     * Store or remove the configured certificate signature image.
+     *
+     * @param  array<string, array{old: mixed, new: mixed}>  $auditChanges
+     */
+    private function handleSignature(Request $request, array &$auditChanges): void
+    {
+        $old = (string) setting('certificate.signature_path', '');
+
+        if ($request->hasFile('certificate_signature')) {
+            if ($old !== '') {
+                Storage::disk('public')->delete($old);
+            }
+
+            $path = $request->file('certificate_signature')->store('certificate-signatures', 'public');
+            Setting::setValue('certificate.signature_path', $path);
+            $auditChanges['certificate.signature_path'] = ['old' => $old, 'new' => $path];
+
+            return;
+        }
+
+        if ($request->boolean('certificate_signature_remove') && $old !== '') {
+            Storage::disk('public')->delete($old);
+            Setting::setValue('certificate.signature_path', '');
+            $auditChanges['certificate.signature_path'] = ['old' => $old, 'new' => ''];
+        }
     }
 }

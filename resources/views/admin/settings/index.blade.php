@@ -7,7 +7,7 @@
 @section('content')
 <div class="mx-auto max-w-3xl">
 
-    <form method="POST" action="{{ route('admin.settings.update') }}" class="space-y-6">
+    <form method="POST" action="{{ route('admin.settings.update') }}" class="space-y-6" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -99,6 +99,54 @@
         @endforeach
 
         @if(auth()->user()->isSuperAdministrator())
+            @php
+                $signaturePath = (string) setting('certificate.signature_path', '');
+                $hasSignature = $signaturePath !== '' && \Illuminate\Support\Facades\Storage::disk('public')->exists($signaturePath);
+            @endphp
+            <x-ui.card title="Certificate">
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <div>
+                        <x-form.label for="certificate_signatory_name">Signatory name</x-form.label>
+                        <x-ui.input
+                            id="certificate_signatory_name"
+                            name="settings[certificate.signatory_name]"
+                            value="{{ old('settings.certificate.signatory_name', setting('certificate.signatory_name', 'Program Director')) }}"
+                        />
+                    </div>
+                    <div>
+                        <x-form.label for="certificate_signatory_title">Signatory title</x-form.label>
+                        <x-ui.input
+                            id="certificate_signatory_title"
+                            name="settings[certificate.signatory_title]"
+                            value="{{ old('settings.certificate.signatory_title', setting('certificate.signatory_title', 'Program Director, LabGOTO')) }}"
+                        />
+                    </div>
+                    <div class="sm:col-span-2">
+                        <x-form.label for="certificate_signature">Signature image</x-form.label>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                            PNG/JPG/SVG signature with a transparent background. It appears on every issued certificate.
+                        </p>
+                        <div class="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center">
+                            <div class="flex h-16 w-40 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800">
+                                @if($hasSignature)
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($signaturePath) }}" alt="Current certificate signature" class="max-h-14 max-w-36 object-contain">
+                                @else
+                                    <span class="text-xs text-slate-400 dark:text-slate-500">No signature</span>
+                                @endif
+                            </div>
+                            <div class="flex-1 space-y-3">
+                                <x-ui.input type="file" id="certificate_signature" name="certificate_signature" accept="image/png,image/jpeg,image/svg+xml" />
+                                <label class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+                                    <input type="checkbox" name="certificate_signature_remove" value="1" class="rounded border-slate-300 text-danger-600 focus:ring-danger-500 dark:border-slate-600 dark:bg-slate-800">
+                                    Remove current signature
+                                </label>
+                            </div>
+                        </div>
+                        <x-form.error for="certificate_signature" />
+                    </div>
+                </div>
+            </x-ui.card>
+
             <div class="flex items-center justify-end gap-3">
                 <x-ui.button type="submit">
                     Save Settings

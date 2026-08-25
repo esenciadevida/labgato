@@ -9,12 +9,12 @@
     $initialLeft = $epochTarget > 0 ? max(0, $epochTarget - now()->getTimestamp()) : 0;
 
     $boxClass = match ($size) {
-        'lg' => 'min-w-[4.75rem] px-3 py-4 sm:min-w-[6.5rem] sm:px-6 sm:py-7 rounded-2xl sm:rounded-3xl',
-        default => 'min-w-[3.75rem] px-2.5 py-3 sm:min-w-[5rem] sm:px-4 sm:py-4 rounded-xl sm:rounded-2xl',
+        'lg' => 'flex-1 min-w-0 px-3 py-4 sm:px-5 sm:py-6 sm:min-w-[4.5rem] sm:max-w-[6.5rem] rounded-2xl sm:rounded-3xl',
+        default => 'flex-1 min-w-0 px-2.5 py-3 sm:px-4 sm:py-4 sm:min-w-[3.5rem] sm:max-w-[5rem] rounded-xl sm:rounded-2xl',
     };
     $digitClass = match ($size) {
-        'lg' => 'text-3xl sm:text-6xl',
-        default => 'text-xl sm:text-3xl',
+        'lg' => 'text-2xl sm:text-4xl md:text-5xl',
+        default => 'text-xl sm:text-2xl',
     };
     $labelClass = match ($size) {
         'lg' => 'text-[9px] sm:text-[11px]',
@@ -40,7 +40,7 @@
      {{ $attributes->merge(['class' => 'inline-flex flex-col items-center']) }}
 >
     @if($epochTarget > 0)
-        <div class="flex items-stretch gap-1.5 sm:gap-2.5" aria-live="off">
+        <div class="flex w-full max-w-md items-stretch justify-center gap-1.5 sm:max-w-none sm:gap-2.5" aria-live="off">
             @foreach($units as $unit)
                 <div class="relative isolate overflow-hidden border border-white/10 bg-gradient-to-b from-white/[0.14] via-white/[0.06] to-white/[0.02] shadow-[0_18px_40px_-12px_rgb(0_0_0/0.55),inset_0_1px_0_0_rgb(255_255_255/0.14)] backdrop-blur-md {{ $boxClass }}">
                     <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" aria-hidden="true"></div>

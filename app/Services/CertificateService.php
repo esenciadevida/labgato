@@ -111,8 +111,10 @@ class CertificateService
             'certificate' => $certificate,
             'holderName' => $this->holderName($certificate),
             'qrBase64' => $qrBase64,
+            'signatureBase64' => $this->signatureBase64(),
+            'signatoryName' => (string) setting('certificate.signatory_name', 'Program Director'),
+            'signatoryTitle' => (string) setting('certificate.signatory_title', 'Program Director, LabGOTO'),
         ])
-            ->setPaper('a4', 'landscape')
             ->save(Storage::disk('public')->path($relativePath));
 
         $certificate->forceFill(['pdf_path' => $relativePath])->save();
@@ -159,6 +161,33 @@ class CertificateService
         }
 
         return $certificate->user?->name ?? 'Participant';
+    }
+
+    /**
+     * Base64-encoded signature image (if one is configured), else null.
+     */
+    private function signatureBase64(): ?string
+    {
+        $path = (string) setting('certificate.signature_path', '');
+
+        if ($path === '' || ! Storage::disk('public')->exists($path)) {
+            return null;
+        }
+
+        return base64_encode(Storage::disk('public')->get($path));
+    }
+
+    /**
+     * A descriptive, industry-style download filename:
+     * Certificate-of-{Type}-{Holder}-{Year}.pdf
+     */
+    public function filename(Certificate $certificate): string
+    {
+        $type = ucfirst($certificate->type);
+        $holder = preg_replace('/[^A-Za-z0-9]+/', '-', $this->holderName($certificate));
+        $holder = trim($holder ?: 'Participant', '-');
+
+        return sprintf('Certificate-of-%s-%s-%d.pdf', $type, $holder, (int) $certificate->issued_at?->year ?? now()->year);
     }
 
     private function nextCertificateNumber(): string

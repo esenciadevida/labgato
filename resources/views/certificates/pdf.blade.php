@@ -3,213 +3,133 @@
 <head>
     <meta charset="utf-8">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @page { size: A4 landscape; margin: 0; }
 
-        body {
-            font-family: Helvetica, Arial, sans-serif;
-            color: #1e293b;
-            background: #ffffff;
+        * { margin: 0; padding: 0; }
+
+        body { font-family: Helvetica, Arial, sans-serif; color: #0f172a; background: #ffffff; }
+
+        .certificate { position: relative; width: 280mm; height: 184mm; margin: 8mm 7mm; border: 4px solid #1e3a8a; page-break-inside: avoid; overflow: hidden; }
+
+        .certificate-inner { position: relative; margin: 3mm; border: 1px solid #d4af37; }
+
+        .content { padding: 8mm 15mm; text-align: center; }
+
+        .cert-header { width: 100%; border-collapse: collapse; }
+
+        .wordmark { font-size: 18px; font-weight: 800; letter-spacing: 3px; color: #1e3a8a; text-align: left; }
+        .wordmark small {
+            display: block; font-size: 6px; font-weight: 600; letter-spacing: 2px;
+            color: #64748b; text-transform: uppercase; margin-top: 1px;
         }
 
-        .frame {
-            width: 100%;
-            height: 100%;
-            border: 4px solid #1e3a8a;
-            padding: 6px;
-        }
-
-        .frame-inner {
-            border: 2px solid #d4af37;
-            padding: 28px 40px;
-            height: 100%;
-            text-align: center;
-        }
-
-        .wordmark {
-            font-size: 30px;
-            font-weight: bold;
-            letter-spacing: 4px;
-            color: #1e3a8a;
-        }
-
-        .tagline {
-            font-size: 11px;
-            letter-spacing: 3px;
-            color: #64748b;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
+        .cert-no { font-size: 7.5px; color: #64748b; text-align: right; line-height: 1.4; }
+        .cert-no strong { color: #334155; }
 
         .type-label {
-            display: inline-block;
-            margin-top: 22px;
-            padding: 6px 18px;
-            border: 1px solid #d4af37;
-            color: #85700f;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            display: inline-block; margin-top: 4mm; padding: 2.2mm 9mm;
+            border: 1px solid #d4af37; border-radius: 999px; color: #8a6d0f;
+            font-size: 8.5px; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; background: #fbf7ea;
         }
 
-        .presented {
-            margin-top: 26px;
-            font-size: 13px;
-            color: #64748b;
-            font-style: italic;
-        }
+        .presented { margin-top: 4mm; font-size: 9.5px; color: #64748b; font-style: italic; }
+        .holder { font-family: Georgia, 'Times New Roman', serif; font-size: 34px; line-height: 1.06; color: #0f172a; }
 
-        .holder {
-            margin-top: 12px;
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: 38px;
-            color: #0f172a;
-        }
+        .holder-underline { width: 86mm; height: 1px; margin: 2mm auto 0; background: #cbd5e1; }
 
-        .completion {
-            margin-top: 14px;
-            font-size: 15px;
-            color: #334155;
-        }
+        .completion { margin-top: 3mm; font-size: 10.5px; color: #334155; }
+        .assessment-title { font-weight: 800; color: #1e3a8a; }
 
-        .assessment-title {
-            font-weight: bold;
-            color: #1e3a8a;
-        }
+        .score-line { margin-top: 2.5mm; font-size: 9.5px; color: #475569; }
+        .score-line strong { color: #0f172a; }
+        .meta-line { margin-top: 3mm; font-size: 8px; color: #64748b; }
 
-        .score-line {
-            margin-top: 10px;
-            font-size: 13px;
-            color: #475569;
-        }
-
-        .meta-line {
-            margin-top: 16px;
-            font-size: 11px;
-            color: #64748b;
-        }
-
-        .footer {
-            margin-top: 34px;
-            table-layout: fixed;
-            width: 100%;
-        }
-
+        .footer { width: 100%; margin-top: 6mm; border-top: 1px solid #e2e8f0; padding-top: 3mm; border-collapse: collapse; }
         .footer td { vertical-align: bottom; }
+        .signature-cell { text-align: left; width: 52%; padding-left: 0; }
+        .qr-cell { text-align: right; width: 48%; }
 
-        .signature-cell {
-            text-align: left;
-            width: 55%;
-        }
+        .signature-img { max-width: 164px; max-height: 32px; display: block; margin-bottom: 1px; }
+        .signature-line { width: 186px; border-top: 1px solid #94a3b8; padding-top: 1mm; }
+        .signature-name { font-family: Georgia, serif; font-size: 12px; font-weight: 700; color: #334155; display: block; }
+        .signature-role { font-size: 7px; color: #64748b; display: block; margin-top: 0.4mm; text-transform: uppercase; letter-spacing: 0.8px; }
 
-        .qr-cell {
-            text-align: right;
-            width: 45%;
-        }
-
-        .signature-name {
-            border-top: 1px solid #94a3b8;
-            display: inline-block;
-            padding-top: 6px;
-            min-width: 220px;
-            font-size: 13px;
-            font-weight: bold;
-            color: #334155;
-        }
-
-        .signature-role {
-            font-size: 10px;
-            color: #64748b;
-            margin-top: 3px;
-        }
-
-        .qr-code {
-            width: 96px;
-            height: 96px;
-            display: block;
-            margin-left: auto;
-        }
-
-        .qr-caption {
-            font-size: 9px;
-            color: #64748b;
-            margin-top: 4px;
-        }
-
-        .verification-code {
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: #334155;
-        }
+        .qr-code { width: 96px; height: 96px; }
+        .qr-caption { font-size: 7px; color: #64748b; margin-top: 1mm; line-height: 1.5; }
+        .verification-code { display: inline-block; font-size: 9.5px; font-weight: 800; letter-spacing: 2px; color: #334155; margin-top: 1mm; }
 
         .disclaimer {
-            margin-top: 24px;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 10px;
-            font-size: 8.5px;
-            line-height: 1.5;
-            color: #94a3b8;
-            text-align: justify;
+            margin-top: 2mm; border-top: 1px solid #e2e8f0; padding-top: 1.6mm;
+            font-size: 6.4px; line-height: 1.4; color: #94a3b8; text-align: justify;
         }
     </style>
 </head>
 <body>
-    <div class="frame">
-        <div class="frame-inner">
-            <div class="wordmark">LabGOTO</div>
-            <div class="tagline">Laboratory Toolkit</div>
+    <div class="certificate">
+        <div class="certificate-inner">
+            <div class="content">
+                <table class="cert-header">
+                    <tr>
+                        <td style="text-align:left;vertical-align:top;">
+                            <div class="wordmark">LabGOTO<small>Medical Laboratory Knowledge Platform</small></div>
+                        </td>
+                        <td style="text-align:right;vertical-align:top;">
+                            <div class="cert-no">Certificate No.<br><strong>{{ $certificate->certificate_number }}</strong></div>
+                        </td>
+                    </tr>
+                </table>
 
-            <div class="type-label">{{ $certificate->label() }}</div>
+                <div class="type-label">{{ $certificate->label() }}</div>
 
-            <div class="presented">This is proudly presented to</div>
-            <div class="holder">{{ $holderName }}</div>
+                <div class="presented">This certificate is proudly presented to</div>
+                <div class="holder">{{ $holderName }}</div>
+                <div class="holder-underline"></div>
 
-            <div class="completion">
-                for successfully completing the
-                <span class="assessment-title">{{ $certificate->assessment->title }}</span>
-            </div>
-
-            @if($certificate->type !== 'participation')
-                <div class="score-line">
-                    Score: {{ number_format($certificate->score_percent, 1) }}%
-                    @if($certificate->rank_at_issue !== null)
-                        &nbsp;&middot;&nbsp; Rank: #{{ $certificate->rank_at_issue }}
-                    @endif
+                <div class="completion">
+                    for successfully completing the
+                    <span class="assessment-title">{{ $certificate->assessment->title }}</span>
                 </div>
-            @endif
 
-            <div class="meta-line">
-                Issued on {{ $certificate->issued_at->format('F j, Y') }}
-                &nbsp;&middot;&nbsp; Certificate No. {{ $certificate->certificate_number }}
-            </div>
-
-            <table class="footer">
-                <tr>
-                    <td class="signature-cell">
-                        <div class="signature-name">Program Director</div>
-                        <div class="signature-role">Program Director, LabGOTO</div>
-                    </td>
-                    <td class="qr-cell">
-                        @if($qrBase64)
-                            <img class="qr-code" src="data:image/png;base64,{{ $qrBase64 }}" alt="Verification QR code">
-                            <div class="qr-caption">Scan to verify</div>
-                            <div class="verification-code">{{ $certificate->verification_code }}</div>
-                        @else
-                            <div class="qr-caption">
-                                Verify at<br>
-                                <span class="verification-code">{{ $certificate->verifyUrl() }}</span><br>
-                                Code: {{ $certificate->verification_code }}
-                            </div>
+                @if($certificate->type !== 'participation')
+                    <div class="score-line">
+                        Score <strong>{{ number_format($certificate->score_percent, 1) }}%</strong>
+                        @if($certificate->rank_at_issue !== null)
+                            &nbsp;&middot;&nbsp; Rank <strong>#{{ $certificate->rank_at_issue }}</strong>
                         @endif
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                @endif
 
-            <div class="disclaimer">
-                This certificate is issued by LabGOTO in recognition of performance in the
-                {{ $certificate->assessment->title }}. It is a LabGOTO achievement certificate and is NOT an ASCP
-                certification nor an official ASCP credential.
+                <div class="meta-line">
+                    Issued on {{ $certificate->issued_at->format('F j, Y') }} &middot; Verification Code {{ $certificate->verification_code }}
+                </div>
+
+                <table class="footer">
+                    <tr>
+                        <td class="signature-cell">
+                            @if(!empty($signatureBase64))
+                                <img class="signature-img" src="data:image/png;base64,{{ $signatureBase64 }}" alt="Authorised signature">
+                            @endif
+                            <div class="signature-line">
+                                <span class="signature-name">{{ $signatoryName }}</span>
+                                <span class="signature-role">{{ $signatoryTitle }}</span>
+                            </div>
+                        </td>
+                        <td class="qr-cell">
+                            @if($qrBase64)
+                                <img class="qr-code" src="data:image/png;base64,{{ $qrBase64 }}" alt="Verification QR code">
+                            @endif
+                            <div class="qr-caption">Scan to verify this certificate at<br>labgoto.com/verify/{{ $certificate->verification_code }}</div>
+                            <div class="verification-code">{{ $certificate->verification_code }}</div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="disclaimer">
+                    This certificate acknowledges achievement in the {{ $certificate->assessment->title }} administered by LabGOTO.
+                    It is not an ASCP certification nor an official ASCP credential. Verify authenticity at the QR code above or at
+                    {{ $certificate->verifyUrl() }}.
+                </div>
             </div>
         </div>
     </div>
