@@ -36,6 +36,7 @@
                         <li><a href="{{ route('legal.disclaimer') }}" class="text-white/70 hover:text-lime-300 transition-colors">Disclaimer</a></li>
                         <li><a href="{{ route('legal.accessibility-statement') }}" class="text-white/70 hover:text-lime-300 transition-colors">Accessibility Statement</a></li>
                         <li><a href="{{ route('legal.cookie-policy') }}" class="text-white/70 hover:text-lime-300 transition-colors">Cookie Policy</a></li>
+                        <li><a href="{{ route('attributions.index') }}" class="text-white/70 hover:text-lime-300 transition-colors">Image Attributions</a></li>
                         <li><a href="{{ route('contact.create') }}" class="text-white/70 hover:text-lime-300 transition-colors">Contact Us</a></li>
                     </ul>
                 </div>

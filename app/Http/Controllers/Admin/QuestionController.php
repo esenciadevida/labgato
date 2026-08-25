@@ -272,6 +272,10 @@ class QuestionController extends Controller
             'status' => $request->input('status'),
             'stem' => $request->input('stem'),
             'explanation' => $request->filled('explanation') ? $request->input('explanation') : null,
+            'image_source' => $request->filled('image_source') ? $request->input('image_source') : null,
+            'image_license' => $request->filled('image_license') ? $request->input('image_license') : null,
+            'image_attribution' => $request->filled('image_attribution') ? $request->input('image_attribution') : null,
+            'image_source_url' => $request->filled('image_source_url') ? $request->input('image_source_url') : null,
         ];
     }
 

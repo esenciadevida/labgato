@@ -128,6 +128,12 @@ class ExamController extends Controller
                     'case_text' => $question->case_text,
                     'image_url' => $question->image_url,
                     'image_alt' => $question->image_alt,
+                    'attribution' => $question->requiresAttribution() ? [
+                        'source' => $question->image_source,
+                        'license' => $question->image_license,
+                        'attribution' => $question->image_attribution,
+                        'source_url' => $question->image_source_url,
+                    ] : null,
                     'options' => $options,
                 ];
             })

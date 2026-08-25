@@ -45,6 +45,7 @@ class LaunchWall
         // the QR code on a certificate always resolves, even pre-launch.
         'verify/',
         'share/',
+        'attributions/',
         // The scheduler tick must be reachable even pre-launch so backups,
         // auto-submit and auto-activation still run from a Hostinger cron.
         'cron/',

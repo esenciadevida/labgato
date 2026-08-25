@@ -31,6 +31,17 @@
                 <img src="{{ $item['image_url'] }}" alt="{{ $item['image_alt'] ?? 'Question image' }}"
                      class="max-h-80 w-full object-contain" loading="lazy">
             </figure>
+            @if($item['attribution'] ?? null)
+                <p class="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                    {{ $item['attribution']['source'] }} &middot; {{ $item['attribution']['license'] }}
+                    @if($item['attribution']['attribution'])
+                        &middot; {{ $item['attribution']['attribution'] }}
+                    @endif
+                    @if($item['attribution']['source_url'])
+                        &middot; <a href="{{ $item['attribution']['source_url'] }}" target="_blank" rel="noopener noreferrer" class="underline">Source</a>
+                    @endif
+                </p>
+            @endif
         @endif
 
         <ul class="mt-4 space-y-2">

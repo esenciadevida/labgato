@@ -117,6 +117,21 @@
                          class="max-h-[28rem] w-full object-contain" draggable="false">
                 </figure>
 
+                <div x-show="question.attribution" class="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                    <template x-if="question.attribution">
+                        <span>
+                            <span x-text="question.attribution.source"></span>
+                            &middot;&nbsp;<span x-text="question.attribution.license"></span>
+                            <template x-if="question.attribution.attribution">
+                                <span>&middot;&nbsp;<span x-text="question.attribution.attribution"></span></span>
+                            </template>
+                            <template x-if="question.attribution.source_url">
+                                &middot;&nbsp;<a :href="question.attribution.source_url" target="_blank" rel="noopener noreferrer" class="underline">Source</a>
+                            </template>
+                        </span>
+                    </template>
+                </div>
+
                 <div class="mt-6 space-y-3" role="radiogroup" :aria-label="'Question ' + (index + 1) + ' options'">
                     <template x-for="option in question.options" :key="option.id">
                         <button type="button" role="radio"

@@ -17,6 +17,8 @@ class Question extends Model
 
     public const STATUSES = ['draft', 'active', 'archived'];
 
+    public const IMAGE_LICENSES = ['Public Domain', 'CC BY 4.0', 'CC BY-SA 4.0', 'CC BY-NC 4.0', 'Original'];
+
     protected $fillable = [
         'question_category_id',
         'question_type',
@@ -24,6 +26,10 @@ class Question extends Model
         'case_text',
         'image_path',
         'image_alt',
+        'image_source',
+        'image_license',
+        'image_attribution',
+        'image_source_url',
         'difficulty',
         'explanation',
         'reference',
@@ -33,6 +39,40 @@ class Question extends Model
     public function usesImage(): bool
     {
         return in_array($this->question_type, ['image', 'text_image'], true);
+    }
+
+    /** Whether this question's image requires attribution (CC license). */
+    public function requiresAttribution(): bool
+    {
+        return $this->image_license !== null && str_contains($this->image_license, 'CC');
+    }
+
+    /** Rendered attribution line as safe HTML, linking to the source when present. */
+    public function attributionHtml(): string
+    {
+        if (! $this->requiresAttribution() && ! $this->image_source) {
+            return '';
+        }
+
+        $parts = [];
+
+        if ($this->image_source) {
+            $parts[] = e($this->image_source);
+        }
+
+        if ($this->image_license) {
+            $parts[] = e($this->image_license);
+        }
+
+        if ($this->image_attribution) {
+            $parts[] = e($this->image_attribution);
+        }
+
+        if ($this->image_source_url) {
+            $parts[] = '<a href="'.e($this->image_source_url).'" target="_blank" rel="noopener noreferrer" class="underline">Source</a>';
+        }
+
+        return implode(' · ', array_filter($parts));
     }
 
     public function getImageUrlAttribute(): ?string

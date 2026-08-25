@@ -11,6 +11,7 @@ use App\Http\Controllers\Assessments\CertificateController;
 use App\Http\Controllers\Assessments\ExamController;
 use App\Http\Controllers\Assessments\IntegrityEventController;
 use App\Http\Controllers\Assessments\ResultController;
+use App\Http\Controllers\PublicSite\AttributionsController;
 use App\Http\Controllers\PublicSite\CalculatorController;
 use App\Http\Controllers\PublicSite\ContactController;
 use App\Http\Controllers\PublicSite\ContributorController;
@@ -54,6 +55,7 @@ Route::get('/assessments', [AssessmentHubController::class, 'index'])
 
 Route::get('/verify/{code}', [VerifyController::class, 'verify'])->name('certificates.verify');
 Route::get('/share/{code}', [VerifyController::class, 'share'])->name('certificates.share');
+Route::get('/attributions', [AttributionsController::class, 'index'])->name('attributions.index');
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactController::class, 'store'])->middleware(['honeypot', 'throttle:contact'])->name('contact.store');

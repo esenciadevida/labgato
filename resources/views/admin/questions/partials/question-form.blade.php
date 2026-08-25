@@ -1,4 +1,4 @@
-<div class="space-y-6" x-data="questionForm()" data-initial-options="{{ json_encode(array_values($options)) }}" data-initial-correct="{{ $correctIndex }}">
+<div class="space-y-6" x-data="questionForm()" data-initial-options="{{ json_encode(array_values($options)) }}" data-initial-correct="{{ $correctIndex }}" data-initial-license="{{ $question->image_license }}">
 
     <x-ui.card title="Question details">
         <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -95,6 +95,44 @@
                 <img src="" alt="Preview of selected image" x-show="previewSrc" x-bind:src="previewSrc" class="mt-3 h-40 w-auto rounded-lg border border-slate-200 object-contain dark:border-slate-700" x-cloak>
 
                 <x-form.error for="image" />
+
+                <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div>
+                        <x-form.label for="image_source">Image source</x-form.label>
+                        <x-ui.input id="image_source" name="image_source" placeholder="CDC PHIL, Wikimedia Commons or Original"
+                            value="{{ old('image_source', $question->image_source) }}" />
+                        <x-form.error for="image_source" />
+                    </div>
+                    <div>
+                        <x-form.label for="image_license">Image license</x-form.label>
+                        <select id="image_license" name="image_license" x-model="license"
+                            class="mt-1 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-card focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/25 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100">
+                            <option value="">Choose a license</option>
+                            @foreach(\App\Models\Question::IMAGE_LICENSES as $licenseOption)
+                                <option value="{{ $licenseOption }}" @selected($question->image_license === $licenseOption)>{{ $licenseOption }}</option>
+                            @endforeach
+                        </select>
+                        <x-form.error for="image_license" />
+                    </div>
+                    <div class="sm:col-span-2" x-show="requiresAttributionField()" x-cloak>
+                        <x-form.label for="image_attribution">Image attribution</x-form.label>
+                        <textarea
+                            id="image_attribution"
+                            name="image_attribution"
+                            rows="2"
+                            maxlength="1000"
+                            placeholder="e.g. By User:Mikrograf, CC BY-SA 4.0"
+                            class="mt-1 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-card focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/25 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+                        >{{ old('image_attribution', $question->image_attribution) }}</textarea>
+                        <x-form.error for="image_attribution" />
+                    </div>
+                    <div class="sm:col-span-2">
+                        <x-form.label for="image_source_url">Image source URL</x-form.label>
+                        <x-ui.input id="image_source_url" name="image_source_url" type="url" placeholder="https://..."
+                            value="{{ old('image_source_url', $question->image_source_url) }}" />
+                        <x-form.error for="image_source_url" />
+                    </div>
+                </div>
             </div>
 
             <div class="sm:col-span-2">
@@ -182,12 +220,14 @@
             type: 'text',
             options: [],
             correct: 0,
+            license: '',
             previewSrc: '',
             removingImage: false,
             init() {
                 const root = this.$el;
                 this.options = JSON.parse(root.dataset.initialOptions || '["",""]');
                 this.correct = parseInt(root.dataset.initialCorrect || '0', 10);
+                this.license = root.dataset.initialLicense || '';
                 const typeSelect = root.querySelector('#question_type');
                 if (typeSelect) {
                     this.type = typeSelect.value;
@@ -195,6 +235,9 @@
             },
             usesImage() {
                 return ['image', 'text_image'].includes(this.type);
+            },
+            requiresAttributionField() {
+                return String(this.license).includes('CC');
             },
             add() {
                 if (this.options.length < 6) {

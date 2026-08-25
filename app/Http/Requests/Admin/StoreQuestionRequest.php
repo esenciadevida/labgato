@@ -33,6 +33,10 @@ class StoreQuestionRequest extends FormRequest
             'options' => ['required', 'array', 'min:2', 'max:6'],
             'options.*' => ['required', 'string', 'max:1000'],
             'correct_index' => ['required', 'integer', 'min:0'],
+            'image_source' => ['nullable', 'string', 'max:255'],
+            'image_license' => ['nullable', Rule::in(Question::IMAGE_LICENSES)],
+            'image_attribution' => ['nullable', 'string', 'max:1000'],
+            'image_source_url' => ['nullable', 'url', 'max:2048'],
         ];
     }
 
