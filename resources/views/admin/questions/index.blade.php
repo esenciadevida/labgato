@@ -104,6 +104,27 @@
         @endforeach
     </div>
 
+    @if($batchProgress)
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach($batchProgress as $batch)
+                <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+                    <div class="flex items-center justify-between gap-2">
+                        <p class="truncate text-sm font-semibold text-slate-900 dark:text-slate-100">{{ str_replace('_', ' ', $batch['label']) }}</p>
+                        <span class="shrink-0 text-xs font-medium text-slate-500 dark:text-slate-400">
+                            {{ $batch['activated'] }}/{{ $batch['total'] }} activated
+                        </span>
+                    </div>
+                    <div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+                        <div class="h-full rounded-full bg-success-500 transition-all" style="width: {{ $batch['percent'] }}%;"></div>
+                    </div>
+                    <p class="mt-1.5 text-[11px] text-slate-400 dark:text-slate-500">
+                        Review, attach images, then Activate to publish.
+                    </p>
+                </div>
+            @endforeach
+        </div>
+    @endif
+
     <x-ui.card>
         @if($questions->isEmpty())
             <x-ui.empty-state title="No questions found" description="Adjust your filters or create the first question for this bank.">

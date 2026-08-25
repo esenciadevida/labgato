@@ -47,6 +47,8 @@ class QuestionController extends Controller
             ->orderBy('sort_order')
             ->get();
 
+        $batchProgress = $this->batchProgress();
+
         return view('admin.questions.index', compact(
             'questions',
             'search',
@@ -55,8 +57,40 @@ class QuestionController extends Controller
             'type',
             'status',
             'stats',
-            'categoryCounts'
+            'categoryCounts',
+            'batchProgress',
         ));
+    }
+
+    /**
+     * Progress per seeded JSON batch: how many of the batch's questions have
+     * been activated (reviewed) vs. still draft.
+     *
+     * @return list<array{label: string, total: int, activated: int, percent: int}>
+     */
+    private function batchProgress(): array
+    {
+        $progress = [];
+
+        foreach (glob(database_path('data/questions/*.json')) ?: [] as $file) {
+            $items = json_decode((string) file_get_contents($file), true) ?: [];
+            $stems = array_values(array_filter(array_column($items, 'stem')));
+
+            if ($stems === []) {
+                continue;
+            }
+
+            $activated = Question::where('status', 'active')->whereIn('stem', $stems)->count();
+
+            $progress[] = [
+                'label' => pathinfo($file, PATHINFO_FILENAME),
+                'total' => count($stems),
+                'activated' => (int) $activated,
+                'percent' => (int) round($activated / count($stems) * 100),
+            ];
+        }
+
+        return $progress;
     }
 
     public function create()

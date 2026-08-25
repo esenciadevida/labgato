@@ -164,4 +164,15 @@ class JsonSeedTest extends TestCase
         $this->assertSame('https://example.com/img.jpg', $question->image_source_url);
         $this->assertTrue($question->requiresAttribution());
     }
+
+    public function test_questions_index_shows_batch_progress(): void
+    {
+        $this->artisan('questions:seed')->assertSuccessful();
+
+        $response = $this->actingAs($this->superAdmin)->get(route('admin.questions.index'));
+
+        $response->assertOk();
+        $response->assertSee('hematology batch1');
+        $response->assertSee('0/20 activated');
+    }
 }
