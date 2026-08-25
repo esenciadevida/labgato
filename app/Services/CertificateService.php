@@ -114,6 +114,9 @@ class CertificateService
             'signatureBase64' => $this->signatureBase64(),
             'signatoryName' => (string) setting('certificate.signatory_name', 'Program Director'),
             'signatoryTitle' => (string) setting('certificate.signatory_title', 'Program Director, LabGOTO'),
+            'logoBase64' => base64_encode(
+                (string) file_get_contents(public_path('assets/LabGoTo_favicon_192.png'))
+            ),
         ])
             ->save(Storage::disk('public')->path($relativePath));
 

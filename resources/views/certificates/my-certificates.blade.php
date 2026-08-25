@@ -8,7 +8,7 @@
         <header>
             <h1 class="font-display text-3xl font-bold text-slate-900 dark:text-slate-100">My Certificates</h1>
             <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                Verifiable certificates for completed assessments. Each certificate carries a QR code anyone can check on the public verification page.
+                Verifiable certificates for completed assessments. Each certificate carries a QR code that can be scanned to verify it publicly.
             </p>
         </header>
 
@@ -56,10 +56,6 @@
                                 Share
                             </a>
                         @endunless
-                        <a href="{{ $certificate->verifyUrl() }}"
-                           class="inline-flex min-h-[40px] items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
-                            Verify page
-                        </a>
                     </div>
                 </div>
             @empty
