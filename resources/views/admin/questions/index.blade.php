@@ -97,10 +97,23 @@
 
     <div class="flex flex-wrap gap-1.5">
         @foreach($categoryCounts as $categoryCount)
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+            @php
+                $chipUrl = route('admin.questions.index', array_filter([
+                    'search' => $search,
+                    'difficulty' => $difficulty,
+                    'type' => $type,
+                    'status' => $status ?: null,
+                    'category' => $categoryCount->id,
+                ]));
+                $chipActive = (string) $categoryId === (string) $categoryCount->id;
+            @endphp
+            <a href="{{ $chipUrl }}"
+                class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium transition-colors
+                    {{ $chipActive ? 'bg-primary-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-primary-50 hover:text-primary-700 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600' }}"
+            >
                 {{ $categoryCount->name }}
-                <span class="rounded-full bg-white/80 px-1.5 py-0.5 text-[10px] font-semibold text-slate-500 dark:bg-slate-900/60 dark:text-slate-400">{{ $categoryCount->questions_count }}</span>
-            </span>
+                <span class="rounded-full px-1.5 py-0.5 text-[10px] font-semibold {{ $chipActive ? 'bg-white/25 text-white' : 'bg-white/80 text-slate-500 dark:bg-slate-900/60 dark:text-slate-400' }}">{{ $categoryCount->questions_count }}</span>
+            </a>
         @endforeach
     </div>
 

@@ -17,7 +17,7 @@ class Question extends Model
 
     public const STATUSES = ['draft', 'active', 'archived'];
 
-    public const IMAGE_LICENSES = ['Public Domain', 'CC BY 4.0', 'CC BY-SA 4.0', 'CC BY-NC 4.0', 'Original'];
+    public const IMAGE_LICENSES = ['Public Domain', 'CC0', 'CC BY 2.0', 'CC BY 4.0', 'CC BY-SA 3.0', 'CC BY-SA 4.0', 'CC BY-NC 4.0', 'Original'];
 
     protected $fillable = [
         'question_category_id',

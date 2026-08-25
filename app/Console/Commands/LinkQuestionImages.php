@@ -9,23 +9,29 @@ class LinkQuestionImages extends Command
 {
     protected $signature = 'questions:link-images';
 
-    protected $description = 'Attach remote Wikimedia source URLs to seeded image questions by matching stem fragments.';
+    protected $description = 'Attach reliable Wikimedia Commons image source URLs to seeded image questions by matching stem fragments.';
 
     private const MAP = [
-        "bull's-eye" => ['https://commons.wikimedia.org/wiki/Special:FilePath/Target%20Cells,%20Peripheral%20Blood%20Smear%20(39144139915).jpg?width=1200', 'Wikimedia Commons', 'CC'],
-        'slit- or mouth-shaped' => ['https://commons.wikimedia.org/wiki/Special:FilePath/Poikilocytes%20-%20Red%20blood%20cell%20types.jpg?width=1200', 'Wikimedia Commons', 'CC BY 4.0'],
-        'crescent-shaped' => ['https://commons.wikimedia.org/wiki/Special:FilePath/Sickle%20cell%20anemia%20smear.jpg?width=1200', 'Wikimedia Commons', 'CC BY-SA 4.0'],
-        'fragmented, helmet' => ['https://commons.wikimedia.org/wiki/Special:FilePath/Bloodsmear%20with%20typical%20schistocytes%20in%20TTP%20marked%20in%20blue%201.tif?width=1200', 'Wikimedia Commons', 'CC'],
-        'lacking central pallor' => ['https://commons.wikimedia.org/wiki/Special:FilePath/Investigation%20of%20hereditary%20spherocytosis%20red%20blood%20cell%20shapes.jpg?width=1200', 'Wikimedia Commons', 'CC'],
-        '6 nuclear lobes' => ['https://commons.wikimedia.org/wiki/Special:FilePath/HypersegmentedNeutrophils.jpg?width=1200', 'Wikimedia Commons', 'CC BY-SA 4.0'],
-        'casts containing white' => ['https://commons.wikimedia.org/wiki/Special:FilePath/WBC%20cast%20in%20urine.jpg?width=1200', 'Wikimedia Commons', 'CC BY-SA 4.0'],
-        'cocci arranged in clusters' => ['https://commons.wikimedia.org/wiki/Special:FilePath/Staphylococcus%20aureus%20Gram%20stain.jpg?width=1200', 'Wikimedia Commons', 'CC BY-SA 4.0'],
-        'lancet-shaped' => ['https://commons.wikimedia.org/wiki/Special:FilePath/Gram%20stain%20of%20Streptococcus%20pneumoniae.jpg?width=1200', 'Wikimedia Commons', 'CC'],
-        'delicate ring forms' => ['https://commons.wikimedia.org/wiki/Special:FilePath/Plasmodium%20falciparum%20(malaria)%20parasite%20in%20blood.jpg?width=1200', 'Wikimedia Commons', 'CC'],
-        'pear-shaped flagellate' => ['https://commons.wikimedia.org/wiki/Special:FilePath/Giardia%20intestinalis%20-%20trophozoite.jpg?width=1200', 'Wikimedia Commons', 'CC'],
-        'pseudohyphae and blastoconidia' => ['https://commons.wikimedia.org/wiki/Special:FilePath/Candida%20albicans%20-%20Gram%20stain.jpg?width=1200', 'Wikimedia Commons', 'CC BY-SA 4.0'],
-        'acid-fast bacilli' => ['https://commons.wikimedia.org/wiki/Special:FilePath/ZN%20of%20MTB.jpg?width=1200', 'Wikimedia Commons', 'CC BY-SA 4.0'],
-        'clear halo' => ['https://commons.wikimedia.org/wiki/Special:FilePath/Cryptococcus%20neoformans%20using%20a%20light%20India%20ink%20staining%20preparation%20PHIL%203771%20lores.jpg?width=1200', 'CDC PHIL via Wikimedia Commons', 'Public Domain'],
+        "bull's-eye" => ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Target_Cells%2C_Peripheral_Blood_Smear_%2839144139915%29.jpg/1280px-Target_Cells%2C_Peripheral_Blood_Smear_%2839144139915%29.jpg', 'Wikimedia Commons', 'CC BY 2.0'],
+        'slit- or mouth-shaped' => ['https://upload.wikimedia.org/wikipedia/commons/8/83/Poikilocytes_-_Red_blood_cell_types.jpg', 'Wikimedia Commons', 'CC BY 4.0'],
+        'crescent-shaped' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Sickle_cell_anemia_smear.jpg/1280px-Sickle_cell_anemia_smear.jpg', 'Wikimedia Commons', 'CC BY-SA 4.0'],
+        'fragmented, helmet' => ['https://upload.wikimedia.org/wikipedia/commons/8/83/Poikilocytes_-_Red_blood_cell_types.jpg', 'Wikimedia Commons', 'CC BY 4.0'],
+        'lacking central pallor' => ['https://upload.wikimedia.org/wikipedia/commons/d/d9/Investigation_of_hereditary_spherocytosis_red_blood_cell_shapes.jpg', 'Wikimedia Commons', 'CC BY-SA 4.0'],
+        '6 nuclear lobes' => ['https://upload.wikimedia.org/wikipedia/commons/5/51/Hypersegmented_neutrophil.png', 'Wikimedia Commons', 'Public Domain'],
+        'casts containing white' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/WBC_cast_in_urine.jpg/1280px-WBC_cast_in_urine.jpg', 'Wikimedia Commons', 'CC BY-SA 4.0'],
+        'cocci arranged in clusters' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Staphylococcus_aureus_Gram_stain.jpg/1280px-Staphylococcus_aureus_Gram_stain.jpg', 'Wikimedia Commons', 'CC BY-SA 4.0'],
+        'lancet-shaped' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Gram_stain_of_Streptococcus_pneumoniae.jpg/1280px-Gram_stain_of_Streptococcus_pneumoniae.jpg', 'Wikimedia Commons', 'CC0'],
+        'delicate ring forms' => ['https://upload.wikimedia.org/wikipedia/commons/c/c6/Plasmodium_falciparum_%28malaria%29_parasite_in_blood.jpg', 'Wikimedia Commons', 'Public Domain'],
+        'pear-shaped flagellate' => ['https://upload.wikimedia.org/wikipedia/commons/2/21/Giardia_intestinalis_-_trophozoite.jpg', 'Wikimedia Commons', 'CC BY-SA 4.0'],
+        'pseudohyphae and blastoconidia' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Candida_albicans_-_Gram_stain.jpg/1280px-Candida_albicans_-_Gram_stain.jpg', 'Wikimedia Commons', 'CC BY-SA 4.0'],
+        'acid-fast bacilli' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/ZN_of_MTB.jpg/1280px-ZN_of_MTB.jpg', 'Wikimedia Commons', 'CC BY-SA 4.0'],
+        'clear halo' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Cryptococcus_neoformans_using_a_light_India_ink_staining_preparation_PHIL_3771_lores.jpg/1280px-Cryptococcus_neoformans_using_a_light_India_ink_staining_preparation_PHIL_3771_lores.jpg', 'Wikimedia Commons', 'Public Domain'],
+        'Gram-negative diplococci within neutrophils' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Neisseria_gonorrhoeae_bacteria_%28Gram_stain%29.jpg/1280px-Neisseria_gonorrhoeae_bacteria_%28Gram_stain%29.jpg', 'Wikimedia Commons', 'CC BY 4.0'],
+        'envelope-shaped (octahedral) crystals' => ['https://upload.wikimedia.org/wikipedia/commons/1/1f/Calcium_oxalate_crystals_in_urine.jpg', 'Wikimedia Commons', 'Public Domain'],
+        'rod-shaped, azurophilic inclusion' => ['https://upload.wikimedia.org/wikipedia/commons/d/d0/Auer_Rods_in_Leukemic_Blast_%282434847298%29.jpg', 'Wikimedia Commons', 'CC BY 2.0'],
+        'bilobed cell with large orange-red granules' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Eosinophil_blood_smear.JPG/1280px-Eosinophil_blood_smear.JPG', 'Wikimedia Commons', 'CC BY-SA 4.0'],
+        'terminal round spores' => ['https://upload.wikimedia.org/wikipedia/commons/f/fe/C_tetani_gram_stain.jpg', 'Wikimedia Commons', 'Public Domain'],
+        'coffin-lid appearance' => ['https://upload.wikimedia.org/wikipedia/commons/a/a4/Struvite_crystals_%28urine%29_-_Str%C3%BCvit_kristalleri_%28idrar%29_-_01.png', 'Wikimedia Commons', 'CC BY-SA 3.0'],
     ];
 
     public function handle(): int
