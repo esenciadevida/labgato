@@ -131,7 +131,7 @@
                                 <p class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">Current signature</p>
                                 <div class="flex h-16 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white px-4 dark:border-slate-600 dark:bg-slate-800">
                                     @if($hasSignature)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($signaturePath) }}" alt="Current certificate signature" class="max-h-10 max-w-[180px] object-contain">
+                                        <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($signaturePath) }}" alt="Current certificate signature" class="h-10 w-44 object-contain">
                                     @else
                                         <span class="text-xs text-slate-400 dark:text-slate-500">No signature uploaded</span>
                                     @endif

@@ -27,7 +27,7 @@
             pointer-events: none;
         }
 
-        .content { padding: 10mm 16mm; }
+        .content { padding: 10mm 16mm; text-align: center; }
 
         .header { width: 100%; margin-bottom: 5mm; }
 
