@@ -56,19 +56,20 @@
             text-transform: uppercase; background: #ffffff;
         }
 
-        .presented { margin-top: 5mm; font-size: 10px; color: #6b7280; font-style: italic; letter-spacing: 0.5px; }
+        .presented { margin-top: 5mm; font-size: 10px; color: #6b7280; font-style: italic; letter-spacing: 0.5px; text-align: center; }
 
         .holder {
             font-family: Georgia, 'Times New Roman', serif;
             font-size: 40px; font-weight: bold; line-height: 1.08; color: #1e3a8a;
+            text-align: center;
         }
 
         .holder-rule { width: 120mm; height: 1px; margin: 2mm auto 0; background: #d4af37; }
 
-        .completion { margin-top: 4mm; font-size: 10.5px; color: #374151; line-height: 1.5; }
+        .completion { margin-top: 4mm; font-size: 10.5px; color: #374151; line-height: 1.5; text-align: center; }
         .completion .title { font-weight: 700; color: #1e3a8a; }
 
-        .score-line { margin-top: 3mm; font-size: 9.5px; color: #475569; }
+        .score-line { margin-top: 3mm; font-size: 9.5px; color: #475569; text-align: center; }
         .score-line strong { color: #111827; }
 
         .footer { width: 100%; margin-top: 13mm; padding-top: 4mm; border-top: 1px solid #d4af37; border-collapse: collapse; }
