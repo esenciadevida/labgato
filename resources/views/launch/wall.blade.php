@@ -37,12 +37,12 @@
             Coming soon
         </p>
 
-        <h1 class="mt-6 font-display text-4xl font-black uppercase tracking-[0.18em] text-white sm:text-6xl">
+        <h1 class="mt-6 font-display text-3xl font-black uppercase tracking-[0.18em] text-white sm:text-5xl lg:text-6xl">
             Labgoto
             <span class="mt-2 block bg-gradient-to-r from-primary-300 via-cyan-200 to-emerald-300 bg-clip-text text-transparent">is coming</span>
         </h1>
 
-        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
+        <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
             A new digital platform for medical laboratory science.
             Practice, learn and compete - all in one place.
         </p>

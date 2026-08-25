@@ -6,10 +6,10 @@
 @extends('layouts.public')
 
 @section('content')
-<section class="py-10">
+<section class="py-8 sm:py-12 lg:py-16">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-            <h1 class="font-display text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
+            <h1 class="break-words font-display text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100 sm:text-3xl lg:text-4xl">
                 Welcome, {{ $user->profile?->display_name ?: $user->name }}
             </h1>
             <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-500 dark:text-slate-400">
@@ -17,7 +17,7 @@
             </p>
         </div>
 
-        <div class="relative isolate mt-10 overflow-hidden rounded-3xl border border-primary-800/60 bg-gradient-to-b from-primary-950 via-primary-900 to-slate-950 p-6 shadow-panel sm:p-10">
+        <div class="relative isolate mt-8 overflow-hidden rounded-3xl border border-primary-800/60 bg-gradient-to-b from-primary-950 via-primary-900 to-slate-950 p-5 shadow-panel sm:p-8 lg:p-10">
             <div class="pointer-events-none absolute inset-0" aria-hidden="true">
                 <div class="absolute -top-24 left-1/2 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-primary-500/20 blur-3xl"></div>
                 <div class="absolute bottom-0 right-0 h-48 w-48 translate-x-1/4 rounded-full bg-cyan-400/10 blur-3xl"></div>
@@ -29,8 +29,8 @@
                     <x-launch.countdown :target="$settings->launchAtCarbon()" size="lg" reload-on-zero />
                 </div>
 
-                <div class="mt-10 w-full max-w-lg mx-auto">
-                    <div class="relative isolate overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-left shadow-[0_18px_50px_-20px_rgb(0_0_0/0.6)] backdrop-blur-md sm:p-7">
+                <div class="mt-8 w-full max-w-xl mx-auto">
+                    <div class="relative isolate overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-5 text-left shadow-[0_18px_50px_-20px_rgb(0_0_0/0.6)] backdrop-blur-md sm:p-7">
                         <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" aria-hidden="true"></div>
 
                         <h2 class="font-display text-sm font-bold uppercase tracking-[0.2em] text-white/60">Your Challenges</h2>
@@ -57,7 +57,7 @@
                                 @endphp
                                 <div class="flex flex-col gap-3 border-b border-white/5 pb-3 last:border-0 last:pb-0 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                                     <div class="min-w-0">
-                                        <h3 class="font-display text-sm font-bold text-white">{{ $assessment->title }}</h3>
+                                        <h3 class="break-words font-display text-sm font-bold text-white">{{ $assessment->title }}</h3>
                                         <p class="mt-0.5 text-xs text-slate-400">
                                             {{ ucfirst($assessment->type) }} &middot; {{ $assessment->total_questions }} questions &middot; {{ $assessment->duration_minutes }} min &middot;
                                             <span class="{{ $canBegin ? 'text-success-300' : 'text-white/60' }}">{{ $statusLabel }}</span>

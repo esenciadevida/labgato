@@ -9,11 +9,15 @@
 
         body { font-family: Helvetica, Arial, sans-serif; color: #0f172a; background: #ffffff; }
 
-        .certificate { position: relative; width: 280mm; height: 184mm; margin: 8mm 7mm; border: 4px solid #1e3a8a; page-break-inside: avoid; overflow: hidden; }
+        .certificate { position: relative; width: 280mm; height: 184mm; margin: 8mm 7mm; border: 5px solid #1e3a8a; overflow: hidden; background: #fffdf6; }
 
         .certificate-inner { position: relative; margin: 3mm; border: 1px solid #d4af37; }
 
         .content { padding: 8mm 15mm; text-align: center; }
+
+        .top-rule {
+            width: 60mm; height: 1px; margin: 0 auto 3mm; background: #d4af37;
+        }
 
         .cert-header { width: 100%; border-collapse: collapse; }
 
@@ -27,25 +31,25 @@
         .cert-no strong { color: #334155; }
 
         .type-label {
-            display: inline-block; margin-top: 4mm; padding: 2.2mm 9mm;
-            border: 1px solid #d4af37; border-radius: 999px; color: #8a6d0f;
-            font-size: 8.5px; font-weight: 700; letter-spacing: 3px;
-            text-transform: uppercase; background: #fbf7ea;
+            display: inline-block; margin-top: 3mm; padding: 2.4mm 10mm;
+            border: 1px solid #b98a12; border-radius: 999px; color: #7a5e0c;
+            font-size: 8.5px; font-weight: 800; letter-spacing: 3px;
+            text-transform: uppercase; background: #fcf3d9;
         }
 
         .presented { margin-top: 4mm; font-size: 9.5px; color: #64748b; font-style: italic; }
-        .holder { font-family: Georgia, 'Times New Roman', serif; font-size: 34px; line-height: 1.06; color: #0f172a; }
+        .holder { font-family: Georgia, 'Times New Roman', serif; font-size: 36px; line-height: 1.06; color: #0f172a; }
 
-        .holder-underline { width: 86mm; height: 1px; margin: 2mm auto 0; background: #cbd5e1; }
+        .holder-underline { width: 90mm; height: 1px; margin: 2mm auto 0; background: #d4af37; }
 
-        .completion { margin-top: 3mm; font-size: 10.5px; color: #334155; }
+        .completion { margin-top: 3.5mm; font-size: 10.5px; color: #334155; }
         .assessment-title { font-weight: 800; color: #1e3a8a; }
 
         .score-line { margin-top: 2.5mm; font-size: 9.5px; color: #475569; }
         .score-line strong { color: #0f172a; }
         .meta-line { margin-top: 3mm; font-size: 8px; color: #64748b; }
 
-        .footer { width: 100%; margin-top: 6mm; border-top: 1px solid #e2e8f0; padding-top: 3mm; border-collapse: collapse; }
+        .footer { width: 100%; margin-top: 6mm; border-top: 1px solid #d4af37; padding-top: 3mm; border-collapse: collapse; }
         .footer td { vertical-align: bottom; }
         .signature-cell { text-align: left; width: 52%; padding-left: 0; }
         .qr-cell { text-align: right; width: 48%; }
@@ -79,6 +83,8 @@
                         </td>
                     </tr>
                 </table>
+
+                <div class="top-rule"></div>
 
                 <div class="type-label">{{ $certificate->label() }}</div>
 
