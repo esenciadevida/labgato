@@ -35,6 +35,7 @@ class RestructureAscp extends Command
             'tube top (additive) is used for coagulation',
             'blood culture sets',
             'Westgard rules are applied',
+            'Westgard 1_2s rule',
             'prevent specimen contamination',
             'molarity unit is defined',
             'reference interval',
