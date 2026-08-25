@@ -6,7 +6,6 @@ use App\Models\Question;
 use App\Services\ImageDownloaderService;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class DownloadQuestionImages extends Command
 {
@@ -19,16 +18,21 @@ class DownloadQuestionImages extends Command
         $downloaded = 0;
         $failed = 0;
 
-        foreach (Question::whereNotNull('image_url')->get() as $question) {
+        $questions = Question::query()
+            ->whereIn('question_type', ['image', 'text_image'])
+            ->whereNotNull('image_source_url')
+            ->get();
+
+        foreach ($questions as $question) {
             $dest = $question->image_path;
 
             if ($dest && Storage::disk('public')->exists($dest)) {
                 continue;
             }
 
-            $dest = $dest ?: 'questions/'.Str::slug($question->stem ?: 'question-'.$question->id).'.jpg';
+            $dest = $dest ?: 'questions/'.$question->id;
 
-            if ($downloader->downloadAndStore((string) $question->image_url, $dest)) {
+            if ($downloader->downloadAndStore((string) $question->image_source_url, $dest)) {
                 $question->update(['image_path' => $dest]);
                 $downloaded++;
                 $this->info('Downloaded: '.mb_substr($question->stem, 0, 50).'...');

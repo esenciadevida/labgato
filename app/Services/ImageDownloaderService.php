@@ -14,7 +14,9 @@ class ImageDownloaderService
     public function downloadAndStore(string $sourceUrl, string $destPath): bool
     {
         try {
-            $response = Http::timeout(30)->get($sourceUrl);
+            $response = Http::withHeaders([
+                'User-Agent' => 'LabGOTO/1.0 (https://labgoto.com; admin@labgoto.com) Laravel/'.app()->version(),
+            ])->timeout(40)->get($sourceUrl);
 
             if (! $response->successful()) {
                 return false;

@@ -31,7 +31,7 @@
 
 # Deny access to sensitive directories
 <IfModule mod_rewrite.c>
-    RewriteRule ^(storage|vendor|bootstrap|config|database|routes|tests|docs|deploy)/ - [F,L]
+    RewriteRule ^(vendor|bootstrap|config|database|routes|tests|docs|deploy)/ - [F,L]
 </IfModule>
 
 # Prevent directory listing
@@ -50,7 +50,7 @@ ServerSignature Off
     Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
     Header set Cross-Origin-Resource-Policy "same-origin"
     Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://upload.wikimedia.org https://commons.wikimedia.org; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
     Header unset X-Powered-By
 </IfModule>
 
