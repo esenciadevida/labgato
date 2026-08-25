@@ -276,6 +276,8 @@ class QuestionController extends Controller
             'image_license' => $request->filled('image_license') ? $request->input('image_license') : null,
             'image_attribution' => $request->filled('image_attribution') ? $request->input('image_attribution') : null,
             'image_source_url' => $request->filled('image_source_url') ? $request->input('image_source_url') : null,
+            'image_search' => $request->filled('image_search') ? $request->input('image_search') : null,
+            'image_spec' => $request->filled('image_spec') ? $request->input('image_spec') : null,
         ];
     }
 

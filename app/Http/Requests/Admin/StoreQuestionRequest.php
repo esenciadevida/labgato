@@ -37,6 +37,8 @@ class StoreQuestionRequest extends FormRequest
             'image_license' => ['nullable', Rule::in(Question::IMAGE_LICENSES)],
             'image_attribution' => ['nullable', 'string', 'max:1000'],
             'image_source_url' => ['nullable', 'url', 'max:2048'],
+            'image_search' => ['nullable', 'string', 'max:500'],
+            'image_spec' => ['nullable', 'string', 'max:2000'],
         ];
     }
 

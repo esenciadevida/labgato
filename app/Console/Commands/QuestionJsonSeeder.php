@@ -38,6 +38,12 @@ class QuestionJsonSeeder extends Command
                     throw new \RuntimeException('Invalid question at index '.$index.' in '.basename($file));
                 }
 
+                if (Question::where('stem', $item['stem'])->exists()) {
+                    $this->line('Skipped (already exists): '.mb_substr((string) $item['stem'], 0, 50).'...');
+
+                    continue;
+                }
+
                 $this->createQuestion($item);
                 $imported++;
                 $this->info('Created: '.mb_substr((string) $item['stem'], 0, 50).'...');
@@ -79,6 +85,8 @@ class QuestionJsonSeeder extends Command
             'image_license' => $item['image_license'] ?? null,
             'image_attribution' => $item['image_attribution'] ?? null,
             'image_source_url' => $item['image_url'] ?? null,
+            'image_search' => $item['image_search'] ?? null,
+            'image_spec' => $item['image_spec'] ?? null,
             'difficulty' => $item['difficulty'] ?? 'intermediate',
             'explanation' => $item['explanation'] ?? null,
             'reference' => $item['reference'] ?? null,

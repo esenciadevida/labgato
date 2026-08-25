@@ -132,6 +132,20 @@
                             value="{{ old('image_source_url', $question->image_source_url) }}" />
                         <x-form.error for="image_source_url" />
                     </div>
+                    <div>
+                        <x-form.label for="image_search">Image search</x-form.label>
+                        <x-ui.input id="image_search" name="image_search" placeholder="e.g. site:commons.wikimedia.org spherocytes"
+                            value="{{ old('image_search', $question->image_search) }}" />
+                        <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">A search query to help locate a licensed source image.</p>
+                        <x-form.error for="image_search" />
+                    </div>
+                    <div>
+                        <x-form.label for="image_spec">Image spec</x-form.label>
+                        <x-ui.input id="image_spec" name="image_spec" placeholder="e.g. Draw a diagram showing..."
+                            value="{{ old('image_spec', $question->image_spec) }}" />
+                        <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">For original diagrams to be drawn.</p>
+                        <x-form.error for="image_spec" />
+                    </div>
                 </div>
             </div>
 

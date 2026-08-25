@@ -30,6 +30,8 @@ class Question extends Model
         'image_license',
         'image_attribution',
         'image_source_url',
+        'image_search',
+        'image_spec',
         'difficulty',
         'explanation',
         'reference',
