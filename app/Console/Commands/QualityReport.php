@@ -25,12 +25,13 @@ class QualityReport extends Command
             $total++;
 
             $stemWords = count(preg_split('/\s+/', trim((string) $q->stem)));
+            $combinedWords = $stemWords + count(preg_split('/\s+/', trim((string) ($q->case_text ?? ''))));
 
             $score = 0;
             $flags = [];
 
-            if ($stemWords >= 18) { $score += 25; }
-            elseif ($stemWords >= 10) { $score += 15; }
+            if ($combinedWords >= 30) { $score += 25; }
+            elseif ($combinedWords >= 18) { $score += 15; }
             else { $score += 5; $flags[] = 'short-stem(recal)'; }
 
             $hasCase = filled($q->case_text);
@@ -55,8 +56,10 @@ class QualityReport extends Command
 
             if ($optLengths->count() < 4) { $flags[] = 'few-options'; }
 
+            if (filled($q->difficulty)) { $score += 10; }
+
             $score = min(100, $score);
-            $bucket = $score >= 75 ? 'high' : ($score >= 50 ? 'medium' : 'low');
+            $bucket = $score >= 70 ? 'high' : ($score >= 45 ? 'medium' : 'low');
             $buckets[$bucket]++;
 
             $rows[] = [
