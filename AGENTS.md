@@ -33,6 +33,17 @@ php -l <file>
 - No emojis in code or UI copy.
 - Migrations: timestamp-prefixed, descriptive names.
 
+## Question authoring (ASCP standard)
+
+Aim for ASCP MLS-style items - most should be clinical vignettes, not one-line recall:
+- Use `type: "case"` with a `case_text` vignette (age/sex + presentation + lab values/results), then a focused `stem` ending in the actual question.
+- Exactly 4 plausible options, **single best answer**. Distractors must be plausible and at consistent length (avoid single-word options where possible).
+- No "all/none of the above" stems/options, no negative stems (`EXCEPT`/`NOT`) unless genuinely required.
+- Always write a teaching `explanation` that states the correct answer AND why the distractors are wrong.
+- Set `difficulty` (`easy`/`intermediate`/`advanced`) and `source_type: "original"`; seed as `status: "active"`.
+- Verify with `php artisan questions:quality-report` (target score >= 70) and `php artisan questions:ascp-audit` (composition vs ASCP weights).
+- Balance authoring toward the ASCP-heavy areas (Chemistry & Hematology ~20-25% each) and be wary of over-supplying Laboratory Operations.
+
 ## Deployment (Hostinger)
 
 - Remotes: `origin` = GitHub, `hostinger` = production docroot (non-bare, `updateInstead`).
