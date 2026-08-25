@@ -192,11 +192,32 @@ class CertificateService
     }
 
     /**
-     * PNG version of the LabGOTO logo, rasterized on the fly from the SVG
-     * (Dompdf cannot render SVG images reliably). Returns null when the
-     * rasterizer is unavailable, so the view falls back to a text wordmark.
+     * PNG version of the LabGOTO logo, rasterized once from the SVG and
+     * cached on the public disk (Dompdf cannot render SVG images reliably).
+     * Returns null when the rasterizer is unavailable, so the view falls back
+     * to a text wordmark.
      */
     private function logoBase64(): ?string
+    {
+        $disk = Storage::disk('public');
+        $path = 'certificates/logo.png';
+
+        if ($disk->exists($path)) {
+            return base64_encode((string) $disk->get($path));
+        }
+
+        $png = $this->rasterizeLogo();
+
+        if ($png === null) {
+            return null;
+        }
+
+        $disk->put($path, $png);
+
+        return base64_encode($png);
+    }
+
+    private function rasterizeLogo(): ?string
     {
         $path = public_path('assets/LabGoTo_logo.svg');
 
@@ -215,7 +236,7 @@ class CertificateService
                 $img->resizeImage(720, 0, \Imagick::FILTER_LANCZOS, 1);
             }
 
-            return base64_encode($img->getImageBlob());
+            return $img->getImageBlob();
         } catch (\Throwable) {
             return null;
         }

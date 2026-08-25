@@ -1,4 +1,4 @@
-@props(['label' => null, 'href' => null, 'active' => false, 'permission' => null, 'placeholder' => false, 'badge' => null])
+@props(['label' => null, 'href' => null, 'active' => false, 'permission' => null, 'placeholder' => false, 'badge' => null, 'badgeAlpine' => null])
 
 @if($permission === null || Auth::user()->hasPermission($permission))
     <li>
@@ -18,7 +18,11 @@
                 @endif
                 <span class="w-5 h-5 shrink-0 {{ $active ? 'text-primary-300' : 'text-white/40' }}">{{ $slot }}</span>
                 <span class="truncate" x-show="!sidebarCollapsed || sidebarOpen">{{ $label }}</span>
-                @if($badge)
+                @if($badgeAlpine)
+                    <span class="ml-auto shrink-0 rounded-full bg-danger-500 px-2 py-0.5 text-[10px] font-semibold text-white"
+                          x-show="{{ $badgeAlpine }} > 0"
+                          x-text="{{ $badgeAlpine }}"></span>
+                @elseif($badge)
                     <span class="ml-auto shrink-0 rounded-full bg-danger-500 px-2 py-0.5 text-[10px] font-semibold text-white" x-show="!sidebarCollapsed || sidebarOpen">{{ $badge }}</span>
                 @endif
             </a>

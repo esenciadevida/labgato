@@ -38,6 +38,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
     Route::post('/notifications/clear', [NotificationController::class, 'clear'])
         ->middleware('permission:contact-messages.view')
         ->name('notifications.clear');
+    Route::get('/notifications/unread-count', [NotificationController::class, 'unreadCount'])->name('notifications.unread-count');
 
     Route::middleware('permission:admin.full-access')->group(function () {
         Route::get('/launch', [LaunchControlController::class, 'index'])->name('launch');

@@ -19,6 +19,16 @@ class NotificationController extends Controller
         ]);
     }
 
+    public function unreadCount(Request $request)
+    {
+        $user = $request->user();
+
+        return response()->json([
+            'unread' => $user->unreadNotifications()->count(),
+            'contact_unread' => \App\Models\ContactMessage::query()->whereNull('read_at')->count(),
+        ]);
+    }
+
     public function clear(Request $request)
     {
         $request->user()->notifications()

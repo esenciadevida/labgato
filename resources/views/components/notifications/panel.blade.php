@@ -20,6 +20,21 @@
         window.addEventListener('labgoto:notification-updated', e => {
             if (e.detail && typeof e.detail.unread_count === 'number') this.unreadCount = e.detail.unread_count;
         });
+        @if($isAdmin)
+            this.pollUnread();
+            this.pollInterval = setInterval(() => this.pollUnread(), 25000);
+        @endif
+    },
+    pollUnread() {
+        let self = this;
+        fetch('{{ route('admin.notifications.unread-count') }}', {
+            headers: { 'Accept': 'application/json' },
+        }).then(r => r.json()).then(d => {
+            if (typeof d.unread === 'number') self.unreadCount = d.unread;
+            if (typeof d.contact_unread === 'number') {
+                self.$dispatch('labgoto:contact-unread', { count: d.contact_unread });
+            }
+        }).catch(() => {});
     },
     toggle() {
         this.open = !this.open;

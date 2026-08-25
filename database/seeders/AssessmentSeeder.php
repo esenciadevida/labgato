@@ -10,13 +10,15 @@ use Illuminate\Database\Seeder;
 class AssessmentSeeder extends Seeder
 {
     private const BLUEPRINT = [
-        'hematology' => 20,
-        'clinical-chemistry' => 20,
-        'microbiology' => 20,
-        'blood-banking-transfusion' => 15,
-        'immunology' => 15,
-        'other' => 10,
+        'hematology' => 9,
+        'clinical-chemistry' => 9,
+        'microbiology' => 9,
+        'blood-banking-transfusion' => 9,
+        'immunology' => 9,
+        'other' => 9,
     ];
+
+    private const TOTAL_QUESTIONS = 54;
 
     public function run(): void
     {
@@ -27,7 +29,7 @@ class AssessmentSeeder extends Seeder
                 'type' => 'challenge',
                 'status' => 'scheduled',
                 'duration_minutes' => 150,
-                'total_questions' => 100,
+                'total_questions' => self::TOTAL_QUESTIONS,
                 'max_attempts' => 1,
                 'allow_practice' => true,
                 'certificate_enabled' => true,
@@ -53,8 +55,8 @@ class AssessmentSeeder extends Seeder
                 [
                     'question_count' => $count,
                     'easy_percent' => 30,
-                    'intermediate_percent' => 50,
-                    'advanced_percent' => 20,
+                    'intermediate_percent' => 40,
+                    'advanced_percent' => 30,
                 ]
             );
         }

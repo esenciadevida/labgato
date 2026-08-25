@@ -123,9 +123,9 @@
                     </div>
                     <div class="sm:col-span-2">
                         <x-form.label for="certificate_signature">Signature image</x-form.label>
-                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                            A PNG/JPG/SVG signature with a transparent background. It is placed above the signatory name on every issued certificate.
-                        </p>
+                            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                A transparent-background PNG/JPG signature. It is placed above the signatory name on every issued certificate.
+                            </p>
                         <div class="mt-3 flex flex-col gap-4 sm:flex-row sm:items-start">
                             <div class="w-full sm:w-64">
                                 <p class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">Current signature</p>
@@ -142,7 +142,7 @@
                             </div>
                             <div class="flex-1 space-y-3">
                                 <x-form.label for="certificate_signature">Upload new</x-form.label>
-                                <x-ui.input type="file" id="certificate_signature" name="certificate_signature" accept="image/png,image/jpeg,image/svg+xml" />
+                                <x-ui.input type="file" id="certificate_signature" name="certificate_signature" accept="image/png,image/jpeg" />
                                 <label class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
                                     <input type="checkbox" name="certificate_signature_remove" value="1" class="rounded border-slate-300 text-danger-600 focus:ring-danger-500 dark:border-slate-600 dark:bg-slate-800">
                                     Remove current signature

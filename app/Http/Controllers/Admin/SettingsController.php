@@ -89,7 +89,7 @@ class SettingsController extends Controller
         $data = $request->validate([
             'settings' => ['required', 'array'],
             'settings.*' => ['nullable', 'string'],
-            'certificate_signature' => ['nullable', 'image', 'mimes:png,jpg,jpeg,svg', 'max:2048'],
+            'certificate_signature' => ['nullable', 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
             'certificate_signature_remove' => ['nullable', 'in:1'],
         ]);
 
