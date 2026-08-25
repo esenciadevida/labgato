@@ -265,7 +265,7 @@ class LaunchIntegrationTest extends TestCase
         $attempt = $this->completeOfficial($member, $closed);
         $closed->update(['status' => 'closed']);
 
-        $guest = $this->get(route('assessments.index'))->assertOk()->getContent();
+        $guest = $this->actingAs($member)->get(route('assessments.index'))->assertOk()->getContent();
 
         $this->assertLessThan(
             strpos($guest, $scheduled->title),
@@ -305,8 +305,8 @@ class LaunchIntegrationTest extends TestCase
 
         $this->actingAs($member)->get(route('assessments.index'))->assertOk();
 
-        // Assessment hub page no longer shows the nav dropdown links.
-        $content = $this->get(route('assessments.index'))->assertOk()->getContent();
+        // Assessment hub page is member-only; it no longer shows the nav dropdown links.
+        $content = $this->actingAs($member)->get(route('assessments.index'))->assertOk()->getContent();
         $this->assertStringNotContainsString('Assessments Hub', $content);
 
         LaunchSetting::current()->update(['main_site_status' => 'open']);

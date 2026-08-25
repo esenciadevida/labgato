@@ -213,6 +213,7 @@ class IntegrityTest extends TestCase
             'events' => [
                 ['type' => 'tab_switch'],
                 ['type' => 'fullscreen_exit'],
+                ['type' => 'tab_switch'],
             ],
         ])->assertOk()
             ->assertJson([

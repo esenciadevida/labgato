@@ -47,10 +47,11 @@
             'submit' => route('exams.submit', $attempt),
             'submitted' => route('exams.submitted', $attempt),
             'integrity' => route('exams.integrity.store', $attempt),
-            'cancel' => route('exams.cancel', $attempt),
-            'intro' => route('assessments.show', $attempt->assessment),
-        ],
-    ];
+        'cancel' => route('exams.cancel', $attempt),
+        'intro' => route('assessments.show', $attempt->assessment),
+    ],
+    'autoCancelThreshold' => (int) config('labgoto.integrity.auto_cancel_threshold', 3),
+];
 @endphp
 
 <script type="application/json" data-exam-config>
@@ -226,6 +227,19 @@
     </div>
 </div>
 
+<div x-show="warnOpen" x-cloak class="fixed inset-0 z-40 flex items-center justify-center bg-slate-900/60 p-4" role="alertdialog" aria-modal="true">
+    <div class="w-full max-w-md rounded-xl border border-amber-300 bg-white p-6 shadow-xl dark:border-amber-600 dark:bg-slate-900" @click.outside="warnOpen = false">
+        <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Stay in the exam window</h2>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300" x-text="warnMessage"></p>
+        <div class="mt-6 flex justify-end">
+            <button type="button" @click="warnOpen = false"
+                    class="rounded-lg bg-amber-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-amber-700">
+                I'll stay focused
+            </button>
+        </div>
+    </div>
+</div>
+
 <script>
 function examComponent() {
     var config = JSON.parse(document.querySelector('script[data-exam-config]').textContent);
@@ -250,6 +264,10 @@ function examComponent() {
         lastEventAt: {},
         clockSkew: (config.serverNow * 1000) - Date.now(),
         endsAtMs: (config.endsAt || 0) * 1000,
+        autoCancelThreshold: config.autoCancelThreshold || 3,
+        leaves: 0,
+        warnOpen: false,
+        warnMessage: '',
 
         init: function () {
             var self = this;
@@ -508,6 +526,25 @@ function examComponent() {
             }, 2500);
         },
 
+        registerLeave: function (type) {
+            if (this.submitting || this.timeUpOpen) {
+                return;
+            }
+
+            this.leaves = (this.leaves || 0) + 1;
+            var remaining = this.autoCancelThreshold - this.leaves;
+
+            if (remaining <= 0) {
+                return;
+            }
+
+            this.warnMessage = 'You left the exam window (' + type + '). ' + remaining
+                + ' more leave' + (remaining === 1 ? '' : 's')
+                + ' will cancel this attempt.';
+            this.warnOpen = true;
+            this.pushEvent(type === 'fullscreen_exit' ? 'fullscreen_exit' : 'tab_switch');
+        },
+
         headers: function () {
             return {
                 'Content-Type': 'application/json',
@@ -551,7 +588,7 @@ function examComponent() {
 
             document.addEventListener('visibilitychange', function () {
                 if (document.hidden) {
-                    self.pushEvent('tab_switch');
+                    self.registerLeave('tab switch');
                 }
             });
 
@@ -561,7 +598,7 @@ function examComponent() {
 
             document.addEventListener('fullscreenchange', function () {
                 if (!document.fullscreenElement) {
-                    self.pushEvent('fullscreen_exit');
+                    self.registerLeave('fullscreen exit');
                 }
             });
 
