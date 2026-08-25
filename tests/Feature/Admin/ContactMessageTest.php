@@ -209,6 +209,26 @@ class ContactMessageTest extends TestCase
         $this->assertSame(0, ContactMessage::unread()->count());
     }
 
+    public function test_inbox_clears_legacy_contact_message_notifications(): void
+    {
+        $admin = $this->superAdmin();
+
+        // Legacy row: correct notification class but no data->type / id keys.
+        $admin->notifications()->create([
+            'id' => Str::uuid(),
+            'type' => NewContactMessageNotification::class,
+            'data' => [
+                'message' => 'Legacy contact message notification',
+            ],
+        ]);
+
+        $this->assertSame(1, $admin->unreadNotifications()->count());
+
+        $this->actingAs($admin)->get(route('admin.contact-messages.index'))->assertOk();
+
+        $this->assertSame(0, $admin->unreadNotifications()->count());
+    }
+
     public function test_reply_requires_valid_input(): void
     {
         $admin = $this->superAdmin();

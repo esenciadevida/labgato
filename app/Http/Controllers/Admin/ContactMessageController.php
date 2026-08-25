@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\ReplyContactRequest;
 use App\Models\ContactMessage;
 use App\Models\ContactReply;
 use App\Notifications\ContactMessageRepliedNotification;
+use App\Notifications\NewContactMessageNotification;
 use App\Services\AuditLogService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
@@ -23,9 +24,12 @@ class ContactMessageController extends Controller
             ->orderByDesc('created_at')
             ->paginate((int) config('labgoto.pagination.per_page', 20));
 
-        // Opening the inbox clears the notification heads-up for new messages.
+        // Opening the inbox clears the notification heads-up for new messages,
+        // including legacy rows that predate the data 'type' key.
         $request->user()->notifications()
-            ->where('data->type', 'contact_message')
+            ->where(fn ($query) => $query
+                ->where('type', NewContactMessageNotification::class)
+                ->orWhere('data->type', 'contact_message'))
             ->update(['read_at' => now()]);
 
         return view('admin.contact-messages.index', compact('messages', 'status'));
@@ -37,7 +41,7 @@ class ContactMessageController extends Controller
         $message->markRead();
 
         $request->user()->notifications()
-            ->where('data->type', 'contact_message')
+            ->where('type', NewContactMessageNotification::class)
             ->where(fn ($query) => $query
                 ->where('data->contact_message_id', $message->id)
                 ->orWhere('data->action_url', 'like', '%'.route('admin.contact-messages.show', $message).'%'))

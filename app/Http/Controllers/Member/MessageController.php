@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Member;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContactMessage;
+use App\Notifications\ContactMessageRepliedNotification;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -24,7 +25,9 @@ class MessageController extends Controller
             ->update(['member_read_at' => now()]);
 
         $request->user()->notifications()
-            ->where('data->type', 'contact_reply')
+            ->where(fn ($query) => $query
+                ->where('type', ContactMessageRepliedNotification::class)
+                ->orWhere('data->type', 'contact_reply'))
             ->update(['read_at' => now()]);
 
         return view('member.messages', compact('messages'));
