@@ -100,7 +100,7 @@ class RestructureAscp extends Command
             $assessment->blueprints()->delete();
 
             $plan = [
-                'chemistry' => 13,
+                'clinical-chemistry' => 13,
                 'hematology' => 13,
                 'microbiology' => 11,
                 'blood-banking-transfusion' => 7,
