@@ -28,7 +28,7 @@ class LinkQuestionImages extends Command
         'clear halo' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Cryptococcus_neoformans_using_a_light_India_ink_staining_preparation_PHIL_3771_lores.jpg/1280px-Cryptococcus_neoformans_using_a_light_India_ink_staining_preparation_PHIL_3771_lores.jpg', 'Wikimedia Commons', 'Public Domain'],
         'Gram-negative diplococci within neutrophils' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Neisseria_gonorrhoeae_bacteria_%28Gram_stain%29.jpg/1280px-Neisseria_gonorrhoeae_bacteria_%28Gram_stain%29.jpg', 'Wikimedia Commons', 'CC BY 4.0'],
         'envelope-shaped (octahedral) crystals' => ['https://upload.wikimedia.org/wikipedia/commons/1/1f/Calcium_oxalate_crystals_in_urine.jpg', 'Wikimedia Commons', 'Public Domain'],
-        'rod-shaped, azurophilic inclusion' => ['https://upload.wikimedia.org/wikipedia/commons/d/d0/Auer_Rods_in_Leukemic_Blast_%282434847298%29.jpg', 'Wikimedia Commons', 'CC BY 2.0'],
+        'rod-shaped, azurophilic inclusion' => ['https://upload.wikimedia.org/wikipedia/commons/0/0e/Myeloblast_with_Auer_Rod_smear_2009-11-23_cropped.jpg', 'Wikimedia Commons', 'CC BY-SA 3.0'],
         'bilobed cell with large orange-red granules' => ['https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Eosinophil_blood_smear.JPG/1280px-Eosinophil_blood_smear.JPG', 'Wikimedia Commons', 'CC BY-SA 4.0'],
         'terminal round spores' => ['https://upload.wikimedia.org/wikipedia/commons/f/fe/C_tetani_gram_stain.jpg', 'Wikimedia Commons', 'Public Domain'],
         'coffin-lid appearance' => ['https://upload.wikimedia.org/wikipedia/commons/a/a4/Struvite_crystals_%28urine%29_-_Str%C3%BCvit_kristalleri_%28idrar%29_-_01.png', 'Wikimedia Commons', 'CC BY-SA 3.0'],
