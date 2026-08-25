@@ -5,7 +5,9 @@ namespace Tests\Feature\Member;
 use App\Models\ContactMessage;
 use App\Models\ContactReply;
 use App\Models\User;
+use App\Notifications\ContactMessageRepliedNotification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class MemberMessagesTest extends TestCase
@@ -79,5 +81,31 @@ class MemberMessagesTest extends TestCase
         $response = $this->actingAs($admin)->get(route('account.messages'));
 
         $response->assertRedirect(route('home'));
+    }
+
+    public function test_viewing_messages_marks_them_and_reply_notifications_read(): void
+    {
+        $member = User::factory()->member()->create();
+        $message = $this->messageFor($member);
+
+        $this->assertTrue($message->isMemberUnread());
+
+        $member->notifications()->create([
+            'id' => Str::uuid(),
+            'type' => ContactMessageRepliedNotification::class,
+            'data' => [
+                'type' => 'contact_reply',
+                'contact_message_id' => $message->id,
+                'message' => 'You have a new reply.',
+                'action_url' => url('/account/messages'),
+            ],
+        ]);
+
+        $this->assertSame(1, $member->unreadNotifications()->count());
+
+        $this->actingAs($member)->get(route('account.messages'))->assertOk();
+
+        $this->assertFalse($message->fresh()->isMemberUnread());
+        $this->assertSame(0, $member->unreadNotifications()->count());
     }
 }

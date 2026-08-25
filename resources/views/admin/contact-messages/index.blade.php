@@ -45,12 +45,13 @@
                     </thead>
                     <tbody class="divide-y divide-slate-200 bg-white dark:bg-slate-800">
                         @foreach($messages as $message)
-                            <tr class="{{ $message->status === 'new' ? 'bg-primary-50/40 dark:bg-primary-900/10' : '' }}">
+                            <tr class="{{ $message->isUnread() ? 'bg-primary-50/40 dark:bg-primary-900/10' : 'bg-white dark:bg-slate-800' }}">
                                 <td class="px-4 py-3 text-xs font-mono text-slate-500 dark:text-slate-400">{{ $message->reference_code }}</td>
-                                <td scope="row" class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-slate-100">
+                                <td scope="row" class="px-4 py-3 text-sm {{ $message->isUnread() ? 'font-semibold text-slate-900 dark:text-slate-100' : 'font-medium text-slate-700 dark:text-slate-200' }}">
                                     <div class="flex items-center gap-2">
-                                        @if($message->status === 'new')
-                                            <span class="h-2 w-2 shrink-0 rounded-full bg-amber-500" aria-hidden="true"></span>
+                                        @if($message->isUnread())
+                                            <span class="h-2 w-2 shrink-0 rounded-full bg-danger-500" aria-hidden="true"></span>
+                                            <span class="text-[10px] font-bold uppercase tracking-wide text-danger-600 dark:text-danger-400">New</span>
                                         @endif
                                         <a href="{{ route('admin.contact-messages.show', $message) }}" class="hover:text-primary-600 dark:hover:text-primary-400">
                                             {{ $message->subject }}

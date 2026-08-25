@@ -156,6 +156,59 @@ class ContactMessageTest extends TestCase
         );
     }
 
+    public function test_viewing_a_message_marks_it_read(): void
+    {
+        $admin = $this->superAdmin();
+        $message = $this->message();
+
+        $this->assertTrue($message->isUnread());
+
+        $this->actingAs($admin)->get(route('admin.contact-messages.show', $message))->assertOk();
+
+        $this->assertFalse($message->fresh()->isUnread());
+    }
+
+    public function test_inbox_clears_contact_message_notifications(): void
+    {
+        $admin = $this->superAdmin();
+        $message = $this->message();
+
+        $admin->notifications()->create([
+            'id' => Str::uuid(),
+            'type' => NewContactMessageNotification::class,
+            'data' => [
+                'type' => 'contact_message',
+                'contact_message_id' => $message->id,
+                'message' => 'New contact message',
+            ],
+        ]);
+
+        $this->assertSame(1, $admin->unreadNotifications()->count());
+
+        $this->actingAs($admin)->get(route('admin.contact-messages.index'))->assertOk();
+
+        $this->assertSame(0, $admin->unreadNotifications()->count());
+    }
+
+    public function test_reply_marks_message_read_for_admin_and_unread_for_member(): void
+    {
+        Notification::fake();
+        $admin = $this->superAdmin();
+        $member = User::factory()->member()->create();
+        $message = $this->message(['user_id' => $member->id]);
+
+        $this->actingAs($admin)->post(
+            route('admin.contact-messages.reply', $message),
+            ['reply' => 'Thank you for your message. Here is the answer.'],
+        );
+
+        $message->refresh();
+        $this->assertSame('replied', $message->status);
+        $this->assertNotNull($message->read_at);
+        $this->assertTrue($message->isMemberUnread());
+        $this->assertSame(0, ContactMessage::unread()->count());
+    }
+
     public function test_reply_requires_valid_input(): void
     {
         $admin = $this->superAdmin();

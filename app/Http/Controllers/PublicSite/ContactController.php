@@ -30,6 +30,7 @@ class ContactController extends Controller
             'subject' => $validated['subject'],
             'message' => $validated['message'],
             'status' => 'new',
+            'member_read_at' => now(),
         ]);
 
         $notification = new NewContactMessageNotification(

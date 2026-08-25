@@ -18,6 +18,8 @@ class ContactMessage extends Model
         'subject',
         'message',
         'status',
+        'read_at',
+        'member_read_at',
         'reference_code',
     ];
 
@@ -49,5 +51,36 @@ class ContactMessage extends Model
     public function scopeReplied($query)
     {
         return $query->where('status', 'replied');
+    }
+
+    public function scopeUnread($query)
+    {
+        return $query->whereNull('read_at');
+    }
+
+    /** Whether an admin has not yet opened this message. */
+    public function isUnread(): bool
+    {
+        return $this->read_at === null;
+    }
+
+    /** Whether the sender has seen the latest interaction. */
+    public function isMemberUnread(): bool
+    {
+        return $this->member_read_at === null;
+    }
+
+    public function markRead(): void
+    {
+        if ($this->isUnread()) {
+            $this->forceFill(['read_at' => now()])->save();
+        }
+    }
+
+    public function markMemberRead(): void
+    {
+        if ($this->isMemberUnread()) {
+            $this->forceFill(['member_read_at' => now()])->save();
+        }
     }
 }

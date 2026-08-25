@@ -38,6 +38,8 @@ class ContactMessageRepliedNotification extends Notification
     public function toArray($notifiable): array
     {
         return [
+            'type' => 'contact_reply',
+            'contact_message_id' => $this->contactMessage->id,
             'message' => 'LabGato replied to your message regarding "'.$this->contactMessage->subject.'".',
             'action_text' => 'View messages',
             'action_url' => url('/account/messages'),

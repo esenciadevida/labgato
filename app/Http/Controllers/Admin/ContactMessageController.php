@@ -19,9 +19,14 @@ class ContactMessageController extends Controller
 
         $messages = ContactMessage::query()
             ->when($status !== '', fn ($query) => $query->where('status', $status))
-            ->orderByRaw("CASE WHEN status = 'new' THEN 0 ELSE 1 END")
+            ->orderByRaw("CASE WHEN read_at IS NULL THEN 0 ELSE 1 END")
             ->orderByDesc('created_at')
             ->paginate((int) config('labgoto.pagination.per_page', 20));
+
+        // Opening the inbox clears the notification heads-up for new messages.
+        $request->user()->notifications()
+            ->where('data->type', 'contact_message')
+            ->update(['read_at' => now()]);
 
         return view('admin.contact-messages.index', compact('messages', 'status'));
     }
@@ -29,6 +34,7 @@ class ContactMessageController extends Controller
     public function show(Request $request, ContactMessage $message)
     {
         $message->load('replies.admin', 'user');
+        $message->markRead();
 
         $request->user()->notifications()
             ->where('data->type', 'contact_message')
@@ -50,7 +56,11 @@ class ContactMessageController extends Controller
             'reply' => $validated['reply'],
         ]);
 
-        $message->update(['status' => 'replied']);
+        $message->update([
+            'status' => 'replied',
+            'read_at' => now(),
+            'member_read_at' => null,
+        ]);
 
         $notification = new ContactMessageRepliedNotification(
             $message,

@@ -1,7 +1,7 @@
 @php
     $currentRoute = request()->route()->getName();
     $pendingContributions = app(\App\Services\ContributionService::class)->pendingCount();
-    $newContactMessages = \App\Models\ContactMessage::query()->where('status', 'new')->count();
+    $newContactMessages = \App\Models\ContactMessage::query()->whereNull('read_at')->count();
 @endphp
 
 <aside
