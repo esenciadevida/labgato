@@ -37,6 +37,8 @@
         'attemptId' => $attempt->id,
         'total' => $questions->count(),
         'remainingSeconds' => $remainingSeconds,
+        'endsAt' => $attempt->ends_at?->getTimestamp() ?? 0,
+        'serverNow' => (int) now()->timestamp,
         'answers' => (object) $answersMap,
         'flags' => (object) array_map(fn () => true, $flagsMap),
         'urls' => [
@@ -246,6 +248,8 @@ function examComponent() {
         cancelledRedirect: config.urls.intro || '/',
         eventQueue: [],
         lastEventAt: {},
+        clockSkew: (config.serverNow * 1000) - Date.now(),
+        endsAtMs: (config.endsAt || 0) * 1000,
 
         init: function () {
             var self = this;
@@ -370,7 +374,16 @@ function examComponent() {
                             self.answers[questionId] = previous;
                         }
                     });
+
+                    return;
                 }
+
+                // Authoritative timer sync straight from the server.
+                response.json().then(function (data) {
+                    if (typeof data.remaining_seconds === 'number') {
+                        self.remaining = data.remaining_seconds;
+                    }
+                }).catch(function () {});
             }).catch(function () {});
         },
 
@@ -408,7 +421,14 @@ function examComponent() {
                 return;
             }
 
-            this.remaining--;
+            // Server-authoritative countdown: derive the remaining time from
+            // the real end deadline (with the clock-skew offset), so it stays
+            // accurate even when the tab is throttled or backgrounded.
+            if (this.endsAtMs > 0) {
+                this.remaining = Math.max(0, Math.ceil((this.endsAtMs - (Date.now() + this.clockSkew)) / 1000));
+            } else {
+                this.remaining = Math.max(0, this.remaining - 1);
+            }
 
             if (this.remaining <= 0) {
                 this.remaining = 0;
