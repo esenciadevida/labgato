@@ -24,9 +24,9 @@
             'name' => $category->name,
             'include' => (bool) ($oldRow['include'] ?? null) || $blueprint !== null,
             'question_count' => (int) ($oldRow['question_count'] ?? $blueprint?->question_count ?? 0),
-            'easy' => (int) ($oldRow['easy_percent'] ?? $blueprint?->easy_percent ?? 0),
-            'intermediate' => (int) ($oldRow['intermediate_percent'] ?? $blueprint?->intermediate_percent ?? 0),
-            'advanced' => (int) ($oldRow['advanced_percent'] ?? $blueprint?->advanced_percent ?? 0),
+            'easy' => (int) ($oldRow['easy_percent'] ?? $blueprint?->easy_percent ?? ((bool) ($oldRow['include'] ?? null) || $blueprint !== null ? 30 : 0)),
+            'intermediate' => (int) ($oldRow['intermediate_percent'] ?? $blueprint?->intermediate_percent ?? ((bool) ($oldRow['include'] ?? null) || $blueprint !== null ? 40 : 0)),
+            'advanced' => (int) ($oldRow['advanced_percent'] ?? $blueprint?->advanced_percent ?? ((bool) ($oldRow['include'] ?? null) || $blueprint !== null ? 30 : 0)),
         ];
     })->values()->all();
 
@@ -41,7 +41,6 @@
 @endphp
 
 <form method="POST" action="{{ $action }}" class="space-y-6" x-data="{
-    total: {{ (int) $oldValue('total_questions', 10) }},
     rows: [],
     init() {
         this.rows = JSON.parse(this.$root.dataset.rows || '[]');
@@ -52,7 +51,7 @@
     get included() { return this.rows.filter(r => r.include); },
     get grandTotal() { return this.included.reduce((sum, r) => sum + (parseInt(r.question_count) || 0), 0); },
     get rowsValid() { return this.included.length > 0 && this.included.every(r => this.rowSum(r) === 100); },
-    get totalsValid() { return this.rows.length === 0 || (this.grandTotal === parseInt(this.total)); },
+    get totalsValid() { return this.grandTotal >= 1; },
 }" data-rows="{{ json_encode($initialRows) }}">
     @csrf
     @if($method !== 'POST')
@@ -117,8 +116,9 @@
                 </div>
 
                 <div>
-                    <x-form.label for="total_questions" required>Total questions</x-form.label>
-                    <x-ui.input type="number" id="total_questions" name="total_questions" min="1" max="500" x-model.number="total" value="{{ $oldValue('total_questions', 10) }}" :error="$errors->first('total_questions')" />
+                    <x-form.label for="total_questions">Total questions (auto)</x-form.label>
+                    <x-ui.input type="number" id="total_questions" name="total_questions" min="1" max="500" :value="grandTotal" readonly aria-readonly="true" />
+                    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Auto-calculated from the blueprint counts below.</p>
                 </div>
             </div>
         </x-form.section>
@@ -178,13 +178,11 @@
                 <span class="text-slate-600 dark:text-slate-300">
                     Blueprint total:
                     <strong class="tabular-nums" x-text="grandTotal"></strong>
-                    /
-                    <strong class="tabular-nums" x-text="total"></strong>
                     questions
                 </span>
                 <span class="font-semibold" x-show="rows.length > 0"
                       :class="totalsValid ? 'text-emerald-600 dark:text-emerald-400' : 'text-danger-600 dark:text-danger-400'"
-                      x-text="totalsValid ? '\u2713 counts match' : '\u2717 counts do not match total'"></span>
+                      x-text="totalsValid ? '\u2713 ready' : '\u2717 set at least one question count'"></span>
             </div>
         </x-form.section>
     </x-ui.card>

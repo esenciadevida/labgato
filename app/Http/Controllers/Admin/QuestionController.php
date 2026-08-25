@@ -82,6 +82,10 @@ class QuestionController extends Controller
 
             $activated = Question::where('status', 'active')->whereIn('stem', $stems)->count();
 
+            if ($activated >= count($stems)) {
+                continue;
+            }
+
             $progress[] = [
                 'label' => pathinfo($file, PATHINFO_FILENAME),
                 'total' => count($stems),

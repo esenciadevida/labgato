@@ -36,6 +36,14 @@ class StoreAssessmentRequest extends FormRequest
             ->all();
 
         $this->merge(['blueprints' => $blueprints]);
+
+        $planned = collect($this->input('blueprints', []))
+            ->filter(fn ($row) => (int) ($row['include'] ?? 0) === 1)
+            ->sum('question_count');
+
+        $this->merge([
+            'total_questions' => max(1, min(500, (int) $planned)),
+        ]);
     }
 
     public function rules(): array
