@@ -15,3 +15,9 @@ Schedule::command('sitemap:generate')->dailyAt('03:00')->withoutOverlapping();
 Schedule::command('backup:run --only-db')->dailyAt('02:00')->withoutOverlapping()->onOneServer();
 Schedule::command('backup:run')->weeklyOn(0, '04:00')->withoutOverlapping()->onOneServer();
 Schedule::command('content-images:prune --days=7')->dailyAt('03:30')->withoutOverlapping();
+
+// Heartbeat sentinel: writes the current time every minute so we can confirm
+// the scheduler (via the Hostinger cron) is actually ticking.
+Schedule::call(function () {
+    file_put_contents(storage_path('app/scheduler-heartbeat.txt'), now()->toIso8601String());
+})->everyMinute()->name('scheduler-heartbeat');
