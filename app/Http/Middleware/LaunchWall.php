@@ -38,6 +38,10 @@ class LaunchWall
         'verification',
         'up/',
         'legal/',
+        // Certificate verification & sharing must stay publicly reachable so
+        // the QR code on a certificate always resolves, even pre-launch.
+        'verify/',
+        'share/',
         // Exam hub stays reachable pre-launch so registered members can
         // take open challenges (access still gated by challenge_open and the
         // assessment being open, plus the member middleware).

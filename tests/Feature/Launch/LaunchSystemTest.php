@@ -41,6 +41,13 @@ class LaunchSystemTest extends TestCase
         $this->get('/calculators')->assertRedirect('/');
     }
 
+    public function test_pre_launch_certificate_verification_is_reachable(): void
+    {
+        // Both routes must pass the launch wall (not redirect to the countdown).
+        $this->get('/verify/NOTAREALCODE')->assertOk();
+        $this->get('/share/NOTAREALCODE')->assertNotFound();
+    }
+
     public function test_pre_launch_home_shows_launch_wall(): void
     {
         $this->get('/')
