@@ -42,8 +42,19 @@ class StoreQuestionRequest extends FormRequest
             $options = $this->input('options', []);
             $correctIndex = $this->input('correct_index');
 
-            if (is_numeric($correctIndex) && (int) $correctIndex >= count($options)) {
-                $validator->errors()->add('correct_index', 'The correct option must be one of the provided options.');
+            // Blank options are silently dropped on save, which can leave a
+            // question with zero correct answers. Reject them outright.
+            foreach (array_values($options) as $i => $option) {
+                if (trim((string) $option) === '') {
+                    $validator->errors()->add("options.{$i}", 'Option '.chr(65 + $i).' cannot be empty.');
+                }
+            }
+
+            if (is_numeric($correctIndex)) {
+                $ci = (int) $correctIndex;
+                if ($ci < 0 || $ci >= count($options)) {
+                    $validator->errors()->add('correct_index', 'The correct option must be one of the provided options.');
+                }
             }
         });
     }

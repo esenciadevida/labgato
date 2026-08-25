@@ -14,6 +14,17 @@
         </header>
 
         @if($status === 'valid')
+            @php
+                $showName = $certificate->user?->profile?->show_on_leaderboard !== false;
+                $holderName = $showName
+                    ? ($certificate->user?->profile?->display_name ?: $certificate->user?->name)
+                    : 'A LabGOTO participant';
+            @endphp
+
+            @if($credentialSchema)
+                <script type="application/ld+json">{!! $credentialSchema !!}</script>
+            @endif
+
             <div class="mt-8 flex flex-col items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-6 py-4 sm:flex-row sm:justify-center dark:border-emerald-800/60 dark:bg-emerald-900/20">
                 <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -47,7 +58,7 @@
                         </span>
                         <p class="mt-6 text-sm italic text-slate-500">This certificate is proudly presented to</p>
                         <p class="mt-2 font-serif text-3xl font-bold text-primary-900 sm:text-4xl">
-                            {{ $certificate->user?->profile?->display_name ?: $certificate->user?->name }}
+                            {{ $holderName }}
                         </p>
                         <div class="mx-auto mt-3 h-px w-40 bg-amber-400"></div>
                         <p class="mt-5 text-sm text-slate-700">
@@ -85,9 +96,6 @@
             <!-- Details -->
             <div class="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
                 <dl class="divide-y divide-slate-100 px-6 dark:divide-slate-800">
-                    @php
-                        $holderName = $certificate->user?->profile?->display_name ?: $certificate->user?->name;
-                    @endphp
                     <div class="flex justify-between gap-4 py-3">
                         <dt class="text-sm font-medium text-slate-500 dark:text-slate-400">Holder</dt>
                         <dd class="text-right text-sm font-semibold text-slate-900 dark:text-white">{{ $holderName }}</dd>

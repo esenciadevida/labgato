@@ -38,6 +38,7 @@ php -l <file>
 - Remotes: `origin` = GitHub, `hostinger` = production docroot (non-bare, `updateInstead`).
 - **Server CLI `php` is 8.3 but the app needs 8.4** - use `/opt/alt/php84/usr/bin/php artisan ...` over SSH.
 - `public/build/` is gitignored: after `npm run build`, sync assets manually (tar+scp into `public_html/public/`).
+- If `composer.json` / `composer.lock` changed, run Composer on the server with the PHP 8.4 binary so new vendor packages are installed (e.g. `COMPOSER_MEMORY_LIMIT=-1 /opt/alt/php84/usr/bin/php /usr/local/bin/composer install --no-dev --no-interaction`).
 - After pushing: `/opt/alt/php84/usr/bin/php artisan migrate --force && php artisan optimize`.
 - Server-only files `.htaccess` / `.user.ini` are protected via `.git/info/exclude` on the server.
 - If push is rejected with "Working directory has unstaged changes", someone edited the server directly - stash there first and investigate before discarding.

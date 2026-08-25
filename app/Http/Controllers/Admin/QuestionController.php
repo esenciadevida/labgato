@@ -296,6 +296,8 @@ class QuestionController extends Controller
     {
         $question->options()->delete();
 
+        $saved = collect();
+
         foreach (array_values($options) as $index => $text) {
             $text = trim((string) $text);
 
@@ -303,12 +305,17 @@ class QuestionController extends Controller
                 continue;
             }
 
-            $question->options()->create([
+            $saved->push($question->options()->create([
                 'label' => chr(65 + $index),
                 'text' => $text,
                 'is_correct' => $index === $correctIndex,
                 'sort_order' => $index,
-            ]);
+            ]));
+        }
+
+        // Defensive: never persist a question with zero correct answers.
+        if ($saved !== [] && ! $saved->contains(fn ($option) => $option->is_correct)) {
+            $saved->first()->update(['is_correct' => true]);
         }
     }
 

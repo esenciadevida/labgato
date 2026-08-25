@@ -17,9 +17,24 @@ class VerifyController extends Controller
     {
         $result = $this->certificates->verify($code);
 
+        $credentialSchema = $result['status'] === 'valid'
+            ? json_encode([
+                '@context' => 'https://schema.org',
+                '@type' => 'EducationalOccupationalCredential',
+                'name' => $result['certificate']->label(),
+                'credentialCategory' => ucfirst($result['certificate']->type),
+                'description' => 'LabGOTO certificate for '.$result['certificate']->assessment?->title.'.',
+                'dateIssued' => $result['certificate']->issued_at?->toIso8601String(),
+                'awardedBy' => ['@type' => 'Organization', 'name' => config('app.name')],
+                '@id' => $result['certificate']->verifyUrl(),
+                'identifier' => $result['certificate']->certificate_number,
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
+            : null;
+
         return view('certificates.verify', [
             'status' => $result['status'],
             'certificate' => $result['certificate'],
+            'credentialSchema' => $credentialSchema,
         ]);
     }
 
