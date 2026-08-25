@@ -48,7 +48,10 @@
                     <span class="flex-1 whitespace-pre-line leading-relaxed text-slate-700 dark:text-slate-300">{{ $option['text'] }}</span>
 
                     @if($option['is_correct'])
-                        <span class="text-xs font-semibold text-emerald-700 dark:text-emerald-400">Correct answer</span>
+                        <span class="text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+                            <svg class="inline h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            Correct
+                        </span>
                     @elseif($option['is_user_selection'])
                         <span class="text-xs font-semibold text-red-700 dark:text-red-400">Your answer</span>
                     @endif
@@ -60,7 +63,7 @@
             <span class="{{ $item['is_correct'] ? 'font-semibold text-emerald-700 dark:text-emerald-400' : 'text-red-700 dark:text-red-400' }}">
                 Your answer:
                 @if($item['your_option'])
-                    {{ $item['your_option']['letter'] }}. {{ $item['your_option']['label'] }}
+                    {{ $item['your_option']['letter'] }}. {{ $item['your_option']['text'] }}
                 @else
                     Unanswered
                 @endif
@@ -68,7 +71,7 @@
 
             @if(! $item['is_correct'] && $item['correct_option'])
                 <span class="font-semibold text-emerald-700 dark:text-emerald-400">
-                    Correct answer: {{ $item['correct_option']['letter'] }}. {{ $item['correct_option']['label'] }}
+                    Correct answer: {{ $item['correct_option']['letter'] }}. {{ $item['correct_option']['text'] }}
                 </span>
             @endif
 

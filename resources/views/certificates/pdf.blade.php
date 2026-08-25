@@ -31,11 +31,11 @@
 
         .header { width: 100%; margin-bottom: 5mm; }
 
-        .logo {
-            width: 22mm;
-            height: 22mm;
-            float: left;
-            margin-right: 3mm;
+        .logo { width: 44mm; height: auto; display: block; }
+
+        .tagline {
+            margin-top: 1mm; font-size: 6px; font-weight: 600; letter-spacing: 2px;
+            color: #64748b; text-transform: uppercase;
         }
 
         .wordmark { font-size: 19px; font-weight: 800; letter-spacing: 2px; color: #1e3a8a; line-height: 1.1; }
@@ -75,7 +75,7 @@
         .signature-cell { text-align: left; width: 55%; vertical-align: bottom; padding: 0; }
         .verify-cell { text-align: right; width: 45%; vertical-align: bottom; padding: 0; }
 
-        .signature-img { max-width: 170px; max-height: 32px; display: block; margin-bottom: 1px; }
+        .signature-img { width: 150px; height: 28px; object-fit: contain; display: block; margin: 0 0 1px; }
         .signature-line { width: 190px; border-top: 1px solid #94a3b8; padding-top: 1.2mm; }
         .signature-name { font-family: Georgia, serif; font-size: 12px; font-weight: 700; color: #334155; display: block; }
         .signature-role { font-size: 7px; color: #64748b; display: block; margin-top: 0.5mm; text-transform: uppercase; letter-spacing: 0.8px; }
@@ -101,8 +101,10 @@
                     <td style="text-align:left;vertical-align:top;">
                         @if(!empty($logoBase64))
                             <img class="logo" src="data:image/png;base64,{{ $logoBase64 }}" alt="LabGOTO">
+                            <div class="tagline">Medical Laboratory Knowledge Platform</div>
+                        @else
+                            <div class="wordmark">LabGOTO<small>Medical Laboratory Knowledge Platform</small></div>
                         @endif
-                        <div class="wordmark">LabGOTO<small>Medical Laboratory Knowledge Platform</small></div>
                     </td>
                     <td style="text-align:right;vertical-align:top;">
                         <div class="cert-meta">

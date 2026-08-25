@@ -124,17 +124,24 @@
                     <div class="sm:col-span-2">
                         <x-form.label for="certificate_signature">Signature image</x-form.label>
                         <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                            PNG/JPG/SVG signature with a transparent background. It appears on every issued certificate.
+                            A PNG/JPG/SVG signature with a transparent background. It is placed above the signatory name on every issued certificate.
                         </p>
-                        <div class="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center">
-                            <div class="flex h-16 w-40 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800">
+                        <div class="mt-3 flex flex-col gap-4 sm:flex-row sm:items-start">
+                            <div class="w-full sm:w-64">
+                                <p class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">Current signature</p>
+                                <div class="flex h-24 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white px-4 dark:border-slate-600 dark:bg-slate-800">
+                                    @if($hasSignature)
+                                        <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($signaturePath) }}" alt="Current certificate signature" class="max-h-20 max-w-full object-contain">
+                                    @else
+                                        <span class="text-xs text-slate-400 dark:text-slate-500">No signature uploaded</span>
+                                    @endif
+                                </div>
                                 @if($hasSignature)
-                                    <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($signaturePath) }}" alt="Current certificate signature" class="max-h-14 max-w-36 object-contain">
-                                @else
-                                    <span class="text-xs text-slate-400 dark:text-slate-500">No signature</span>
+                                    <p class="mt-1 text-[11px] text-emerald-600 dark:text-emerald-400">Preview shown above will appear on certificates.</p>
                                 @endif
                             </div>
                             <div class="flex-1 space-y-3">
+                                <x-form.label for="certificate_signature">Upload new</x-form.label>
                                 <x-ui.input type="file" id="certificate_signature" name="certificate_signature" accept="image/png,image/jpeg,image/svg+xml" />
                                 <label class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
                                     <input type="checkbox" name="certificate_signature_remove" value="1" class="rounded border-slate-300 text-danger-600 focus:ring-danger-500 dark:border-slate-600 dark:bg-slate-800">

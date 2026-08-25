@@ -114,9 +114,7 @@ class CertificateService
             'signatureBase64' => $this->signatureBase64(),
             'signatoryName' => (string) setting('certificate.signatory_name', 'Program Director'),
             'signatoryTitle' => (string) setting('certificate.signatory_title', 'Program Director, LabGOTO'),
-            'logoBase64' => base64_encode(
-                (string) file_get_contents(public_path('assets/LabGoTo_favicon_192.png'))
-            ),
+            'logoBase64' => $this->logoBase64(),
         ])
             ->save(Storage::disk('public')->path($relativePath));
 
@@ -191,6 +189,36 @@ class CertificateService
         $holder = trim($holder ?: 'Participant', '-');
 
         return sprintf('Certificate-of-%s-%s-%d.pdf', $type, $holder, (int) $certificate->issued_at?->year ?? now()->year);
+    }
+
+    /**
+     * PNG version of the LabGOTO logo, rasterized on the fly from the SVG
+     * (Dompdf cannot render SVG images reliably). Returns null when the
+     * rasterizer is unavailable, so the view falls back to a text wordmark.
+     */
+    private function logoBase64(): ?string
+    {
+        $path = public_path('assets/LabGoTo_logo.svg');
+
+        if (! extension_loaded('imagick') || ! is_file($path)) {
+            return null;
+        }
+
+        try {
+            $img = new \Imagick();
+            $img->readImageBlob((string) file_get_contents($path));
+            $img->setImageFormat('png');
+            $img->setBackgroundColor(new \ImagickPixel('transparent'));
+            $img->setImageAlphaChannel(\Imagick::ALPHACHANNEL_SET);
+
+            if ($img->getImageWidth() > 720) {
+                $img->resizeImage(720, 0, \Imagick::FILTER_LANCZOS, 1);
+            }
+
+            return base64_encode($img->getImageBlob());
+        } catch (\Throwable) {
+            return null;
+        }
     }
 
     private function nextCertificateNumber(): string
