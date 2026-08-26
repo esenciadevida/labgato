@@ -47,7 +47,7 @@
                         </div>
                         <div class="px-4 py-3">
                             <dt class="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">Reviewed</dt>
-                            <dd class="mt-0.5 text-sm font-semibold text-slate-900 dark:text-slate-100">{{ $sop->reviewed_date?->format('M j, Y') ?? '—' }}</dd>
+                            <dd class="mt-0.5 text-sm font-semibold text-slate-900 dark:text-slate-100">{{ ($sop->reviewed_date ?? $sop->last_reviewed_at)?->format('M j, Y') ?? '—' }}</dd>
                         </div>
                         <div class="px-4 py-3">
                             <dt class="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">Department</dt>
@@ -118,10 +118,10 @@
                                 <dd class="font-medium text-slate-900 dark:text-slate-100">{{ $sop->version }}</dd>
                             </div>
                         @endif
-                        @if($sop->reviewed_date)
+                        @if($sop->reviewed_date || $sop->last_reviewed_at)
                             <div class="flex items-start justify-between gap-4">
                                 <dt class="text-slate-500 dark:text-slate-400">Reviewed</dt>
-                                <dd class="font-medium text-slate-900 dark:text-slate-100">{{ $sop->reviewed_date->format('M j, Y') }}</dd>
+                                <dd class="font-medium text-slate-900 dark:text-slate-100">{{ ($sop->reviewed_date ?? $sop->last_reviewed_at)->format('M j, Y') }}</dd>
                             </div>
                         @endif
                         @if($sop->published_at)
