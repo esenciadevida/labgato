@@ -132,7 +132,7 @@ class ContributorProfileTest extends TestCase
         $response->assertStatus(404);
     }
 
-    public function test_profile_with_zero_published_contributions_returns_404(): void
+    public function test_profile_with_zero_published_contributions_shows_empty_state(): void
     {
         $user = $this->contributor();
         Sop::factory()->create([
@@ -143,7 +143,9 @@ class ContributorProfileTest extends TestCase
 
         $response = $this->get(route('contributors.show', $user->profile_slug));
 
-        $response->assertStatus(404);
+        $response->assertStatus(200);
+        $response->assertSee('No published contributions');
+        $response->assertSee($user->name);
     }
 
     public function test_nonexistent_profile_slug_returns_404(): void

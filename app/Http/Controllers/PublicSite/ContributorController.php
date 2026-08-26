@@ -29,10 +29,6 @@ class ContributorController extends Controller
 
         $items = $this->publishedContributions($user->id);
 
-        if ($items->isEmpty()) {
-            abort(404);
-        }
-
         $page = Paginator::resolveCurrentPage('page');
 
         $contributions = new LengthAwarePaginator(
