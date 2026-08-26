@@ -128,6 +128,27 @@ class RichTextSanitizerTest extends TestCase
         $this->assertStringNotContainsString('<script', $result);
     }
 
+    public function test_unclosed_code_fence_does_not_swallow_following_image(): void
+    {
+        $markdown = "```text\nBefore: x\n\nAfter: y\n\n![alt](https://example.com/a.webp)";
+
+        $result = RichTextSanitizer::render($markdown);
+
+        $this->assertStringContainsString('<img', $result);
+        $this->assertStringNotContainsString('![alt]', $result);
+    }
+
+    public function test_balanced_code_fence_is_untouched(): void
+    {
+        $markdown = "```php\necho 'x';\n```\n\nAfter the fence.";
+
+        $result = RichTextSanitizer::render($markdown);
+
+        $this->assertStringContainsString('echo', $result);
+        $this->assertStringContainsString('<pre>', $result);
+        $this->assertStringContainsString('After the fence.', $result);
+    }
+
     public function test_sanitize_svg_removes_script_and_event_handlers(): void
     {
         $svg = '<svg xmlns="http://www.w3.org/2000/svg"><script>alert(1)</script><rect onload="evil()" width="10" height="10"/></svg>';

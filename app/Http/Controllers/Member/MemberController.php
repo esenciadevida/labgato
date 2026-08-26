@@ -8,8 +8,9 @@ use App\Http\Requests\Member\UpdateProfileRequest;
 use App\Mail\PasswordUpdatedEmail;
 use App\Services\AuditLogService;
 use App\Services\ContributionService;
-use App\Services\OnboardingService;
 use App\Services\ContentImageService;
+use App\Services\LeaderboardService;
+use App\Services\OnboardingService;
 use App\Services\RecentlyViewedService;
 use App\Services\RecommendationService;
 use Illuminate\Support\Facades\Auth;
@@ -27,6 +28,7 @@ class MemberController extends Controller
         private readonly OnboardingService $onboarding,
         private readonly AuditLogService $auditLog,
         private readonly ContentImageService $imageService,
+        private readonly LeaderboardService $leaderboard,
     ) {}
 
     public function show()
@@ -87,6 +89,8 @@ class MemberController extends Controller
         $profile->forceFill([
             'profile_completed' => $profile->completionPercent() >= 100,
         ])->save();
+
+        $this->leaderboard->flushAllOther();
 
         $this->auditLog->logWithSubject(
             action: 'profile.updated',

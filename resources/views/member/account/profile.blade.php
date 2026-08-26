@@ -135,6 +135,35 @@
                             <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">
                                 A complete profile builds trust and helps you connect with the community.
                             </p>
+                            @php
+                                $missing = [];
+                                if (! in_array($profile->professional_status, \App\Models\UserProfile::STATUSES, true)) {
+                                    $missing[] = 'Professional status';
+                                } else {
+                                    if (! filled($profile->display_name)) $missing[] = 'Display name';
+                                    if (! filled($profile->country)) $missing[] = 'Country';
+                                    if (! filled($profile->photo_path)) $missing[] = 'Profile photo';
+                                    if ($profile->isStudent()) {
+                                        if (! filled($profile->institution)) $missing[] = 'Institution';
+                                        if (! filled($profile->programme)) $missing[] = 'Programme';
+                                    } elseif ($profile->isProfessional()) {
+                                        if (! filled($profile->employer)) $missing[] = 'Employer';
+                                        if (! filled($profile->job_title)) $missing[] = 'Job title';
+                                    }
+                                }
+                            @endphp
+                            @if($missing)
+                                <ul class="mt-3 space-y-1.5">
+                                    @foreach($missing as $item)
+                                        <li class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                                            <svg class="h-3.5 w-3.5 shrink-0 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/>
+                                            </svg>
+                                            {{ $item }}
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
                         @endif
                     </x-ui.card>
 

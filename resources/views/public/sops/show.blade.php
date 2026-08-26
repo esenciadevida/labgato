@@ -26,12 +26,13 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div class="lg:col-span-8 space-y-6">
 
+                @php($featuredDims = $sop->featured_image_dimensions)
                 @if($sop->featured_image_url)
                     <img
                         src="{{ $sop->featured_image_url }}"
                         alt="{{ $sop->short_description ?: $sop->name }}"
                         loading="lazy"
-                        style="aspect-ratio: 16 / 9;"
+                        style="aspect-ratio: {{ $featuredDims ? $featuredDims[0] : 16 }} / {{ $featuredDims ? $featuredDims[1] : 9 }};"
                         class="w-full object-cover rounded-xl shadow-card border border-slate-200 dark:border-slate-700"
                         onerror="this.style.display='none'"
                     >

@@ -150,6 +150,23 @@ class LeaderboardService
         Cache::forget('leaderboard:alltime');
     }
 
+    /**
+     * Drop every cached board (used when a member's display name or photo changes,
+     * so the boards reflect the fresh profile rather than the stale cache).
+     */
+    public function flushAllOther(?Assessment $except = null): void
+    {
+        foreach (Assessment::query()->pluck('id') as $id) {
+            if ($except !== null && $except->id == $id) {
+                continue;
+            }
+
+            Cache::forget("leaderboard:{$id}");
+        }
+
+        Cache::forget('leaderboard:alltime');
+    }
+
     private function displayName(ExamAttempt $attempt): string
     {
         $profile = $attempt->user?->profile;

@@ -270,9 +270,16 @@ class RichTextSanitizer
             }
 
             if ($inCodeBlock) {
-                $codeLines[] = $line;
+                if (preg_match('/^!\[[^\]]*\]\([^)]+\)/', $trimmed) || preg_match('/^#{1,6}\s+\S/', $trimmed)) {
+                    // Auto-close an unclosed fence so trailing images/headings aren't swallowed
+                    // by an author who forgot the closing code fence.
+                    $flushCode();
+                    $inCodeBlock = false;
+                } else {
+                    $codeLines[] = $line;
 
-                continue;
+                    continue;
+                }
             }
 
             if ($trimmed === '') {

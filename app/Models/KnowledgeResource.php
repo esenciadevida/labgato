@@ -108,4 +108,26 @@ class KnowledgeResource extends Model
 
         return Storage::url($path);
     }
+
+    /**
+     * @return array{0: int, 1: int}|null
+     */
+    public function getFeaturedImageDimensionsAttribute(): ?array
+    {
+        $path = $this->featured_image;
+
+        if (! $path || str_starts_with($path, '/') || preg_match('#^https?:#i', $path)) {
+            return null;
+        }
+
+        $full = Storage::disk('public')->path($path);
+
+        if (! is_file($full)) {
+            return null;
+        }
+
+        $dims = @getimagesize($full);
+
+        return $dims === false || $dims[0] < 1 || $dims[1] < 1 ? null : [$dims[0], $dims[1]];
+    }
 }
