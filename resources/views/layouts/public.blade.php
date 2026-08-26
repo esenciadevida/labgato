@@ -68,6 +68,32 @@
 
     <x-public.footer />
 
+    {{-- Reading progress bar --}}
+    <div x-data="readingProgress" x-init="init()" class="no-print">
+        <div class="fixed top-0 left-0 z-[60] h-1 w-full bg-transparent pointer-events-none">
+            <div class="h-full bg-primary-500 transition-[width] duration-150 ease-out" :style="`width: ${percent}%`"></div>
+        </div>
+    </div>
+
+    {{-- Back-to-top button --}}
+    <div x-data="backToTop" x-init="init()" class="no-print">
+        <button
+            x-show="visible"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 translate-y-4"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-4"
+            @click="scrollToTop()"
+            type="button"
+            class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center w-11 h-11 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950 transition-colors"
+            aria-label="Back to top"
+        >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+        </button>
+    </div>
+
     @stack('scripts')
     @livewireScriptConfig
     @if(auth()->check() && auth()->user()->isMember() && !auth()->user()->hasOnboarded())

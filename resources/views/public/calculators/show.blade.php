@@ -112,13 +112,14 @@
 <script type="application/ld+json">
 {
     "@@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@@type": "WebApplication",
     "name": "{{ $calculator->name }}",
     "description": "{{ $calculator->short_description ?? $calculator->name }}",
     "url": "{{ url()->current() }}",
     "applicationCategory": "HealthApplication",
+    "dateModified": "{{ $calculator->updated_at->toIso8601String() }}",
     "offers": {
-        "@type": "Offer",
+        "@@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
     }

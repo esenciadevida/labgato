@@ -174,4 +174,34 @@ document.addEventListener('alpine:init', () => {
             localStorage.setItem(this.storageKey, '1');
         },
     }));
+
+    window.Alpine.data('readingProgress', () => ({
+        percent: 0,
+        init() {
+            const main = document.getElementById('article-content');
+            if (!main) return;
+
+            const update = () => {
+                const rect = main.getBoundingClientRect();
+                const total = main.offsetHeight - window.innerHeight;
+                if (total <= 0) { this.percent = 0; return; }
+                this.percent = Math.min(100, Math.max(0, (-rect.top / total) * 100));
+            };
+
+            window.addEventListener('scroll', update, { passive: true });
+            update();
+        },
+    }));
+
+    window.Alpine.data('backToTop', () => ({
+        visible: false,
+        init() {
+            window.addEventListener('scroll', () => {
+                this.visible = window.scrollY > 400;
+            }, { passive: true });
+        },
+        scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        },
+    }));
 });

@@ -50,6 +50,12 @@ class SopController extends Controller
             'revisions',
             'pageTitle',
             'metaDescription',
-        ));
+        ) + [
+            'ogType' => 'article',
+            'ogImage' => $sop->featured_image_url,
+            'publishedTime' => optional($sop->published_at)->toIso8601String(),
+            'modifiedTime' => optional($sop->updated_at)->toIso8601String(),
+            'authorName' => $sop->contributor?->name,
+        ]);
     }
 }

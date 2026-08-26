@@ -50,7 +50,9 @@ class KnowledgeController extends Controller
             'metaDescription',
         ) + [
             'ogType' => 'article',
+            'ogImage' => $knowledge->featured_image_url,
             'publishedTime' => optional($knowledge->published_at)->toIso8601String(),
+            'modifiedTime' => optional($knowledge->updated_at)->toIso8601String(),
             'authorName' => $knowledge->contributor?->name,
         ]);
     }

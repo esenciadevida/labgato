@@ -44,6 +44,12 @@ class InterpretationController extends Controller
             'content',
             'pageTitle',
             'metaDescription',
-        ));
+        ) + [
+            'ogType' => 'article',
+            'ogImage' => $interpretation->featured_image_url,
+            'publishedTime' => optional($interpretation->published_at)->toIso8601String(),
+            'modifiedTime' => optional($interpretation->updated_at)->toIso8601String(),
+            'authorName' => $interpretation->contributor?->name,
+        ]);
     }
 }

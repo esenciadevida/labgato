@@ -654,6 +654,8 @@
     a[href]:after { content: none !important; }
     .bg-primary-950 { background: white !important; color: black !important; }
     .bg-primary-950 * { color: black !important; }
+    .dark { background: white !important; color: black !important; }
+    .dark * { color: black !important; border-color: #e2e8f0 !important; }
 
     .rich-content figure,
     .rich-content table,
@@ -664,17 +666,38 @@
 
     .rich-content img {
         max-width: 100% !important;
+        page-break-inside: avoid;
     }
 
-    .dark .rich-content,
-    .dark .rich-content h1, .dark .rich-content h2, .dark .rich-content h3,
-    .dark .rich-content h4, .dark .rich-content h5, .dark .rich-content h6,
-    .dark .rich-content strong, .dark .rich-content p, .dark .rich-content li {
-        color: black !important;
+    .rich-content h1, .rich-content h2, .rich-content h3 {
+        break-after: avoid;
+        page-break-after: avoid;
     }
 
     .rich-content figcaption {
         color: #555 !important;
+    }
+
+    header, nav, footer, aside {
+        display: none !important;
+    }
+
+    .shadow-card, .shadow-card-hover {
+        box-shadow: none !important;
+    }
+
+    main {
+        padding: 0 !important;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table td,
+    table th {
+        border: 1px solid #e2e8f0 !important;
+        padding: 4px 8px;
     }
 }
 
