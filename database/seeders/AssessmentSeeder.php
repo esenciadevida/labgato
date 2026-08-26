@@ -10,15 +10,17 @@ use Illuminate\Database\Seeder;
 class AssessmentSeeder extends Seeder
 {
     private const BLUEPRINT = [
-        'hematology' => 9,
-        'clinical-chemistry' => 9,
-        'microbiology' => 9,
-        'blood-banking-transfusion' => 9,
-        'immunology' => 9,
-        'other' => 9,
+        'clinical-chemistry' => 15,
+        'hematology' => 12,
+        'microbiology' => 10,
+        'blood-banking-transfusion' => 8,
+        'immunology' => 7,
+        'urinalysis-body-fluids' => 4,
+        'molecular-diagnostics' => 2,
+        'laboratory-operations' => 2,
     ];
 
-    private const TOTAL_QUESTIONS = 54;
+    private const TOTAL_QUESTIONS = 60;
 
     public function run(): void
     {
@@ -28,7 +30,7 @@ class AssessmentSeeder extends Seeder
                 'title' => 'ASCPI Challenge 2026',
                 'type' => 'challenge',
                 'status' => 'scheduled',
-                'duration_minutes' => 150,
+                'duration_minutes' => 60,
                 'total_questions' => self::TOTAL_QUESTIONS,
                 'max_attempts' => 1,
                 'allow_practice' => true,
