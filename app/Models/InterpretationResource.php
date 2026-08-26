@@ -8,6 +8,7 @@ use App\Models\Traits\HasResourceLifecycle;
 use App\Models\Traits\Searchable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 
 class InterpretationResource extends Model
@@ -115,14 +116,16 @@ class InterpretationResource extends Model
             return null;
         }
 
-        $full = Storage::disk('public')->path($path);
+        return Cache::remember('featured-dims:'.$path, 3600, function () use ($path) {
+            $full = Storage::disk('public')->path($path);
 
-        if (! is_file($full)) {
-            return null;
-        }
+            if (! is_file($full)) {
+                return null;
+            }
 
-        $dims = @getimagesize($full);
+            $dims = @getimagesize($full);
 
-        return $dims === false || $dims[0] < 1 || $dims[1] < 1 ? null : [$dims[0], $dims[1]];
+            return $dims === false || $dims[0] < 1 || $dims[1] < 1 ? null : [$dims[0], $dims[1]];
+        });
     }
 }

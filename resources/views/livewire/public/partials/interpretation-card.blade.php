@@ -1,6 +1,13 @@
 @props(['resource'])
 
 <a href="{{ route('public.interpretation.show', $resource->slug) }}" class="group block bg-white rounded-xl shadow-card border border-slate-200 dark:bg-slate-800 dark:border-slate-700 p-6 hover:border-primary-300 hover:shadow-card-hover transition flex flex-col">
+    @if($resource->featured_image_url)
+        <div class="mb-4 h-40 w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-700">
+            <img src="{{ $resource->featured_image_url }}" alt="{{ $resource->name }}"
+                 loading="lazy" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                 onerror="this.closest('div').style.display='none'">
+        </div>
+    @endif
     <h2 class="font-display text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">
         <span class="text-primary-700 group-hover:text-primary-800 transition-colors">
             {{ $resource->name }}

@@ -24,7 +24,7 @@ class AssessmentSchemaTest extends TestCase
         $this->seed(QuestionCategorySeeder::class);
         $this->seed(AssessmentSeeder::class);
 
-        $this->assertSame(7, QuestionCategory::count());
+        $this->assertSame(8, QuestionCategory::count());
 
         $assessment = Assessment::where('slug', 'ascpi-challenge-2026')->firstOrFail();
 
@@ -36,8 +36,8 @@ class AssessmentSchemaTest extends TestCase
 
         $blueprints = $assessment->blueprints;
 
-        $this->assertCount(6, $blueprints);
-        $this->assertSame(54, $assessment->blueprintQuestionCount());
+        $this->assertCount(5, $blueprints);
+        $this->assertSame(45, $assessment->blueprintQuestionCount());
     }
 
     public function test_question_with_four_options_exposes_correct_option(): void

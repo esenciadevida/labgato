@@ -1,6 +1,13 @@
 @props(['resource'])
 
 <a href="{{ route('public.sops.show', $resource->slug) }}" class="group block bg-white rounded-xl shadow-card border border-slate-200 dark:bg-slate-800 dark:border-slate-700 p-6 hover:border-primary-300 hover:shadow-card-hover transition flex flex-col">
+    @if($resource->featured_image_url)
+        <div class="mb-4 h-40 w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-700">
+            <img src="{{ $resource->featured_image_url }}" alt="{{ $resource->name }}"
+                 loading="lazy" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                 onerror="this.closest('div').style.display='none'">
+        </div>
+    @endif
     <div class="flex flex-wrap items-center gap-2 mb-3">
         @if($resource->department)
             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 text-xs font-semibold">

@@ -38,6 +38,13 @@
         @endif
             @foreach($resources as $resource)
             <a href="{{ $resource->url ?? ($showRoute ? route($showRoute, $resource->slug) : '#') }}" class="block rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 hover:border-primary-500 transition overflow-hidden">
+                @if($resource->featured_image_url ?? null)
+                    <div class="{{ $stacked ? 'mb-3 h-32 w-full' : 'mb-3 h-36 w-full' }} overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-700">
+                        <img src="{{ $resource->featured_image_url }}" alt="" loading="lazy"
+                             class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                             onerror="this.closest('div').style.display='none'">
+                    </div>
+                @endif
                 <span class="inline-block max-w-full truncate rounded-full bg-primary-50 dark:bg-primary-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary-700 dark:text-primary-400">
                     {{ $resource->type_label ?? ($currentType ?: 'Resource') }}
                 </span>

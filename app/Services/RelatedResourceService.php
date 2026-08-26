@@ -81,6 +81,7 @@ class RelatedResourceService
             'short_description' => $model->short_description,
             'type_label' => $config['label'],
             'url' => route($config['route'], $model->slug),
+            'featured_image_url' => method_exists($model, 'getFeaturedImageUrlAttribute') ? $model->featured_image_url : null,
         ];
     }
 }
