@@ -3,14 +3,15 @@
 @section('content')
 <x-public.resource-hero
     :title="$sop->name"
-    :type="'SOPs'"
-    :typeLabel="'SOP'"
+    type="SOPs"
+    typeLabel="SOP"
     :shortDescription="$sop->short_description"
     :categories="$sop->categories"
     :tags="$sop->tags"
     :contributor="$sop->contributor"
     :lastVerifiedAt="$sop->last_verified_at"
     :publishedAt="$sop->published_at"
+    :coverImage="$sop->featured_image_url"
     resourceType="sops"
 >
     <x-public.share-button :url="url()->current()" />
@@ -23,20 +24,8 @@
 </x-public.resource-hero>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         <div class="lg:col-span-8 space-y-6">
-
-                @php($featuredDims = $sop->featured_image_dimensions)
-                @if($sop->featured_image_url)
-                    <img
-                        src="{{ $sop->featured_image_url }}"
-                        alt="{{ $sop->short_description ?: $sop->name }}"
-                        loading="lazy"
-                        style="aspect-ratio: {{ $featuredDims ? $featuredDims[0] : 16 }} / {{ $featuredDims ? $featuredDims[1] : 9 }};"
-                        class="w-full object-cover rounded-xl shadow-card border border-slate-200 dark:border-slate-700"
-                        onerror="this.style.display='none'"
-                    >
-                @endif
 
                 <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-card dark:border-slate-700 dark:bg-slate-900">
                     <div class="border-b border-slate-200 bg-slate-50 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-400">
@@ -62,11 +51,9 @@
                     </dl>
                 </div>
 
-                <x-ui.card>
-                    <div class="rich-content">
-                        {!! $content !!}
-                    </div>
-                </x-ui.card>
+                <article id="article-content" class="rich-content max-w-none">
+                    {!! $content !!}
+                </article>
 
                 @if($revisions->isNotEmpty())
                     <x-ui.card>

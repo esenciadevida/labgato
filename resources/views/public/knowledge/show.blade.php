@@ -1,25 +1,24 @@
 @extends('layouts.public')
 
 @section('content')
-<x-public.resource-hero :title="$knowledge->name" :type="'Knowledge'" :typeLabel="'Knowledge'" :shortDescription="$knowledge->short_description" :categories="$knowledge->categories" :tags="$knowledge->tags" :contributor="$knowledge->contributor" :publishedAt="$knowledge->published_at" resourceType="knowledge">
+<x-public.resource-hero
+    :title="$knowledge->name"
+    type="Knowledge"
+    typeLabel="Knowledge"
+    :shortDescription="$knowledge->short_description"
+    :categories="$knowledge->categories"
+    :tags="$knowledge->tags"
+    :contributor="$knowledge->contributor"
+    :publishedAt="$knowledge->published_at"
+    :coverImage="$knowledge->featured_image_url"
+    resourceType="knowledge"
+>
     <x-public.share-button :url="url()->current()" />
 </x-public.resource-hero>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         <div class="lg:col-span-8 space-y-6">
-
-                @php($featuredDims = $knowledge->featured_image_dimensions)
-                @if($knowledge->featured_image_url)
-                    <img
-                        src="{{ $knowledge->featured_image_url }}"
-                        alt="{{ $knowledge->short_description ?: $knowledge->name }}"
-                        loading="lazy"
-                        style="aspect-ratio: {{ $featuredDims ? $featuredDims[0] : 16 }} / {{ $featuredDims ? $featuredDims[1] : 9 }};"
-                        class="w-full object-cover rounded-xl shadow-card border border-slate-200 dark:border-slate-700"
-                        onerror="this.style.display='none'"
-                    >
-                @endif
 
                 @if($knowledge->learning_objectives)
                     <x-ui.card>
@@ -30,11 +29,9 @@
                     </x-ui.card>
                 @endif
 
-                <x-ui.card>
-                    <div class="rich-content max-w-3xl">
-                        {!! $content !!}
-                    </div>
-                </x-ui.card>
+                <article id="article-content" class="rich-content max-w-none">
+                    {!! $content !!}
+                </article>
 
                 <x-public.faq-section :faq="$knowledge->faq" />
             </div>

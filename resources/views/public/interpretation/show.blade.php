@@ -3,33 +3,22 @@
 @section('content')
 <x-public.resource-hero
     :title="$interpretation->name"
-    :type="'Interpretations'"
-    :typeLabel="'Interpretation'"
+    type="Interpretations"
+    typeLabel="Interpretation"
     :shortDescription="$interpretation->short_description"
     :categories="$interpretation->categories"
     :tags="$interpretation->tags"
     :contributor="$interpretation->contributor"
     :publishedAt="$interpretation->published_at"
+    :coverImage="$interpretation->featured_image_url"
     resourceType="interpretation"
 >
     <x-public.share-button :url="url()->current()" />
 </x-public.resource-hero>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         <div class="lg:col-span-8 space-y-6">
-
-                @php($featuredDims = $interpretation->featured_image_dimensions)
-                @if($interpretation->featured_image_url)
-                    <img
-                        src="{{ $interpretation->featured_image_url }}"
-                        alt="{{ $interpretation->short_description ?: $interpretation->name }}"
-                        loading="lazy"
-                        style="aspect-ratio: {{ $featuredDims ? $featuredDims[0] : 16 }} / {{ $featuredDims ? $featuredDims[1] : 9 }};"
-                        class="w-full object-cover rounded-xl shadow-card border border-slate-200 dark:border-slate-700"
-                        onerror="this.style.display='none'"
-                    >
-                @endif
 
                 <x-public.interpretation-disclaimer :text="$interpretation->mandatory_disclaimer" />
 
@@ -37,11 +26,9 @@
                     <x-public.table-of-contents content-selector="#article-content" />
                 @endif
 
-                <x-ui.card>
-                    <div class="rich-content max-w-3xl">
-                        {!! $content !!}
-                    </div>
-                </x-ui.card>
+                <article id="article-content" class="rich-content max-w-none">
+                    {!! $content !!}
+                </article>
 
                 @if($interpretation->clinical_context)
                     <x-ui.card>
