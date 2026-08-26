@@ -111,7 +111,7 @@ class ProfileExtensionTest extends TestCase
         $this->assertTrue($user->fresh()->isProfessional());
     }
 
-    public function test_photo_upload_stores_file_and_sets_path(): void
+    public function test_photo_upload_stores_compressed_webp_and_sets_path(): void
     {
         Storage::fake('public');
 
@@ -127,7 +127,76 @@ class ProfileExtensionTest extends TestCase
         $profile = $user->fresh()->profile;
 
         $this->assertNotNull($profile->photo_path);
+        $this->assertStringEndsWith('.webp', $profile->photo_path);
         Storage::disk('public')->assertExists($profile->photo_path);
+    }
+
+    public function test_replacing_photo_deletes_previous_file(): void
+    {
+        Storage::fake('public');
+
+        $user = $this->member();
+
+        $this->actingAs($user)->put(route('account.profile.update'), [
+            'name' => $user->name,
+            'photo' => UploadedFile::fake()->image('first.png', 200, 200),
+        ]);
+
+        $firstPath = $user->fresh()->profile->photo_path;
+        $this->assertNotNull($firstPath);
+        Storage::disk('public')->assertExists($firstPath);
+
+        $this->actingAs($user)->put(route('account.profile.update'), [
+            'name' => $user->name,
+            'photo' => UploadedFile::fake()->image('second.png', 200, 200),
+        ]);
+
+        Storage::disk('public')->assertMissing($firstPath);
+        $this->assertNotEquals($firstPath, $user->fresh()->profile->photo_path);
+        Storage::disk('public')->assertExists($user->fresh()->profile->photo_path);
+    }
+
+    public function test_uploaded_photo_is_displayed_on_profile_and_header(): void
+    {
+        Storage::fake('public');
+
+        $user = $this->member();
+
+        $this->actingAs($user)->put(route('account.profile.update'), [
+            'name' => $user->name,
+            'photo' => UploadedFile::fake()->image('avatar.png', 200, 200),
+        ]);
+
+        $photoPath = $user->fresh()->profile->photo_path;
+        $this->assertNotNull($photoPath);
+
+        $this->actingAs($user)->get(route('account.profile'))
+            ->assertOk()
+            ->assertSee('/storage/'.$photoPath, false);
+
+        $this->actingAs($user)->get(route('account.dashboard'))
+            ->assertOk()
+            ->assertSee('/storage/'.$photoPath, false);
+    }
+
+    public function test_header_dropdown_avatar_uses_uploaded_photo(): void
+    {
+        Storage::fake('public');
+
+        $user = $this->member();
+
+        $this->actingAs($user)->put(route('account.profile.update'), [
+            'name' => $user->name,
+            'photo' => UploadedFile::fake()->image('avatar.png', 200, 200),
+        ]);
+
+        $photoPath = $user->fresh()->profile->photo_path;
+        $this->assertNotNull($photoPath);
+
+        $html = $this->actingAs($user)->get(route('account.dashboard'))->getContent();
+
+        $href = '/storage/'.$photoPath;
+        $this->assertGreaterThanOrEqual(1, substr_count($html, $href), 'Header dropdown should render the uploaded photo');
     }
 
     public function test_privacy_flags_control_public_display(): void

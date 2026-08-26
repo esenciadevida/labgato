@@ -8,6 +8,7 @@ use App\Models\Traits\HasResourceLifecycle;
 use App\Models\Traits\Searchable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Sop extends Model
 {
@@ -20,6 +21,7 @@ class Sop extends Model
         'name',
         'slug',
         'short_description',
+        'featured_image',
         'content',
         'purpose',
         'scope',
@@ -93,6 +95,21 @@ class Sop extends Model
     public function versions()
     {
         return $this->hasMany(SopVersion::class, 'sop_id');
+    }
+
+    public function getFeaturedImageUrlAttribute(): ?string
+    {
+        $path = $this->featured_image;
+
+        if (! $path) {
+            return null;
+        }
+
+        if (str_starts_with($path, '/') || preg_match('#^https?:#i', $path)) {
+            return $path;
+        }
+
+        return Storage::url($path);
     }
 
     public static function fulltextSearchColumns(): array

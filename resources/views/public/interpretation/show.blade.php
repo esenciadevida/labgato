@@ -19,12 +19,14 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div class="lg:col-span-8 space-y-6">
 
-                @if($interpretation->featured_image)
+                @if($interpretation->featured_image_url)
                     <img
-                        src="{{ \Illuminate\Support\Facades\Storage::url($interpretation->featured_image) }}"
-                        alt="{{ $interpretation->name }}"
+                        src="{{ $interpretation->featured_image_url }}"
+                        alt="{{ $interpretation->short_description ?: $interpretation->name }}"
                         loading="lazy"
-                        class="w-full h-auto rounded-xl shadow-card border border-slate-200 dark:border-slate-700"
+                        style="aspect-ratio: 16 / 9;"
+                        class="w-full object-cover rounded-xl shadow-card border border-slate-200 dark:border-slate-700"
+                        onerror="this.style.display='none'"
                     >
                 @endif
 

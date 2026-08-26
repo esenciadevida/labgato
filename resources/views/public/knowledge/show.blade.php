@@ -9,12 +9,14 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div class="lg:col-span-8 space-y-6">
 
-                @if($knowledge->featured_image)
+                @if($knowledge->featured_image_url)
                     <img
-                        src="{{ \Illuminate\Support\Facades\Storage::url($knowledge->featured_image) }}"
-                        alt="{{ $knowledge->name }}"
+                        src="{{ $knowledge->featured_image_url }}"
+                        alt="{{ $knowledge->short_description ?: $knowledge->name }}"
                         loading="lazy"
-                        class="w-full h-auto rounded-xl shadow-card border border-slate-200 dark:border-slate-700"
+                        style="aspect-ratio: 16 / 9;"
+                        class="w-full object-cover rounded-xl shadow-card border border-slate-200 dark:border-slate-700"
+                        onerror="this.style.display='none'"
                     >
                 @endif
 

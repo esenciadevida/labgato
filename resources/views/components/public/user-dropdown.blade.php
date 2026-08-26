@@ -23,7 +23,7 @@
         :aria-expanded="open"
         aria-label="User menu"
     >
-        <x-public.avatar :name="$user->name" :user-id="$user->id" size="sm" />
+        <x-public.avatar :name="$user->name" :src="$user->profile?->photo_url" size="sm" />
     </button>
 
     <div

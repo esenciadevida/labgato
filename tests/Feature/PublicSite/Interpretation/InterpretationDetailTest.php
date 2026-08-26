@@ -6,6 +6,7 @@ use App\Enums\ResourceStatus;
 use App\Models\Category;
 use App\Models\InterpretationResource;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class InterpretationDetailTest extends TestCase
@@ -87,6 +88,24 @@ class InterpretationDetailTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Related Interpretations');
         $response->assertSee($related->name);
+    }
+
+    public function test_interpretation_detail_renders_featured_image_when_present(): void
+    {
+        Storage::fake('public');
+
+        $imagePath = 'content/featured.jpg';
+        Storage::disk('public')->put($imagePath, 'fake-image');
+
+        $interpretation = InterpretationResource::factory()->create([
+            'status' => ResourceStatus::PUBLISHED,
+            'featured_image' => $imagePath,
+        ]);
+
+        $response = $this->get(route('public.interpretation.show', $interpretation->slug));
+
+        $response->assertStatus(200);
+        $response->assertSee('/storage/'.$imagePath, false);
     }
 
     public function test_interpretation_detail_renders_sanitized_rich_text_content(): void

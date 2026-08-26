@@ -10,6 +10,8 @@ use App\Models\Sop;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class SopAdminCrudTest extends TestCase
@@ -114,6 +116,24 @@ class SopAdminCrudTest extends TestCase
             'status' => ResourceStatus::DRAFT->value,
             'created_by' => $user->id,
         ]);
+    }
+
+    public function test_sop_featured_image_upload_is_persisted(): void
+    {
+        Storage::fake('public');
+
+        $user = $this->createUserWithPermission('sops.create');
+
+        $this->actingAs($user)->post(route('admin.sops.store'), $this->validPayload([
+            'featured_image' => UploadedFile::fake()->image('featured.jpg'),
+        ]));
+
+        $sop = Sop::query()->first();
+
+        $this->assertNotNull($sop->featured_image);
+        $this->assertStringEndsWith('.webp', $sop->featured_image);
+        Storage::disk('public')->assertExists($sop->featured_image);
+        $this->assertStringEndsWith('.webp', (string) $sop->featured_image_url);
     }
 
     public function test_save_and_create_redirects_back_to_create(): void

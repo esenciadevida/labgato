@@ -9,6 +9,7 @@ use App\Models\Traits\Searchable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class KnowledgeResource extends Model
 {
@@ -91,5 +92,20 @@ class KnowledgeResource extends Model
     public function scopeByDifficulty(Builder $query, string $difficulty): Builder
     {
         return $query->where('difficulty_level', $difficulty);
+    }
+
+    public function getFeaturedImageUrlAttribute(): ?string
+    {
+        $path = $this->featured_image;
+
+        if (! $path) {
+            return null;
+        }
+
+        if (str_starts_with($path, '/') || preg_match('#^https?:#i', $path)) {
+            return $path;
+        }
+
+        return Storage::url($path);
     }
 }

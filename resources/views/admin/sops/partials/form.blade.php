@@ -142,11 +142,12 @@
             description="Optional image displayed at the top of the public detail page. Large images are automatically resized and converted to WebP."
         >
             <div>
-                @if($sop?->featured_image)
+                @if($sop?->featured_image_url)
                     <img
-                        src="{{ \Illuminate\Support\Facades\Storage::url($sop->featured_image) }}"
+                        src="{{ $sop->featured_image_url }}"
                         alt="Current featured image"
                         class="mb-3 max-h-40 w-auto rounded-lg border border-slate-200 dark:border-slate-700"
+                        onerror="this.style.display='none'"
                     >
                 @endif
                 <x-ui.input id="featured_image" name="featured_image" type="file" accept=".jpg,.jpeg,.png,.webp" :error="$errors->first('featured_image')" />

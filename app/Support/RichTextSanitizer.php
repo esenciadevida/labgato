@@ -206,10 +206,14 @@ class RichTextSanitizer
             return true;
         }
 
-        return str_starts_with($lower, 'http://')
-            || str_starts_with($lower, 'https://')
-            || str_starts_with($lower, 'mailto:')
-            || str_starts_with($lower, 'tel:');
+        if (preg_match('#^[a-z][a-z0-9+.-]*:#i', $url)) {
+            return str_starts_with($lower, 'http://')
+                || str_starts_with($lower, 'https://')
+                || str_starts_with($lower, 'mailto:')
+                || str_starts_with($lower, 'tel:');
+        }
+
+        return true;
     }
 
     private static function markdownToHtml(string $markdown): string

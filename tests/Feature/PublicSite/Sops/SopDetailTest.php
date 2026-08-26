@@ -5,6 +5,7 @@ namespace Tests\Feature\PublicSite\Sops;
 use App\Enums\ResourceStatus;
 use App\Models\Sop;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class SopDetailTest extends TestCase
@@ -63,6 +64,38 @@ class SopDetailTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('Disclaimer');
+    }
+
+    public function test_sop_detail_renders_featured_image_when_present(): void
+    {
+        Storage::fake('public');
+
+        $imagePath = 'content/featured.jpg';
+        Storage::disk('public')->put($imagePath, 'fake-image');
+
+        $sop = Sop::factory()->create([
+            'status' => ResourceStatus::PUBLISHED,
+            'featured_image' => $imagePath,
+        ]);
+
+        $response = $this->get(route('public.sops.show', $sop->slug));
+
+        $response->assertStatus(200);
+        $response->assertSee('/storage/'.$imagePath, false);
+    }
+
+    public function test_sop_detail_hides_featured_image_when_absolute_url_stored(): void
+    {
+        $sop = Sop::factory()->create([
+            'status' => ResourceStatus::PUBLISHED,
+            'featured_image' => 'https://example.com/banner.webp',
+        ]);
+
+        $response = $this->get(route('public.sops.show', $sop->slug));
+
+        $response->assertStatus(200);
+        $response->assertSee('https://example.com/banner.webp', false);
+        $response->assertDontSee('/storage/https://example.com', false);
     }
 
     public function test_sop_detail_renders_structured_data(): void

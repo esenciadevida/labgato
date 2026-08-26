@@ -9,6 +9,7 @@ use App\Mail\PasswordUpdatedEmail;
 use App\Services\AuditLogService;
 use App\Services\ContributionService;
 use App\Services\OnboardingService;
+use App\Services\ContentImageService;
 use App\Services\RecentlyViewedService;
 use App\Services\RecommendationService;
 use Illuminate\Support\Facades\Auth;
@@ -25,6 +26,7 @@ class MemberController extends Controller
         private readonly RecommendationService $recommendations,
         private readonly OnboardingService $onboarding,
         private readonly AuditLogService $auditLog,
+        private readonly ContentImageService $imageService,
     ) {}
 
     public function show()
@@ -68,15 +70,15 @@ class MemberController extends Controller
             $profileData[$flag] = $request->boolean($flag);
         }
 
-        $profile = $user->profile;
+        $existingPhotoPath = $user->profile()->value('photo_path');
 
         if ($request->hasFile('photo')) {
-            if ($profile->photo_path) {
-                Storage::disk('public')->delete($profile->photo_path);
+            if ($existingPhotoPath) {
+                Storage::disk('public')->delete($existingPhotoPath);
             }
-            $profileData['photo_path'] = $request->file('photo')->store('profiles', 'public');
-        } elseif ($request->boolean('remove_photo') && $profile->photo_path) {
-            Storage::disk('public')->delete($profile->photo_path);
+            $profileData['photo_path'] = $this->imageService->process($request->file('photo'), 'profiles', true)['path'];
+        } elseif ($request->boolean('remove_photo') && $existingPhotoPath) {
+            Storage::disk('public')->delete($existingPhotoPath);
             $profileData['photo_path'] = null;
         }
 

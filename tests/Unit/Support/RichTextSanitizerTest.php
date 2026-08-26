@@ -68,6 +68,34 @@ class RichTextSanitizerTest extends TestCase
         $this->assertStringNotContainsString('data:', $result);
     }
 
+    public function test_keeps_relative_and_same_site_image_sources(): void
+    {
+        $html = '<figure><img src="content/knowledge/2026/08/hero.webp" alt="relative"></figure>'
+            .'<img src="/storage/content/sops/2026/08/hero.webp" alt="absolute">'
+            .'<img src="//cdn.example.com/banner.webp" alt="protocol-relative">';
+
+        $result = RichTextSanitizer::sanitize($html);
+
+        $this->assertStringContainsString('src="content/knowledge/2026/08/hero.webp"', $result);
+        $this->assertStringContainsString('src="/storage/content/sops/2026/08/hero.webp"', $result);
+        $this->assertStringContainsString('src="//cdn.example.com/banner.webp"', $result);
+    }
+
+    public function test_strips_dangerous_image_sources(): void
+    {
+        $html = '<img src="javascript:alert(1)" alt="x">'
+            .'<img src="data:image/png;base64,AAAA" alt="y">'
+            .'<img src="file:///etc/passwd" alt="z">'
+            .'<img src="vbscript:msgbox(1)" alt="w">';
+
+        $result = RichTextSanitizer::sanitize($html);
+
+        $this->assertStringNotContainsString('javascript:', $result);
+        $this->assertStringNotContainsString('data:', $result);
+        $this->assertStringNotContainsString('file:', $result);
+        $this->assertStringNotContainsString('vbscript:', $result);
+    }
+
     public function test_removes_unknown_tags_but_keeps_content(): void
     {
         $html = '<p>Keep <iframe src="https://evil.example"></iframe> this</p>';

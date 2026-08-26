@@ -8,6 +8,7 @@ use App\Models\Traits\HasResourceLifecycle;
 use App\Models\Traits\Searchable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class InterpretationResource extends Model
 {
@@ -86,5 +87,20 @@ class InterpretationResource extends Model
     public static function fulltextSearchColumns(): array
     {
         return ['name', 'short_description', 'clinical_context'];
+    }
+
+    public function getFeaturedImageUrlAttribute(): ?string
+    {
+        $path = $this->featured_image;
+
+        if (! $path) {
+            return null;
+        }
+
+        if (str_starts_with($path, '/') || preg_match('#^https?:#i', $path)) {
+            return $path;
+        }
+
+        return Storage::url($path);
     }
 }

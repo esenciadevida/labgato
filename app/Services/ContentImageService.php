@@ -16,6 +16,8 @@ class ContentImageService
 
     private const WEBP_QUALITY = 82;
 
+    private const SQUARE_SIZE = 512;
+
     private const ALLOWED_MIMES = [
         'image/jpeg',
         'image/png',
@@ -28,11 +30,12 @@ class ContentImageService
     }
 
     /**
-     * Validate, downscale and re-encode an uploaded image as WebP.
+     * Validate, downscale, optionally square-crop, and re-encode an uploaded
+     * image as WebP.
      *
      * @return array{path: string, size_bytes: int, width: int|null, height: int|null}
      */
-    public function process(UploadedFile $file, string $folder = 'content'): array
+    public function process(UploadedFile $file, string $folder = 'content', bool $square = false): array
     {
         if ($file->getSize() > self::MAX_BYTES) {
             throw ValidationException::withMessages([
@@ -58,7 +61,9 @@ class ContentImageService
 
         $image = $this->orientFromExif($source, $detectedMime, $realPath);
 
-        if (imagesx($image) > self::MAX_WIDTH) {
+        if ($square) {
+            $image = $this->centerCropSquare($image);
+        } elseif (imagesx($image) > self::MAX_WIDTH) {
             $scaled = $this->scaleDown($image);
             imagedestroy($image);
             $image = $scaled;
@@ -206,5 +211,44 @@ class ContentImageService
         );
 
         return $target;
+    }
+
+    /**
+     * Center-crop an image to a square, resizing down to SQUARE_SIZE if the
+     * source is larger. Never upscales, so small images are preserved.
+     */
+    private function centerCropSquare(\GdImage $source): \GdImage
+    {
+        $width = imagesx($source);
+        $height = imagesy($source);
+        $side = (int) min($width, $height);
+        $target = (int) min($side, self::SQUARE_SIZE);
+
+        if ($target === $width && $width === $height) {
+            return $source;
+        }
+
+        $srcX = (int) max(0, floor(($width - $side) / 2));
+        $srcY = (int) max(0, floor(($height - $side) / 2));
+
+        $cropped = imagecreatetruecolor($target, $target);
+        imagealphablending($cropped, false);
+        imagesavealpha($cropped, true);
+        imagecopyresampled(
+            $cropped,
+            $source,
+            0,
+            0,
+            $srcX,
+            $srcY,
+            $target,
+            $target,
+            $side,
+            $side,
+        );
+
+        imagedestroy($source);
+
+        return $cropped;
     }
 }
