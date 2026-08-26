@@ -11,6 +11,11 @@
             $completion = $profile->completionPercent();
             $displayName = $profile->display_name ?: $user->name;
             $roleLabel = $user->isAdmin() ? 'Administrator' : ($profile->statusLabel() ?: 'Member');
+            $initials = collect(preg_split('/\s+/', trim($displayName)))
+                ->filter()
+                ->map(fn (string $word) => strtoupper(mb_substr($word, 0, 1)))
+                ->take(2)
+                ->implode('') ?: '?';
         @endphp
 
         <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -51,68 +56,67 @@
             @method('PUT')
 
             {{-- Profile hero with cover banner and editable photo --}}
-            <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-800">
-                <div class="h-20 bg-gradient-to-r from-slate-100 via-primary-50 to-slate-100 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800" aria-hidden="true"></div>
-                <div class="h-0.5 bg-gradient-to-r from-primary-200 via-primary-100 to-primary-200 dark:from-slate-700 dark:via-slate-600 dark:to-slate-700" aria-hidden="true"></div>
+            <div class="w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-800">
+                <div class="h-24 bg-gradient-to-r from-primary-50 via-slate-50 to-primary-50 border-b border-slate-100 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 dark:border-slate-700" aria-hidden="true"></div>
 
-                <div class="px-4 pb-5 sm:px-8">
-                    <div class="-mt-14 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                        <div class="relative group w-fit">
+                <div class="px-6 pb-6 -mt-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                    <div class="flex flex-col gap-5 sm:flex-row sm:items-end">
+                        <div class="relative group shrink-0">
                             <input type="file" id="photo" name="photo" accept="image/png,image/jpeg,image/webp" class="hidden" @change="setPhoto($event)">
                             <input type="checkbox" id="remove_photo" name="remove_photo" value="1" class="hidden" x-model="removed">
 
-                            <div class="rounded-full ring-4 ring-white dark:ring-slate-900">
+                            <div class="h-24 w-24 overflow-hidden rounded-full bg-slate-100 ring-4 ring-white shadow-md dark:bg-slate-700 dark:ring-slate-800">
                                 <template x-if="preview">
-                                    <img :src="preview" alt="" class="inline-block h-24 w-24 shrink-0 rounded-full object-cover">
+                                    <img :src="preview" alt="" class="h-full w-full object-cover" loading="lazy">
                                 </template>
                                 <template x-if="!preview && removed">
-                                    <x-public.avatar :name="$displayName" size="xl" />
+                                    <div class="flex h-full w-full items-center justify-center bg-primary-600 font-semibold text-white">{{ $initials }}</div>
                                 </template>
                                 <template x-if="!preview && !removed">
-                                    <x-public.avatar :name="$displayName" :src="$profile->photo_url" size="xl" />
+                                    @if($profile->photo_url)
+                                        <img src="{{ $profile->photo_url }}" alt="{{ $displayName }}" class="h-full w-full object-cover" loading="lazy">
+                                    @else
+                                        <div class="flex h-full w-full items-center justify-center bg-primary-600 font-semibold text-white">{{ $initials }}</div>
+                                    @endif
                                 </template>
                             </div>
 
-                            <label for="photo" title="Update profile photo"
-                                   class="absolute inset-0 flex cursor-pointer items-center justify-center rounded-full bg-slate-900/60 text-white opacity-0 transition-opacity group-hover:opacity-100">
-                                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/>
-                                </svg>
+                            <label for="photo" title="Change photo"
+                                   class="absolute inset-0 flex cursor-pointer items-center justify-center rounded-full bg-black/40 text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
+                                Change
                             </label>
                             <x-form.error for="photo" />
                         </div>
 
-                        <div class="sm:pb-1 sm:text-right">
-                            <h2 class="font-display text-2xl font-bold text-slate-900 dark:text-slate-100">{{ $displayName }}</h2>
-                            <span class="mt-1 inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-semibold text-primary-700 dark:bg-primary-900/30 dark:text-primary-300">
-                                {{ $roleLabel }}
-                            </span>
+                        <div class="space-y-1 pb-1">
+                            <div class="flex flex-wrap items-center gap-2.5">
+                                <h2 class="font-display text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{{ $displayName }}</h2>
+                                <span class="inline-flex items-center rounded-full border border-primary-100 bg-primary-50 px-2.5 py-0.5 text-xs font-semibold text-primary-700 dark:border-primary-800 dark:bg-primary-900/30 dark:text-primary-300">
+                                    {{ $roleLabel }}
+                                </span>
+                            </div>
                             @if($user->bio)
-                                <p class="mt-2 max-w-md text-sm text-slate-600 dark:text-slate-300 sm:ml-auto line-clamp-3">{{ $user->bio }}</p>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">{{ $user->bio }}</p>
                             @else
-                                <p class="mt-2 text-sm italic text-slate-400 dark:text-slate-500">No bio yet — add one below.</p>
+                                <p class="text-sm italic text-slate-500 dark:text-slate-400">No bio added yet.</p>
                             @endif
                         </div>
                     </div>
 
-                    <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4 dark:border-slate-700">
-                        <p class="text-xs text-slate-400 dark:text-slate-500">Supported formats: JPG, PNG, or WebP · up to 2MB.</p>
-                        @if($profile->photo_path)
-                            <button type="button" @click="clearPhoto()" x-show="!removed"
-                                    class="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition-colors hover:border-danger-300 hover:text-danger-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-danger-400">
-                                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                                </svg>
-                                Remove photo
+                    <div class="flex flex-col gap-3 self-start sm:flex-row sm:items-center md:self-end">
+                        <span class="hidden text-xs text-slate-400 lg:inline-block dark:text-slate-500">JPG, PNG, or WebP · up to 2MB.</span>
+                        <div class="flex items-center gap-2">
+                            <button type="button" @click="choosePhoto()"
+                                    class="rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600">
+                                Upload new photo
                             </button>
-                            <button type="button" @click="removed = false" x-show="removed"
-                                    class="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition-colors hover:border-primary-300 hover:text-primary-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-primary-400">
-                                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                                </svg>
-                                Undo removal
-                            </button>
-                        @endif
+                            @if($profile->photo_path)
+                                <button type="button" @click="clearPhoto()" x-show="!removed"
+                                        class="rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-xs font-medium text-danger-600 transition-colors hover:border-danger-200 hover:bg-danger-50 dark:border-slate-600 dark:bg-slate-800 dark:text-danger-400 dark:hover:bg-slate-700">
+                                    Remove photo
+                                </button>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
