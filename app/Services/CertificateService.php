@@ -115,6 +115,12 @@ class CertificateService
             'signatoryName' => (string) setting('certificate.signatory_name', 'Program Director'),
             'signatoryTitle' => (string) setting('certificate.signatory_title', 'Program Director, LabGOTO'),
             'logoBase64' => $this->logoBase64(),
+            'primaryColor' => (string) setting('certificate.primary_color', '#1e3a8a'),
+            'secondaryColor' => (string) setting('certificate.secondary_color', '#d4af37'),
+            'completionText' => $this->completionText($certificate),
+            'disclaimerText' => $this->disclaimerText($certificate),
+            'showLogo' => setting_bool('certificate.show_logo', true),
+            'showQr' => setting_bool('certificate.show_qr', true),
         ])
             ->save(Storage::disk('public')->path($relativePath));
 
@@ -162,6 +168,40 @@ class CertificateService
         }
 
         return $certificate->user?->name ?? 'Participant';
+    }
+
+    /**
+     * The completion text below the holder name.
+     * Uses the admin-configured body text with {assessment} placeholder, or the default.
+     */
+    private function completionText(Certificate $certificate): string
+    {
+        $custom = (string) setting('certificate.body_text', '');
+
+        if ($custom !== '') {
+            $text = e($custom);
+            $text = str_replace('{assessment}', '<strong>' . e($certificate->assessment->title) . '</strong>', $text);
+            return $text;
+        }
+
+        return 'for successfully completing the <strong>' . e($certificate->assessment->title) . '</strong>';
+    }
+
+    /**
+     * The disclaimer text at the bottom of the certificate.
+     * Uses the admin-configured disclaimer, or the default.
+     */
+    private function disclaimerText(Certificate $certificate): string
+    {
+        $custom = (string) setting('certificate.disclaimer_text', '');
+
+        if ($custom !== '') {
+            return nl2br(e($custom));
+        }
+
+        return 'This certificate acknowledges achievement in the ' . e($certificate->assessment->title) . ' administered by LabGOTO. '
+            . 'It is not an ASCP certification nor an official ASCP credential. Verify authenticity by scanning the QR code above '
+            . 'or visiting ' . e($certificate->verifyUrl()) . '.';
     }
 
     /**

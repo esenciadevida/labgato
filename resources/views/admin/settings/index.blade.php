@@ -154,6 +154,82 @@
                 </div>
             </x-ui.card>
 
+            <x-ui.card title="Certificate Template">
+                <p class="mb-4 text-sm text-slate-500 dark:text-slate-400">Customize the visual appearance and text of issued certificates. Changes invalidate all cached PDFs.</p>
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <div>
+                        <x-form.label for="certificate_primary_color">Primary Color</x-form.label>
+                        <div class="mt-1 flex items-center gap-2">
+                            <input type="color" id="certificate_primary_color" name="settings[certificate.primary_color]"
+                                value="{{ old('settings.certificate.primary_color', setting('certificate.primary_color', '#1e3a8a')) }}"
+                                class="h-9 w-14 cursor-pointer rounded border border-slate-300 dark:border-slate-600">
+                            <x-ui.input
+                                name="settings[certificate.primary_color]"
+                                value="{{ old('settings.certificate.primary_color', setting('certificate.primary_color', '#1e3a8a')) }}"
+                                class="flex-1 font-mono text-xs"
+                            />
+                        </div>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Border, holder name, headings.</p>
+                    </div>
+                    <div>
+                        <x-form.label for="certificate_secondary_color">Secondary Color</x-form.label>
+                        <div class="mt-1 flex items-center gap-2">
+                            <input type="color" id="certificate_secondary_color" name="settings[certificate.secondary_color]"
+                                value="{{ old('settings.certificate.secondary_color', setting('certificate.secondary_color', '#d4af37')) }}"
+                                class="h-9 w-14 cursor-pointer rounded border border-slate-300 dark:border-slate-600">
+                            <x-ui.input
+                                name="settings[certificate.secondary_color]"
+                                value="{{ old('settings.certificate.secondary_color', setting('certificate.secondary_color', '#d4af37')) }}"
+                                class="flex-1 font-mono text-xs"
+                            />
+                        </div>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Inner frame, rules, ribbon accent.</p>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <x-form.label for="certificate_body_text">Body Text</x-form.label>
+                        <textarea
+                            id="certificate_body_text"
+                            name="settings[certificate.body_text]"
+                            rows="3"
+                            class="block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 shadow-card focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/25 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder-slate-500 dark:focus:border-primary-500"
+                            placeholder="Leave blank for default: for successfully completing the {assessment}"
+                        >{{ old('settings.certificate.body_text', setting('certificate.body_text', '')) }}</textarea>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Use {assessment} as a placeholder for the assessment title.</p>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <x-form.label for="certificate_disclaimer_text">Disclaimer Text</x-form.label>
+                        <textarea
+                            id="certificate_disclaimer_text"
+                            name="settings[certificate.disclaimer_text]"
+                            rows="3"
+                            class="block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 shadow-card focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/25 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder-slate-500 dark:focus:border-primary-500"
+                            placeholder="Leave blank for default disclaimer"
+                        >{{ old('settings.certificate.disclaimer_text', setting('certificate.disclaimer_text', '')) }}</textarea>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Shown at the bottom of every certificate. Leave blank for the default.</p>
+                    </div>
+                    <div>
+                        <x-form.label>Show Logo</x-form.label>
+                        <input type="hidden" name="settings[certificate.show_logo]" value="false">
+                        <label class="inline-flex cursor-pointer select-none items-center gap-2">
+                            <input type="checkbox" name="settings[certificate.show_logo]" value="true"
+                                class="h-4 w-4 rounded border-slate-300 text-primary-500 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800"
+                                @checked(setting_bool('certificate.show_logo', true))>
+                            <span class="text-sm text-slate-700 dark:text-slate-300">Enabled</span>
+                        </label>
+                    </div>
+                    <div>
+                        <x-form.label>Show QR Code</x-form.label>
+                        <input type="hidden" name="settings[certificate.show_qr]" value="false">
+                        <label class="inline-flex cursor-pointer select-none items-center gap-2">
+                            <input type="checkbox" name="settings[certificate.show_qr]" value="true"
+                                class="h-4 w-4 rounded border-slate-300 text-primary-500 focus:ring-primary-500 dark:border-slate-600 dark:bg-slate-800"
+                                @checked(setting_bool('certificate.show_qr', true))>
+                            <span class="text-sm text-slate-700 dark:text-slate-300">Enabled</span>
+                        </label>
+                    </div>
+                </div>
+            </x-ui.card>
+
             <div class="flex items-center justify-end gap-3">
                 <x-ui.button type="submit">
                     Save Settings

@@ -14,16 +14,15 @@
             width: 280mm;
             height: 184mm;
             margin: 8mm 7mm;
-            border: 5px solid #1e3a8a;
+            border: 5px solid {{ $primaryColor }};
             overflow: hidden;
             background: #ffffff;
         }
 
-        /* Gold frame extends the full certificate height. */
         .frame-gold {
             position: absolute;
             inset: 3mm;
-            border: 1.5px solid #d4af37;
+            border: 1.5px solid {{ $secondaryColor }};
             pointer-events: none;
         }
 
@@ -38,7 +37,7 @@
             color: #64748b; text-transform: uppercase;
         }
 
-        .wordmark { font-size: 19px; font-weight: 800; letter-spacing: 2px; color: #1e3a8a; line-height: 1.1; }
+        .wordmark { font-size: 19px; font-weight: 800; letter-spacing: 2px; color: {{ $primaryColor }}; line-height: 1.1; }
         .wordmark small {
             display: block; font-size: 6px; font-weight: 600; letter-spacing: 2px;
             color: #64748b; text-transform: uppercase; margin-top: 1px;
@@ -51,7 +50,7 @@
 
         .type-ribbon {
             display: inline-block; padding: 2.4mm 10mm; margin-top: 4mm;
-            border: 1px solid #b98a12; border-radius: 999px;
+            border: 1px solid {{ $secondaryColor }}; border-radius: 999px;
             color: #6b5320; font-size: 8.5px; font-weight: 800; letter-spacing: 3px;
             text-transform: uppercase; background: #ffffff;
         }
@@ -60,19 +59,19 @@
 
         .holder {
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 40px; font-weight: bold; line-height: 1.08; color: #1e3a8a;
+            font-size: 40px; font-weight: bold; line-height: 1.08; color: {{ $primaryColor }};
             text-align: center;
         }
 
-        .holder-rule { width: 120mm; height: 1px; margin: 2mm auto 0; background: #d4af37; }
+        .holder-rule { width: 120mm; height: 1px; margin: 2mm auto 0; background: {{ $secondaryColor }}; }
 
         .completion { margin-top: 4mm; font-size: 10.5px; color: #374151; line-height: 1.5; text-align: center; }
-        .completion .title { font-weight: 700; color: #1e3a8a; }
+        .completion .title { font-weight: 700; color: {{ $primaryColor }}; }
 
         .score-line { margin-top: 3mm; font-size: 9.5px; color: #475569; text-align: center; }
         .score-line strong { color: #111827; }
 
-        .footer { width: 100%; margin-top: 13mm; padding-top: 4mm; border-top: 1px solid #d4af37; border-collapse: collapse; }
+        .footer { width: 100%; margin-top: 13mm; padding-top: 4mm; border-top: 1px solid {{ $secondaryColor }}; border-collapse: collapse; }
         .signature-cell { text-align: left; width: 55%; vertical-align: bottom; padding: 0; }
         .verify-cell { text-align: right; width: 45%; vertical-align: bottom; padding: 0; }
 
@@ -100,9 +99,13 @@
             <table class="header">
                 <tr>
                     <td style="text-align:left;vertical-align:top;">
-                        @if(!empty($logoBase64))
-                            <img class="logo" src="data:image/png;base64,{{ $logoBase64 }}" alt="LabGOTO">
-                            <div class="tagline">Medical Laboratory Knowledge Platform</div>
+                        @if($showLogo)
+                            @if(!empty($logoBase64))
+                                <img class="logo" src="data:image/png;base64,{{ $logoBase64 }}" alt="LabGOTO">
+                                <div class="tagline">Medical Laboratory Knowledge Platform</div>
+                            @else
+                                <div class="wordmark">LabGOTO<small>Medical Laboratory Knowledge Platform</small></div>
+                            @endif
                         @else
                             <div class="wordmark">LabGOTO<small>Medical Laboratory Knowledge Platform</small></div>
                         @endif
@@ -124,8 +127,7 @@
             <div class="holder-rule"></div>
 
             <div class="completion">
-                for successfully completing the
-                <span class="title">{{ $certificate->assessment->title }}</span>
+                {!! $completionText !!}
             </div>
 
             @if($certificate->type !== 'participation')
@@ -149,21 +151,21 @@
                         </div>
                     </td>
                     <td class="verify-cell">
-                        <div class="verify-block">
-                            @if($qrBase64)
-                                <img class="qr-code" src="data:image/png;base64,{{ $qrBase64 }}" alt="Verification QR code">
-                            @endif
-                            <p class="verify-line">Scan or visit<br><strong>labgoto.com/verify</strong></p>
-                            <span class="verify-code">Code: {{ $certificate->verification_code }}</span>
-                        </div>
+                        @if($showQr)
+                            <div class="verify-block">
+                                @if($qrBase64)
+                                    <img class="qr-code" src="data:image/png;base64,{{ $qrBase64 }}" alt="Verification QR code">
+                                @endif
+                                <p class="verify-line">Scan or visit<br><strong>labgoto.com/verify</strong></p>
+                                <span class="verify-code">Code: {{ $certificate->verification_code }}</span>
+                            </div>
+                        @endif
                     </td>
                 </tr>
             </table>
 
             <div class="disclaimer">
-                This certificate acknowledges achievement in the {{ $certificate->assessment->title }} administered by LabGOTO.
-                It is not an ASCP certification nor an official ASCP credential. Verify authenticity by scanning the QR code above
-                or visiting {{ $certificate->verifyUrl() }}.
+                {!! $disclaimerText !!}
             </div>
         </div>
     </div>
