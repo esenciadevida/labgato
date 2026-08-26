@@ -30,6 +30,8 @@ class KnowledgeController extends Controller
         $related = app(RelatedResourceService::class)->relatedFor($knowledge);
 
         $content = RichTextSanitizer::render($knowledge->content);
+        [$heroImage, $heroImageSrc] = RichTextSanitizer::extractFirstImage($content);
+        $content = $heroImage ? RichTextSanitizer::stripFirstImage($content) : $content;
         $learningObjectives = $knowledge->learning_objectives
             ? nl2br(e($knowledge->learning_objectives))
             : null;
@@ -48,9 +50,11 @@ class KnowledgeController extends Controller
             'learningObjectives',
             'pageTitle',
             'metaDescription',
+            'heroImage',
+            'heroImageSrc',
         ) + [
             'ogType' => 'article',
-            'ogImage' => $knowledge->featured_image_url,
+            'ogImage' => $knowledge->featured_image_url ?? $heroImageSrc,
             'publishedTime' => optional($knowledge->published_at)->toIso8601String(),
             'modifiedTime' => optional($knowledge->updated_at)->toIso8601String(),
             'authorName' => $knowledge->contributor?->name,

@@ -216,6 +216,37 @@ class RichTextSanitizer
         return true;
     }
 
+    /**
+     * Extract the first image (or figure containing an image) from HTML.
+     * Returns [imageHtml, src] or [null, null] if no image found.
+     */
+    public static function extractFirstImage(string $html): array
+    {
+        if (preg_match('/<figure[^>]*>\s*<img\b[^>]*>.*?<\/figure>/is', $html, $m)) {
+            preg_match('/<img[^>]*\bsrc=["\']([^"\']+)["\']/i', $m[0], $src);
+
+            return [$m[0], $src[1] ?? null];
+        }
+
+        if (preg_match('/<img\b[^>]*>/i', $html, $m)) {
+            preg_match('/\bsrc=["\']([^"\']+)["\']/i', $m[0], $src);
+
+            return [$m[0], $src[1] ?? null];
+        }
+
+        return [null, null];
+    }
+
+    /**
+     * Remove the first image (or figure containing an image) from HTML.
+     */
+    public static function stripFirstImage(string $html): string
+    {
+        $html = preg_replace('/<figure[^>]*>\s*<img\b[^>]*>.*?<\/figure>/is', '', $html, 1);
+
+        return preg_replace('/<img\b[^>]*>/i', '', $html, 1);
+    }
+
     private static function markdownToHtml(string $markdown): string
     {
         $markdown = str_replace(["\r\n", "\r"], "\n", $markdown);

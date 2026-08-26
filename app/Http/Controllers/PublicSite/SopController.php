@@ -30,6 +30,8 @@ class SopController extends Controller
         $related = app(RelatedResourceService::class)->relatedFor($sop);
 
         $content = RichTextSanitizer::render($sop->content);
+        [$heroImage, $heroImageSrc] = RichTextSanitizer::extractFirstImage($content);
+        $content = $heroImage ? RichTextSanitizer::stripFirstImage($content) : $content;
 
         $revisions = $sop->versions()
             ->orderByDesc('created_at')
@@ -50,9 +52,11 @@ class SopController extends Controller
             'revisions',
             'pageTitle',
             'metaDescription',
+            'heroImage',
+            'heroImageSrc',
         ) + [
             'ogType' => 'article',
-            'ogImage' => $sop->featured_image_url,
+            'ogImage' => $sop->featured_image_url ?? $heroImageSrc,
             'publishedTime' => optional($sop->published_at)->toIso8601String(),
             'modifiedTime' => optional($sop->updated_at)->toIso8601String(),
             'authorName' => $sop->contributor?->name,

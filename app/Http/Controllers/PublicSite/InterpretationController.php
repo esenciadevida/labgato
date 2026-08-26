@@ -30,6 +30,8 @@ class InterpretationController extends Controller
         $related = app(RelatedResourceService::class)->relatedFor($interpretation);
 
         $content = RichTextSanitizer::render($interpretation->content);
+        [$heroImage, $heroImageSrc] = RichTextSanitizer::extractFirstImage($content);
+        $content = $heroImage ? RichTextSanitizer::stripFirstImage($content) : $content;
 
         $pageTitle = $interpretation->effectiveSeoTitle();
         $metaDescription = $interpretation->effectiveSeoDescription();
@@ -44,9 +46,11 @@ class InterpretationController extends Controller
             'content',
             'pageTitle',
             'metaDescription',
+            'heroImage',
+            'heroImageSrc',
         ) + [
             'ogType' => 'article',
-            'ogImage' => $interpretation->featured_image_url,
+            'ogImage' => $interpretation->featured_image_url ?? $heroImageSrc,
             'publishedTime' => optional($interpretation->published_at)->toIso8601String(),
             'modifiedTime' => optional($interpretation->updated_at)->toIso8601String(),
             'authorName' => $interpretation->contributor?->name,
