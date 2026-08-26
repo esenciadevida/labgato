@@ -33,6 +33,8 @@ class SopController extends Controller
         [$heroImage, $heroImageSrc] = RichTextSanitizer::extractFirstImage($content);
         $content = $heroImage ? RichTextSanitizer::stripFirstImage($content) : $content;
 
+        $readingTime = max(1, (int) ceil(str_word_count(strip_tags($sop->content)) / 200));
+
         $revisions = $sop->versions()
             ->orderByDesc('created_at')
             ->limit(10)
@@ -54,6 +56,7 @@ class SopController extends Controller
             'metaDescription',
             'heroImage',
             'heroImageSrc',
+            'readingTime',
         ) + [
             'ogType' => 'article',
             'ogImage' => $sop->featured_image_url ?? $heroImageSrc,

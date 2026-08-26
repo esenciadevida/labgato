@@ -36,6 +36,9 @@ class KnowledgeController extends Controller
             ? nl2br(e($knowledge->learning_objectives))
             : null;
 
+        $readingTime = $knowledge->reading_time_minutes
+            ?? max(1, (int) ceil(str_word_count(strip_tags($knowledge->content)) / 200));
+
         $pageTitle = $knowledge->effectiveSeoTitle();
         $metaDescription = $knowledge->effectiveSeoDescription();
 
@@ -52,6 +55,7 @@ class KnowledgeController extends Controller
             'metaDescription',
             'heroImage',
             'heroImageSrc',
+            'readingTime',
         ) + [
             'ogType' => 'article',
             'ogImage' => $knowledge->featured_image_url ?? $heroImageSrc,

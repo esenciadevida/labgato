@@ -32,9 +32,9 @@
     @endif
 
     <div class="mt-auto pt-4 flex flex-wrap items-center gap-2">
-        @if($resource->reviewed_date)
+        @if($resource->reviewed_date || $resource->last_reviewed_at)
             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-200 text-xs font-medium">
-                Reviewed {{ $resource->reviewed_date->format('M Y') }}
+                Reviewed {{ ($resource->reviewed_date ?? $resource->last_reviewed_at)->format('M Y') }}
             </span>
         @endif
         <span class="inline-flex items-center gap-1 text-xs font-medium text-slate-400 uppercase tracking-wider ml-auto">

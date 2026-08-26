@@ -33,6 +33,9 @@ class InterpretationController extends Controller
         [$heroImage, $heroImageSrc] = RichTextSanitizer::extractFirstImage($content);
         $content = $heroImage ? RichTextSanitizer::stripFirstImage($content) : $content;
 
+        $readingTime = $interpretation->reading_time_minutes
+            ?? max(1, (int) ceil(str_word_count(strip_tags($interpretation->content)) / 200));
+
         $pageTitle = $interpretation->effectiveSeoTitle();
         $metaDescription = $interpretation->effectiveSeoDescription();
 
@@ -48,6 +51,7 @@ class InterpretationController extends Controller
             'metaDescription',
             'heroImage',
             'heroImageSrc',
+            'readingTime',
         ) + [
             'ogType' => 'article',
             'ogImage' => $interpretation->featured_image_url ?? $heroImageSrc,

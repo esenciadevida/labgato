@@ -96,6 +96,27 @@
 
     @stack('scripts')
     @livewireScriptConfig
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.rich-content pre').forEach(function (pre) {
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.textContent = 'Copy';
+                btn.className = 'absolute top-2 right-2 rounded-md bg-slate-700 px-2 py-1 text-xs font-medium text-slate-300 hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-primary-400 transition-colors';
+                btn.setAttribute('aria-label', 'Copy code');
+                pre.style.position = 'relative';
+                pre.appendChild(btn);
+                btn.addEventListener('click', function () {
+                    var code = pre.querySelector('code');
+                    var text = code ? code.textContent : pre.textContent;
+                    navigator.clipboard.writeText(text).then(function () {
+                        btn.textContent = 'Copied!';
+                        setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+                    });
+                });
+            });
+        });
+    </script>
     @if(auth()->check() && auth()->user()->isMember() && !auth()->user()->hasOnboarded())
         <x-onboarding.welcome-modal :tour-steps="app(\App\Services\OnboardingService::class)->dashboardTourSteps()" />
     @endif

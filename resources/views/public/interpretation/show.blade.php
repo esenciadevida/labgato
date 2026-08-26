@@ -11,6 +11,7 @@
     :contributor="$interpretation->contributor"
     :publishedAt="$interpretation->published_at"
     :coverImage="$interpretation->featured_image_url"
+    :readingTime="$readingTime"
     resourceType="interpretation"
 >
     <x-public.share-button :url="url()->current()" />

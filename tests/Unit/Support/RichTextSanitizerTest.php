@@ -210,4 +210,15 @@ class RichTextSanitizerTest extends TestCase
         $this->assertStringNotContainsString('<table>', $result);
         $this->assertStringContainsString('<p>', $result);
     }
+
+    public function test_table_alignment_center_and_right(): void
+    {
+        $markdown = "| Left | Center | Right |\n|:---|:---:|---:|\n| a | b | c |";
+
+        $result = RichTextSanitizer::render($markdown);
+
+        $this->assertStringNotContainsString('style="text-align:left"', $result);
+        $this->assertStringContainsString('style="text-align:center"', $result);
+        $this->assertStringContainsString('style="text-align:right"', $result);
+    }
 }

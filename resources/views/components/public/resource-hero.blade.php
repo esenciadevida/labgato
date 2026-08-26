@@ -10,6 +10,7 @@
     'publishedAt' => null,
     'resourceType' => null,
     'coverImage' => null,
+    'readingTime' => null,
 ])
 
 <section class="relative bg-primary-950 text-white">
@@ -48,7 +49,7 @@
             </p>
         @endif
 
-        @if($contributor || $publishedAt || $lastVerifiedAt || $categories->isNotEmpty() || $tags->isNotEmpty() || !empty($slot))
+        @if($contributor || $publishedAt || $lastVerifiedAt || $readingTime || $categories->isNotEmpty() || $tags->isNotEmpty() || !empty($slot))
         <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
             @if($contributor)
                 <div class="flex items-center gap-2">
@@ -70,6 +71,11 @@
 
             @if($lastVerifiedAt)
                 <span class="text-slate-400">Last verified {{ $lastVerifiedAt->diffForHumans() }}</span>
+                <span class="text-white/30" aria-hidden="true">&middot;</span>
+            @endif
+
+            @if($readingTime)
+                <span class="text-slate-300">{{ $readingTime }} min read</span>
                 <span class="text-white/30" aria-hidden="true">&middot;</span>
             @endif
 

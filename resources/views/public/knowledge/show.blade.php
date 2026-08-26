@@ -11,6 +11,7 @@
     :contributor="$knowledge->contributor"
     :publishedAt="$knowledge->published_at"
     :coverImage="$knowledge->featured_image_url"
+    :readingTime="$readingTime"
     resourceType="knowledge"
 >
     <x-public.share-button :url="url()->current()" />

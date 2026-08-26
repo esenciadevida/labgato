@@ -23,8 +23,8 @@ class RichTextSanitizer
         'span' => ['class'],
         'div' => ['class'],
         'table' => ['class'],
-        'th' => ['scope', 'class'],
-        'td' => ['class'],
+        'th' => ['scope', 'class', 'style'],
+        'td' => ['class', 'style'],
     ];
 
     private const DROP_TAGS = [
@@ -411,18 +411,36 @@ class RichTextSanitizer
                         return array_map(fn ($c) => static::inline(trim($c)), explode('|', $row));
                     };
 
+                    $aligns = array_map(function (string $cell): ?string {
+                        $cell = trim($cell);
+                        if (str_starts_with($cell, ':') && str_ends_with($cell, ':')) {
+                            return 'center';
+                        }
+                        if (str_ends_with($cell, ':')) {
+                            return 'right';
+                        }
+
+                        return null;
+                    }, explode('|', trim($tableLines[$sepIdx], " \t|")));
+
                     $html[] = '<div class="overflow-x-auto">';
                     $html[] = '<table>';
                     $html[] = '<thead><tr>';
-                    foreach ($parseCells($tableLines[$sepIdx - 1]) as $th) {
-                        $html[] = '<th>'.$th.'</th>';
+                    foreach ($parseCells($tableLines[$sepIdx - 1]) as $idx => $th) {
+                        $style = isset($aligns[$idx]) && $aligns[$idx] !== null
+                            ? ' style="text-align:'.$aligns[$idx].'"'
+                            : '';
+                        $html[] = '<th'.$style.'>'.$th.'</th>';
                     }
                     $html[] = '</tr></thead>';
                     $html[] = '<tbody>';
                     for ($j = $sepIdx + 1, $tCount = count($tableLines); $j < $tCount; $j++) {
                         $html[] = '<tr>';
-                        foreach ($parseCells($tableLines[$j]) as $td) {
-                            $html[] = '<td>'.$td.'</td>';
+                        foreach ($parseCells($tableLines[$j]) as $idx => $td) {
+                            $style = isset($aligns[$idx]) && $aligns[$idx] !== null
+                                ? ' style="text-align:'.$aligns[$idx].'"'
+                                : '';
+                            $html[] = '<td'.$style.'>'.$td.'</td>';
                         }
                         $html[] = '</tr>';
                     }

@@ -12,6 +12,7 @@
     :lastVerifiedAt="$sop->last_verified_at"
     :publishedAt="$sop->published_at"
     :coverImage="$sop->featured_image_url"
+    :readingTime="$readingTime"
     resourceType="sops"
 >
     <x-public.share-button :url="url()->current()" />
@@ -102,36 +103,6 @@
 
         <aside class="lg:col-span-4 space-y-6">
                 <x-public.eeat-trust-box :resource="$sop" />
-
-                <x-ui.card>
-                    <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Details</h2>
-                    <dl class="space-y-3 text-sm">
-                        @if($sop->department)
-                            <div class="flex items-start justify-between gap-4">
-                                <dt class="text-slate-500 dark:text-slate-400">Department</dt>
-                                <dd class="font-medium text-slate-900 dark:text-slate-100 text-right">{{ $sop->department }}</dd>
-                            </div>
-                        @endif
-                        @if($sop->version)
-                            <div class="flex items-start justify-between gap-4">
-                                <dt class="text-slate-500 dark:text-slate-400">Version</dt>
-                                <dd class="font-medium text-slate-900 dark:text-slate-100">{{ $sop->version }}</dd>
-                            </div>
-                        @endif
-                        @if($sop->reviewed_date || $sop->last_reviewed_at)
-                            <div class="flex items-start justify-between gap-4">
-                                <dt class="text-slate-500 dark:text-slate-400">Reviewed</dt>
-                                <dd class="font-medium text-slate-900 dark:text-slate-100">{{ ($sop->reviewed_date ?? $sop->last_reviewed_at)->format('M j, Y') }}</dd>
-                            </div>
-                        @endif
-                        @if($sop->published_at)
-                            <div class="flex items-start justify-between gap-4">
-                                <dt class="text-slate-500 dark:text-slate-400">Published</dt>
-                                <dd class="font-medium text-slate-900 dark:text-slate-100">{{ $sop->published_at->format('M j, Y') }}</dd>
-                            </div>
-                        @endif
-                    </dl>
-                </x-ui.card>
 
                 <x-ui.card>
                     <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-3">Disclaimer</h2>
