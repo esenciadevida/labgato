@@ -24,9 +24,9 @@
 </x-public.resource-hero>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-    @if($heroImage)
+    @if($heroImageSrc)
         <figure class="mb-8 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 shadow-card">
-            {!! str_replace('<img ', '<img loading="eager" fetchpriority="high" class="w-full h-auto object-cover" ', $heroImage) !!}
+            <img src="{{ $heroImageSrc }}" alt="" loading="eager" fetchpriority="high" class="w-full h-auto object-cover">
         </figure>
     @endif
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
