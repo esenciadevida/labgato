@@ -31,7 +31,7 @@ class AuditLogController extends Controller
             ->when($from !== null && $from !== '', fn ($query) => $query->whereDate('created_at', '>=', $from))
             ->when($to !== null && $to !== '', fn ($query) => $query->whereDate('created_at', '<=', $to))
             ->orderByDesc('created_at')
-            ->paginate(50)
+            ->paginate(config('labgoto.pagination.per_page'))
             ->withQueryString();
 
         $actions = AuditLog::select('action')->distinct()->orderBy('action')->pluck('action');

@@ -39,6 +39,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
         ->middleware('permission:contact-messages.view')
         ->name('notifications.clear');
     Route::get('/notifications/unread-count', [NotificationController::class, 'unreadCount'])->name('notifications.unread-count');
+    Route::post('/notifications/read-all', [NotificationController::class, 'markAllAsRead'])->name('notifications.mark-all-read');
+    Route::post('/notifications/{notification}/read', [NotificationController::class, 'markAsRead'])->name('notifications.mark-read');
 
     Route::middleware('permission:admin.full-access')->group(function () {
         Route::get('/launch', [LaunchControlController::class, 'index'])->name('launch');
@@ -115,9 +117,25 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
 
     Route::middleware('permission:certificates.view')->group(function () {
         Route::get('/certificates', [CertificateAdminController::class, 'index'])->name('certificates.index');
+        Route::get('/certificates/template', [CertificateAdminController::class, 'template'])
+            ->middleware('permission:certificates.manage')
+            ->name('certificates.template');
+        Route::get('/certificates/{certificate}', [CertificateAdminController::class, 'show'])->name('certificates.show');
+        Route::post('/certificates/{certificate}/regenerate', [CertificateAdminController::class, 'regenerate'])
+            ->middleware('permission:certificates.manage')
+            ->name('certificates.regenerate');
+        Route::get('/certificates/{certificate}/download', [CertificateAdminController::class, 'download'])
+            ->middleware('permission:certificates.download')
+            ->name('certificates.download');
         Route::post('/certificates/{certificate}/revoke', [CertificateAdminController::class, 'revoke'])
             ->middleware('permission:certificates.revoke')
             ->name('certificates.revoke');
+        Route::post('/certificates/bulk-revoke', [CertificateAdminController::class, 'bulkRevoke'])
+            ->middleware('permission:certificates.revoke')
+            ->name('certificates.bulk-revoke');
+        Route::post('/certificates/preview', [CertificateAdminController::class, 'preview'])
+            ->middleware('permission:certificates.manage')
+            ->name('certificates.preview');
     });
 
     Route::middleware('permission:questions.view')->group(function () {

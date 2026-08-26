@@ -5,6 +5,11 @@
 @section('header', 'Edit Tool: ' . $tool->name)
 
 @section('content')
+<div class="mb-6">
+    <x-ui.button href="{{ route('admin.tools.index') }}" variant="ghost" size="sm">
+        &larr; Back
+    </x-ui.button>
+</div>
 <div class="mx-auto max-w-3xl">
 
     <div class="mb-6 rounded-lg border border-primary-200 bg-primary-50 p-4 dark:border-primary-900/30 dark:bg-primary-900/10">

@@ -11,7 +11,7 @@ class NotificationController extends Controller
     {
         $notifications = $request->user()->notifications()
             ->latest()
-            ->paginate(20);
+            ->paginate(config('labgoto.pagination.per_page'));
 
         return view('admin.notifications.index', [
             'notifications' => $notifications,
@@ -27,6 +27,21 @@ class NotificationController extends Controller
             'unread' => $user->unreadNotifications()->count(),
             'contact_unread' => \App\Models\ContactMessage::query()->whereNull('read_at')->count(),
         ]);
+    }
+
+    public function markAllAsRead(Request $request)
+    {
+        $request->user()->unreadNotifications()->update(['read_at' => now()]);
+
+        return redirect()->route('admin.notifications.index')->with('success', 'All notifications marked as read.');
+    }
+
+    public function markAsRead(Request $request, $notificationId)
+    {
+        $notification = $request->user()->notifications()->findOrFail($notificationId);
+        $notification->update(['read_at' => now()]);
+
+        return redirect()->route('admin.notifications.index')->with('success', 'Notification marked as read.');
     }
 
     public function clear(Request $request)

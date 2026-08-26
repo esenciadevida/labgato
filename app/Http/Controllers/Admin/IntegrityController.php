@@ -24,7 +24,7 @@ class IntegrityController extends Controller
             })
             ->orderByRaw("CASE integrity_status WHEN 'high_risk' THEN 0 WHEN 'review' THEN 1 ELSE 2 END")
             ->orderByDesc('id')
-            ->paginate(25)
+            ->paginate(config('labgoto.pagination.per_page'))
             ->withQueryString();
 
         $counts = ExamAttempt::query()

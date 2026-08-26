@@ -86,6 +86,21 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('analytics.view', fn ($user) => $user->hasPermission('analytics.view'));
         Gate::define('settings.view', fn ($user) => $user->hasPermission('settings.view'));
         Gate::define('settings.manage', fn ($user) => $user->hasPermission('settings.manage'));
+        Gate::define('knowledge.view', fn ($user) => $user->hasPermission('knowledge.view'));
+        Gate::define('sops.view', fn ($user) => $user->hasPermission('sops.view'));
+        Gate::define('interpretation.view', fn ($user) => $user->hasPermission('interpretation.view'));
+        Gate::define('calculators.view', fn ($user) => $user->hasPermission('calculators.view'));
+        Gate::define('reference-ranges.view', fn ($user) => $user->hasPermission('reference-ranges.view'));
+        Gate::define('tools.view', fn ($user) => $user->hasPermission('tools.view'));
+        Gate::define('questions.view', fn ($user) => $user->hasPermission('questions.view'));
+        Gate::define('contact-messages.view', fn ($user) => $user->hasPermission('contact-messages.view'));
+        Gate::define('certificates.view', fn ($user) => $user->hasPermission('certificates.view'));
+        Gate::define('integrity.view', fn ($user) => $user->hasPermission('integrity.view'));
+        Gate::define('assessments.manage', fn ($user) => $user->hasPermission('assessments.manage'));
+        Gate::define('announcements.manage', fn ($user) => $user->hasPermission('announcements.manage'));
+        Gate::define('popups.manage', fn ($user) => $user->hasPermission('popups.manage'));
+        Gate::define('certificates.manage', fn ($user) => $user->hasPermission('certificates.manage'));
+        Gate::define('certificates.download', fn ($user) => $user->hasPermission('certificates.download'));
 
         RateLimiter::for('api-public', function (Request $request) {
             return Limit::perMinute(60)->by($request->ip());

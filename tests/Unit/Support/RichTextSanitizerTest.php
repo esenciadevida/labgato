@@ -165,4 +165,49 @@ class RichTextSanitizerTest extends TestCase
         $this->assertSame('', RichTextSanitizer::sanitize(null));
         $this->assertSame('', RichTextSanitizer::sanitize(''));
     }
+
+    public function test_renders_markdown_table(): void
+    {
+        $markdown = "| Rule | Action |\n|---|---|\n| 1-2s | Check control |";
+
+        $result = RichTextSanitizer::render($markdown);
+
+        $this->assertStringContainsString('<table>', $result);
+        $this->assertStringContainsString('<th>Rule</th>', $result);
+        $this->assertStringContainsString('<th>Action</th>', $result);
+        $this->assertStringContainsString('<td>1-2s</td>', $result);
+        $this->assertStringContainsString('<td>Check control</td>', $result);
+        $this->assertStringContainsString('overflow-x-auto', $result);
+    }
+
+    public function test_renders_multi_row_table(): void
+    {
+        $markdown = "| A | B | C |\n|---|---|---|\n| 1 | 2 | 3 |\n| 4 | 5 | 6 |";
+
+        $result = RichTextSanitizer::render($markdown);
+
+        $this->assertStringContainsString('<td>1</td>', $result);
+        $this->assertStringContainsString('<td>5</td>', $result);
+        $this->assertStringContainsString('<td>6</td>', $result);
+    }
+
+    public function test_table_with_inline_formatting(): void
+    {
+        $markdown = "| Name | Note |\n|---|---|\n| **Bold** | *Italic* |";
+
+        $result = RichTextSanitizer::render($markdown);
+
+        $this->assertStringContainsString('<strong>Bold</strong>', $result);
+        $this->assertStringContainsString('<em>Italic</em>', $result);
+    }
+
+    public function test_invalid_table_falls_back_to_paragraphs(): void
+    {
+        $markdown = "| just one row |\n| still no separator |";
+
+        $result = RichTextSanitizer::render($markdown);
+
+        $this->assertStringNotContainsString('<table>', $result);
+        $this->assertStringContainsString('<p>', $result);
+    }
 }

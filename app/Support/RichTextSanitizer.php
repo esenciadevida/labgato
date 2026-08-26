@@ -284,7 +284,9 @@ class RichTextSanitizer
             }
         };
 
-        foreach ($lines as $line) {
+        $count = count($lines);
+        for ($i = 0; $i < $count; $i++) {
+            $line = $lines[$i];
             $trimmed = trim($line);
 
             if (str_starts_with($trimmed, '```')) {
@@ -379,6 +381,59 @@ class RichTextSanitizer
                     $listType = 'ol';
                 }
                 $html[] = '<li>'.static::inline($m[1]).'</li>';
+
+                continue;
+            }
+
+            if (preg_match('/^\|(.+)\|?\s*$/', $trimmed)) {
+                $flushParagraph();
+                $flushList($listType);
+
+                $tableLines = [];
+                while ($i < $count && preg_match('/^\|(.+)\|?\s*$/', trim($lines[$i]))) {
+                    $tableLines[] = trim($lines[$i]);
+                    $i++;
+                }
+                $i--;
+
+                $sepIdx = -1;
+                for ($j = 1, $tCount = count($tableLines); $j < $tCount; $j++) {
+                    if (preg_match('/^[\s|:\-]+$/', $tableLines[$j]) && strpos($tableLines[$j], '-') !== false) {
+                        $sepIdx = $j;
+                        break;
+                    }
+                }
+
+                if ($sepIdx > 0 && count($tableLines) >= 3) {
+                    $parseCells = static function (string $row): array {
+                        $row = trim($row, " \t|");
+
+                        return array_map(fn ($c) => static::inline(trim($c)), explode('|', $row));
+                    };
+
+                    $html[] = '<div class="overflow-x-auto">';
+                    $html[] = '<table>';
+                    $html[] = '<thead><tr>';
+                    foreach ($parseCells($tableLines[$sepIdx - 1]) as $th) {
+                        $html[] = '<th>'.$th.'</th>';
+                    }
+                    $html[] = '</tr></thead>';
+                    $html[] = '<tbody>';
+                    for ($j = $sepIdx + 1, $tCount = count($tableLines); $j < $tCount; $j++) {
+                        $html[] = '<tr>';
+                        foreach ($parseCells($tableLines[$j]) as $td) {
+                            $html[] = '<td>'.$td.'</td>';
+                        }
+                        $html[] = '</tr>';
+                    }
+                    $html[] = '</tbody>';
+                    $html[] = '</table>';
+                    $html[] = '</div>';
+                } else {
+                    foreach ($tableLines as $tl) {
+                        $html[] = '<p>'.static::inline(trim($tl, " \t|")).'</p>';
+                    }
+                }
 
                 continue;
             }

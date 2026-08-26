@@ -5,6 +5,7 @@
 @section('header', 'Contact Messages')
 
 @section('content')
+@can('contact-messages.view')
 <div class="space-y-6">
 
     <form method="GET" action="{{ route('admin.contact-messages.index') }}" class="flex flex-col gap-2 sm:flex-row sm:items-center" role="search">
@@ -98,4 +99,9 @@
         @endif
     </x-ui.card>
 </div>
+@else
+    <div class="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center shadow-card dark:border-slate-700 dark:bg-slate-800">
+        <p class="text-sm font-medium text-slate-600 dark:text-slate-300">You do not have permission to view this page.</p>
+    </div>
+@endcan
 @endsection

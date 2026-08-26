@@ -30,7 +30,7 @@ class AssessmentController extends Controller
                 ."and exam_attempts.status in ('submitted', 'auto_submitted') and exam_attempts.percentage is not null) as avg_percentage"
             ))
             ->orderByDesc('created_at')
-            ->paginate(20);
+            ->paginate(config('labgoto.pagination.per_page'));
 
         return view('admin.assessments.index', [
             'assessments' => $assessments,

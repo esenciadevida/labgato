@@ -34,7 +34,7 @@ class UserManagementController extends Controller
                 'sops as contributions_count' => fn ($query) => $query->where('status', '!=', 'rejected'),
             ])
             ->orderByDesc('created_at')
-            ->paginate(20)
+            ->paginate(config('labgoto.pagination.per_page'))
             ->withQueryString();
 
         return view('admin.users.index', compact('users', 'search', 'status'));

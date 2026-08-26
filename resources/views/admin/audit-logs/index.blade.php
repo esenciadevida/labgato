@@ -5,6 +5,7 @@
 @section('header', 'Audit Logs')
 
 @section('content')
+@can('audit-logs.view')
 <div class="space-y-6">
 
     <form method="GET" action="{{ route('admin.audit-logs.index') }}" class="flex flex-col gap-3 sm:flex-row" role="search">
@@ -96,4 +97,9 @@
         @endif
     </x-ui.card>
 </div>
+@else
+    <div class="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center shadow-card dark:border-slate-700 dark:bg-slate-800">
+        <p class="text-sm font-medium text-slate-600 dark:text-slate-300">You do not have permission to view this page.</p>
+    </div>
+@endcan
 @endsection

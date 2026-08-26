@@ -5,6 +5,7 @@
 @section('header', 'Assessments')
 
 @section('content')
+@can('assessments.manage')
 <div class="space-y-6">
     <div class="flex items-center justify-between gap-3">
         <p class="text-sm text-slate-600 dark:text-slate-400">
@@ -15,10 +16,10 @@
         </x-ui.button>
     </div>
 
-    <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
+    <x-ui.card class="!p-0 overflow-hidden">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-slate-200 text-sm dark:divide-slate-700">
-                <thead class="bg-slate-50 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+                <thead class="border-b border-slate-200 bg-slate-50 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:border-slate-700 dark:bg-slate-700/50 dark:text-slate-400">
                     <tr>
                         <th class="px-4 py-3">Assessment</th>
                         <th class="px-4 py-3">Status</th>
@@ -121,16 +122,24 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="7" class="px-4 py-10 text-center text-sm text-slate-500 dark:text-slate-400">
-                                No assessments yet. Create the first monthly challenge.
+                            <td colspan="7" class="px-4 py-10">
+                                <div class="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center shadow-card dark:border-slate-700 dark:bg-slate-800">
+                                    <p class="text-sm font-medium text-slate-600 dark:text-slate-300">No assessments yet.</p>
+                                    <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">Create your first assessment to get started.</p>
+                                </div>
                             </td>
                         </tr>
                     @endforelse
                 </tbody>
             </table>
         </div>
-    </div>
+    </x-ui.card>
 
     <div>{{ $assessments->links() }}</div>
 </div>
+@else
+    <div class="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center shadow-card dark:border-slate-700 dark:bg-slate-800">
+        <p class="text-sm font-medium text-slate-600 dark:text-slate-300">You do not have permission to view this page.</p>
+    </div>
+@endcan
 @endsection

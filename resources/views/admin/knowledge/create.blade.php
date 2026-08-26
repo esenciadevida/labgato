@@ -5,6 +5,11 @@
 @section('header', 'New Knowledge Resource')
 
 @section('content')
+<div class="mb-6">
+    <x-ui.button href="{{ route('admin.knowledge.index') }}" variant="ghost" size="sm">
+        &larr; Back
+    </x-ui.button>
+</div>
 <div class="mx-auto max-w-3xl">
     @include('admin.knowledge.partials.form', [
         'action' => route('admin.knowledge.store'),

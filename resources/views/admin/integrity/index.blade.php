@@ -31,6 +31,7 @@
 @endphp
 
 @section('content')
+@can('integrity.view')
 <div class="space-y-6">
     <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div class="flex flex-wrap gap-1.5">
@@ -62,7 +63,7 @@
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-slate-200 text-sm dark:divide-slate-700">
                 <thead>
-                    <tr class="text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                    <tr class="border-b border-slate-200 bg-slate-50 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:border-slate-700 dark:bg-slate-700/50 dark:text-slate-400">
                         <th class="px-4 py-3">Candidate</th>
                         <th class="px-4 py-3">Assessment</th>
                         <th class="px-4 py-3">Mode</th>
@@ -103,13 +104,11 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="px-4 py-12 text-center">
-                                <p class="text-sm font-medium text-slate-600 dark:text-slate-300">
-                                    {{ $search !== '' ? 'No attempts match your search.' : 'No attempts yet.' }}
-                                </p>
-                                <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                                    Attempts appear here as soon as candidates start taking assessments, with integrity events flagged automatically.
-                                </p>
+                            <td colspan="8" class="px-4 py-10">
+                                <div class="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center shadow-card dark:border-slate-700 dark:bg-slate-800">
+                                    <p class="text-sm font-medium text-slate-600 dark:text-slate-300">{{ $search !== '' ? 'No attempts match your search.' : 'No exam attempts to review.' }}</p>
+                                    <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">{{ $search !== '' ? 'Try adjusting your filters.' : 'Attempts appear here as soon as candidates start taking assessments, with integrity events flagged automatically.' }}</p>
+                                </div>
                             </td>
                         </tr>
                     @endforelse
@@ -124,4 +123,9 @@
         @endif
     </x-ui.card>
 </div>
+@else
+    <div class="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center shadow-card dark:border-slate-700 dark:bg-slate-800">
+        <p class="text-sm font-medium text-slate-600 dark:text-slate-300">You do not have permission to view this page.</p>
+    </div>
+@endcan
 @endsection

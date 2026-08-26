@@ -5,6 +5,11 @@
 @section('header', 'Invite Administrator')
 
 @section('content')
+<div class="mb-6">
+    <x-ui.button href="{{ route('admin.administrators.index') }}" variant="ghost" size="sm">
+        &larr; Back
+    </x-ui.button>
+</div>
 <div class="mx-auto max-w-2xl">
     <div class="mb-4 rounded-lg border border-info-200 bg-info-50 px-4 py-3 text-sm text-info-800 dark:border-info-500/30 dark:bg-info-500/10 dark:text-info-300">
         The invited administrator will receive an email link to set up their own password. You assign the role now — they choose their credentials.

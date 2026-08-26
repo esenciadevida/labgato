@@ -13,15 +13,16 @@
         </div>
 
         @if($unreadCount > 0)
-            <form method="POST" action="{{ route('notifications.read-all') }}">
+            <form method="POST" action="{{ route('admin.notifications.mark-all-read') }}">
                 @csrf
                 <x-ui.button variant="secondary" type="submit">Mark all as read</x-ui.button>
             </form>
         @endif
     </div>
 
-    <div class="mt-6 space-y-3">
-        @forelse($notifications as $notification)
+    <x-ui.card class="mt-6">
+        <div class="space-y-3">
+            @forelse($notifications as $notification)
             <div class="rounded-xl border bg-white p-5 shadow-card dark:border-slate-700 dark:bg-slate-800 {{ $notification->read_at === null ? 'border-primary-300 dark:border-primary-700' : '' }}">
                 <div class="flex items-start justify-between gap-4">
                     <div class="min-w-0">
@@ -57,7 +58,7 @@
                         @endif
 
                         @if($notification->read_at === null)
-                            <form method="POST" action="{{ route('notifications.read', $notification->id) }}">
+                            <form method="POST" action="{{ route('admin.notifications.mark-read', $notification->id) }}">
                                 @csrf
                                 <button type="submit" class="text-sm font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200">
                                     Mark as read
@@ -73,7 +74,8 @@
                 <p class="mt-1 text-xs text-slate-400 dark:text-slate-500">Contact messages and other alerts will appear here.</p>
             </div>
         @endforelse
-    </div>
+        </div>
+    </x-ui.card>
 
     <div class="mt-8">
         {{ $notifications->links() }}

@@ -5,6 +5,11 @@
 @section('header', 'New Role')
 
 @section('content')
+<div class="mb-6">
+    <x-ui.button href="{{ route('admin.roles.index') }}" variant="ghost" size="sm">
+        &larr; Back
+    </x-ui.button>
+</div>
 <div class="mx-auto max-w-3xl">
     <form method="POST" action="{{ route('admin.roles.store') }}" class="space-y-6">
         @csrf

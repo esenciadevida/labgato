@@ -43,14 +43,8 @@
             </div>
         </div>
 
-        <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/40">
+        <div class="mt-12 pt-8 border-t border-white/10 flex items-center justify-center gap-3 text-sm text-white/40">
             <span>&copy; {{ date('Y') }} Labgoto. All rights reserved.</span>
-            <a href="#top" class="inline-flex items-center gap-1.5 text-white/50 hover:text-lime-300 transition-colors">
-                Back to top
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
-                </svg>
-            </a>
         </div>
     </div>
 </footer>

@@ -39,7 +39,7 @@ class AdministratorController extends Controller
                 });
             })
             ->orderBy('name')
-            ->paginate(20)
+            ->paginate(config('labgoto.pagination.per_page'))
             ->withQueryString();
 
         $pendingInvitations = AdminInvitation::with('role')

@@ -5,6 +5,7 @@
 @section('header', 'Pop-ups')
 
 @section('content')
+@can('popups.manage')
 <div class="space-y-6">
 
     <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -82,4 +83,9 @@
         @endif
     </x-ui.card>
 </div>
+@else
+    <div class="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center shadow-card dark:border-slate-700 dark:bg-slate-800">
+        <p class="text-sm font-medium text-slate-600 dark:text-slate-300">You do not have permission to view this page.</p>
+    </div>
+@endcan
 @endsection

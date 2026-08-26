@@ -5,6 +5,7 @@
 @section('header', 'Reference Ranges')
 
 @section('content')
+@can('reference-ranges.view')
 <div class="space-y-6">
 
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -17,7 +18,7 @@
                 aria-label="Search reference ranges"
             />
 
-            <select name="status" class="rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm shadow-card dark:border-slate-700 dark:bg-slate-800 dark:bg-slate-800 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/25" aria-label="Filter by status">
+            <select name="status" class="rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm shadow-card dark:border-slate-700 dark:bg-slate-800 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/25" aria-label="Filter by status">
                 <option value="">All statuses</option>
                 @foreach(\App\Enums\ResourceStatus::cases() as $statusOption)
                     <option value="{{ $statusOption->value }}" @selected($status === $statusOption->value)>
@@ -26,7 +27,7 @@
                 @endforeach
             </select>
 
-            <select name="category" class="rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm shadow-card dark:border-slate-700 dark:bg-slate-800 dark:bg-slate-800 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/25" aria-label="Filter by category">
+            <select name="category" class="rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm shadow-card dark:border-slate-700 dark:bg-slate-800 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/25" aria-label="Filter by category">
                 <option value="">All categories</option>
                 @foreach(\App\Models\Category::query()->where('is_active', true)->orderBy('name')->get() as $category)
                     <option value="{{ $category->id }}" @selected((string) $categoryId === (string) $category->id)>
@@ -146,4 +147,9 @@
         @endif
     </x-ui.card>
 </div>
+@else
+    <div class="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center shadow-card dark:border-slate-700 dark:bg-slate-800">
+        <p class="text-sm font-medium text-slate-600 dark:text-slate-300">You do not have permission to view this page.</p>
+    </div>
+@endcan
 @endsection

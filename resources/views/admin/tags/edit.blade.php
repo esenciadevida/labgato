@@ -5,6 +5,11 @@
 @section('header', 'Edit Tag')
 
 @section('content')
+<div class="mb-6">
+    <x-ui.button href="{{ route('admin.tags.index') }}" variant="ghost" size="sm">
+        &larr; Back
+    </x-ui.button>
+</div>
 <div class="mx-auto max-w-2xl">
     <form method="POST" action="{{ route('admin.tags.update', $tag) }}" class="space-y-6">
         @csrf

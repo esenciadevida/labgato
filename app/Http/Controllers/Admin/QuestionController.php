@@ -32,7 +32,7 @@ class QuestionController extends Controller
         $questions = (clone $baseQuery)
             ->with(['category'])
             ->latest('updated_at')
-            ->paginate(25)
+            ->paginate(config('labgoto.pagination.per_page'))
             ->withQueryString();
 
         $stats = [

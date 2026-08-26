@@ -12,17 +12,19 @@
     'coverImage' => null,
 ])
 
-<section class="relative bg-primary-950 text-white overflow-hidden">
+<section class="relative bg-primary-950 text-white">
     @if($coverImage)
-        <img
-            src="{{ $coverImage }}"
-            alt=""
-            class="absolute inset-0 h-full w-full object-cover"
-            loading="eager"
-            fetchpriority="high"
-        >
-        <div class="absolute inset-0 bg-linear-to-t from-primary-950 via-primary-950/60 to-primary-950/20"></div>
-        <div class="absolute inset-0 bg-linear-to-r from-primary-950/40 to-transparent"></div>
+        <div class="absolute inset-0 h-[360px] sm:h-[400px] lg:h-[440px] overflow-hidden">
+            <img
+                src="{{ $coverImage }}"
+                alt=""
+                class="h-full w-full object-cover"
+                loading="eager"
+                fetchpriority="high"
+            >
+            <div class="absolute inset-0 bg-linear-to-t from-primary-950 via-primary-950/60 to-primary-950/20"></div>
+            <div class="absolute inset-0 bg-linear-to-r from-primary-950/40 to-transparent"></div>
+        </div>
     @else
         <div class="absolute inset-0 bg-linear-to-b from-primary-950 via-primary-950/60 to-slate-950"></div>
     @endif

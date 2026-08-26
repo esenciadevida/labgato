@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Assessment;
 use App\Models\Certificate;
 use App\Models\ExamAttempt;
+use App\Support\CertificateTemplateVariables;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -159,6 +160,18 @@ class CertificateService
         return $certificate;
     }
 
+    /**
+     * Delete the cached PDF so the next ensurePdf() call regenerates it.
+     */
+    public function regenerate(Certificate $certificate): void
+    {
+        if ($certificate->pdf_path !== null && Storage::disk('public')->exists($certificate->pdf_path)) {
+            Storage::disk('public')->delete($certificate->pdf_path);
+        }
+
+        $certificate->forceFill(['pdf_path' => null])->save();
+    }
+
     private function holderName(Certificate $certificate): string
     {
         $profile = $certificate->user?->profile;
@@ -172,16 +185,16 @@ class CertificateService
 
     /**
      * The completion text below the holder name.
-     * Uses the admin-configured body text with {assessment} placeholder, or the default.
+     * Uses the admin-configured body text with system insertion placeholders, or the default.
      */
     private function completionText(Certificate $certificate): string
     {
         $custom = (string) setting('certificate.body_text', '');
 
         if ($custom !== '') {
-            $text = e($custom);
-            $text = str_replace('{assessment}', '<strong>' . e($certificate->assessment->title) . '</strong>', $text);
-            return $text;
+            $vars = CertificateTemplateVariables::resolve($certificate);
+            $text = CertificateTemplateVariables::replace($custom, $vars);
+            return nl2br(e($text));
         }
 
         return 'for successfully completing the <strong>' . e($certificate->assessment->title) . '</strong>';
@@ -189,14 +202,16 @@ class CertificateService
 
     /**
      * The disclaimer text at the bottom of the certificate.
-     * Uses the admin-configured disclaimer, or the default.
+     * Uses the admin-configured disclaimer with system insertion placeholders, or the default.
      */
     private function disclaimerText(Certificate $certificate): string
     {
         $custom = (string) setting('certificate.disclaimer_text', '');
 
         if ($custom !== '') {
-            return nl2br(e($custom));
+            $vars = CertificateTemplateVariables::resolve($certificate);
+            $text = CertificateTemplateVariables::replace($custom, $vars);
+            return nl2br(e($text));
         }
 
         return 'This certificate acknowledges achievement in the ' . e($certificate->assessment->title) . ' administered by LabGOTO. '

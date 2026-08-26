@@ -5,6 +5,11 @@
 @section('header', 'Edit Interpretation Resource')
 
 @section('content')
+<div class="mb-6">
+    <x-ui.button href="{{ route('admin.interpretation.index') }}" variant="ghost" size="sm">
+        &larr; Back
+    </x-ui.button>
+</div>
 <div class="mx-auto max-w-3xl">
 
     @include('admin.interpretation.partials.form', [
