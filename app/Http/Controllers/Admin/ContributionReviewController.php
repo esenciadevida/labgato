@@ -65,7 +65,7 @@ class ContributionReviewController extends Controller
         app(ContentImageService::class)->syncAttachments(
             $contributionType === ContributionType::SOP
                 ? array_map(fn (string $field) => (string) $resource->{$field}, [
-                    'purpose', 'scope', 'procedure_content', 'quality_control',
+                    'purpose', 'scope', 'principle', 'procedure_content', 'quality_control',
                     'safety_information', 'references', 'content',
                 ])
                 : [(string) $resource->content],
@@ -166,7 +166,7 @@ class ContributionReviewController extends Controller
     {
         $allowed = match ($type) {
             ContributionType::SOP => [
-                'name', 'short_description', 'purpose', 'scope',
+                'name', 'short_description', 'purpose', 'scope', 'principle',
                 'procedure_content', 'quality_control', 'safety_information', 'references',
             ],
             ContributionType::KNOWLEDGE => [
@@ -193,6 +193,7 @@ class ContributionReviewController extends Controller
         $sections = [
             'purpose' => 'Purpose',
             'scope' => 'Scope',
+            'principle' => 'Principle',
             'procedure_content' => 'Procedure',
             'quality_control' => 'Quality Control',
             'safety_information' => 'Safety Information',

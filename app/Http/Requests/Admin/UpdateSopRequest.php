@@ -43,6 +43,7 @@ class UpdateSopRequest extends FormRequest
             'featured_image' => ['nullable', 'file', 'mimes:jpeg,jpg,png,webp', 'max:5120'],
             'remove_featured_image' => ['nullable', 'boolean'],
             'content' => ['required', 'string'],
+            'principle' => ['nullable', 'string', 'max:5000'],
             'department' => ['nullable', 'string', 'max:255'],
             'version' => ['nullable', 'string', 'max:50'],
             'author_name' => ['nullable', 'string', 'max:255'],

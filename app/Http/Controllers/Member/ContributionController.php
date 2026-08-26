@@ -253,7 +253,7 @@ class ContributionController extends Controller
     private function syncContentImages(ContributionType $type, Sop|KnowledgeResource|InterpretationResource $resource): void
     {
         $fields = $type === ContributionType::SOP
-            ? ['purpose', 'scope', 'procedure_content', 'quality_control', 'safety_information', 'references', 'content']
+            ? ['purpose', 'scope', 'principle', 'procedure_content', 'quality_control', 'safety_information', 'references', 'content']
             : ['content'];
 
         app(ContentImageService::class)->syncAttachments(
@@ -267,7 +267,7 @@ class ContributionController extends Controller
     {
         $allowed = match ($type) {
             ContributionType::SOP => [
-                'name', 'short_description', 'purpose', 'scope',
+                'name', 'short_description', 'purpose', 'scope', 'principle',
                 'procedure_content', 'quality_control', 'safety_information', 'references',
             ],
             ContributionType::KNOWLEDGE => [
@@ -294,6 +294,7 @@ class ContributionController extends Controller
         $sections = [
             'purpose' => 'Purpose',
             'scope' => 'Scope',
+            'principle' => 'Principle',
             'procedure_content' => 'Procedure',
             'quality_control' => 'Quality Control',
             'safety_information' => 'Safety Information',

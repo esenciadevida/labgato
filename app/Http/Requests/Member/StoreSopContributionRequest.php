@@ -18,6 +18,7 @@ class StoreSopContributionRequest extends FormRequest
             'short_description' => ['required', 'string', 'min:10', 'max:300'],
             'purpose' => ['required', 'string', 'max:5000'],
             'scope' => ['required', 'string', 'max:5000'],
+            'principle' => ['nullable', 'string', 'max:5000'],
             'procedure_content' => ['required', 'string', 'max:50000'],
             'quality_control' => ['nullable', 'string', 'max:5000'],
             'safety_information' => ['nullable', 'string', 'max:5000'],

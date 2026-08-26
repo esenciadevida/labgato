@@ -9,6 +9,7 @@
 
 @php
     $oldValue = fn (string $field) => old($field, $interpretation?->{$field});
+    $authorNameDefault = $interpretation?->author_name ?? auth()->user()->name;
     $defaultDisclaimer = 'Educational Interpretation Only: This content is for educational purposes and explains common laboratory result patterns. It does not constitute medical advice or diagnosis. Always interpret laboratory results in the context of the patient\'s clinical condition and consult with a qualified healthcare professional.';
     $relatedAnalytes = old('related_analytes', $interpretation?->related_analytes ?? []);
     $relatedAnalytes = is_array($relatedAnalytes) ? implode(', ', $relatedAnalytes) : $relatedAnalytes;
@@ -138,7 +139,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <x-form.label for="author_name">Author name</x-form.label>
-                    <x-ui.input id="author_name" name="author_name" value="{{ $oldValue('author_name') }}" :error="$errors->first('author_name')" />
+                    <x-ui.input id="author_name" name="author_name" value="{{ old('author_name', $authorNameDefault) }}" :error="$errors->first('author_name')" />
                 </div>
 
                 <div>

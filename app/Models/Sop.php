@@ -26,6 +26,7 @@ class Sop extends Model
         'content',
         'purpose',
         'scope',
+        'principle',
         'procedure_content',
         'quality_control',
         'safety_information',

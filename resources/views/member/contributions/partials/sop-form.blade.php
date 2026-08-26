@@ -57,6 +57,12 @@
             </div>
 
             <div>
+                <x-form.label for="principle">Principle</x-form.label>
+                <x-form.markdown-editor id="principle" name="principle" type="sop" rows="4">{{ $oldValue('principle') }}</x-form.markdown-editor>
+                <x-form.error for="principle" />
+            </div>
+
+            <div>
                 <x-form.label for="procedure_content" required>Procedure steps</x-form.label>
                 <x-form.markdown-editor id="procedure_content" name="procedure_content" type="sop" rows="16">{{ $oldValue('procedure_content') }}</x-form.markdown-editor>
                 <x-form.error for="procedure_content" />

@@ -9,6 +9,7 @@
 
 @php
     $oldValue = fn (string $field) => old($field, $sop?->{$field});
+    $authorNameDefault = $sop?->author_name ?? auth()->user()->name;
 @endphp
 
 <form method="POST" action="{{ $action }}" enctype="multipart/form-data" class="space-y-6" x-data="{ isNewVersion: false }">
@@ -90,6 +91,19 @@
 
     <x-ui.card>
         <x-form.section
+            title="Principle"
+            description="Describe the scientific or theoretical basis underlying this procedure."
+        >
+            <div>
+                <x-form.label for="principle">Principle</x-form.label>
+                <x-form.markdown-editor id="principle" name="principle" type="sop" rows="6">{{ $oldValue('principle') }}</x-form.markdown-editor>
+                <x-form.error for="principle" />
+            </div>
+        </x-form.section>
+    </x-ui.card>
+
+    <x-ui.card>
+        <x-form.section
             title="Procedure Metadata"
             description="Department, versioning, authorship, and review information."
         >
@@ -113,7 +127,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <x-form.label for="author_name">Author name</x-form.label>
-                    <x-ui.input id="author_name" name="author_name" value="{{ $oldValue('author_name') }}" :error="$errors->first('author_name')" />
+                    <x-ui.input id="author_name" name="author_name" value="{{ old('author_name', $authorNameDefault) }}" :error="$errors->first('author_name')" />
                 </div>
 
                 <div>

@@ -9,6 +9,7 @@
 
 @php
     $oldValue = fn (string $field) => old($field, $knowledge?->{$field});
+    $authorNameDefault = $knowledge?->author_name ?? auth()->user()->name;
 @endphp
 
 <form method="POST" action="{{ $action }}" enctype="multipart/form-data" class="space-y-6">
@@ -122,7 +123,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <x-form.label for="author_name">Author name</x-form.label>
-                    <x-ui.input id="author_name" name="author_name" value="{{ $oldValue('author_name') }}" :error="$errors->first('author_name')" />
+                    <x-ui.input id="author_name" name="author_name" value="{{ old('author_name', $authorNameDefault) }}" :error="$errors->first('author_name')" />
                 </div>
 
                 <div>
