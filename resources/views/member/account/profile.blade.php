@@ -52,15 +52,16 @@
 
             {{-- Profile hero with cover banner and editable photo --}}
             <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card dark:border-slate-800 dark:bg-slate-800">
-                <div class="h-28 bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 dark:from-primary-800 dark:via-primary-700 dark:to-primary-600" aria-hidden="true"></div>
+                <div class="h-20 bg-gradient-to-r from-slate-100 via-primary-50 to-slate-100 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800" aria-hidden="true"></div>
+                <div class="h-0.5 bg-gradient-to-r from-primary-200 via-primary-100 to-primary-200 dark:from-slate-700 dark:via-slate-600 dark:to-slate-700" aria-hidden="true"></div>
 
-                <div class="px-4 pb-6 sm:px-8">
+                <div class="px-4 pb-5 sm:px-8">
                     <div class="-mt-14 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                         <div class="relative group w-fit">
                             <input type="file" id="photo" name="photo" accept="image/png,image/jpeg,image/webp" class="hidden" @change="setPhoto($event)">
                             <input type="checkbox" id="remove_photo" name="remove_photo" value="1" class="hidden" x-model="removed">
 
-                            <div class="rounded-full ring-4 ring-white dark:ring-slate-800">
+                            <div class="rounded-full ring-4 ring-white dark:ring-slate-900">
                                 <template x-if="preview">
                                     <img :src="preview" alt="" class="inline-block h-24 w-24 shrink-0 rounded-full object-cover">
                                 </template>
@@ -94,19 +95,19 @@
                         </div>
                     </div>
 
-                    <div class="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-5 dark:border-slate-700">
-                        <p class="text-xs text-slate-400 dark:text-slate-500">JPG, PNG, or WebP · up to 2MB.</p>
+                    <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4 dark:border-slate-700">
+                        <p class="text-xs text-slate-400 dark:text-slate-500">Supported formats: JPG, PNG, or WebP · up to 2MB.</p>
                         @if($profile->photo_path)
                             <button type="button" @click="clearPhoto()" x-show="!removed"
-                                    class="inline-flex items-center gap-1.5 text-sm font-medium text-danger-600 hover:text-danger-700 dark:text-danger-400">
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    class="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition-colors hover:border-danger-300 hover:text-danger-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-danger-400">
+                                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                                 </svg>
                                 Remove photo
                             </button>
                             <button type="button" @click="removed = false" x-show="removed"
-                                    class="inline-flex items-center gap-1.5 text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400">
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    class="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition-colors hover:border-primary-300 hover:text-primary-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-primary-400">
+                                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                                 </svg>
                                 Undo removal
