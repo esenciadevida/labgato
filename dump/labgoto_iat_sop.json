@@ -1,0 +1,39 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Indirect Antiglobulin Test (IAT / Indirect Coombs)",
+        "slug": "indirect-antiglobulin-test-iat",
+        "short_description": "SOP for detecting in vitro sensitization of RBCs by patient serum antibodies.",
+        "content": "# Standard Operating Procedure: Indirect Antiglobulin Test (IAT)\n## 1. Purpose: Detect unexpected antibodies in patient serum (e.g., pre-transfusion testing, prenatal screening).\n## 2. Specimen: Patient serum or plasma; reagent screening/panel RBCs.\n## 3. Reagents: LISS or PEG enhancement media, 37°C incubator, polyspecific AHG, check cells.\n## 4. Procedure:\n- Add 2 drops patient serum to tube with 1 drop reagent RBCs.\n- Add enhancement media (if required).\n- Incubate at 37°C for 15-30 minutes.\n- Wash 3-4 times with saline.\n- Add 2 drops AHG, mix, centrifuge, and read.\n- Add check cells to negative reactions.\n## 5. Interpretation: Agglutination = Positive IAT (antibody present). No agglutination + check cell reaction = Negative IAT.",
+        "principle": "Patient serum is incubated with reagent RBCs at 37°C to allow antibody binding (sensitization). After washing, AHG is added to cross-link the bound antibodies, causing agglutination.",
+        "department": "Blood Bank / Transfusion Medicine",
+        "mandatory_disclaimer": "Template based on AABB guidelines. Must be approved by Laboratory Director.",
+        "categories": [
+            "Blood Bank / Transfusion Medicine",
+            "Immunohematology"
+        ],
+        "tags": [
+            "iat",
+            "indirect coombs",
+            "antibody screen",
+            "blood bank"
+        ],
+        "seo_title": "IAT (Indirect Coombs) SOP | Antibody Detection",
+        "focus_keyword": "indirect antiglobulin test",
+        "reviewer_credentials": "MD, Transfusion Medicine",
+        "faqs": [
+            {
+                "question": "What is the role of LISS or PEG in IAT?",
+                "answer": "They enhance antibody uptake by RBCs, reducing incubation time and increasing test sensitivity."
+            }
+        ],
+        "seo_description": "SOP for detecting in vitro sensitization of RBCs by patient serum antibodies."
+    }
+]

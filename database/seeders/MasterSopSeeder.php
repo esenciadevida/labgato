@@ -32,6 +32,23 @@ class MasterSopSeeder extends Seeder
         'labgoto_mcfarland_sop.json',
         'labgoto_hanging_drop_sop.json',
         'labgoto_catalase_sop.json',
+        'labgoto_coagulase_test_sop.json',
+        'labgoto_oxidase_test_sop.json',
+        'labgoto_abo_grouping_sop.json',
+        'labgoto_rh_typing_sop.json',
+        'labgoto_dat_sop.json',
+        'labgoto_iat_sop.json',
+        'labgoto_crossmatching_sop.json',
+        'labgoto_antibody_screening_sop.json',
+        'labgoto_blood_storage_sop.json',
+        'labgoto_transfusion_reaction_sop.json',
+        'labgoto_glucose_sop.json',
+        'labgoto_urea_sop.json',
+        'labgoto_creatinine_sop.json',
+        'labgoto_electrolytes_sop.json',
+        'labgoto_lft_sop.json',
+        'labgoto_lipid_profile_sop.json',
+        'labgoto_hba1c_sop.json',
     ];
 
     public function run(): void

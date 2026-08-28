@@ -1,0 +1,39 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Major Crossmatching Procedure",
+        "slug": "major-crossmatching-procedure",
+        "short_description": "SOP for final compatibility testing between patient serum and donor red blood cells.",
+        "content": "# Standard Operating Procedure: Major Crossmatching\n## 1. Purpose: Ensure donor RBCs are compatible with patient serum to prevent hemolytic transfusion reactions.\n## 2. Specimen: Patient serum/plasma (drawn within 3 days if previously transfused/pregnant), donor pilot tube.\n## 3. Reagents: Saline, LISS/PEG, 37°C incubator, AHG, check cells.\n## 4. Procedure (Serologic Crossmatch):\n- Mix 2 drops patient serum with 1 drop donor 3-5% RBC suspension.\n- Immediate Spin (IS): Centrifuge, read for ABO incompatibility.\n- 37°C Phase: Add enhancement, incubate 15-30 mins at 37°C, centrifuge, read.\n- AHG Phase: Wash 3-4 times, add AHG, centrifuge, read. Add check cells to negative results.\n## 5. Interpretation: No hemolysis or agglutination at any phase = Compatible. Any agglutination/hemolysis = Incompatible.",
+        "principle": "The major crossmatch simulates the transfusion in vitro, detecting any IgG or IgM antibodies in the patient's serum that react with antigens on the donor's RBCs.",
+        "department": "Blood Bank / Transfusion Medicine",
+        "mandatory_disclaimer": "Template based on AABB guidelines. Must be approved by Laboratory Director.",
+        "categories": [
+            "Blood Bank / Transfusion Medicine",
+            "Immunohematology"
+        ],
+        "tags": [
+            "crossmatch",
+            "compatibility testing",
+            "blood transfusion",
+            "blood bank"
+        ],
+        "seo_title": "Major Crossmatching SOP | Blood Compatibility Procedure",
+        "focus_keyword": "major crossmatching",
+        "reviewer_credentials": "MD, Transfusion Medicine",
+        "faqs": [
+            {
+                "question": "When is an electronic (computer) crossmatch acceptable?",
+                "answer": "When the patient has no history of clinically significant antibodies, current screen is negative, and ABO/Rh have been confirmed twice."
+            }
+        ],
+        "seo_description": "SOP for final compatibility testing between patient serum and donor red blood cells."
+    }
+]

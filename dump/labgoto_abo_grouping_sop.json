@@ -1,0 +1,40 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "ABO Blood Grouping (Forward and Reverse)",
+        "slug": "abo-blood-grouping-forward-reverse",
+        "short_description": "SOP for determining ABO blood group using forward (cell) and reverse (serum) typing.",
+        "content": "# Standard Operating Procedure: ABO Blood Grouping\n## 1. Purpose: Determine patient ABO blood type for safe transfusion.\n## 2. Specimen: EDTA whole blood (forward) and serum/plasma (reverse).\n## 3. Reagents: Monoclonal Anti-A (blue), Anti-B (yellow), Anti-A,B; 2-5% A1 and B reagent red cells.\n## 4. Procedure:\n- **Forward Typing:** Add 1 drop patient 3-5% RBC suspension to tubes/slides with Anti-A and Anti-B. Mix, centrifuge (if tube), and read for agglutination.\n- **Reverse Typing:** Add 1 drop patient serum to tubes/slides with A1 cells and B cells. Mix, incubate 5 mins (RT), centrifuge, and read.\n## 5. Interpretation: Forward and reverse results must match. Discrepancies require investigation.\n## 6. QC: Test reagents daily with known A, B, and O cells/serum.",
+        "principle": "Forward typing detects A and B antigens on patient RBCs using known antisera. Reverse typing detects naturally occurring anti-A and anti-B antibodies in patient serum using known reagent RBCs.",
+        "department": "Blood Bank / Transfusion Medicine",
+        "mandatory_disclaimer": "Template based on AABB/WHO guidelines. Must be approved by Laboratory Director.",
+        "categories": [
+            "Blood Bank / Transfusion Medicine",
+            "Immunohematology"
+        ],
+        "tags": [
+            "abo grouping",
+            "blood typing",
+            "forward typing",
+            "reverse typing",
+            "transfusion"
+        ],
+        "seo_title": "ABO Blood Grouping SOP | Forward and Reverse Typing",
+        "focus_keyword": "abo blood grouping",
+        "reviewer_credentials": "MD, Transfusion Medicine",
+        "faqs": [
+            {
+                "question": "What causes an ABO discrepancy?",
+                "answer": "Weak subgroups, cold agglutinins, recent transfusion, or plasma cell disorders (e.g., multiple myeloma)."
+            }
+        ],
+        "seo_description": "SOP for determining ABO blood group using forward (cell) and reverse (serum) typing."
+    }
+]

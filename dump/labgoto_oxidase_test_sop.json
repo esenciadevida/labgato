@@ -1,0 +1,40 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Oxidase Test for Bacterial Identification",
+        "slug": "oxidase-test-bacterial-identification",
+        "short_description": "SOP for detecting cytochrome c oxidase to differentiate bacterial groups (e.g., Pseudomonas vs. Enterobacteriaceae).",
+        "content": "# Standard Operating Procedure: Oxidase Test\n## 1. Purpose: Detect cytochrome c oxidase enzyme.\n## 2. Specimen: Fresh 18-24h bacterial colony (avoid sugar-containing media like MacConkey).\n## 3. Reagents: 1% Tetramethyl-p-phenylenediamine dihydrochloride (Kovacs reagent).\n## 4. Procedure:\n- Place filter paper on a clean slide.\n- Add 1-2 drops of oxidase reagent to the paper.\n- Using a wooden stick or platinum loop, rub a heavy inoculum of the colony onto the wet paper.\n## 5. Interpretation: Deep purple/blue color within 10-30 seconds = Positive. No color change or >30 seconds = Negative.\n## 6. QC: *P. aeruginosa* ATCC 27853 (Positive), *E. coli* ATCC 25922 (Negative).",
+        "principle": "Cytochrome c oxidase oxidizes the reagent (tetramethyl-p-phenylenediamine) to form a dark purple indophenol compound.",
+        "department": "Microbiology",
+        "mandatory_disclaimer": "Template based on standard microbiology practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Microbiology",
+            "Bacteriology",
+            "Biochemical Testing"
+        ],
+        "tags": [
+            "oxidase test",
+            "pseudomonas",
+            "biochemical test",
+            "microbiology"
+        ],
+        "seo_title": "Oxidase Test SOP | Bacterial Identification Procedure",
+        "focus_keyword": "oxidase test",
+        "reviewer_credentials": "MD, Microbiology",
+        "faqs": [
+            {
+                "question": "Why avoid nickel/chrome loops for this test?",
+                "answer": "Nickel/chrome alloys can cause a false-positive reaction. Use wooden sticks, plastic loops, or platinum."
+            }
+        ],
+        "seo_description": "SOP for detecting cytochrome c oxidase to differentiate bacterial groups (e.g., Pseudomonas vs. Enterobacteriaceae)."
+    }
+]

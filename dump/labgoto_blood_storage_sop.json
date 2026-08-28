@@ -1,0 +1,39 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Blood Component Storage and Handling",
+        "slug": "blood-component-storage-handling",
+        "short_description": "SOP for proper temperature control, storage, and handling of blood components.",
+        "content": "# Standard Operating Procedure: Blood Component Storage\n## 1. Purpose: Maintain viability and safety of blood components.\n## 2. Requirements:\n- **Whole Blood / RBCs:** 1°C to 6°C. Do not freeze. Shelf life: 35-42 days (depending on additive solution).\n- **Platelets:** 20°C to 24°C with continuous gentle agitation. Shelf life: 5-7 days.\n- **Fresh Frozen Plasma (FFP):** ≤ -18°C (preferably -30°C). Shelf life: 1 year.\n- **Cryoprecipitate:** ≤ -18°C. Shelf life: 1 year.\n## 3. Procedure:\n- Monitor and document temperatures continuously (min. twice daily) with calibrated alarms.\n- Store components in dedicated, validated blood bank refrigerators/freezers (no food or lab reagents).\n- Ensure adequate air circulation; do not overcrowd.\n## 4. QC: Calibrate temperature monitoring devices every 6 months.",
+        "principle": "Specific temperatures prevent bacterial growth (RBCs), maintain platelet metabolism and prevent clumping (platelets), and preserve coagulation factor activity (FFP/Cryo).",
+        "department": "Blood Bank / Transfusion Medicine",
+        "mandatory_disclaimer": "Template based on AABB/WHO guidelines. Must be approved by Laboratory Director.",
+        "categories": [
+            "Blood Bank / Transfusion Medicine",
+            "Laboratory Quality Assurance"
+        ],
+        "tags": [
+            "blood storage",
+            "blood bank",
+            "component therapy",
+            "temperature monitoring"
+        ],
+        "seo_title": "Blood Storage SOP | Component Handling Guidelines",
+        "focus_keyword": "blood storage",
+        "reviewer_credentials": "MD, Transfusion Medicine",
+        "faqs": [
+            {
+                "question": "What happens if a blood unit is out of temperature?",
+                "answer": "It must be quarantined immediately. Viability testing or discard protocols must be followed per blood bank policy."
+            }
+        ],
+        "seo_description": "SOP for proper temperature control, storage, and handling of blood components."
+    }
+]

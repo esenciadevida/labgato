@@ -1,0 +1,39 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Rh (D) Blood Typing",
+        "slug": "rh-d-blood-typing",
+        "short_description": "SOP for determining the presence or absence of the Rh(D) antigen on red blood cells.",
+        "content": "# Standard Operating Procedure: Rh (D) Typing\n## 1. Purpose: Determine Rh(D) status to prevent hemolytic disease of the fetus and newborn (HDFN) and transfusion reactions.\n## 2. Specimen: EDTA whole blood.\n## 3. Reagents: Monoclonal Anti-D (IgM/IgG blend), 22% bovine albumin or saline (for control).\n## 4. Procedure:\n- Add 1 drop patient 3-5% RBC suspension to two tubes/slides.\n- Add 1 drop Anti-D to one, and 1 drop control (saline/albumin) to the other.\n- Mix, incubate (if required by reagent), centrifuge, and gently resuspend.\n## 5. Interpretation: Agglutination in Anti-D tube + no agglutination in control = Rh Positive. No agglutination in both = Rh Negative.\n## 6. QC: Known Rh-positive and Rh-negative RBCs daily.",
+        "principle": "Anti-D antibodies bind to the D antigen on patient RBCs, causing visible agglutination. A control is used to rule out false positives from spontaneous agglutination.",
+        "department": "Blood Bank / Transfusion Medicine",
+        "mandatory_disclaimer": "Template based on AABB guidelines. Must be approved by Laboratory Director.",
+        "categories": [
+            "Blood Bank / Transfusion Medicine",
+            "Immunohematology"
+        ],
+        "tags": [
+            "rh typing",
+            "rh factor",
+            "blood bank",
+            "transfusion medicine"
+        ],
+        "seo_title": "Rh Typing SOP | Blood Bank Procedure",
+        "focus_keyword": "rh typing",
+        "reviewer_credentials": "MD, Transfusion Medicine",
+        "faqs": [
+            {
+                "question": "What if the Rh result is weak or mixed-field?",
+                "answer": "Perform a Weak D test (indirect antiglobulin test phase) to confirm."
+            }
+        ],
+        "seo_description": "SOP for determining the presence or absence of the Rh(D) antigen on red blood cells."
+    }
+]

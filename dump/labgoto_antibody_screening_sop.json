@@ -1,0 +1,39 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Unexpected Antibody Screening",
+        "slug": "unexpected-antibody-screening",
+        "short_description": "SOP for detecting clinically significant alloantibodies in patient serum using reagent screening cells.",
+        "content": "# Standard Operating Procedure: Antibody Screening\n## 1. Purpose: Detect unexpected RBC alloantibodies prior to transfusion or during pregnancy.\n## 2. Specimen: Patient serum or plasma.\n## 3. Reagents: 2-3 vials of Group O screening cells (containing homozygous expression of common antigens), LISS/PEG, AHG, check cells.\n## 4. Procedure:\n- Add 2 drops patient serum to separate tubes containing 1 drop of Screening Cell I, II, (and III).\n- Incubate at 37°C for 15-30 mins.\n- Wash 3-4 times with saline.\n- Add AHG, centrifuge, read. Add check cells to negatives.\n## 5. Interpretation: Agglutination = Positive screen (requires antibody identification panel). No agglutination = Negative screen.",
+        "principle": "Group O screening cells lack A and B antigens, preventing interference from ABO antibodies. They are selected to express a wide variety of clinically significant antigens to maximize the chance of detecting alloantibodies.",
+        "department": "Blood Bank / Transfusion Medicine",
+        "mandatory_disclaimer": "Template based on AABB guidelines. Must be approved by Laboratory Director.",
+        "categories": [
+            "Blood Bank / Transfusion Medicine",
+            "Immunohematology"
+        ],
+        "tags": [
+            "antibody screen",
+            "alloantibody",
+            "blood bank",
+            "immunohematology"
+        ],
+        "seo_title": "Antibody Screening SOP | Immunohematology Procedure",
+        "focus_keyword": "antibody screening",
+        "reviewer_credentials": "MD, Transfusion Medicine",
+        "faqs": [
+            {
+                "question": "Why use Group O cells for screening?",
+                "answer": "To prevent naturally occurring anti-A or anti-B in the patient's serum from causing a false-positive agglutination."
+            }
+        ],
+        "seo_description": "SOP for detecting clinically significant alloantibodies in patient serum using reagent screening cells."
+    }
+]

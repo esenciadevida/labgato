@@ -1,0 +1,40 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Direct Antiglobulin Test (DAT / Direct Coombs)",
+        "slug": "direct-antiglobulin-test-dat",
+        "short_description": "SOP for detecting in vivo sensitization of RBCs with IgG and/or C3d.",
+        "content": "# Standard Operating Procedure: Direct Antiglobulin Test (DAT)\n## 1. Purpose: Detect antibodies or complement bound to patient RBCs in vivo (e.g., HDFN, autoimmune hemolytic anemia, drug-induced hemolysis).\n## 2. Specimen: EDTA whole blood (preferred to prevent in vitro complement activation).\n## 3. Reagents: Polyspecific AHG (Anti-IgG + Anti-C3d), IgG monospecific AHG, C3d monospecific AHG, Coombs control cells (check cells).\n## 4. Procedure:\n- Wash patient RBCs 3-4 times with saline to remove unbound globulins.\n- Prepare 3-5% washed RBC suspension.\n- Add 1 drop suspension to tubes labeled Anti-IgG, Anti-C3d, and Control (saline).\n- Add 1 drop corresponding reagent. Mix and centrifuge.\n- Read for agglutination.\n- Add check cells to all negative tubes; centrifuge and read to confirm AHG activity.\n## 5. Interpretation: Agglutination = Positive DAT. No agglutination + check cell agglutination = Negative DAT.",
+        "principle": "AHG reagent bridges the gap between IgG or C3d molecules coating the patient's RBCs, causing visible agglutination. Washing removes free serum globulins that could neutralize the AHG reagent.",
+        "department": "Blood Bank / Transfusion Medicine",
+        "mandatory_disclaimer": "Template based on AABB guidelines. Must be approved by Laboratory Director.",
+        "categories": [
+            "Blood Bank / Transfusion Medicine",
+            "Immunohematology"
+        ],
+        "tags": [
+            "dat",
+            "direct coombs",
+            "hemolytic anemia",
+            "blood bank",
+            "immunohematology"
+        ],
+        "seo_title": "DAT (Direct Coombs) SOP | Immunohematology Procedure",
+        "focus_keyword": "direct antiglobulin test",
+        "reviewer_credentials": "MD, Transfusion Medicine",
+        "faqs": [
+            {
+                "question": "Why are check cells mandatory?",
+                "answer": "They confirm that the AHG reagent was active and not neutralized by inadequate washing, preventing false-negative results."
+            }
+        ],
+        "seo_description": "SOP for detecting in vivo sensitization of RBCs with IgG and/or C3d."
+    }
+]

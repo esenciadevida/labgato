@@ -1,0 +1,41 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Blood Urea / BUN Testing",
+        "slug": "blood-urea-bun-testing",
+        "short_description": "SOP for quantitative measurement of urea or blood urea nitrogen (BUN) to assess renal function.",
+        "content": "# Standard Operating Procedure: Blood Urea / BUN\n## 1. Purpose: Evaluate renal function and nitrogen metabolism.\n## 2. Specimen: Serum or plasma (heparin). Avoid hemolyzed samples.\n## 3. Reagents: Urease-GLDH (Glutamate Dehydrogenase) kinetic reagent.\n## 4. Procedure:\n- Urease hydrolyzes urea to ammonia and CO2.\n- Ammonia + α-ketoglutarate + NADH → Glutamate + NAD+ (via GLDH).\n- Measure the decrease in NADH absorbance at 340 nm kinetically.\n## 5. Reference Intervals: Urea: 15-40 mg/dL (2.5-6.7 mmol/L). BUN: 7-20 mg/dL.\n## 6. QC: Run 2 levels of control daily.",
+        "principle": "The urease-GLDH method is highly specific. The rate of NADH oxidation is directly proportional to the urea concentration in the sample.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Clinical Chemistry",
+            "Renal",
+            "Metabolic"
+        ],
+        "tags": [
+            "urea",
+            "bun",
+            "renal function",
+            "clinical chemistry",
+            "kidney"
+        ],
+        "seo_title": "Blood Urea / BUN Testing SOP | Renal Function",
+        "focus_keyword": "blood urea testing",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "What is the difference between Urea and BUN?",
+                "answer": "BUN measures only the nitrogen part of the urea molecule. Urea (mg/dL) = BUN (mg/dL) × 2.14."
+            }
+        ],
+        "seo_description": "SOP for quantitative measurement of urea or blood urea nitrogen (BUN) to assess renal function."
+    }
+]

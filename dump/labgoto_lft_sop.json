@@ -1,0 +1,44 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Liver Function Tests (LFTs) Panel",
+        "slug": "liver-function-tests-panel",
+        "short_description": "SOP for measuring ALT, AST, ALP, Bilirubin, Total Protein, and Albumin.",
+        "content": "# Standard Operating Procedure: Liver Function Tests\n## 1. Purpose: Assess hepatic integrity, synthetic function, and biliary excretion.\n## 2. Specimen: Serum (non-hemolyzed).\n## 3. Reagents: Specific kinetic/colorimetric reagents for each analyte.\n## 4. Procedure (Automated Analyzer):\n- **ALT/AST:** UV kinetic methods (IFCC) measuring NADH oxidation at 340 nm.\n- **ALP:** Kinetic method using p-nitrophenyl phosphate (pNPP) substrate, measuring p-nitrophenol at 405 nm.\n- **Bilirubin:** Diazo method (Total and Direct).\n- **Total Protein:** Biuret method (540 nm).\n- **Albumin:** Bromocresol green (BCG) or purple (BCP) dye-binding method (600 nm).\n## 5. QC: Run 2 levels of control daily for each assay.",
+        "principle": "Each test uses specific enzymatic or colorimetric reactions. ALT/AST indicate hepatocellular damage; ALP and Bilirubin indicate cholestasis; Albumin and Total Protein reflect hepatic synthetic function.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Clinical Chemistry",
+            "Liver",
+            "Metabolic"
+        ],
+        "tags": [
+            "lft",
+            "liver function",
+            "alt",
+            "ast",
+            "alp",
+            "bilirubin",
+            "albumin",
+            "clinical chemistry"
+        ],
+        "seo_title": "Liver Function Tests (LFTs) SOP | Clinical Chemistry",
+        "focus_keyword": "liver function tests",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "What is the most sensitive marker for acute hepatocellular injury?",
+                "answer": "ALT is more specific to the liver than AST, making it a more sensitive marker for acute hepatic injury."
+            }
+        ],
+        "seo_description": "SOP for measuring ALT, AST, ALP, Bilirubin, Total Protein, and Albumin."
+    }
+]

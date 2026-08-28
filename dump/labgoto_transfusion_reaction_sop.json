@@ -1,0 +1,39 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Transfusion Reaction Investigation",
+        "slug": "transfusion-reaction-investigation",
+        "short_description": "SOP for the immediate laboratory investigation of suspected adverse transfusion reactions.",
+        "content": "# Standard Operating Procedure: Transfusion Reaction Investigation\n## 1. Purpose: Rapidly identify or rule out hemolytic transfusion reactions and other adverse events.\n## 2. Specimen: Post-transfusion patient blood sample (EDTA and clotted), returned blood bag with giving set.\n## 3. Procedure:\n- **Clerical Check:** Verify patient ID, blood unit number, and labels on the bag, slip, and patient wristband.\n- **Visual Inspection:** Check patient plasma/serum for pink/red discoloration (hemolysis). Check returned blood bag for discoloration or clots.\n- **Serological Testing:** Repeat ABO/Rh on pre- and post-transfusion samples. Perform DAT on post-transfusion sample.\n- **Additional:** If hemolysis is suspected, check bilirubin, LDH, and haptoglobin.\n## 4. Reporting: Report findings immediately to the attending physician and transfusion service director.",
+        "principle": "Acute hemolytic transfusion reactions are most often due to ABO incompatibility from clerical errors. Rapid visual and serological checks confirm or rule out in vivo hemolysis.",
+        "department": "Blood Bank / Transfusion Medicine",
+        "mandatory_disclaimer": "Template based on AABB guidelines. Must be approved by Laboratory Director.",
+        "categories": [
+            "Blood Bank / Transfusion Medicine",
+            "Laboratory Quality Assurance"
+        ],
+        "tags": [
+            "transfusion reaction",
+            "hemolysis",
+            "blood bank",
+            "adverse event"
+        ],
+        "seo_title": "Transfusion Reaction Investigation SOP",
+        "focus_keyword": "transfusion reaction investigation",
+        "reviewer_credentials": "MD, Transfusion Medicine",
+        "faqs": [
+            {
+                "question": "What is the first step when a reaction is reported?",
+                "answer": "Stop the transfusion immediately, keep the IV line open with normal saline, and return the blood bag to the lab."
+            }
+        ],
+        "seo_description": "SOP for the immediate laboratory investigation of suspected adverse transfusion reactions."
+    }
+]

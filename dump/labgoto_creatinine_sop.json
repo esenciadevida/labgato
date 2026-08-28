@@ -1,0 +1,42 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Serum Creatinine Testing",
+        "slug": "serum-creatinine-testing",
+        "short_description": "SOP for quantitative measurement of creatinine to assess glomerular filtration rate (GFR).",
+        "content": "# Standard Operating Procedure: Serum Creatinine\n## 1. Purpose: Assess renal function and calculate eGFR.\n## 2. Specimen: Serum or plasma.\n## 3. Reagents: Enzymatic creatinine reagent (preferred) or Jaffe (alkaline picrate) kinetic reagent.\n## 4. Procedure (Enzymatic):\n- Creatinine is hydrolyzed by creatininase to creatine.\n- Creatine is converted to sarcosine and urea.\n- Sarcosine is oxidized to glycine, formaldehyde, and H2O2.\n- H2O2 reacts with a chromogen to form a colored complex measured at 550 nm.\n## 5. Reference Intervals: Male: 0.7-1.3 mg/dL. Female: 0.6-1.1 mg/dL.\n## 6. QC: Run 2 levels of control daily.",
+        "principle": "Enzymatic methods are highly specific and avoid the non-specific interference (e.g., from proteins, glucose, ketones) common in the traditional Jaffe reaction.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Clinical Chemistry",
+            "Renal",
+            "Metabolic"
+        ],
+        "tags": [
+            "creatinine",
+            "egfr",
+            "renal function",
+            "clinical chemistry",
+            "jaffe",
+            "enzymatic"
+        ],
+        "seo_title": "Serum Creatinine Testing SOP | Renal Function",
+        "focus_keyword": "serum creatinine testing",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "Why is enzymatic creatinine preferred over Jaffe?",
+                "answer": "The Jaffe method suffers from positive interference by non-creatinine chromogens (e.g., ketoacids, cephalosporins), while enzymatic methods are highly specific."
+            }
+        ],
+        "seo_description": "SOP for quantitative measurement of creatinine to assess glomerular filtration rate (GFR)."
+    }
+]

@@ -1,0 +1,43 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Serum Electrolytes (Na, K, Cl)",
+        "slug": "serum-electrolytes-na-k-cl",
+        "short_description": "SOP for measuring sodium, potassium, and chloride using Ion-Selective Electrodes (ISE).",
+        "content": "# Standard Operating Procedure: Serum Electrolytes\n## 1. Purpose: Assess fluid, electrolyte, and acid-base balance.\n## 2. Specimen: Serum, plasma (lithium heparin), or whole blood. Avoid hemolysis (falsely elevates K+).\n## 3. Reagents: ISE inner/outer reference solutions, diluent.\n## 4. Procedure (Indirect ISE):\n- Sample is automatically diluted with high-ionic-strength buffer.\n- Passed over specific ion-selective membranes (Na+, K+, Cl-).\n- Potential difference generated is measured against a reference electrode and converted to concentration via the Nernst equation.\n## 5. Reference Intervals: Na: 135-145 mmol/L. K: 3.5-5.0 mmol/L. Cl: 98-107 mmol/L.\n## 6. QC: Run 2 levels of control daily.",
+        "principle": "Ion-selective electrodes generate a voltage potential proportional to the logarithm of the ion activity in the sample, as described by the Nernst equation.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Clinical Chemistry",
+            "Fluids",
+            "Electrolytes & Acid-Base",
+            "Renal"
+        ],
+        "tags": [
+            "electrolytes",
+            "sodium",
+            "potassium",
+            "chloride",
+            "ise",
+            "clinical chemistry"
+        ],
+        "seo_title": "Serum Electrolytes SOP | ISE Testing Procedure",
+        "focus_keyword": "serum electrolytes",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "Why does hemolysis affect potassium results?",
+                "answer": "Intracellular potassium concentration is ~20x higher than extracellular. RBC rupture releases K+, causing falsely elevated serum potassium."
+            }
+        ],
+        "seo_description": "SOP for measuring sodium, potassium, and chloride using Ion-Selective Electrodes (ISE)."
+    }
+]

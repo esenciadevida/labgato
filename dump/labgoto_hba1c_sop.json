@@ -1,0 +1,41 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Glycated Hemoglobin (HbA1c) Testing",
+        "slug": "glycated-hemoglobin-hba1c-testing",
+        "short_description": "SOP for measuring HbA1c to monitor long-term glycemic control in diabetes.",
+        "content": "# Standard Operating Procedure: HbA1c Testing\n## 1. Purpose: Monitor 2-3 month average blood glucose levels in diabetic patients.\n## 2. Specimen: Whole blood (EDTA preferred).\n## 3. Reagents: HPLC buffers or immunoturbidimetric reagents (NGSP-certified methods).\n## 4. Procedure (HPLC Method):\n- Hemolyze whole blood sample.\n- Inject into cation-exchange HPLC column.\n- HbA1c elutes at a specific retention time due to its altered charge.\n- Quantify via spectrophotometric detection, reporting as % of total hemoglobin.\n## 5. Reference Intervals: Normal: < 5.7%. Prediabetes: 5.7-6.4%. Diabetes: ≥ 6.5%.\n## 6. QC: Run 2 levels of NGSP-certified HbA1c controls daily.",
+        "principle": "Glucose non-enzymatically binds to the N-terminal valine of the hemoglobin beta chain. HPLC separates HbA1c from other hemoglobin fractions based on charge differences, providing a highly specific and standardized measurement.",
+        "department": "Clinical Chemistry / Endocrinology",
+        "mandatory_disclaimer": "Template based on NGSP/IFCC guidelines. Must be approved by Laboratory Director.",
+        "categories": [
+            "Clinical Chemistry",
+            "Endocrinology",
+            "Diabetes"
+        ],
+        "tags": [
+            "hba1c",
+            "glycated hemoglobin",
+            "diabetes",
+            "hplc",
+            "endocrinology"
+        ],
+        "seo_title": "HbA1c Testing SOP | Glycated Hemoglobin Procedure",
+        "focus_keyword": "hba1c testing",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "What conditions can falsely alter HbA1c results?",
+                "answer": "Hemoglobin variants (e.g., HbS, HbC), severe anemia, recent blood transfusion, or conditions altering RBC lifespan (e.g., hemolysis, ESRD)."
+            }
+        ],
+        "seo_description": "SOP for measuring HbA1c to monitor long-term glycemic control in diabetes."
+    }
+]

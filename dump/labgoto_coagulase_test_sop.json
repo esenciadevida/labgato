@@ -1,0 +1,41 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Coagulase Test for Staphylococcal Identification",
+        "slug": "coagulase-test-staphylococcal-identification",
+        "short_description": "SOP for detecting coagulase enzyme to differentiate Staphylococcus aureus from other staphylococci.",
+        "content": "# Standard Operating Procedure: Coagulase Test\n## 1. Purpose: Differentiate *S. aureus* (coagulase-positive) from Coagulase-Negative Staphylococci (CoNS).\n## 2. Specimen: Pure 18-24h bacterial culture on non-blood agar.\n## 3. Reagents: Rabbit plasma (with EDTA), sterile saline, glass slides, test tubes.\n## 4. Procedure:\n- **Slide Test (Bound coagulase):** Emulsify colony in drop of saline. Add drop of rabbit plasma. Mix. Observe for macroscopic clumping within 10 seconds.\n- **Tube Test (Free coagulase):** Emulsify colony in 0.5 mL rabbit plasma. Incubate at 37°C. Check for clot formation at 1h, 2h, and 4h. If negative, leave at room temperature overnight (max 24h).\n## 5. Interpretation: Clumping/clotting = Positive. No clumping/clotting = Negative.\n## 6. QC: *S. aureus* ATCC 25923 (Positive), *S. epidermidis* ATCC 12228 (Negative).",
+        "principle": "Coagulase converts fibrinogen to fibrin, causing plasma to clot. Slide test detects bound coagulase (clumping factor); tube test detects free coagulase.",
+        "department": "Microbiology",
+        "mandatory_disclaimer": "Template based on CLSI guidelines. Must be adapted and approved by Laboratory Director.",
+        "categories": [
+            "Microbiology",
+            "Bacteriology",
+            "Biochemical Testing",
+            "Identification"
+        ],
+        "tags": [
+            "coagulase test",
+            "staphylococcus aureus",
+            "biochemical test",
+            "microbiology"
+        ],
+        "seo_title": "Coagulase Test SOP | Staphylococcus Identification",
+        "focus_keyword": "coagulase test",
+        "reviewer_credentials": "MD, Microbiology",
+        "faqs": [
+            {
+                "question": "Why use rabbit plasma instead of human plasma?",
+                "answer": "Rabbit plasma lacks inhibitors to staphylocoagulase and does not contain fibrinolytic enzymes that might dissolve the clot."
+            }
+        ],
+        "seo_description": "SOP for detecting coagulase enzyme to differentiate Staphylococcus aureus from other staphylococci."
+    }
+]
