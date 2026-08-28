@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Manual Complete Blood Count (CBC) Procedure",
+        "slug": "manual-complete-blood-count-cbc-procedure",
+        "short_description": "Standard Operating Procedure (SOP) for performing a manual Complete Blood Count (CBC), including WBC, RBC, Platelet, Hemoglobin, PCV, and differential counts using a hemocytometer and microscopy.",
+        "status": "published",
+        "content": "# Standard Operating Procedure: Manual Complete Blood Count (CBC)\n\n## 1. Purpose and Scope\nThis procedure defines the step-by-step method for performing a manual Complete Blood Count (CBC), including Total White Blood Cell (WBC) count, Total Red Blood Cell (RBC) count, Platelet count, Hemoglobin (Hb), Packed Cell Volume (PCV), and Manual Differential Leukocyte Count.\n\n## 2. Specimen Requirements\n- **Specimen Type:** Whole venous blood.\n- **Anticoagulant:** K2EDTA or K3EDTA (Lavender/Purple top tube).\n- **Volume:** Minimum 2 mL.\n- **Storage/Stability:** Room temperature (18-25°C). Complete within 4-6 hours.\n- **Rejection Criteria:** Clotted, hemolyzed, under-filled, or mislabeled samples.\n\n## 3. Safety and Precautions\n- Wear appropriate PPE (lab coat, gloves).\n- Treat all specimens as potentially infectious.\n- **Never mouth pipette.** Use mechanical pipettes.\n- Dispose of waste in biohazard containers.\n\n## 4. Equipment and Reagents\n- **Equipment:** Light microscope, Neubauer hemocytometer, microhematocrit centrifuge, spectrophotometer/colorimeter.\n- **Reagents:** Turk's fluid (WBC), Hayem's fluid (RBC), 1% Ammonium oxalate (Platelets), Drabkin's reagent (Hb), Leishman's/Wright's stain.\n\n## 5. Step-by-Step Procedure\n\n### A. Specimen Preparation\n1. Allow EDTA tube to reach room temperature.\n2. Gently invert 8-10 times to mix. Do not shake vigorously.\n\n### B. Total White Blood Cell (WBC) Count\n1. Aspirate 20 µL of well-mixed blood.\n2. Dispense into 380 µL of Turk's fluid (1:20 dilution). Mix well.\n3. Charge the Neubauer chamber. Let settle for 3-5 minutes.\n4. Count WBCs in the 4 large corner squares using the 10x objective.\n5. **Calculation:** Total WBC/µL = (Cells counted in 4 squares) × 50.\n\n### C. Total Red Blood Cell (RBC) Count\n1. Aspirate 10 µL of well-mixed blood.\n2. Dispense into 1990 µL of Hayem's fluid (1:200 dilution). Mix well.\n3. Charge the chamber. Let settle for 5 minutes.\n4. Count RBCs in the 5 small squares of the center large square using the 40x objective.\n5. **Calculation:** Total RBC/µL = (Cells counted in 5 squares) × 10,000.\n\n### D. Platelet Count\n1. Aspirate 20 µL of well-mixed blood.\n2. Dispense into 1980 µL of 1% Ammonium Oxalate (1:100 dilution). Mix gently.\n3. Charge the chamber. Let settle for 10-15 minutes.\n4. Count platelets in the entire 25 small squares of the center large square using the 40x objective.\n5. **Calculation:** Total Platelets/µL = (Platelets counted) × 100.\n\n### E. Hemoglobin (Cyanmethemoglobin Method)\n1. Pipette 20 µL of blood into 4.0 mL of Drabkin's reagent (1:201 dilution).\n2. Let stand for 15 minutes.\n3. Zero spectrophotometer at 540 nm with Drabkin's reagent blank.\n4. Read absorbance of the test sample.\n5. **Calculation:** Hb (g/dL) = (Absorbance of Test / Absorbance of Standard) × Concentration of Standard.\n\n### F. Packed Cell Volume (PCV)\n1. Fill a microhematocrit capillary tube 3/4 full with blood.\n2. Seal the dry end with clay.\n3. Centrifuge at 10,000-12,000 RPM for 5 minutes.\n4. Read the percentage of the red cell column using a hematocrit reader.\n\n### G. Manual Differential Leukocyte Count\n1. Prepare a thin blood film and air dry.\n2. Fix with methanol for 3 minutes. Stain with Leishman's/Wright's stain.\n3. Examine under 100x oil immersion objective.\n4. Count and classify 100 white blood cells.\n5. **Calculation:** Percentage = (Number of specific cell type / 100) × 100%.\n\n## 6. Red Cell Indices Calculation\n- **MCV (fL):** [PCV (%) / RBC (millions/µL)] × 10\n- **MCH (pg):** [Hb (g/dL) / RBC (millions/µL)] × 10\n- **MCHC (g/dL):** [Hb (g/dL) / PCV (%)] × 100\n\n## 7. Quality Control\n- Check Neubauer chamber for cleanliness.\n- Perform duplicate counts for 5% of samples (should not differ by >10%).\n- Participate in External Quality Assessment (EQA).\n\n## 8. Reporting Results\n- Verify calculations and units.\n- Flag critical values (e.g., Platelets < 20 × 10⁹/L) and notify the physician.\n- Note morphological abnormalities in the report comments.",
+        "principle": "The manual Complete Blood Count (CBC) relies on the principles of visual haemocytometry and spectrophotometry. White blood cells, red blood cells, and platelets are diluted in specific isotonic or lysing fluids to achieve optimal counting concentrations and then enumerated manually using a calibrated Neubauer hemocytometer chamber under a light microscope. Hemoglobin concentration is determined via the cyanmethemoglobin method, where hemoglobin is converted to a stable colored complex measured spectrophotometrically at 540 nm. Packed Cell Volume (PCV) is measured by centrifuging blood to separate cellular components from plasma, allowing direct volumetric reading.",
+        "department": "Hematology",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-28",
+        "last_verified_date": "2026-08-28",
+        "mandatory_disclaimer": "This Standard Operating Procedure (SOP) is provided as a template based on WHO and CLSI guidelines. It must be reviewed, adapted to your specific laboratory's equipment and reagents, and formally approved by your Laboratory Director before clinical use.",
+        "featured_image": null,
+        "categories": [
+            "Haematology",
+            "Manual Haematology",
+            "Hematology",
+            "Laboratory Techniques",
+            "Microscopy"
+        ],
+        "tags": [
+            "manual cbc",
+            "cbc",
+            "fbc",
+            "wbc",
+            "rbc",
+            "platelets",
+            "hemoglobin",
+            "pcv",
+            "haematocrit",
+            "differential count",
+            "hemocytometer",
+            "microscopy",
+            "haematology",
+            "blood film",
+            "red cell indices",
+            "mcv",
+            "mch",
+            "mchc"
+        ],
+        "seo_title": "Manual Complete Blood Count (CBC) SOP | Step-by-Step Procedure",
+        "focus_keyword": "manual complete blood count",
+        "seo_description": "Comprehensive Standard Operating Procedure (SOP) for performing a manual Complete Blood Count (CBC), including WBC, RBC, Platelet, Hb, PCV, and differential counts.",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Pathology / PhD, Laboratory Medicine",
+        "last_reviewed_date": "2026-08-28",
+        "faqs": [
+            {
+                "question": "What is the recommended anticoagulant for a manual CBC?",
+                "answer": "K2EDTA or K3EDTA (Lavender/Purple top tube) is the recommended anticoagulant."
+            },
+            {
+                "question": "How long is an EDTA blood sample stable for a manual CBC?",
+                "answer": "The sample should be tested within 4 to 6 hours of collection when stored at room temperature (18-25°C)."
+            },
+            {
+                "question": "What dilution is used for a manual WBC count?",
+                "answer": "A 1:20 dilution is typically used, achieved by adding 20 µL of blood to 380 µL of Turk's fluid."
+            },
+            {
+                "question": "Which objective lens is used for counting RBCs and Platelets?",
+                "answer": "The 40x (high dry) objective lens is used for counting both Red Blood Cells and Platelets."
+            },
+            {
+                "question": "How is the Absolute Neutrophil Count calculated from a manual differential?",
+                "answer": "Multiply the total WBC count by the percentage of neutrophils (expressed as a decimal). For example, if WBC is 10,000/µL and neutrophils are 60%, the absolute count is 6,000/µL."
+            }
+        ]
+    }
+]

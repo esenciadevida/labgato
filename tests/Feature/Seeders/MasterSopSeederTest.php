@@ -22,7 +22,7 @@ class MasterSopSeederTest extends TestCase
 
     public function test_seeds_all_sop_records(): void
     {
-        $this->assertSame(18, $this->seedSops());
+        $this->assertSame(19, $this->seedSops());
     }
 
     public function test_maps_fields_from_json(): void
@@ -61,5 +61,22 @@ class MasterSopSeederTest extends TestCase
         $this->assertTrue($sop->categories->contains(fn ($category) => $category->name === 'Haematology'));
         $this->assertTrue($sop->categories->contains(fn ($category) => $category->name === 'Manual Haematology'));
         $this->assertTrue($sop->tags->contains(fn ($tag) => $tag->name === 'CBC'));
+    }
+
+    public function test_seeds_manual_cbc_procedure(): void
+    {
+        $this->seedSops();
+
+        $sop = Sop::query()->where('slug', 'manual-complete-blood-count-cbc-procedure')->first();
+
+        $this->assertNotNull($sop);
+        $this->assertSame('Manual Complete Blood Count (CBC) Procedure', $sop->name);
+        $this->assertSame('Hematology', $sop->department);
+        $this->assertSame(ResourceStatus::PUBLISHED, $sop->status);
+        $this->assertNotNull($sop->published_at);
+        $this->assertSame('Dr. [Laboratory Director Name]', $sop->reviewer_name);
+        $this->assertCount(5, $sop->faq);
+        $this->assertStringContainsString('# Standard Operating Procedure: Manual Complete Blood Count (CBC)', (string) $sop->content);
+        $this->assertTrue($sop->categories->contains(fn ($category) => $category->name === 'Laboratory Techniques'));
     }
 }
