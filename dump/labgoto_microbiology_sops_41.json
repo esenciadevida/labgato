@@ -1,0 +1,1625 @@
+[
+  {
+    "name": "Specimen Collection and Transport for Microbiology",
+    "slug": "specimen-collection-transport-microbiology",
+    "short_description": "Standardized guidance for collecting, labelling, packaging and transporting microbiology specimens while preserving specimen quality and maintaining biosafety.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize the pre-analytical handling of specimens submitted for microbiological examination.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nAccurate microbiological diagnosis depends on obtaining an appropriate specimen from the correct site, preventing contamination and deterioration, and transporting it under conditions suitable for the intended examination.\n\n## Specimen / Test Material\n\nClinical specimens collected from the appropriate anatomical site using approved containers and collection devices.\n\n## Equipment and Materials\n\n- Approved sterile or specimen-specific collection containers\n- Transport media where indicated\n- Leak-resistant primary containers\n- Secondary containment and appropriate packaging\n- Request form or electronic order system\n- Personal protective equipment\n\n## Procedure\n\n1. Verify patient identity and examination request.\n2. Explain the collection procedure where applicable.\n3. Collect the correct specimen from the appropriate site using aseptic technique.\n4. Avoid contamination with non-target organisms where possible.\n5. Place the specimen in the correct approved container.\n6. Label the specimen at the point of collection according to laboratory policy.\n7. Complete required clinical and collection information.\n8. Package and transport safely using the validated local transport process.\n9. Record delays, unsuitable conditions or deviations on receipt.\n\n## Quality Control and Quality Assurance\n\n- Define and apply specimen acceptance and rejection criteria.\n- Monitor specimen labelling, leakage, delays and contamination rates.\n- Use approved transport media and packaging.\n- Train staff and document competency.\n\n## Reporting\n\nReport specimen rejection, acceptance, processing limitations and final microbiological findings according to laboratory policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Accurate microbiological diagnosis depends on obtaining an appropriate specimen from the correct site, preventing contamination and deterioration, and transporting it under conditions suitable for the intended examination.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Pre-Analytical"
+    ],
+    "tags": [
+      "Specimen Collection",
+      "Specimen Transport",
+      "Microbiology"
+    ],
+    "seo_title": "Specimen Collection and Transport for Microbiology SOP | LabGOTO",
+    "focus_keyword": "Specimen Collection and Transport for Microbiology SOP",
+    "seo_description": "Professional SOP for safe collection, labelling, packaging and transport of microbiology specimens.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is correct specimen collection important?",
+        "answer": "Poor specimen quality can cause contamination, loss of organism viability or misleading results."
+      },
+      {
+        "question": "Can all specimens use the same transport conditions?",
+        "answer": "No. Transport requirements depend on specimen type and intended investigation."
+      }
+    ]
+  },
+  {
+    "name": "Gram Staining",
+    "slug": "gram-staining",
+    "short_description": "Standardized differential staining procedure for classifying bacteria by Gram reaction and observing cellular morphology.",
+    "status": "published",
+    "content": "## Purpose\n\nTo provide a standardized framework for performing Gram Staining.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nGram staining differentiates bacteria based on differences in cell-envelope properties, resulting in characteristic retention or loss of the primary stain after the decolorization step.\n\n## Specimen / Test Material\n\nSmears prepared from suitable clinical material or isolated colonies.\n\n## Equipment and Materials\n\n- Clean glass slides\n- Validated Gram stain reagents\n- Microscope\n- Immersion oil\n- Positive and negative quality-control organisms or preparations where required\n\n## Procedure\n\n1. Prepare a suitable thin smear.\n2. Allow the smear to dry and fix according to the validated method.\n3. Apply the primary stain.\n4. Apply the mordant.\n5. Decolorize using the validated procedure.\n6. Apply the counterstain.\n7. Examine microscopically and record Gram reaction, morphology and arrangement.\n\n## Quality Control and Quality Assurance\n\n- Check reagent condition and storage.\n- Include suitable control preparations as required.\n- Monitor stain quality and microscope performance.\n- Repeat unacceptable preparations.\n\n## Reporting\n\nReport the staining reaction and relevant microscopic findings using approved terminology.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Gram staining differentiates bacteria based on differences in cell-envelope properties, resulting in characteristic retention or loss of the primary stain after the decolorization step.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Staining",
+      "Microscopy"
+    ],
+    "tags": [
+      "Gram Stain",
+      "Bacteriology",
+      "Microscopy"
+    ],
+    "seo_title": "Gram Staining SOP | LabGOTO",
+    "focus_keyword": "Gram Staining SOP",
+    "seo_description": "Laboratory SOP for performing Gram Staining using validated staining and microscopy procedures.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is stain quality important?",
+        "answer": "Poor staining can produce misleading microscopic appearances and compromise interpretation."
+      },
+      {
+        "question": "Should reagent concentrations and timings be improvised?",
+        "answer": "No. Use a validated method or approved manufacturer procedure."
+      }
+    ]
+  },
+  {
+    "name": "Ziehl-Neelsen (ZN) Staining",
+    "slug": "ziehl-neelsen-zn-staining",
+    "short_description": "Acid-fast staining procedure for demonstrating organisms with acid-fast staining characteristics.",
+    "status": "published",
+    "content": "## Purpose\n\nTo provide a standardized framework for performing Ziehl-Neelsen (ZN) Staining.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nAcid-fast organisms retain the primary stain after controlled acid-alcohol decolorization because of their cell-wall properties.\n\n## Specimen / Test Material\n\nAppropriately prepared clinical smears or suitable culture material processed under approved biosafety conditions.\n\n## Equipment and Materials\n\n- Clean slides\n- Validated ZN staining reagents\n- Controlled heating or validated staining system where applicable\n- Microscope and immersion oil\n\n## Procedure\n\n1. Prepare and fix an appropriate smear.\n2. Apply the validated primary stain procedure.\n3. Decolorize according to the approved method.\n4. Apply the counterstain.\n5. Examine systematically using the required microscope objective.\n6. Record acid-fast findings according to the approved reporting system.\n\n## Quality Control and Quality Assurance\n\n- Use validated reagents.\n- Include appropriate positive and negative controls where required.\n- Verify microscope and staining performance.\n\n## Reporting\n\nReport the staining reaction and relevant microscopic findings using approved terminology.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Acid-fast organisms retain the primary stain after controlled acid-alcohol decolorization because of their cell-wall properties.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Staining",
+      "Microscopy"
+    ],
+    "tags": [
+      "Ziehl-Neelsen",
+      "ZN Stain",
+      "Acid-Fast Bacilli",
+      "AFB"
+    ],
+    "seo_title": "Ziehl-Neelsen (ZN) Staining SOP | LabGOTO",
+    "focus_keyword": "Ziehl-Neelsen Staining SOP",
+    "seo_description": "Laboratory SOP for performing Ziehl-Neelsen (ZN) Staining using validated staining and microscopy procedures.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is stain quality important?",
+        "answer": "Poor staining can produce misleading microscopic appearances and compromise interpretation."
+      },
+      {
+        "question": "Should reagent concentrations and timings be improvised?",
+        "answer": "No. Use a validated method or approved manufacturer procedure."
+      }
+    ]
+  },
+  {
+    "name": "Modified Ziehl-Neelsen Staining",
+    "slug": "modified-ziehl-neelsen-staining",
+    "short_description": "Modified acid-fast staining procedure used in validated workflows for selected weakly acid-fast organisms or structures.",
+    "status": "published",
+    "content": "## Purpose\n\nTo provide a standardized framework for performing Modified Ziehl-Neelsen Staining.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nA modified acid-fast staining system uses altered decolorization or staining conditions to demonstrate organisms with partial or modified acid-fast characteristics.\n\n## Specimen / Test Material\n\nAppropriately prepared specimens or smears relevant to the laboratory's validated indication.\n\n## Equipment and Materials\n\n- Clean slides\n- Validated modified ZN reagents\n- Microscope\n- Appropriate controls\n\n## Procedure\n\n1. Prepare and fix the smear according to the validated procedure.\n2. Apply the modified primary staining system.\n3. Decolorize using the approved modified conditions.\n4. Counterstain.\n5. Examine microscopically and document findings.\n\n## Quality Control and Quality Assurance\n\n- Verify reagent performance.\n- Use suitable controls where available.\n- Follow organism-specific validated interpretation criteria.\n\n## Reporting\n\nReport the staining reaction and relevant microscopic findings using approved terminology.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "A modified acid-fast staining system uses altered decolorization or staining conditions to demonstrate organisms with partial or modified acid-fast characteristics.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Staining",
+      "Microscopy"
+    ],
+    "tags": [
+      "Modified ZN",
+      "Acid-Fast Stain",
+      "Microbiology"
+    ],
+    "seo_title": "Modified Ziehl-Neelsen Staining SOP | LabGOTO",
+    "focus_keyword": "Modified Ziehl-Neelsen Staining SOP",
+    "seo_description": "Laboratory SOP for performing Modified Ziehl-Neelsen Staining using validated staining and microscopy procedures.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is stain quality important?",
+        "answer": "Poor staining can produce misleading microscopic appearances and compromise interpretation."
+      },
+      {
+        "question": "Should reagent concentrations and timings be improvised?",
+        "answer": "No. Use a validated method or approved manufacturer procedure."
+      }
+    ]
+  },
+  {
+    "name": "Albert Staining",
+    "slug": "albert-staining",
+    "short_description": "Special staining procedure used in validated workflows to demonstrate characteristic metachromatic granules and morphology.",
+    "status": "published",
+    "content": "## Purpose\n\nTo provide a standardized framework for performing Albert Staining.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nAlbert staining differentially demonstrates cellular morphology and characteristic granules in organisms for which the method is validated.\n\n## Specimen / Test Material\n\nSuitable smears prepared from relevant clinical isolates or specimens.\n\n## Equipment and Materials\n\n- Clean slides\n- Validated Albert stain reagents\n- Microscope\n- Appropriate control material\n\n## Procedure\n\n1. Prepare a suitable smear.\n2. Fix according to the validated procedure.\n3. Apply Albert staining reagents as specified by the approved method.\n4. Examine microscopically.\n5. Record morphology and relevant staining characteristics.\n\n## Quality Control and Quality Assurance\n\n- Use known control material where required.\n- Reject poor-quality smears or staining reactions.\n\n## Reporting\n\nReport the staining reaction and relevant microscopic findings using approved terminology.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Albert staining differentially demonstrates cellular morphology and characteristic granules in organisms for which the method is validated.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Staining",
+      "Microscopy"
+    ],
+    "tags": [
+      "Albert Stain",
+      "Metachromatic Granules",
+      "Bacteriology"
+    ],
+    "seo_title": "Albert Staining SOP | LabGOTO",
+    "focus_keyword": "Albert Staining SOP",
+    "seo_description": "Laboratory SOP for performing Albert Staining using validated staining and microscopy procedures.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is stain quality important?",
+        "answer": "Poor staining can produce misleading microscopic appearances and compromise interpretation."
+      },
+      {
+        "question": "Should reagent concentrations and timings be improvised?",
+        "answer": "No. Use a validated method or approved manufacturer procedure."
+      }
+    ]
+  },
+  {
+    "name": "Culture and Sensitivity Testing",
+    "slug": "culture-and-sensitivity-testing",
+    "short_description": "Integrated workflow for culture, organism work-up and antimicrobial susceptibility testing using validated methods.",
+    "status": "published",
+    "content": "## Purpose\n\nTo provide a framework for culture, identification and antimicrobial susceptibility testing.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nClinical specimens are inoculated onto appropriate culture systems, significant isolates are identified using validated methods, and susceptibility testing is performed using standardized AST methodology.\n\n## Specimen / Test Material\n\nAppropriate clinical specimens or significant pure isolates.\n\n## Equipment and Materials\n\n- Validated culture media\n- Incubation equipment\n- Identification systems\n- AST system or validated manual method\n- Quality-control organisms and materials\n\n## Procedure\n\n1. Verify specimen suitability and clinical request.\n2. Process and inoculate the specimen using the validated specimen-specific workflow.\n3. Incubate and inspect according to validated conditions.\n4. Assess significant growth and obtain suitable isolates.\n5. Identify organisms using validated procedures.\n6. Perform AST only when clinically and methodologically appropriate.\n7. Verify quality-control status.\n8. Interpret results using the current approved breakpoint system.\n9. Release results after technical review.\n\n## Quality Control and Quality Assurance\n\n- Monitor media, incubators, identification systems and AST performance.\n- Use required QC organisms and materials.\n- Follow current approved interpretive standards and local resistance-reporting rules.\n\n## Reporting\n\nReport organism identification and antimicrobial susceptibility results in the approved clinical format.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Clinical specimens are inoculated onto appropriate culture systems, significant isolates are identified using validated methods, and susceptibility testing is performed using standardized AST methodology.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Antimicrobial Susceptibility Testing"
+    ],
+    "tags": [
+      "Culture",
+      "Sensitivity",
+      "AST",
+      "C&S"
+    ],
+    "seo_title": "Culture and Sensitivity Testing SOP | LabGOTO",
+    "focus_keyword": "Culture and Sensitivity Testing SOP",
+    "seo_description": "Professional SOP for culture, organism identification and antimicrobial susceptibility testing.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Does every isolate require susceptibility testing?",
+        "answer": "Testing should follow the laboratory's validated workflow and current clinical reporting rules."
+      },
+      {
+        "question": "Which breakpoint system should be used?",
+        "answer": "Use one current, validated interpretive system consistently, such as the system adopted by the laboratory."
+      }
+    ]
+  },
+  {
+    "name": "Kirby-Bauer Disk Diffusion Method",
+    "slug": "kirby-bauer-disk-diffusion-method",
+    "short_description": "Standardized antimicrobial susceptibility testing method based on measuring inhibition zones around antimicrobial disks.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize Kirby-Bauer Disk Diffusion Method using a validated antimicrobial susceptibility testing method.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nAntimicrobial agents diffuse through a standardized agar medium and inhibit susceptible bacterial growth to a degree related to organism susceptibility and validated test conditions.\n\n## Specimen / Test Material\n\nA suitable, pure and correctly identified isolate prepared according to the validated AST method.\n\n## Equipment and Materials\n\n- Validated AST media or broth\n- Standardized inoculum preparation materials\n- Approved antimicrobial agents or disks\n- Incubation system\n- Quality-control organisms\n- Current approved breakpoint tables\n\n## Procedure\n\n1. Confirm isolate purity and suitability.\n2. Prepare a standardized inoculum using the validated method.\n3. Inoculate the approved agar medium to obtain appropriate confluent growth.\n4. Apply approved antimicrobial disks.\n5. Incubate under method-specific validated conditions.\n6. Measure inhibition zones using the approved reading procedure.\n7. Interpret using the current approved breakpoint tables.\n\n## Quality Control and Quality Assurance\n\n- Use approved QC strains.\n- Verify media performance, disk storage and incubation conditions.\n- Investigate out-of-range QC results before releasing patient results.\n\n## Reporting\n\nReport results only after confirming acceptable quality-control performance and applying the current laboratory-approved interpretive criteria.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Antimicrobial agents diffuse through a standardized agar medium and inhibit susceptible bacterial growth to a degree related to organism susceptibility and validated test conditions.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Antimicrobial Susceptibility Testing"
+    ],
+    "tags": [
+      "Kirby-Bauer",
+      "Disk Diffusion",
+      "AST",
+      "Antibiotic Sensitivity"
+    ],
+    "seo_title": "Kirby-Bauer Disk Diffusion Method SOP | LabGOTO",
+    "focus_keyword": "Kirby-Bauer Disk Diffusion SOP",
+    "seo_description": "Laboratory SOP for Kirby-Bauer Disk Diffusion Method using standardized and validated AST methodology.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is inoculum standardization important?",
+        "answer": "Inoculum variation can significantly affect susceptibility test results."
+      },
+      {
+        "question": "Can obsolete breakpoint tables be used?",
+        "answer": "No. Use the current laboratory-approved interpretive standard and applicable version."
+      }
+    ]
+  },
+  {
+    "name": "Broth Dilution Method",
+    "slug": "broth-dilution-method",
+    "short_description": "Antimicrobial susceptibility method based on exposing a standardized inoculum to defined concentrations of antimicrobial agents in broth.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize Broth Dilution Method using a validated antimicrobial susceptibility testing method.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nA standardized organism inoculum is exposed to a series of antimicrobial concentrations in broth, allowing assessment of growth inhibition.\n\n## Specimen / Test Material\n\nA suitable, pure and correctly identified isolate prepared according to the validated AST method.\n\n## Equipment and Materials\n\n- Validated AST media or broth\n- Standardized inoculum preparation materials\n- Approved antimicrobial agents or disks\n- Incubation system\n- Quality-control organisms\n- Current approved breakpoint tables\n\n## Procedure\n\n1. Prepare the validated concentration series or approved testing panel.\n2. Prepare a standardized inoculum.\n3. Inoculate according to the validated method.\n4. Incubate under method-specific conditions.\n5. Examine growth endpoints using the approved reading criteria.\n6. Determine the relevant susceptibility endpoint where applicable.\n7. Interpret using the current approved standard.\n\n## Quality Control and Quality Assurance\n\n- Verify concentration preparation or panel integrity.\n- Use required QC organisms.\n- Confirm acceptable media and incubation performance.\n\n## Reporting\n\nReport results only after confirming acceptable quality-control performance and applying the current laboratory-approved interpretive criteria.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "A standardized organism inoculum is exposed to a series of antimicrobial concentrations in broth, allowing assessment of growth inhibition.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Antimicrobial Susceptibility Testing"
+    ],
+    "tags": [
+      "Broth Dilution",
+      "AST",
+      "Antimicrobial Susceptibility"
+    ],
+    "seo_title": "Broth Dilution Method SOP | LabGOTO",
+    "focus_keyword": "Broth Dilution Method SOP",
+    "seo_description": "Laboratory SOP for Broth Dilution Method using standardized and validated AST methodology.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is inoculum standardization important?",
+        "answer": "Inoculum variation can significantly affect susceptibility test results."
+      },
+      {
+        "question": "Can obsolete breakpoint tables be used?",
+        "answer": "No. Use the current laboratory-approved interpretive standard and applicable version."
+      }
+    ]
+  },
+  {
+    "name": "Minimum Inhibitory Concentration (MIC)",
+    "slug": "minimum-inhibitory-concentration-mic",
+    "short_description": "Procedure for determining the lowest validated antimicrobial concentration that inhibits visible growth under specified test conditions.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize Minimum Inhibitory Concentration (MIC) using a validated antimicrobial susceptibility testing method.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nThe MIC is determined from standardized exposure of an organism to defined antimicrobial concentrations using an approved reference or validated method.\n\n## Specimen / Test Material\n\nA suitable, pure and correctly identified isolate prepared according to the validated AST method.\n\n## Equipment and Materials\n\n- Validated AST media or broth\n- Standardized inoculum preparation materials\n- Approved antimicrobial agents or disks\n- Incubation system\n- Quality-control organisms\n- Current approved breakpoint tables\n\n## Procedure\n\n1. Select a suitable pure isolate.\n2. Prepare standardized inoculum.\n3. Set up the validated MIC concentration range or commercial system.\n4. Incubate according to the approved method.\n5. Determine the endpoint according to validated reading rules.\n6. Apply current breakpoint interpretation where clinically applicable.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate QC strains.\n- Monitor reagent, panel and instrument performance.\n- Do not interpret results when required QC is unacceptable.\n\n## Reporting\n\nReport results only after confirming acceptable quality-control performance and applying the current laboratory-approved interpretive criteria.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "The MIC is determined from standardized exposure of an organism to defined antimicrobial concentrations using an approved reference or validated method.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Antimicrobial Susceptibility Testing"
+    ],
+    "tags": [
+      "MIC",
+      "Minimum Inhibitory Concentration",
+      "AST"
+    ],
+    "seo_title": "Minimum Inhibitory Concentration (MIC) SOP | LabGOTO",
+    "focus_keyword": "Minimum Inhibitory Concentration MIC SOP",
+    "seo_description": "Laboratory SOP for Minimum Inhibitory Concentration (MIC) using standardized and validated AST methodology.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is inoculum standardization important?",
+        "answer": "Inoculum variation can significantly affect susceptibility test results."
+      },
+      {
+        "question": "Can obsolete breakpoint tables be used?",
+        "answer": "No. Use the current laboratory-approved interpretive standard and applicable version."
+      }
+    ]
+  },
+  {
+    "name": "McFarland Standard Preparation",
+    "slug": "mcfarland-standard-preparation",
+    "short_description": "Procedure for preparing or verifying a standardized turbidity reference used to support inoculum standardization.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize McFarland Standard Preparation using a validated antimicrobial susceptibility testing method.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nA McFarland turbidity reference provides a standardized visual or instrument-verified benchmark for preparing microbial suspensions of controlled density.\n\n## Specimen / Test Material\n\nA suitable, pure and correctly identified isolate prepared according to the validated AST method.\n\n## Equipment and Materials\n\n- Validated AST media or broth\n- Standardized inoculum preparation materials\n- Approved antimicrobial agents or disks\n- Incubation system\n- Quality-control organisms\n- Current approved breakpoint tables\n\n## Procedure\n\n1. Use the laboratory-approved preparation or certified commercial standard.\n2. Label and store according to the validated procedure.\n3. Verify turbidity by the approved method where required.\n4. Compare or adjust microbial suspensions using the validated process.\n5. Replace standards that fail acceptance criteria.\n\n## Quality Control and Quality Assurance\n\n- Use traceable or validated standards.\n- Monitor storage, expiration and physical condition.\n- Verify instrument-based systems according to manufacturer instructions.\n\n## Reporting\n\nReport results only after confirming acceptable quality-control performance and applying the current laboratory-approved interpretive criteria.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "A McFarland turbidity reference provides a standardized visual or instrument-verified benchmark for preparing microbial suspensions of controlled density.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Antimicrobial Susceptibility Testing"
+    ],
+    "tags": [
+      "McFarland Standard",
+      "Turbidity",
+      "AST",
+      "Inoculum"
+    ],
+    "seo_title": "McFarland Standard Preparation SOP | LabGOTO",
+    "focus_keyword": "McFarland Standard Preparation SOP",
+    "seo_description": "Laboratory SOP for McFarland Standard Preparation using standardized and validated AST methodology.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is inoculum standardization important?",
+        "answer": "Inoculum variation can significantly affect susceptibility test results."
+      },
+      {
+        "question": "Can obsolete breakpoint tables be used?",
+        "answer": "No. Use the current laboratory-approved interpretive standard and applicable version."
+      }
+    ]
+  },
+  {
+    "name": "Serial Dilution Technique",
+    "slug": "serial-dilution-technique",
+    "short_description": "General laboratory procedure for producing sequential dilutions using a defined dilution factor.",
+    "status": "published",
+    "content": "## Purpose\n\nTo prepare validated serial dilutions for microbiological procedures such as enumeration, quantitative testing or assay preparation.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nEach dilution is prepared by transferring a defined portion of material into a defined volume of diluent, producing a predictable sequential reduction in concentration.\n\n## Specimen / Test Material\n\nAppropriate specimen suspension, culture suspension or other material approved for the intended test.\n\n## Equipment and Materials\n\n- Sterile or validated diluent\n- Correctly labelled tubes or containers\n- Calibrated pipettes or dispensing devices\n- Vortex mixer where appropriate\n- Personal protective equipment\n\n## Procedure\n\n1. Label dilution containers in sequence.\n2. Add the required validated volume of diluent.\n3. Mix the starting material as required.\n4. Transfer the validated aliquot to the first dilution.\n5. Mix appropriately.\n6. Continue sequential transfers using clean technique.\n7. Process the required dilution(s) according to the intended test.\n\n## Quality Control and Quality Assurance\n\n- Verify pipette performance.\n- Use correct dilution calculations and labelling.\n- Include contamination controls where required.\n\n## Reporting\n\nReport dilution factors and results using the approved calculation and reporting method.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Each dilution is prepared by transferring a defined portion of material into a defined volume of diluent, producing a predictable sequential reduction in concentration.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Laboratory Techniques"
+    ],
+    "tags": [
+      "Serial Dilution",
+      "Dilution",
+      "Microbiology"
+    ],
+    "seo_title": "Serial Dilution Technique SOP | LabGOTO",
+    "focus_keyword": "Serial Dilution Technique SOP",
+    "seo_description": "Laboratory SOP for preparing sequential serial dilutions using validated dilution procedures.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why must each dilution be mixed?",
+        "answer": "Adequate mixing supports uniform distribution before the next transfer."
+      },
+      {
+        "question": "What is a common source of error?",
+        "answer": "Incorrect labelling, transfer volumes or dilution calculations can invalidate results."
+      }
+    ]
+  },
+  {
+    "name": "Colony Counting",
+    "slug": "colony-counting",
+    "short_description": "Procedure for counting microbial colonies on suitable culture media and calculating quantitative results using validated criteria.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize counting and calculation of colonies for quantitative microbiological examinations.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nUnder appropriate culture conditions, viable organisms form visible colonies that can be counted within the validated quantitative range of the method.\n\n## Specimen / Test Material\n\nAppropriately inoculated culture plates from validated quantitative procedures.\n\n## Equipment and Materials\n\n- Suitable culture plates\n- Colony counter or manual counting aid\n- Marker or approved recording system\n- Calculator or validated laboratory information system\n\n## Procedure\n\n1. Confirm plate identification and culture integrity.\n2. Select plates meeting the validated counting criteria.\n3. Count colonies using the approved method.\n4. Record counts and dilution factors.\n5. Calculate the final result using the validated formula.\n6. Apply laboratory rules for plates outside the validated counting range.\n\n## Quality Control and Quality Assurance\n\n- Verify counting criteria.\n- Check calculation accuracy.\n- Review unusual counts or contamination patterns.\n\n## Reporting\n\nReport quantitative results in the approved units and include relevant limitations.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Under appropriate culture conditions, viable organisms form visible colonies that can be counted within the validated quantitative range of the method.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Quantitative Microbiology"
+    ],
+    "tags": [
+      "Colony Count",
+      "CFU",
+      "Enumeration"
+    ],
+    "seo_title": "Colony Counting SOP | LabGOTO",
+    "focus_keyword": "Colony Counting SOP",
+    "seo_description": "Professional laboratory SOP for microbial colony counting and quantitative calculation.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can every plate be used for counting?",
+        "answer": "No. Use plates that meet the validated method's acceptance and counting criteria."
+      },
+      {
+        "question": "Why are dilution factors recorded?",
+        "answer": "They are required for correct calculation of the original concentration."
+      }
+    ]
+  },
+  {
+    "name": "Blood Culture",
+    "slug": "blood-culture",
+    "short_description": "Specimen-specific culture workflow for blood culture using validated microbiological methods.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize processing and culture of blood culture.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nRecovery of microorganisms from blood depends on appropriate aseptic collection, adequate specimen volume as specified by the validated system, prompt incubation and appropriate investigation of positive signals.\n\n## Specimen / Test Material\n\nBlood collected aseptically into validated blood-culture bottles or systems.\n\n## Equipment and Materials\n\n- Appropriate validated culture media\n- Inoculating equipment\n- Incubation system\n- Identification reagents or system\n- AST materials where indicated\n\n## Procedure\n\n1. Verify patient identity and request.\n2. Perform collection using strict aseptic technique and the approved blood-culture collection process.\n3. Inoculate the correct validated culture bottle(s).\n4. Label and transport promptly.\n5. Incubate and monitor using the validated culture system.\n6. Process positive cultures using approved identification and AST workflows.\n\n## Quality Control and Quality Assurance\n\nMonitor contamination rates, culture-system QC and investigation of positive signals.\n\n## Reporting\n\nReport clinically significant findings, relevant negative results and limitations according to laboratory policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Recovery of microorganisms from blood depends on appropriate aseptic collection, adequate specimen volume as specified by the validated system, prompt incubation and appropriate investigation of positive signals.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Clinical Bacteriology"
+    ],
+    "tags": [
+      "Blood Culture",
+      "Bacteraemia",
+      "Sepsis"
+    ],
+    "seo_title": "Blood Culture SOP | LabGOTO",
+    "focus_keyword": "Blood Culture SOP",
+    "seo_description": "Professional laboratory SOP for blood culture processing and microbiological culture.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is specimen quality important?",
+        "answer": "Poor collection or transport can reduce recovery of clinically significant organisms or increase contamination."
+      },
+      {
+        "question": "Should every isolate be reported as a pathogen?",
+        "answer": "No. Significance depends on specimen source, organism, quantity and clinical context."
+      }
+    ]
+  },
+  {
+    "name": "Urine Culture",
+    "slug": "urine-culture",
+    "short_description": "Specimen-specific culture workflow for urine culture using validated microbiological methods.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize processing and culture of urine culture.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nQuantitative culture and interpretation of urine depend on specimen quality, controlled inoculation and correlation of organism quantity and type with clinical information.\n\n## Specimen / Test Material\n\nAppropriately collected urine using a validated collection method.\n\n## Equipment and Materials\n\n- Appropriate validated culture media\n- Inoculating equipment\n- Incubation system\n- Identification reagents or system\n- AST materials where indicated\n\n## Procedure\n\n1. Verify specimen type and collection information.\n2. Assess acceptance criteria.\n3. Mix where required by the validated method.\n4. Inoculate using a validated quantitative or semi-quantitative technique.\n5. Incubate and examine for growth.\n6. Identify significant isolates and perform AST where indicated.\n7. Apply validated colony-count and reporting criteria.\n\n## Quality Control and Quality Assurance\n\nMonitor media, inoculation devices and quantitative calculations.\n\n## Reporting\n\nReport clinically significant findings, relevant negative results and limitations according to laboratory policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Quantitative culture and interpretation of urine depend on specimen quality, controlled inoculation and correlation of organism quantity and type with clinical information.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Clinical Bacteriology"
+    ],
+    "tags": [
+      "Urine Culture",
+      "UTI",
+      "Quantitative Culture"
+    ],
+    "seo_title": "Urine Culture SOP | LabGOTO",
+    "focus_keyword": "Urine Culture SOP",
+    "seo_description": "Professional laboratory SOP for urine culture processing and microbiological culture.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is specimen quality important?",
+        "answer": "Poor collection or transport can reduce recovery of clinically significant organisms or increase contamination."
+      },
+      {
+        "question": "Should every isolate be reported as a pathogen?",
+        "answer": "No. Significance depends on specimen source, organism, quantity and clinical context."
+      }
+    ]
+  },
+  {
+    "name": "Stool Culture",
+    "slug": "stool-culture",
+    "short_description": "Specimen-specific culture workflow for stool culture using validated microbiological methods.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize processing and culture of stool culture.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nSelective and differential culture systems support recovery and differentiation of enteric pathogens while specimen quality and clinical information guide work-up.\n\n## Specimen / Test Material\n\nFresh stool or appropriate rectal specimen collected in an approved container or transport system.\n\n## Equipment and Materials\n\n- Appropriate validated culture media\n- Inoculating equipment\n- Incubation system\n- Identification reagents or system\n- AST materials where indicated\n\n## Procedure\n\n1. Verify specimen identity and suitability.\n2. Inoculate appropriate validated media.\n3. Incubate using organism- and method-specific conditions.\n4. Examine for significant colony types.\n5. Identify suspected pathogens using validated procedures.\n6. Perform AST when indicated.\n7. Report significant findings according to policy.\n\n## Quality Control and Quality Assurance\n\nUse validated media and controls; monitor selective media performance.\n\n## Reporting\n\nReport clinically significant findings, relevant negative results and limitations according to laboratory policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Selective and differential culture systems support recovery and differentiation of enteric pathogens while specimen quality and clinical information guide work-up.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Clinical Bacteriology"
+    ],
+    "tags": [
+      "Stool Culture",
+      "Enteric Pathogens",
+      "Faecal Culture"
+    ],
+    "seo_title": "Stool Culture SOP | LabGOTO",
+    "focus_keyword": "Stool Culture SOP",
+    "seo_description": "Professional laboratory SOP for stool culture processing and microbiological culture.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is specimen quality important?",
+        "answer": "Poor collection or transport can reduce recovery of clinically significant organisms or increase contamination."
+      },
+      {
+        "question": "Should every isolate be reported as a pathogen?",
+        "answer": "No. Significance depends on specimen source, organism, quantity and clinical context."
+      }
+    ]
+  },
+  {
+    "name": "Sputum Culture",
+    "slug": "sputum-culture",
+    "short_description": "Specimen-specific culture workflow for sputum culture using validated microbiological methods.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize processing and culture of sputum culture.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nMicroscopic specimen quality assessment and appropriate culture processing help distinguish suitable lower-respiratory material from heavily contaminated upper-airway material.\n\n## Specimen / Test Material\n\nA lower-respiratory specimen collected into a sterile approved container.\n\n## Equipment and Materials\n\n- Appropriate validated culture media\n- Inoculating equipment\n- Incubation system\n- Identification reagents or system\n- AST materials where indicated\n\n## Procedure\n\n1. Verify specimen type and labelling.\n2. Assess specimen quality using the validated laboratory criteria.\n3. Process and inoculate appropriate media.\n4. Incubate under validated conditions.\n5. Assess significant growth.\n6. Identify clinically significant isolates and perform AST where indicated.\n\n## Quality Control and Quality Assurance\n\nMonitor specimen rejection rates, media performance and contamination.\n\n## Reporting\n\nReport clinically significant findings, relevant negative results and limitations according to laboratory policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Microscopic specimen quality assessment and appropriate culture processing help distinguish suitable lower-respiratory material from heavily contaminated upper-airway material.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Clinical Bacteriology"
+    ],
+    "tags": [
+      "Sputum Culture",
+      "Respiratory Culture",
+      "MCS"
+    ],
+    "seo_title": "Sputum Culture SOP | LabGOTO",
+    "focus_keyword": "Sputum Culture SOP",
+    "seo_description": "Professional laboratory SOP for sputum culture processing and microbiological culture.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is specimen quality important?",
+        "answer": "Poor collection or transport can reduce recovery of clinically significant organisms or increase contamination."
+      },
+      {
+        "question": "Should every isolate be reported as a pathogen?",
+        "answer": "No. Significance depends on specimen source, organism, quantity and clinical context."
+      }
+    ]
+  },
+  {
+    "name": "Wound/Swab Culture",
+    "slug": "wound-swab-culture",
+    "short_description": "Specimen-specific culture workflow for wound/swab culture using validated microbiological methods.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize processing and culture of wound/swab culture.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nRecovery of pathogens depends on collecting representative material while minimizing superficial contamination and using suitable culture media.\n\n## Specimen / Test Material\n\nAppropriate wound material or swab collected from the clinically relevant site using approved technique.\n\n## Equipment and Materials\n\n- Appropriate validated culture media\n- Inoculating equipment\n- Incubation system\n- Identification reagents or system\n- AST materials where indicated\n\n## Procedure\n\n1. Verify specimen source and collection details.\n2. Assess specimen suitability.\n3. Inoculate validated culture media.\n4. Incubate appropriately.\n5. Evaluate significant growth in relation to specimen source.\n6. Identify relevant isolates and perform AST when indicated.\n\n## Quality Control and Quality Assurance\n\nUse specimen-specific acceptance criteria and monitor media quality.\n\n## Reporting\n\nReport clinically significant findings, relevant negative results and limitations according to laboratory policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Recovery of pathogens depends on collecting representative material while minimizing superficial contamination and using suitable culture media.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Clinical Bacteriology"
+    ],
+    "tags": [
+      "Wound Culture",
+      "Swab Culture",
+      "MCS"
+    ],
+    "seo_title": "Wound/Swab Culture SOP | LabGOTO",
+    "focus_keyword": "Wound/Swab Culture SOP",
+    "seo_description": "Professional laboratory SOP for wound/swab culture processing and microbiological culture.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is specimen quality important?",
+        "answer": "Poor collection or transport can reduce recovery of clinically significant organisms or increase contamination."
+      },
+      {
+        "question": "Should every isolate be reported as a pathogen?",
+        "answer": "No. Significance depends on specimen source, organism, quantity and clinical context."
+      }
+    ]
+  },
+  {
+    "name": "Semen Culture",
+    "slug": "semen-culture",
+    "short_description": "Specimen-specific culture workflow for semen culture using validated microbiological methods.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize processing and culture of semen culture.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nCulture seeks clinically significant microorganisms in semen while controlling for contamination and correlating findings with microscopy and clinical information.\n\n## Specimen / Test Material\n\nFresh semen specimen collected into a sterile approved container.\n\n## Equipment and Materials\n\n- Appropriate validated culture media\n- Inoculating equipment\n- Incubation system\n- Identification reagents or system\n- AST materials where indicated\n\n## Procedure\n\n1. Verify patient and specimen identification.\n2. Assess specimen collection and transport information.\n3. Process using the validated semen culture workflow.\n4. Inoculate appropriate media.\n5. Incubate and assess growth.\n6. Identify clinically significant isolates and perform AST where indicated.\n\n## Quality Control and Quality Assurance\n\nMonitor contamination, media performance and specimen suitability.\n\n## Reporting\n\nReport clinically significant findings, relevant negative results and limitations according to laboratory policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Culture seeks clinically significant microorganisms in semen while controlling for contamination and correlating findings with microscopy and clinical information.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Clinical Bacteriology"
+    ],
+    "tags": [
+      "Semen Culture",
+      "Semen MCS",
+      "Microbiology"
+    ],
+    "seo_title": "Semen Culture SOP | LabGOTO",
+    "focus_keyword": "Semen Culture SOP",
+    "seo_description": "Professional laboratory SOP for semen culture processing and microbiological culture.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is specimen quality important?",
+        "answer": "Poor collection or transport can reduce recovery of clinically significant organisms or increase contamination."
+      },
+      {
+        "question": "Should every isolate be reported as a pathogen?",
+        "answer": "No. Significance depends on specimen source, organism, quantity and clinical context."
+      }
+    ]
+  },
+  {
+    "name": "Cerebrospinal Fluid (CSF) Culture",
+    "slug": "cerebrospinal-fluid-csf-culture",
+    "short_description": "Specimen-specific culture workflow for cerebrospinal fluid (csf) culture using validated microbiological methods.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize processing and culture of cerebrospinal fluid (csf) culture.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nBecause CSF is a critical normally sterile-site specimen, prompt processing and appropriate culture methods are essential for recovery of clinically significant organisms.\n\n## Specimen / Test Material\n\nCerebrospinal fluid collected aseptically into an approved sterile container.\n\n## Equipment and Materials\n\n- Appropriate validated culture media\n- Inoculating equipment\n- Incubation system\n- Identification reagents or system\n- AST materials where indicated\n\n## Procedure\n\n1. Treat the specimen as urgent according to laboratory policy.\n2. Verify identification and specimen integrity.\n3. Process promptly using the validated CSF workflow.\n4. Perform appropriate microscopy and culture.\n5. Incubate and investigate significant growth.\n6. Communicate critical findings according to the laboratory escalation policy.\n\n## Quality Control and Quality Assurance\n\nPrioritize rapid processing; monitor media, microscopy and critical-result communication.\n\n## Reporting\n\nReport clinically significant findings, relevant negative results and limitations according to laboratory policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Because CSF is a critical normally sterile-site specimen, prompt processing and appropriate culture methods are essential for recovery of clinically significant organisms.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Clinical Bacteriology"
+    ],
+    "tags": [
+      "CSF Culture",
+      "Meningitis",
+      "Sterile Site Culture"
+    ],
+    "seo_title": "Cerebrospinal Fluid (CSF) Culture SOP | LabGOTO",
+    "focus_keyword": "Cerebrospinal Fluid (CSF) Culture SOP",
+    "seo_description": "Professional laboratory SOP for cerebrospinal fluid (csf) culture processing and microbiological culture.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is specimen quality important?",
+        "answer": "Poor collection or transport can reduce recovery of clinically significant organisms or increase contamination."
+      },
+      {
+        "question": "Should every isolate be reported as a pathogen?",
+        "answer": "No. Significance depends on specimen source, organism, quantity and clinical context."
+      }
+    ]
+  },
+  {
+    "name": "Throat Swab Culture",
+    "slug": "throat-swab-culture",
+    "short_description": "Specimen-specific culture workflow for throat swab culture using validated microbiological methods.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize processing and culture of throat swab culture.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nAppropriate sampling and selective culture methods support recovery of clinically relevant throat pathogens while limiting interference from normal flora.\n\n## Specimen / Test Material\n\nThroat swab collected from the clinically relevant pharyngeal area using an approved swab system.\n\n## Equipment and Materials\n\n- Appropriate validated culture media\n- Inoculating equipment\n- Incubation system\n- Identification reagents or system\n- AST materials where indicated\n\n## Procedure\n\n1. Verify specimen and source.\n2. Assess transport condition.\n3. Inoculate appropriate validated media.\n4. Incubate under the required conditions.\n5. Identify significant organisms using validated methods.\n6. Report according to clinical and laboratory policy.\n\n## Quality Control and Quality Assurance\n\nUse validated media and controls; ensure correct specimen-site documentation.\n\n## Reporting\n\nReport clinically significant findings, relevant negative results and limitations according to laboratory policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Appropriate sampling and selective culture methods support recovery of clinically relevant throat pathogens while limiting interference from normal flora.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Clinical Bacteriology"
+    ],
+    "tags": [
+      "Throat Swab",
+      "Throat Culture",
+      "Respiratory Microbiology"
+    ],
+    "seo_title": "Throat Swab Culture SOP | LabGOTO",
+    "focus_keyword": "Throat Swab Culture SOP",
+    "seo_description": "Professional laboratory SOP for throat swab culture processing and microbiological culture.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is specimen quality important?",
+        "answer": "Poor collection or transport can reduce recovery of clinically significant organisms or increase contamination."
+      },
+      {
+        "question": "Should every isolate be reported as a pathogen?",
+        "answer": "No. Significance depends on specimen source, organism, quantity and clinical context."
+      }
+    ]
+  },
+  {
+    "name": "High Vaginal Swab (HVS) Examination",
+    "slug": "high-vaginal-swab-hvs-examination",
+    "short_description": "Standardized microscopy and culture workflow for high vaginal swab specimens.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize examination of high vaginal swab specimens.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nDirect microscopy and appropriate culture methods may demonstrate inflammatory cells, microorganisms and clinically relevant growth patterns in vaginal specimens.\n\n## Specimen / Test Material\n\nProperly labelled high vaginal swab collected using an approved collection device.\n\n## Equipment and Materials\n\n- Microscope\n- Clean slides\n- Validated wet-mount and staining reagents\n- Appropriate culture media where indicated\n\n## Procedure\n\n1. Verify specimen source and identification.\n2. Assess specimen suitability.\n3. Perform direct examination according to the validated workflow.\n4. Prepare microscopy and/or staining preparations where indicated.\n5. Inoculate appropriate culture media where required.\n6. Identify significant findings and report using approved terminology.\n\n## Quality Control and Quality Assurance\n\nMonitor microscopy, staining, media and control performance as applicable.\n\n## Reporting\n\nReport microscopy and culture findings according to validated laboratory criteria.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Direct microscopy and appropriate culture methods may demonstrate inflammatory cells, microorganisms and clinically relevant growth patterns in vaginal specimens.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Clinical Bacteriology",
+      "Specimen Examination"
+    ],
+    "tags": [
+      "HVS",
+      "High Vaginal Swab",
+      "Vaginal Culture"
+    ],
+    "seo_title": "High Vaginal Swab HVS Examination SOP | LabGOTO",
+    "focus_keyword": "High Vaginal Swab Examination SOP",
+    "seo_description": "Laboratory SOP for microscopy and culture examination of high vaginal swab specimens.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can microscopy and culture provide different information?",
+        "answer": "Yes. Direct examination and culture are complementary and may detect different findings."
+      }
+    ]
+  },
+  {
+    "name": "Endocervical Swab Examination",
+    "slug": "endocervical-swab-examination",
+    "short_description": "Standardized examination workflow for appropriately collected endocervical swab specimens.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize receipt and examination of endocervical swab specimens.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nDirect microscopy, culture or other validated testing methods are selected according to the requested clinical investigation and organism-specific workflow.\n\n## Specimen / Test Material\n\nProperly collected and labelled endocervical swab transported in the approved system.\n\n## Equipment and Materials\n\n- Approved microscopy materials\n- Validated staining reagents where indicated\n- Appropriate culture or molecular systems according to the requested test\n\n## Procedure\n\n1. Verify specimen identity and anatomical source.\n2. Confirm specimen suitability and transport conditions.\n3. Perform the requested validated examination.\n4. Process microscopy, culture or other testing according to the organism-specific SOP.\n5. Review and report results using approved criteria.\n\n## Quality Control and Quality Assurance\n\nApply method-specific controls and monitor specimen adequacy.\n\n## Reporting\n\nReport only findings supported by the validated method and appropriate clinical reporting policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Direct microscopy, culture or other validated testing methods are selected according to the requested clinical investigation and organism-specific workflow.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Clinical Bacteriology"
+    ],
+    "tags": [
+      "Endocervical Swab",
+      "Cervical Examination"
+    ],
+    "seo_title": "Endocervical Swab Examination SOP | LabGOTO",
+    "focus_keyword": "Endocervical Swab Examination SOP",
+    "seo_description": "Professional laboratory SOP for validated examination of endocervical swab specimens.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is correct specimen-site documentation important?",
+        "answer": "Different anatomical sites can have different expected flora and testing requirements."
+      }
+    ]
+  },
+  {
+    "name": "KOH Preparation",
+    "slug": "koh-preparation",
+    "short_description": "Direct microscopic preparation used in validated workflows to improve visualization of fungal elements in clinical material.",
+    "status": "published",
+    "content": "## Purpose\n\nTo prepare and examine a KOH mount using a validated fungal microscopy procedure.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nPotassium hydroxide helps clear background cellular and keratinous material, improving microscopic visualization of fungal structures when present.\n\n## Specimen / Test Material\n\nSkin, hair, nail or other approved clinical material collected for direct fungal examination.\n\n## Equipment and Materials\n\n- Clean slides and cover glasses\n- Validated KOH preparation reagent\n- Microscope\n- Appropriate specimen collection tools\n\n## Procedure\n\n1. Verify specimen identity.\n2. Place an appropriate amount of specimen on a clean slide.\n3. Add the validated KOH reagent.\n4. Apply a cover glass where required.\n5. Allow clearing according to the validated procedure.\n6. Examine systematically for fungal elements.\n7. Record findings using approved terminology.\n\n## Quality Control and Quality Assurance\n\nUse validated reagent preparation and microscopy quality checks.\n\n## Reporting\n\nReport observed fungal elements or relevant negative findings according to laboratory policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Potassium hydroxide helps clear background cellular and keratinous material, improving microscopic visualization of fungal structures when present.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Mycology",
+      "Microscopy"
+    ],
+    "tags": [
+      "KOH",
+      "Fungal Microscopy",
+      "Mycology"
+    ],
+    "seo_title": "KOH Preparation SOP | LabGOTO",
+    "focus_keyword": "KOH Preparation SOP",
+    "seo_description": "Laboratory SOP for KOH direct microscopy preparation for fungal examination.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "What is the purpose of KOH in fungal microscopy?",
+        "answer": "It helps clear background material and improve visualization of fungal structures."
+      }
+    ]
+  },
+  {
+    "name": "Lactophenol Cotton Blue (LPCB) Mount",
+    "slug": "lactophenol-cotton-blue-lpcb-mount",
+    "short_description": "Microscopic preparation for observing fungal morphology using a validated LPCB mounting procedure.",
+    "status": "published",
+    "content": "## Purpose\n\nTo prepare an LPCB mount for microscopic assessment of fungal morphology.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nLactophenol cotton blue provides contrast and preserves fungal structures sufficiently for morphological observation in validated laboratory workflows.\n\n## Specimen / Test Material\n\nSuitable fungal culture material or approved fungal specimen material.\n\n## Equipment and Materials\n\n- LPCB mounting reagent\n- Clean slides and cover glasses\n- Appropriate fungal handling tools\n- Microscope\n\n## Procedure\n\n1. Verify isolate or specimen identification.\n2. Handle fungal material using appropriate biosafety precautions.\n3. Prepare a small representative mount using the validated technique.\n4. Apply the cover glass carefully.\n5. Examine microscopically.\n6. Record relevant morphological features using approved identification criteria.\n\n## Quality Control and Quality Assurance\n\nUse suitable control or reference material where required and monitor microscope performance.\n\n## Reporting\n\nReport morphology only to the level supported by the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Lactophenol cotton blue provides contrast and preserves fungal structures sufficiently for morphological observation in validated laboratory workflows.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Mycology"
+    ],
+    "tags": [
+      "LPCB",
+      "Lactophenol Cotton Blue",
+      "Fungal Morphology"
+    ],
+    "seo_title": "LPCB Mount SOP | LabGOTO",
+    "focus_keyword": "Lactophenol Cotton Blue Mount SOP",
+    "seo_description": "Laboratory SOP for fungal microscopic examination using lactophenol cotton blue.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can morphology alone always identify a fungus to species level?",
+        "answer": "No. Identification level depends on the validated method and may require additional tests."
+      }
+    ]
+  },
+  {
+    "name": "Fungal Culture",
+    "slug": "fungal-culture",
+    "short_description": "Standardized culture workflow for recovery and preliminary assessment of fungi from appropriate clinical specimens.",
+    "status": "published",
+    "content": "## Purpose\n\nTo standardize fungal culture and subsequent preliminary work-up.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nAppropriate culture media and incubation conditions support recovery of fungi, followed by macroscopic and microscopic assessment using validated identification methods.\n\n## Specimen / Test Material\n\nAppropriate clinical specimens collected for fungal investigation.\n\n## Equipment and Materials\n\n- Validated fungal culture media\n- Incubation system\n- Microscopy materials\n- Identification reagents or systems\n- Appropriate controls\n\n## Procedure\n\n1. Verify specimen identity and suitability.\n2. Inoculate appropriate validated fungal media.\n3. Incubate under the validated conditions for the intended organism group.\n4. Inspect cultures using the approved schedule.\n5. Assess colony morphology and perform validated microscopic examination.\n6. Identify isolates to the level supported by the laboratory method.\n\n## Quality Control and Quality Assurance\n\nMonitor media sterility, performance, incubation and contamination.\n\n## Reporting\n\nReport fungal recovery and identification according to validated criteria and clinical policy.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Appropriate culture media and incubation conditions support recovery of fungi, followed by macroscopic and microscopic assessment using validated identification methods.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Mycology"
+    ],
+    "tags": [
+      "Fungal Culture",
+      "Mycology",
+      "Fungus"
+    ],
+    "seo_title": "Fungal Culture SOP | LabGOTO",
+    "focus_keyword": "Fungal Culture SOP",
+    "seo_description": "Professional laboratory SOP for culture and validated identification of fungi.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why can fungal culture take longer than routine bacterial culture?",
+        "answer": "Growth rates vary substantially among fungal organisms and method-specific incubation requirements must be followed."
+      }
+    ]
+  },
+  {
+    "name": "Wet Mount Preparation",
+    "slug": "wet-mount-preparation",
+    "short_description": "Direct microscopy procedure for examining fresh material suspended in a suitable liquid medium.",
+    "status": "published",
+    "content": "## Purpose\n\nTo prepare a wet mount for immediate microscopic examination.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nA fresh preparation allows observation of cells, microorganisms or structures without fixation, preserving features relevant to the intended examination.\n\n## Specimen / Test Material\n\nFresh clinical material or culture material suitable for the validated examination.\n\n## Equipment and Materials\n\n- Clean slide and cover glass\n- Approved mounting liquid or physiological medium\n- Microscope\n\n## Procedure\n\n1. Verify specimen identity.\n2. Place an appropriate amount of material on a clean slide.\n3. Add the validated liquid where required.\n4. Apply a cover glass while minimizing bubbles.\n5. Examine promptly using the appropriate objectives.\n6. Record relevant observations.\n\n## Quality Control and Quality Assurance\n\nUse clean materials and examine promptly to minimize drying and artefact.\n\n## Reporting\n\nReport findings according to the intended specimen-specific examination.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "A fresh preparation allows observation of cells, microorganisms or structures without fixation, preserving features relevant to the intended examination.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Microscopy"
+    ],
+    "tags": [
+      "Wet Mount",
+      "Direct Microscopy"
+    ],
+    "seo_title": "Wet Mount Preparation SOP | LabGOTO",
+    "focus_keyword": "Wet Mount Preparation SOP",
+    "seo_description": "Laboratory SOP for preparing fresh wet mounts for microscopic examination.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why should wet mounts be examined promptly?",
+        "answer": "Drying and deterioration can alter structures and reduce reliable observation."
+      }
+    ]
+  },
+  {
+    "name": "Hanging Drop Method",
+    "slug": "hanging-drop-method",
+    "short_description": "Microscopic technique for observing true microbial motility in a suspended liquid drop.",
+    "status": "published",
+    "content": "## Purpose\n\nTo prepare and examine a hanging drop using a validated motility observation procedure.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nA suspended drop permits observation of organisms moving in liquid, helping distinguish directional true motility from passive Brownian movement.\n\n## Specimen / Test Material\n\nA suitable fresh microbial suspension prepared according to the laboratory's validated workflow.\n\n## Equipment and Materials\n\n- Depression slide\n- Cover glass\n- Suitable inoculating device\n- Microscope\n\n## Procedure\n\n1. Prepare a suitable fresh suspension.\n2. Place a small drop on the appropriate cover glass.\n3. Assemble the hanging-drop preparation using the validated technique.\n4. Examine promptly using suitable magnification.\n5. Assess movement patterns and document observations.\n\n## Quality Control and Quality Assurance\n\nUse known motile and non-motile controls where required.\n\n## Reporting\n\nReport motility according to the validated interpretation criteria.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "A suspended drop permits observation of organisms moving in liquid, helping distinguish directional true motility from passive Brownian movement.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Microscopy"
+    ],
+    "tags": [
+      "Hanging Drop",
+      "Motility",
+      "Bacteria"
+    ],
+    "seo_title": "Hanging Drop Method SOP | LabGOTO",
+    "focus_keyword": "Hanging Drop Method SOP",
+    "seo_description": "Laboratory SOP for observing microbial motility using the hanging drop technique.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "What is the main interpretation challenge?",
+        "answer": "True directional motility should be distinguished from passive Brownian movement."
+      }
+    ]
+  },
+  {
+    "name": "Motility Testing",
+    "slug": "motility-testing",
+    "short_description": "General procedure for determining microbial motility using a validated microscopic or culture-based method.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine motility using an approved laboratory method.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nMotile organisms demonstrate movement through an appropriate medium or suspension under conditions defined by the selected validated method.\n\n## Specimen / Test Material\n\nA suitable fresh pure culture or validated specimen preparation.\n\n## Equipment and Materials\n\n- Validated motility medium or microscopic preparation materials\n- Incubation system where required\n- Microscope where applicable\n- Appropriate controls\n\n## Procedure\n\n1. Verify isolate suitability.\n2. Select the laboratory-approved motility method.\n3. Prepare and inoculate or mount according to the validated procedure.\n4. Incubate or examine as required.\n5. Assess results using validated interpretation criteria.\n6. Record the result.\n\n## Quality Control and Quality Assurance\n\nUse known positive and negative controls where required.\n\n## Reporting\n\nReport motile or non-motile findings within the limitations of the validated method.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Motile organisms demonstrate movement through an appropriate medium or suspension under conditions defined by the selected validated method.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology"
+    ],
+    "tags": [
+      "Motility",
+      "Bacterial Identification"
+    ],
+    "seo_title": "Motility Testing SOP | LabGOTO",
+    "focus_keyword": "Motility Testing SOP",
+    "seo_description": "Laboratory SOP for determining microbial motility using validated methods.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Are all movement patterns evidence of true motility?",
+        "answer": "No. Interpretation must distinguish true motility from passive movement or artefact."
+      }
+    ]
+  },
+  {
+    "name": "Catalase Test",
+    "slug": "catalase-test",
+    "short_description": "Biochemical identification procedure for catalase test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform Catalase Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nCatalase decomposes hydrogen peroxide, producing visible oxygen release under the validated test conditions.\n\n## Specimen / Test Material\n\nA suitable fresh pure culture.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Use an approved reagent and validated culture material; observe the characteristic reaction according to the laboratory method.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Catalase decomposes hydrogen peroxide, producing visible oxygen release under the validated test conditions.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "Catalase",
+      "Biochemical Test",
+      "Bacterial Identification"
+    ],
+    "seo_title": "Catalase Test SOP | LabGOTO",
+    "focus_keyword": "Catalase Test SOP",
+    "seo_description": "Professional laboratory SOP for Catalase Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "Coagulase Test",
+    "slug": "coagulase-test",
+    "short_description": "Biochemical identification procedure for coagulase test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform Coagulase Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nCoagulase activity promotes clotting or detectable interaction with plasma in validated testing systems.\n\n## Specimen / Test Material\n\nA suitable pure culture.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Perform the approved slide, tube or validated method with appropriate controls and interpret only according to the validated endpoint.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Coagulase activity promotes clotting or detectable interaction with plasma in validated testing systems.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "Coagulase",
+      "Biochemical Test",
+      "Staphylococcus"
+    ],
+    "seo_title": "Coagulase Test SOP | LabGOTO",
+    "focus_keyword": "Coagulase Test SOP",
+    "seo_description": "Professional laboratory SOP for Coagulase Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "Oxidase Test",
+    "slug": "oxidase-test",
+    "short_description": "Biochemical identification procedure for oxidase test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform Oxidase Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nOrganisms possessing relevant oxidase activity produce a characteristic reaction with an approved oxidation-reduction reagent.\n\n## Specimen / Test Material\n\nA suitable fresh pure culture.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Apply the validated reagent system, observe within the method-defined interpretation window and record the reaction.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Organisms possessing relevant oxidase activity produce a characteristic reaction with an approved oxidation-reduction reagent.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "Oxidase",
+      "Biochemical Test",
+      "Bacterial Identification"
+    ],
+    "seo_title": "Oxidase Test SOP | LabGOTO",
+    "focus_keyword": "Oxidase Test SOP",
+    "seo_description": "Professional laboratory SOP for Oxidase Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "Indole Test",
+    "slug": "indole-test",
+    "short_description": "Biochemical identification procedure for indole test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform Indole Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nOrganisms with tryptophan metabolism capable of producing indole can generate a characteristic reaction with an appropriate detection reagent.\n\n## Specimen / Test Material\n\nA suitable culture prepared in the validated test system.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Perform the validated test and interpret the approved reaction endpoint.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Organisms with tryptophan metabolism capable of producing indole can generate a characteristic reaction with an appropriate detection reagent.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "Indole",
+      "Biochemical Test",
+      "Bacterial Identification"
+    ],
+    "seo_title": "Indole Test SOP | LabGOTO",
+    "focus_keyword": "Indole Test SOP",
+    "seo_description": "Professional laboratory SOP for Indole Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "Citrate Utilization Test",
+    "slug": "citrate-utilization-test",
+    "short_description": "Biochemical identification procedure for citrate utilization test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform Citrate Utilization Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nOrganisms able to utilize citrate under the validated test conditions produce characteristic growth or indicator changes.\n\n## Specimen / Test Material\n\nA suitable pure culture.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Inoculate the validated citrate medium appropriately, incubate under the approved conditions and interpret according to the method criteria.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Organisms able to utilize citrate under the validated test conditions produce characteristic growth or indicator changes.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "Citrate",
+      "Biochemical Test",
+      "Simmons Citrate"
+    ],
+    "seo_title": "Citrate Utilization Test SOP | LabGOTO",
+    "focus_keyword": "Citrate Utilization Test SOP",
+    "seo_description": "Professional laboratory SOP for Citrate Utilization Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "Urease Test",
+    "slug": "urease-test",
+    "short_description": "Biochemical identification procedure for urease test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform Urease Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nUrease-producing organisms hydrolyze urea, producing a detectable change in the validated test system.\n\n## Specimen / Test Material\n\nA suitable pure culture.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Inoculate the validated urease system, incubate according to the approved procedure and record the endpoint.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Urease-producing organisms hydrolyze urea, producing a detectable change in the validated test system.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "Urease",
+      "Biochemical Test",
+      "Bacterial Identification"
+    ],
+    "seo_title": "Urease Test SOP | LabGOTO",
+    "focus_keyword": "Urease Test SOP",
+    "seo_description": "Professional laboratory SOP for Urease Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "Triple Sugar Iron (TSI) Test",
+    "slug": "triple-sugar-iron-tsi-test",
+    "short_description": "Biochemical identification procedure for triple sugar iron (tsi) test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform Triple Sugar Iron (TSI) Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nDifferential metabolism of carbohydrates and production of gas or hydrogen sulfide can produce characteristic reactions in TSI medium.\n\n## Specimen / Test Material\n\nA suitable pure culture.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Inoculate the validated TSI medium using the approved technique, incubate and interpret slant, butt, gas and other validated reactions.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Differential metabolism of carbohydrates and production of gas or hydrogen sulfide can produce characteristic reactions in TSI medium.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "TSI",
+      "Triple Sugar Iron",
+      "Biochemical Test"
+    ],
+    "seo_title": "Triple Sugar Iron (TSI) Test SOP | LabGOTO",
+    "focus_keyword": "Triple Sugar Iron (TSI) Test SOP",
+    "seo_description": "Professional laboratory SOP for Triple Sugar Iron (TSI) Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "Methyl Red Test",
+    "slug": "methyl-red-test",
+    "short_description": "Biochemical identification procedure for methyl red test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform Methyl Red Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nPersistent acidic metabolic end products may be demonstrated by an appropriate pH indicator reaction.\n\n## Specimen / Test Material\n\nA suitable culture prepared in the validated test medium.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Perform the validated methyl red procedure and interpret the indicator response using approved criteria.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Persistent acidic metabolic end products may be demonstrated by an appropriate pH indicator reaction.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "Methyl Red",
+      "MR Test",
+      "Biochemical Test"
+    ],
+    "seo_title": "Methyl Red Test SOP | LabGOTO",
+    "focus_keyword": "Methyl Red Test SOP",
+    "seo_description": "Professional laboratory SOP for Methyl Red Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "Voges-Proskauer Test",
+    "slug": "voges-proskauer-test",
+    "short_description": "Biochemical identification procedure for voges-proskauer test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform Voges-Proskauer Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nDetection of specific neutral metabolic products is achieved through a validated reagent reaction.\n\n## Specimen / Test Material\n\nA suitable culture prepared in the validated test medium.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Add reagents according to the validated method and interpret the reaction using the approved criteria.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Detection of specific neutral metabolic products is achieved through a validated reagent reaction.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "Voges-Proskauer",
+      "VP Test",
+      "Biochemical Test"
+    ],
+    "seo_title": "Voges-Proskauer Test SOP | LabGOTO",
+    "focus_keyword": "Voges-Proskauer Test SOP",
+    "seo_description": "Professional laboratory SOP for Voges-Proskauer Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "SIM Test",
+    "slug": "sim-test",
+    "short_description": "Biochemical identification procedure for sim test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform SIM Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nA combined medium may demonstrate sulfide production, indole production and motility using validated observation and reagent steps.\n\n## Specimen / Test Material\n\nA suitable pure culture.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Inoculate the validated SIM medium, incubate according to the approved procedure and assess each parameter using the appropriate validated endpoint.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "A combined medium may demonstrate sulfide production, indole production and motility using validated observation and reagent steps.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "SIM",
+      "Sulfide",
+      "Indole",
+      "Motility"
+    ],
+    "seo_title": "SIM Test SOP | LabGOTO",
+    "focus_keyword": "SIM Test SOP",
+    "seo_description": "Professional laboratory SOP for SIM Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "Bile Esculin Test",
+    "slug": "bile-esculin-test",
+    "short_description": "Biochemical identification procedure for bile esculin test using a validated test system.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform Bile Esculin Test as part of a validated microbial identification workflow.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nOrganisms capable of hydrolyzing esculin under bile-containing conditions produce a characteristic reaction in the validated medium.\n\n## Specimen / Test Material\n\nA suitable pure culture.\n\n## Equipment and Materials\n\n- Validated biochemical test medium or reagent\n- Suitable pure culture\n- Incubation equipment where required\n- Positive and negative controls where applicable\n\n## Procedure\n\n1. Verify isolate purity and identity.\n2. Confirm reagent or medium acceptability.\n3. Inoculate the validated bile esculin system, incubate according to the method and record the approved reaction.\n4. Compare findings with the laboratory-approved interpretation criteria.\n5. Record the result as part of the overall identification profile.\n\n## Quality Control and Quality Assurance\n\n- Use appropriate control organisms or materials where required.\n- Verify media and reagent performance.\n- Do not identify an organism using a single biochemical reaction unless the validated workflow specifically permits it.\n\n## Reporting\n\nReport the biochemical reaction using approved terminology and integrate it with the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "Organisms capable of hydrolyzing esculin under bile-containing conditions produce a characteristic reaction in the validated medium.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Biochemical Testing"
+    ],
+    "tags": [
+      "Bile Esculin",
+      "Biochemical Test",
+      "Enterococcus"
+    ],
+    "seo_title": "Bile Esculin Test SOP | LabGOTO",
+    "focus_keyword": "Bile Esculin Test SOP",
+    "seo_description": "Professional laboratory SOP for Bile Esculin Test in bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can one biochemical test identify an organism conclusively?",
+        "answer": "Usually no. Results should be interpreted within a validated identification algorithm."
+      },
+      {
+        "question": "Why are controls useful?",
+        "answer": "They help verify that the reagent or medium is performing as expected."
+      }
+    ]
+  },
+  {
+    "name": "Novobiocin Susceptibility Test",
+    "slug": "novobiocin-susceptibility-test",
+    "short_description": "Phenotypic susceptibility screening test using novobiocin under standardized conditions as part of a validated identification workflow.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform novobiocin susceptibility testing as an adjunct identification procedure.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nA standardized antimicrobial disk or validated system is used to assess the characteristic phenotypic response of selected organisms.\n\n## Specimen / Test Material\n\nA suitable pure isolate for which the test is validated.\n\n## Equipment and Materials\n\n- Validated susceptibility medium\n- Novobiocin test disk or approved system\n- Standardized inoculum materials\n- Incubation system\n- Appropriate controls\n\n## Procedure\n\n1. Verify isolate purity and test indication.\n2. Prepare the inoculum according to the validated method.\n3. Inoculate the approved medium.\n4. Apply the validated novobiocin disk or system.\n5. Incubate under approved conditions.\n6. Measure or assess the reaction according to validated criteria.\n7. Integrate the result with the identification algorithm.\n\n## Quality Control and Quality Assurance\n\nUse appropriate QC organisms and verify media and disk performance.\n\n## Reporting\n\nReport the phenotypic reaction according to the validated identification workflow.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "A standardized antimicrobial disk or validated system is used to assess the characteristic phenotypic response of selected organisms.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Identification"
+    ],
+    "tags": [
+      "Novobiocin",
+      "Susceptibility",
+      "Staphylococci"
+    ],
+    "seo_title": "Novobiocin Susceptibility Test SOP | LabGOTO",
+    "focus_keyword": "Novobiocin Susceptibility Test SOP",
+    "seo_description": "Laboratory SOP for novobiocin susceptibility testing as a bacterial identification aid.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Is novobiocin testing a complete identification method?",
+        "answer": "No. It is an adjunct phenotypic test and should be interpreted with other validated identification findings."
+      }
+    ]
+  },
+  {
+    "name": "Optochin Susceptibility Test",
+    "slug": "optochin-susceptibility-test",
+    "short_description": "Phenotypic susceptibility screening test using optochin under standardized conditions as part of a validated identification workflow.",
+    "status": "published",
+    "content": "## Purpose\n\nTo perform optochin susceptibility testing as an adjunct identification procedure.\n\n## Scope\n\nThis procedure applies to trained microbiology laboratory personnel working within an approved quality-management and biosafety system.\n\n## Principle\n\nA standardized optochin disk or validated system produces a characteristic growth response in selected organisms under controlled test conditions.\n\n## Specimen / Test Material\n\nA suitable pure isolate for which the method is validated.\n\n## Equipment and Materials\n\n- Validated culture medium\n- Optochin test disk or approved system\n- Standardized inoculum materials\n- Incubation system\n- Appropriate controls\n\n## Procedure\n\n1. Verify isolate purity and test indication.\n2. Prepare and inoculate the approved medium.\n3. Apply the validated optochin disk or system.\n4. Incubate under approved conditions.\n5. Measure or assess the reaction using validated criteria.\n6. Integrate the result with other identification findings.\n\n## Quality Control and Quality Assurance\n\nUse appropriate QC organisms and monitor media and disk performance.\n\n## Reporting\n\nReport the result according to the validated identification algorithm.\n\n## Safety\n\nUse risk-based biosafety practices, appropriate personal protective equipment and approved decontamination and waste-disposal procedures. Treat clinical specimens and cultures according to the laboratory's biological risk assessment.\n\n## References\n\n- World Health Organization (WHO): *Toolkit for Standard Operating Procedures for Bacteriology, Mycology and Antimicrobial Susceptibility Testing*.\n- WHO: *Laboratory Biosafety Manual, 4th edition*.\n- WHO guidance on collection, packaging and transport of infectious substances.\n- EUCAST methodology and quality-control guidance for antimicrobial susceptibility testing, where applicable.\n- Current locally approved laboratory procedures and validated manufacturer instructions.",
+    "principle": "A standardized optochin disk or validated system produces a characteristic growth response in selected organisms under controlled test conditions.",
+    "department": "Microbiology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Microbiology",
+      "Bacteriology",
+      "Identification"
+    ],
+    "tags": [
+      "Optochin",
+      "Susceptibility",
+      "Streptococcus"
+    ],
+    "seo_title": "Optochin Susceptibility Test SOP | LabGOTO",
+    "focus_keyword": "Optochin Susceptibility Test SOP",
+    "seo_description": "Laboratory SOP for optochin susceptibility testing as an aid to bacterial identification.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can optochin testing be used alone for definitive identification?",
+        "answer": "No. The result should be interpreted together with the laboratory's validated identification workflow."
+      }
+    ]
+  }
+]
