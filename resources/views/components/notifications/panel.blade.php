@@ -14,16 +14,25 @@
     open: false,
     unreadCount: {{ $unreadCount }},
     init() {
-        window.addEventListener('labgato-open-panel', e => {
+        this.onOpenPanel = e => {
             if (e.detail !== 'panel') this.open = false;
-        });
-        window.addEventListener('labgoto:notification-updated', e => {
+        };
+        this.onNotificationUpdated = e => {
             if (e.detail && typeof e.detail.unread_count === 'number') this.unreadCount = e.detail.unread_count;
-        });
+        };
+        window.addEventListener('labgato-open-panel', this.onOpenPanel);
+        window.addEventListener('labgoto:notification-updated', this.onNotificationUpdated);
         @if($isAdmin)
             this.pollUnread();
             this.pollInterval = setInterval(() => this.pollUnread(), 25000);
         @endif
+    },
+    destroy() {
+        window.removeEventListener('labgato-open-panel', this.onOpenPanel);
+        window.removeEventListener('labgoto:notification-updated', this.onNotificationUpdated);
+        if (this.pollInterval) {
+            clearInterval(this.pollInterval);
+        }
     },
     pollUnread() {
         let self = this;

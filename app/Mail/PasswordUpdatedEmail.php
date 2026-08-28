@@ -23,8 +23,8 @@ class PasswordUpdatedEmail extends Mailable
     {
         return new Envelope(
             subject: $this->created
-                ? 'Your LabGato password was created'
-                : 'Your LabGato password was changed',
+                ? 'Your Labgoto password was created'
+                : 'Your Labgoto password was changed',
         );
     }
 

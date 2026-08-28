@@ -67,7 +67,7 @@ class UserManagementTest extends TestCase
 
         $this->assertDatabaseMissing('users', ['email' => 'testadmin@example.com']);
 
-        Mail::assertSent(AdminInvitationEmail::class);
+        Mail::assertQueued(AdminInvitationEmail::class);
     }
 
     public function test_admin_can_view_member_user_edit_page(): void

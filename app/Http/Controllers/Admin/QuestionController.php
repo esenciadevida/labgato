@@ -70,9 +70,20 @@ class QuestionController extends Controller
      */
     private function batchProgress(): array
     {
+        $files = glob(database_path('data/questions/*.json')) ?: [];
+
+        if ($files === []) {
+            return [];
+        }
+
+        $activeStems = Question::query()
+            ->where('status', 'active')
+            ->pluck('stem')
+            ->flip();
+
         $progress = [];
 
-        foreach (glob(database_path('data/questions/*.json')) ?: [] as $file) {
+        foreach ($files as $file) {
             $items = json_decode((string) file_get_contents($file), true) ?: [];
             $stems = array_values(array_filter(array_column($items, 'stem')));
 
@@ -80,7 +91,7 @@ class QuestionController extends Controller
                 continue;
             }
 
-            $activated = Question::where('status', 'active')->whereIn('stem', $stems)->count();
+            $activated = collect($stems)->filter(fn ($stem) => isset($activeStems[$stem]))->count();
 
             if ($activated >= count($stems)) {
                 continue;
@@ -264,31 +275,33 @@ class QuestionController extends Controller
         $affected = 0;
         $blocked = 0;
 
-        $questions = Question::whereIn('id', $validated['ids'])->get();
+        Question::whereIn('id', $validated['ids'])
+            ->orderBy('id')
+            ->chunkById(100, function ($questions) use ($action, &$affected, &$blocked) {
+                foreach ($questions as $question) {
+                    if ($action === 'archive') {
+                        $question->update(['status' => 'archived']);
+                        $affected++;
+                    } elseif ($action === 'activate') {
+                        $question->update(['status' => 'active']);
+                        $affected++;
+                    } else {
+                        if ($question->usedInExams()) {
+                            $blocked++;
 
-        foreach ($questions as $question) {
-            if ($action === 'archive') {
-                $question->update(['status' => 'archived']);
-                $affected++;
-            } elseif ($action === 'activate') {
-                $question->update(['status' => 'active']);
-                $affected++;
-            } else {
-                if ($question->usedInExams()) {
-                    $blocked++;
+                            continue;
+                        }
 
-                    continue;
+                        if ($question->image_path !== null) {
+                            Storage::disk('public')->delete($question->image_path);
+                        }
+
+                        $question->options()->delete();
+                        $question->delete();
+                        $affected++;
+                    }
                 }
-
-                if ($question->image_path !== null) {
-                    Storage::disk('public')->delete($question->image_path);
-                }
-
-                $question->options()->delete();
-                $question->delete();
-                $affected++;
-            }
-        }
+            });
 
         $messages = [
             'archive' => "{$affected} question(s) archived.",

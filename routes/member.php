@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', [MemberRegisterController::class, 'showRegistrationForm'])->name('register');
-    Route::post('/register', [MemberRegisterController::class, 'register'])->middleware('honeypot')->name('register.submit');
+    Route::post('/register', [MemberRegisterController::class, 'register'])->middleware(['honeypot', 'throttle:register'])->name('register.submit');
     Route::get('/login', [MemberLoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [MemberLoginController::class, 'login'])->middleware('honeypot')->name('login.submit');
     Route::get('/auth/google', [SocialAuthController::class, 'redirectToGoogle'])->name('auth.google');
@@ -33,9 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/notifications/read-all', [NotificationController::class, 'markAllAsRead'])->name('notifications.read-all');
 
     Route::get('/recently-viewed', [RecentlyViewedController::class, 'index'])->name('recently-viewed.index');
-    Route::post('/recently-viewed', [RecentlyViewedController::class, 'store'])->name('recently-viewed.store');
+    Route::post('/recently-viewed', [RecentlyViewedController::class, 'store'])->middleware('throttle:60,1')->name('recently-viewed.store');
     Route::delete('/recently-viewed/{id}', [RecentlyViewedController::class, 'destroy'])->name('recently-viewed.destroy');
-    Route::post('/recently-viewed/clear', [RecentlyViewedController::class, 'clear'])->name('recently-viewed.clear');
+    Route::post('/recently-viewed/clear', [RecentlyViewedController::class, 'clear'])->middleware('throttle:10,1')->name('recently-viewed.clear');
 });
 
 Route::prefix('account')->name('account.')->middleware(['member', 'active.user'])->group(function () {
@@ -43,13 +43,16 @@ Route::prefix('account')->name('account.')->middleware(['member', 'active.user']
     Route::get('/profile', [MemberController::class, 'profile'])->name('profile');
     Route::put('/profile', [MemberController::class, 'updateProfile'])->name('profile.update');
     Route::put('/password', [MemberController::class, 'updatePassword'])->name('password.update');
+    Route::get('/password/create/{token}', [MemberController::class, 'createPasswordConfirm'])
+        ->middleware('signed')
+        ->name('password.create-confirm');
 
     Route::prefix('onboarding')->name('onboarding.')->middleware('throttle:30,1')->group(function () {
         Route::post('/welcome', [OnboardingController::class, 'welcome'])->name('welcome');
         Route::post('/tour/{key}', [OnboardingController::class, 'completeTour'])->name('tour.complete');
     });
 
-    Route::prefix('contributions')->name('contributions.')->group(function () {
+    Route::prefix('contributions')->name('contributions.')->middleware('throttle:contributions')->group(function () {
         Route::get('/', [ContributionController::class, 'index'])->name('index');
         Route::get('/create', [ContributionController::class, 'create'])->name('create');
         Route::post('/{type}', [ContributionController::class, 'store'])->name('store');

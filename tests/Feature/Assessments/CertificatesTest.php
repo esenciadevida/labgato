@@ -278,6 +278,54 @@ class CertificatesTest extends TestCase
         $this->assertSame('Confirmed breach', $certificate->revoke_reason);
     }
 
+    public function test_pdf_uses_assessment_certificate_overrides(): void
+    {
+        $assessment = $this->makeAssessment([
+            'cert_signatory_name' => 'Dr. Custom Signatory',
+            'cert_signatory_title' => 'Course Lead, LabGOTO',
+            'cert_body_text' => 'for completing the {assessment} beta trial',
+            'cert_disclaimer_text' => 'Custom disclaimer for the beta trial.',
+            'cert_primary_color' => '#ff0000',
+            'cert_secondary_color' => '#00ff00',
+            'cert_show_logo' => false,
+            'cert_show_qr' => false,
+        ]);
+        $user = User::factory()->member()->create();
+        $attempt = $this->makeAttempt($user, $assessment, 85, 85);
+
+        $certificate = $this->service->issue($attempt);
+        $data = $this->service->viewData($certificate);
+
+        $this->assertSame('Dr. Custom Signatory', $data['signatoryName']);
+        $this->assertSame('Course Lead, LabGOTO', $data['signatoryTitle']);
+        $this->assertSame('#ff0000', $data['primaryColor']);
+        $this->assertSame('#00ff00', $data['secondaryColor']);
+        $this->assertFalse($data['showLogo']);
+        $this->assertFalse($data['showQr']);
+        $this->assertSame('for completing the Certificate Challenge beta trial', $data['completionText']);
+        $this->assertStringContainsString('Custom disclaimer for the beta trial.', $data['disclaimerText']);
+    }
+
+    public function test_pdf_falls_back_to_global_template_settings(): void
+    {
+        $assessment = $this->makeAssessment();
+        $user = User::factory()->member()->create();
+        $attempt = $this->makeAttempt($user, $assessment, 85, 85);
+
+        $certificate = $this->service->issue($attempt);
+        $data = $this->service->viewData($certificate);
+
+        $this->assertSame('Program Director', $data['signatoryName']);
+        $this->assertSame('#1e3a8a', $data['primaryColor']);
+        $this->assertSame('#d4af37', $data['secondaryColor']);
+        $this->assertTrue($data['showLogo']);
+        $this->assertTrue($data['showQr']);
+        $this->assertSame(
+            'for successfully completing the <strong>Certificate Challenge</strong>',
+            $data['completionText']
+        );
+    }
+
     public function test_my_certificates_lists_own_certificates_only(): void
     {
         $assessment = $this->makeAssessment(['slug' => 'mine-only']);

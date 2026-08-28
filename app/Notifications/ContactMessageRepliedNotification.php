@@ -40,7 +40,7 @@ class ContactMessageRepliedNotification extends Notification
         return [
             'type' => 'contact_reply',
             'contact_message_id' => $this->contactMessage->id,
-            'message' => 'LabGato replied to your message regarding "'.$this->contactMessage->subject.'".',
+            'message' => 'Labgoto replied to your message regarding "'.$this->contactMessage->subject.'".',
             'action_text' => 'View messages',
             'action_url' => url('/account/messages'),
         ];

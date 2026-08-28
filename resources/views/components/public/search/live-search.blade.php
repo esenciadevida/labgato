@@ -117,7 +117,7 @@
                                 class="ml-2 flex-shrink-0 inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium text-slate-700 dark:text-slate-200"
                                 :class="{
                                     'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300': result.type === 'calculator',
-                                    'bg-success-100 text-success-700 dark:bg-success-900/40 dark:text-success-300': result.type === 'reference_range',
+                                    'bg-success-100 text-success-700 dark:bg-success-900/40 dark:text-success-300': result.type === 'reference-range',
                                     'bg-info-100 text-info-700 dark:bg-info-900/40 dark:text-info-300': result.type === 'interpretation',
                                     'bg-warning-100 text-warning-700 dark:bg-warning-900/40 dark:text-warning-300': result.type === 'knowledge',
                                     'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-200': result.type === 'tool',

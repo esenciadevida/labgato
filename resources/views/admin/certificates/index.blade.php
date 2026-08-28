@@ -130,7 +130,7 @@
                                 <a href="{{ route('admin.certificates.show', $certificate) }}" class="font-mono text-xs font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400">{{ $certificate->certificate_number }}</a>
                             </td>
                             <td class="whitespace-nowrap px-4 py-3 text-sm text-slate-700 dark:text-slate-200">{{ $certificate->user?->name }}</td>
-                            <td class="px-4 py-3 text-sm text-slate-700 dark:text-slate-200">{{ $certificate->assessment?->title }}</td>
+                            <td class="px-4 py-3 text-sm text-slate-700 dark:text-slate-200">{{ $certificate->course?->title ?? $certificate->assessment?->title }}</td>
                             <td class="whitespace-nowrap px-4 py-3">
                                 <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium {{ $tierBadges[$certificate->type] }}">{{ $tierLabels[$certificate->type] }}</span>
                             </td>

@@ -9,7 +9,7 @@
             <div>
                 <h1 class="font-display text-2xl font-bold text-slate-900 dark:text-slate-100">My Messages</h1>
                 <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                    Messages you've sent to LabGato, with replies from our team.
+                    Messages you've sent to Labgoto, with replies from our team.
                 </p>
             </div>
             <x-ui.button href="{{ route('contact.create') }}" size="sm">New Message</x-ui.button>
@@ -72,7 +72,7 @@
                                         @foreach($message->replies as $reply)
                                             <div class="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-800">
                                                 <p class="text-xs font-medium text-slate-500 dark:text-slate-400">
-                                                    LabGato &middot; {{ $reply->created_at?->format('M j, Y g:i A') ?? '—' }}
+                                                    Labgoto &middot; {{ $reply->created_at?->format('M j, Y g:i A') ?? '—' }}
                                                 </p>
                                                 <p class="mt-2 whitespace-pre-line text-sm text-slate-700 dark:text-slate-300">{{ $reply->reply }}</p>
                                             </div>

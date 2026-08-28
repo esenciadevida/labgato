@@ -27,7 +27,7 @@ class PopupManagementTest extends TestCase
     private function payload(array $overrides = []): array
     {
         return array_merge([
-            'title' => 'Welcome to LabGato',
+            'title' => 'Welcome to Labgoto',
             'content' => 'Explore the free laboratory toolkit and reference ranges.',
             'cta_text' => 'Get started',
             'cta_url' => 'https://example.com/start',
@@ -72,7 +72,7 @@ class PopupManagementTest extends TestCase
         $response->assertSessionHas('success');
 
         $this->assertDatabaseHas('popups', [
-            'title' => 'Welcome to LabGato',
+            'title' => 'Welcome to Labgoto',
             'trigger_type' => 'on_load',
             'is_active' => true,
             'is_dismissible' => true,

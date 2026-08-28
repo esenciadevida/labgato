@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class Setting extends Model
 {
@@ -28,5 +29,11 @@ class Setting extends Model
     public static function setValue(string $key, mixed $value): void
     {
         static::updateOrCreate(['key' => $key], ['value' => $value]);
+        static::flushCache();
+    }
+
+    public static function flushCache(): void
+    {
+        Cache::forget('settings.all');
     }
 }

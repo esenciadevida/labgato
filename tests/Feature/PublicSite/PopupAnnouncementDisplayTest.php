@@ -17,14 +17,14 @@ class PopupAnnouncementDisplayTest extends TestCase
         Popup::factory()->create([
             'is_active' => true,
             'title' => 'Welcome Popup',
-            'content' => 'Welcome to LabGato.',
+            'content' => 'Welcome to Labgoto.',
         ]);
 
         $response = $this->get(route('home'));
 
         $response->assertOk();
         $response->assertSee('Welcome Popup');
-        $response->assertSee('Welcome to LabGato.');
+        $response->assertSee('Welcome to Labgoto.');
     }
 
     public function test_active_announcement_renders_on_public_pages(): void

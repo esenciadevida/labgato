@@ -79,7 +79,7 @@ class AdminInvitationController extends Controller
         $roleName = $invitation->role?->name ?? 'Administrator';
 
         try {
-            Mail::to($administrator->email)->send(new AdminWelcomeEmail(
+            Mail::to($administrator->email)->queue(new AdminWelcomeEmail(
                 $administrator,
                 $roleName,
                 route('auth.login'),

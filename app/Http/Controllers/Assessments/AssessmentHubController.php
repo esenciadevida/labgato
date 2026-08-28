@@ -48,6 +48,12 @@ class AssessmentHubController extends Controller
         return view('assessments.index', [
             'assessments' => $assessments,
             'states' => $states,
+            'courses' => \App\Models\Course::query()
+                ->published()
+                ->withCount('assessments as assessments_count')
+                ->orderBy('sort_order')
+                ->orderBy('title')
+                ->get(),
         ]);
     }
 

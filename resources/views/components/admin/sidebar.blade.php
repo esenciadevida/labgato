@@ -8,9 +8,13 @@
     x-data="{
         contactUnread: {{ $newContactMessages }},
         init() {
-            window.addEventListener('labgoto:contact-unread', e => {
+            this.onContactUnread = e => {
                 if (e.detail && typeof e.detail.count === 'number') this.contactUnread = e.detail.count;
-            });
+            };
+            window.addEventListener('labgoto:contact-unread', this.onContactUnread);
+        },
+        destroy() {
+            window.removeEventListener('labgoto:contact-unread', this.onContactUnread);
         },
     }"
     :class="{
@@ -83,11 +87,21 @@
                     <x-admin.navigation-item
                         label="Assessments"
                         href="{{ route('admin.assessments.index') }}"
-                        :active="str_starts_with($currentRoute, 'admin.assessments')"
+                        :active="str_starts_with($currentRoute, 'admin.assessments') && ! str_starts_with($currentRoute, 'admin.courses')"
                         permission="assessments.manage"
                     >
                         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                        </svg>
+                    </x-admin.navigation-item>
+                    <x-admin.navigation-item
+                        label="Courses"
+                        href="{{ route('admin.courses.index') }}"
+                        :active="str_starts_with($currentRoute, 'admin.courses')"
+                        permission="assessments.manage"
+                    >
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
                         </svg>
                     </x-admin.navigation-item>
                     <x-admin.navigation-item

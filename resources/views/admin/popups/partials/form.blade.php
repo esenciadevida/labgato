@@ -26,7 +26,7 @@
                     id="title"
                     name="title"
                     value="{{ $oldValue('title') }}"
-                    placeholder="Welcome to LabGato"
+                    placeholder="Welcome to Labgoto"
                     :error="$errors->first('title')"
                     aria-required="true"
                 />

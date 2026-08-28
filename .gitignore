@@ -47,6 +47,7 @@ Thumbs.db
 /.cursor/
 /.nova
 /.zed
+/storage/phpstan/
 /.phpactor.json
 /_ide_helper.php
 /storage/pail

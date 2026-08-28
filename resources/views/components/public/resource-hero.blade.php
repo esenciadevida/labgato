@@ -16,13 +16,14 @@
 <section class="relative bg-primary-950 text-white">
     @if($coverImage)
         <div class="absolute inset-0 h-[360px] sm:h-[400px] lg:h-[440px] overflow-hidden">
-            <img
-                src="{{ $coverImage }}"
+            <x-public.img
+                :src="$coverImage"
                 alt=""
+                :eager="true"
+                :priority="true"
+                sizes="100vw"
                 class="h-full w-full object-cover"
-                loading="eager"
-                fetchpriority="high"
-            >
+            />
             <div class="absolute inset-0 bg-linear-to-t from-primary-950 via-primary-950/60 to-primary-950/20"></div>
             <div class="absolute inset-0 bg-linear-to-r from-primary-950/40 to-transparent"></div>
         </div>
@@ -81,7 +82,7 @@
 
             @foreach($categories as $category)
                 <a
-                    href="{{ $resourceType ? route("public.{$resourceType}.index", ['category' => $category->slug]) : '#' }}"
+                    href="{{ $resourceType ? route("public.{$resourceType}.index", ['categories' => [(int) $category->id]]) : '#' }}"
                     class="inline-flex items-center rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium border border-white/20 hover:bg-white/20 transition-colors"
                 >
                     {{ str_replace('-', ' ', $category->name) }}
@@ -89,12 +90,9 @@
             @endforeach
 
             @foreach($tags as $tag)
-                <a
-                    href="{{ $resourceType ? route("public.{$resourceType}.index", ['tag' => $tag->slug]) : '#' }}"
-                    class="inline-flex items-center rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium border border-white/20 hover:bg-white/20 transition-colors"
-                >
+                <span class="inline-flex items-center rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium border border-white/20">
                     #{{ $tag->name }}
-                </a>
+                </span>
             @endforeach
 
             @if(!empty($slot))

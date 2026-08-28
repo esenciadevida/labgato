@@ -136,6 +136,11 @@ document.addEventListener('alpine:init', () => {
                 this.open = true;
             }
         },
+        destroy() {
+            if (this.delayTimer) {
+                clearTimeout(this.delayTimer);
+            }
+        },
         dismiss() {
             this.open = false;
             localStorage.setItem(this.storageKey, '1');
@@ -178,27 +183,44 @@ document.addEventListener('alpine:init', () => {
     window.Alpine.data('readingProgress', () => ({
         percent: 0,
         init() {
+            if (!document.getElementById('article-content')) {
+                return;
+            }
+
+            this._onScroll = () => this.updateProgress();
+            window.addEventListener('scroll', this._onScroll, { passive: true });
+            this.updateProgress();
+        },
+        updateProgress() {
             const main = document.getElementById('article-content');
-            if (!main) return;
+            if (!main) {
+                return;
+            }
 
-            const update = () => {
-                const rect = main.getBoundingClientRect();
-                const total = main.offsetHeight - window.innerHeight;
-                if (total <= 0) { this.percent = 0; return; }
-                this.percent = Math.min(100, Math.max(0, (-rect.top / total) * 100));
-            };
-
-            window.addEventListener('scroll', update, { passive: true });
-            update();
+            const rect = main.getBoundingClientRect();
+            const total = main.offsetHeight - window.innerHeight;
+            if (total <= 0) { this.percent = 0; return; }
+            this.percent = Math.min(100, Math.max(0, (-rect.top / total) * 100));
+        },
+        destroy() {
+            if (this._onScroll) {
+                window.removeEventListener('scroll', this._onScroll);
+            }
         },
     }));
 
     window.Alpine.data('backToTop', () => ({
         visible: false,
         init() {
-            window.addEventListener('scroll', () => {
+            this._onScroll = () => {
                 this.visible = window.scrollY > 400;
-            }, { passive: true });
+            };
+            window.addEventListener('scroll', this._onScroll, { passive: true });
+        },
+        destroy() {
+            if (this._onScroll) {
+                window.removeEventListener('scroll', this._onScroll);
+            }
         },
         scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });

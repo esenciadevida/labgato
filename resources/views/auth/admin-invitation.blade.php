@@ -6,7 +6,7 @@
 <div class="bg-white rounded-2xl border border-slate-200 shadow-panel p-8 sm:p-10 dark:border-slate-700 dark:bg-slate-900">
     <h1 class="font-display text-2xl font-bold text-slate-900 dark:text-slate-100 text-center">Set up your account</h1>
     <p class="mt-2 text-sm text-slate-500 dark:text-slate-400 text-center">
-        You've been invited to join the LabGato admin team as a
+        You've been invited to join the Labgoto admin team as a
         <span class="font-medium text-primary-700 dark:text-primary-400">{{ $invitation->role?->name }}</span>.
     </p>
 

@@ -18,6 +18,9 @@ class ContentImageService
 
     private const SQUARE_SIZE = 512;
 
+    /** Responsive width variants written next to each content image. */
+    final public const VARIANTS = [320, 640, 960, 1280, 1600];
+
     private const ALLOWED_MIMES = [
         'image/jpeg',
         'image/png',
@@ -31,9 +34,9 @@ class ContentImageService
 
     /**
      * Validate, downscale, optionally square-crop, and re-encode an uploaded
-     * image as WebP.
+     * image as WebP, plus responsive width variants for content images.
      *
-     * @return array{path: string, size_bytes: int, width: int|null, height: int|null}
+     * @return array{path: string, size_bytes: int, width: int|null, height: int|null, variants: array<int, int>}
      */
     public function process(UploadedFile $file, string $folder = 'content', bool $square = false): array
     {
@@ -56,7 +59,10 @@ class ContentImageService
         $source = @imagecreatefromstring($binary);
 
         if ($source === false) {
-            return $this->storeOriginal($binary, $detectedMime, $folder);
+            $result = $this->storeOriginal($binary, $detectedMime, $folder);
+            $result['variants'] = [];
+
+            return $result;
         }
 
         $image = $this->orientFromExif($source, $detectedMime, $realPath);
@@ -76,32 +82,166 @@ class ContentImageService
         $encoded = (string) ob_get_clean();
 
         [$width, $height] = [imagesx($image), imagesy($image)];
-        imagedestroy($image);
 
         if ($encoded === '') {
+            imagedestroy($image);
+
             throw ValidationException::withMessages([
                 'image' => 'The image could not be processed. Please try a different file.',
             ]);
         }
 
         $directory = trim($folder, '/').'/'.now()->format('Y/m');
-        $path = $directory.'/'.Str::random(32).'.webp';
+        $name = Str::random(32);
+        $path = $directory.'/'.$name.'.webp';
 
         Storage::disk('public')->put($path, $encoded);
+
+        $variants = $square ? [] : $this->writeVariants($image, $directory, $name, $width);
+
+        imagedestroy($image);
 
         return [
             'path' => $path,
             'size_bytes' => strlen($encoded),
             'width' => $width,
             'height' => $height,
+            'variants' => $variants,
         ];
     }
 
     public function delete(?string $path): void
     {
-        if ($path !== null && $path !== '' && Storage::disk('public')->exists($path)) {
-            Storage::disk('public')->delete($path);
+        if ($path === null || $path === '') {
+            return;
         }
+
+        $this->deleteWithVariants($path);
+    }
+
+    /**
+     * Delete a base image together with any responsive variants that share
+     * its file name.
+     */
+    public function deleteWithVariants(string $path): void
+    {
+        $disk = Storage::disk('public');
+
+        $disk->delete($path);
+
+        if (strtolower(pathinfo($path, PATHINFO_EXTENSION)) !== 'webp') {
+            return;
+        }
+
+        $stem = pathinfo($path, PATHINFO_DIRNAME).'/'.pathinfo($path, PATHINFO_FILENAME);
+
+        foreach (self::VARIANTS as $width) {
+            $disk->delete("{$stem}-{$width}w.webp");
+        }
+    }
+
+    /**
+     * Generate the responsive width variants for an already-stored WebP image
+     * (used to backfill images uploaded before variants existed).
+     *
+     * @return array<int, int> widths written
+     */
+    public function generateVariantsForPath(string $path, bool $force = false): array
+    {
+        $disk = Storage::disk('public');
+
+        if (strtolower(pathinfo($path, PATHINFO_EXTENSION)) !== 'webp' || ! $disk->exists($path)) {
+            return [];
+        }
+
+        $binary = $disk->get($path);
+        if ($binary === null) {
+            return [];
+        }
+
+        $image = @imagecreatefromstring($binary);
+        if ($image === false) {
+            return [];
+        }
+
+        $width = imagesx($image);
+        $directory = pathinfo($path, PATHINFO_DIRNAME);
+        $name = pathinfo($path, PATHINFO_FILENAME);
+
+        if (! $force) {
+            foreach (self::VARIANTS as $variantWidth) {
+                if ($variantWidth < $width && $disk->exists("{$directory}/{$name}-{$variantWidth}w.webp")) {
+                    imagedestroy($image);
+
+                    return [];
+                }
+            }
+        }
+
+        $written = $this->writeVariants($image, $directory, $name, $width);
+
+        imagedestroy($image);
+
+        return $written;
+    }
+
+    /**
+     * Encode responsive WebP variants of a decoded image at the configured
+     * widths, skipping any that would upscale.
+     *
+     * @return array<int, int> widths written
+     */
+    private function writeVariants(\GdImage $image, string $directory, string $name, int $sourceWidth): array
+    {
+        $disk = Storage::disk('public');
+        $written = [];
+
+        foreach (self::VARIANTS as $width) {
+            if ($width >= $sourceWidth) {
+                continue;
+            }
+
+            $variant = $this->resize($image, $width);
+
+            ob_start();
+            imagewebp($variant, null, self::WEBP_QUALITY);
+            $encoded = (string) ob_get_clean();
+            imagedestroy($variant);
+
+            if ($encoded === '') {
+                continue;
+            }
+
+            $disk->put("{$directory}/{$name}-{$width}w.webp", $encoded);
+            $written[] = $width;
+        }
+
+        return $written;
+    }
+
+    private function resize(\GdImage $source, int $targetWidth): \GdImage
+    {
+        $sourceWidth = imagesx($source);
+        $sourceHeight = imagesy($source);
+        $targetHeight = max(1, (int) round($sourceHeight * ($targetWidth / $sourceWidth)));
+
+        $target = imagecreatetruecolor($targetWidth, $targetHeight);
+        imagealphablending($target, false);
+        imagesavealpha($target, true);
+        imagecopyresampled(
+            $target,
+            $source,
+            0,
+            0,
+            0,
+            0,
+            $targetWidth,
+            $targetHeight,
+            $sourceWidth,
+            $sourceHeight,
+        );
+
+        return $target;
     }
 
     /**
@@ -190,27 +330,7 @@ class ContentImageService
 
     private function scaleDown(\GdImage $source): \GdImage
     {
-        $sourceWidth = imagesx($source);
-        $sourceHeight = imagesy($source);
-        $targetHeight = max(1, (int) round($sourceHeight * (self::MAX_WIDTH / $sourceWidth)));
-
-        $target = imagecreatetruecolor(self::MAX_WIDTH, $targetHeight);
-        imagealphablending($target, false);
-        imagesavealpha($target, true);
-        imagecopyresampled(
-            $target,
-            $source,
-            0,
-            0,
-            0,
-            0,
-            self::MAX_WIDTH,
-            $targetHeight,
-            $sourceWidth,
-            $sourceHeight,
-        );
-
-        return $target;
+        return $this->resize($source, self::MAX_WIDTH);
     }
 
     /**

@@ -24,7 +24,7 @@ class MemberRegisteredNotification extends Notification
     public function toArray($notifiable): array
     {
         return [
-            'message' => 'Welcome to LabGato! Your member account is ready.',
+            'message' => 'Welcome to Labgoto! Your member account is ready.',
             'action_text' => 'Go to dashboard',
             'action_url' => url('/account/dashboard'),
         ];

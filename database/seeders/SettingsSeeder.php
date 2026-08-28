@@ -116,7 +116,7 @@ class SettingsSeeder extends Seeder
             // SEO
             [
                 'key' => 'seo.default_title',
-                'value' => 'LabGato — Professional Laboratory Toolkit',
+                'value' => 'Labgoto — Professional Laboratory Toolkit',
                 'type' => 'string',
                 'group' => 'seo',
                 'label' => 'Default SEO Title',

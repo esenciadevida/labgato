@@ -8,6 +8,7 @@ use App\Http\Controllers\LaunchController;
 use App\Http\Controllers\Member\MessageController;
 use App\Http\Controllers\Assessments\AssessmentHubController;
 use App\Http\Controllers\Assessments\CertificateController;
+use App\Http\Controllers\Assessments\CourseController;
 use App\Http\Controllers\Assessments\ExamController;
 use App\Http\Controllers\Assessments\IntegrityEventController;
 use App\Http\Controllers\Assessments\ResultController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\PublicSite\LeaderboardController;
 use App\Http\Controllers\PublicSite\LegalController;
 use App\Http\Controllers\PublicSite\LiveSearchController;
 use App\Http\Controllers\PublicSite\ReferenceRangeController;
+use App\Http\Controllers\PublicSite\RssController;
 use App\Http\Controllers\PublicSite\SearchController;
 use App\Http\Controllers\PublicSite\SeoController;
 use App\Http\Controllers\PublicSite\SopController;
@@ -45,6 +47,7 @@ Route::post('/recently-viewed/clear', [HomeController::class, 'clearRecentlyView
 
 Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');
 Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
+Route::get('/rss/knowledge.xml', [RssController::class, 'knowledge'])->name('rss.knowledge');
 
 Route::get('/leaderboard', [LeaderboardController::class, 'index'])->name('leaderboard.index');
 Route::get('/leaderboard/{assessment:slug}', [LeaderboardController::class, 'show'])->name('leaderboard.show');
@@ -52,6 +55,10 @@ Route::get('/leaderboard/{assessment:slug}', [LeaderboardController::class, 'sho
 Route::get('/assessments', [AssessmentHubController::class, 'index'])
     ->middleware(['auth', 'active.user', 'member'])
     ->name('assessments.index');
+
+Route::get('/courses', [CourseController::class, 'index'])
+    ->middleware(['auth', 'active.user', 'member'])
+    ->name('courses.index');
 
 Route::get('/verify/{code}', [VerifyController::class, 'verify'])->name('certificates.verify');
 Route::get('/share/{code}', [VerifyController::class, 'share'])->name('certificates.share');
@@ -73,6 +80,9 @@ Route::middleware(['auth', 'active.user', 'member'])->group(function () {
         ->name('certificates.share-redirect');
     Route::get('/exam/{attempt}/result', [ResultController::class, 'show'])->name('exams.result');
     Route::get('/assessments/{assessment}', [ExamController::class, 'showIntro'])->name('assessments.show');
+    Route::get('/courses/{course:slug}', [CourseController::class, 'show'])->name('courses.show');
+    Route::get('/courses/{course:slug}/certificate', [CourseController::class, 'download'])
+        ->name('courses.certificate-download');
     Route::post('/assessments/{assessment}/start', [ExamController::class, 'start'])
         ->middleware('throttle:30,1')
         ->name('assessments.start');
@@ -176,6 +186,12 @@ if (! app()->isProduction()) {
                         url('/reset-password/sample-token?email='.urlencode($user->email)),
                         '127.0.0.1',
                         60,
+                    ),
+                    'create-password' => fn () => new \App\Mail\ConfirmPasswordCreationEmail(
+                        $user,
+                        url('/account/password/create/sample-token'),
+                        '127.0.0.1',
+                        30,
                     ),
                     'reply' => fn () => new ContactReplyMail(
                         (new ContactMessage)->forceFill([

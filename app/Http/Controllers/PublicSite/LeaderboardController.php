@@ -28,6 +28,7 @@ class LeaderboardController extends Controller
             ->whereHas('attempts', fn ($query) => $query
                 ->where('mode', 'official')
                 ->whereIn('status', ['submitted', 'auto_submitted']))
+            ->when(! $isAdmin, fn ($query) => $query->whereIn('status', ['open', 'closed']))
             ->orderByDesc('closes_at')
             ->orderByDesc('id')
             ->limit(20)
@@ -77,6 +78,11 @@ class LeaderboardController extends Controller
     {
         $user = $request->user();
         $isAdmin = $user !== null && $user->isAdministrator();
+
+        if (! $isAdmin && ! in_array($assessment->status, ['open', 'closed'], true)) {
+            abort(404);
+        }
+
         $visible = $this->leaderboard->isBoardVisible($assessment);
 
         if (! $visible && ! $isAdmin) {

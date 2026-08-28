@@ -11,6 +11,7 @@ class CertificateTemplateVariables
      */
     public static array $available = [
         '{assessment}' => 'Assessment title',
+        '{course}' => 'Course title (course certificates)',
         '{name}' => 'Certificate holder full name',
         '{first_name}' => 'Certificate holder first name',
         '{date}' => 'Issue date (e.g. August 26, 2026)',
@@ -24,6 +25,7 @@ class CertificateTemplateVariables
      */
     public static array $sample = [
         '{assessment}' => 'Hematology Proficiency Exam',
+        '{course}' => 'Clinical Chemistry Course',
         '{name}' => 'Maria Santos',
         '{first_name}' => 'Maria',
         '{date}' => 'August 26, 2026',
@@ -43,8 +45,12 @@ class CertificateTemplateVariables
 
         $firstName = explode(' ', $holderName)[0] ?? $holderName;
 
+        $assessmentTitle = $certificate->assessment?->title ?? 'Assessment';
+        $courseTitle = $certificate->course?->title ?? $assessmentTitle;
+
         return [
-            '{assessment}' => $certificate->assessment?->title ?? 'Assessment',
+            '{assessment}' => $assessmentTitle,
+            '{course}' => $courseTitle,
             '{name}' => $holderName,
             '{first_name}' => $firstName,
             '{date}' => $certificate->issued_at?->format('F j, Y') ?? now()->format('F j, Y'),

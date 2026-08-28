@@ -1,6 +1,6 @@
 @extends('emails.layouts.default')
 
-@section('preheader', 'Your LabGato administrator account is ready.')
+@section('preheader', 'Your Labgoto administrator account is ready.')
 
 @section('content')
 <h1 class="eg-h1" style="margin: 0 0 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25; color: #1e293b;">

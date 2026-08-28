@@ -26,7 +26,7 @@ class SignInAlert
         Cache::put($throttleKey, true, now()->endOfDay());
 
         try {
-            Mail::to($user->email)->send(new SignInNotification(
+            Mail::to($user->email)->queue(new SignInNotification(
                 $user,
                 $ipAddress,
                 $userAgent,

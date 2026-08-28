@@ -113,9 +113,10 @@ class HeaderUxTest extends TestCase
         $response = $this->actingAs($user)->get(route('admin.dashboard'));
 
         $response->assertStatus(200);
-        $response->assertSee('My Profile', false);
-        $response->assertSee('Recently Viewed', false);
+        $response->assertSee('User menu', false);
         $response->assertSee('Log out', false);
+        $response->assertDontSee('My Profile', false);
+        $response->assertDontSee('Recently Viewed', false);
     }
 
     public function test_recently_viewed_page_requires_authentication(): void

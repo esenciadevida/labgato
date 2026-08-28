@@ -14,8 +14,21 @@ use Illuminate\Database\Eloquent\Collection;
 
 class RecentlyViewedService
 {
+    public const ALLOWED_TYPES = [
+        'calculator',
+        'tool',
+        'reference-range',
+        'sop',
+        'interpretation',
+        'knowledge',
+    ];
+
     public function track(User $user, string $resourceType, int $resourceId): void
     {
+        if (! in_array($resourceType, self::ALLOWED_TYPES, true)) {
+            return;
+        }
+
         RecentlyViewed::updateOrCreate(
             [
                 'user_id' => $user->id,
@@ -30,27 +43,34 @@ class RecentlyViewedService
 
     public function getRecent(User $user, int $limit = 8): Collection
     {
-        return RecentlyViewed::where('user_id', $user->id)
+        $rows = RecentlyViewed::where('user_id', $user->id)
             ->latest('viewed_at')
             ->limit($limit)
-            ->get()
-            ->map(function ($item) {
-                $model = $this->resolveModel($item->resource_type);
-                if (! $model) {
-                    return $item;
-                }
+            ->get();
 
-                $record = $model::query()->find($item->resource_id);
+        foreach ($rows->groupBy('resource_type') as $type => $group) {
+            $modelClass = $this->resolveModel($type);
+            if (! $modelClass) {
+                continue;
+            }
+
+            $records = $modelClass::query()
+                ->findMany($group->pluck('resource_id')->unique()->values())
+                ->keyBy('id');
+
+            foreach ($group as $item) {
+                $record = $records->get($item->resource_id);
                 if (! $record) {
-                    return $item;
+                    continue;
                 }
 
                 $item->setRelation('viewable', $record);
                 $item->url = $this->getUrl($record, $item->resource_type);
                 $item->name = $record->name ?? 'Unknown resource';
+            }
+        }
 
-                return $item;
-            });
+        return $rows;
     }
 
     private function prune(int $userId, int $keep): void

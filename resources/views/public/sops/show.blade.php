@@ -26,8 +26,14 @@
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
     @if($heroImageSrc)
-        <figure class="mb-8 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 shadow-card">
-            <img src="{{ $heroImageSrc }}" alt="" loading="eager" fetchpriority="high" class="w-full h-auto object-cover">
+        <figure class="mx-auto mb-8 max-w-3xl overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 shadow-card">
+            <x-public.img
+                :src="$heroImageSrc"
+                :alt="$heroImageAlt ?? ''"
+                :eager="true"
+                :priority="true"
+                class="w-full h-auto"
+            />
         </figure>
     @endif
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -68,9 +74,16 @@
                     </div>
                 @endif
 
-                <article id="article-content" class="rich-content max-w-none">
+                <article id="article-content" class="rich-content max-w-3xl">
                     {!! $content !!}
                 </article>
+
+                <x-public.prev-next
+                    :previous="$previous"
+                    :next="$next"
+                    :previous-url="$previous ? route('public.sops.show', $previous->slug) : null"
+                    :next-url="$next ? route('public.sops.show', $next->slug) : null"
+                />
 
                 @if($revisions->isNotEmpty())
                     <x-ui.card>

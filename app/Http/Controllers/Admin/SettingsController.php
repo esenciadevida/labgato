@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use App\Services\AuditLogService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -15,6 +14,7 @@ class SettingsController extends Controller
     private const CATEGORY_ORDER = [
         'general' => 'General',
         'features' => 'Features',
+        'hub' => 'Assessment Hub',
         'content' => 'Content',
         'seo' => 'SEO',
         'analytics' => 'Analytics',
@@ -36,6 +36,7 @@ class SettingsController extends Controller
     private const ALLOWED_PREFIXES = [
         'general.',
         'features.',
+        'hub.',
         'content.',
         'seo.',
         'analytics.',
@@ -127,7 +128,7 @@ class SettingsController extends Controller
             $this->invalidateCertificatePdfs();
         }
 
-        Cache::forget('settings.all');
+        Setting::flushCache();
 
         return redirect()->route('admin.settings.index')->with('success', 'Settings updated successfully.');
     }

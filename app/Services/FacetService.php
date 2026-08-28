@@ -11,8 +11,10 @@ use App\Models\ReferenceRange;
 use App\Models\Sop;
 use App\Models\Tag;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 class FacetService
 {
@@ -61,12 +63,14 @@ class FacetService
         }
 
         $resourceIds = $query->pluck((new $modelClass)->getKeyName());
-        $categoryIdList = $resourceIds->implode(',') ?: '0';
+
+        $counts = $this->pivotCounts($pivot['table'], $pivot['fk'], $resourceIds, 'category_id');
 
         return Category::query()
             ->where('is_active', true)
             ->select('categories.*')
-            ->selectRaw("COALESCE((SELECT COUNT(DISTINCT pc.{$pivot['fk']}) FROM {$pivot['table']} pc WHERE pc.category_id = categories.id AND pc.{$pivot['fk']} IN ({$categoryIdList})), 0) as count")
+            ->selectRaw('COALESCE(cnt.count, 0) AS count')
+            ->leftJoinSub($counts, 'cnt', 'cnt.category_id', '=', 'categories.id')
             ->orderBy('categories.sort_order')
             ->orderBy('categories.name')
             ->get();
@@ -84,17 +88,24 @@ class FacetService
 
         $resourceIds = $query->pluck((new $modelClass)->getKeyName());
 
-        if ($resourceIds->isEmpty()) {
-            return collect();
-        }
-
-        $idList = $resourceIds->implode(',');
+        $counts = $this->pivotCounts($pivot['tag_table'], $pivot['tag_fk'], $resourceIds, 'tag_id');
 
         return Tag::query()
             ->select('tags.*')
-            ->selectRaw("COALESCE((SELECT COUNT(DISTINCT pt.{$pivot['tag_fk']}) FROM {$pivot['tag_table']} pt WHERE pt.tag_id = tags.id AND pt.{$pivot['tag_fk']} IN ({$idList})), 0) as count")
+            ->selectRaw('COALESCE(cnt.count, 0) AS count')
+            ->leftJoinSub($counts, 'cnt', 'cnt.tag_id', '=', 'tags.id')
             ->orderBy('tags.name')
             ->get();
+    }
+
+    private function pivotCounts(string $pivotTable, string $resourceColumn, Collection $resourceIds, string $groupColumn): QueryBuilder
+    {
+        return DB::table($pivotTable)
+            ->select($groupColumn)
+            ->selectRaw("COUNT(DISTINCT {$resourceColumn}) AS count")
+            ->whereIn($resourceColumn, $resourceIds)
+            ->whereNotNull($groupColumn)
+            ->groupBy($groupColumn);
     }
 
     public function results(

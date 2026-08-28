@@ -173,9 +173,8 @@
             },
 
             fallbackScrollSpy() {
-                window.addEventListener('scroll', () => {
-                    this.updateActiveHeading();
-                }, { passive: true });
+                this._fallbackScrollHandler = () => this.updateActiveHeading();
+                window.addEventListener('scroll', this._fallbackScrollHandler, { passive: true });
             },
 
             updateActiveHeading() {
@@ -222,6 +221,9 @@
             destroy() {
                 if (this.observer) {
                     this.observer.disconnect();
+                }
+                if (this._fallbackScrollHandler) {
+                    window.removeEventListener('scroll', this._fallbackScrollHandler);
                 }
             },
         };

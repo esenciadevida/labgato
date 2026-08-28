@@ -23,8 +23,8 @@ class AdminInvitationEmail extends Mailable
     {
         return new Envelope(
             subject: $this->isResend
-                ? 'Reminder: Your LabGato admin invitation'
-                : "You're invited to join the LabGato admin team",
+                ? 'Reminder: Your Labgoto admin invitation'
+                : "You're invited to join the Labgoto admin team",
         );
     }
 

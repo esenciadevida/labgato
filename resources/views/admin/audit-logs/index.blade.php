@@ -41,6 +41,18 @@
             aria-label="To date"
         />
         <x-ui.button type="submit" variant="secondary">Filter</x-ui.button>
+        <x-ui.button
+            :href="route('admin.audit-logs.export', [
+                'search' => $search,
+                'action' => $action,
+                'resource_type' => $resourceType,
+                'from' => $from,
+                'to' => $to,
+            ])"
+            variant="secondary"
+        >
+            Export CSV
+        </x-ui.button>
     </form>
 
     <x-ui.card>

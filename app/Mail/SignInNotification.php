@@ -23,7 +23,7 @@ class SignInNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New sign-in to your LabGato account',
+            subject: 'New sign-in to your Labgoto account',
         );
     }
 

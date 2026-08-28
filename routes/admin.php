@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CertificateAdminController;
 use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\ContributionReviewController;
+use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\InterpretationController;
 use App\Http\Controllers\Admin\IntegrityController;
@@ -56,6 +57,13 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
         Route::post('/assessments/{assessment}/status', [AssessmentController::class, 'status'])->name('assessments.status');
         Route::post('/assessments/{assessment}/duplicate', [AssessmentController::class, 'duplicate'])->name('assessments.duplicate');
         Route::delete('/assessments/{assessment}', [AssessmentController::class, 'destroy'])->name('assessments.destroy');
+
+        Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+        Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
+        Route::post('/courses', [CourseController::class, 'store'])->name('courses.store');
+        Route::get('/courses/{course}/edit', [CourseController::class, 'edit'])->name('courses.edit');
+        Route::put('/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
+        Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy');
     });
 
     Route::post('/bulk/{type}', [BulkActionController::class, 'process'])->name('bulk');
@@ -328,6 +336,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
 
     Route::middleware('permission:audit-logs.view')->group(function () {
         Route::get('/audit-logs', [AuditLogController::class, 'index'])->name('audit-logs.index');
+        Route::get('/audit-logs/export', [AuditLogController::class, 'export'])->name('audit-logs.export');
         Route::get('/audit-logs/{auditLog}', [AuditLogController::class, 'show'])->name('audit-logs.show');
     });
 

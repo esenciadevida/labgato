@@ -61,6 +61,22 @@ return [
         'password_min_length' => (int) env('PASSWORD_MIN_LENGTH', 8),
         'session_regeneration_interval' => (int) env('SESSION_REGENERATION_INTERVAL', 120),
         'admin_inactivity_minutes' => (int) env('ADMIN_INACTIVITY_MINUTES', 30),
+        'two_factor_admin' => (bool) env('ADMIN_TWO_FACTOR', false),
+        'alert_email' => (string) env('ERROR_NOTIFICATION_EMAIL', ''),
+        'alert_cooldown_seconds' => (int) env('ERROR_ALERT_COOLDOWN_SECONDS', 900),
+        'audit_retention_days' => (int) env('AUDIT_RETENTION_DAYS', 365),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Monitoring Configuration
+    |--------------------------------------------------------------------------
+    */
+
+    'monitoring' => [
+        'queue_failed_window_hours' => (int) env('QUEUE_HEALTH_WINDOW_HOURS', 24),
+        'queue_failed_threshold' => (int) env('QUEUE_HEALTH_FAILED_THRESHOLD', 10),
+        'digest_week_days' => (int) env('DIGEST_WEEK_DAYS', 7),
     ],
 
     /*

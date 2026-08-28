@@ -80,6 +80,157 @@ class AssessmentLifecycleTest extends TestCase
         );
     }
 
+    public function test_store_persists_certificate_customization_fields(): void
+    {
+        $category = \App\Models\QuestionCategory::firstOrCreate(
+            ['slug' => 'hematology'],
+            ['name' => 'Hematology']
+        );
+
+        $this->actingAs($this->admin())
+            ->post(route('admin.assessments.store'), [
+                'title' => 'Custom Cert Challenge',
+                'slug' => 'custom-cert-challenge',
+                'type' => 'challenge',
+                'status' => 'draft',
+                'duration_minutes' => 60,
+                'total_questions' => 5,
+                'pass_percentage' => 70,
+                'certificate_enabled' => '1',
+                'cert_body_text' => 'for completing {assessment}',
+                'cert_disclaimer_text' => 'Internal training only.',
+                'cert_primary_color' => '#ff0000',
+                'cert_secondary_color' => '#00ff00',
+                'cert_signatory_name' => 'Dr. Person',
+                'cert_signatory_title' => 'Course Lead',
+                'cert_show_logo' => '0',
+                'cert_show_qr' => '1',
+                'blueprints' => [
+                    [
+                        'question_category_id' => $category->id,
+                        'include' => '1',
+                        'question_count' => 5,
+                        'easy_percent' => 100,
+                        'intermediate_percent' => 0,
+                        'advanced_percent' => 0,
+                    ],
+                ],
+            ])
+            ->assertRedirect(route('admin.assessments.index'));
+
+        $this->assertDatabaseHas('assessments', [
+            'title' => 'Custom Cert Challenge',
+            'cert_body_text' => 'for completing {assessment}',
+            'cert_disclaimer_text' => 'Internal training only.',
+            'cert_primary_color' => '#ff0000',
+            'cert_secondary_color' => '#00ff00',
+            'cert_signatory_name' => 'Dr. Person',
+            'cert_signatory_title' => 'Course Lead',
+            'cert_show_logo' => false,
+            'cert_show_qr' => true,
+        ]);
+    }
+
+    public function test_store_blank_certificate_fields_inherit_globals(): void
+    {
+        $category = \App\Models\QuestionCategory::firstOrCreate(
+            ['slug' => 'hematology'],
+            ['name' => 'Hematology']
+        );
+
+        $this->actingAs($this->admin())
+            ->post(route('admin.assessments.store'), [
+                'title' => 'Default Cert Challenge',
+                'slug' => 'default-cert-challenge',
+                'type' => 'challenge',
+                'status' => 'draft',
+                'duration_minutes' => 60,
+                'total_questions' => 5,
+                'pass_percentage' => 70,
+                'certificate_enabled' => '1',
+                'cert_body_text' => '',
+                'cert_disclaimer_text' => '',
+                'cert_primary_color' => '',
+                'cert_secondary_color' => '',
+                'cert_signatory_name' => '',
+                'cert_signatory_title' => '',
+                'cert_show_logo' => '',
+                'cert_show_qr' => '',
+                'blueprints' => [
+                    [
+                        'question_category_id' => $category->id,
+                        'include' => '1',
+                        'question_count' => 5,
+                        'easy_percent' => 100,
+                        'intermediate_percent' => 0,
+                        'advanced_percent' => 0,
+                    ],
+                ],
+            ])
+            ->assertRedirect(route('admin.assessments.index'));
+
+        $this->assertDatabaseHas('assessments', [
+            'title' => 'Default Cert Challenge',
+            'cert_body_text' => null,
+            'cert_disclaimer_text' => null,
+            'cert_primary_color' => null,
+            'cert_secondary_color' => null,
+            'cert_signatory_name' => null,
+            'cert_signatory_title' => null,
+            'cert_show_logo' => null,
+            'cert_show_qr' => null,
+        ]);
+    }
+
+    public function test_store_rejects_invalid_certificate_color(): void
+    {
+        $category = \App\Models\QuestionCategory::firstOrCreate(
+            ['slug' => 'hematology'],
+            ['name' => 'Hematology']
+        );
+
+        $this->actingAs($this->admin())
+            ->post(route('admin.assessments.store'), [
+                'title' => 'Bad Color Challenge',
+                'slug' => 'bad-color-challenge',
+                'type' => 'challenge',
+                'status' => 'draft',
+                'duration_minutes' => 60,
+                'total_questions' => 5,
+                'pass_percentage' => 70,
+                'certificate_enabled' => '1',
+                'cert_primary_color' => 'red',
+                'blueprints' => [
+                    [
+                        'question_category_id' => $category->id,
+                        'include' => '1',
+                        'question_count' => 5,
+                        'easy_percent' => 100,
+                        'intermediate_percent' => 0,
+                        'advanced_percent' => 0,
+                    ],
+                ],
+            ])
+            ->assertSessionHasErrors('cert_primary_color');
+
+        $this->assertDatabaseMissing('assessments', ['slug' => 'bad-color-challenge']);
+    }
+
+    public function test_hub_page_renders_configurable_copy(): void
+    {
+        $this->makeAssessment(['status' => 'open']);
+        $member = User::factory()->create(['is_active' => true, 'user_type' => 'member']);
+
+        $response = $this->actingAs($member)->get(route('assessments.index'));
+
+        $response->assertOk();
+        $response->assertSee(setting('hub.eyebrow', 'ASCPi Challenge'));
+        $response->assertSee(setting('hub.heading', 'Assessments'));
+        $response->assertSee(setting('hub.card_cta', 'Take Challenge'));
+        $response->assertSee(setting('hub.how_works_title', 'How it works'));
+        $response->assertSee(setting('hub.practice_title', 'Practice makes perfect'));
+    }
+
     public function test_destroy_blocks_when_attempts_exist(): void
     {
         $assessment = $this->makeAssessment(['status' => 'closed']);

@@ -10,6 +10,7 @@ use App\Models\ReferenceRange;
 use App\Models\Sop;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 
 class RelatedResourceService
 {
@@ -24,7 +25,18 @@ class RelatedResourceService
 
     private const PER_TYPE_CANDIDATE_LIMIT = 200;
 
+    private const CACHE_TTL = 3600;
+
     public function relatedFor(Model $resource, int $limit = 6): Collection
+    {
+        return Cache::remember(
+            'related:'.get_class($resource).':'.$resource->getKey().':'.$limit,
+            now()->addSeconds(self::CACHE_TTL),
+            fn () => $this->computeRelated($resource, $limit),
+        );
+    }
+
+    private function computeRelated(Model $resource, int $limit): Collection
     {
         $tagIds = $resource->tags()->pluck('tags.id')->all();
         $categoryIds = $resource->categories()->pluck('categories.id')->all();

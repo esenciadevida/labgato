@@ -8,7 +8,7 @@
         <p class="eyebrow text-primary-300">Get in touch</p>
         <h1 class="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight">Contact Us</h1>
         <p class="mt-4 max-w-2xl text-primary-100/80">
-            Questions, feedback, or suggestions about LabGato? Send us a message and our team will get back to you.
+            Questions, feedback, or suggestions about Labgoto? Send us a message and our team will get back to you.
         </p>
     </div>
 </section>

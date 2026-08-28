@@ -1,6 +1,6 @@
 @extends('emails.layouts.default')
 
-@section('preheader', $isResend ? 'Reminder: your LabGato administrator invitation is still waiting.' : 'You have been invited to join the LabGato admin team.')
+@section('preheader', $isResend ? 'Reminder: your Labgoto administrator invitation is still waiting.' : 'You have been invited to join the Labgoto admin team.')
 
 @section('content')
 <h1 class="eg-h1" style="margin: 0 0 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25; color: #1e293b;">
@@ -12,7 +12,7 @@
 </h1>
 
 <p style="margin: 0 0 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #1e293b;">
-    {{ $invitedBy }} has invited you to join the LabGato administration team as a
+    {{ $invitedBy }} has invited you to join the Labgoto administration team as a
     <strong>{{ $roleName }}</strong>.
 </p>
 

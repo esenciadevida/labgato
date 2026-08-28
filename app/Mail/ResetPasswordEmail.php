@@ -23,7 +23,7 @@ class ResetPasswordEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Reset your LabGato password',
+            subject: 'Reset your Labgoto password',
         );
     }
 

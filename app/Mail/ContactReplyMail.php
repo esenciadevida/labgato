@@ -22,7 +22,7 @@ class ContactReplyMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Re: Your message to LabGato',
+            subject: 'Re: Your message to Labgoto',
         );
     }
 

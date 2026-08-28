@@ -83,11 +83,13 @@ class ThemeTest extends TestCase
     {
         $cssFiles = glob(public_path('build/assets/app-*.css'));
         $this->assertNotEmpty($cssFiles, 'No compiled CSS file found in build/assets');
-        $cssPath = $cssFiles[0];
 
-        $this->assertFileExists($cssPath);
-
-        $css = file_get_contents($cssPath);
+        // Vite can emit multiple app chunk stylesheets (e.g. driver.js CSS is
+        // split out), so inspect all of them to stay robust to glob ordering.
+        $css = implode("\n", array_map(
+            fn (string $path) => file_get_contents($path),
+            $cssFiles,
+        ));
 
         $this->assertStringContainsString('dark\\:bg-slate-950', $css);
         $this->assertStringContainsString('dark\\:text-slate-100', $css);

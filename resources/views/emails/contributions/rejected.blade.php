@@ -1,6 +1,6 @@
 @extends('emails.layouts.default')
 
-@section('preheader', 'An update on your LabGato contribution — feedback from our review team.')
+@section('preheader', 'An update on your Labgoto contribution — feedback from our review team.')
 
 @section('footer_note', 'We appreciate your effort and encourage you to try again!')
 

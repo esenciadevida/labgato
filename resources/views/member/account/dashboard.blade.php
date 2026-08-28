@@ -1,4 +1,4 @@
-@extends('layouts.public')
+@extends('layouts.member')
 
 @section('title', 'Member Dashboard - ' . config('app.name'))
 
@@ -15,8 +15,6 @@
                 </p>
             </div>
         </div>
-
-        <x-member.navigation class="mt-8" />
 
         <x-ui.card class="mt-8" data-tour="submit">
             <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">

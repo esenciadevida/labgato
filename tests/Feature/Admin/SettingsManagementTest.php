@@ -85,6 +85,27 @@ class SettingsManagementTest extends TestCase
         ]);
     }
 
+    public function test_hub_settings_can_be_updated_via_ui(): void
+    {
+        $admin = $this->createSuperAdmin();
+
+        $this->actingAs($admin)->put(route('admin.settings.update'), [
+            'settings' => [
+                'hub.eyebrow' => 'Clinical Chemistry Course',
+                'hub.primary_cta' => 'Start the course',
+            ],
+        ])->assertRedirect(route('admin.settings.index'));
+
+        $this->assertDatabaseHas('settings', [
+            'key' => 'hub.eyebrow',
+            'value' => 'Clinical Chemistry Course',
+        ]);
+        $this->assertDatabaseHas('settings', [
+            'key' => 'hub.primary_cta',
+            'value' => 'Start the course',
+        ]);
+    }
+
     public function test_only_super_admin_can_edit_settings(): void
     {
         $user = $this->createRegularAdmin();

@@ -30,7 +30,7 @@ class KnowledgeController extends Controller
         $related = app(RelatedResourceService::class)->relatedFor($knowledge);
 
         $content = RichTextSanitizer::render($knowledge->content);
-        [$heroImage, $heroImageSrc] = RichTextSanitizer::extractFirstImage($content);
+        [$heroImage, $heroImageSrc, $heroImageAlt] = RichTextSanitizer::extractFirstImage($content);
         $content = $heroImage ? RichTextSanitizer::stripFirstImage($content) : $content;
         $learningObjectives = $knowledge->learning_objectives
             ? nl2br(e($knowledge->learning_objectives))
@@ -38,6 +38,20 @@ class KnowledgeController extends Controller
 
         $readingTime = $knowledge->reading_time_minutes
             ?? max(1, (int) ceil(str_word_count(strip_tags($knowledge->content)) / 200));
+
+        $previous = $knowledge->published_at
+            ? KnowledgeResource::query()->published()
+                ->where('published_at', '<', $knowledge->published_at)
+                ->orderByDesc('published_at')
+                ->first(['id', 'slug', 'name'])
+            : null;
+
+        $next = $knowledge->published_at
+            ? KnowledgeResource::query()->published()
+                ->where('published_at', '>', $knowledge->published_at)
+                ->orderBy('published_at')
+                ->first(['id', 'slug', 'name'])
+            : null;
 
         $pageTitle = $knowledge->effectiveSeoTitle();
         $metaDescription = $knowledge->effectiveSeoDescription();
@@ -55,6 +69,9 @@ class KnowledgeController extends Controller
             'metaDescription',
             'heroImage',
             'heroImageSrc',
+            'heroImageAlt',
+            'previous',
+            'next',
             'readingTime',
         ) + [
             'ogType' => 'article',

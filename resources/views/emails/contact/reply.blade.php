@@ -1,6 +1,6 @@
 @extends('emails.layouts.default')
 
-@section('preheader', 'The LabGato team has replied to your message.')
+@section('preheader', 'The Labgoto team has replied to your message.')
 
 @section('footer_note')
     You can reply directly to this email or visit your messages.
@@ -34,7 +34,7 @@
     <tr>
         <td style="padding: 16px 20px;">
             <p style="margin: 0 0 6px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0369a1;">
-                LabGato team
+                Labgoto team
             </p>
             <p style="margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.5; font-weight: 600; color: #1e293b;">
                 {{ $reply }}

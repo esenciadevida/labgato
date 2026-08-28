@@ -8,9 +8,13 @@
 <div x-data="{
     open: false,
     init() {
-        window.addEventListener('labgato-open-panel', e => {
+        this.onOpenPanel = e => {
             if (e.detail !== 'dropdown') this.open = false;
-        });
+        };
+        window.addEventListener('labgato-open-panel', this.onOpenPanel);
+    },
+    destroy() {
+        window.removeEventListener('labgato-open-panel', this.onOpenPanel);
     },
     toggle() {
         this.open = !this.open;

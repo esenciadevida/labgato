@@ -30,10 +30,24 @@ class SopController extends Controller
         $related = app(RelatedResourceService::class)->relatedFor($sop);
 
         $content = RichTextSanitizer::render($sop->content);
-        [$heroImage, $heroImageSrc] = RichTextSanitizer::extractFirstImage($content);
+        [$heroImage, $heroImageSrc, $heroImageAlt] = RichTextSanitizer::extractFirstImage($content);
         $content = $heroImage ? RichTextSanitizer::stripFirstImage($content) : $content;
 
         $readingTime = max(1, (int) ceil(str_word_count(strip_tags($sop->content)) / 200));
+
+        $previous = $sop->published_at
+            ? Sop::query()->published()
+                ->where('published_at', '<', $sop->published_at)
+                ->orderByDesc('published_at')
+                ->first(['id', 'slug', 'name'])
+            : null;
+
+        $next = $sop->published_at
+            ? Sop::query()->published()
+                ->where('published_at', '>', $sop->published_at)
+                ->orderBy('published_at')
+                ->first(['id', 'slug', 'name'])
+            : null;
 
         $revisions = $sop->versions()
             ->orderByDesc('created_at')
@@ -56,6 +70,9 @@ class SopController extends Controller
             'metaDescription',
             'heroImage',
             'heroImageSrc',
+            'heroImageAlt',
+            'previous',
+            'next',
             'readingTime',
         ) + [
             'ogType' => 'article',

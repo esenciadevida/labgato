@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Auth\HashedRememberTokenUserProvider;
 use App\Models\Calculator;
 use App\Models\InterpretationResource;
 use App\Models\KnowledgeResource;
@@ -19,8 +20,10 @@ use App\Support\SearchResult;
 use App\View\Composers\TaxonomyComposer;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +40,10 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(SearchService $searchService): void
     {
+        Auth::provider('hashed-tokens', function ($app, array $config) {
+            return new HashedRememberTokenUserProvider($app['hash'], $config['model']);
+        });
+
         Route::bind('passwordResetToken', function (string $value) {
             return $value;
         });
@@ -119,22 +126,35 @@ class AppServiceProvider extends ServiceProvider
             return Limit::perHour(5)->by($request->user()?->id ?: $request->ip());
         });
 
+        RateLimiter::for('register', function (Request $request) {
+            return Limit::perHour(5)->by($request->ip());
+        });
+
+        RateLimiter::for('contributions', function (Request $request) {
+            return Limit::perHour(20)->by($request->user()?->id ?: $request->ip());
+        });
+
+        RateLimiter::for('two-factor', function (Request $request) {
+            return Limit::perMinutes(10, 5)->by($request->ip());
+        });
+
+        RateLimiter::for('two-factor-resend', function (Request $request) {
+            return Limit::perHour(3)->by($request->ip());
+        });
+
         $searchService->registerProvider('calculator', function (string $query, array $filters) {
-            return Calculator::query()
-                ->select(['id', 'slug', 'name', 'short_description', 'published_at'])
-                ->published()
-                ->with(['categories', 'tags'])
-                ->search($query)
-                ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
-                })
-                ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
-                })
-                ->orderByDesc('published_at')
-                ->limit(50)
-                ->get()
-                ->map(fn (Calculator $calculator) => new SearchResult(
+            return $this->searchProviderResult(
+                Calculator::query()
+                    ->published()
+                    ->search($query)
+                    ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
+                    })
+                    ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
+                    }),
+                ['id', 'slug', 'name', 'short_description', 'published_at'],
+                fn (Calculator $calculator) => new SearchResult(
                     type: 'calculator',
                     title: $calculator->name,
                     url: route('public.calculators.show', $calculator->slug),
@@ -142,51 +162,47 @@ class AppServiceProvider extends ServiceProvider
                     categoryName: $calculator->categories->first()?->name,
                     tags: $calculator->tags->pluck('name')->all(),
                     publishedAt: $calculator->published_at,
-                ));
+                ),
+            );
         });
 
-        $searchService->registerProvider('reference_range', function (string $query, array $filters) {
-            return ReferenceRange::query()
-                ->select(['id', 'slug', 'name', 'analyte_name', 'short_description', 'published_at'])
-                ->published()
-                ->with(['categories', 'tags'])
-                ->search($query)
-                ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
-                })
-                ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
-                })
-                ->orderByDesc('published_at')
-                ->limit(50)
-                ->get()
-                ->map(fn (ReferenceRange $range) => new SearchResult(
-                    type: 'reference_range',
+        $searchService->registerProvider('reference-range', function (string $query, array $filters) {
+            return $this->searchProviderResult(
+                ReferenceRange::query()
+                    ->published()
+                    ->search($query)
+                    ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
+                    })
+                    ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
+                    }),
+                ['id', 'slug', 'name', 'analyte_name', 'short_description', 'published_at'],
+                fn (ReferenceRange $range) => new SearchResult(
+                    type: 'reference-range',
                     title: $range->name,
                     url: route('public.reference-ranges.show', $range->slug),
                     description: $range->short_description,
                     categoryName: $range->categories->first()?->name,
                     tags: $range->tags->pluck('name')->all(),
                     publishedAt: $range->published_at,
-                ));
+                ),
+            );
         });
 
         $searchService->registerProvider('interpretation', function (string $query, array $filters) {
-            return InterpretationResource::query()
-                ->select(['id', 'slug', 'name', 'short_description', 'published_at'])
-                ->published()
-                ->with(['categories', 'tags'])
-                ->search($query)
-                ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
-                })
-                ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
-                })
-                ->orderByDesc('published_at')
-                ->limit(50)
-                ->get()
-                ->map(fn (InterpretationResource $resource) => new SearchResult(
+            return $this->searchProviderResult(
+                InterpretationResource::query()
+                    ->published()
+                    ->search($query)
+                    ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
+                    })
+                    ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
+                    }),
+                ['id', 'slug', 'name', 'short_description', 'published_at'],
+                fn (InterpretationResource $resource) => new SearchResult(
                     type: 'interpretation',
                     title: $resource->name,
                     url: route('public.interpretation.show', $resource->slug),
@@ -194,25 +210,23 @@ class AppServiceProvider extends ServiceProvider
                     categoryName: $resource->categories->first()?->name,
                     tags: $resource->tags->pluck('name')->all(),
                     publishedAt: $resource->published_at,
-                ));
+                ),
+            );
         });
 
         $searchService->registerProvider('knowledge', function (string $query, array $filters) {
-            return KnowledgeResource::query()
-                ->select(['id', 'slug', 'name', 'short_description', 'published_at'])
-                ->published()
-                ->with(['categories', 'tags'])
-                ->search($query)
-                ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
-                })
-                ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
-                })
-                ->orderByDesc('published_at')
-                ->limit(50)
-                ->get()
-                ->map(fn (KnowledgeResource $resource) => new SearchResult(
+            return $this->searchProviderResult(
+                KnowledgeResource::query()
+                    ->published()
+                    ->search($query)
+                    ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
+                    })
+                    ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
+                    }),
+                ['id', 'slug', 'name', 'short_description', 'published_at'],
+                fn (KnowledgeResource $resource) => new SearchResult(
                     type: 'knowledge',
                     title: $resource->name,
                     url: route('public.knowledge.show', $resource->slug),
@@ -220,25 +234,23 @@ class AppServiceProvider extends ServiceProvider
                     categoryName: $resource->categories->first()?->name,
                     tags: $resource->tags->pluck('name')->all(),
                     publishedAt: $resource->published_at,
-                ));
+                ),
+            );
         });
 
         $searchService->registerProvider('tool', function (string $query, array $filters) {
-            return LaboratoryTool::query()
-                ->select(['id', 'slug', 'name', 'short_description', 'published_at'])
-                ->published()
-                ->with(['categories', 'tags'])
-                ->search($query)
-                ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
-                })
-                ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
-                })
-                ->orderByDesc('published_at')
-                ->limit(50)
-                ->get()
-                ->map(fn (LaboratoryTool $tool) => new SearchResult(
+            return $this->searchProviderResult(
+                LaboratoryTool::query()
+                    ->published()
+                    ->search($query)
+                    ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
+                    })
+                    ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
+                    }),
+                ['id', 'slug', 'name', 'short_description', 'published_at'],
+                fn (LaboratoryTool $tool) => new SearchResult(
                     type: 'tool',
                     title: $tool->name,
                     url: route('public.tools.show', $tool->slug),
@@ -246,25 +258,23 @@ class AppServiceProvider extends ServiceProvider
                     categoryName: $tool->categories->first()?->name,
                     tags: $tool->tags->pluck('name')->all(),
                     publishedAt: $tool->published_at,
-                ));
+                ),
+            );
         });
 
         $searchService->registerProvider('sop', function (string $query, array $filters) {
-            return Sop::query()
-                ->select(['id', 'slug', 'name', 'short_description', 'published_at'])
-                ->published()
-                ->with(['categories', 'tags'])
-                ->search($query)
-                ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
-                })
-                ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
-                    $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
-                })
-                ->orderByDesc('published_at')
-                ->limit(50)
-                ->get()
-                ->map(fn (Sop $sop) => new SearchResult(
+            return $this->searchProviderResult(
+                Sop::query()
+                    ->published()
+                    ->search($query)
+                    ->when(isset($filters['category']) && $filters['category'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('categories', fn ($c) => $c->where('slug', $filters['category']));
+                    })
+                    ->when(isset($filters['tag']) && $filters['tag'] !== '', function ($q) use ($filters) {
+                        $q->whereHas('tags', fn ($t) => $t->where('slug', $filters['tag']));
+                    }),
+                ['id', 'slug', 'name', 'short_description', 'published_at'],
+                fn (Sop $sop) => new SearchResult(
                     type: 'sop',
                     title: $sop->name,
                     url: route('public.sops.show', $sop->slug),
@@ -272,7 +282,22 @@ class AppServiceProvider extends ServiceProvider
                     categoryName: $sop->categories->first()?->name,
                     tags: $sop->tags->pluck('name')->all(),
                     publishedAt: $sop->published_at,
-                ));
+                ),
+            );
         });
+    }
+
+    private function searchProviderResult(Builder $builder, array $columns, callable $present): array
+    {
+        return [
+            'results' => (clone $builder)
+                ->select($columns)
+                ->with(['categories', 'tags'])
+                ->orderByDesc('published_at')
+                ->limit(50)
+                ->get()
+                ->map($present),
+            'total' => (clone $builder)->count(),
+        ];
     }
 }

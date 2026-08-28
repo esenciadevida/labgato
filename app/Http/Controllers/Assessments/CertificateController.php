@@ -17,7 +17,7 @@ class CertificateController extends Controller
     {
         $certificates = auth()->user()
             ->certificates()
-            ->with(['assessment', 'attempt'])
+            ->with(['assessment', 'attempt', 'course'])
             ->orderByDesc('issued_at')
             ->get();
 

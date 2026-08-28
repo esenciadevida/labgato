@@ -170,20 +170,20 @@ class AggregateAnalytics extends Command
     {
         $cutoffDate = Carbon::now()->subDays(90);
 
-        $searchQueriesPurged = SearchQuery::where('created_at', '<', $cutoffDate)
-            ->orderBy('id')
-            ->chunkById(1000, function ($records) {
-                $records->each->delete();
-            });
-
-        $aiUsagePurged = AiUsage::where('created_at', '<', $cutoffDate)
-            ->orderBy('id')
-            ->chunkById(1000, function ($records) {
-                $records->each->delete();
-            });
-
         $searchCount = SearchQuery::where('created_at', '<', $cutoffDate)->count();
         $aiCount = AiUsage::where('created_at', '<', $cutoffDate)->count();
+
+        SearchQuery::where('created_at', '<', $cutoffDate)
+            ->orderBy('id')
+            ->chunkById(1000, function ($records) {
+                $records->each->delete();
+            });
+
+        AiUsage::where('created_at', '<', $cutoffDate)
+            ->orderBy('id')
+            ->chunkById(1000, function ($records) {
+                $records->each->delete();
+            });
 
         $this->info("Purged {$searchCount} old search queries and {$aiCount} old AI usage records.");
 

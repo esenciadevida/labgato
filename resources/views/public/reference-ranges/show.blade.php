@@ -195,9 +195,9 @@
                         <ul class="flex flex-wrap gap-1.5">
                             @foreach($referenceRange->tags as $tag)
                                 <li>
-                                    <a href="{{ route('public.reference-ranges.index', ['tag' => $tag->slug]) }}" class="inline-flex items-center px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+                                    <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-200 text-xs font-medium">
                                         #{{ $tag->name }}
-                                    </a>
+                                    </span>
                                 </li>
                             @endforeach
                         </ul>

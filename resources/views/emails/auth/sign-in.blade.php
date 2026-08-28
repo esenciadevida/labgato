@@ -1,6 +1,6 @@
 @extends('emails.layouts.default')
 
-@section('preheader', 'A new sign-in to your LabGato account was detected.')
+@section('preheader', 'A new sign-in to your Labgoto account was detected.')
 
 @section('content')
 <h1 class="eg-h1" style="margin: 0 0 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25; color: #1e293b;">
@@ -8,7 +8,7 @@
 </h1>
 
 <p style="margin: 0 0 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #1e293b;">
-    We noticed a new sign-in to your LabGato account.
+    We noticed a new sign-in to your Labgoto account.
 </p>
 
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 20px; background-color: #f1f5f9; border-radius: 8px;">

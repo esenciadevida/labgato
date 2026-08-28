@@ -103,7 +103,7 @@
                         name="type"
                         class="w-full rounded-lg border border-slate-300 bg-slate-50 dark:bg-slate-800 px-3.5 py-2.5 text-sm text-slate-900 dark:text-slate-100 shadow-card focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/25"
                     >
-                        @foreach(['all' => 'All Types', 'calculator' => 'Calculators', 'tool' => 'Tools', 'reference_range' => 'Reference Ranges', 'interpretation' => 'Interpretations', 'knowledge' => 'Knowledge', 'sop' => 'SOPs'] as $value => $label)
+                        @foreach(['all' => 'All Types', 'calculator' => 'Calculators', 'tool' => 'Tools', 'reference-range' => 'Reference Ranges', 'interpretation' => 'Interpretations', 'knowledge' => 'Knowledge', 'sop' => 'SOPs'] as $value => $label)
                             <option value="{{ $value }}" @selected($type === $value)>{{ $label }}</option>
                         @endforeach
                     </select>

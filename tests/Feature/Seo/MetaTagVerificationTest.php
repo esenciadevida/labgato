@@ -64,6 +64,43 @@ class MetaTagVerificationTest extends TestCase
         }
     }
 
+    public function test_knowledge_detail_page_emits_article_json_ld(): void
+    {
+        $author = \App\Models\User::factory()->create(['name' => 'Dr Jane Doe']);
+        $knowledge = KnowledgeResource::factory()->create([
+            'status' => ResourceStatus::PUBLISHED,
+            'contributed_by' => $author->id,
+        ]);
+
+        $response = $this->get(route('public.knowledge.show', $knowledge->slug));
+
+        $response->assertOk();
+        $response->assertSee('<script type="application/ld+json">', false);
+        $content = $response->getContent();
+        preg_match_all('#<script type="application/ld\+json">(.*?)</script>#s', $content, $matches);
+        $schemas = array_map(
+            fn ($json) => json_decode($json, true),
+            $matches[1],
+        );
+        $article = collect($schemas)->first(fn ($schema) => ($schema['@type'] ?? null) === 'Article');
+
+        $this->assertNotNull($article);
+        $this->assertSame($knowledge->name, $article['headline']);
+        $this->assertSame('Dr Jane Doe', $article['author']['name']);
+        $this->assertNotEmpty($article['datePublished']);
+        $this->assertSame('Organization', $article['publisher']['@type']);
+    }
+
+    public function test_listing_pages_do_not_emit_article_json_ld(): void
+    {
+        Calculator::factory()->create(['status' => ResourceStatus::PUBLISHED]);
+
+        $response = $this->get(route('public.calculators.index'));
+
+        $response->assertOk();
+        $this->assertStringNotContainsString('"@type":"Article"', $response->getContent());
+    }
+
     public function test_filtered_listing_page_is_noindex(): void
     {
         $response = $this->get(route('public.reference-ranges.index', ['category' => 'nonexistent']));

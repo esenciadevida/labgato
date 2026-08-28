@@ -1,4 +1,4 @@
-# LabGato — Professional Laboratory Toolkit
+# Labgoto — Professional Laboratory Toolkit
 
 A Laravel platform for laboratory professionals: clinical calculators, reference ranges,
 SOPs, interpretation guides, and a knowledge hub — with community contributions,

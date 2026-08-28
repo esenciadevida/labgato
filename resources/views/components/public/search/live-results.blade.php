@@ -55,7 +55,7 @@
                 <option value="all" @selected($initialType === 'all')>All Types</option>
                 <option value="calculator" @selected($initialType === 'calculator')>Calculators</option>
                 <option value="tool" @selected($initialType === 'tool')>Tools</option>
-                <option value="reference_range" @selected($initialType === 'reference_range')>Reference Ranges</option>
+                <option value="reference-range" @selected($initialType === 'reference-range')>Reference Ranges</option>
                 <option value="interpretation" @selected($initialType === 'interpretation')>Interpretations</option>
                 <option value="knowledge" @selected($initialType === 'knowledge')>Knowledge</option>
                 <option value="sop" @selected($initialType === 'sop')>SOPs</option>

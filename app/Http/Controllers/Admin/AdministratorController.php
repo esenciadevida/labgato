@@ -72,7 +72,7 @@ class AdministratorController extends Controller
             $request->user()->id
         );
 
-        Mail::to($invitation->email)->send(new AdminInvitationEmail(
+        Mail::to($invitation->email)->queue(new AdminInvitationEmail(
             $invitation,
             route('admin.invitation.show', ['token' => $plainToken])
         ));
@@ -102,7 +102,7 @@ class AdministratorController extends Controller
             $request->user()->id
         );
 
-        Mail::to($invitation->email)->send(new AdminInvitationEmail(
+        Mail::to($invitation->email)->queue(new AdminInvitationEmail(
             $invitation,
             route('admin.invitation.show', ['token' => $plainToken]),
             isResend: true

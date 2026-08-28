@@ -432,8 +432,9 @@
         <div class="mt-6">
             <x-ui.card title="Create a Password">
                 <p class="mb-5 text-sm text-slate-600 dark:text-slate-400">
-                    You signed up using Google and don't have a LabGato password yet. Create one to also
+                    You signed up using Google and don't have a Labgoto password yet. Choose one to also
                     sign in with your email address — your Google sign-in will keep working either way.
+                    After submitting, we'll email you a confirmation link to finish setting it up.
                 </p>
 
                 <form method="POST" action="{{ route('account.password.update') }}" class="space-y-5">

@@ -20,6 +20,7 @@ class Certificate extends Model
         'exam_attempt_id',
         'user_id',
         'assessment_id',
+        'course_id',
         'certificate_number',
         'verification_code',
         'type',
@@ -53,6 +54,11 @@ class Certificate extends Model
     public function assessment(): BelongsTo
     {
         return $this->belongsTo(Assessment::class);
+    }
+
+    public function course(): BelongsTo
+    {
+        return $this->belongsTo(Course::class);
     }
 
     public function isRevoked(): bool

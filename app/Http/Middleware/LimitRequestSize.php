@@ -10,6 +10,8 @@ class LimitRequestSize
 {
     protected const MAX_BYTES = 1048576; // 1 MB
 
+    protected const MAX_MULTIPART_BYTES = 10485760; // 10 MB
+
     protected array $excludedPaths = [
         'livewire/*',
         'admin/reference-ranges/import*',
@@ -23,7 +25,11 @@ class LimitRequestSize
 
         $contentLength = (int) $request->header('Content-Length');
 
-        if ($contentLength > self::MAX_BYTES) {
+        $limit = ($request->isMethod('POST') && $request->files->count() > 0)
+            ? self::MAX_MULTIPART_BYTES
+            : self::MAX_BYTES;
+
+        if ($contentLength > $limit) {
             abort(413, 'The request payload is too large.');
         }
 
@@ -32,10 +38,6 @@ class LimitRequestSize
 
     protected function shouldSkip(Request $request): bool
     {
-        if ($request->isMethod('POST') && $request->files->count() > 0) {
-            return true;
-        }
-
         return $request->is($this->excludedPaths);
     }
 }

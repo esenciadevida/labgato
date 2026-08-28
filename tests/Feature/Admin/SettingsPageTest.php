@@ -50,9 +50,9 @@ class SettingsPageTest extends TestCase
     public function test_settings_page_displays_grouped_settings(): void
     {
         $admin = $this->createSuperAdmin();
-        $this->createSetting('general.site_name', 'LabGato', 'string', 'general', 'Site Name');
+        $this->createSetting('general.site_name', 'Labgoto', 'string', 'general', 'Site Name');
         $this->createSetting('features.public_registration', 'true', 'boolean', 'features', 'Enable Public Registration');
-        $this->createSetting('seo.default_title', 'LabGato — Professional Laboratory Toolkit', 'string', 'seo', 'Default SEO Title');
+        $this->createSetting('seo.default_title', 'Labgoto — Professional Laboratory Toolkit', 'string', 'seo', 'Default SEO Title');
 
         $response = $this->actingAs($admin)->get(route('admin.settings.index'));
 
@@ -68,14 +68,14 @@ class SettingsPageTest extends TestCase
     public function test_general_group_shows_site_name(): void
     {
         $admin = $this->createSuperAdmin();
-        $this->createSetting('general.site_name', 'LabGato', 'string', 'general', 'Site Name', 'The name displayed across the platform.');
+        $this->createSetting('general.site_name', 'Labgoto', 'string', 'general', 'Site Name', 'The name displayed across the platform.');
 
         $response = $this->actingAs($admin)->get(route('admin.settings.index'));
 
         $response->assertStatus(200);
         $response->assertSee('Site Name');
         $response->assertSee('name="settings[general.site_name]"', false);
-        $response->assertSee('value="LabGato"', false);
+        $response->assertSee('value="Labgoto"', false);
         $response->assertSee('The name displayed across the platform.');
     }
 
@@ -109,7 +109,7 @@ class SettingsPageTest extends TestCase
     public function test_updating_a_setting_persists_the_change(): void
     {
         $admin = $this->createSuperAdmin();
-        $this->createSetting('general.site_name', 'LabGato', 'string', 'general', 'Site Name');
+        $this->createSetting('general.site_name', 'Labgoto', 'string', 'general', 'Site Name');
 
         $response = $this->actingAs($admin)->put(route('admin.settings.update'), [
             'settings' => [

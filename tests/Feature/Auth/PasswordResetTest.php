@@ -4,8 +4,10 @@ namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class PasswordResetTest extends TestCase
@@ -85,5 +87,32 @@ class PasswordResetTest extends TestCase
         ]);
 
         $response->assertSessionHasErrors('email');
+    }
+
+    public function test_password_reset_invalidates_existing_sessions(): void
+    {
+        $user = User::factory()->create();
+        $token = Password::createToken($user);
+
+        DB::table('sessions')->insert([
+            'id' => Str::random(40),
+            'user_id' => $user->getAuthIdentifier(),
+            'ip_address' => '127.0.0.1',
+            'user_agent' => 'phpunit',
+            'payload' => base64_encode(''),
+            'last_activity' => now()->timestamp,
+        ]);
+
+        $this->put(route('auth.password.update'), [
+            'token' => $token,
+            'email' => $user->email,
+            'password' => 'NewPassword1234',
+            'password_confirmation' => 'NewPassword1234',
+        ])->assertRedirect(route('auth.login'));
+
+        $this->assertSame(
+            0,
+            DB::table('sessions')->where('user_id', $user->getAuthIdentifier())->count(),
+        );
     }
 }

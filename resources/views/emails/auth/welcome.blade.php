@@ -1,10 +1,10 @@
 @extends('emails.layouts.default')
 
-@section('preheader', 'Your LabGato account is ready — welcome aboard!')
+@section('preheader', 'Your Labgoto account is ready — welcome aboard!')
 
 @section('content')
 <h1 class="eg-h1" style="margin: 0 0 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25; color: #1e293b;">
-    Welcome to LabGato, {{ $user->name }}!
+    Welcome to Labgoto, {{ $user->name }}!
 </h1>
 
 <p style="margin: 0 0 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #1e293b;">

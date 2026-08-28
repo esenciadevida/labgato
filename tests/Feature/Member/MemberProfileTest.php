@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Member;
 
+use App\Mail\ConfirmPasswordCreationEmail;
 use App\Mail\PasswordUpdatedEmail;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -212,11 +213,26 @@ class MemberProfileTest extends TestCase
 
         $member->refresh();
 
+        $this->assertFalse(Hash::check('NewPass456', $member->password));
+        $this->assertNull($member->password_set_at);
+        $this->assertDatabaseMissing('audit_logs', ['action' => 'account.password.set']);
+
+        Mail::assertQueued(ConfirmPasswordCreationEmail::class, function (ConfirmPasswordCreationEmail $mail) use ($member) {
+            return $mail->hasTo($member->email);
+        });
+
+        $confirmMailable = Mail::queued(ConfirmPasswordCreationEmail::class)->first();
+        $url = $confirmMailable->confirmationUrl;
+
+        $this->actingAs($member)->get($url)->assertRedirect(route('account.profile'));
+
+        $member->refresh();
+
         $this->assertTrue(Hash::check('NewPass456', $member->password));
         $this->assertNotNull($member->password_set_at);
         $this->assertDatabaseHas('audit_logs', ['action' => 'account.password.set']);
 
-        Mail::assertSent(PasswordUpdatedEmail::class, function (PasswordUpdatedEmail $mail) use ($member) {
+        Mail::assertQueued(PasswordUpdatedEmail::class, function (PasswordUpdatedEmail $mail) use ($member) {
             return $mail->hasTo($member->email) && $mail->created === true;
         });
     }
@@ -237,6 +253,8 @@ class MemberProfileTest extends TestCase
 
     public function test_after_creating_password_current_password_is_required_for_changes(): void
     {
+        Mail::fake();
+
         $member = User::factory()->member()->googleOnly()->create([
             'password' => bcrypt(Str::password(32)),
         ]);
@@ -248,7 +266,10 @@ class MemberProfileTest extends TestCase
             ])
             ->assertRedirect(route('account.profile'));
 
-        $this->actingAs($member)
+        $confirmMailable = Mail::queued(ConfirmPasswordCreationEmail::class)->first();
+        $this->actingAs($member)->get($confirmMailable->confirmationUrl)->assertRedirect(route('account.profile'));
+
+        $this->actingAs($member->fresh())
             ->put(route('account.password.update'), [
                 'password' => 'SecondPass456',
                 'password_confirmation' => 'SecondPass456',

@@ -42,7 +42,7 @@ class VerifyController extends Controller
     {
         $certificate = Certificate::query()
             ->where('verification_code', strtoupper(trim($code)))
-            ->with(['user.profile', 'assessment'])
+            ->with(['user.profile', 'assessment', 'course'])
             ->first();
 
         if ($certificate === null || $certificate->isRevoked()) {
@@ -56,10 +56,12 @@ class VerifyController extends Controller
         $topPercent = $attempt !== null ? $results->topPercent($attempt) : 100;
         $participants = $attempt !== null ? $results->officialAttempts($attempt->assessment)->count() : 0;
 
+        $subject = $certificate->course?->title ?? $certificate->assessment?->title;
+
         $shareText = sprintf(
             'I scored %.1f%% in the %s on LabGOTO',
             (float) $certificate->score_percent,
-            $certificate->assessment->title
+            $subject
         );
 
         $shareUrl = $certificate->shareUrl();
@@ -80,7 +82,7 @@ class VerifyController extends Controller
             'shareText' => $shareText,
             'shareUrl' => $shareUrl,
             'intents' => $intents,
-            'pageTitle' => "I scored ".round((float) $certificate->score_percent)."% in the {$certificate->assessment->title} - LabGOTO",
+            'pageTitle' => "I scored ".round((float) $certificate->score_percent)."% in the {$subject} - LabGOTO",
             'metaDescription' => $rank !== null
                 ? "Rank #{$rank} of {$participants} · Top {$topPercent}% · Verified on LabGOTO"
                 : "Verified on LabGOTO",

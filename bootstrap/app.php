@@ -5,7 +5,6 @@ use App\Exceptions\Ai\AiRateLimitException;
 use App\Http\Middleware\AdminInactivityTimeout;
 use App\Http\Middleware\CachePublicPages;
 use App\Http\Middleware\EnsureUserHasPermission;
-use App\Http\Middleware\EnsureUserIsActive;
 use App\Http\Middleware\EnsureUserIsActiveUser;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use App\Http\Middleware\EnsureUserIsMember;
@@ -15,6 +14,8 @@ use App\Http\Middleware\LimitRequestSize;
 use App\Http\Middleware\SecurityHeaders;
 use App\Support\AiErrorMessage;
 use App\Support\ApiResponse;
+use App\Support\EnvironmentGuard;
+use App\Support\ExceptionNotifier;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Application;
@@ -26,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-return Application::configure(basePath: dirname(__DIR__))
+$app = Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
         api: __DIR__.'/../routes/api.php',
@@ -53,9 +54,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->trustProxies(at: env('TRUSTED_PROXIES', '*'));
 
         $middleware->alias([
-            'active' => EnsureUserIsActive::class,
             'active.user' => EnsureUserIsActiveUser::class,
-            'ensure_user_is_active' => EnsureUserIsActive::class,
             'admin' => EnsureUserIsAdmin::class,
             'admin.inactivity' => AdminInactivityTimeout::class,
             'honeypot' => HoneypotProtection::class,
@@ -68,6 +67,8 @@ return Application::configure(basePath: dirname(__DIR__))
         });
     })
     ->withExceptions(function (Exceptions $exceptions): void {
+        $exceptions->report(fn (Throwable $e) => ExceptionNotifier::notify($e));
+
         $exceptions->shouldRenderJsonWhen(
             fn (Request $request): bool => $request->is('api/*'),
         );
@@ -116,4 +117,17 @@ return Application::configure(basePath: dirname(__DIR__))
 
             return ApiResponse::serverError(AiErrorMessage::for($e));
         });
-    })->create();
+    })
+    ->create();
+
+$app->booted(function () use ($app): void {
+    $config = $app->make('config');
+
+    EnvironmentGuard::assertEnv(
+        $app->environment(),
+        (bool) $config->get('app.debug'),
+        (string) $config->get('app.key'),
+    );
+});
+
+return $app;

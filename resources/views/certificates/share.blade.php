@@ -1,5 +1,7 @@
 @extends('layouts.public')
 
+@php $metaNoindex = true; @endphp
+
 @section('title', $pageTitle)
 
 @section('content')
@@ -22,7 +24,10 @@
             {{-- Body --}}
             <div class="px-6 py-8 text-center sm:px-10">
                 <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">Certificate of {{ ucfirst($certificate->type) }}</p>
-                <h1 class="mt-1 font-display text-2xl font-bold text-slate-900 dark:text-white">{{ $certificate->assessment->title }}</h1>
+                <h1 class="mt-1 font-display text-2xl font-bold text-slate-900 dark:text-white">{{ $certificate->course?->title ?? $certificate->assessment?->title }}</h1>
+                @if($certificate->course)
+                    <p class="mt-2 inline-block rounded-full bg-emerald-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Course Completion</p>
+                @endif
 
                 <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">Proudly presented to</p>
                 <p class="mt-1 text-xl font-bold text-blue-900 dark:text-blue-300">{{ $holderName }}</p>

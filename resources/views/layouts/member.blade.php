@@ -39,6 +39,9 @@
 
     @stack('scripts')
     @livewireScriptConfig
+    @if(auth()->check() && auth()->user()->isMember() && !auth()->user()->hasOnboarded())
+        <x-onboarding.welcome-modal :tour-steps="app(\App\Services\OnboardingService::class)->dashboardTourSteps()" />
+    @endif
     <x-ui.flash />
     <x-ui.confirm />
 </body>

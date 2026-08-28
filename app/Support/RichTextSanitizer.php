@@ -36,7 +36,9 @@ class RichTextSanitizer
 
     public static function render(string $markdown): string
     {
-        return static::decorateImages(static::sanitize(static::markdownToHtml($markdown)));
+        $html = static::decorateImages(static::sanitize(static::markdownToHtml($markdown)));
+
+        return StoredImage::decorate($html);
     }
 
     public static function sanitize(?string $html): string
@@ -218,23 +220,26 @@ class RichTextSanitizer
 
     /**
      * Extract the first image (or figure containing an image) from HTML.
-     * Returns [imageHtml, src] or [null, null] if no image found.
+     * Returns [imageHtml, src, alt] or [null, null, null] if no image found.
      */
     public static function extractFirstImage(string $html): array
     {
         if (preg_match('/<figure[^>]*>\s*<img\b[^>]*>.*?<\/figure>/is', $html, $m)) {
-            preg_match('/<img[^>]*\bsrc=["\']([^"\']+)["\']/i', $m[0], $src);
+            $imageHtml = $m[0];
+            preg_match('/<img[^>]*\bsrc=["\']([^"\']+)["\']/i', $imageHtml, $src);
+            preg_match('/<img[^>]*\balt=["\']([^"\']*)["\']/i', $imageHtml, $alt);
 
-            return [$m[0], $src[1] ?? null];
+            return [$imageHtml, $src[1] ?? null, $alt[1] ?? null];
         }
 
         if (preg_match('/<img\b[^>]*>/i', $html, $m)) {
             preg_match('/\bsrc=["\']([^"\']+)["\']/i', $m[0], $src);
+            preg_match('/\balt=["\']([^"\']*)["\']/i', $m[0], $alt);
 
-            return [$m[0], $src[1] ?? null];
+            return [$m[0], $src[1] ?? null, $alt[1] ?? null];
         }
 
-        return [null, null];
+        return [null, null, null];
     }
 
     /**

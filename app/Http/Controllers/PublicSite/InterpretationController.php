@@ -30,11 +30,25 @@ class InterpretationController extends Controller
         $related = app(RelatedResourceService::class)->relatedFor($interpretation);
 
         $content = RichTextSanitizer::render($interpretation->content);
-        [$heroImage, $heroImageSrc] = RichTextSanitizer::extractFirstImage($content);
+        [$heroImage, $heroImageSrc, $heroImageAlt] = RichTextSanitizer::extractFirstImage($content);
         $content = $heroImage ? RichTextSanitizer::stripFirstImage($content) : $content;
 
         $readingTime = $interpretation->reading_time_minutes
             ?? max(1, (int) ceil(str_word_count(strip_tags($interpretation->content)) / 200));
+
+        $previous = $interpretation->published_at
+            ? InterpretationResource::query()->published()
+                ->where('published_at', '<', $interpretation->published_at)
+                ->orderByDesc('published_at')
+                ->first(['id', 'slug', 'name'])
+            : null;
+
+        $next = $interpretation->published_at
+            ? InterpretationResource::query()->published()
+                ->where('published_at', '>', $interpretation->published_at)
+                ->orderBy('published_at')
+                ->first(['id', 'slug', 'name'])
+            : null;
 
         $pageTitle = $interpretation->effectiveSeoTitle();
         $metaDescription = $interpretation->effectiveSeoDescription();
@@ -51,6 +65,9 @@ class InterpretationController extends Controller
             'metaDescription',
             'heroImage',
             'heroImageSrc',
+            'heroImageAlt',
+            'previous',
+            'next',
             'readingTime',
         ) + [
             'ogType' => 'article',

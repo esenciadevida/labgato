@@ -1,6 +1,6 @@
 @extends('emails.layouts.default')
 
-@section('preheader', $created ? 'A password was created for your LabGato account.' : 'The password for your LabGato account was changed.')
+@section('preheader', $created ? 'A password was created for your Labgoto account.' : 'The password for your Labgoto account was changed.')
 
 @section('content')
 <h1 class="eg-h1" style="margin: 0 0 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25; color: #1e293b;">
@@ -13,11 +13,11 @@
 
 @if($created)
 <p style="margin: 0 0 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #1e293b;">
-    A password was just created for your LabGato account. You can now sign in with your email address and password, or continue using Google sign-in — both will work.
+    A password was just created for your Labgoto account. You can now sign in with your email address and password, or continue using Google sign-in — both will work.
 </p>
 @else
 <p style="margin: 0 0 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #1e293b;">
-    The password for your LabGato account was just changed. All other devices have been signed out.
+    The password for your Labgoto account was just changed. All other devices have been signed out.
 </p>
 @endif
 

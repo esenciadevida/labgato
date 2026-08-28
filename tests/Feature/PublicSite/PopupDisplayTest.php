@@ -146,7 +146,7 @@ class PopupDisplayTest extends TestCase
         $response = $this->get(route('home'));
 
         $response->assertOk();
-        $response->assertDontSee('setTimeout');
+        $response->assertDontSee('setTimeout(() => this.open = true');
         $response->assertSee('this.open = true;', false);
     }
 

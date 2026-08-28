@@ -14,7 +14,7 @@ const typeMeta = {
             'M15 12a3 3 0 11-6 0 3 3 0 016 0z',
         ],
     },
-    reference_range: {
+    'reference-range': {
         label: 'Reference Range',
         color: 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-800',
         paths: [

@@ -55,11 +55,17 @@ class KnowledgeResource extends Model
         ];
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<Category, $this>
+     */
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'knowledge_resource_category');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<Tag, $this>
+     */
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'knowledge_resource_tag');

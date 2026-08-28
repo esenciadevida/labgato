@@ -7,9 +7,8 @@ use App\Models\InterpretationResource;
 use App\Models\KnowledgeResource;
 use App\Models\Sop;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Collection;
 
 class ContributorController extends Controller
 {
@@ -27,17 +26,7 @@ class ContributorController extends Controller
             abort(404);
         }
 
-        $items = $this->publishedContributions($user->id);
-
-        $page = Paginator::resolveCurrentPage('page');
-
-        $contributions = new LengthAwarePaginator(
-            $items->forPage($page, self::PER_PAGE)->values(),
-            $items->count(),
-            self::PER_PAGE,
-            $page,
-            ['path' => Paginator::resolveCurrentPath(), 'pageName' => 'page']
-        );
+        $contributions = $this->publishedContributions($user->id);
 
         $pageTitle = $user->name.' | '.config('app.name').' Contributor';
         $metaDescription = $user->bio ?: 'Contributions by '.$user->name.' on '.config('app.name').'.';
@@ -50,29 +39,24 @@ class ContributorController extends Controller
         ));
     }
 
-    private function publishedContributions(int $userId): Collection
+    private function publishedContributions(int $userId): LengthAwarePaginator
     {
-        return collect()
-            ->concat($this->published(Sop::class, $userId, 'sop'))
-            ->concat($this->published(KnowledgeResource::class, $userId, 'knowledge'))
-            ->concat($this->published(InterpretationResource::class, $userId, 'interpretation'))
-            ->sortByDesc('published_at')
-            ->values();
+        $query = $this->contributionQuery(Sop::class, 'sop', $userId)
+            ->unionAll($this->contributionQuery(KnowledgeResource::class, 'knowledge', $userId))
+            ->unionAll($this->contributionQuery(InterpretationResource::class, 'interpretation', $userId));
+
+        return $query
+            ->orderByDesc('published_at')
+            ->paginate(self::PER_PAGE, ['type', 'id', 'slug', 'name', 'short_description', 'published_at'])
+            ->through(fn ($row) => $row->only(['type', 'id', 'slug', 'name', 'short_description', 'published_at']));
     }
 
-    private function published(string $model, int $userId, string $type): array
+    private function contributionQuery(string $model, string $type, int $userId): Builder
     {
         return $model::query()
             ->published()
             ->where('contributed_by', $userId)
-            ->get(['id', 'slug', 'name', 'short_description', 'published_at'])
-            ->map(fn ($resource) => [
-                'type' => $type,
-                'slug' => $resource->slug,
-                'name' => $resource->name,
-                'short_description' => $resource->short_description,
-                'published_at' => $resource->published_at,
-            ])
-            ->all();
+            ->selectRaw('? as type', [$type])
+            ->addSelect(['id', 'slug', 'name', 'short_description', 'published_at']);
     }
 }

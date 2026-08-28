@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\RecentlyViewed;
 use App\Services\RecentlyViewedService;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class RecentlyViewedController extends Controller
 {
@@ -20,7 +21,7 @@ class RecentlyViewedController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'resource_type' => ['required', 'string', 'max:255'],
+            'resource_type' => ['required', 'string', Rule::in(RecentlyViewedService::ALLOWED_TYPES)],
             'resource_id' => ['required', 'integer'],
         ]);
 

@@ -32,6 +32,7 @@ class SearchService
         }
 
         $results = collect();
+        $total = 0;
 
         foreach ($this->providers as $type => $providers) {
             if (isset($filters['type']) && $filters['type'] !== 'all' && $filters['type'] !== $type) {
@@ -39,8 +40,16 @@ class SearchService
             }
 
             foreach ($providers as $provider) {
-                foreach ($provider($query, $filters) as $result) {
-                    $results->push($result);
+                $outcome = $provider($query, $filters);
+
+                if (is_array($outcome) && array_key_exists('results', $outcome)) {
+                    $providerResults = collect($outcome['results']);
+                    $results->push(...$providerResults);
+                    $total += (int) ($outcome['total'] ?? $providerResults->count());
+                } else {
+                    $providerResults = collect($outcome);
+                    $results->push(...$providerResults);
+                    $total += $providerResults->count();
                 }
             }
         }
@@ -57,7 +66,6 @@ class SearchService
             ->map(fn (array $item) => $item['result'])
             ->values();
 
-        $total = $results->count();
         $items = $results->slice(($page - 1) * $perPage, $perPage)->values();
 
         $this->logQuery($query, $total);

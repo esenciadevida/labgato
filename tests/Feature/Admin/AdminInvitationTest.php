@@ -54,7 +54,7 @@ class AdminInvitationTest extends TestCase
 
     private function captureToken(): string
     {
-        $mailable = Mail::sent(AdminInvitationEmail::class)->last();
+        $mailable = Mail::queued(AdminInvitationEmail::class)->last();
 
         return (string) Str::after($mailable->acceptUrl, '/admin/invitation/');
     }
@@ -165,7 +165,7 @@ class AdminInvitationTest extends TestCase
 
         $this->actingAs($superAdmin)->post(route('admin.administrators.invitations.resend', $invitation));
 
-        Mail::assertSent(AdminInvitationEmail::class, fn ($mail) => $mail->hasTo('resend@example.com'));
+        Mail::assertQueued(AdminInvitationEmail::class, fn ($mail) => $mail->hasTo('resend@example.com'));
 
         $newToken = $this->captureToken();
         $this->assertNotSame($oldToken, $newToken);

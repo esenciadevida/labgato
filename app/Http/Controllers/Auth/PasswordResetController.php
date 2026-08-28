@@ -7,8 +7,10 @@ use App\Services\AuditLogService;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
@@ -64,9 +66,15 @@ class PasswordResetController extends Controller
             function ($user, $password) {
                 $user->forceFill([
                     'password' => Hash::make($password),
-                    'remember_token' => Str::random(60),
+                    'remember_token' => Hash::make(Str::random(60)),
                     'password_set_at' => now(),
                 ])->save();
+
+                $table = config('session.table', 'sessions');
+
+                if (Schema::hasTable($table)) {
+                    DB::table($table)->where('user_id', $user->getAuthIdentifier())->delete();
+                }
 
                 event(new PasswordReset($user));
             }

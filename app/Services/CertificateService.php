@@ -4,8 +4,11 @@ namespace App\Services;
 
 use App\Models\Assessment;
 use App\Models\Certificate;
+use App\Models\Course;
 use App\Models\ExamAttempt;
+use App\Models\User;
 use App\Support\CertificateTemplateVariables;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -70,6 +73,7 @@ class CertificateService
             'exam_attempt_id' => $attempt->id,
             'user_id' => $attempt->user_id,
             'assessment_id' => $attempt->assessment_id,
+            'course_id' => null,
             'certificate_number' => $number,
             'verification_code' => $this->generateVerificationCode(),
             'type' => $type,
@@ -79,6 +83,57 @@ class CertificateService
         ]);
 
         return $certificate;
+    }
+
+    /**
+     * Issue a course completion certificate once a user has a passing
+     * official attempt on every required assessment. Idempotent per
+     * user + course.
+     */
+    public function issueForCourse(Course $course, User $user): ?Certificate
+    {
+        $existing = Certificate::query()
+            ->where('course_id', $course->id)
+            ->where('user_id', $user->id)
+            ->first();
+
+        if ($existing !== null) {
+            return $existing;
+        }
+
+        if (! $course->certificate_enabled) {
+            return null;
+        }
+
+        $passing = $this->requiredPassingAttempts($course, $user);
+
+        if ($passing === null) {
+            return null;
+        }
+
+        $certificate = Certificate::create([
+            'exam_attempt_id' => null,
+            'user_id' => $user->id,
+            'assessment_id' => null,
+            'course_id' => $course->id,
+            'certificate_number' => $this->nextCertificateNumber(),
+            'verification_code' => $this->generateVerificationCode(),
+            'type' => 'achievement',
+            'score_percent' => round((float) $passing->avg('percentage'), 2),
+            'rank_at_issue' => null,
+            'issued_at' => now(),
+        ]);
+
+        return $certificate;
+    }
+
+    /**
+     * Whether the user has completed (passed) every required assessment in a
+     * course. Results must be released for each linked assessment.
+     */
+    public function courseComplete(Course $course, User $user): bool
+    {
+        return $this->requiredPassingAttempts($course, $user) !== null;
     }
 
     /**
@@ -92,6 +147,27 @@ class CertificateService
             return $certificate->pdf_path;
         }
 
+        $relativePath = 'certificates/'.$certificate->certificate_number.'.pdf';
+
+        Storage::disk('public')->makeDirectory('certificates');
+
+        \Barryvdh\DomPDF\Facade\Pdf::loadView('certificates.pdf', $this->viewData($certificate))
+            ->save(Storage::disk('public')->path($relativePath));
+
+        $certificate->forceFill(['pdf_path' => $relativePath])->save();
+
+        return $relativePath;
+    }
+
+    /**
+     * Every variable the certificate PDF view needs. Exposed for tests so the
+     * per-assessment override / global fallback chain can be asserted directly
+     * without parsing the compressed PDF stream.
+     *
+     * @return array<string, mixed>
+     */
+    public function viewData(Certificate $certificate): array
+    {
         $qrBase64 = null;
 
         try {
@@ -104,30 +180,21 @@ class CertificateService
             $qrBase64 = null;
         }
 
-        $relativePath = 'certificates/'.$certificate->certificate_number.'.pdf';
-
-        Storage::disk('public')->makeDirectory('certificates');
-
-        \Barryvdh\DomPDF\Facade\Pdf::loadView('certificates.pdf', [
+        return [
             'certificate' => $certificate,
             'holderName' => $this->holderName($certificate),
             'qrBase64' => $qrBase64,
             'signatureBase64' => $this->signatureBase64(),
-            'signatoryName' => (string) setting('certificate.signatory_name', 'Program Director'),
-            'signatoryTitle' => (string) setting('certificate.signatory_title', 'Program Director, LabGOTO'),
+            'signatoryName' => $this->signatoryName($certificate),
+            'signatoryTitle' => $this->signatoryTitle($certificate),
             'logoBase64' => $this->logoBase64(),
-            'primaryColor' => (string) setting('certificate.primary_color', '#1e3a8a'),
-            'secondaryColor' => (string) setting('certificate.secondary_color', '#d4af37'),
+            'primaryColor' => $this->primaryColor($certificate),
+            'secondaryColor' => $this->secondaryColor($certificate),
             'completionText' => $this->completionText($certificate),
             'disclaimerText' => $this->disclaimerText($certificate),
-            'showLogo' => setting_bool('certificate.show_logo', true),
-            'showQr' => setting_bool('certificate.show_qr', true),
-        ])
-            ->save(Storage::disk('public')->path($relativePath));
-
-        $certificate->forceFill(['pdf_path' => $relativePath])->save();
-
-        return $relativePath;
+            'showLogo' => $this->showLogo($certificate),
+            'showQr' => $this->showQr($certificate),
+        ];
     }
 
     /**
@@ -137,7 +204,7 @@ class CertificateService
     {
         $certificate = Certificate::query()
             ->where('verification_code', strtoupper(trim($code)))
-            ->with(['user.profile', 'assessment'])
+            ->with(['user.profile', 'assessment', 'course'])
             ->first();
 
         if ($certificate === null) {
@@ -184,12 +251,64 @@ class CertificateService
     }
 
     /**
+     * Course certificates draw their overrides from the course first, then the
+     * assessment, then the global certificate template settings. Assessement
+     * certificates fall back straight to the globals (course_id is null).
+     */
+    private function source(Certificate $certificate)
+    {
+        if ($certificate->course_id !== null) {
+            return $certificate->course;
+        }
+
+        return $certificate->assessment;
+    }
+
+    private function primaryColor(Certificate $certificate): string
+    {
+        return (string) ($this->source($certificate)?->cert_primary_color
+            ?? setting('certificate.primary_color', '#1e3a8a'));
+    }
+
+    private function secondaryColor(Certificate $certificate): string
+    {
+        return (string) ($this->source($certificate)?->cert_secondary_color
+            ?? setting('certificate.secondary_color', '#d4af37'));
+    }
+
+    private function signatoryName(Certificate $certificate): string
+    {
+        return (string) ($this->source($certificate)?->cert_signatory_name
+            ?? setting('certificate.signatory_name', 'Program Director'));
+    }
+
+    private function signatoryTitle(Certificate $certificate): string
+    {
+        return (string) ($this->source($certificate)?->cert_signatory_title
+            ?? setting('certificate.signatory_title', 'Program Director, LabGOTO'));
+    }
+
+    private function showLogo(Certificate $certificate): bool
+    {
+        return $this->source($certificate)?->cert_show_logo
+            ?? setting_bool('certificate.show_logo', true);
+    }
+
+    private function showQr(Certificate $certificate): bool
+    {
+        return $this->source($certificate)?->cert_show_qr
+            ?? setting_bool('certificate.show_qr', true);
+    }
+
+    /**
      * The completion text below the holder name.
-     * Uses the admin-configured body text with system insertion placeholders, or the default.
+     * Uses the source-level body text (or the admin-configured global one)
+     * with system insertion placeholders, or the default.
      */
     private function completionText(Certificate $certificate): string
     {
-        $custom = (string) setting('certificate.body_text', '');
+        $custom = $this->source($certificate)?->cert_body_text
+            ?? (string) setting('certificate.body_text', '');
 
         if ($custom !== '') {
             $vars = CertificateTemplateVariables::resolve($certificate);
@@ -197,16 +316,22 @@ class CertificateService
             return nl2br(e($text));
         }
 
-        return 'for successfully completing the <strong>' . e($certificate->assessment->title) . '</strong>';
+        if ($certificate->course !== null) {
+            return 'for successfully completing the <strong>' . e($certificate->course->title) . '</strong> course';
+        }
+
+        return 'for successfully completing the <strong>' . e($certificate->assessment?->title ?? 'Assessment') . '</strong>';
     }
 
     /**
      * The disclaimer text at the bottom of the certificate.
-     * Uses the admin-configured disclaimer with system insertion placeholders, or the default.
+     * Uses the source-level (or global) disclaimer with system insertion
+     * placeholders, or the default.
      */
     private function disclaimerText(Certificate $certificate): string
     {
-        $custom = (string) setting('certificate.disclaimer_text', '');
+        $custom = $this->source($certificate)?->cert_disclaimer_text
+            ?? (string) setting('certificate.disclaimer_text', '');
 
         if ($custom !== '') {
             $vars = CertificateTemplateVariables::resolve($certificate);
@@ -214,7 +339,9 @@ class CertificateService
             return nl2br(e($text));
         }
 
-        return 'This certificate acknowledges achievement in the ' . e($certificate->assessment->title) . ' administered by LabGOTO. '
+        $subject = $certificate->course?->title ?? $certificate->assessment?->title ?? 'Assessment';
+
+        return 'This certificate acknowledges achievement in the ' . e($subject) . ' administered by LabGOTO. '
             . 'It is not an ASCP certification nor an official ASCP credential. Verify authenticity by scanning the QR code above '
             . 'or visiting ' . e($certificate->verifyUrl()) . '.';
     }
@@ -295,6 +422,50 @@ class CertificateService
         } catch (\Throwable) {
             return null;
         }
+    }
+
+    /**
+     * @return Collection<int, ExamAttempt>|null the passing attempt per
+     *         required assessment, or null when the course is not complete.
+     */
+    private function requiredPassingAttempts(Course $course, User $user): ?Collection
+    {
+        $required = $course->requiredAssessments()->get();
+
+        if ($required->isEmpty()) {
+            return null;
+        }
+
+        $passing = collect();
+
+        foreach ($required as $assessment) {
+            if (! $this->results->isReleased($assessment)) {
+                return null;
+            }
+
+            $attempt = ExamAttempt::query()
+                ->where('user_id', $user->id)
+                ->where('assessment_id', $assessment->id)
+                ->where('mode', 'official')
+                ->whereIn('status', ['submitted', 'auto_submitted'])
+                ->orderByDesc('percentage')
+                ->first();
+
+            if ($attempt === null || $attempt->percentage === null) {
+                return null;
+            }
+
+            $pass = $assessment->pass_percentage === null
+                || (float) $attempt->percentage >= (float) $assessment->pass_percentage;
+
+            if (! $pass) {
+                return null;
+            }
+
+            $passing->push($attempt);
+        }
+
+        return $passing;
     }
 
     private function nextCertificateNumber(): string

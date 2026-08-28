@@ -51,7 +51,7 @@
                     <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/40">
                         <div class="flex flex-wrap items-center justify-between gap-2">
                             <p class="text-sm font-medium text-slate-900 dark:text-slate-100">
-                                {{ $reply->admin?->name ?? 'LabGato Staff' }}
+                                {{ $reply->admin?->name ?? 'Labgoto Staff' }}
                                 <span class="ml-1 text-xs font-normal text-slate-500 dark:text-slate-400">({{ $reply->created_at?->format('M j, Y g:i A') ?? '—' }})</span>
                             </p>
                         </div>

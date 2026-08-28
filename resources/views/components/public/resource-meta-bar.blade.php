@@ -18,7 +18,7 @@
     <div class="flex flex-wrap gap-2">
         @foreach($categories as $category)
             <a
-                href="{{ $resourceType ? route("public.{$resourceType}.index", ['category' => $category->slug]) : '#' }}"
+                href="{{ $resourceType ? route("public.{$resourceType}.index", ['categories' => [(int) $category->id]]) : '#' }}"
                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium uppercase tracking-wider border
                     {{ $variant === 'dark'
                         ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
@@ -33,15 +33,14 @@
     @if($tags->isNotEmpty())
     <div class="flex flex-wrap gap-2">
         @foreach($tags as $tag)
-            <a
-                href="{{ $resourceType ? route("public.{$resourceType}.index", ['tag' => $tag->slug]) : '#' }}"
+            <span
                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium uppercase tracking-wider border
                     {{ $variant === 'dark'
-                        ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
+                        ? 'bg-white/10 text-white border-white/20'
                         : 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-600' }}"
             >
                 #{{ $tag->name }}
-            </a>
+            </span>
         @endforeach
     </div>
     @endif

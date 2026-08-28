@@ -1,5 +1,7 @@
 @extends('layouts.public')
 
+@php $metaNoindex = true; @endphp
+
 @section('title', 'Certificate Verification')
 
 @section('content')
@@ -63,7 +65,11 @@
                         <div class="mx-auto mt-3 h-px w-40 bg-amber-400"></div>
                         <p class="mt-5 text-sm text-slate-700">
                             for successfully completing the
-                            <span class="font-semibold text-primary-800">{{ $certificate->assessment?->title }}</span>
+                            @if($certificate->course)
+                                <span class="font-semibold text-primary-800">{{ $certificate->course->title }}</span> course
+                            @else
+                                <span class="font-semibold text-primary-800">{{ $certificate->assessment?->title }}</span>
+                            @endif
                         </p>
 
                         @if($certificate->type !== 'participation')
@@ -101,8 +107,8 @@
                         <dd class="text-right text-sm font-semibold text-slate-900 dark:text-white">{{ $holderName }}</dd>
                     </div>
                     <div class="flex justify-between gap-4 py-3">
-                        <dt class="text-sm font-medium text-slate-500 dark:text-slate-400">Assessment</dt>
-                        <dd class="text-right text-sm font-semibold text-slate-900 dark:text-white">{{ $certificate->assessment?->title }}</dd>
+                        <dt class="text-sm font-medium text-slate-500 dark:text-slate-400">{{ $certificate->course ? 'Course' : 'Assessment' }}</dt>
+                        <dd class="text-right text-sm font-semibold text-slate-900 dark:text-white">{{ $certificate->course?->title ?? $certificate->assessment?->title }}</dd>
                     </div>
                     <div class="flex justify-between gap-4 py-3">
                         <dt class="text-sm font-medium text-slate-500 dark:text-slate-400">Tier</dt>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Services\AdminTwoFactorService;
 use App\Services\AuditLogService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -76,6 +77,22 @@ class LoginController extends Controller
             return redirect()->route('login')->withErrors([
                 'email' => 'Please use the member login page.',
             ]);
+        }
+
+        $twoFactor = app(AdminTwoFactorService::class);
+
+        if ($twoFactor->enabled()) {
+            Cache::forget("login_attempts_{$throttleKey}");
+
+            Auth::logout();
+
+            $auditLog->log(
+                action: 'auth.login.challenge_issued',
+            );
+
+            $token = $twoFactor->begin($user);
+
+            return redirect()->route('auth.login.two-factor.show', $token);
         }
 
         Cache::forget("login_attempts_{$throttleKey}");

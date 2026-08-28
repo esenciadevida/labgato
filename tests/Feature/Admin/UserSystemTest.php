@@ -90,7 +90,7 @@ class UserSystemTest extends TestCase
 
         $this->assertDatabaseMissing('users', ['email' => 'newadmin@example.com']);
 
-        Mail::assertSent(AdminInvitationEmail::class, function ($mail) {
+        Mail::assertQueued(AdminInvitationEmail::class, function ($mail) {
             return $mail->hasTo('newadmin@example.com');
         });
     }

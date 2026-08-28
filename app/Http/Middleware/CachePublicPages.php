@@ -14,6 +14,8 @@ class CachePublicPages
         'auth.',
         'member.',
         'dashboard.',
+        'cron.',
+        'contact.',
     ];
 
     private const LONG_CACHE_ROUTES = [
@@ -26,6 +28,11 @@ class CachePublicPages
         $response = $next($request);
 
         if (! $this->shouldCache($request, $response)) {
+            // Responses that carry fresh cookies must never be stored by shared caches.
+            if ($response->headers->has('Set-Cookie')) {
+                $response->headers->set('Cache-Control', 'private, no-store');
+            }
+
             return $response;
         }
 
@@ -60,6 +67,10 @@ class CachePublicPages
         }
 
         if ($request->is('api/*')) {
+            return false;
+        }
+
+        if ($response->headers->has('Set-Cookie')) {
             return false;
         }
 

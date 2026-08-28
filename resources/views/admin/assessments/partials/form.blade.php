@@ -9,6 +9,8 @@
 @php
     $oldValue = fn (string $field, $default = null) => old($field, $assessment?->{$field} ?? $default);
 
+    $globalSetting = fn (string $key, mixed $default) => setting($key, $default);
+
     $existingBlueprints = $assessment?->relationLoaded('blueprints')
         ? $assessment->blueprints->keyBy('question_category_id')
         : $assessment?->blueprints->keyBy('question_category_id');
@@ -211,6 +213,68 @@
         </x-form.section>
     </x-ui.card>
 
+    <x-ui.card>
+        <x-form.section title="Certificate" description="Optional per-assessment certificate overrides. Leave fields blank to inherit the global certificate template settings.">
+            <div class="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
+                <div class="sm:col-span-2">
+                    <x-form.label for="cert_body_text">Body Text</x-form.label>
+                    <x-ui.textarea id="cert_body_text" name="cert_body_text" rows="3" :error="$errors->first('cert_body_text')" placeholder="Blank = use global template body text">{{ $oldValue('cert_body_text') }}</x-ui.textarea>
+                    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">System variables like {assessment}, {name}, {date} are replaced when the certificate is generated.</p>
+                </div>
+
+                <div class="sm:col-span-2">
+                    <x-form.label for="cert_disclaimer_text">Disclaimer Text</x-form.label>
+                    <x-ui.textarea id="cert_disclaimer_text" name="cert_disclaimer_text" rows="2" :error="$errors->first('cert_disclaimer_text')" placeholder="Blank = use global template disclaimer">{{ $oldValue('cert_disclaimer_text') }}</x-ui.textarea>
+                </div>
+
+                <div>
+                    <x-form.label for="cert_signatory_name">Signatory Name</x-form.label>
+                    <x-ui.input id="cert_signatory_name" name="cert_signatory_name" value="{{ $oldValue('cert_signatory_name') }}" placeholder="Blank = {{ $globalSetting('certificate.signatory_name', 'Program Director') }}" :error="$errors->first('cert_signatory_name')" />
+                </div>
+
+                <div>
+                    <x-form.label for="cert_signatory_title">Signatory Title</x-form.label>
+                    <x-ui.input id="cert_signatory_title" name="cert_signatory_title" value="{{ $oldValue('cert_signatory_title') }}" placeholder="Blank = {{ $globalSetting('certificate.signatory_title', 'Program Director, LabGOTO') }}" :error="$errors->first('cert_signatory_title')" />
+                </div>
+
+                <div>
+                    <x-form.label for="cert_primary_color">Primary Color</x-form.label>
+                    <div class="mt-1 flex items-center gap-2">
+                        <input type="color" id="cert_primary_color_picker" value="{{ $oldValue('cert_primary_color', $globalSetting('certificate.primary_color', '#1e3a8a')) }}" class="h-9 w-14 cursor-pointer rounded border border-slate-300 dark:border-slate-600">
+                        <x-ui.input id="cert_primary_color" name="cert_primary_color" value="{{ $oldValue('cert_primary_color') }}" placeholder="{{ $globalSetting('certificate.primary_color', '#1e3a8a') }}" class="flex-1 font-mono text-xs" :error="$errors->first('cert_primary_color')" />
+                    </div>
+                    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Blank hex code = inherit the global color.</p>
+                </div>
+
+                <div>
+                    <x-form.label for="cert_secondary_color">Secondary Color</x-form.label>
+                    <div class="mt-1 flex items-center gap-2">
+                        <input type="color" id="cert_secondary_color_picker" value="{{ $oldValue('cert_secondary_color', $globalSetting('certificate.secondary_color', '#d4af37')) }}" class="h-9 w-14 cursor-pointer rounded border border-slate-300 dark:border-slate-600">
+                        <x-ui.input id="cert_secondary_color" name="cert_secondary_color" value="{{ $oldValue('cert_secondary_color') }}" placeholder="{{ $globalSetting('certificate.secondary_color', '#d4af37') }}" class="flex-1 font-mono text-xs" :error="$errors->first('cert_secondary_color')" />
+                    </div>
+                </div>
+
+                <div>
+                    <x-form.label for="cert_show_logo">Show Logo</x-form.label>
+                    <x-ui.select id="cert_show_logo" name="cert_show_logo" :error="$errors->first('cert_show_logo')">
+                        <option value="" @selected($oldValue('cert_show_logo') === null || $oldValue('cert_show_logo') === '')>Inherit global default</option>
+                        <option value="1" @selected($oldValue('cert_show_logo') == '1')>Show</option>
+                        <option value="0" @selected($oldValue('cert_show_logo') == '0')>Hide</option>
+                    </x-ui.select>
+                </div>
+
+                <div>
+                    <x-form.label for="cert_show_qr">Show QR Code</x-form.label>
+                    <x-ui.select id="cert_show_qr" name="cert_show_qr" :error="$errors->first('cert_show_qr')">
+                        <option value="" @selected($oldValue('cert_show_qr') === null || $oldValue('cert_show_qr') === '')>Inherit global default</option>
+                        <option value="1" @selected($oldValue('cert_show_qr') == '1')>Show</option>
+                        <option value="0" @selected($oldValue('cert_show_qr') == '0')>Hide</option>
+                    </x-ui.select>
+                </div>
+            </div>
+        </x-form.section>
+    </x-ui.card>
+
     <div class="flex items-center justify-end gap-3">
         <x-ui.button href="{{ route('admin.assessments.index') }}" variant="ghost">
             Cancel
@@ -220,3 +284,19 @@
         </x-ui.button>
     </div>
 </form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sync = (pickerId, inputId) => {
+        const picker = document.getElementById(pickerId);
+        const input = document.getElementById(inputId);
+        if (!picker || !input) return;
+        picker.addEventListener('input', () => { input.value = picker.value; });
+        input.addEventListener('input', () => {
+            if (/^#[0-9a-fA-F]{6}$/.test(input.value)) picker.value = input.value;
+        });
+    };
+    sync('cert_primary_color_picker', 'cert_primary_color');
+    sync('cert_secondary_color_picker', 'cert_secondary_color');
+});
+</script>

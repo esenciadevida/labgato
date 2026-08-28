@@ -56,14 +56,17 @@ class RecommendationService
     {
         $categoryIds = [];
 
-        foreach ($recent as $item) {
-            $model = $this->resolveModel($item->resource_type);
-            if (! $model) {
+        foreach ($recent->groupBy('resource_type') as $type => $group) {
+            $modelClass = $this->resolveModel($type);
+            if (! $modelClass) {
                 continue;
             }
 
-            $record = $model::query()->find($item->resource_id);
-            if ($record && $record->categories()->exists()) {
+            $records = $modelClass::query()
+                ->with('categories')
+                ->findMany($group->pluck('resource_id')->unique()->values());
+
+            foreach ($records as $record) {
                 $categoryIds = array_merge($categoryIds, $record->categories->pluck('id')->all());
             }
         }

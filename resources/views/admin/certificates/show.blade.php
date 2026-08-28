@@ -152,8 +152,13 @@
                 </div>
             </x-ui.card>
 
-            <x-ui.card title="Assessment">
-                @if($certificate->assessment)
+            <x-ui.card :title="$certificate->course ? 'Course' : 'Assessment'">
+                @if($certificate->course)
+                    <div class="space-y-2 text-sm">
+                        <p class="font-medium text-slate-900 dark:text-white">{{ $certificate->course->title }}</p>
+                        <p class="text-slate-500 dark:text-slate-400">Required assessments: {{ $certificate->course->assessments()->count() }}</p>
+                    </div>
+                @elseif($certificate->assessment)
                     <div class="space-y-2 text-sm">
                         <p class="font-medium text-slate-900 dark:text-white">{{ $certificate->assessment->title }}</p>
                         @if($certificate->assessment->pass_percentage !== null)
@@ -161,7 +166,7 @@
                         @endif
                     </div>
                 @else
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Assessment record unavailable.</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Associated record unavailable.</p>
                 @endif
             </x-ui.card>
         </div>

@@ -44,6 +44,40 @@ class StoreAssessmentRequest extends FormRequest
         $this->merge([
             'total_questions' => max(1, min(500, (int) $planned)),
         ]);
+
+        // Per-assessment certificate overrides: blank means "inherit global".
+        $plainFields = [
+            'cert_body_text',
+            'cert_disclaimer_text',
+            'cert_primary_color',
+            'cert_secondary_color',
+            'cert_signatory_name',
+            'cert_signatory_title',
+        ];
+
+        foreach ($plainFields as $field) {
+            $value = $this->input($field);
+
+            if ($value === null || trim((string) $value) === '') {
+                $this->merge([$field => null]);
+            }
+        }
+
+        $this->merge([
+            'cert_show_logo' => $this->nullableBoolean('cert_show_logo'),
+            'cert_show_qr' => $this->nullableBoolean('cert_show_qr'),
+        ]);
+    }
+
+    private function nullableBoolean(string $field): ?bool
+    {
+        $value = $this->input($field);
+
+        if ($value === null || trim((string) $value) === '') {
+            return null;
+        }
+
+        return $this->boolean($field);
     }
 
     public function rules(): array
@@ -65,6 +99,14 @@ class StoreAssessmentRequest extends FormRequest
             'shuffle_options' => ['nullable', 'boolean'],
             'fullscreen_required' => ['nullable', 'boolean'],
             'certificate_enabled' => ['nullable', 'boolean'],
+            'cert_body_text' => ['nullable', 'string', 'max:2000'],
+            'cert_disclaimer_text' => ['nullable', 'string', 'max:2000'],
+            'cert_primary_color' => ['nullable', 'regex:/^#[0-9a-fA-F]{6}$/'],
+            'cert_secondary_color' => ['nullable', 'regex:/^#[0-9a-fA-F]{6}$/'],
+            'cert_signatory_name' => ['nullable', 'string', 'max:150'],
+            'cert_signatory_title' => ['nullable', 'string', 'max:150'],
+            'cert_show_logo' => ['nullable', 'boolean'],
+            'cert_show_qr' => ['nullable', 'boolean'],
             'results_available' => ['nullable', 'boolean'],
             'answer_review_available' => ['nullable', 'boolean'],
             'leaderboard_visible' => ['nullable', 'boolean'],
@@ -144,6 +186,14 @@ class StoreAssessmentRequest extends FormRequest
             'shuffle_options' => $this->boolean('shuffle_options'),
             'fullscreen_required' => $this->boolean('fullscreen_required'),
             'certificate_enabled' => $this->boolean('certificate_enabled'),
+            'cert_body_text' => $this->input('cert_body_text'),
+            'cert_disclaimer_text' => $this->input('cert_disclaimer_text'),
+            'cert_primary_color' => $this->input('cert_primary_color'),
+            'cert_secondary_color' => $this->input('cert_secondary_color'),
+            'cert_signatory_name' => $this->input('cert_signatory_name'),
+            'cert_signatory_title' => $this->input('cert_signatory_title'),
+            'cert_show_logo' => $this->input('cert_show_logo'),
+            'cert_show_qr' => $this->input('cert_show_qr'),
             'results_status' => $statusFlag($this->boolean('results_available')),
             'answer_review_status' => $statusFlag($this->boolean('answer_review_available')),
             'leaderboard_status' => $statusFlag($this->boolean('leaderboard_visible')),

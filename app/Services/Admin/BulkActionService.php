@@ -67,18 +67,23 @@ class BulkActionService
         }
 
         $affected = 0;
+        $model = $config['model'];
 
-        $config['model']::whereIn('id', $ids)->get()->each(function ($resource) use ($action, $config, $user, $request, &$affected) {
-            $applied = match ($action) {
-                'publish' => $this->publishResource($resource, $config['permission'], $user, $request),
-                'archive' => $this->archiveResource($resource, $config['permission'], $user, $request),
-                'delete' => $this->deleteResource($resource, $config['permission'], $user, $request),
-            };
+        $model::whereIn('id', $ids)
+            ->orderBy('id')
+            ->chunkById(200, function ($resources) use ($action, $config, $user, $request, &$affected) {
+                foreach ($resources as $resource) {
+                    $applied = match ($action) {
+                        'publish' => $this->publishResource($resource, $config['permission'], $user, $request),
+                        'archive' => $this->archiveResource($resource, $config['permission'], $user, $request),
+                        'delete' => $this->deleteResource($resource, $config['permission'], $user, $request),
+                    };
 
-            if ($applied) {
-                $affected++;
-            }
-        });
+                    if ($applied) {
+                        $affected++;
+                    }
+                }
+            });
 
         return $affected;
     }

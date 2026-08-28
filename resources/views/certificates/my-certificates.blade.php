@@ -29,7 +29,14 @@
                         </span>
                         <div>
                             <div class="flex flex-wrap items-center gap-2">
-                                <h2 class="font-semibold text-slate-900 dark:text-white">{{ $certificate->assessment?->title }}</h2>
+                                <h2 class="font-semibold text-slate-900 dark:text-white">
+                                    @if($certificate->course)
+                                        {{ $certificate->course->title }}
+                                        <span class="ml-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-semibold text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Course</span>
+                                    @else
+                                        {{ $certificate->assessment?->title }}
+                                    @endif
+                                </h2>
                                 <span class="rounded-full bg-primary-50 px-2 py-0.5 text-[11px] font-semibold text-primary-700 dark:bg-primary-900/40 dark:text-primary-300">{{ ucfirst($certificate->type) }}</span>
                                 @if($certificate->isRevoked())
                                     <span class="rounded-full bg-red-100 px-2 py-0.5 text-[11px] font-semibold text-red-700 dark:bg-red-900/40 dark:text-red-300">Revoked</span>
@@ -44,17 +51,31 @@
 
                     <div class="flex shrink-0 gap-2">
                         @unless($certificate->isRevoked())
-                            <a href="{{ route('certificates.download', $certificate->attempt) }}"
-                               class="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500">
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                                </svg>
-                                Download
-                            </a>
-                            <a href="{{ route('certificates.share-redirect', $certificate->attempt) }}"
-                               class="inline-flex min-h-[40px] items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
-                                Share
-                            </a>
+                            @if($certificate->course)
+                                <a href="{{ route('courses.certificate-download', $certificate->course) }}"
+                                   class="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                    </svg>
+                                    Download
+                                </a>
+                                <a href="{{ route('certificates.share', $certificate->verification_code) }}"
+                                   class="inline-flex min-h-[40px] items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
+                                    Share
+                                </a>
+                            @else
+                                <a href="{{ route('certificates.download', $certificate->attempt) }}"
+                                   class="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                    </svg>
+                                    Download
+                                </a>
+                                <a href="{{ route('certificates.share-redirect', $certificate->attempt) }}"
+                                   class="inline-flex min-h-[40px] items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
+                                    Share
+                                </a>
+                            @endif
                         @endunless
                     </div>
                 </div>

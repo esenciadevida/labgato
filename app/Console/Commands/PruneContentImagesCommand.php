@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\ContentImage;
+use App\Services\ContentImageService;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Storage;
 
 class PruneContentImagesCommand extends Command
 {
@@ -27,13 +27,11 @@ class PruneContentImagesCommand extends Command
             return self::SUCCESS;
         }
 
-        $disk = Storage::disk('public');
         $freedBytes = 0;
+        $service = app(ContentImageService::class);
 
         foreach ($images as $image) {
-            if ($disk->exists($image->path)) {
-                $disk->delete($image->path);
-            }
+            $service->deleteWithVariants($image->path);
 
             $freedBytes += (int) $image->size_bytes;
             $image->delete();

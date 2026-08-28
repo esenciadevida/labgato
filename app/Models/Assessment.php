@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\DB;
 
@@ -29,6 +30,14 @@ class Assessment extends Model
         'fullscreen_required',
         'pass_percentage',
         'certificate_enabled',
+        'cert_body_text',
+        'cert_disclaimer_text',
+        'cert_primary_color',
+        'cert_secondary_color',
+        'cert_signatory_name',
+        'cert_signatory_title',
+        'cert_show_logo',
+        'cert_show_qr',
         'results_status',
         'answer_review_status',
         'leaderboard_status',
@@ -45,6 +54,8 @@ class Assessment extends Model
             'fullscreen_required' => 'boolean',
             'pass_percentage' => 'decimal:2',
             'certificate_enabled' => 'boolean',
+            'cert_show_logo' => 'boolean',
+            'cert_show_qr' => 'boolean',
         ];
     }
 
@@ -56,6 +67,13 @@ class Assessment extends Model
     public function attempts(): HasMany
     {
         return $this->hasMany(ExamAttempt::class);
+    }
+
+    public function courses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'course_assessment')
+            ->withPivot('required', 'sort_order')
+            ->orderByPivot('sort_order');
     }
 
     public function isOpen(): bool

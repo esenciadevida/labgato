@@ -441,6 +441,31 @@ function examComponent() {
             }
         },
 
+        focusRelative: function (offset) {
+            var tabs = this.$refs.tablist.querySelectorAll('[role="tab"]');
+            var target;
+
+            if (offset === 'home') {
+                target = 0;
+            } else if (offset === 'end') {
+                target = this.total - 1;
+            } else {
+                target = this.current + offset;
+                if (target < 0) {
+                    target = this.total - 1;
+                }
+                if (target > this.total - 1) {
+                    target = 0;
+                }
+            }
+
+            this.goto(target);
+
+            if (tabs[target]) {
+                tabs[target].focus();
+            }
+        },
+
         next: function () {
             this.goto(this.current + 1);
         },

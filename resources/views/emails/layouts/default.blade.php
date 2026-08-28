@@ -7,7 +7,7 @@
     <meta name="x-apple-disable-message-reformatting">
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
-    <title>{{ config('app.name', 'LabGato') }}</title>
+    <title>{{ config('app.name', 'Labgoto') }}</title>
     <style>
         @media only screen and (max-width: 620px) {
             .eg-container {
@@ -32,7 +32,7 @@
 
 {{-- Hidden preheader text shown in inbox previews --}}
 <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
-    @yield('preheader', config('app.name', 'LabGato').' — Professional Laboratory Toolkit')
+    @yield('preheader', config('app.name', 'Labgoto').' — Professional Laboratory Toolkit')
 </div>
 
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #0f172a;">
@@ -50,7 +50,7 @@
                                     <img src="{{ asset('assets/LabGoTo_favicon_192.png') }}" width="36" height="36" alt="Labgoto logo" style="display: block; border: 0; outline: none; text-decoration: none;">
                                 </td>
                                 <td align="left" valign="middle">
-                                    <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em;">LabGato</span>
+                                    <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em;">Labgoto</span>
                                 </td>
                             </tr>
                         </table>
@@ -71,10 +71,10 @@
                 <tr>
                     <td class="eg-pad" align="center" style="padding: 24px 40px; background-color: #f1f5f9; border-top: 1px solid #e2e8f0;">
                         <p style="margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.5; color: #64748b;">
-                            &copy; {{ date('Y') }} {{ config('app.name', 'LabGato') }}. All rights reserved.
+                            &copy; {{ date('Y') }} {{ config('app.name', 'Labgoto') }}. All rights reserved.
                         </p>
                         <p style="margin: 8px 0 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.5; color: #64748b;">
-                            @yield('footer_note', 'You received this email because you have a LabGato account.')
+                            @yield('footer_note', 'You received this email because you have a Labgoto account.')
                         </p>
                     </td>
                 </tr>
