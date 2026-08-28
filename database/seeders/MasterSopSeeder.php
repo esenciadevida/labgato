@@ -15,6 +15,15 @@ class MasterSopSeeder extends Seeder
         'labgoto_manual_reticulocyte_count_sop.json',
         'labgoto_peripheral_blood_film_sop.json',
         'labgoto_d_dimer_sop.json',
+        'labgoto_thick_blood_film_sop.json',
+        'labgoto_thin_blood_film_sop.json',
+        'labgoto_esr_sop.json',
+        'labgoto_pcv_sop.json',
+        'labgoto_sickling_test_sop.json',
+        'labgoto_pt_inr_sop.json',
+        'labgoto_aptt_sop.json',
+        'labgoto_urinalysis_chemical_sop.json',
+        'labgoto_urine_microscopy_sop.json',
     ];
 
     public function run(): void

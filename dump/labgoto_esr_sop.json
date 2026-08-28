@@ -1,0 +1,46 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "reviewer_credentials": "MD, Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Erythrocyte Sedimentation Rate (Westergren Method)",
+        "slug": "erythrocyte-sedimentation-rate-westergren",
+        "short_description": "SOP for measuring the rate at which red blood cells settle in a vertical tube over one hour, indicating non-specific inflammation.",
+        "content": "# Standard Operating Procedure: Erythrocyte Sedimentation Rate (ESR)\n\n## 1. Purpose and Scope\nTo measure the distance red blood cells fall in a vertical tube over 60 minutes (Westergren method) as a non-specific marker of inflammation.\n\n## 2. Specimen Requirements\n- **Type:** Whole blood.\n- **Anticoagulant:** K2/K3 EDTA (preferred) or 3.2% Sodium Citrate (1:4 ratio).\n- **Stability:** Test within 2 hours at room temperature. If delayed, store at 2-8°C for up to 6 hours (bring to RT before testing).\n- **Rejection:** Clotted, hemolyzed, or under-filled tubes.\n\n## 3. Safety and Precautions\n- Standard PPE. Treat all blood as infectious.\n\n## 4. Equipment and Reagents\n- Westergren ESR tubes (300 mm length, 2.55 mm bore) or automated ESR analyzer.\n- ESR rack with leveling screws.\n- Timer, EDTA or citrate whole blood.\n\n## 5. Step-by-Step Procedure\n1. Mix the blood specimen gently by inverting 8-10 times.\n2. Draw the blood into the Westergren tube exactly to the \"0\" mark.\n3. Place the tube vertically in the ESR rack. Ensure the rack is perfectly level (use a spirit level).\n4. Ensure the setup is away from vibrations, direct sunlight, and temperature extremes (ideal RT: 18-25°C).\n5. Allow to stand undisturbed for exactly 60 minutes.\n6. Read the distance (in mm) from the top of the plasma to the top of the settled red cell column.\n\n## 6. Quality Control\n- Verify the rack is perfectly vertical.\n- Run normal and elevated ESR controls weekly.\n- Ensure no bubbles are trapped in the tube.\n\n## 7. Reference Intervals\n- **Men < 50 yrs:** 0-15 mm/hr | **Men > 50 yrs:** 0-20 mm/hr\n- **Women < 50 yrs:** 0-20 mm/hr | **Women > 50 yrs:** 0-30 mm/hr\n\n## 8. Reporting Results\n- Report as \"ESR: [X] mm in 1 hour (Westergren)\".\n- Flag significantly elevated results for clinical correlation.",
+        "principle": "Inflammation increases acute-phase proteins (like fibrinogen), which neutralize the negative zeta potential on red blood cells. This causes RBCs to aggregate into rouleaux, making them heavier and causing them to settle faster under gravity in a vertical tube. The distance settled in one hour is the ESR.",
+        "department": "Hematology",
+        "mandatory_disclaimer": "This SOP is a template based on ICSH/WHO guidelines. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Haematology",
+            "Laboratory Techniques",
+            "Specimen Examination"
+        ],
+        "tags": [
+            "esr",
+            "erythrocyte sedimentation rate",
+            "westergren",
+            "inflammation",
+            "rouleaux",
+            "haematology"
+        ],
+        "seo_title": "ESR Testing SOP | Westergren Method Procedure",
+        "focus_keyword": "erythrocyte sedimentation rate",
+        "seo_description": "Standard Operating Procedure for Erythrocyte Sedimentation Rate (ESR) testing using the Westergren method to detect inflammation.",
+        "faqs": [
+            {
+                "question": "Why is the ESR rack leveling so important?",
+                "answer": "Even a slight tilt (as little as 3 degrees) can increase the sedimentation rate by up to 30%, causing falsely elevated results."
+            },
+            {
+                "question": "Can EDTA blood be used for ESR?",
+                "answer": "Yes, EDTA blood is now the ICSH-recommended specimen. It can be diluted with 3.2% sodium citrate (4:1) or used directly depending on the specific tube/system validated by the lab."
+            }
+        ]
+    }
+]

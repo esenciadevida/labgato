@@ -1,0 +1,47 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "reviewer_credentials": "MD, Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Thick Blood Film Preparation and Examination",
+        "slug": "thick-blood-film-preparation-examination",
+        "short_description": "SOP for preparing and examining thick blood films, primarily for the detection of malaria parasites and other blood-borne pathogens.",
+        "content": "# Standard Operating Procedure: Thick Blood Film\n\n## 1. Purpose and Scope\nTo define the procedure for preparing, staining, and examining thick blood films to concentrate and detect malaria parasites and other blood-borne pathogens.\n\n## 2. Specimen Requirements\n- **Type:** Capillary blood (finger/heel prick) or EDTA whole blood.\n- **Volume:** 2-3 drops (approx. 10-15 µL).\n- **Stability:** Prepare immediately for capillary blood; within 2 hours for EDTA blood.\n- **Rejection:** Clotted or severely hemolyzed samples.\n\n## 3. Safety and Precautions\n- Wear PPE (gloves, lab coat). Treat all blood as infectious.\n- Dispose of lancets in sharps containers.\n\n## 4. Equipment and Reagents\n- Clean, grease-free glass slides.\n- Giemsa stain (working solution: 3% or 10% in buffered water, pH 7.2).\n- Buffered water (pH 7.2), distilled water, staining rack, light microscope (100x oil immersion).\n\n## 5. Step-by-Step Procedure\n1. **Preparation:** Place a clean slide on a flat surface. Place 2-3 drops of blood in the center.\n2. **Spreading:** Using the corner of another slide or a wooden applicator stick, spread the blood in a circular motion to form a uniform circle about 1-1.5 cm in diameter. The film should be thick enough that newsprint is just barely visible through it.\n3. **Drying:** Air-dry the thick film completely in a horizontal position (protect from dust and flies). **Do not heat or fix with methanol.**\n4. **Staining:** Flood the dried film with 3% Giemsa stain for 30-45 minutes (or 10% Giemsa for 10-15 minutes).\n5. **Rinsing:** Gently rinse with buffered water (pH 7.2) to remove stain. Do not pour water directly onto the film.\n6. **Drying:** Air-dry vertically.\n7. **Examination:** Examine under 100x oil immersion. Scan at least 100 high-power fields before reporting as negative.\n\n## 6. Quality Control\n- Check Giemsa stain pH daily.\n- Include known positive and negative control slides with each new stain batch.\n\n## 7. Reporting Results\n- Report species identified (e.g., *Plasmodium falciparum*), parasite density (parasites/µL), and stage.\n- If negative after 100 fields, report \"No malaria parasites seen.\"",
+        "principle": "A thick blood film contains multiple layers of red blood cells. During staining with aqueous Giemsa, the red blood cells are lysed (dehemoglobinized), leaving behind white blood cells, platelets, and any concentrated intracellular parasites (like Plasmodium). This concentration effect makes it 20-30 times more sensitive than a thin film for detecting low-level parasitemia.",
+        "department": "Parasitology / Hematology",
+        "mandatory_disclaimer": "This SOP is a template based on WHO guidelines. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Parasitology",
+            "Malaria Diagnosis",
+            "Microscopy",
+            "Laboratory Techniques"
+        ],
+        "tags": [
+            "thick blood film",
+            "malaria",
+            "plasmodium",
+            "giemsa stain",
+            "microscopy",
+            "parasite density"
+        ],
+        "seo_title": "Thick Blood Film SOP | Malaria Diagnosis Procedure",
+        "focus_keyword": "thick blood film",
+        "seo_description": "Standard Operating Procedure for thick blood film preparation and Giemsa staining for sensitive malaria parasite detection.",
+        "faqs": [
+            {
+                "question": "Why is a thick film not fixed with methanol?",
+                "answer": "Methanol fixes red blood cells. In a thick film, we want the red blood cells to lyse during staining to concentrate the parasites and make them easier to find."
+            },
+            {
+                "question": "What is the ideal thickness of a thick film?",
+                "answer": "It should be thick enough that you can just barely read newsprint through it when held up to the light."
+            }
+        ]
+    }
+]

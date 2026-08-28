@@ -1,0 +1,47 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "reviewer_credentials": "MD, Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Thin Blood Film Preparation and Examination",
+        "slug": "thin-blood-film-preparation-examination",
+        "short_description": "SOP for preparing and examining thin blood films for malaria species identification and detailed blood cell morphology.",
+        "content": "# Standard Operating Procedure: Thin Blood Film\n\n## 1. Purpose and Scope\nTo define the procedure for preparing, staining, and examining thin blood films to identify malaria species and assess detailed blood cell morphology.\n\n## 2. Specimen Requirements\n- **Type:** Capillary blood or EDTA whole blood.\n- **Volume:** 1 small drop (approx. 2-3 µL).\n- **Stability:** Prepare immediately (capillary) or within 2 hours (EDTA).\n\n## 3. Safety and Precautions\n- Standard PPE. Dispose of sharps properly. Handle methanol in a ventilated area.\n\n## 4. Equipment and Reagents\n- Clean, grease-free glass slides, spreader slide.\n- Absolute methanol (fixative).\n- Giemsa stain (working solution, pH 7.2), buffered water, microscope (100x oil).\n\n## 5. Step-by-Step Procedure\n1. **Preparation:** Place a small drop of blood 1 cm from the end of a clean slide.\n2. **Spreading:** Hold a spreader slide at a 30-45° angle, draw it back to touch the drop, and push forward smoothly to create a feathered-edge monolayer.\n3. **Drying:** Air-dry completely.\n4. **Fixation:** Flood the film with absolute methanol for 1-3 minutes. Air-dry.\n5. **Staining:** Flood with working Giemsa stain for 20-30 minutes.\n6. **Rinsing:** Gently rinse with buffered water (pH 7.2). Air-dry vertically.\n7. **Examination:** Scan the monolayer (where RBCs are just touching) under 100x oil immersion.\n\n## 6. Quality Control\n- Ensure spreader slides have smooth, unchipped edges.\n- Verify methanol is absolute (water content causes RBC lysis).\n\n## 7. Reporting Results\n- Report malaria species and stage if present.\n- Document RBC, WBC, and platelet morphological abnormalities.",
+        "principle": "A thin blood film creates a single layer (monolayer) of intact red blood cells. Fixation with methanol preserves cell morphology and prevents lysis. Staining with Giemsa differentially colors cellular components, allowing precise identification of malaria parasite species (based on parasite morphology and RBC changes) and detailed evaluation of blood cell abnormalities.",
+        "department": "Parasitology / Hematology",
+        "mandatory_disclaimer": "This SOP is a template based on WHO guidelines. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Parasitology",
+            "Malaria Diagnosis",
+            "Blood Film Examination",
+            "Microscopy"
+        ],
+        "tags": [
+            "thin blood film",
+            "malaria species",
+            "blood smear",
+            "giemsa",
+            "morphology",
+            "monolayer"
+        ],
+        "seo_title": "Thin Blood Film SOP | Malaria Species Identification",
+        "focus_keyword": "thin blood film",
+        "seo_description": "Standard Operating Procedure for thin blood film preparation, methanol fixation, and Giemsa staining for malaria species identification.",
+        "faqs": [
+            {
+                "question": "Why must a thin film be fixed with methanol?",
+                "answer": "Methanol fixes the cells to the slide and preserves their natural size, shape, and internal structure, which is critical for species identification."
+            },
+            {
+                "question": "What happens if the buffered water pH is too acidic during Giemsa staining?",
+                "answer": "RBCs will stain too pink/red, and parasite chromatin will stain poorly, making identification difficult."
+            }
+        ]
+    }
+]

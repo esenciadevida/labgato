@@ -1,0 +1,47 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "reviewer_credentials": "MD, Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Sickling Test (Sodium Metabisulfite Method)",
+        "slug": "sickling-test-sodium-metabisulfite",
+        "short_description": "SOP for screening for the presence of Hemoglobin S (HbS) by inducing deoxygenation and observing red blood cell sickling under microscopy.",
+        "content": "# Standard Operating Procedure: Sickling Test\n\n## 1. Purpose and Scope\nTo screen for the presence of Hemoglobin S (HbS) by chemically inducing deoxygenation, which causes HbS-containing red blood cells to assume a sickle shape.\n\n## 2. Specimen Requirements\n- **Type:** Whole blood.\n- **Anticoagulant:** EDTA or capillary blood.\n- **Stability:** Test within 6 hours of collection.\n- **Rejection:** Clotted samples.\n\n## 3. Safety and Precautions\n- Standard PPE. Sodium metabisulfite is an irritant; handle with care.\n\n## 4. Equipment and Reagents\n- 2% Sodium metabisulfite solution (freshly prepared or commercially stabilized).\n- Clean glass slides, coverslips, vaseline or petroleum jelly.\n- Light microscope with 40x and 100x objectives.\n\n## 5. Step-by-Step Procedure\n1. Place 1 drop of 2% sodium metabisulfite solution on a clean glass slide.\n2. Add 1 drop of well-mixed patient blood and mix gently with an applicator stick.\n3. Place a coverslip over the mixture and seal the edges with vaseline to create an airtight environment (preventing re-oxygenation).\n4. Allow the slide to stand at room temperature for 15-30 minutes.\n5. Examine under the microscope using the 40x objective, then confirm with 100x oil immersion.\n6. Look for characteristic elongated, crescent, or holly-leaf shaped red blood cells (sickled cells).\n\n## 6. Quality Control\n- Run a known HbS positive and HbA (normal) negative control with each new batch of reagent.\n- Ensure the sodium metabisulfite solution is fresh (oxidized solution will yield false negatives).\n\n## 7. Reporting Results\n- **Positive:** Sickled cells observed. (Note: Does not distinguish between Sickle Cell Trait (HbAS) and Sickle Cell Disease (HbSS)).\n- **Negative:** No sickled cells observed after 30 minutes.\n- Recommend Hemoglobin Electrophoresis for definitive diagnosis.",
+        "principle": "Sodium metabisulfite is a reducing agent that removes oxygen from the blood sample. Deoxygenated Hemoglobin S (HbS) is poorly soluble and polymerizes into long, rigid rods. This polymerization distorts the red blood cell membrane, causing the cell to assume a characteristic sickle or crescent shape, which is visible under a microscope.",
+        "department": "Hematology",
+        "mandatory_disclaimer": "This SOP is a template. It must be adapted and approved by your Laboratory Director before clinical use. Confirmatory testing (e.g., electrophoresis) is required for diagnosis.",
+        "categories": [
+            "Haematology",
+            "Hemoglobinopathy",
+            "Manual Haematology",
+            "Microscopy"
+        ],
+        "tags": [
+            "sickling test",
+            "sickle cell",
+            "hbS",
+            "sodium metabisulfite",
+            "hemoglobinopathy",
+            "anemia"
+        ],
+        "seo_title": "Sickling Test SOP | Sickle Cell Screening Procedure",
+        "focus_keyword": "sickling test",
+        "seo_description": "Standard Operating Procedure for the sickling test using sodium metabisulfite to screen for Hemoglobin S (HbS).",
+        "faqs": [
+            {
+                "question": "Can the sickling test differentiate between Sickle Cell Trait and Sickle Cell Disease?",
+                "answer": "No. It only indicates the presence of HbS. Hemoglobin electrophoresis or HPLC is required to differentiate between HbAS (trait) and HbSS (disease)."
+            },
+            {
+                "question": "Why must the slide be sealed with vaseline?",
+                "answer": "Sealing prevents atmospheric oxygen from re-entering the sample. Re-oxygenation can cause sickled cells to revert to their normal shape, leading to a false-negative result."
+            }
+        ]
+    }
+]

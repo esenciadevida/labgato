@@ -1,0 +1,47 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "reviewer_credentials": "MD, Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Urinalysis (Chemical Reagent Strip)",
+        "slug": "urinalysis-chemical-reagent-strip",
+        "short_description": "SOP for the chemical analysis of urine using a multi-parameter reagent strip to detect metabolic, renal, and systemic abnormalities.",
+        "content": "# Standard Operating Procedure: Urinalysis (Chemical)\n\n## 1. Purpose and Scope\nTo perform a rapid, semi-quantitative chemical analysis of urine using a multi-parameter reagent strip to screen for renal, metabolic, and hepatic disorders, as well as urinary tract infections.\n\n## 2. Specimen Requirements\n- **Type:** Mid-stream clean-catch urine (preferred), first-morning void, or random urine.\n- **Volume:** Minimum 10-15 mL.\n- **Stability:** Test within 2 hours of collection. If delayed, refrigerate at 2-8°C for up to 24 hours (bring to room temperature before testing).\n- **Rejection:** Grossly contaminated or improperly labeled samples.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). Urine is a potential biohazard.\n- Do not touch the reagent pads on the strip.\n\n## 4. Equipment and Reagents\n- Multi-parameter urine reagent strips (e.g., 10- or 14-parameter).\n- Timer (or analyzer with built-in timer).\n- Urine dipstick automated reader (optional but recommended).\n- Quality control solutions (negative and positive).\n\n## 5. Step-by-Step Procedure\n1. Mix the urine specimen gently by inversion.\n2. Remove one reagent strip from the container and immediately recap tightly to prevent moisture degradation.\n3. Completely immerse the reagent pads in the urine specimen and remove immediately.\n4. Tap the edge of the strip against the rim of the container to remove excess urine and prevent cross-contamination between pads.\n5. Hold the strip horizontally.\n6. Compare the color changes of each pad to the manufacturer's color chart at the exact specified times (typically 30-120 seconds, depending on the parameter), OR insert into an automated strip reader.\n7. Record the results for all parameters (e.g., Leukocytes, Nitrite, Urobilinogen, Protein, pH, Blood, Specific Gravity, Ketones, Bilirubin, Glucose).\n\n## 6. Quality Control\n- Run positive and negative liquid controls daily or with each new bottle of strips.\n- Check strip expiration dates; do not use expired strips.\n\n## 7. Reporting Results\n- Report results semi-quantitatively as indicated on the bottle label (e.g., Negative, Trace, 1+, 2+, 3+, 4+ or specific numeric values for pH/SG).",
+        "principle": "Urine reagent strips contain dry chemical reagents impregnated into distinct pads. When dipped in urine, the analytes in the urine react with these chemicals, causing a color change. The intensity of the color change is proportional to the concentration of the analyte (e.g., glucose oxidase for glucose, pseudoperoxidase activity of hemoglobin for blood, diazotization for nitrites).",
+        "department": "Urinalysis and Body Fluids",
+        "mandatory_disclaimer": "This SOP is a template. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Urinalysis and Body Fluids",
+            "Clinical Chemistry",
+            "Laboratory Techniques"
+        ],
+        "tags": [
+            "urinalysis",
+            "dipstick",
+            "reagent strip",
+            "chemical urinalysis",
+            "proteinuria",
+            "hematuria",
+            "glycosuria"
+        ],
+        "seo_title": "Chemical Urinalysis SOP | Reagent Strip Procedure",
+        "focus_keyword": "chemical urinalysis",
+        "seo_description": "Standard Operating Procedure for chemical urinalysis using multi-parameter reagent strips to screen for renal and metabolic disorders.",
+        "faqs": [
+            {
+                "question": "Why must the urine strip be read at exact times?",
+                "answer": "Reading too early or too late can cause false-positive or false-negative results due to ongoing chemical reactions or color fade-back (e.g., leukocyte esterase or glucose)."
+            },
+            {
+                "question": "What causes a false-positive result for blood on a dipstick?",
+                "answer": "Microbial peroxidase (e.g., from UTI), oxidizing contaminants (e.g., hypochlorite from cleaning agents), or myoglobin can cause false positives."
+            }
+        ]
+    }
+]
