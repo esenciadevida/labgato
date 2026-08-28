@@ -56,6 +56,11 @@ Aim for ASCP MLS-style items - most should be clinical vignettes, not one-line r
 - Server-only files `.htaccess` / `.user.ini` are protected via `.git/info/exclude` on the server.
 - If push is rejected with "Working directory has unstaged changes", someone edited the server directly - stash there first and investigate before discarding.
 
+## Featured images
+
+- Admin forms accept an external image URL (`featured_image_url`; upload > URL > remove). The CSP `img-src` blocks unknown hosts, and remote URLs (e.g. LinkedIn signed links, which expire) can stop rendering.
+- **Standard: self-host external featured images** with `php artisan featured-images:download` (`--dry-run` previews). It scans knowledge/SOP/interpretation `featured_image` columns for `http(s)` URLs, runs each through `ContentImageService` (WebP + responsive variants, 5 MB cap), and repoints the row to the local path. Idempotent, run at quiet times (slow, like `questions:download-images`).
+
 ## Gotchas
 
 - **Certificate PDFs cache on disk** at `storage/app/public/certificates/*.pdf`; `CertificateService::ensurePdf()` returns the cached file. Cleared automatically when certificate settings are saved, but clear manually (or re-download) to pick up template changes.
