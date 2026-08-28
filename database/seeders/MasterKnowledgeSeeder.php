@@ -54,7 +54,7 @@ class MasterKnowledgeSeeder extends Seeder
                     'difficulty_level' => $this->normalizeDifficulty($item['difficultyLevel'] ?? null),
                     'learning_objectives' => $this->formatObjectives($item['learningObjectives'] ?? null),
                     'author_name' => $item['authorName'] ?? null,
-                    'featured_image' => $item['featuredImage'] ?? null,
+                    'featured_image' => $item['featuredImage'] ?? $item['image_url'] ?? null,
                     'reading_time_minutes' => $item['readingTimeMinutes'] ?? null,
                     'status' => $item['status'] ?? 'draft',
                     'seo_title' => $item['seoTitle'] ?? null,

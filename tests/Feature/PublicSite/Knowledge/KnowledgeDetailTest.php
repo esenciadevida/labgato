@@ -71,6 +71,21 @@ class KnowledgeDetailTest extends TestCase
         $response->assertSee('/storage/'.$imagePath, false);
     }
 
+    public function test_knowledge_detail_renders_external_featured_image_url_as_is(): void
+    {
+        $knowledge = KnowledgeResource::factory()->create([
+            'status' => ResourceStatus::PUBLISHED,
+            'featured_image' => 'https://media.licdn.com/dms/image/example.jpg',
+        ]);
+
+        $response = $this->get(route('public.knowledge.show', $knowledge->slug));
+
+        $response->assertStatus(200);
+        $response->assertSee('https://media.licdn.com/dms/image/example.jpg', false);
+        $response->assertSee('og:image', false);
+        $response->assertSee('content="https://media.licdn.com/dms/image/example.jpg"', false);
+    }
+
     public function test_knowledge_detail_renders_sanitized_rich_text_content(): void
     {
         $knowledge = KnowledgeResource::factory()->create([

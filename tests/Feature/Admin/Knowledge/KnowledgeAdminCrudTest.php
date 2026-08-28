@@ -245,6 +245,83 @@ class KnowledgeAdminCrudTest extends TestCase
         Storage::disk('public')->assertExists($knowledge->featured_image);
     }
 
+    public function test_featured_image_url_is_persisted_and_used_for_rendering(): void
+    {
+        $user = $this->createUserWithPermission('knowledge.create');
+
+        $this->actingAs($user)->post(route('admin.knowledge.store'), $this->validPayload([
+            'featured_image_url' => 'https://media.licdn.com/dms/image/example.jpg',
+        ]));
+
+        $knowledge = KnowledgeResource::query()->first();
+
+        $this->assertSame('https://media.licdn.com/dms/image/example.jpg', $knowledge->featured_image);
+        $this->assertSame($knowledge->featured_image, $knowledge->featured_image_url);
+    }
+
+    public function test_uploaded_image_takes_precedence_over_url(): void
+    {
+        Storage::fake('public');
+
+        $user = $this->createUserWithPermission('knowledge.create');
+
+        $this->actingAs($user)->post(route('admin.knowledge.store'), $this->validPayload([
+            'featured_image' => UploadedFile::fake()->image('featured.jpg'),
+            'featured_image_url' => 'https://example.com/remote.jpg',
+        ]));
+
+        $knowledge = KnowledgeResource::query()->first();
+
+        $this->assertNotNull($knowledge->featured_image);
+        $this->assertStringEndsWith('.webp', (string) $knowledge->featured_image);
+        Storage::disk('public')->assertExists($knowledge->featured_image);
+    }
+
+    public function test_updating_featured_image_from_upload_to_url_deletes_local_image(): void
+    {
+        Storage::fake('public');
+
+        $imagePath = 'content/featured.webp';
+        Storage::disk('public')->put($imagePath, 'fake-content');
+
+        $knowledge = KnowledgeResource::factory()->create(['featured_image' => $imagePath]);
+        $user = $this->createUserWithPermission('knowledge.edit');
+
+        $this->actingAs($user)->put(route('admin.knowledge.update', $knowledge), $this->validPayload([
+            'featured_image_url' => 'https://example.com/remote.jpg',
+            'status' => ResourceStatus::PUBLISHED->value,
+        ]));
+
+        $knowledge->refresh();
+
+        $this->assertSame('https://example.com/remote.jpg', $knowledge->featured_image);
+        Storage::disk('public')->assertMissing($imagePath);
+    }
+
+    public function test_featured_image_url_can_be_removed(): void
+    {
+        $knowledge = KnowledgeResource::factory()->create(['featured_image' => 'https://example.com/remote.jpg']);
+        $user = $this->createUserWithPermission('knowledge.edit');
+
+        $this->actingAs($user)->put(route('admin.knowledge.update', $knowledge), $this->validPayload([
+            'remove_featured_image' => '1',
+            'status' => ResourceStatus::PUBLISHED->value,
+        ]));
+
+        $this->assertNull($knowledge->refresh()->featured_image);
+    }
+
+    public function test_knowledge_deletion_with_url_featured_image_does_not_error(): void
+    {
+        $knowledge = KnowledgeResource::factory()->create(['featured_image' => 'https://example.com/remote.jpg']);
+        $user = $this->createUserWithPermission('knowledge.delete');
+
+        $response = $this->actingAs($user)->delete(route('admin.knowledge.destroy', $knowledge));
+
+        $response->assertRedirect(route('admin.knowledge.index'));
+        $this->assertDatabaseMissing('knowledge_resources', ['id' => $knowledge->id]);
+    }
+
     public function test_knowledge_deletion_removes_featured_image(): void
     {
         Storage::fake('public');

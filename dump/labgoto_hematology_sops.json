@@ -1,0 +1,732 @@
+[
+  {
+    "name": "Manual Complete Blood Count (CBC/FBC)",
+    "slug": "manual-complete-blood-count-cbc-fbc",
+    "short_description": "A standardized manual procedure for evaluating major cellular components of blood, including haemoglobin, haematocrit, red blood cells, white blood cells and platelets.",
+    "status": "published",
+    "content": "## Purpose\n\nTo provide a standardized framework for performing a manual Complete Blood Count (CBC/FBC) when automated analysis is unavailable, when a validated manual method is specifically required, or when selected automated findings require confirmation.\n\n## Scope\n\nThis procedure applies to trained laboratory personnel performing validated manual haematology procedures under an approved laboratory quality-management system.\n\n## Principle\n\nA manual CBC combines validated methods for measurement or estimation of major blood cellular parameters. Depending on the laboratory workflow, this may include haemoglobin estimation, packed cell volume/haematocrit, manual red blood cell counting, manual white blood cell counting, manual platelet counting and microscopic review of a peripheral blood film.\n\n## Specimen\n\nUse a properly collected, correctly identified anticoagulated blood specimen suitable for haematological testing. Check specimen acceptance criteria before analysis.\n\n## Equipment and Materials\n\n- Validated microscope\n- Improved Neubauer counting chamber or equivalent validated chamber\n- Appropriate chamber cover glass\n- Validated diluting fluids and reagents\n- Pipettes or validated diluting devices\n- Haemoglobin testing system\n- Microhaematocrit equipment where applicable\n- Clean glass slides\n- Personal protective equipment\n\n## Procedure\n\n### 1. Pre-examination checks\n\n1. Verify patient identification and specimen labelling.\n2. Check the specimen for clots, leakage or other conditions that may compromise analysis.\n3. Mix the anticoagulated specimen according to the laboratory's validated procedure.\n4. Confirm that equipment and reagents are within acceptable operational and quality-control status.\n\n### 2. Haemoglobin\n\nPerform haemoglobin estimation using the laboratory's validated method and the applicable manufacturer's instructions.\n\n### 3. Packed Cell Volume / Haematocrit\n\nPerform PCV/haematocrit using the laboratory-approved microhaematocrit or other validated method.\n\n### 4. Manual Cell Counts\n\nWhere manual enumeration is required, perform red blood cell, white blood cell and platelet counts using validated dilutions, counting chambers and calculation procedures.\n\n### 5. Blood Film Review\n\nPrepare and examine a peripheral blood film when indicated. Record significant morphology findings using standardized terminology and laboratory-approved reporting criteria.\n\n## Quality Control\n\n- Verify equipment performance before use.\n- Ensure counting chambers are clean and undamaged.\n- Use properly stored and validated reagents.\n- Follow internal quality-control requirements.\n- Repeat or investigate results that are inconsistent with specimen appearance, related parameters or validated laboratory rules.\n- Document corrective action when required.\n\n## Reporting\n\nReport results using validated units, approved calculation methods and laboratory-approved reference intervals.\n\n## Safety\n\nTreat all blood specimens as potentially infectious. Use appropriate personal protective equipment and dispose of biological waste according to institutional policy.\n\n## References\n\n- International Council for Standardization in Haematology (ICSH): standardized recommendations relevant to peripheral blood morphology.\n- Locally validated laboratory procedures and applicable quality standards.",
+    "principle": "A manual CBC evaluates major blood cellular parameters using validated manual measurement, enumeration and microscopic examination methods.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP is an educational and laboratory workflow resource and must be locally validated, approved and adapted before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Manual Haematology"
+    ],
+    "tags": [
+      "CBC",
+      "FBC",
+      "Manual CBC",
+      "Haematology"
+    ],
+    "seo_title": "Manual Complete Blood Count CBC/FBC SOP | LabGOTO",
+    "focus_keyword": "Manual Complete Blood Count SOP",
+    "seo_description": "Professional laboratory SOP for performing a manual complete blood count, including specimen checks, cell counts and quality control.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "When should a manual CBC be performed?",
+        "answer": "A manual procedure may be required when automated analysis is unavailable, when a validated workflow requires it, or when selected findings require confirmation."
+      },
+      {
+        "question": "Are manual RBC, WBC and platelet counts included?",
+        "answer": "Yes. For this LabGOTO library, these procedures are incorporated into the Manual CBC workflow to avoid unnecessary duplication."
+      },
+      {
+        "question": "Why may a blood film be reviewed?",
+        "answer": "A peripheral blood film can provide additional information about blood-cell morphology and help investigate abnormal findings."
+      }
+    ]
+  },
+  {
+    "name": "Peripheral Blood Film Examination",
+    "slug": "peripheral-blood-film-examination",
+    "short_description": "A standardized procedure for preparing, staining and microscopically examining a peripheral blood film for blood-cell morphology and differential assessment.",
+    "status": "published",
+    "content": "## Purpose\n\nTo provide a standardized approach for preparing and microscopically examining a peripheral blood film.\n\n## Principle\n\nA thin film of blood is spread across a clean glass slide, appropriately stained and examined microscopically. Red blood cells, white blood cells and platelets can then be assessed for distribution and morphology.\n\n## Specimen\n\nUse a properly collected and correctly identified blood specimen suitable for peripheral blood film preparation. Follow the laboratory's specimen-age and storage requirements.\n\n## Equipment and Materials\n\n- Clean microscope slides\n- Spreader slide\n- Validated Romanowsky-type staining system\n- Microscope with appropriate objectives\n- Immersion oil where required\n- Personal protective equipment\n\n## Procedure\n\n### 1. Slide Preparation\n\n1. Confirm specimen identification.\n2. Place an appropriate drop of well-mixed blood near one end of a clean slide.\n3. Use a spreader slide to produce a smooth wedge-shaped film with an adequate feathered edge.\n4. Allow the film to air dry.\n\n### 2. Staining\n\nStain the film using the laboratory's validated staining procedure. Do not substitute stain concentrations or timings without validation.\n\n### 3. Microscopic Examination\n\n1. Examine the slide initially at low magnification to assess film and stain quality.\n2. Select an appropriate examination area where cells are sufficiently separated.\n3. Examine red cells, white cells and platelets using the appropriate objectives.\n4. Record significant morphology findings using standardized terminology.\n\n## Quality Control\n\n- Ensure slides are clean and free from defects.\n- Monitor stain quality.\n- Confirm microscope performance.\n- Repeat preparation when the film is unsuitable for reliable examination.\n\n## Reporting\n\nReport morphology findings according to laboratory policy. Standardized nomenclature and grading should be used where applicable.\n\n## References\n\n- International Council for Standardization in Haematology (ICSH) recommendations for standardized nomenclature and grading of peripheral blood cell morphology.\n\n## Safety\n\nHandle blood specimens and contaminated slides using standard precautions.",
+    "principle": "Microscopic examination of a properly prepared and stained peripheral blood film allows assessment of red-cell, white-cell and platelet morphology.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This procedure must be adapted to the laboratory's validated staining system, microscope configuration, reporting policy and quality-management requirements before clinical use.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Blood Film Examination"
+    ],
+    "tags": [
+      "Blood Film",
+      "Blood Smear",
+      "Morphology",
+      "Haematology Microscopy"
+    ],
+    "seo_title": "Peripheral Blood Film Examination SOP | LabGOTO",
+    "focus_keyword": "Peripheral Blood Film Examination SOP",
+    "seo_description": "Laboratory SOP for preparation, staining and microscopic examination of peripheral blood films with standardized morphology reporting.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "What is a peripheral blood film used for?",
+        "answer": "It is used to assess blood-cell morphology and support investigation of abnormal haematological findings."
+      },
+      {
+        "question": "Why should standardized morphology terminology be used?",
+        "answer": "Standardized terminology improves consistency, communication and comparability of laboratory reports."
+      }
+    ]
+  },
+  {
+    "name": "Thick Blood Film for Malaria Parasites",
+    "slug": "thick-blood-film-malaria-parasites",
+    "short_description": "A laboratory procedure for preparing and microscopically examining a thick blood film for detection of malaria parasites.",
+    "status": "published",
+    "content": "## Purpose\n\nTo provide a standardized procedure for preparing and examining a thick blood film for detection of malaria parasites by light microscopy.\n\n## Principle\n\nA thick blood film concentrates blood components within a relatively small area. Following appropriate staining, this concentration improves the sensitivity of microscopic detection of malaria parasites.\n\n## Specimen\n\nBlood may be obtained by finger prick or prepared from appropriately collected venous blood according to the laboratory's validated procedure and applicable malaria microscopy guidance.\n\n## Equipment and Materials\n\n- Clean microscope slides\n- Appropriate blood collection materials\n- Validated Giemsa staining system\n- Buffered water prepared according to the validated procedure\n- Light microscope\n- 100x oil immersion objective\n- Immersion oil\n- Personal protective equipment\n\n## Procedure\n\n### 1. Preparation\n\n1. Confirm patient and specimen identification.\n2. Prepare the thick film using the validated blood-film preparation procedure.\n3. Allow the film to dry appropriately before staining.\n4. Stain using the validated Giemsa procedure.\n\n### 2. Microscopic Examination\n\n1. Place the stained slide on the microscope stage.\n2. Select a well-stained and evenly distributed area of the thick film.\n3. Apply immersion oil appropriately.\n4. Examine using the 100x oil immersion objective.\n5. Scan systematically using the laboratory-approved examination pattern.\n6. When considering a negative result, examine the minimum number of fields required by the applicable validated procedure before reporting no parasites seen.\n\n## Interpretation\n\nThick films are primarily used for sensitive detection of malaria parasites. Species confirmation and detailed parasite morphology may require examination of a corresponding thin blood film.\n\n## Quality Control\n\n- Verify stain quality.\n- Ensure acceptable film thickness and staining.\n- Maintain microscope performance.\n- Follow applicable malaria microscopy quality-assurance procedures.\n\n## Reporting\n\nReport parasite detection according to the laboratory-approved malaria microscopy reporting system. Record species identification or parasite density only when determined using validated procedures.\n\n## References\n\n- World Health Organization (WHO) malaria microscopy SOPs covering blood collection, thick and thin film preparation, Giemsa staining, microscopic examination, parasite counting and result reporting.\n\n## Safety\n\nFollow standard precautions and applicable laboratory biosafety procedures.",
+    "principle": "A thick blood film concentrates blood within a small area, increasing the likelihood of detecting malaria parasites by light microscopy.",
+    "department": "Parasitology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This procedure must be performed by trained personnel using validated reagents, staining methods and microscopy quality-assurance systems. Follow applicable WHO guidance and local laboratory procedures.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Parasitology",
+      "Malaria Diagnosis",
+      "Microscopy"
+    ],
+    "tags": [
+      "Malaria",
+      "Thick Blood Film",
+      "Malaria Microscopy",
+      "Giemsa",
+      "Plasmodium"
+    ],
+    "seo_title": "Thick Blood Film for Malaria Parasites SOP | LabGOTO",
+    "focus_keyword": "Thick Blood Film Malaria SOP",
+    "seo_description": "Professional SOP for preparation and microscopic examination of thick blood films for malaria parasite detection using validated procedures.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is a thick blood film used for malaria diagnosis?",
+        "answer": "The thick film concentrates blood components and is particularly useful for sensitive microscopic detection of malaria parasites."
+      },
+      {
+        "question": "Can a thick film confirm malaria species?",
+        "answer": "Species identification may require examination of a corresponding thin blood film because parasite morphology is generally better preserved on thin films."
+      },
+      {
+        "question": "How should a negative result be reported?",
+        "answer": "Follow the applicable validated malaria microscopy procedure regarding systematic examination and the minimum examination requirements before reporting no parasites seen."
+      }
+    ]
+  },
+  {
+    "name": "Thin Blood Film for Malaria Parasites",
+    "slug": "thin-blood-film-malaria-parasites",
+    "short_description": "A laboratory procedure for preparing and examining a thin blood film for malaria parasite identification and morphological assessment.",
+    "status": "published",
+    "content": "## Purpose\n\nTo provide a standardized procedure for preparing and examining a thin blood film for malaria parasite identification.\n\n## Principle\n\nA thin blood film spreads blood cells into a monolayer that preserves parasite and host-cell morphology. Following appropriate staining, the film supports malaria parasite identification and species assessment.\n\n## Specimen\n\nUse blood collected and handled according to the laboratory's validated malaria microscopy procedure.\n\n## Equipment and Materials\n\n- Clean microscope slides\n- Spreader slide\n- Appropriate blood collection materials\n- Validated Giemsa staining system\n- Light microscope\n- 100x oil immersion objective\n- Immersion oil\n- Personal protective equipment\n\n## Procedure\n\n### 1. Film Preparation\n\n1. Confirm specimen identification.\n2. Prepare a thin blood film using a validated spreading technique.\n3. Allow the film to dry appropriately.\n4. Fix and stain the film according to the applicable validated procedure.\n\n### 2. Microscopic Examination\n\n1. Examine the stained film systematically.\n2. Select an area with suitable cell distribution and morphology.\n3. Examine using appropriate microscope objectives, including oil immersion where required.\n4. Identify malaria parasites using validated morphological criteria.\n\n## Interpretation\n\nThin blood films are particularly useful for parasite morphology and species identification. Findings should be correlated with examination of the thick film where both are prepared.\n\n## Quality Control\n\n- Ensure acceptable film quality and staining.\n- Verify microscope performance.\n- Follow validated malaria microscopy quality-assurance procedures.\n\n## Reporting\n\nReport malaria findings using the laboratory-approved format. Species identification should only be reported when supported by validated microscopy findings.\n\n## References\n\n- World Health Organization (WHO) malaria microscopy SOPs covering preparation and examination of thick and thin blood films.\n\n## Safety\n\nFollow standard laboratory biosafety procedures when handling blood specimens and contaminated materials.",
+    "principle": "A thin blood film preserves parasite and red-cell morphology, supporting microscopic identification and assessment of malaria parasites.",
+    "department": "Parasitology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "This SOP must be implemented using validated staining, microscopy and quality-assurance procedures.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Parasitology",
+      "Malaria Diagnosis",
+      "Microscopy"
+    ],
+    "tags": [
+      "Malaria",
+      "Thin Blood Film",
+      "Plasmodium",
+      "Malaria Microscopy",
+      "Giemsa"
+    ],
+    "seo_title": "Thin Blood Film for Malaria Parasites SOP | LabGOTO",
+    "focus_keyword": "Thin Blood Film Malaria SOP",
+    "seo_description": "Laboratory SOP for preparing and examining thin blood films for malaria parasite identification using validated microscopy procedures.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is a thin film important in malaria microscopy?",
+        "answer": "A thin film preserves parasite morphology and is particularly useful for malaria parasite identification and species assessment."
+      },
+      {
+        "question": "Should thick and thin films be used together?",
+        "answer": "Where indicated, the two films provide complementary information, with thick films supporting sensitive detection and thin films supporting morphological identification."
+      }
+    ]
+  },
+  {
+    "name": "Reticulocyte Count",
+    "slug": "reticulocyte-count",
+    "short_description": "A laboratory procedure for determining the proportion of reticulocytes in peripheral blood using a validated manual or automated method.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine the proportion of circulating reticulocytes and support assessment of erythropoietic activity.\n\n## Principle\n\nReticulocytes contain residual ribonucleic material that can be demonstrated by an appropriate supravital staining method. The stained immature red cells are then enumerated using a validated counting procedure.\n\n## Specimen\n\nUse a properly collected and correctly identified blood specimen suitable for reticulocyte analysis.\n\n## Equipment and Materials\n\n- Validated supravital staining system for manual methods\n- Clean microscope slides\n- Microscope\n- Pipettes or validated dispensing devices\n- Personal protective equipment\n\n## Procedure\n\n1. Verify specimen identification and suitability.\n2. Mix the specimen according to the validated laboratory procedure.\n3. Prepare the reticulocyte reaction using the approved staining method.\n4. Incubate where required according to the validated procedure.\n5. Prepare a suitable microscopic preparation where applicable.\n6. Examine and count reticulocytes using the laboratory-approved counting method.\n7. Calculate and report the result using the validated formula or analytical system.\n\n## Quality Control\n\n- Monitor stain quality and storage conditions.\n- Ensure acceptable microscopic preparation.\n- Use validated counting rules.\n- Investigate significant discrepancies according to laboratory policy.\n\n## Reporting\n\nReport the result using the laboratory-approved units and calculation method. Corrected indices should only be reported where supported by a validated laboratory calculation.\n\n## Safety\n\nTreat specimens as potentially infectious and follow standard precautions.",
+    "principle": "Residual RNA within immature red blood cells can be demonstrated by supravital staining, allowing reticulocyte enumeration.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Use locally validated staining, counting and calculation procedures before clinical implementation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology"
+    ],
+    "tags": [
+      "Reticulocyte",
+      "Retic Count",
+      "Erythropoiesis"
+    ],
+    "seo_title": "Reticulocyte Count SOP | LabGOTO",
+    "focus_keyword": "Reticulocyte Count SOP",
+    "seo_description": "Professional laboratory SOP for manual or validated reticulocyte counting.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "What does a reticulocyte count assess?",
+        "answer": "It provides information about bone marrow red-cell production and the erythropoietic response."
+      },
+      {
+        "question": "Can corrected reticulocyte indices be reported?",
+        "answer": "Yes, where the laboratory uses a validated calculation and appropriate clinical reporting policy."
+      }
+    ]
+  },
+  {
+    "name": "ESR — Westergren Method",
+    "slug": "esr-westergren-method",
+    "short_description": "A standardized procedure for measuring erythrocyte sedimentation rate using the Westergren principle.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine the erythrocyte sedimentation rate (ESR) using a validated Westergren method.\n\n## Principle\n\nAnticoagulated blood is placed in a standardized vertical sedimentation system. During the specified test period, erythrocytes settle under the influence of gravity and the distance of sedimentation is measured.\n\n## Specimen\n\nUse a properly collected and correctly identified specimen prepared according to the validated Westergren procedure.\n\n## Equipment and Materials\n\n- Validated Westergren sedimentation system\n- Appropriate specimen collection and anticoagulant system\n- Timer\n- Personal protective equipment\n\n## Procedure\n\n1. Verify specimen identification and acceptance criteria.\n2. Prepare the specimen according to the laboratory's validated Westergren procedure.\n3. Fill the appropriate sedimentation tube or system.\n4. Ensure the system is correctly positioned vertically.\n5. Protect the test from excessive vibration or disturbance.\n6. Allow sedimentation for the validated test period.\n7. Read and record the sedimentation distance according to the approved method.\n\n## Quality Control\n\n- Ensure the sedimentation system is vertical.\n- Avoid bubbles and leakage.\n- Monitor environmental and procedural conditions according to the validated method.\n- Use appropriate quality checks required by the laboratory.\n\n## Reporting\n\nReport results using the approved unit and laboratory reporting format.\n\n## Safety\n\nFollow standard precautions when handling blood specimens.",
+    "principle": "The rate at which erythrocytes sediment in a standardized column of anticoagulated blood is measured under controlled conditions.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Use validated Westergren equipment, specimen preparation and timing requirements.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology"
+    ],
+    "tags": [
+      "ESR",
+      "Westergren",
+      "Sedimentation Rate"
+    ],
+    "seo_title": "ESR Westergren Method SOP | LabGOTO",
+    "focus_keyword": "ESR Westergren Method SOP",
+    "seo_description": "Standard operating procedure for erythrocyte sedimentation rate testing using the Westergren method.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "What can affect ESR results?",
+        "answer": "Specimen handling, tube positioning, vibration and departures from validated methodology can affect results."
+      },
+      {
+        "question": "Why must the tube remain vertical?",
+        "answer": "Correct positioning is required for standardized sedimentation and reliable measurement."
+      }
+    ]
+  },
+  {
+    "name": "Packed Cell Volume (PCV/Hematocrit)",
+    "slug": "packed-cell-volume-pcv-hematocrit",
+    "short_description": "A procedure for determining the proportion of blood volume occupied by packed red blood cells.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine packed cell volume (PCV), also known as haematocrit, using a validated method.\n\n## Principle\n\nA blood specimen is centrifuged under standardized conditions so that red blood cells are packed. The proportion of the packed red-cell column relative to the total blood column is then measured.\n\n## Specimen\n\nUse a properly collected and correctly identified blood specimen suitable for haematocrit testing.\n\n## Equipment and Materials\n\n- Appropriate capillary tubes or validated haematocrit system\n- Sealant where required\n- Validated microhaematocrit centrifuge\n- Haematocrit reader\n- Personal protective equipment\n\n## Procedure\n\n1. Verify specimen identification and suitability.\n2. Fill the appropriate capillary tube or validated device according to the approved procedure.\n3. Seal where required.\n4. Balance and centrifuge according to the validated method.\n5. Read the packed red-cell proportion using the appropriate reader.\n6. Record and report the result.\n\n## Quality Control\n\n- Ensure correct tube filling.\n- Verify centrifuge performance.\n- Check for damaged tubes or leakage.\n- Ensure accurate reading and documentation.\n\n## Reporting\n\nReport the result using the approved unit and laboratory format.\n\n## Safety\n\nFollow standard precautions and centrifuge safety requirements.",
+    "principle": "Centrifugation separates and packs erythrocytes, allowing determination of the proportion of blood volume occupied by red cells.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Follow locally validated centrifugation, specimen handling and reading procedures.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology"
+    ],
+    "tags": [
+      "PCV",
+      "Hematocrit",
+      "Haematocrit"
+    ],
+    "seo_title": "Packed Cell Volume PCV Hematocrit SOP | LabGOTO",
+    "focus_keyword": "Packed Cell Volume SOP",
+    "seo_description": "Laboratory SOP for determining packed cell volume and haematocrit.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "What does PCV measure?",
+        "answer": "PCV measures the proportion of blood volume occupied by packed red blood cells."
+      },
+      {
+        "question": "Why is centrifuge performance important?",
+        "answer": "Incorrect centrifugation can affect red-cell packing and compromise the result."
+      }
+    ]
+  },
+  {
+    "name": "Hemoglobin Estimation",
+    "slug": "hemoglobin-estimation",
+    "short_description": "A laboratory procedure for determining haemoglobin concentration using a validated analytical method.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine haemoglobin concentration in blood using a validated laboratory method.\n\n## Principle\n\nHaemoglobin is measured using an approved analytical method. The exact chemical reaction, wavelength, instrument settings and calibration requirements depend on the validated method used by the laboratory.\n\n## Specimen\n\nUse a properly collected and correctly identified specimen suitable for the validated haemoglobin method.\n\n## Equipment and Materials\n\n- Validated haemoglobin analyser or measurement system\n- Approved reagents and calibrators\n- Quality-control materials\n- Personal protective equipment\n\n## Procedure\n\n1. Verify specimen identification and suitability.\n2. Prepare the specimen according to the approved method.\n3. Confirm analyser or method readiness.\n4. Verify acceptable quality-control status.\n5. Perform haemoglobin analysis according to the validated procedure.\n6. Review analytical flags or errors.\n7. Record and report the result.\n\n## Quality Control\n\nRun required quality-control materials and follow calibration and maintenance requirements.\n\n## Reporting\n\nReport results using validated units and laboratory-approved reference intervals.\n\n## Safety\n\nFollow standard precautions and the applicable instrument safety instructions.",
+    "principle": "Haemoglobin concentration is determined using a validated analytical method appropriate to the laboratory's approved testing system.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Follow the manufacturer's instructions and the laboratory's validated haemoglobin procedure.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology"
+    ],
+    "tags": [
+      "Hemoglobin",
+      "Haemoglobin",
+      "Hb"
+    ],
+    "seo_title": "Hemoglobin Estimation SOP | LabGOTO",
+    "focus_keyword": "Hemoglobin Estimation SOP",
+    "seo_description": "Standard operating procedure for laboratory haemoglobin estimation using a validated method.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Why is haemoglobin measured?",
+        "answer": "Haemoglobin is a major parameter used to assess the blood's oxygen-carrying capacity and support evaluation of haematological conditions."
+      },
+      {
+        "question": "Can different methods give different procedures?",
+        "answer": "Yes. Laboratories must follow the validated procedure and manufacturer instructions for the specific method in use."
+      }
+    ]
+  },
+  {
+    "name": "Differential Leukocyte Count",
+    "slug": "differential-leukocyte-count",
+    "short_description": "A microscopic procedure for determining the relative distribution of leukocyte types in peripheral blood.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine the relative distribution of leukocyte populations in peripheral blood using a validated microscopic differential method.\n\n## Principle\n\nA properly prepared and stained peripheral blood film is examined microscopically. Leukocytes are identified and classified according to validated morphological characteristics.\n\n## Specimen\n\nUse a properly collected and correctly identified blood specimen suitable for blood-film preparation.\n\n## Equipment and Materials\n\n- Prepared and appropriately stained peripheral blood film\n- Microscope\n- Immersion oil where required\n- Laboratory-approved differential counting system\n\n## Procedure\n\n1. Verify specimen and slide identification.\n2. Confirm that film preparation and staining are acceptable.\n3. Select an appropriate examination area.\n4. Examine systematically using the appropriate microscope objective.\n5. Classify leukocytes using standardized morphological criteria.\n6. Count the number of cells required by the laboratory-approved method.\n7. Calculate and report relative or absolute results as applicable.\n\n## Quality Control\n\n- Use acceptable blood films.\n- Verify stain quality.\n- Ensure appropriate microscope performance.\n- Follow competency and review requirements for morphology interpretation.\n\n## Reporting\n\nReport findings using approved terminology and validated calculation methods.\n\n## Safety\n\nFollow standard precautions when handling blood specimens and slides.",
+    "principle": "Morphological classification of leukocytes on a stained peripheral blood film provides the differential leukocyte distribution.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Use validated morphology criteria, competency requirements and laboratory-approved counting procedures.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Microscopy"
+    ],
+    "tags": [
+      "Differential Count",
+      "Leukocyte",
+      "WBC Differential"
+    ],
+    "seo_title": "Differential Leukocyte Count SOP | LabGOTO",
+    "focus_keyword": "Differential Leukocyte Count SOP",
+    "seo_description": "Laboratory SOP for performing a microscopic differential leukocyte count.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "What cells are assessed in a differential count?",
+        "answer": "Major leukocyte populations are identified and classified according to validated morphological criteria."
+      },
+      {
+        "question": "Can absolute counts be reported?",
+        "answer": "Absolute counts may be calculated where a validated total leukocyte count and approved calculation method are available."
+      }
+    ]
+  },
+  {
+    "name": "Sickling Test",
+    "slug": "sickling-test",
+    "short_description": "A screening procedure for demonstrating red blood cell sickling under conditions that promote deoxygenation.",
+    "status": "published",
+    "content": "## Purpose\n\nTo screen for the ability of red blood cells containing significant haemoglobin S to undergo sickling under appropriate test conditions.\n\n## Principle\n\nA reducing or deoxygenating environment may promote characteristic sickling of susceptible red blood cells. The resulting cellular changes can be assessed microscopically.\n\n## Specimen\n\nUse a properly collected and correctly identified specimen suitable for the laboratory's validated screening method.\n\n## Equipment and Materials\n\n- Validated sickling-test reagent system\n- Clean glass slides and cover glasses where applicable\n- Microscope\n- Personal protective equipment\n\n## Procedure\n\n1. Verify specimen identification.\n2. Prepare the test using the laboratory's validated reagent system.\n3. Prepare the microscopic slide according to the approved procedure.\n4. Allow the reaction to proceed according to the validated method.\n5. Examine microscopically using the approved criteria.\n6. Record the finding.\n\n## Quality Control\n\nUse appropriate positive and negative quality-control materials where available and required.\n\n## Interpretation\n\nThis is a screening procedure and should not be used alone to definitively establish haemoglobin genotype.\n\n## Safety\n\nFollow standard precautions and applicable laboratory chemical safety requirements.",
+    "principle": "Reduced oxygen conditions may induce characteristic sickling in susceptible red blood cells containing significant haemoglobin S.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "A screening result must be interpreted with clinical information and confirmed using an appropriate validated haemoglobin identification method where required.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Hemoglobinopathy"
+    ],
+    "tags": [
+      "Sickling Test",
+      "HbS",
+      "Sickle Cell"
+    ],
+    "seo_title": "Sickling Test SOP | LabGOTO",
+    "focus_keyword": "Sickling Test SOP",
+    "seo_description": "Laboratory SOP for performing a microscopic sickling screening test.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can the sickling test determine haemoglobin genotype?",
+        "answer": "No. A screening result should not replace definitive haemoglobin identification testing."
+      },
+      {
+        "question": "What should follow a positive screening result?",
+        "answer": "Follow the laboratory's validated confirmatory testing pathway and clinical reporting policy."
+      }
+    ]
+  },
+  {
+    "name": "Sickling Solubility Test",
+    "slug": "sickling-solubility-test",
+    "short_description": "A screening procedure based on the reduced solubility of haemoglobin S under defined test conditions.",
+    "status": "published",
+    "content": "## Purpose\n\nTo screen for the possible presence of haemoglobin S using a validated solubility method.\n\n## Principle\n\nUnder defined reducing conditions, haemoglobin S demonstrates reduced solubility, producing a characteristic analytical reaction compared with an appropriate negative sample.\n\n## Specimen\n\nUse a specimen suitable for the laboratory's validated haemoglobin S screening method.\n\n## Equipment and Materials\n\n- Validated solubility-test reagent system\n- Appropriate reaction tubes or assay device\n- Quality-control materials where required\n- Personal protective equipment\n\n## Procedure\n\n1. Verify specimen identification and suitability.\n2. Prepare the test reagent according to the validated method.\n3. Add the specimen as specified by the approved procedure.\n4. Allow the reaction to proceed under validated conditions.\n5. Assess the reaction according to the method's interpretation criteria.\n6. Record the result.\n\n## Quality Control\n\nUse appropriate positive and negative controls according to the laboratory's validated procedure.\n\n## Interpretation\n\nThe test is a screening procedure and does not independently establish haemoglobin genotype.\n\n## Safety\n\nFollow laboratory safety procedures for blood specimens and reagents.",
+    "principle": "The test detects the characteristic reduced solubility of haemoglobin S under validated reducing conditions.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Positive screening results should be confirmed using an appropriate validated haemoglobin identification method.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Hemoglobinopathy"
+    ],
+    "tags": [
+      "HbS",
+      "Solubility Test",
+      "Sickle Cell"
+    ],
+    "seo_title": "Sickling Solubility Test SOP | LabGOTO",
+    "focus_keyword": "Sickling Solubility Test SOP",
+    "seo_description": "Laboratory SOP for haemoglobin S solubility screening.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Does a positive solubility test confirm sickle cell disease?",
+        "answer": "No. It indicates the possible presence of haemoglobin S and requires appropriate confirmatory testing."
+      },
+      {
+        "question": "Why are controls important?",
+        "answer": "Controls help verify that the assay system is performing as expected before patient results are accepted."
+      }
+    ]
+  },
+  {
+    "name": "Hemoglobin Electrophoresis",
+    "slug": "hemoglobin-electrophoresis",
+    "short_description": "A laboratory procedure for separating haemoglobin fractions using a validated electrophoretic method.",
+    "status": "published",
+    "content": "## Purpose\n\nTo separate and identify haemoglobin fractions using a validated electrophoretic method.\n\n## Principle\n\nHaemoglobin fractions migrate differently in an electrical field depending on their physical and chemical properties under defined analytical conditions.\n\n## Specimen\n\nUse a properly collected and correctly identified specimen suitable for the validated electrophoretic method.\n\n## Equipment and Materials\n\n- Validated electrophoresis system\n- Approved separation medium and buffers\n- Power supply or automated analyser\n- Appropriate controls\n- Personal protective equipment\n\n## Procedure\n\n1. Verify specimen identification and suitability.\n2. Prepare the sample according to the validated method.\n3. Prepare the electrophoretic system according to the approved procedure.\n4. Apply specimens and controls.\n5. Perform separation under validated conditions.\n6. Verify acceptable control performance.\n7. Interpret migration patterns using approved criteria.\n8. Report findings according to laboratory policy.\n\n## Quality Control\n\nRun appropriate controls and verify acceptable separation before releasing patient results.\n\n## Interpretation\n\nInterpretation depends on the analytical method and the pattern obtained. Some haemoglobin variants may require additional or confirmatory methods.\n\n## Safety\n\nFollow electrical safety procedures and standard precautions for biological specimens.",
+    "principle": "Different haemoglobin fractions migrate at different rates during electrophoresis under controlled analytical conditions.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Follow the validated method and manufacturer's instructions. Some haemoglobin variants may require confirmatory methods.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Hemoglobinopathy"
+    ],
+    "tags": [
+      "Hemoglobin Electrophoresis",
+      "Hb Electrophoresis",
+      "Hemoglobinopathy"
+    ],
+    "seo_title": "Hemoglobin Electrophoresis SOP | LabGOTO",
+    "focus_keyword": "Hemoglobin Electrophoresis SOP",
+    "seo_description": "Laboratory SOP for haemoglobin fraction separation by electrophoresis.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can electrophoresis identify all haemoglobin variants?",
+        "answer": "Interpretation depends on the validated analytical method, and some variants may require additional confirmatory testing."
+      },
+      {
+        "question": "Why are controls required?",
+        "answer": "Controls help demonstrate acceptable analytical separation and support reliable interpretation."
+      }
+    ]
+  },
+  {
+    "name": "Prothrombin Time (PT/INR)",
+    "slug": "prothrombin-time-pt-inr",
+    "short_description": "A coagulation procedure for assessing the extrinsic and common pathways using prothrombin time and INR reporting where applicable.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine prothrombin time (PT) and calculate or report the International Normalized Ratio (INR) where applicable.\n\n## Principle\n\nCitrated platelet-poor plasma is tested with an appropriate thromboplastin reagent and calcium-containing system. The time to clot formation is measured under validated conditions.\n\n## Specimen\n\nUse properly collected citrate plasma prepared according to validated coagulation specimen requirements.\n\n## Equipment and Materials\n\n- Validated coagulation analyser or approved manual system\n- PT reagent system\n- Quality-control materials\n- Calibrators or manufacturer-required materials\n- Personal protective equipment\n\n## Procedure\n\n1. Verify specimen identification and integrity.\n2. Confirm appropriate specimen processing.\n3. Prepare the analyser or manual coagulation system.\n4. Run required quality-control materials.\n5. Test patient plasma using the validated PT reagent system.\n6. Record the clotting result.\n7. Calculate or obtain INR using the validated system where applicable.\n8. Review results according to laboratory acceptance and reporting rules.\n\n## Quality Control\n\nDo not release patient results when required quality-control criteria are unacceptable.\n\n## Reporting\n\nReport PT and INR using the assay-specific and laboratory-approved format.\n\n## Safety\n\nFollow standard precautions for handling blood-derived specimens.",
+    "principle": "Addition of thromboplastin and calcium to citrated plasma initiates clot formation, allowing measurement of prothrombin time.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Follow validated reagent manufacturer instructions, including analyser-specific procedures and INR calculation requirements.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Coagulation"
+    ],
+    "tags": [
+      "PT",
+      "INR",
+      "Coagulation"
+    ],
+    "seo_title": "Prothrombin Time PT INR SOP | LabGOTO",
+    "focus_keyword": "Prothrombin Time PT INR SOP",
+    "seo_description": "Laboratory SOP for prothrombin time and INR testing using a validated coagulation method.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "What pathways are assessed by PT?",
+        "answer": "PT primarily evaluates the extrinsic and common coagulation pathways."
+      },
+      {
+        "question": "Why is specimen processing important?",
+        "answer": "Improper specimen collection or processing can affect coagulation test reliability."
+      }
+    ]
+  },
+  {
+    "name": "Activated Partial Thromboplastin Time (APTT)",
+    "slug": "activated-partial-thromboplastin-time-aptt",
+    "short_description": "A coagulation procedure for assessing the intrinsic and common pathways using activated partial thromboplastin time.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine activated partial thromboplastin time (APTT) using a validated coagulation method.\n\n## Principle\n\nCitrated platelet-poor plasma is incubated with an activator and phospholipid reagent. Calcium is then added and the time to clot formation is measured.\n\n## Specimen\n\nUse properly collected citrate plasma prepared according to validated coagulation specimen requirements.\n\n## Equipment and Materials\n\n- Validated coagulation analyser or approved manual system\n- APTT reagent system\n- Quality-control materials\n- Personal protective equipment\n\n## Procedure\n\n1. Verify specimen identification and integrity.\n2. Confirm appropriate citrate plasma preparation.\n3. Prepare the coagulation analyser or manual system.\n4. Run required quality-control materials.\n5. Perform testing using the validated APTT reagent system.\n6. Record the clotting result.\n7. Review results according to laboratory acceptance and reporting rules.\n\n## Quality Control\n\nEnsure acceptable quality-control performance before releasing results.\n\n## Reporting\n\nReport APTT using the approved unit and laboratory reporting format.\n\n## Safety\n\nFollow standard precautions.",
+    "principle": "Activation of the intrinsic coagulation pathway in citrated plasma allows measurement of clotting time following calcium addition.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Follow validated reagent and analyser instructions for specimen processing and result interpretation.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Coagulation"
+    ],
+    "tags": [
+      "APTT",
+      "aPTT",
+      "Coagulation"
+    ],
+    "seo_title": "Activated Partial Thromboplastin Time APTT SOP | LabGOTO",
+    "focus_keyword": "APTT SOP",
+    "seo_description": "Laboratory SOP for activated partial thromboplastin time testing.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "What pathways does APTT assess?",
+        "answer": "APTT primarily evaluates the intrinsic and common coagulation pathways."
+      },
+      {
+        "question": "Why must quality control be acceptable?",
+        "answer": "Patient results should not be released when required analytical quality-control criteria are not met."
+      }
+    ]
+  },
+  {
+    "name": "Bleeding Time",
+    "slug": "bleeding-time",
+    "short_description": "A historical primary haemostasis screening procedure that measures the time required for bleeding to stop after a standardized skin injury.",
+    "status": "published",
+    "content": "## Purpose\n\nTo describe the bleeding-time procedure and its important modern limitations.\n\n## Principle\n\nA standardized superficial skin injury is historically produced and the duration of bleeding is measured under controlled conditions.\n\n## Current Practice Consideration\n\nBleeding time is now limited, restricted or discontinued in many modern laboratories because of poor standardization, limited predictive value and the availability of alternative platelet and haemostasis investigations.\n\n## Procedure\n\nWhere the test remains approved for use by an institution, it must be performed strictly according to the institution's current validated and ethically approved procedure by trained personnel.\n\nThe local procedure should address:\n\n- Patient selection and contraindications\n- Standardized technique\n- Timing method\n- Safety and bleeding management\n- Documentation and reporting\n- Escalation of prolonged bleeding\n\n## Quality and Safety\n\nPatient safety, institutional approval, standardized technique and appropriate management of bleeding must be ensured.\n\n## Reporting\n\nResults should be interpreted cautiously and according to current laboratory and clinical policy.\n\n## Safety\n\nBecause this procedure involves intentional skin injury, it requires strict institutional governance and appropriate patient safety measures.",
+    "principle": "The procedure historically assessed the duration of bleeding after a standardized superficial skin injury.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Bleeding time is obsolete or restricted in many settings. Do not implement this procedure without current institutional approval, ethical governance and validated clinical policy.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Coagulation"
+    ],
+    "tags": [
+      "Bleeding Time",
+      "Primary Haemostasis"
+    ],
+    "seo_title": "Bleeding Time SOP | LabGOTO",
+    "focus_keyword": "Bleeding Time SOP",
+    "seo_description": "Laboratory reference SOP describing bleeding time and its modern limitations.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Is bleeding time commonly used today?",
+        "answer": "Its use is limited or discontinued in many modern settings because of methodological limitations and the availability of alternative investigations."
+      },
+      {
+        "question": "Should this procedure be independently introduced into routine practice?",
+        "answer": "No. It should only be used where it remains institutionally approved, validated and clinically governed."
+      }
+    ]
+  },
+  {
+    "name": "Clotting Time",
+    "slug": "clotting-time",
+    "short_description": "A basic manual screening procedure for observing the time required for whole blood to clot under standardized conditions.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine whole-blood clotting time using an approved manual procedure.\n\n## Principle\n\nWhole blood is maintained under defined conditions and the time until visible clot formation is determined.\n\n## Specimen\n\nFollow the locally approved collection procedure for the specific clotting-time method used.\n\n## Equipment and Materials\n\n- Approved collection or test containers\n- Validated timing device\n- Personal protective equipment\n\n## Procedure\n\n1. Verify patient identification.\n2. Collect or prepare the specimen using the approved procedure.\n3. Start timing according to the validated method.\n4. Observe clot formation using the approved technique.\n5. Record the clotting time.\n6. Document any procedural deviations.\n\n## Quality Control\n\nStandardize collection, timing and environmental conditions according to the validated procedure.\n\n## Interpretation\n\nClotting time is a basic screening method with significant methodological limitations compared with modern coagulation testing.\n\n## Safety\n\nFollow standard precautions and appropriate specimen-handling procedures.",
+    "principle": "The procedure measures the time required for whole blood to form a visible clot under defined conditions.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Use only where the method remains locally approved and validated. Modern coagulation assays may be more appropriate.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Coagulation"
+    ],
+    "tags": [
+      "Clotting Time",
+      "Coagulation"
+    ],
+    "seo_title": "Clotting Time SOP | LabGOTO",
+    "focus_keyword": "Clotting Time SOP",
+    "seo_description": "Laboratory SOP for manual whole-blood clotting time testing.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Is clotting time a comprehensive modern coagulation test?",
+        "answer": "No. It is a basic screening method with important methodological limitations."
+      },
+      {
+        "question": "Why must timing be standardized?",
+        "answer": "Procedural variation can significantly affect manual clotting-time results."
+      }
+    ]
+  },
+  {
+    "name": "Fibrinogen Assay",
+    "slug": "fibrinogen-assay",
+    "short_description": "A coagulation procedure for determining plasma fibrinogen concentration using a validated assay method.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine fibrinogen concentration or functional activity in plasma using a validated laboratory assay.\n\n## Principle\n\nA validated assay system measures fibrinogen through controlled conversion of fibrinogen to fibrin or another method-specific analytical reaction. The result is determined using the assay's approved calibration and analytical system.\n\n## Specimen\n\nUse properly collected citrate plasma prepared according to validated coagulation specimen requirements.\n\n## Equipment and Materials\n\n- Validated coagulation analyser or approved testing system\n- Fibrinogen assay reagent system\n- Calibrators and quality-control materials\n- Personal protective equipment\n\n## Procedure\n\n1. Verify specimen identification and integrity.\n2. Confirm appropriate specimen processing.\n3. Prepare the analyser or validated testing system.\n4. Confirm calibration status where required.\n5. Run required quality-control materials.\n6. Perform the assay using the validated reagent system.\n7. Review calibration, quality-control and analytical flags.\n8. Record and report the result.\n\n## Quality Control\n\nFollow the manufacturer's and laboratory's requirements for calibration, internal quality control and corrective action.\n\n## Reporting\n\nReport fibrinogen using the assay-specific unit and laboratory-approved format.\n\n## Safety\n\nFollow standard precautions for blood-derived specimens.",
+    "principle": "The assay determines fibrinogen concentration or functional activity using a validated coagulation analytical method.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "Follow the validated assay manufacturer's instructions and laboratory quality-management requirements.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Coagulation"
+    ],
+    "tags": [
+      "Fibrinogen",
+      "Coagulation",
+      "Clauss Method"
+    ],
+    "seo_title": "Fibrinogen Assay SOP | LabGOTO",
+    "focus_keyword": "Fibrinogen Assay SOP",
+    "seo_description": "Laboratory SOP for determining plasma fibrinogen using a validated assay.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "What specimen is commonly used for fibrinogen testing?",
+        "answer": "Validated citrate plasma is commonly used for coagulation-based fibrinogen assays."
+      },
+      {
+        "question": "Why are calibration and quality control important?",
+        "answer": "They help ensure that the analytical system produces reliable patient results."
+      }
+    ]
+  },
+  {
+    "name": "D-Dimer Testing",
+    "slug": "d-dimer-testing",
+    "short_description": "A laboratory procedure for measuring D-dimer using a validated immunological assay method.",
+    "status": "published",
+    "content": "## Purpose\n\nTo determine D-dimer concentration using a validated laboratory assay.\n\n## Principle\n\nD-dimer assays use antibodies directed against fibrin degradation products containing D-dimer-related structures. The analytical signal is related to the amount present in the specimen according to the validated assay design.\n\n## Specimen\n\nUse the specimen type and handling conditions specified by the validated assay and manufacturer instructions.\n\n## Equipment and Materials\n\n- Validated D-dimer analyser or testing system\n- Approved assay reagents\n- Calibrators where required\n- Quality-control materials\n- Personal protective equipment\n\n## Procedure\n\n1. Verify patient identification and specimen suitability.\n2. Prepare the analyser or validated testing system.\n3. Confirm calibration status where required.\n4. Verify acceptable quality-control performance.\n5. Perform testing according to the validated manufacturer's instructions.\n6. Review analytical flags and quality-control results.\n7. Report results using the assay-specific units and laboratory reporting format.\n\n## Interpretation\n\nD-dimer results must be interpreted with clinical probability, patient factors and the intended clinical use of the specific assay. A D-dimer result alone should not be treated as an independent diagnosis of thrombosis.\n\n## Quality Control\n\nFollow assay-specific calibration, internal quality-control and corrective-action requirements.\n\n## Safety\n\nFollow standard precautions and applicable instrument safety procedures.",
+    "principle": "Immunological detection of fibrin degradation products containing D-dimer-related structures provides a quantitative or qualitative result depending on the validated assay.",
+    "department": "Haematology",
+    "version": "1.0",
+    "author_name": "LabGOTO Editorial Team",
+    "reviewed_date": "2026-08-28",
+    "last_verified_date": "2026-08-28",
+    "mandatory_disclaimer": "D-dimer methods and reporting units vary by assay. Follow the specific manufacturer's instructions and validated clinical interpretation pathway.",
+    "featured_image": "IMAGE_URL_TO_BE_CONFIRMED",
+    "categories": [
+      "Haematology",
+      "Coagulation"
+    ],
+    "tags": [
+      "D-Dimer",
+      "Fibrin Degradation",
+      "Coagulation"
+    ],
+    "seo_title": "D-Dimer Testing SOP | LabGOTO",
+    "focus_keyword": "D-Dimer Testing SOP",
+    "seo_description": "Laboratory SOP for D-dimer testing using validated immunological assay methods.",
+    "reviewed_by": "Samuel Ogundare Editorial Team",
+    "reviewer_credentials": "B.MLS",
+    "last_reviewed_date": "2026-08-28",
+    "faqs": [
+      {
+        "question": "Can D-dimer alone diagnose thrombosis?",
+        "answer": "No. Results must be interpreted with clinical assessment and an appropriate diagnostic pathway."
+      },
+      {
+        "question": "Why do reporting units matter?",
+        "answer": "D-dimer assays may use different units and calibration systems, so results must be interpreted according to the specific validated assay."
+      }
+    ]
+  }
+]

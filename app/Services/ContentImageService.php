@@ -116,6 +116,10 @@ class ContentImageService
             return;
         }
 
+        if (str_starts_with($path, '/') || preg_match('#^https?://#i', $path)) {
+            return;
+        }
+
         $this->deleteWithVariants($path);
     }
 

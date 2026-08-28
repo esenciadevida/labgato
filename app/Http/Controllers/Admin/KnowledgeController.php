@@ -42,10 +42,16 @@ class KnowledgeController extends Controller
 
     public function store(StoreKnowledgeRequest $request)
     {
-        $data = collect($request->validated())->except(['featured_image', 'remove_featured_image'])->all();
+        $data = collect($request->validated())->except(['featured_image', 'featured_image_url', 'remove_featured_image'])->all();
+
+        $featuredImage = trim((string) $request->validated('featured_image_url'));
 
         if ($request->hasFile('featured_image')) {
-            $data['featured_image'] = app(ContentImageService::class)->store($request->file('featured_image'));
+            $featuredImage = app(ContentImageService::class)->store($request->file('featured_image'));
+        }
+
+        if ($featuredImage !== '') {
+            $data['featured_image'] = $featuredImage;
         }
 
         $knowledge = KnowledgeResource::create([
@@ -88,17 +94,33 @@ class KnowledgeController extends Controller
 
         $previousStatus = $knowledge->status;
 
-        $data = collect($request->validated())->except(['featured_image', 'remove_featured_image'])->all();
+        $data = collect($request->validated())->except(['featured_image', 'featured_image_url', 'remove_featured_image'])->all();
+
+        $changedFeatured = false;
+        $newImage = trim((string) $request->validated('featured_image_url'));
 
         if ($request->hasFile('featured_image')) {
-            $oldImage = $knowledge->featured_image;
-            $data['featured_image'] = app(ContentImageService::class)->store($request->file('featured_image'));
-            if ($oldImage && $oldImage !== $data['featured_image']) {
-                app(ContentImageService::class)->delete($oldImage);
+            $newImage = app(ContentImageService::class)->store($request->file('featured_image'));
+
+            if ($knowledge->featured_image && $knowledge->featured_image !== $newImage) {
+                app(ContentImageService::class)->delete($knowledge->featured_image);
             }
+
+            $changedFeatured = true;
+        } elseif ($newImage !== '' && $newImage !== $knowledge->featured_image) {
+            if ($knowledge->featured_image) {
+                app(ContentImageService::class)->delete($knowledge->featured_image);
+            }
+
+            $changedFeatured = true;
         } elseif ($request->boolean('remove_featured_image') && $knowledge->featured_image) {
             app(ContentImageService::class)->delete($knowledge->featured_image);
-            $data['featured_image'] = null;
+            $newImage = null;
+            $changedFeatured = true;
+        }
+
+        if ($changedFeatured) {
+            $data['featured_image'] = $newImage === '' ? null : $newImage;
         }
 
         $knowledge->update([

@@ -210,6 +210,9 @@ return [
         'knowledge' => [
             'enabled' => env('LABGOTO_SEED_KNOWLEDGE', false),
         ],
+        'sops' => [
+            'enabled' => env('LABGOTO_SEED_SOPS', false),
+        ],
         'exam_engine' => [
             'enabled' => env('LABGOTO_SEED_EXAM_ENGINE', false),
             'member_email' => env('LABGOTO_SEED_EXAM_MEMBER_EMAIL', 'demo@labgoto.test'),

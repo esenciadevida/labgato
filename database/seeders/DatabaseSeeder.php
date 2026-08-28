@@ -59,6 +59,12 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        if (config('labgoto.seed.sops.enabled')) {
+            $this->call([
+                MasterSopSeeder::class,
+            ]);
+        }
+
         if (config('labgoto.seed.exam_engine.enabled')) {
             $this->call([
                 ExamEngineSeeder::class,
