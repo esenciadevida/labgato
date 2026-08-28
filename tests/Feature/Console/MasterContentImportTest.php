@@ -76,7 +76,7 @@ class MasterContentImportTest extends TestCase
                 'difficulty_level' => 'intermediate',
                 'author_name' => 'LabGOTO Editorial Team',
                 'image_url' => 'https://media.licdn.com/dms/image/example.jpg',
-                'reading_time_minutes' => 6,
+                'reading_time' => 6,
                 'status' => 'published',
                 'categories' => ['Microbiology'],
                 'tags' => ['Colony Count', 'cfu'],
@@ -115,6 +115,34 @@ class MasterContentImportTest extends TestCase
         ])->assertExitCode(0);
 
         $this->assertNull(Sop::query()->where('slug', 'unresolved-image-sop')->first()->featured_image);
+    }
+
+    public function test_imports_knowledge_03_dump_as_published(): void
+    {
+        $this->artisan('master-content:import', [
+            'file' => 'dump/knowledge_03_laboratory_knowledge.json',
+            '--type' => 'knowledge',
+        ])->assertExitCode(0)->expectsOutputToContain('4 created');
+
+        $this->assertSame(4, KnowledgeResource::query()->count());
+        $this->assertSame(4, KnowledgeResource::query()->where('status', ResourceStatus::PUBLISHED)->count());
+
+        $cultureMedia = KnowledgeResource::query()->where(
+            'slug',
+            'choosing-the-right-culture-medium-in-clinical-microbiology'
+        )->first();
+
+        $this->assertNotNull($cultureMedia);
+        $this->assertSame(9, $cultureMedia->reading_time_minutes);
+        $this->assertSame('Beginner', $cultureMedia->difficulty_level);
+        $this->assertStringContainsString('Sabouraud Dextrose Agar', $cultureMedia->content);
+        $this->assertStringNotContainsString('contentReference', $cultureMedia->content);
+        $this->assertStringContainsString('media.licdn.com', $cultureMedia->featured_image);
+        $this->assertStringContainsString('By the end of this resource', $cultureMedia->learning_objectives);
+        $this->assertSame('Samuel Ogundare Editorial Team', $cultureMedia->reviewer_name);
+        $this->assertSame('B.MLS', $cultureMedia->reviewer_credentials);
+        $this->assertNotNull($cultureMedia->last_reviewed_at);
+        $this->assertTrue($cultureMedia->categories->contains(fn ($category) => $category->name === 'Microbiology'));
     }
 
     public function test_rejects_unknown_type(): void

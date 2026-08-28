@@ -12,6 +12,7 @@ class MasterKnowledgeSeeder extends Seeder
     private const SEED_FILES = [
         'knowledge_01_general_laboratory_upgraded.json',
         'knowledge_02_hematology.json',
+        'knowledge_03_laboratory_knowledge.json',
     ];
 
     public function run(): void

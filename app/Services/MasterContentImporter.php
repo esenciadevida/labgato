@@ -112,11 +112,16 @@ class MasterContentImporter
                 'learning_objectives' => $this->formatObjectives($this->optionalValue($item, 'learningObjectives', 'learning_objectives')),
                 'author_name' => $this->optionalValue($item, 'authorName', 'author_name'),
                 'featured_image' => $featuredImage,
-                'reading_time_minutes' => $this->optionalValue($item, 'readingTimeMinutes', 'reading_time_minutes'),
+                'reading_time_minutes' => $this->optionalValue($item, 'readingTimeMinutes', 'reading_time_minutes', 'reading_time'),
                 'status' => $status,
                 'published_at' => $status === ResourceStatus::PUBLISHED->value ? now() : null,
                 'seo_title' => $this->optionalValue($item, 'seoTitle', 'seo_title'),
                 'seo_description' => $this->optionalValue($item, 'seoDescription', 'seo_description'),
+                'focus_keyword' => $this->optionalValue($item, 'focus_keyword'),
+                'reviewer_name' => $this->optionalValue($item, 'reviewed_by'),
+                'reviewer_credentials' => $this->optionalValue($item, 'reviewer_credentials'),
+                'last_reviewed_at' => $this->optionalValue($item, 'last_reviewed_date'),
+                'faq' => $this->optionalValue($item, 'faqs', 'faq'),
             ],
         );
 
