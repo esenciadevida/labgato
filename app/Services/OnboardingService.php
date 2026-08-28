@@ -27,7 +27,7 @@ class OnboardingService
             [
                 'id' => 'explore-sop',
                 'label' => 'Explore an SOP',
-                'description' => 'Browse step-by-step standard operating procedures.',
+                'description' => 'Browse step-by-step SOPs from every major laboratory department.',
                 'href' => route('public.sops.index'),
                 'done' => $viewed->contains('sop'),
             ],
@@ -44,6 +44,21 @@ class OnboardingService
                 'description' => 'Run a clinical calculation or check reference ranges.',
                 'href' => route('public.calculators.index'),
                 'done' => $viewed->contains('calculator'),
+            ],
+            [
+                'id' => 'explore-interpretation',
+                'label' => 'Read an interpretation guide',
+                'description' => 'See how laboratory results are correlated and reported.',
+                'href' => route('public.interpretation.index'),
+                'done' => $viewed->contains('interpretation'),
+            ],
+            [
+                'id' => 'take-assessment',
+                'label' => 'Take an assessment',
+                'description' => 'Test yourself with a timed ASCP-style exam and earn a certificate.',
+                'href' => route('assessments.index'),
+                'done' => $user->examAttempts()->whereIn('status', ['submitted', 'auto_submitted'])->exists()
+                    || $user->certificates()->exists(),
             ],
             [
                 'id' => 'contribute',
@@ -77,6 +92,12 @@ class OnboardingService
                 'title' => 'Track your progress',
                 'description' => 'See how many of your submissions are drafted, in review, published, or need changes.',
                 'side' => 'bottom',
+            ],
+            [
+                'element' => '[data-tour="checklist"]',
+                'title' => 'Level up',
+                'description' => 'Work through the getting-started list - 56 SOPs across Hematology, Coagulation, Microbiology, Blood Bank, and Clinical Chemistry, interpretation guides, and timed ASCP-style assessments are one click away.',
+                'side' => 'top',
             ],
             [
                 'element' => '[data-tour="recent"]',

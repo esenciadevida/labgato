@@ -99,4 +99,16 @@ class OnboardingTest extends TestCase
         $response->assertSee('data-tour-config', false);
         $response->assertSee('Navigate your hub');
     }
+
+    public function test_dashboard_checklist_promotes_new_features(): void
+    {
+        $user = $this->member();
+
+        $response = $this->actingAs($user)->get(route('account.dashboard'));
+
+        $response->assertOk();
+        $response->assertSee('Read an interpretation guide');
+        $response->assertSee('Take an assessment');
+        $response->assertSee('Level up');
+    }
 }

@@ -88,7 +88,7 @@
                         Welcome to {{ config('app.name') }}
                     </h2>
                     <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-                        Your trusted hub for laboratory knowledge &mdash; procedures, result interpretations, and clinical tools built by professionals.
+                        Your trusted hub for laboratory knowledge &mdash; SOPs, result interpretations, timed exams, and clinical tools built by professionals.
                     </p>
                 </div>
 
@@ -100,7 +100,7 @@
                     </span>
                     <h2 class="font-display text-xl font-bold text-slate-900 dark:text-slate-100">Learn the standards</h2>
                     <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-                        Browse SOPs and result interpretation guides written and reviewed by experienced laboratory scientists.
+                        Browse step-by-step SOPs across Hematology, Coagulation, Microbiology, Blood Bank, and Clinical Chemistry, plus interpretation guides written and reviewed by experienced laboratory scientists.
                     </p>
                 </div>
 
@@ -112,7 +112,7 @@
                     </span>
                     <h2 class="font-display text-xl font-bold text-slate-900 dark:text-slate-100">Work faster</h2>
                     <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-                        Run clinical calculators and check reference ranges without leaving your browser.
+                        Run clinical calculators, check reference ranges, and use laboratory tools without leaving your browser.
                     </p>
                 </div>
 
