@@ -29,10 +29,12 @@ class RelatedResourceService
 
     public function relatedFor(Model $resource, int $limit = 6): Collection
     {
-        return Cache::remember(
-            'related:'.get_class($resource).':'.$resource->getKey().':'.$limit,
-            now()->addSeconds(self::CACHE_TTL),
-            fn () => $this->computeRelated($resource, $limit),
+        return Collection::make(
+            Cache::remember(
+                'related:'.get_class($resource).':'.$resource->getKey().':'.$limit,
+                now()->addSeconds(self::CACHE_TTL),
+                fn () => $this->computeRelated($resource, $limit)->all(),
+            ),
         );
     }
 
