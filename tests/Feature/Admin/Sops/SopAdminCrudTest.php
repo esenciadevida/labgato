@@ -136,6 +136,83 @@ class SopAdminCrudTest extends TestCase
         $this->assertStringEndsWith('.webp', (string) $sop->featured_image_url);
     }
 
+    public function test_sop_featured_image_url_is_persisted_and_used_for_rendering(): void
+    {
+        $user = $this->createUserWithPermission('sops.create');
+
+        $this->actingAs($user)->post(route('admin.sops.store'), $this->validPayload([
+            'featured_image_url' => 'https://media.licdn.com/dms/image/example.jpg',
+        ]));
+
+        $sop = Sop::query()->first();
+
+        $this->assertSame('https://media.licdn.com/dms/image/example.jpg', $sop->featured_image);
+        $this->assertSame($sop->featured_image, $sop->featured_image_url);
+    }
+
+    public function test_sop_uploaded_image_takes_precedence_over_url(): void
+    {
+        Storage::fake('public');
+
+        $user = $this->createUserWithPermission('sops.create');
+
+        $this->actingAs($user)->post(route('admin.sops.store'), $this->validPayload([
+            'featured_image' => UploadedFile::fake()->image('featured.jpg'),
+            'featured_image_url' => 'https://example.com/remote.jpg',
+        ]));
+
+        $sop = Sop::query()->first();
+
+        $this->assertNotNull($sop->featured_image);
+        $this->assertStringEndsWith('.webp', (string) $sop->featured_image);
+        Storage::disk('public')->assertExists($sop->featured_image);
+    }
+
+    public function test_sop_updating_featured_image_from_upload_to_url_deletes_local_image(): void
+    {
+        Storage::fake('public');
+
+        $imagePath = 'content/featured.webp';
+        Storage::disk('public')->put($imagePath, 'fake-content');
+
+        $sop = Sop::factory()->create(['featured_image' => $imagePath]);
+        $user = $this->createUserWithPermission('sops.edit');
+
+        $this->actingAs($user)->put(route('admin.sops.update', $sop), $this->validPayload([
+            'featured_image_url' => 'https://example.com/remote.jpg',
+            'status' => ResourceStatus::PUBLISHED->value,
+        ]));
+
+        $sop->refresh();
+
+        $this->assertSame('https://example.com/remote.jpg', $sop->featured_image);
+        Storage::disk('public')->assertMissing($imagePath);
+    }
+
+    public function test_sop_featured_image_url_can_be_removed(): void
+    {
+        $sop = Sop::factory()->create(['featured_image' => 'https://example.com/remote.jpg']);
+        $user = $this->createUserWithPermission('sops.edit');
+
+        $this->actingAs($user)->put(route('admin.sops.update', $sop), $this->validPayload([
+            'remove_featured_image' => '1',
+            'status' => ResourceStatus::PUBLISHED->value,
+        ]));
+
+        $this->assertNull($sop->refresh()->featured_image);
+    }
+
+    public function test_sop_featured_image_url_rejects_invalid_urls(): void
+    {
+        $user = $this->createUserWithPermission('sops.create');
+
+        $response = $this->actingAs($user)->post(route('admin.sops.store'), $this->validPayload([
+            'featured_image_url' => 'ftp://example.com/image.jpg',
+        ]));
+
+        $response->assertSessionHasErrors('featured_image_url');
+    }
+
     public function test_save_and_create_redirects_back_to_create(): void
     {
         $user = $this->createUserWithPermission('sops.create');

@@ -257,6 +257,72 @@ class InterpretationAdminCrudTest extends TestCase
         Storage::disk('public')->assertExists($interpretation->featured_image);
     }
 
+    public function test_interpretation_featured_image_url_is_persisted_and_used_for_rendering(): void
+    {
+        $user = $this->createUserWithPermission('interpretation.create');
+
+        $this->actingAs($user)->post(route('admin.interpretation.store'), $this->validPayload([
+            'featured_image_url' => 'https://media.licdn.com/dms/image/example.jpg',
+        ]));
+
+        $interpretation = InterpretationResource::query()->first();
+
+        $this->assertSame('https://media.licdn.com/dms/image/example.jpg', $interpretation->featured_image);
+        $this->assertSame($interpretation->featured_image, $interpretation->featured_image_url);
+    }
+
+    public function test_interpretation_uploaded_image_takes_precedence_over_url(): void
+    {
+        Storage::fake('public');
+
+        $user = $this->createUserWithPermission('interpretation.create');
+
+        $this->actingAs($user)->post(route('admin.interpretation.store'), $this->validPayload([
+            'featured_image' => UploadedFile::fake()->image('featured.jpg'),
+            'featured_image_url' => 'https://example.com/remote.jpg',
+        ]));
+
+        $interpretation = InterpretationResource::query()->first();
+
+        $this->assertNotNull($interpretation->featured_image);
+        Storage::disk('public')->assertExists($interpretation->featured_image);
+        $this->assertNotSame('https://example.com/remote.jpg', $interpretation->featured_image);
+    }
+
+    public function test_interpretation_updating_featured_image_from_upload_to_url_deletes_local_image(): void
+    {
+        Storage::fake('public');
+
+        $imagePath = 'content/featured.jpg';
+        Storage::disk('public')->put($imagePath, 'fake-content');
+
+        $interpretation = InterpretationResource::factory()->create(['featured_image' => $imagePath]);
+        $user = $this->createUserWithPermission('interpretation.edit');
+
+        $this->actingAs($user)->put(route('admin.interpretation.update', $interpretation), $this->validPayload([
+            'featured_image_url' => 'https://example.com/remote.jpg',
+            'status' => ResourceStatus::PUBLISHED->value,
+        ]));
+
+        $interpretation->refresh();
+
+        $this->assertSame('https://example.com/remote.jpg', $interpretation->featured_image);
+        Storage::disk('public')->assertMissing($imagePath);
+    }
+
+    public function test_interpretation_featured_image_url_can_be_removed(): void
+    {
+        $interpretation = InterpretationResource::factory()->create(['featured_image' => 'https://example.com/remote.jpg']);
+        $user = $this->createUserWithPermission('interpretation.edit');
+
+        $this->actingAs($user)->put(route('admin.interpretation.update', $interpretation), $this->validPayload([
+            'remove_featured_image' => '1',
+            'status' => ResourceStatus::PUBLISHED->value,
+        ]));
+
+        $this->assertNull($interpretation->refresh()->featured_image);
+    }
+
     public function test_interpretation_deletion_removes_featured_image(): void
     {
         Storage::fake('public');

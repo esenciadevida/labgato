@@ -13,6 +13,8 @@
     $defaultDisclaimer = 'Educational Interpretation Only: This content is for educational purposes and explains common laboratory result patterns. It does not constitute medical advice or diagnosis. Always interpret laboratory results in the context of the patient\'s clinical condition and consult with a qualified healthcare professional.';
     $relatedAnalytes = old('related_analytes', $interpretation?->related_analytes ?? []);
     $relatedAnalytes = is_array($relatedAnalytes) ? implode(', ', $relatedAnalytes) : $relatedAnalytes;
+    $currentFeaturedImageIsUrl = is_string($interpretation?->featured_image) && preg_match('#^https?://#i', $interpretation->featured_image);
+    $featuredImageUrlValue = old('featured_image_url', $currentFeaturedImageIsUrl ? $interpretation->featured_image : '');
 @endphp
 
 <form method="POST" action="{{ $action }}" enctype="multipart/form-data" class="space-y-6">
@@ -153,7 +155,7 @@
     <x-ui.card>
         <x-form.section
             title="Featured Image"
-            description="Optional image displayed at the top of the public detail page. Max 2 MB (JPEG, PNG, WebP, or SVG)."
+            description="Optional image displayed at the top of the public detail page. Max 2 MB (JPEG, PNG, WebP, or SVG), or paste a direct link to an image hosted elsewhere."
         >
             <div>
                 @if($interpretation?->featured_image_url)
@@ -166,6 +168,20 @@
                 @endif
                 <x-ui.input id="featured_image" name="featured_image" type="file" accept=".jpg,.jpeg,.png,.webp" :error="$errors->first('featured_image')" />
                 <x-form.error for="featured_image" />
+
+                <div class="mt-4">
+                    <x-form.label for="featured_image_url">Or use an image URL</x-form.label>
+                    <x-ui.input
+                        id="featured_image_url"
+                        name="featured_image_url"
+                        type="url"
+                        value="{{ $featuredImageUrlValue }}"
+                        placeholder="https://example.com/path/to/image.jpg"
+                        :error="$errors->first('featured_image_url')"
+                    />
+                    <x-form.error for="featured_image_url" />
+                    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Paste a direct http(s) link to an image hosted elsewhere. If you also upload a file, the uploaded file is used.</p>
+                </div>
 
                 @if($interpretation?->featured_image)
                     <label class="mt-3 inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">

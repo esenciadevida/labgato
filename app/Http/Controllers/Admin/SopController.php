@@ -44,12 +44,18 @@ class SopController extends Controller
     public function store(StoreSopRequest $request)
     {
         $data = collect($request->validated())
-            ->except(['featured_image', 'remove_featured_image'])
+            ->except(['featured_image', 'featured_image_url', 'remove_featured_image'])
             ->all();
         $data['version'] = ($data['version'] ?? '') ?: '1.0';
 
+        $featuredImage = trim((string) $request->validated('featured_image_url'));
+
         if ($request->hasFile('featured_image')) {
-            $data['featured_image'] = app(ContentImageService::class)->store($request->file('featured_image'));
+            $featuredImage = app(ContentImageService::class)->store($request->file('featured_image'));
+        }
+
+        if ($featuredImage !== '') {
+            $data['featured_image'] = $featuredImage;
         }
 
         $sop = Sop::create([
@@ -97,21 +103,36 @@ class SopController extends Controller
         $versionService = app(SopVersionService::class);
         $isNewVersion = $request->boolean('is_new_version');
 
-        if ($request->hasFile('featured_image')) {
-            $oldImage = $sop->featured_image;
-            $data['featured_image'] = app(ContentImageService::class)->store($request->file('featured_image'));
+        $data = collect($request->validated())
+            ->except(['is_new_version', 'change_summary', 'featured_image', 'featured_image_url', 'remove_featured_image'])
+            ->all();
 
-            if ($oldImage && $oldImage !== $data['featured_image']) {
-                app(ContentImageService::class)->delete($oldImage);
+        $changedFeatured = false;
+        $newImage = trim((string) $request->validated('featured_image_url'));
+
+        if ($request->hasFile('featured_image')) {
+            $newImage = app(ContentImageService::class)->store($request->file('featured_image'));
+
+            if ($sop->featured_image && $sop->featured_image !== $newImage) {
+                app(ContentImageService::class)->delete($sop->featured_image);
             }
+
+            $changedFeatured = true;
+        } elseif ($newImage !== '' && $newImage !== $sop->featured_image) {
+            if ($sop->featured_image) {
+                app(ContentImageService::class)->delete($sop->featured_image);
+            }
+
+            $changedFeatured = true;
         } elseif ($request->boolean('remove_featured_image') && $sop->featured_image) {
             app(ContentImageService::class)->delete($sop->featured_image);
-            $data['featured_image'] = null;
+            $newImage = null;
+            $changedFeatured = true;
         }
 
-        $data = collect($request->validated())
-            ->except(['is_new_version', 'change_summary', 'featured_image', 'remove_featured_image'])
-            ->all();
+        if ($changedFeatured) {
+            $data['featured_image'] = $newImage === '' ? null : $newImage;
+        }
 
         if ($isNewVersion) {
             $newVersion = trim((string) ($data['version'] ?? ''));

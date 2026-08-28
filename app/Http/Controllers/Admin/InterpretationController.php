@@ -42,10 +42,16 @@ class InterpretationController extends Controller
 
     public function store(StoreInterpretationRequest $request)
     {
-        $data = collect($request->validated())->except(['featured_image', 'remove_featured_image'])->all();
+        $data = collect($request->validated())->except(['featured_image', 'featured_image_url', 'remove_featured_image'])->all();
+
+        $featuredImage = trim((string) $request->validated('featured_image_url'));
 
         if ($request->hasFile('featured_image')) {
-            $data['featured_image'] = app(ContentImageService::class)->store($request->file('featured_image'));
+            $featuredImage = app(ContentImageService::class)->store($request->file('featured_image'));
+        }
+
+        if ($featuredImage !== '') {
+            $data['featured_image'] = $featuredImage;
         }
 
         $interpretation = InterpretationResource::create([
@@ -88,17 +94,34 @@ class InterpretationController extends Controller
 
         $previousStatus = $interpretation->status;
 
-        $data = collect($request->validated())->except(['featured_image', 'remove_featured_image'])->all();
+        $data = collect($request->validated())->except(['featured_image', 'featured_image_url', 'remove_featured_image'])->all();
+
+        $changedFeatured = false;
+        $newImage = trim((string) $request->validated('featured_image_url'));
 
         if ($request->hasFile('featured_image')) {
             $oldImage = $interpretation->featured_image;
-            $data['featured_image'] = app(ContentImageService::class)->store($request->file('featured_image'));
-            if ($oldImage && $oldImage !== $data['featured_image']) {
+            $newImage = app(ContentImageService::class)->store($request->file('featured_image'));
+
+            if ($oldImage && $oldImage !== $newImage) {
                 app(ContentImageService::class)->delete($oldImage);
             }
+
+            $changedFeatured = true;
+        } elseif ($newImage !== '' && $newImage !== $interpretation->featured_image) {
+            if ($interpretation->featured_image) {
+                app(ContentImageService::class)->delete($interpretation->featured_image);
+            }
+
+            $changedFeatured = true;
         } elseif ($request->boolean('remove_featured_image') && $interpretation->featured_image) {
             app(ContentImageService::class)->delete($interpretation->featured_image);
-            $data['featured_image'] = null;
+            $newImage = null;
+            $changedFeatured = true;
+        }
+
+        if ($changedFeatured) {
+            $data['featured_image'] = $newImage === '' ? null : $newImage;
         }
 
         $interpretation->update([

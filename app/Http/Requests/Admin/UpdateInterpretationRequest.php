@@ -49,6 +49,7 @@ class UpdateInterpretationRequest extends FormRequest
             'mandatory_disclaimer' => ['required', 'string', 'max:5000'],
             'author_name' => ['nullable', 'string', 'max:255'],
             'featured_image' => ['nullable', 'file', 'mimes:jpeg,jpg,png,webp', 'max:5120'],
+            'featured_image_url' => ['nullable', 'string', 'max:255', 'regex:/^https?:\/\/\S+$/i'],
             'reading_time_minutes' => ['nullable', 'integer', 'min:1', 'max:10000'],
             'status' => ['required', Rule::enum(ResourceStatus::class)],
             'categories' => ['nullable', 'array'],

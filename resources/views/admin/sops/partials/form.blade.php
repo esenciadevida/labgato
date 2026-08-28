@@ -10,6 +10,8 @@
 @php
     $oldValue = fn (string $field) => old($field, $sop?->{$field});
     $authorNameDefault = $sop?->author_name ?? auth()->user()->name;
+    $currentFeaturedImageIsUrl = is_string($sop?->featured_image) && preg_match('#^https?://#i', $sop->featured_image);
+    $featuredImageUrlValue = old('featured_image_url', $currentFeaturedImageIsUrl ? $sop->featured_image : '');
 @endphp
 
 <form method="POST" action="{{ $action }}" enctype="multipart/form-data" class="space-y-6" x-data="{ isNewVersion: false }">
@@ -153,7 +155,7 @@
     <x-ui.card>
         <x-form.section
             title="Featured Image"
-            description="Optional image displayed at the top of the public detail page. Large images are automatically resized and converted to WebP."
+            description="Optional image displayed at the top of the public detail page. Large images are automatically resized and converted to WebP, or paste a direct link to an image hosted elsewhere."
         >
             <div>
                 @if($sop?->featured_image_url)
@@ -166,6 +168,20 @@
                 @endif
                 <x-ui.input id="featured_image" name="featured_image" type="file" accept=".jpg,.jpeg,.png,.webp" :error="$errors->first('featured_image')" />
                 <x-form.error for="featured_image" />
+
+                <div class="mt-4">
+                    <x-form.label for="featured_image_url">Or use an image URL</x-form.label>
+                    <x-ui.input
+                        id="featured_image_url"
+                        name="featured_image_url"
+                        type="url"
+                        value="{{ $featuredImageUrlValue }}"
+                        placeholder="https://example.com/path/to/image.jpg"
+                        :error="$errors->first('featured_image_url')"
+                    />
+                    <x-form.error for="featured_image_url" />
+                    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Paste a direct http(s) link to an image hosted elsewhere. If you also upload a file, the uploaded file is used.</p>
+                </div>
 
                 @if($sop?->featured_image)
                     <label class="mt-3 inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">

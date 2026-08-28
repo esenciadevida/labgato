@@ -122,6 +122,27 @@ class InterpretationAdminValidationTest extends TestCase
         $response->assertSessionHasErrors('featured_image');
     }
 
+    public function test_featured_image_url_accepts_valid_http_url(): void
+    {
+        $response = $this->actingAs($this->createUser())->post(
+            route('admin.interpretation.store'),
+            $this->validPayload(['featured_image_url' => 'https://media.example.com/path/to/image.jpg'])
+        );
+
+        $response->assertRedirect(route('admin.interpretation.index'));
+        $response->assertSessionHasNoErrors('featured_image_url');
+    }
+
+    public function test_featured_image_url_rejects_invalid_urls(): void
+    {
+        $response = $this->actingAs($this->createUser())->post(
+            route('admin.interpretation.store'),
+            $this->validPayload(['featured_image_url' => 'ftp://example.com/image.jpg'])
+        );
+
+        $response->assertSessionHasErrors('featured_image_url');
+    }
+
     public function test_seo_title_has_max_length(): void
     {
         $response = $this->actingAs($this->createUser())->post(
