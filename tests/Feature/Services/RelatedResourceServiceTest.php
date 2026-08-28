@@ -28,7 +28,7 @@ class RelatedResourceServiceTest extends TestCase
         $this->assertSame($related->name, $result->first()->title);
     }
 
-    public function test_related_for_caches_a_plain_array_not_userland_objects(): void
+    public function test_related_for_caches_json_not_serialized_objects(): void
     {
         $tag = Tag::factory()->create();
 
@@ -40,7 +40,8 @@ class RelatedResourceServiceTest extends TestCase
         $key = 'related:'.get_class($current).':'.$current->getKey().':6';
         $cached = Cache::get($key);
 
-        $this->assertIsArray($cached);
-        $this->assertContainsOnlyInstancesOf(\stdClass::class, $cached);
+        $this->assertIsString($cached);
+        $decoded = json_decode($cached, true);
+        $this->assertIsArray($decoded);
     }
 }

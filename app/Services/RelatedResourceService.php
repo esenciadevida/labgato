@@ -29,13 +29,17 @@ class RelatedResourceService
 
     public function relatedFor(Model $resource, int $limit = 6): Collection
     {
-        return Collection::make(
-            Cache::remember(
-                'related:'.get_class($resource).':'.$resource->getKey().':'.$limit,
-                now()->addSeconds(self::CACHE_TTL),
-                fn () => $this->computeRelated($resource, $limit)->all(),
-            ),
+        $json = (string) Cache::remember(
+            'related:'.get_class($resource).':'.$resource->getKey().':'.$limit,
+            now()->addSeconds(self::CACHE_TTL),
+            fn () => json_encode($this->computeRelated($resource, $limit)->all(), JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES),
         );
+
+        $items = json_decode($json, true) ?: [];
+
+        return collect($items)
+            ->map(static fn (array $item) => (object) $item)
+            ->values();
     }
 
     private function computeRelated(Model $resource, int $limit): Collection
