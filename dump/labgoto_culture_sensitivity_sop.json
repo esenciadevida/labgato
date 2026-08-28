@@ -1,0 +1,47 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Microbiology/Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Bacterial Culture and Antimicrobial Susceptibility Testing",
+        "slug": "bacterial-culture-antimicrobial-susceptibility-testing",
+        "short_description": "SOP for bacterial culture, isolation, identification, and antimicrobial susceptibility testing (AST).",
+        "content": "# Standard Operating Procedure: Culture and Sensitivity\n\n## 1. Purpose and Scope\nTo isolate, identify bacterial pathogens from clinical specimens and determine their susceptibility to antimicrobial agents.\n\n## 2. Specimen Requirements\n- **Type:** Various (blood, urine, sputum, wound, CSF, body fluids, tissue).\n- **Collection:** Use appropriate collection devices and transport media.\n- **Storage:** Process immediately or store at appropriate temperature (usually 2-8°C).\n- **Rejection Criteria:** Improperly labeled, contaminated, or delayed specimens.\n\n## 3. Safety and Precautions\n- Wear appropriate PPE.\n- Handle all specimens as potentially infectious.\n- Work in biological safety cabinet for high-risk specimens.\n\n## 4. Equipment and Reagents\n- Culture media (blood agar, MacConkey, chocolate agar, selective media).\n- Incubator (35-37°C, 5% CO₂ if needed).\n- Biochemical identification tests or automated system.\n- Mueller-Hinton agar for AST.\n- Antibiotic discs, McFarland standards.\n- Inoculating loops, sterile swabs.\n\n## 5. Step-by-Step Procedure\n\n### A. Culture\n1. **Inoculation:** Inoculate specimen onto appropriate media using aseptic technique.\n2. **Streaking:** Use quadrant streak method for isolation.\n3. **Incubation:** Incubate at 35-37°C for 18-24 hours (or longer for slow growers).\n4. **Examination:** Examine for growth, colony morphology, hemolysis pattern.\n\n### B. Identification\n1. **Gram stain:** Perform on representative colonies.\n2. **Biochemical tests:** Perform appropriate tests (catalase, coagulase, oxidase, sugar fermentation, etc.) or use automated system.\n3. **Confirm identification** to species level when clinically relevant.\n\n### C. Antimicrobial Susceptibility Testing (Kirby-Bauer Disc Diffusion)\n1. **Inoculum preparation:** Pick 3-5 well-isolated colonies, suspend in saline/broth to match 0.5 McFarland standard (1-2 × 10⁸ CFU/mL).\n2. **Inoculation:** Within 15 minutes, dip sterile swab into suspension, remove excess, inoculate entire surface of Mueller-Hinton agar plate (3 swabs in 3 directions).\n3. **Disc application:** Apply antibiotic discs with sterile forceps or dispenser (center-to-center ≥24 mm, ≥15 mm from edge).\n4. **Incubation:** Invert plates, incubate at 35-37°C for 16-18 hours.\n5. **Reading:** Measure zone diameters (including disc) in mm.\n\n### D. Interpretation\n- Compare zone diameters to CLSI/EUCAST breakpoints.\n- Categorize as: **S** (Susceptible), **I** (Intermediate), **R** (Resistant).\n\n## 6. Quality Control\n- Run QC strains (E. coli ATCC 25922, S. aureus ATCC 25923, P. aeruginosa ATCC 27853) weekly or with each new batch of media/discs.\n- Verify zone diameters fall within acceptable ranges.\n\n## 7. Reporting Results\n- Report organism identification and susceptibility pattern.\n- Report critical resistance immediately (e.g., MRSA, VRE, ESBL, carbapenem-resistant).\n- Include interpretive comments when appropriate.",
+        "principle": "Bacterial culture isolates pathogens on appropriate media. Identification uses morphological, biochemical, and/or molecular characteristics. Antimicrobial susceptibility testing (disc diffusion) measures the ability of antibiotics to inhibit bacterial growth. Antibiotic discs diffuse into agar; bacteria grow except where antibiotic concentration exceeds the minimum inhibitory concentration (MIC). Zone diameter correlates with susceptibility.",
+        "department": "Microbiology",
+        "mandatory_disclaimer": "This SOP is a template based on CLSI guidelines. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Microbiology",
+            "Bacteriology",
+            "Antimicrobial Susceptibility Testing",
+            "Culture"
+        ],
+        "tags": [
+            "culture and sensitivity",
+            "ast",
+            "antimicrobial susceptibility",
+            "antibiotic testing",
+            "microbiology",
+            "kirby-bauer"
+        ],
+        "seo_title": "Culture and Sensitivity SOP | Bacterial Identification and AST",
+        "focus_keyword": "culture and sensitivity",
+        "seo_description": "Standard Operating Procedure for bacterial culture, identification, and antimicrobial susceptibility testing.",
+        "faqs": [
+            {
+                "question": "Why use Mueller-Hinton agar for AST?",
+                "answer": "Mueller-Hinton agar has low inhibitors, good reproducibility, and allows adequate diffusion of antibiotics."
+            },
+            {
+                "question": "What is the significance of \"Intermediate\" susceptibility?",
+                "answer": "Intermediate indicates the organism may be susceptible if antibiotic is concentrated at the infection site or if higher doses are used."
+            }
+        ]
+    }
+]

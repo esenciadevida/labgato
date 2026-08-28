@@ -1,0 +1,48 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Microbiology/Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Ziehl-Neelsen Staining for Acid-Fast Bacilli",
+        "slug": "ziehl-neelsen-staining-afb",
+        "short_description": "SOP for Ziehl-Neelsen staining to detect acid-fast bacilli (Mycobacterium tuberculosis and other mycobacteria).",
+        "content": "# Standard Operating Procedure: Ziehl-Neelsen Staining\n\n## 1. Purpose and Scope\nTo perform Ziehl-Neelsen (ZN) staining for detection of acid-fast bacilli (AFB), primarily Mycobacterium tuberculosis, in clinical specimens.\n\n## 2. Specimen Requirements\n- **Type:** Sputum (preferred early morning), BAL, CSF, tissue, body fluids, urine.\n- **Volume:** Sputum: 3-5 mL; Other specimens: as much as available.\n- **Storage:** Process fresh or refrigerate at 2-8°C.\n- **Rejection Criteria:** Improperly labeled or contaminated specimens.\n\n## 3. Safety and Precautions\n- **BIOSAFETY LEVEL 2 or 3** - Perform in biological safety cabinet.\n- Wear appropriate PPE (gloves, gown, N95 mask, eye protection).\n- Mycobacteria are airborne pathogens.\n- Use dedicated AFB staining area.\n- Dispose of waste in biohazard bags; decontaminate with 5% phenol or bleach.\n\n## 4. Equipment and Reagents\n- Clean glass slides, Bunsen burner or hot plate.\n- **Reagents:**\n  - Primary stain: Ziehl-Neelsen carbol fuchsin (0.3% basic fuchsin in 5% phenol + ethanol)\n  - Decolorizer: 20% sulfuric acid (H₂SO₄) or 3% acid-alcohol\n  - Counterstain: Methylene blue (0.3%) or malachite green\n- Microscope with 100x oil immersion objective.\n\n## 5. Step-by-Step Procedure\n1. **Smear Preparation:**\n   - For sputum: Select purulent portions, prepare thin smear (2x3 cm).\n   - Air dry completely.\n   - Heat fix by passing through flame 2-3 times.\n2. **Staining:**\n   - Flood smear with carbol fuchsin.\n   - **Heat gently** until steam rises (do not boil). Maintain steaming for 3-5 minutes. Add more stain if it dries.\n   - Cool, rinse gently with water.\n   - **Decolorize:** Flood with 20% H₂SO₄ for 2-3 minutes or until pink color stops running. Rinse with water. Repeat if necessary.\n   - Rinse well with water.\n   - Flood with methylene blue counterstain for 1-2 minutes.\n   - Rinse with water, air dry.\n3. **Microscopy:** Examine under 100x oil immersion objective.\n\n## 6. Interpretation\n- **AFB positive:** Bright red/pink rods against blue background.\n- **AFB negative:** Only blue background, no red rods.\n- **Grading (WHO/IUATLD):**\n  - Scanty: 1-9 AFB/100 fields (report exact number)\n  - 1+: 10-99 AFB/100 fields\n  - 2+: 1-10 AFB/10 fields\n  - 3+: >10 AFB/field\n\n## 7. Quality Control\n- Include known AFB-positive slide (M. tuberculosis control) with each new batch of reagents.\n- Check reagent quality monthly.\n\n## 8. Reporting Results\n- Report as \"AFB seen\" with grading, or \"No AFB seen.\"\n- Report immediately for positive results (critical value).",
+        "principle": "Mycobacteria have cell walls rich in mycolic acids (waxy lipids), making them resistant to decolorization by acid-alcohol after staining with carbol fuchsin. The phenol in the stain helps penetrate the waxy cell wall. Heating enhances penetration. Once stained, the organisms resist decolorization with 20% sulfuric acid (hence \"acid-fast\") and retain the red/pink color. Non-acid-fast organisms and background material are decolorized and take up the blue counterstain.",
+        "department": "Microbiology",
+        "mandatory_disclaimer": "This SOP is a template based on WHO and IUATLD guidelines. It must be adapted and approved by your Laboratory Director before clinical use. AFB work requires appropriate biosafety facilities.",
+        "categories": [
+            "Microbiology",
+            "Bacteriology",
+            "Staining",
+            "Mycobacteriology"
+        ],
+        "tags": [
+            "zn stain",
+            "ziehl-neelsen",
+            "afb",
+            "acid-fast bacilli",
+            "tuberculosis",
+            "mycobacterium",
+            "staining"
+        ],
+        "seo_title": "Ziehl-Neelsen Staining SOP | AFB Detection Procedure",
+        "focus_keyword": "ziehl-neelsen staining",
+        "seo_description": "Standard Operating Procedure for Ziehl-Neelsen staining to detect acid-fast bacilli (Mycobacterium tuberculosis).",
+        "faqs": [
+            {
+                "question": "Why is heating necessary in ZN staining?",
+                "answer": "Heating helps the carbol fuchsin penetrate the thick, waxy mycolic acid layer of the mycobacterial cell wall."
+            },
+            {
+                "question": "What is the difference between ZN and Kinyoun staining?",
+                "answer": "Kinyoun (cold) method uses higher phenol concentration and does not require heating; ZN (hot) method uses heat for penetration."
+            }
+        ]
+    }
+]

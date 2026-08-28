@@ -1,0 +1,47 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Microbiology/Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Catalase Test for Bacterial Identification",
+        "slug": "catalase-test-bacterial-identification",
+        "short_description": "SOP for catalase test to differentiate bacteria based on production of catalase enzyme.",
+        "content": "# Standard Operating Procedure: Catalase Test\n\n## 1. Purpose and Scope\nTo detect the presence of catalase enzyme in bacteria, differentiating catalase-positive organisms (e.g., Staphylococcus) from catalase-negative organisms (e.g., Streptococcus, Enterococcus).\n\n## 2. Specimen Requirements\n- **Type:** Fresh bacterial culture (18-24 hours old).\n- **Source:** Colonies from solid media (blood agar, nutrient agar).\n- **Important:** Do NOT use colonies from blood agar if testing for catalase (blood contains catalase - causes false positive). Use nutrient agar or TSA.\n- **Rejection:** Old cultures (>48 hours), colonies from blood-containing media.\n\n## 3. Safety and Precautions\n- Wear appropriate PPE (gloves, lab coat, eye protection).\n- Hydrogen peroxide is corrosive and oxidizing.\n- Handle cultures in biological safety cabinet.\n- Dispose of materials in biohazard waste.\n\n## 4. Equipment and Reagents\n- **Reagent:** 3% hydrogen peroxide (H₂O₂) solution.\n  - Store in dark bottle at 2-8°C.\n  - Check potency regularly (should bubble when added to catalase-positive control).\n- Clean glass slide or test tube.\n- Wooden applicator stick or platinum/nichrome loop (NOT iron or steel - causes false positive).\n- Fresh bacterial culture on non-blood agar.\n- **Quality Control Organisms:**\n  - Positive: Staphylococcus aureus ATCC 25923\n  - Negative: Streptococcus pyogenes ATCC 19615\n\n## 5. Step-by-Step Procedure\n\n### Method 1: Slide Method (Most Common)\n1. Place clean glass slide on white background.\n2. Using wooden stick or platinum loop, transfer small amount of bacterial colony to slide (do not use iron/steel loop).\n3. Add 1-2 drops of 3% H₂O₂ to bacterial smear.\n4. Observe immediately for bubble formation (within 5-10 seconds).\n\n### Method 2: Tube Method (For Anaerobes or Small Colonies)\n1. Add 1 mL of 3% H₂O₂ to small test tube.\n2. Using wooden stick, transfer several colonies into H₂O₂.\n3. Observe for bubble formation.\n\n### Method 3: Capillary Tube Method (For Microaerophiles)\n1. Place colony in capillary tube.\n2. Add H₂O₂.\n3. Observe bubbles.\n\n## 6. Interpretation\n\n### Positive Result\n- **Immediate, vigorous bubbling** (effervescence).\n- Indicates presence of catalase enzyme.\n- Organisms: Staphylococcus, Micrococcus, Listeria, Bacillus, Corynebacterium, most aerobic and facultative anaerobic bacteria.\n\n### Negative Result\n- **No bubbles or weak/delayed bubbling.**\n- Indicates absence of catalase enzyme.\n- Organisms: Streptococcus, Enterococcus, some anaerobes.\n\n## 7. Quality Control\n1. Test QC organisms with each new batch of H₂O₂:\n   - S. aureus: Should show vigorous bubbling (positive).\n   - S. pyogenes: Should show no bubbling (negative).\n2. Check H₂O₂ potency weekly by testing against known positive control.\n3. Replace H₂O₂ if negative result with positive control.\n\n## 8. Special Considerations\n\n### False Positives\n- Using iron/nichrome loop (use wooden stick or platinum).\n- Testing colonies from blood agar (RBCs contain catalase).\n- Old H₂O₂ that has decomposed.\n\n### False Negatives\n- Old culture (>48 hours) - enzyme activity decreases.\n- H₂O₂ too old/decomposed.\n- Testing anaerobes (some produce little catalase).\n\n### Modified Catalase Tests\n- **Semiquantitative catalase:** Measure bubble height.\n- **Heat-stable catalase:** Heat organism at 68°C for 30 min, then test (differentiates Mycobacterium species).\n- **Aerobic vs anaerobic:** Some organisms produce catalase only aerobically.\n\n## 9. Reporting Results\n- Report as \"Catalase positive\" or \"Catalase negative.\"\n- Include in identification workup with other biochemical tests.",
+        "principle": "Catalase is an enzyme that converts toxic hydrogen peroxide (H₂O₂) into water and oxygen gas: 2H₂O₂ → 2H₂O + O₂↑. Aerobic and facultative anaerobic bacteria produce catalase to protect themselves from reactive oxygen species generated during aerobic metabolism. When H₂O₂ is added to catalase-positive bacteria, rapid bubble formation (oxygen gas) occurs. Catalase-negative organisms (typically strict fermenters like streptococci) lack this enzyme and show no bubbling.",
+        "department": "Microbiology",
+        "mandatory_disclaimer": "This SOP is a template based on standard microbiology practices and CLSI guidelines. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Microbiology",
+            "Bacteriology",
+            "Biochemical Testing",
+            "Identification"
+        ],
+        "tags": [
+            "catalase test",
+            "biochemical test",
+            "bacterial identification",
+            "staphylococcus",
+            "streptococcus",
+            "microbiology"
+        ],
+        "seo_title": "Catalase Test SOP | Bacterial Biochemical Test",
+        "focus_keyword": "catalase test",
+        "seo_description": "Standard Operating Procedure for catalase test to differentiate bacteria based on catalase enzyme production.",
+        "faqs": [
+            {
+                "question": "Why can't I use colonies from blood agar for catalase test?",
+                "answer": "Red blood cells contain catalase, which causes false-positive results. Use colonies from non-blood agar (nutrient agar, TSA)."
+            },
+            {
+                "question": "Why must I use a wooden stick instead of metal loop?",
+                "answer": "Iron and some metals have pseudocatalase activity and cause false-positive bubbling. Use wooden applicator sticks or platinum loops."
+            }
+        ]
+    }
+]

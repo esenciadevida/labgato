@@ -1,0 +1,48 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Microbiology/Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Gram Staining Procedure",
+        "slug": "gram-staining-procedure",
+        "short_description": "SOP for differential Gram staining to classify bacteria as Gram-positive or Gram-negative and assess morphology.",
+        "content": "# Standard Operating Procedure: Gram Staining\n\n## 1. Purpose and Scope\nTo perform differential Gram staining for preliminary identification of bacteria based on cell wall characteristics, morphology, and arrangement.\n\n## 2. Specimen Requirements\n- **Type:** Bacterial colonies from culture, clinical specimens (sputum, CSF, pus, urine sediment).\n- **Volume:** Small amount sufficient for smear preparation.\n- **Rejection Criteria:** Dried or improperly collected specimens.\n\n## 3. Safety and Precautions\n- Wear appropriate PPE (lab coat, gloves, eye protection).\n- Handle all specimens as potentially infectious.\n- Use Bunsen burner in well-ventilated area.\n- Crystal violet and safranin are irritants.\n\n## 4. Equipment and Reagents\n- Clean glass slides, inoculating loop, Bunsen burner.\n- **Reagents:**\n  - Primary stain: Crystal violet (1% aqueous or Hucker's)\n  - Mordant: Gram's iodine\n  - Decolorizer: 95% ethanol or acetone-alcohol\n  - Counterstain: Safranin (0.5% aqueous) or basic fuchsin\n- Microscope with 100x oil immersion objective, immersion oil.\n\n## 5. Step-by-Step Procedure\n1. **Smear Preparation:**\n   - For liquid specimens: Place 1-2 loops on slide, spread to form thin film.\n   - For colonies: Emulsify small amount in drop of saline/water on slide.\n   - Air dry completely.\n2. **Heat Fixation:** Pass slide through flame 2-3 times (specimen side up). Do not overheat.\n3. **Staining:**\n   - Flood smear with crystal violet for 1 minute. Rinse gently with water.\n   - Flood with Gram's iodine for 1 minute. Rinse with water.\n   - **Decolorize:** Tilt slide, apply 95% ethanol drop by drop for 5-15 seconds until runoff is clear. **CRITICAL STEP** - immediately rinse with water.\n   - Flood with safranin for 30-60 seconds. Rinse with water.\n4. **Drying:** Air dry or blot gently with bibulous paper.\n5. **Microscopy:** Examine under 100x oil immersion objective.\n\n## 6. Interpretation\n- **Gram-positive:** Purple/violet color (thick peptidoglycan retains crystal violet-iodine complex).\n- **Gram-negative:** Pink/red color (thin peptidoglycan, decolorized, takes up safranin).\n- Note morphology (cocci, bacilli, spirilla) and arrangement (chains, clusters, pairs).\n\n## 7. Quality Control\n- Run known Gram-positive (Staphylococcus aureus ATCC 25923) and Gram-negative (Escherichia coli ATCC 25922) controls with each new batch of reagents.\n- Check reagent freshness; replace if contaminated or expired.\n\n## 8. Reporting Results\n- Report Gram reaction, morphology, and arrangement (e.g., \"Gram-positive cocci in clusters,\" \"Gram-negative bacilli\").\n- Semi-quantify if from clinical specimen (Rare, Few, Moderate, Many).",
+        "principle": "Gram staining differentiates bacteria based on cell wall composition. Gram-positive bacteria have thick peptidoglycan layers that retain the crystal violet-iodine complex after decolorization, appearing purple. Gram-negative bacteria have thin peptidoglycan and outer lipid membranes; the decolorizer dissolves the lipid, allowing the crystal violet-iodine complex to wash out, and they take up the counterstain (safranin), appearing pink/red.",
+        "department": "Microbiology",
+        "mandatory_disclaimer": "This SOP is a template based on CLSI and WHO guidelines. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Microbiology",
+            "Bacteriology",
+            "Staining",
+            "Laboratory Techniques"
+        ],
+        "tags": [
+            "gram stain",
+            "gram staining",
+            "bacteriology",
+            "microbiology",
+            "differential stain",
+            "gram positive",
+            "gram negative"
+        ],
+        "seo_title": "Gram Staining SOP | Bacterial Differential Staining Procedure",
+        "focus_keyword": "gram staining",
+        "seo_description": "Standard Operating Procedure for Gram staining to differentiate bacteria as Gram-positive or Gram-negative.",
+        "faqs": [
+            {
+                "question": "What causes Gram-variable results?",
+                "answer": "Over-decolorization, old cultures (>24 hours), cell wall damage, or certain species (e.g., Bacillus, Clostridium) can cause variable staining."
+            },
+            {
+                "question": "Why is the decolorization step critical?",
+                "answer": "Over-decolorization causes Gram-positives to appear Gram-negative; under-decolorization causes Gram-negatives to appear Gram-positive."
+            }
+        ]
+    }
+]

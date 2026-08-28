@@ -24,6 +24,14 @@ class MasterSopSeeder extends Seeder
         'labgoto_aptt_sop.json',
         'labgoto_urinalysis_chemical_sop.json',
         'labgoto_urine_microscopy_sop.json',
+        'labgoto_urine_culture_sop.json',
+        'labgoto_gram_staining_sop.json',
+        'labgoto_ziehl_neelsen_sop.json',
+        'labgoto_culture_sensitivity_sop.json',
+        'labgoto_kirby_bauer_sop.json',
+        'labgoto_mcfarland_sop.json',
+        'labgoto_hanging_drop_sop.json',
+        'labgoto_catalase_sop.json',
     ];
 
     public function run(): void

@@ -1,0 +1,47 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Microbiology/Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "McFarland Standard Preparation and Use",
+        "slug": "mcfarland-standard-preparation-use",
+        "short_description": "SOP for preparation and use of McFarland turbidity standards for standardizing bacterial inoculum density.",
+        "content": "# Standard Operating Procedure: McFarland Standard\n\n## 1. Purpose and Scope\nTo prepare and use McFarland turbidity standards for standardizing bacterial suspension density in antimicrobial susceptibility testing and other microbiological procedures.\n\n## 2. Materials Required\n- **Reagents:**\n  - Barium chloride dihydrate (BaCl₂·2H₂O), 1% (w/v) aqueous solution\n  - Sulfuric acid (H₂SO₄), 1% (v/v) aqueous solution\n- **Equipment:** Sterile tubes with caps, vortex mixer, spectrophotometer (optional), sterile pipettes.\n\n## 3. Safety and Precautions\n- Wear appropriate PPE (gloves, lab coat, eye protection).\n- Barium chloride is toxic; handle with care.\n- Sulfuric acid is corrosive; avoid skin contact.\n- Work in fume hood when preparing standards.\n- Dispose of barium waste as hazardous chemical waste.\n\n## 4. Preparation of McFarland Standards\n\n### 0.5 McFarland Standard (Most Common)\n1. Add 0.5 mL of 1% BaCl₂·2H₂O to 99.5 mL of 1% H₂SO₄.\n2. Mix thoroughly by vortexing or inverting.\n3. Dispense into sterile tubes in 4-6 mL aliquots.\n4. Seal tightly to prevent evaporation.\n5. Store at room temperature in the dark.\n6. **Turbidity:** Approximately 1-2 × 10⁸ CFU/mL (equivalent to bacterial suspension).\n7. **OD at 625 nm:** 0.08-0.13\n\n### Other McFarland Standards\n| McFarland | BaCl₂ (mL) | H₂SO₄ 1% (mL) | Approx. CFU/mL | Use |\n|-----------|------------|---------------|----------------|-----|\n| 0.5       | 0.5        | 99.5          | 1.5 × 10⁸      | AST, routine |\n| 1.0       | 1.0        | 99.0          | 3 × 10⁸        | Some yeast |\n| 2.0       | 2.0        | 98.0          | 6 × 10⁸        | Dense inoculum |\n| 3.0       | 3.0        | 97.0          | 9 × 10⁸        | Special tests |\n\n## 5. Quality Control\n1. **Visual Inspection:** Standard should be uniformly turbid, no precipitate.\n2. **Spectrophotometric Verification:**\n   - Mix standard thoroughly.\n   - Measure absorbance at 625 nm in 1 cm cuvette.\n   - 0.5 McFarland: OD₆₂₅ = 0.08-0.13\n3. **Replacement:** Prepare fresh standards every 6 months or if turbidity changes.\n\n## 6. Use in Standardizing Bacterial Inoculum\n1. Vortex McFarland standard to ensure uniform turbidity.\n2. Prepare bacterial suspension in saline or broth.\n3. Compare bacterial suspension turbidity visually against McFarland standard (hold against white background with black lines).\n4. Adjust bacterial suspension by adding more organisms or diluent until turbidity matches.\n5. Use standardized suspension within 15 minutes.\n\n## 7. Alternative: Latex Particle Standards\n- Commercially available latex bead suspensions.\n- More stable than barium sulfate standards.\n- Follow manufacturer's instructions.\n\n## 8. Storage and Stability\n- Store at room temperature (15-25°C) in the dark.\n- Do not refrigerate or freeze.\n- Check monthly for evaporation or precipitation.\n- Replace if turbidity changes or after 6 months.",
+        "principle": "McFarland standards are turbidity standards created by mixing barium chloride with sulfuric acid to form a barium sulfate precipitate. The precipitate creates a uniform turbidity that approximates the optical density of bacterial suspensions. By matching the turbidity of a bacterial suspension to a McFarland standard, the bacterial concentration can be standardized (e.g., 0.5 McFarland ≈ 1-2 × 10⁸ CFU/mL), ensuring reproducibility in antimicrobial susceptibility testing and other quantitative microbiological procedures.",
+        "department": "Microbiology",
+        "mandatory_disclaimer": "This SOP is a template based on CLSI guidelines. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Microbiology",
+            "Laboratory Techniques",
+            "Quality Control",
+            "Antimicrobial Susceptibility Testing"
+        ],
+        "tags": [
+            "mcfarland standard",
+            "turbidity standard",
+            "inoculum standardization",
+            "ast",
+            "quality control",
+            "microbiology"
+        ],
+        "seo_title": "McFarland Standard SOP | Preparation and Use Guide",
+        "focus_keyword": "mcfarland standard",
+        "seo_description": "Standard Operating Procedure for preparation and use of McFarland turbidity standards for bacterial inoculum standardization.",
+        "faqs": [
+            {
+                "question": "Why is 0.5 McFarland the standard for AST?",
+                "answer": "0.5 McFarland (1-2 × 10⁸ CFU/mL) provides optimal bacterial density for reproducible zone sizes in disc diffusion testing."
+            },
+            {
+                "question": "Can I use a spectrophotometer instead of visual comparison?",
+                "answer": "Yes, spectrophotometric adjustment at 625 nm (OD 0.08-0.13 for 0.5 McFarland) is more accurate than visual comparison."
+            }
+        ]
+    }
+]

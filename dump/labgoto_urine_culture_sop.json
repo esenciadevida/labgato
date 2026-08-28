@@ -1,0 +1,48 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Microbiology/Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Urine Culture and Colony Count",
+        "slug": "urine-culture-colony-count",
+        "short_description": "SOP for quantitative urine culture to diagnose urinary tract infections (UTI) and identify causative organisms.",
+        "content": "# Standard Operating Procedure: Urine Culture\n\n## 1. Purpose and Scope\nTo perform quantitative culture of urine specimens to detect and enumerate bacterial pathogens causing urinary tract infections (UTI).\n\n## 2. Specimen Requirements\n- **Type:** Mid-stream clean-catch urine, catheterized specimen, or suprapubic aspirate.\n- **Volume:** Minimum 5-10 mL.\n- **Storage/Transport:** Process within 2 hours of collection or refrigerate at 2-8°C for up to 24 hours.\n- **Rejection Criteria:** Improperly labeled, contaminated, or delayed (>24 hours refrigerated) specimens.\n\n## 3. Safety and Precautions\n- Wear appropriate PPE (lab coat, gloves).\n- Handle all specimens as potentially infectious.\n- Work in a biological safety cabinet if available.\n\n## 4. Equipment and Reagents\n- Calibrated inoculating loop (1 µL or 10 µL) or calibrated pipette.\n- Culture media: Blood agar, MacConkey agar, CLED (Cystine Lactose Electrolyte Deficient) agar.\n- Incubator (35-37°C), Bunsen burner or incinerator.\n- Colony counter, microscope.\n\n## 5. Step-by-Step Procedure\n1. **Specimen Preparation:** Mix urine specimen gently by inversion.\n2. **Inoculation:**\n   - Using a calibrated 1 µL loop: Touch loop to well-mixed urine and streak onto blood agar and MacConkey/CLED agar.\n   - Using a calibrated 10 µL loop: Use for specimens with suspected low colony counts.\n   - Alternatively, use calibrated pipette to deliver exact volume onto agar surface.\n3. **Streaking Pattern:** Use quadrant streak method to isolate individual colonies.\n4. **Incubation:** Incubate plates at 35-37°C for 18-24 hours in ambient air (or 5% CO₂ if required).\n5. **Colony Count:** After incubation, count colonies on the plate.\n   - Calculate CFU/mL: Number of colonies × dilution factor (1000 for 1 µL loop; 100 for 10 µL loop).\n6. **Interpretation:**\n   - **≥10⁵ CFU/mL:** Significant bacteriuria (UTI likely).\n   - **10⁴-10 CFU/mL:** Equivocal (repeat culture if symptomatic).\n   - **<10⁴ CFU/mL:** Usually contamination (unless symptomatic or catheterized specimen).\n7. **Identification:** Identify organisms based on colony morphology, Gram stain, and biochemical tests.\n8. **Antimicrobial Susceptibility Testing:** Perform on significant isolates.\n\n## 6. Quality Control\n- Verify calibrated loop volume monthly by weighing water delivered.\n- Check media sterility and performance with known organisms.\n- Include QC strains (E. coli ATCC 25922) for culture and AST.\n\n## 7. Reporting Results\n- Report organism(s) identified and colony count in CFU/mL.\n- Report mixed growth if ≥2 organisms present with no predominant organism.\n- Include susceptibility results for significant isolates.",
+        "principle": "Quantitative urine culture determines the number of viable bacteria per milliliter of urine. A calibrated loop or pipette delivers a known volume of urine onto solid culture media. After incubation, the number of colonies formed is counted and multiplied by the dilution factor to calculate CFU/mL. This quantification helps distinguish true urinary tract infection from contamination or colonization.",
+        "department": "Microbiology",
+        "mandatory_disclaimer": "This SOP is a template based on CLSI and WHO guidelines. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Microbiology",
+            "Urinalysis and Body Fluids",
+            "Quantitative Microbiology",
+            "Bacteriology"
+        ],
+        "tags": [
+            "urine culture",
+            "colony count",
+            "cfu",
+            "uti",
+            "quantitative culture",
+            "bacteriology",
+            "microbiology"
+        ],
+        "seo_title": "Urine Culture SOP | Quantitative Colony Count Procedure",
+        "focus_keyword": "urine culture",
+        "seo_description": "Standard Operating Procedure for quantitative urine culture and colony count to diagnose urinary tract infections.",
+        "faqs": [
+            {
+                "question": "What is the significance of different colony count thresholds?",
+                "answer": "≥10⁵ CFU/mL indicates significant bacteriuria in asymptomatic patients; ≥10³ CFU/mL may be significant in symptomatic patients or catheterized specimens."
+            },
+            {
+                "question": "Why use both blood agar and MacConkey agar for urine culture?",
+                "answer": "Blood agar supports growth of Gram-positive and fastidious organisms; MacConkey agar is selective for Gram-negative bacteria and differentiates lactose fermenters."
+            }
+        ]
+    }
+]

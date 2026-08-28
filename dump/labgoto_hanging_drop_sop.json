@@ -1,0 +1,47 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Microbiology/Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Hanging Drop Method for Bacterial Motility",
+        "slug": "hanging-drop-method-motility",
+        "short_description": "SOP for hanging drop preparation to observe bacterial motility and true motility vs. Brownian movement.",
+        "content": "# Standard Operating Procedure: Hanging Drop Method\n\n## 1. Purpose and Scope\nTo prepare hanging drop mounts for microscopic observation of bacterial motility, distinguishing true motility from Brownian movement and water currents.\n\n## 2. Specimen Requirements\n- **Type:** Fresh bacterial culture (18-24 hours old).\n- **Medium:** Semi-solid motility medium or fresh broth culture preferred.\n- **Rejection:** Old cultures (>24 hours), cultures from solid media (unless emulsified properly).\n\n## 3. Safety and Precautions\n- Wear appropriate PPE (gloves, lab coat).\n- Handle cultures in biological safety cabinet.\n- Use sealed coverslip to prevent aerosol generation.\n- Dispose of slides in disinfectant.\n\n## 4. Equipment and Reagents\n- Special concave (depression) slides or regular slides with petroleum jelly ring.\n- Coverslips (22 × 22 mm).\n- Petroleum jelly (vaseline) or paraffin.\n- Fresh bacterial culture in broth or semi-solid medium.\n- Inoculating loop or sterile applicator stick.\n- Microscope with 10x, 40x objectives (phase-contrast preferred).\n- Bunsen burner or incinerator.\n\n## 5. Step-by-Step Procedure\n\n### Method 1: Using Depression Slide\n1. **Prepare Coverslip:**\n   - Clean coverslip thoroughly.\n   - Place small ring of petroleum jelly around edge of coverslip.\n2. **Inoculum:**\n   - Using sterile loop, place small drop of fresh broth culture or emulsified colony in center of coverslip (inside petroleum jelly ring).\n   - Do not make drop too large.\n3. **Assembly:**\n   - Invert depression slide over coverslip so depression is centered over drop.\n   - Press down gently so petroleum jelly adheres to slide, creating seal.\n   - The drop should \"hang\" from coverslip into depression without touching slide.\n4. **Inversion:**\n   - Carefully invert the assembly so coverslip is on top.\n   - The drop now hangs from coverslip into the depression.\n5. **Microscopy:**\n   - Place on microscope stage.\n   - Focus using 10x objective first, then 40x (high dry).\n   - Use reduced light for better contrast.\n   - Phase-contrast microscopy greatly enhances visibility.\n   - Observe for motility at edge of drop.\n\n### Method 2: Using Regular Slide\n1. Place petroleum jelly ring on regular slide.\n2. Place drop of culture in center.\n3. Cover with coverslip, press gently to seal.\n4. Observe immediately.\n\n## 6. Interpretation\n\n### True Motility\n- Organisms move purposefully in different directions.\n- Movement is directional, not random.\n- Organisms cross field of view.\n- May show tumbling, spinning, or swimming.\n- Indicates presence of flagella.\n\n### Brownian Movement\n- Organisms vibrate in place (oscillatory motion).\n- No change in location.\n- Caused by molecular bombardment.\n- All particles show this to some degree.\n\n### Water Currents\n- All organisms move in same direction.\n- Caused by evaporation or capillary action.\n- Not true motility.\n\n## 7. Quality Control\n- Test known motile organism (Proteus mirabilis, E. coli).\n- Test known non-motile organism (Klebsiella pneumoniae, Staphylococcus aureus).\n- Ensure fresh cultures (motility decreases with age).\n\n## 8. Alternative Methods\n- **Semi-solid motility medium:** Inoculate by stabbing; motile organisms spread from stab line.\n- **Wet mount:** Simpler but dries quickly; less ideal than hanging drop.\n\n## 9. Reporting Results\n- Report as \"Motile\" or \"Non-motile.\"\n- Note type of motility if observed (e.g., \"darting,\" \"tumbling\").",
+        "principle": "The hanging drop method suspends bacteria in a drop of liquid hanging from a coverslip into a depression slide. This preparation prevents drying and allows observation of living, unstained bacteria over time. True motility (active, self-propelled movement via flagella) can be distinguished from passive Brownian movement (random vibration from molecular bombardment) and water currents. Motile organisms move purposefully in different directions and cross the field of view, while Brownian movement shows only vibration in place.",
+        "department": "Microbiology",
+        "mandatory_disclaimer": "This SOP is a template based on standard microbiology practices. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Microbiology",
+            "Bacteriology",
+            "Laboratory Techniques",
+            "Microscopy"
+        ],
+        "tags": [
+            "hanging drop",
+            "motility test",
+            "bacterial motility",
+            "microscopy",
+            "flagella",
+            "microbiology"
+        ],
+        "seo_title": "Hanging Drop Method SOP | Bacterial Motility Test",
+        "focus_keyword": "hanging drop method",
+        "seo_description": "Standard Operating Procedure for hanging drop preparation to observe bacterial motility and distinguish true motility from Brownian movement.",
+        "faqs": [
+            {
+                "question": "Why use a depression slide instead of a regular slide?",
+                "answer": "The depression provides space for the drop to hang without being crushed, allowing longer observation time and better visualization of motility."
+            },
+            {
+                "question": "What is the advantage of phase-contrast microscopy?",
+                "answer": "Phase-contrast enhances contrast of unstained, living bacteria, making motility easier to observe without staining (which kills organisms)."
+            }
+        ]
+    }
+]

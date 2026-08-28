@@ -22,7 +22,7 @@ class MasterSopSeederTest extends TestCase
 
     public function test_seeds_all_sop_records(): void
     {
-        $this->assertSame(31, $this->seedSops());
+        $this->assertSame(39, $this->seedSops());
     }
 
     public function test_maps_fields_from_json(): void

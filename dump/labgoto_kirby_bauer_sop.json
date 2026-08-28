@@ -1,0 +1,47 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Microbiology/Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Kirby-Bauer Disc Diffusion Antimicrobial Susceptibility Testing",
+        "slug": "kirby-bauer-disc-diffusion-ast",
+        "short_description": "SOP for standardized disc diffusion method to determine bacterial susceptibility to antimicrobial agents.",
+        "content": "# Standard Operating Procedure: Kirby-Bauer Disc Diffusion\n\n## 1. Purpose and Scope\nTo perform standardized disc diffusion antimicrobial susceptibility testing (AST) to guide antibiotic therapy.\n\n## 2. Specimen Requirements\n- **Type:** Pure bacterial culture (18-24 hours old).\n- **Organisms:** Rapidly growing bacteria (not fastidious organisms).\n- **Rejection:** Mixed cultures, contaminated isolates.\n\n## 3. Safety and Precautions\n- Wear appropriate PPE.\n- Handle cultures in biological safety cabinet.\n- Dispose of antibiotic discs and cultures properly.\n\n## 4. Equipment and Reagents\n- Mueller-Hinton agar plates (4 mm depth, pH 7.2-7.4).\n- Antibiotic discs (stored at -20°C or 2-8°C as per manufacturer).\n- Sterile cotton swabs.\n- 0.85% saline or Mueller-Hinton broth.\n- McFarland turbidity standards (0.5).\n- Incubator (35±2°C).\n- Caliper or ruler (mm), or automated zone reader.\n- Forceps or disc dispenser.\n\n## 5. Step-by-Step Procedure\n1. **Inoculum Preparation:**\n   - Pick 3-5 well-isolated colonies of same morphological type.\n   - Suspend in saline or broth to match 0.5 McFarland standard (1-2 × 10⁸ CFU/mL).\n   - Use within 15 minutes of preparation.\n2. **Plate Inoculation:**\n   - Dip sterile swab into suspension, rotate against tube wall to remove excess.\n   - Swab entire agar surface uniformly (rotate plate 60° and repeat 2 more times).\n   - Leave lid ajar for 3-5 minutes to dry.\n3. **Disc Application:**\n   - Apply discs with sterile forceps or automatic dispenser.\n   - Place discs ≥24 mm apart (center-to-center).\n   - Place discs ≥15 mm from plate edge.\n   - Press gently to ensure contact.\n   - Do not move discs once placed.\n4. **Incubation:**\n   - Invert plates within 15 minutes of disc application.\n   - Incubate at 35±2°C for 16-18 hours (ambient air).\n5. **Reading Results:**\n   - Examine under reflected light.\n   - Measure zone diameters (including disc) to nearest mm.\n   - Measure from back of plate.\n   - For sulfonamides/trimethoprim: ignore slight growth; measure obvious inhibition.\n   - For swarming organisms (Proteus): ignore swarming, measure obvious inhibition.\n\n## 6. Interpretation\n- Compare zone diameters to current CLSI or EUCAST breakpoints.\n- Categorize as:\n  - **S (Susceptible):** Infection likely treatable with standard dose.\n  - **I (Intermediate):** May be treatable with higher dose or at specific sites.\n  - **R (Resistant):** Not inhibited by achievable concentrations.\n\n## 7. Quality Control\n- Test QC strains weekly:\n  - E. coli ATCC 25922\n  - S. aureus ATCC 25923\n  - P. aeruginosa ATCC 27853\n- Verify zone diameters fall within CLSI acceptable ranges.\n- Check Mueller-Hinton agar depth (4 mm) and pH (7.2-7.4).\n- Store discs properly; check expiration dates.\n\n## 8. Reporting Results\n- Report antibiotic name and interpretation (S/I/R).\n- Report critical resistance immediately (MRSA, VRE, ESBL, carbapenem-resistant).\n- Include comments for unusual resistance patterns.",
+        "principle": "Antibiotic discs impregnated with defined concentrations are placed on agar inoculated with test organism. During incubation, the antibiotic diffuses radially, creating a concentration gradient. Bacterial growth is inhibited where antibiotic concentration exceeds the organism's MIC. The zone diameter of inhibition is inversely proportional to the MIC and is interpreted using standardized breakpoints to categorize susceptibility.",
+        "department": "Microbiology",
+        "mandatory_disclaimer": "This SOP is a template based on CLSI guidelines (M02, M100). It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Microbiology",
+            "Antimicrobial Susceptibility Testing",
+            "Bacteriology",
+            "Laboratory Techniques"
+        ],
+        "tags": [
+            "kirby-bauer",
+            "disc diffusion",
+            "ast",
+            "antimicrobial susceptibility",
+            "antibiotic testing",
+            "mueller-hinton"
+        ],
+        "seo_title": "Kirby-Bauer Disc Diffusion SOP | AST Procedure",
+        "focus_keyword": "kirby-bauer",
+        "seo_description": "Standard Operating Procedure for Kirby-Bauer disc diffusion antimicrobial susceptibility testing.",
+        "faqs": [
+            {
+                "question": "Why must the inoculum be standardized to 0.5 McFarland?",
+                "answer": "Standardized inoculum ensures reproducible results; too heavy inoculum causes smaller zones (false resistance); too light causes larger zones (false susceptibility)."
+            },
+            {
+                "question": "What factors affect zone size?",
+                "answer": "Agar depth, pH, inoculum density, disc potency, incubation time/temperature, and medium composition."
+            }
+        ]
+    }
+]
