@@ -1,0 +1,71 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Pathology / PhD, Laboratory Medicine",
+        "last_reviewed_date": "2026-08-29",
+        "name": "D-Dimer Testing Procedure",
+        "slug": "d-dimer-testing-procedure",
+        "short_description": "Standard Operating Procedure (SOP) for quantitative and semi-quantitative D-dimer testing using immunoassay methods for the evaluation of thrombotic disorders.",
+        "content": "# Standard Operating Procedure: D-Dimer Testing\n\n## 1. Purpose and Scope\nThis procedure defines the step-by-step method for performing D-dimer testing to aid in the diagnosis and exclusion of venous thromboembolism (VTE), disseminated intravascular coagulation (DIC), and other thrombotic disorders.\n\n## 2. Specimen Requirements\n- **Specimen Type:** Platelet-poor plasma.\n- **Anticoagulant:** 3.2% (0.109 M) sodium citrate (blue top tube).\n- **Collection:** Fill tube to proper volume (9:1 blood-to-anticoagulant ratio).\n- **Volume:** Minimum 2 mL whole blood (yields approximately 1 mL plasma).\n- **Processing:** Centrifuge within 2 hours of collection at 1500-2000 × g for 15 minutes at room temperature.\n- **Storage/Stability:** \n  - Room temperature: Test within 4 hours\n  - Refrigerated (2-8°C): Stable for 24 hours\n  - Frozen (-20°C or below): Stable for 1 month (avoid repeated freeze-thaw cycles)\n- **Rejection Criteria:** Underfilled tubes, clotted samples, hemolyzed or lipemic samples, improper anticoagulant.\n\n## 3. Safety and Precautions\n- Wear appropriate PPE (lab coat, gloves, eye protection).\n- Treat all specimens as potentially infectious.\n- Handle reagents according to manufacturer's safety data sheets.\n- Dispose of waste in appropriate biohazard containers.\n- Never mouth pipette.\n\n## 4. Equipment and Reagents\n- **Equipment:** Automated coagulation analyzer or ELISA reader, centrifuge, micropipettes, timer, vortex mixer, 37°C water bath or heating block (if required).\n- **Reagents:** D-dimer test kit (latex-enhanced immunoturbidimetric, ELISA, or fluorescence immunoassay), calibration standards, quality control materials, citrate diluent buffer.\n\n## 5. Step-by-Step Procedure\n\n### A. Specimen Collection and Processing\n1. Perform venipuncture using standard technique.\n2. Collect blood into 3.2% sodium citrate tube, filling to the indicated volume.\n3. Gently invert the tube 3-4 times to mix.\n4. Transport to laboratory at room temperature.\n5. Centrifuge at 1500-2000 × g for 15 minutes within 2 hours of collection.\n6. Carefully remove plasma without disturbing the cell layer.\n7. If not testing immediately, aliquot and store appropriately.\n\n### B. Instrument Setup and Calibration\n1. Turn on the analyzer and allow to warm up per manufacturer's instructions.\n2. Load D-dimer reagents, calibrators, and controls.\n3. Perform calibration according to manufacturer's schedule (typically with each new reagent lot or every 30 days).\n4. Verify calibration is acceptable before proceeding.\n\n### C. Quality Control\n1. Run at least two levels of quality control material with each batch of patient samples.\n2. Controls should be run:\n   - At the beginning of each shift\n   - With each new reagent lot\n   - After instrument maintenance\n   - As per laboratory QC policy\n3. Verify control results are within acceptable ranges before reporting patient results.\n4. Document all QC results.\n\n### D. Testing Procedure (Immunoturbidimetric Method)\n1. Bring all reagents and samples to room temperature (if refrigerated).\n2. Label test cuvettes or sample cups.\n3. Pipette the specified volume of citrate buffer into the cuvette (typically 100-200 µL).\n4. Add the specified volume of patient plasma (typically 50-100 µL).\n5. Add the specified volume of D-dimer reagent (latex-coated antibodies).\n6. Mix gently and incubate at 37°C for the specified time (typically 5-10 minutes).\n7. Measure the change in absorbance/turbidity at the specified wavelength (typically 575-660 nm).\n8. The instrument calculates D-dimer concentration from the calibration curve.\n\n### E. Testing Procedure (ELISA Method)\n1. Bring all reagents to room temperature.\n2. Add diluted patient samples and standards to antibody-coated wells.\n3. Incubate for specified time (typically 1-2 hours).\n4. Wash wells to remove unbound material.\n5. Add enzyme-conjugated antibody.\n6. Incubate and wash again.\n7. Add substrate solution and incubate.\n8. Add stop solution.\n9. Read absorbance at specified wavelength (typically 405-450 nm).\n10. Calculate concentration from standard curve.\n\n### F. Result Interpretation\n- **Normal/Negative:** <0.5 µg/mL FEU (or <500 ng/mL FEU)\n- **Elevated/Positive:** ≥0.5 µg/mL FEU\n- **Note:** Cutoff values may vary by manufacturer and clinical application.\n\n### G. Units of Measurement\n- **FEU (Fibrinogen Equivalent Units):** Most common; approximately 2× DDU\n- **DDU (D-Dimer Units):** Reports actual D-dimer concentration\n- **Conversion:** 1 µg/mL FEU ≈ 0.5 µg/mL DDU\n\n## 6. Quality Control\n- Run two levels of QC with each batch (normal and elevated).\n- Acceptable QC ranges should be established per CLSI guidelines.\n- Participate in external quality assessment/proficiency testing programs.\n- Monitor delta checks for repeat patients.\n- Correlate with clinical presentation and other coagulation tests.\n\n## 7. Reference Intervals\n- **Normal Range:** <0.5 µg/mL FEU (<500 ng/mL FEU)\n- **Age-Adjusted Cutoff (for patients >50 years):** Age (years) × 10 ng/mL FEU\n  - Example: 70-year-old patient: cutoff = 700 ng/mL FEU\n- **Note:** Each laboratory should establish or verify reference intervals.\n\n## 8. Clinical Significance\n**Elevated D-dimer may indicate:**\n- Deep vein thrombosis (DVT)\n- Pulmonary embolism (PE)\n- Disseminated intravascular coagulation (DIC)\n- Recent surgery or trauma\n- Pregnancy\n- Malignancy\n- Inflammation or infection\n- Advanced age\n\n**Clinical Applications:**\n- **Rule-out VTE:** High negative predictive value (>95%) in low-to-moderate risk patients\n- **Monitor DIC:** Serial measurements track disease progression\n- **Assess thrombotic risk:** In various clinical settings\n\n## 9. Reporting Results\n- Report result with units (µg/mL FEU or ng/mL FEU).\n- Include reference range on report.\n- Flag elevated results (>0.5 µg/mL FEU).\n- For VTE rule-out, include comment: \"Negative D-dimer has high predictive value for excluding VTE in low-to-moderate risk patients.\"\n- Critical values: Report immediately to physician if >4.0 µg/mL FEU (suggests possible DIC or massive thrombosis).",
+        "principle": "D-dimer is a fibrin degradation product consisting of two cross-linked D fragments of fibrin. It is produced when a blood clot is lysed by the fibrinolytic system, specifically through the action of plasmin on cross-linked fibrin. D-dimer testing employs immunoassay techniques using monoclonal antibodies that are specific for the D-dimer epitope present only in cross-linked fibrin degradation products. In immunoturbidimetric methods, latex particles coated with anti-D-dimer antibodies agglutinate in the presence of D-dimer, causing increased turbidity proportional to D-dimer concentration. In ELISA methods, D-dimer in the sample binds to immobilized antibodies, and a secondary enzyme-labeled antibody produces a color change measurable by spectrophotometry. Because D-dimer is highly sensitive but not specific for thrombosis, a negative result effectively rules out venous thromboembolism in low-to-moderate risk patients, while elevated levels require further investigation.",
+        "department": "Coagulation",
+        "mandatory_disclaimer": "This Standard Operating Procedure (SOP) is provided as a template based on CLSI, WHO, and manufacturer guidelines. It must be reviewed, adapted to your specific laboratory's instrumentation, reagents, and patient population, and formally approved by your Laboratory Director before clinical use.",
+        "featured_image": null,
+        "categories": [
+            "Coagulation",
+            "Hematology",
+            "Clinical Chemistry",
+            "Laboratory Techniques",
+            "Hemostasis"
+        ],
+        "tags": [
+            "d-dimer",
+            "d dimer",
+            "fibrin degradation",
+            "coagulation",
+            "thrombosis",
+            "pulmonary embolism",
+            "deep vein thrombosis",
+            "vte",
+            "dic",
+            "fibrinolysis",
+            "immunoassay",
+            "elisa",
+            "turbidimetric",
+            "hemostasis",
+            "clotting",
+            "plasmin",
+            "fibrin"
+        ],
+        "seo_title": "D-Dimer Testing SOP | Procedure for Thrombosis Diagnosis",
+        "focus_keyword": "d-dimer testing",
+        "seo_description": "Comprehensive Standard Operating Procedure (SOP) for D-dimer testing using immunoassay methods for diagnosis of venous thromboembolism, DIC, and thrombotic disorders.",
+        "faqs": [
+            {
+                "question": "What is the clinical significance of a negative D-dimer result?",
+                "answer": "A negative D-dimer (<0.5 µg/mL FEU) has a high negative predictive value (>95%) for excluding venous thromboembolism (VTE) in patients with low-to-moderate pre-test probability. This can help avoid unnecessary imaging studies."
+            },
+            {
+                "question": "Why is D-dimer elevated in so many conditions besides thrombosis?",
+                "answer": "D-dimer is a non-specific marker of fibrin formation and breakdown. It can be elevated in any condition that activates coagulation and fibrinolysis, including infection, inflammation, malignancy, pregnancy, trauma, surgery, and advanced age."
+            },
+            {
+                "question": "What is the difference between FEU and DDU units?",
+                "answer": "FEU (Fibrinogen Equivalent Units) measures D-dimer relative to the fibrinogen standard and is approximately 2 times higher than DDU (D-Dimer Units), which measures the actual D-dimer concentration. Most modern assays report in FEU."
+            },
+            {
+                "question": "When should age-adjusted D-dimer cutoffs be used?",
+                "answer": "Age-adjusted cutoffs (age in years × 10 ng/mL) should be considered for patients over 50 years old to improve specificity while maintaining sensitivity for VTE exclusion. This reduces false positives in elderly patients."
+            },
+            {
+                "question": "What pre-analytical factors can affect D-dimer results?",
+                "answer": "Common pre-analytical issues include: improper blood-to-anticoagulant ratio (underfilled tubes), delayed processing (>2 hours), hemolysis, lipemia, clotted samples, and improper storage. These can cause falsely elevated or decreased results."
+            }
+        ]
+    }
+]

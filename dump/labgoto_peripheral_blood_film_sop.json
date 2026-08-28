@@ -1,0 +1,70 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Laboratory Director Name]",
+        "reviewer_credentials": "MD, Pathology / PhD, Laboratory Medicine",
+        "last_reviewed_date": "2026-08-29",
+        "name": "Peripheral Blood Film Examination and Morphology Assessment",
+        "slug": "peripheral-blood-film-examination-morphology-assessment",
+        "short_description": "Standard Operating Procedure (SOP) for the preparation, staining, microscopic examination, and morphological assessment of peripheral blood films for diagnostic hematology.",
+        "content": "# Standard Operating Procedure: Peripheral Blood Film Examination\n\n## 1. Purpose and Scope\nThis procedure defines the step-by-step method for preparing, staining, and examining peripheral blood films to assess blood cell morphology, identify abnormalities, and support the diagnosis of hematological disorders.\n\n## 2. Specimen Requirements\n- **Specimen Type:** Whole venous blood (EDTA) or fresh capillary blood.\n- **Anticoagulant:** K2EDTA or K3EDTA preferred. Capillary blood for immediate smears.\n- **Volume:** Minimum 1 mL for EDTA samples; 1-2 drops for capillary.\n- **Storage/Stability:** EDTA samples stable for 24 hours at room temperature. Films should be prepared within 6 hours for optimal morphology.\n- **Rejection Criteria:** Clotted, hemolyzed, severely lipemic, or mislabeled samples.\n\n## 3. Safety and Precautions\n- Wear appropriate PPE (lab coat, gloves, eye protection).\n- Treat all specimens as potentially infectious.\n- Handle methanol and staining reagents in a well-ventilated area.\n- Dispose of slides and sharps in designated containers.\n- Never mouth pipette.\n\n## 4. Equipment and Reagents\n- **Equipment:** Clean glass slides (frost-edged preferred), spreader slides, staining rack, timer, light microscope with 10x, 40x, and 100x oil immersion objectives, immersion oil, lens cleaning solution.\n- **Reagents:** Methanol (absolute), Wright's stain, Giemsa stain, or combined Wright-Giemsa stain, buffered water (pH 6.8), xylene or commercial slide cleaner.\n\n## 5. Step-by-Step Procedure\n\n### A. Blood Film Preparation (Wedge Technique)\n1. Mix the EDTA specimen gently by inverting 8-10 times.\n2. Place a 3-4 mm drop of blood approximately 1 cm from the end of a clean slide.\n3. Hold a spreader slide at a 30-45° angle in front of the blood drop.\n4. Draw the spreader back to touch the blood drop, allowing it to spread along the edge.\n5. Push the spreader forward in one smooth, rapid motion to create a thin film.\n6. The film should have a head (thick), body (monolayer), and feathered edge (thin).\n7. Label the slide with patient identification and date.\n8. Air dry completely by waving in air (do not blow or heat).\n\n### B. Staining Procedure (Wright-Giemsa Method)\n1. Place the dried film on a staining rack, smear side up.\n2. Flood the entire film with methanol for 3 minutes to fix. Allow to air dry.\n3. Flood with Wright's stain for 1-3 minutes (or as per manufacturer's instructions).\n4. Add an equal volume of buffered water (pH 6.8) to the stain. Mix gently by tilting.\n5. Allow to stain for 5-10 minutes. A metallic sheen should form on the surface.\n6. Rinse gently with buffered water or distilled water until the runoff is clear.\n7. Stand the slide vertically and allow to air dry completely.\n8. Do not blot or wipe the stained film.\n\n### C. Microscopic Examination\n1. **Low Power Examination (10x objective):**\n   - Scan the entire film to assess staining quality and cell distribution.\n   - Check for platelet clumps, Rouleaux formation, and large abnormal cells.\n   - Identify the monolayer area (where RBCs are just touching but not overlapping).\n\n2. **Oil Immersion Examination (100x objective):**\n   - Apply a drop of immersion oil to the monolayer area.\n   - Examine red blood cell morphology: size, shape, color, inclusions.\n   - Assess white blood cell differential and morphology.\n   - Evaluate platelet number and morphology.\n\n### D. Morphological Assessment\n\n**Red Blood Cell Evaluation:**\n- Size: Normocytic, microcytic, macrocytic\n- Shape: Normocytic, ovalocytes, target cells, sickle cells, schistocytes, spherocytes, etc.\n- Color: Normochromic, hypochromic, polychromasia\n- Inclusions: Howell-Jolly bodies, basophilic stippling, Pappenheimer bodies, parasites\n\n**White Blood Cell Evaluation:**\n- Perform differential count (100 cells minimum)\n- Note any abnormal or immature cells (blasts, atypical lymphocytes, etc.)\n- Assess nuclear and cytoplasmic morphology\n\n**Platelet Evaluation:**\n- Estimate number (adequate, increased, decreased)\n- Note size variations (giant platelets, microplatelets)\n- Check for clumping or satellitism\n\n### E. Grading and Reporting\n- **1+ (Rare):** 1-2 cells per oil immersion field\n- **2+ (Few):** 3-10 cells per oil immersion field\n- **3+ (Moderate):** 11-30 cells per oil immersion field\n- **4+ (Many):** >30 cells per oil immersion field\n\n## 6. Quality Control\n- Use clean, grease-free slides for optimal film preparation.\n- Check buffered water pH daily (should be 6.8).\n- Stain quality control: Review known normal and abnormal films daily.\n- Participate in external quality assessment programs.\n- Correlate findings with automated hematology results.\n\n## 7. Reference Information\n- **RBC Morphology:** >75% should appear normal\n- **WBC Differential:** Neutrophils 40-75%, Lymphocytes 20-45%, Monocytes 2-10%, Eosinophils 1-6%, Basophils 0-2%\n- **Platelet Estimate:** 8-20 platelets per oil immersion field (correlates with 150-400 × 10⁹/L)\n\n## 8. Reporting Results\n- Document all abnormal findings with appropriate grading.\n- Include descriptive morphology for each cell line.\n- Flag critical findings (blasts, malaria parasites, severe thrombocytopenia) for immediate physician notification.\n- Correlate with clinical history and other laboratory findings.",
+        "principle": "Peripheral blood film examination is a fundamental diagnostic tool in hematology that allows direct visualization of blood cell morphology. The wedge technique creates a gradient of cell distribution from thick to thin, enabling optimal examination in the monolayer area. Romanowsky stains (Wright's, Giemsa, or combined) are polychromatic stains containing methylene blue and eosin derivatives that differentially stain cellular components: acidic components (like hemoglobin) stain pink-orange with eosin, while basic components (like nuclear DNA and RNA) stain blue-purple with methylene blue. This differential staining allows identification of cell types, assessment of maturation stages, and detection of morphological abnormalities that indicate various hematological disorders, infections, and systemic diseases.",
+        "department": "Hematology",
+        "mandatory_disclaimer": "This Standard Operating Procedure (SOP) is provided as a template based on WHO, CLSI, and ICSH guidelines. It must be reviewed, adapted to your specific laboratory's equipment, reagents, and patient population, and formally approved by your Laboratory Director before clinical use.",
+        "featured_image": null,
+        "categories": [
+            "Haematology",
+            "Blood Film Examination",
+            "Microscopy",
+            "Laboratory Techniques",
+            "Manual Haematology",
+            "Hematology"
+        ],
+        "tags": [
+            "blood film",
+            "blood smear",
+            "peripheral smear",
+            "morphology",
+            "wright stain",
+            "giemsa stain",
+            "differential count",
+            "rbc morphology",
+            "wbc morphology",
+            "platelet morphology",
+            "manual microscopy",
+            "haematology",
+            "blood cell",
+            "hematology microscopy",
+            "blood film examination"
+        ],
+        "seo_title": "Peripheral Blood Film Examination SOP | Morphology Assessment Guide",
+        "focus_keyword": "peripheral blood film examination",
+        "seo_description": "Comprehensive Standard Operating Procedure (SOP) for peripheral blood film preparation, staining with Wright-Giemsa, and morphological examination under microscopy.",
+        "faqs": [
+            {
+                "question": "What is the ideal angle for preparing a blood film?",
+                "answer": "The spreader slide should be held at a 30-45° angle. A higher angle creates a thicker film, while a lower angle creates a thinner film."
+            },
+            {
+                "question": "Why is the pH of buffered water critical for blood film staining?",
+                "answer": "The pH affects the staining characteristics. At pH 6.8, acidic components stain red-orange and basic components stain blue-purple. Incorrect pH can cause poor differentiation and misleading morphology."
+            },
+            {
+                "question": "What causes a poor-quality blood film?",
+                "answer": "Common causes include: dirty or greasy slides, delayed staining (>6 hours for EDTA samples), improper spreading technique, incorrect stain pH, and inadequate drying."
+            },
+            {
+                "question": "When should a manual blood film examination be performed?",
+                "answer": "Blood films should be examined when: automated results are abnormal, flags are generated, clinical suspicion exists despite normal automated results, for monitoring known hematological conditions, or as part of routine malaria screening in endemic areas."
+            },
+            {
+                "question": "How do you estimate platelet count from a blood film?",
+                "answer": "Count the number of platelets in 10 oil immersion fields in the monolayer area, calculate the average, and multiply by 15-20 to estimate the platelet count × 10⁹/L. For example, 10 platelets per field × 20 = approximately 200 × 10⁹/L."
+            }
+        ]
+    }
+]
