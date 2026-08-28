@@ -1,7 +1,7 @@
 @props(['variant' => 'default'])
 
 @php
-$classes = 'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium';
+$classes = 'inline-flex items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium';
 $classes .= match($variant) {
     'success' => ' bg-success-50 text-success-600 border border-success-600/20 dark:bg-success-900/30 dark:text-success-400 dark:border-success-600/30',
     'danger' => ' bg-danger-50 text-danger-600 border border-danger-600/20 dark:bg-danger-900/30 dark:text-danger-400 dark:border-danger-600/30',
