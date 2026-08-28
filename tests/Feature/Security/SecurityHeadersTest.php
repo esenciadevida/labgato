@@ -45,5 +45,9 @@ class SecurityHeadersTest extends TestCase
             "frame-ancestors 'self'",
             (string) $response->headers->get('Content-Security-Policy'),
         );
+        $this->assertMatchesRegularExpression(
+            "/img-src 'self' https: data: blob:/",
+            (string) $response->headers->get('Content-Security-Policy'),
+        );
     }
 }
