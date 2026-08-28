@@ -12,6 +12,7 @@ class MasterSopSeeder extends Seeder
     private const SEED_FILES = [
         'labgoto_hematology_sops.json',
         'labgoto_manual_cbc_sop.json',
+        'labgoto_manual_reticulocyte_count_sop.json',
     ];
 
     public function run(): void
