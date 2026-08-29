@@ -137,6 +137,20 @@ class ReferenceRangeGovernanceCommandsTest extends TestCase
             ->assertExitCode(1);
     }
 
+    public function test_ranges_drift_ignores_archived_spares(): void
+    {
+        ReferenceRange::factory()->create([
+            'slug' => 'legacy-glucose-random',
+            'status' => ResourceStatus::ARCHIVED,
+            'published_at' => null,
+        ]);
+
+        $this->artisan('ranges:drift')
+            ->expectsOutputToContain('legacy-glucose-random')
+            ->expectsOutputToContain('No drift')
+            ->assertExitCode(0);
+    }
+
     public function test_ranges_drift_detects_missing_canonical_records(): void
     {
         ReferenceRange::query()->where('slug', 'sodium-adult')->delete();

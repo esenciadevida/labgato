@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Enums\ResourceStatus;
 use App\Models\ReferenceRange;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -38,7 +39,10 @@ class RangeDrift extends Command
             fn (string $slug) => ! in_array($slug, self::CATEGORY_SLUGS, true)
         ));
 
-        $dbSlugs = ReferenceRange::query()->pluck('slug')->all();
+        $dbSlugs = ReferenceRange::query()
+            ->where('status', ResourceStatus::PUBLISHED->value)
+            ->pluck('slug')
+            ->all();
 
         $missing = array_values(array_diff($canonical, $dbSlugs));
         $extra = array_values(array_diff($dbSlugs, $canonical));
@@ -60,12 +64,22 @@ class RangeDrift extends Command
 
         if ($extra !== []) {
             $drift = true;
-            $this->line('  [!] Database range(s) not in the canonical set:');
+            $this->line('  [!] Published database range(s) not in the canonical set:');
 
             foreach ($extra as $slug) {
-                $status = ReferenceRange::where('slug', $slug)->value('status');
-                $this->line('      - '.$slug.' (status: '.($status?->label() ?? (string) $status).')');
+                $this->line('      - '.$slug);
             }
+        }
+
+        $archived = ReferenceRange::query()
+            ->whereNot('status', ResourceStatus::PUBLISHED->value)
+            ->pluck('slug')
+            ->sort()
+            ->values()
+            ->all();
+
+        if ($archived !== []) {
+            $this->line('Archived/non-published spares (ignored): '.implode(', ', $archived));
         }
 
         if (! $drift) {
