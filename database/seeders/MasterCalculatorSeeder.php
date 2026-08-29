@@ -1725,8 +1725,10 @@ class MasterCalculatorSeeder extends Seeder
                     [
                         'key' => 'bun_creatinine_ratio',
                         'label' => 'BUN/Creatinine Ratio',
+                        'unit' => 'ratio',
                         'rounding' => 'round_half_up',
                         'precision' => 1,
+                        'reference_key' => 'bun_creatinine_ratio',
                     ],
                 ],
                 'interpretation_notes' => 'A normal BUN/creatinine ratio is approximately 10-15:1. A ratio above 20:1 suggests a prerenal component (dehydration, volume depletion, GI bleeding, catabolic states); a ratio below 10:1 suggests reduced urea production (liver disease, low protein intake). The ratio uses BUN in mg/dL and serum creatinine in mg/dL.',
@@ -2617,9 +2619,10 @@ class MasterCalculatorSeeder extends Seeder
                         'unit' => 'ratio',
                         'rounding' => 'round_half_up',
                         'precision' => 2,
+                        'reference_key' => 'ag_ratio',
                     ],
                 ],
-                'interpretation_notes' => 'The A/G ratio is albumin divided by globulin (total protein minus albumin). Normal values are usually between 1.0 and 2.5. A low ratio reflects either low albumin (cirrhosis, nephrotic syndrome, malnutrition) or high globulins (multiple myeloma, chronic inflammation, autoimmune disease). A reversed A/G ratio (< 1.0) is classically seen in multiple myeloma and chronic infection.',
+                'interpretation_notes' => 'The A/G ratio is albumin divided by globulin (total protein minus albumin). Normal values are usually between 1.1 and 2.5. A low ratio reflects either low albumin (cirrhosis, nephrotic syndrome, malnutrition) or high globulins (multiple myeloma, chronic inflammation, autoimmune disease). A reversed A/G ratio (< 1.0) is classically seen in multiple myeloma and chronic infection.',
                 'references' => [
                     ['title' => 'NCBI Bookshelf — Serum Albumin and Globulin (Clinical Methods)', 'url' => 'https://www.ncbi.nlm.nih.gov/books/NBK204/'],
                 ],

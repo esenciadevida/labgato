@@ -107,4 +107,45 @@ class CalculatorReferenceRangeTest extends TestCase
             ->call('calculate')
             ->assertSee(route('public.reference-ranges.show', 'mcv-adult'));
     }
+
+    public function test_show_page_lists_internal_reference_ranges_used(): void
+    {
+        $this->mcvReferenceRange();
+        $calculator = $this->mcvCalculator(['reference_key' => 'mcv']);
+
+        $this->get(route('public.calculators.show', $calculator->slug))
+            ->assertOk()
+            ->assertSee('Reference Ranges Used')
+            ->assertSee('MCV - Adult')
+            ->assertSee('80–100 fL')
+            ->assertSee(route('public.reference-ranges.show', 'mcv-adult'));
+    }
+
+    public function test_show_page_omits_panel_without_reference_key(): void
+    {
+        $this->mcvReferenceRange();
+        $calculator = $this->mcvCalculator();
+
+        $this->get(route('public.calculators.show', $calculator->slug))
+            ->assertOk()
+            ->assertDontSee('Reference Ranges Used');
+    }
+
+    public function test_show_page_dedupes_repeated_reference_keys(): void
+    {
+        $this->mcvReferenceRange();
+        $calculator = $this->mcvCalculator(['reference_key' => 'mcv']);
+
+        $calculator->forceFill([
+            'output_schema' => [
+                ['key' => 'mcv', 'label' => 'MCV', 'unit' => 'fL', 'reference_key' => 'mcv'],
+                ['key' => 'mch', 'label' => 'MCH', 'unit' => 'pg', 'reference_key' => 'mcv'],
+            ],
+        ])->save();
+
+        $response = $this->get(route('public.calculators.show', $calculator->slug));
+
+        $response->assertOk();
+        $this->assertSame(1, substr_count($response->getContent(), 'MCV - Adult'));
+    }
 }

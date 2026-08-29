@@ -20,6 +20,22 @@
     <div class="lg:col-span-2 space-y-8">
         <livewire:public-site.calculators.calculator-runner :calculator="$calculator" />
 
+        @if($referenceRanges->isNotEmpty())
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8">
+                <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">Reference Ranges Used</h2>
+                <ul class="space-y-3">
+                    @foreach($referenceRanges as $range)
+                        <li class="flex items-baseline justify-between gap-4">
+                            <a href="{{ route('public.reference-ranges.show', $range->slug) }}" class="text-sm font-medium text-primary-700 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300">
+                                {{ $range->name }}
+                            </a>
+                            <span class="text-sm font-semibold text-slate-900 dark:text-slate-100 shrink-0 text-right">{{ $range->referenceDisplay() }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         @if($calculator->formula_display || $calculator->interpretation_notes)
             <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8">
                 <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Formula & Clinical Notes</h2>

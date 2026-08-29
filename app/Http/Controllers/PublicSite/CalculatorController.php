@@ -4,6 +4,7 @@ namespace App\Http\Controllers\PublicSite;
 
 use App\Http\Controllers\Controller;
 use App\Models\Calculator;
+use App\Models\ReferenceRange;
 use App\Services\RecentlyViewedService;
 use Illuminate\Http\Request;
 
@@ -28,6 +29,19 @@ class CalculatorController extends Controller
         $pageTitle = $calculator->seo_title ?: $calculator->name;
         $metaDescription = $calculator->seo_description ?: ($calculator->short_description ?: 'Clinical calculator for laboratory professionals.');
 
+        $parameterKeys = collect($calculator->output_schema)
+            ->pluck('reference_key')
+            ->filter(fn ($key) => is_string($key) && $key !== '')
+            ->unique()
+            ->values();
+
+        $referenceRanges = $parameterKeys->isNotEmpty()
+            ? ReferenceRange::query()
+                ->published()
+                ->whereIn('parameter_key', $parameterKeys)
+                ->get()
+            : collect();
+
         $related = Calculator::query()
             ->published()
             ->whereKeyNot($calculator->id)
@@ -43,6 +57,12 @@ class CalculatorController extends Controller
             app(RecentlyViewedService::class)->track(auth()->user(), 'calculator', $calculator->id);
         }
 
-        return view('public.calculators.show', compact('calculator', 'related', 'pageTitle', 'metaDescription'));
+        return view('public.calculators.show', compact(
+            'calculator',
+            'related',
+            'referenceRanges',
+            'pageTitle',
+            'metaDescription',
+        ));
     }
 }
