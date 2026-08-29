@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Enums\ResourceStatus;
 use App\Models\Category;
 use App\Models\KnowledgeResource;
+use App\Models\ReferenceRange;
 use App\Models\Sop;
 use App\Models\Tag;
 use Illuminate\Support\Str;
@@ -92,6 +93,7 @@ class MasterContentImporter
 
         $this->syncCategories($sop, $item['categories'] ?? []);
         $this->syncTags($sop, $item['tags'] ?? []);
+        $this->syncReferenceRanges($sop, $item);
 
         return $sop;
     }
@@ -203,5 +205,19 @@ class MasterContentImporter
 
             $resource->tags()->syncWithoutDetaching([$tag->id]);
         }
+    }
+
+    private function syncReferenceRanges($sop, array $item): void
+    {
+        if (! array_key_exists('reference_ranges', $item)) {
+            return;
+        }
+
+        $ids = ReferenceRange::query()
+            ->published()
+            ->whereIn('slug', (array) $item['reference_ranges'])
+            ->pluck('id');
+
+        $sop->referenceRanges()->sync($ids->all());
     }
 }

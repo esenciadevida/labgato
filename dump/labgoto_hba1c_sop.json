@@ -11,7 +11,7 @@
         "name": "Glycated Hemoglobin (HbA1c) Testing",
         "slug": "glycated-hemoglobin-hba1c-testing",
         "short_description": "SOP for measuring HbA1c to monitor long-term glycemic control in diabetes.",
-        "content": "# Standard Operating Procedure: HbA1c Testing\n## 1. Purpose: Monitor 2-3 month average blood glucose levels in diabetic patients.\n## 2. Specimen: Whole blood (EDTA preferred).\n## 3. Reagents: HPLC buffers or immunoturbidimetric reagents (NGSP-certified methods).\n## 4. Procedure (HPLC Method):\n- Hemolyze whole blood sample.\n- Inject into cation-exchange HPLC column.\n- HbA1c elutes at a specific retention time due to its altered charge.\n- Quantify via spectrophotometric detection, reporting as % of total hemoglobin.\n## 5. Reference Intervals: Normal: < 5.7%. Prediabetes: 5.7-6.4%. Diabetes: ≥ 6.5%.\n## 6. QC: Run 2 levels of NGSP-certified HbA1c controls daily.",
+        "content": "# Standard Operating Procedure: HbA1c Testing\n## 1. Purpose: Monitor 2-3 month average blood glucose levels in diabetic patients.\n## 2. Specimen: Whole blood (EDTA preferred).\n## 3. Reagents: HPLC buffers or immunoturbidimetric reagents (NGSP-certified methods).\n## 4. Procedure (HPLC Method):\n- Hemolyze whole blood sample.\n- Inject into cation-exchange HPLC column.\n- HbA1c elutes at a specific retention time due to its altered charge.\n- Quantify via spectrophotometric detection, reporting as % of total hemoglobin.\n## 5. Reference Ranges\n- The canonical adult reference interval for HbA1c is shown in the Reference Ranges panel below.\n\n## Decision Limits (ADA diagnostic categories)\n- **Normal:** < 5.7%\n- **Prediabetes:** 5.7-6.4%\n- **Diabetes:** ≥ 6.5%\n## 6. QC: Run 2 levels of NGSP-certified HbA1c controls daily.",
         "principle": "Glucose non-enzymatically binds to the N-terminal valine of the hemoglobin beta chain. HPLC separates HbA1c from other hemoglobin fractions based on charge differences, providing a highly specific and standardized measurement.",
         "department": "Clinical Chemistry / Endocrinology",
         "mandatory_disclaimer": "Template based on NGSP/IFCC guidelines. Must be approved by Laboratory Director.",
@@ -36,6 +36,9 @@
                 "answer": "Hemoglobin variants (e.g., HbS, HbC), severe anemia, recent blood transfusion, or conditions altering RBC lifespan (e.g., hemolysis, ESRD)."
             }
         ],
-        "seo_description": "SOP for measuring HbA1c to monitor long-term glycemic control in diabetes."
+        "seo_description": "SOP for measuring HbA1c to monitor long-term glycemic control in diabetes.",
+        "reference_ranges": [
+            "hba1c-adult"
+        ]
     }
 ]

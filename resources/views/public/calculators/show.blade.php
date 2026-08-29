@@ -48,7 +48,7 @@
         @endphp
         @if(is_array($referenceList) && count($referenceList))
             <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8">
-                <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">References</h2>
+                <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Sources</h2>
                 <ul class="space-y-2">
                     @foreach($referenceList as $reference)
                         @php
@@ -69,7 +69,7 @@
             </div>
         @elseif(trim((string) $calculator->references) !== '' && trim((string) $calculator->references) !== '[]')
             <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8">
-                <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">References</h2>
+                <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Sources</h2>
                 <div class="text-slate-700 dark:text-slate-300 whitespace-pre-line">
                     {!! nl2br(e($calculator->references)) !!}
                 </div>

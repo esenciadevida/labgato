@@ -44,6 +44,15 @@ Aim for ASCP MLS-style items - most should be clinical vignettes, not one-line r
 - Verify with `php artisan questions:quality-report` (target score >= 70) and `php artisan questions:ascp-audit` (composition vs ASCP weights).
 - Balance authoring toward the ASCP-heavy areas (Chemistry & Hematology ~20-25% each) and be wary of over-supplying Laboratory Operations.
 
+## Reference range governance
+
+`reference_ranges` is the single source of truth for reference data. SOPs link canonical ranges via a pivot; calculators resolve them via `reference_key` on output fields (`CalculatorService::resolveReference`, unit-aware).
+
+- **SOP dumps** carry a `reference_ranges: [slugs]` key; `MasterContentImporter::upsertSop` syncs the pivot (`sop_reference_range`). The SOP show page renders the canonical panel; range show pages list "Covered in SOPs".
+- **Decision thresholds that are not a single adult interval must live as prose** in the SOP body under a `Decision limits` heading (e.g. therapeutic INR 2.0–3.0, HbA1c ADA categories, APTT heparin target, random glucose <140) - never rewrite them as a canonical range.
+- **Calculator `references` = literature sources only.** Range-authority hosts (medscape reference, Lab Tests Guide, Medical Algorithms, MedAptly, Loyola/meddean) are banned. Enforce with `php artisan calculator-references:clean` (idempotent, in-place) and monitor with `php artisan ranges:audit`.
+- When adding a SOP: check `php artisan ranges:audit` for `[!]` lines (hardcoded-interval dumps without `reference_ranges`, output fields missing `reference_key`, banned host links).
+
 ## Deployment (Hostinger)
 
 - Remotes: `origin` = GitHub, `hostinger` = production docroot (non-bare, `updateInstead`).

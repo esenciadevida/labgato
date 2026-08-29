@@ -204,6 +204,21 @@
                     </x-ui.card>
                 @endif
 
+                @if($sops->isNotEmpty())
+                    <x-ui.card>
+                        <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Covered in SOPs</h2>
+                        <ul class="space-y-2">
+                            @foreach($sops as $sopRef)
+                                <li>
+                                    <a href="{{ route('public.sops.show', $sopRef->slug) }}" class="text-sm font-medium text-primary-700 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300">
+                                        {{ $sopRef->name }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </x-ui.card>
+                @endif
+
                 <x-public.related-resources :resources="$related" :currentType="'Reference Range'" stacked />
             </aside>
         </div>

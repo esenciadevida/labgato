@@ -22,7 +22,7 @@ class SopController extends Controller
     public function show(Request $request, string $slug)
     {
         $sop = Sop::query()
-            ->with(['categories', 'tags', 'contributor'])
+            ->with(['categories', 'tags', 'contributor', 'referenceRanges'])
             ->published()
             ->where('slug', $slug)
             ->firstOrFail();

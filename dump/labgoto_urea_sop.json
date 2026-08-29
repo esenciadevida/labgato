@@ -11,7 +11,7 @@
         "name": "Blood Urea / BUN Testing",
         "slug": "blood-urea-bun-testing",
         "short_description": "SOP for quantitative measurement of urea or blood urea nitrogen (BUN) to assess renal function.",
-        "content": "# Standard Operating Procedure: Blood Urea / BUN\n## 1. Purpose: Evaluate renal function and nitrogen metabolism.\n## 2. Specimen: Serum or plasma (heparin). Avoid hemolyzed samples.\n## 3. Reagents: Urease-GLDH (Glutamate Dehydrogenase) kinetic reagent.\n## 4. Procedure:\n- Urease hydrolyzes urea to ammonia and CO2.\n- Ammonia + α-ketoglutarate + NADH → Glutamate + NAD+ (via GLDH).\n- Measure the decrease in NADH absorbance at 340 nm kinetically.\n## 5. Reference Intervals: Urea: 15-40 mg/dL (2.5-6.7 mmol/L). BUN: 7-20 mg/dL.\n## 6. QC: Run 2 levels of control daily.",
+        "content": "# Standard Operating Procedure: Blood Urea / BUN\n## 1. Purpose: Evaluate renal function and nitrogen metabolism.\n## 2. Specimen: Serum or plasma (heparin). Avoid hemolyzed samples.\n## 3. Reagents: Urease-GLDH (Glutamate Dehydrogenase) kinetic reagent.\n## 4. Procedure:\n- Urease hydrolyzes urea to ammonia and CO2.\n- Ammonia + α-ketoglutarate + NADH → Glutamate + NAD+ (via GLDH).\n- Measure the decrease in NADH absorbance at 340 nm kinetically.\n## 5. Reference Ranges\n- The canonical adult BUN reference interval is shown in the Reference Ranges panel below.\n- **Urea equivalent:** 15-40 mg/dL (2.5-6.7 mmol/L) when reporting as urea.\n## 6. QC: Run 2 levels of control daily.",
         "principle": "The urease-GLDH method is highly specific. The rate of NADH oxidation is directly proportional to the urea concentration in the sample.",
         "department": "Clinical Chemistry",
         "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
@@ -36,6 +36,9 @@
                 "answer": "BUN measures only the nitrogen part of the urea molecule. Urea (mg/dL) = BUN (mg/dL) × 2.14."
             }
         ],
-        "seo_description": "SOP for quantitative measurement of urea or blood urea nitrogen (BUN) to assess renal function."
+        "seo_description": "SOP for quantitative measurement of urea or blood urea nitrogen (BUN) to assess renal function.",
+        "reference_ranges": [
+            "bun-adult"
+        ]
     }
 ]

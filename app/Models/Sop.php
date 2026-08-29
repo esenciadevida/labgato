@@ -74,6 +74,11 @@ class Sop extends Model
         return $this->belongsToMany(Tag::class, 'sop_tag');
     }
 
+    public function referenceRanges()
+    {
+        return $this->belongsToMany(ReferenceRange::class, 'sop_reference_range');
+    }
+
     public function createdBy()
     {
         return $this->belongsTo(User::class, 'created_by');

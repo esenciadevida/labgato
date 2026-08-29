@@ -11,7 +11,7 @@
         "name": "Fasting Lipid Profile",
         "slug": "fasting-lipid-profile",
         "short_description": "SOP for measuring Total Cholesterol, Triglycerides, HDL, and calculated LDL.",
-        "content": "# Standard Operating Procedure: Lipid Profile\n## 1. Purpose: Assess cardiovascular risk and lipid metabolism.\n## 2. Specimen: Fasting serum (9-12 hours fasting preferred). Avoid grossly lipemic samples.\n## 3. Reagents: Enzymatic colorimetric kits for CHOD-PAP (Cholesterol), GPO-PAP (Triglycerides), and direct HDL methods.\n## 4. Procedure:\n- **Total Cholesterol:** Cholesterol esterase + cholesterol oxidase produce H2O2, which reacts with chromogen (measured at 500 nm).\n- **Triglycerides:** Lipase + glycerol kinase + GPO produce H2O2, measured at 500 nm.\n- **HDL:** Direct homogeneous assay using selective polymers to mask non-HDL lipoproteins.\n- **LDL:** Calculated via Friedewald formula: LDL = Total Chol - HDL - (Triglycerides / 5) [valid if TG < 400 mg/dL].\n## 5. Reference Intervals: Total Chol < 200 mg/dL, HDL > 40 mg/dL, LDL < 100 mg/dL, TG < 150 mg/dL.",
+        "content": "# Standard Operating Procedure: Lipid Profile\n## 1. Purpose: Assess cardiovascular risk and lipid metabolism.\n## 2. Specimen: Fasting serum (9-12 hours fasting preferred). Avoid grossly lipemic samples.\n## 3. Reagents: Enzymatic colorimetric kits for CHOD-PAP (Cholesterol), GPO-PAP (Triglycerides), and direct HDL methods.\n## 4. Procedure:\n- **Total Cholesterol:** Cholesterol esterase + cholesterol oxidase produce H2O2, which reacts with chromogen (measured at 500 nm).\n- **Triglycerides:** Lipase + glycerol kinase + GPO produce H2O2, measured at 500 nm.\n- **HDL:** Direct homogeneous assay using selective polymers to mask non-HDL lipoproteins.\n- **LDL:** Calculated via Friedewald formula: LDL = Total Chol - HDL - (Triglycerides / 5) [valid if TG < 400 mg/dL].\n## 5. Reference Ranges\n- Canonical adult reference intervals are shown in the Reference Ranges panel below.\n\n## Decision Limits (desirable categories)\n- **Total Cholesterol:** < 200 mg/dL\n- **LDL:** < 100 mg/dL (optimal for most adults)\n- **HDL:** > 40 mg/dL (males) / > 50 mg/dL (females)\n- **Triglycerides:** < 150 mg/dL",
         "principle": "Enzymatic cleavage of cholesterol and triglycerides produces hydrogen peroxide, which is quantified via a peroxidase-coupled colorimetric reaction. HDL is measured directly after precipitating or masking apoB-containing lipoproteins.",
         "department": "Clinical Chemistry",
         "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
@@ -37,6 +37,13 @@
                 "answer": "Food intake, especially fats, causes transient elevation in triglycerides and chylomicrons, which can falsely lower calculated LDL and alter results."
             }
         ],
-        "seo_description": "SOP for measuring Total Cholesterol, Triglycerides, HDL, and calculated LDL."
+        "seo_description": "SOP for measuring Total Cholesterol, Triglycerides, HDL, and calculated LDL.",
+        "reference_ranges": [
+            "total-cholesterol-adult",
+            "ldl-cholesterol-adult",
+            "hdl-cholesterol-adult-male",
+            "hdl-cholesterol-adult-female",
+            "triglycerides-adult"
+        ]
     }
 ]

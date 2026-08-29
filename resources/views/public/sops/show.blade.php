@@ -78,6 +78,48 @@
                     {!! $content !!}
                 </article>
 
+                @if($sop->referenceRanges->isNotEmpty())
+                    <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-card dark:border-slate-700 dark:bg-slate-900">
+                        <div class="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-4 py-2 dark:border-slate-700 dark:bg-slate-800/60">
+                            <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Reference Ranges</h2>
+                            <a href="{{ route('public.reference-ranges.index') }}" class="text-xs font-medium text-primary-700 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300">
+                                Browse all ranges
+                            </a>
+                        </div>
+                        <div class="divide-y divide-slate-100 dark:divide-slate-800">
+                            @foreach($sop->referenceRanges->sortBy('analyte_name') as $rangeRef)
+                                @php
+                                    $refLower = $rangeRef->lower_limit;
+                                    $refUpper = $rangeRef->upper_limit;
+                                    $refFmt = fn ($value) => $value === null ? null : (floor($value) == $value ? number_format($value, 0, '.', '') : rtrim(rtrim(number_format($value, 2, '.', ''), '0'), '.'));
+                                    $refLabel = trim(($refLower !== null ? $refFmt($refLower) : '') . ($refLower !== null && $refUpper !== null ? '–' : '') . ($refUpper !== null ? $refFmt($refUpper) : ''));
+                                @endphp
+                                <div class="flex items-start justify-between gap-4 px-4 py-3">
+                                    <div>
+                                        <a href="{{ route('public.reference-ranges.show', $rangeRef->slug) }}" class="text-sm font-semibold text-slate-900 hover:text-primary-700 dark:text-slate-100 dark:hover:text-primary-400">
+                                            {{ $rangeRef->name }}
+                                        </a>
+                                        <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+                                            {{ collect([$rangeRef->population_group, $rangeRef->sex ? ucfirst($rangeRef->sex) : null])->filter()->implode(' · ') }}
+                                        </p>
+                                    </div>
+                                    <div class="shrink-0 text-right">
+                                        <p class="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                                            {{ $refLabel }}
+                                            @if($rangeRef->unit)
+                                                <span class="font-normal text-slate-500 dark:text-slate-400">{{ $rangeRef->unit }}</span>
+                                            @endif
+                                        </p>
+                                        @if($rangeRef->critical_low !== null || $rangeRef->critical_high !== null)
+                                            <p class="mt-0.5 text-[11px] font-semibold text-amber-700 dark:text-amber-300">Critical values apply</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
+
                 <x-public.prev-next
                     :previous="$previous"
                     :next="$next"

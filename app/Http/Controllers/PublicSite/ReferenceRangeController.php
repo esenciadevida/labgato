@@ -47,6 +47,12 @@ class ReferenceRangeController extends Controller
             ->limit(5)
             ->get();
 
+        $sops = $referenceRange->sops()
+            ->published()
+            ->orderByDesc('published_at')
+            ->limit(5)
+            ->get(['sops.id', 'sops.slug', 'sops.name']);
+
         $pageTitle = $referenceRange->seo_title ?: $referenceRange->name;
         $metaDescription = $referenceRange->seo_description ?: ($referenceRange->short_description ?: "Reference range for {$referenceRange->analyte_name}.");
 
@@ -58,6 +64,7 @@ class ReferenceRangeController extends Controller
             'referenceRange',
             'variations',
             'related',
+            'sops',
             'pageTitle',
             'metaDescription',
         ));

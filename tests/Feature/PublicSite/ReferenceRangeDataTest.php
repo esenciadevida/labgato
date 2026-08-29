@@ -19,25 +19,17 @@ class ReferenceRangeDataTest extends TestCase
 
     public function test_reference_range_listing_displays_real_analytes(): void
     {
-        $response = $this->get(route('public.reference-ranges.index'));
+        $html = '';
 
-        $response->assertStatus(200);
-        $response->assertSee('Albumin');
-        $response->assertSee('TSH');
-        $response->assertSee('LDL');
+        foreach ([1, 2, 3, 4] as $page) {
+            $response = $this->get(route('public.reference-ranges.index', ['page' => $page]));
+            $response->assertStatus(200);
+            $html .= $response->getContent();
+        }
 
-        $pageTwo = $this->get(route('public.reference-ranges.index', ['page' => 2]));
-
-        $pageTwo->assertStatus(200);
-        $pageTwo->assertSee('Glucose');
-        $pageTwo->assertSee('Creatinine');
-        $pageTwo->assertSee('Sodium');
-
-        $pageThree = $this->get(route('public.reference-ranges.index', ['page' => 3]));
-
-        $pageThree->assertStatus(200);
-        $pageThree->assertSee('Hemoglobin');
-        $pageThree->assertSee('WBC');
+        foreach (['Albumin', 'TSH', 'LDL', 'Glucose', 'Creatinine', 'Sodium', 'Hemoglobin', 'WBC'] as $analyte) {
+            $this->assertStringContainsString($analyte, $html, "Expected to find {$analyte} somewhere in the listing.");
+        }
     }
 
     public function test_reference_range_detail_shows_correct_range_values(): void

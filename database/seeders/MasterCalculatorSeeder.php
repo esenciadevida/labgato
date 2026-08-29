@@ -870,7 +870,6 @@ class MasterCalculatorSeeder extends Seeder
                 'interpretation_notes' => 'A negative England & Fraser index (below 0) suggests beta-thalassemia trait; a positive value suggests iron deficiency anemia. This screening discriminant requires confirmation with iron studies and hemoglobin analysis.',
                 'references' => [
                     ['title' => 'England & Fraser index in the differential diagnosis of beta-thalassemia trait and iron deficiency anemia', 'url' => 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4003440/'],
-                    ['title' => 'England-Fraser Formula', 'url' => 'https://www.medicalalgorithms.com/england-fraser-formula'],
                 ],
                 'categories' => ['Hematology'],
                 'tags' => ['england-fraser', 'thalassemia-screening'],
@@ -1442,6 +1441,7 @@ class MasterCalculatorSeeder extends Seeder
                         'unit' => 'mEq/L',
                         'rounding' => 'round_half_up',
                         'precision' => 1,
+                        'reference_key' => 'sodium',
                     ],
                 ],
                 'interpretation_notes' => 'Hyperglycemia draws water out of cells, lowering measured serum sodium. The Katz formula adds 1.6 mEq/L for every 100 mg/dL above 100 mg/dL. In hyperglycemic hyperosmolar states the corrected sodium guides fluid management; in severe hyperglycemia some clinicians use the 2.4 mEq/L correction factor.',
@@ -1489,6 +1489,7 @@ class MasterCalculatorSeeder extends Seeder
                         'unit' => 'mg/dL',
                         'rounding' => 'round_half_up',
                         'precision' => 1,
+                        'reference_key' => 'calcium',
                     ],
                 ],
                 'interpretation_notes' => 'Because roughly half of serum calcium is albumin-bound, hypoalbuminemia falsely lowers total calcium. The corrected calcium adds 0.8 mg/dL for every 1.0 g/dL the albumin is below 4.0 g/dL. Correction is imperfect in critical illness and CKD, where ionized calcium is preferred.',
@@ -2352,7 +2353,6 @@ class MasterCalculatorSeeder extends Seeder
                 'interpretation_notes' => 'The urine anion gap = (UNa + UK) − UCl and indirectly estimates urinary ammonium. In non-anion gap metabolic acidosis, a negative urine anion gap suggests appropriate renal ammonium excretion (e.g., GI bicarbonate loss), while a positive gap suggests impaired ammonium excretion (e.g., renal tubular acidosis). It is most reliable when urine pH is below 6.5.',
                 'references' => [
                     ['title' => 'StatPearls — Anion Gap and Non-Anion Gap Metabolic Acidosis', 'url' => 'https://www.ncbi.nlm.nih.gov/books/NBK448090/'],
-                    ['title' => 'Medscape — Urine Anion Gap or Urine Net Charge', 'url' => 'https://reference.medscape.com/calculator/477/urine-anion-gap-or-urine-net-charge'],
                 ],
                 'categories' => ['Renal'],
                 'tags' => ['urine-anion-gap', 'acid-base', 'renal-tubular-acidosis', 'ammonium'],
@@ -2439,7 +2439,6 @@ class MasterCalculatorSeeder extends Seeder
                 'interpretation_notes' => 'The apparent strong ion difference is SIDa = (Na + K + Ca + Mg) − (Cl + Lactate), all in mEq/L. The normal SIDa is approximately 38–42 mEq/L. A reduced SIDa (acidifying) favours metabolic acidosis (e.g., lactic acidosis, hyperchloremia), while an increased SIDa (alkalinising) favours metabolic alkalosis. Note: ionised calcium in mmol/L must be multiplied by 2 to convert to mEq/L.',
                 'references' => [
                     ['title' => 'Stewart (1983) — Modern Quantitative Acid-Base Chemistry', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/6423247/'],
-                    ['title' => 'MedAptly — Stewart Acid-Base Calculator', 'url' => 'https://www.medaptly.com/calculators/stewart-acid-base/'],
                 ],
                 'categories' => ['Fluids, Electrolytes & Acid-Base'],
                 'tags' => ['strong-ion-difference', 'sid', 'acid-base', 'stewart'],
@@ -2481,12 +2480,11 @@ class MasterCalculatorSeeder extends Seeder
                         'unit' => 'mEq/L',
                         'rounding' => 'round_half_up',
                         'precision' => 1,
+                        'reference_key' => 'chloride',
                     ],
                 ],
                 'interpretation_notes' => 'Corrected chloride = measured chloride × (140 / measured sodium), where 140 mEq/L is the normal sodium used as the standard reference. This correction accounts for the dilutional or concentration effect of abnormal sodium and allows chloride to be interpreted relative to sodium. A low corrected chloride relative to sodium suggests a non-anion gap acidosis (or chloride-responsive alkalosis), while a high corrected chloride is seen with hyperchloremia.',
-                'references' => [
-                    ['title' => 'Lab Tests Guide — Chloride Correction Calculator', 'url' => 'https://www.labtestsguide.com/chloride-correction-calculator-when-sodium-is-corrected'],
-                ],
+                'references' => [],
                 'categories' => ['Fluids, Electrolytes & Acid-Base'],
                 'tags' => ['chloride', 'sodium', 'correction', 'acid-base'],
                 'seo_title' => 'Corrected Chloride Calculator | LabGoTo',
@@ -2531,7 +2529,6 @@ class MasterCalculatorSeeder extends Seeder
                 ],
                 'interpretation_notes' => 'The bicarbonate gap = anion gap − (24 − measured HCO₃), where 24 mEq/L is the normal bicarbonate reference. In a single (pure) anion gap metabolic acidosis the bicarbonate gap remains near the normal anion gap (~12 mEq/L). A bicarbonate gap above ~12 suggests a superimposed metabolic alkalosis (or a baseline elevated bicarbonate); a gap below ~12 suggests a superimposed non-anion gap (hyperchloremic) metabolic acidosis. This complements the separate Delta Gap and Delta Ratio calculators.',
                 'references' => [
-                    ['title' => 'Loyola Medicine — Acid-Base Notes: Delta Gap', 'url' => 'https://www.meddean.luc.edu/lumen/meded/mech/cases/case26/acid_base_notes.htm'],
                     ['title' => 'Pubmed — Using the Delta Gap in Mixed Acid-Base Disorders', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/2240729/'],
                 ],
                 'categories' => ['Fluids, Electrolytes & Acid-Base'],

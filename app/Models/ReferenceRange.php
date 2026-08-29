@@ -72,6 +72,11 @@ class ReferenceRange extends Model
         return $this->belongsToMany(Tag::class, 'reference_range_tag');
     }
 
+    public function sops()
+    {
+        return $this->belongsToMany(Sop::class, 'sop_reference_range');
+    }
+
     public function createdBy()
     {
         return $this->belongsTo(User::class, 'created_by');

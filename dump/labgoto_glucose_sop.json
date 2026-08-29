@@ -11,7 +11,7 @@
         "name": "Blood Glucose Testing (Fasting/Random)",
         "slug": "blood-glucose-testing",
         "short_description": "SOP for quantitative measurement of glucose in serum or plasma.",
-        "content": "# Standard Operating Procedure: Blood Glucose\n## 1. Purpose: Diagnose and monitor diabetes mellitus and hypoglycemia.\n## 2. Specimen: Serum, plasma (fluoride/oxalate preferred to inhibit glycolysis), or whole blood.\n## 3. Reagents: GOD-POD (Glucose Oxidase-Peroxidase) or Hexokinase reagent kits.\n## 4. Procedure (Automated Analyzer):\n- Load reagents and calibrators.\n- Aspirate sample and reagent in specified ratio (e.g., 1:100).\n- Incubate at 37°C.\n- Measure absorbance change at 505 nm (GOD-POD) or 340 nm (Hexokinase).\n## 5. Reference Intervals: Fasting: 70-99 mg/dL (3.9-5.5 mmol/L). Random: <140 mg/dL.\n## 6. QC: Run 2 levels of control daily.",
+        "content": "# Standard Operating Procedure: Blood Glucose\n## 1. Purpose: Diagnose and monitor diabetes mellitus and hypoglycemia.\n## 2. Specimen: Serum, plasma (fluoride/oxalate preferred to inhibit glycolysis), or whole blood.\n## 3. Reagents: GOD-POD (Glucose Oxidase-Peroxidase) or Hexokinase reagent kits.\n## 4. Procedure (Automated Analyzer):\n- Load reagents and calibrators.\n- Aspirate sample and reagent in specified ratio (e.g., 1:100).\n- Incubate at 37°C.\n- Measure absorbance change at 505 nm (GOD-POD) or 340 nm (Hexokinase).\n## 5. Reference Ranges\n- The canonical adult fasting reference interval is shown in the Reference Ranges panel below.\n\n## Decision Limits\n- **Random glucose:** Typically < 140 mg/dL (7.8 mmol/L).\n## 6. QC: Run 2 levels of control daily.",
         "principle": "Hexokinase (Reference): Glucose + ATP → Glucose-6-phosphate (via hexokinase). G-6-P + NADP+ → 6-phosphogluconate + NADPH (via G6PD). NADPH absorbance at 340 nm is proportional to glucose.",
         "department": "Clinical Chemistry",
         "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
@@ -36,6 +36,9 @@
                 "answer": "Sodium fluoride inhibits enolase, preventing glycolysis and falsely low glucose results if testing is delayed."
             }
         ],
-        "seo_description": "SOP for quantitative measurement of glucose in serum or plasma."
+        "seo_description": "SOP for quantitative measurement of glucose in serum or plasma.",
+        "reference_ranges": [
+            "glucose-fasting-adult"
+        ]
     }
 ]
