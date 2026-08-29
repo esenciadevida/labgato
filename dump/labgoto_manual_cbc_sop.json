@@ -67,6 +67,26 @@
                 "question": "How is the Absolute Neutrophil Count calculated from a manual differential?",
                 "answer": "Multiply the total WBC count by the percentage of neutrophils (expressed as a decimal). For example, if WBC is 10,000/µL and neutrophils are 60%, the absolute count is 6,000/µL."
             }
+        ],
+        "reference_ranges": [
+            "hemoglobin-adult-male",
+            "hemoglobin-adult-female",
+            "wbc-adult",
+            "rbc-adult-male",
+            "rbc-adult-female",
+            "platelets-adult",
+            "mcv-adult",
+            "mch-adult",
+            "mchc-adult",
+            "rdw-adult",
+            "neutrophils-percent-adult",
+            "lymphocytes-percent-adult",
+            "eosinophils-percent-adult",
+            "monocytes-percent-adult",
+            "anc-adult",
+            "alc-adult",
+            "aec-adult",
+            "amc-adult"
         ]
     }
 ]

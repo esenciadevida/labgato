@@ -39,6 +39,14 @@
                 "answer": "ALT is more specific to the liver than AST, making it a more sensitive marker for acute hepatic injury."
             }
         ],
-        "seo_description": "SOP for measuring ALT, AST, ALP, Bilirubin, Total Protein, and Albumin."
+        "seo_description": "SOP for measuring ALT, AST, ALP, Bilirubin, Total Protein, and Albumin.",
+        "reference_ranges": [
+            "total-protein-adult",
+            "albumin-adult",
+            "bilirubin-total-adult",
+            "alp-adult",
+            "ast-adult",
+            "alt-adult"
+        ]
     }
 ]
