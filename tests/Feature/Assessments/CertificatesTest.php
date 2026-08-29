@@ -299,6 +299,20 @@ class CertificatesTest extends TestCase
         $this->assertSame('Private Patel', $this->service->viewData($certificate)['holderName']);
     }
 
+    public function test_verify_and_share_pages_are_never_publicly_cached(): void
+    {
+        $assessment = $this->makeAssessment();
+        $user = User::factory()->member()->create();
+        $attempt = $this->makeAttempt($user, $assessment, 85, 85);
+        $certificate = $this->service->issue($attempt);
+
+        $this->get(route('certificates.verify', $certificate->verification_code))
+            ->assertHeader('Cache-Control', 'no-store, private');
+
+        $this->get(route('certificates.share', $certificate->verification_code))
+            ->assertHeader('Cache-Control', 'no-store, private');
+    }
+
     public function test_admin_revoke_sets_fields_and_enforces_permission(): void
     {
         $assessment = $this->makeAssessment();

@@ -18,6 +18,10 @@ class CachePublicPages
         'contact.',
     ];
 
+    private const NO_STORE_PREFIXES = [
+        'certificates.',
+    ];
+
     private const LONG_CACHE_ROUTES = [
         'robots',
         'sitemap',
@@ -27,16 +31,26 @@ class CachePublicPages
     {
         $response = $next($request);
 
+        // Certificate verify/share pages reflect revocation and privacy state;
+        // they must never be served stale by browsers or shared caches.
+        $routeName = (string) $request->route()?->getName();
+
+        foreach (self::NO_STORE_PREFIXES as $prefix) {
+            if (str_starts_with($routeName, $prefix)) {
+                $response->headers->set('Cache-Control', 'no-store, private');
+                return $response;
+            }
+        }
+
         if (! $this->shouldCache($request, $response)) {
             // Responses that carry fresh cookies must never be stored by shared caches.
             if ($response->headers->has('Set-Cookie')) {
-                $response->headers->set('Cache-Control', 'private, no-store');
+                $response->headers->set('Cache-Control', 'no-store, private');
             }
 
             return $response;
         }
 
-        $routeName = (string) $request->route()?->getName();
         $maxAge = in_array($routeName, self::LONG_CACHE_ROUTES, true) ? 86400 : 60;
 
         $response->headers->set('Cache-Control', "public, max-age={$maxAge}");
