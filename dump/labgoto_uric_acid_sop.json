@@ -1,0 +1,51 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "reviewer_credentials": "MD, Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Serum Uric Acid",
+        "slug": "uric-acid-serum-testing",
+        "short_description": "SOP for the spectrophotometric measurement of serum uric acid to support the diagnosis and monitoring of gout, renal impairment, and urate-related disease.",
+        "content": "# Standard Operating Procedure: Serum Uric Acid\n\n## 1. Purpose and Scope\nTo measure serum uric acid (urate) concentration for the diagnosis and monitoring of hyperuricemia, gout, nephrolithiasis, and tumor lysis risk, and to guide urate-lowering therapy.\n\n## 2. Specimen Requirements\n- **Type:** Serum (morning fasting preferred; uric acid varies little with food but fasting improves comparison with reference data).\n- **Volume:** Minimum 1 mL.\n- **Stability:** Stable up to 48 hours refrigerated; avoid prolonged storage at room temperature.\n- **Rejection:** Hemolyzed samples are acceptable for uric acid but should be flagged; grossly lipemic samples should be ultracentrifuged before analysis.\n- **Note:** Thiazide diuretics and loop diuretics raise serum urate; these medications should be recorded for interpretive purposes.\n\n## 3. Safety and Precautions\n- Standard PPE. All samples are potentially infectious.\n- Dispose of waste in biohazard containers.\n\n## 4. Equipment and Reagents\n- Automated chemistry analyzer (spectrophotometric).\n- Uricase-peroxidase reagent kit (Tinder/Trinder chromogen) or uricase end-point method.\n- Two levels of quality control material.\n\n## 5. Step-by-Step Procedure\n1. Centrifuge the clotted specimen at 3000-3500 rpm for 10 minutes.\n2. Load serum onto the analyzer per instrument instructions.\n3. Run two levels of quality control before patient samples.\n4. Verify calibration linearity within the measuring range; dilute and re-run results above the upper linearity limit.\n5. Release results after QC acceptance.\n\n## 6. Quality Control\n- Run 2 levels of control daily for each assay.\n- Participate in an external quality assessment (EQA) program.\n- Verify control values fall within acceptable target ranges before patient reporting.\n\n## 7. Decision limits\n- **Gout treatment target:** With urate-lowering therapy, it is generally recommended to treat to a serum urate below 6.0 mg/dL (360 µmol/L), and below 5.0 mg/dL (300 µmol/L) in patients with tophi, using clinical judgement and applicable society guidance (e.g. ACR 2020).\n- **Acute gout:** Serum urate may be normal (or even low) during an acute flare because urate redistributes; 'treatment to target' does not apply to the immediate flare period.\n- **Tumor lysis risk:** Hyperuricemia in the setting of cancer chemotherapy should prompt monitoring for tumor lysis syndrome; thresholds are part of oncologic protocols rather than a single laboratory interval.\n\n## 8. Reporting Results\n- Report results with the assay-specific reference range and flag values above the upper reference limit.\n- Interpret uric acid in the context of renal function (uric acid accumulates in chronic kidney disease) and relevant medications.\n- Note the sex-specific reference intervals (adult male vs adult female) shown in the canonical panel below.",
+        "principle": "Serum uric acid is measured by a uricase-peroxidase coupled reaction that generates a colored chromogen quantified spectrophotometrically, or by a direct uricase end-point method. Uric acid is the end product of purine catabolism; serum concentration reflects the balance between production and renal elimination, rising with impaired renal clearance and with states of high cell turnover or purine intake.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "This SOP is a template. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Clinical Chemistry",
+            "Metabolic"
+        ],
+        "tags": [
+            "uric acid",
+            "urate",
+            "gout",
+            "tophi",
+            "hyperuricemia",
+            "nephrolithiasis",
+            "tumor lysis",
+            "renal"
+        ],
+        "seo_title": "Serum Uric Acid SOP | Urate Measurement Procedure",
+        "focus_keyword": "serum uric acid",
+        "seo_description": "Standard Operating Procedure for serum uric acid measurement, including specimen handling, uricase method, QC, and gout treat-to-target decision limits.",
+        "faqs": [
+            {
+                "question": "Why may serum uric acid be normal during an acute gout attack?",
+                "answer": "In acute flares urate may move into synovial fluid and be excreted, so serum uric acid can be normal or low; a single normal value does not exclude gout."
+            },
+            {
+                "question": "Why does chronic kidney disease raise serum uric acid?",
+                "answer": "The kidney is the dominant route of urate elimination; as glomerular filtration declines, urate retention causes secondary hyperuricemia."
+            }
+        ],
+        "reference_ranges": [
+            "uric-acid-adult-male",
+            "uric-acid-adult-female"
+        ]
+    }
+]

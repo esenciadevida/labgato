@@ -49,6 +49,8 @@ class MasterSopSeeder extends Seeder
         'labgoto_lft_sop.json',
         'labgoto_lipid_profile_sop.json',
         'labgoto_hba1c_sop.json',
+        'labgoto_thyroid_panel_sop.json',
+        'labgoto_uric_acid_sop.json',
     ];
 
     public function run(): void

@@ -5,6 +5,7 @@ namespace Tests\Feature\Seeders;
 use App\Enums\ResourceStatus;
 use App\Models\Sop;
 use Database\Seeders\MasterSopSeeder;
+use Database\Seeders\ReferenceRangeDataSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -22,7 +23,7 @@ class MasterSopSeederTest extends TestCase
 
     public function test_seeds_all_sop_records(): void
     {
-        $this->assertSame(56, $this->seedSops());
+        $this->assertSame(58, $this->seedSops());
     }
 
     public function test_maps_fields_from_json(): void
@@ -78,5 +79,28 @@ class MasterSopSeederTest extends TestCase
         $this->assertCount(5, $sop->faq);
         $this->assertStringContainsString('# Standard Operating Procedure: Manual Complete Blood Count (CBC)', (string) $sop->content);
         $this->assertTrue($sop->categories->contains(fn ($category) => $category->name === 'Laboratory Techniques'));
+    }
+
+    public function test_thyroid_and_uric_acid_sops_link_canonical_ranges(): void
+    {
+        $this->seed(ReferenceRangeDataSeeder::class);
+        $this->seedSops();
+
+        $thyroid = Sop::query()->where('slug', 'thyroid-function-tests-tsh-ft4-ft3')->first();
+
+        $this->assertNotNull($thyroid);
+        $this->assertCount(3, $thyroid->referenceRanges);
+        $this->assertSame(
+            ['free_t3', 'free_t4', 'tsh'],
+            $thyroid->referenceRanges->pluck('parameter_key')->sort()->values()->all()
+        );
+
+        $uric = Sop::query()->where('slug', 'uric-acid-serum-testing')->first();
+
+        $this->assertNotNull($uric);
+        $this->assertSame(
+            ['uric-acid-adult-female', 'uric-acid-adult-male'],
+            $uric->referenceRanges->pluck('slug')->sort()->values()->all()
+        );
     }
 }

@@ -1,0 +1,51 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-29",
+        "last_verified_date": "2026-08-29",
+        "reviewed_by": "Dr. [Name]",
+        "reviewer_credentials": "MD, Pathology",
+        "last_reviewed_date": "2026-08-29",
+        "featured_image": null,
+        "name": "Thyroid Function Tests (TSH, Free T4, Free T3)",
+        "slug": "thyroid-function-tests-tsh-ft4-ft3",
+        "short_description": "SOP for measuring thyroid stimulating hormone (TSH), free thyroxine (FT4), and free triiodothyronine (FT3) for the evaluation of thyroid dysfunction.",
+        "content": "# Standard Operating Procedure: Thyroid Function Tests\n\n## 1. Purpose and Scope\nTo quantify thyroid stimulating hormone (TSH), free thyroxine (FT4), and free triiodothyronine (FT3) in serum to diagnose and monitor thyroid dysfunction, including primary and central hypothyroidism, hyperthyroidism, and treated thyroid disease.\n\n## 2. Specimen Requirements\n- **Type:** Serum (fasting not required).\n- **Volume:** Minimum 1 mL.\n- **Stability:** Stable up to 48 hours refrigerated; freeze if testing is delayed beyond 72 hours.\n- **Rejection:** Severely hemolyzed or lipemic samples (interfere with immunoassay optics).\n- **Note:** Biotin supplementation can falsely alter TSH and free thyroid hormone immunoassay results; the dosing history should be recorded for interpretive purposes.\n\n## 3. Safety and Precautions\n- Standard PPE. All samples are potentially infectious.\n- Dispose of waste in biohazard containers.\n\n## 4. Equipment and Reagents\n- Automated immunoassay analyzer (chemiluminescence or electrochemiluminescence).\n- TSH, FT4, and FT3 reagent kits with matching calibrators.\n- Two levels of quality control material per analyte.\n\n## 5. Step-by-Step Procedure\n1. Centrifuge the clotted specimen at 3000-3500 rpm for 10 minutes.\n2. Load serum onto the analyzer per instrument instructions.\n3. Run two levels of quality control before patient samples.\n4. Batch or order TSH first as the screening test; measure FT4 and FT3 when TSH is abnormal or otherwise clinically indicated.\n5. Release results after QC acceptance and linearity checks.\n\n## 6. Quality Control\n- Run 2 levels of control daily for each assay.\n- Participate in an external quality assessment (EQA) program.\n- Verify that control values fall within the acceptable target ranges before patient reporting.\n\n## 7. Decision limits\n- **TSH screening:** A TSH within the assay-specific adult reference interval generally excludes primary thyroid dysfunction; the canonical panel below lists the reference interval.\n- **Subclinical hypothyroidism:** TSH above the upper reference limit with a normal free T4 - management thresholds are age- and pregnancy-specific.\n- **Pregnancy:** Trimester-specific TSH targets are recommended (lower first-trimester upper limit), e.g. approximately 0.2-2.5 mIU/L in the first trimester by some society guidelines.\n- **Levothyroxine therapy:** Titrate dose to a TSH within the assay-specific reference interval; central hypothyroidism is monitored with free T4 rather than TSH.\n\n## 8. Reporting Results\n- Report results with the assay-specific reference range and clearly flag borderline values.\n- Correlate TSH and free thyroid hormone results for interpretation (e.g., suppressed TSH with elevated FT4/FT3 suggests hyperthyroidism).\n- Note biotin intake or assay interference when relevant.",
+        "principle": "Thyroid function is assessed by measuring TSH and the free fractions of the circulating thyroid hormones T4 and T3 using competitive (free hormones) or sandwich (TSH) immunoassay methods. Because of the negative feedback loop, TSH is the most sensitive first-line marker of primary thyroid dysfunction: low TSH suggests thyroid hormone excess and high TSH suggests deficiency, with free hormone concentrations characterizing severity and distinguishing primary from central disease.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "This SOP is a template. It must be adapted and approved by your Laboratory Director before clinical use.",
+        "categories": [
+            "Clinical Chemistry",
+            "Thyroid Function"
+        ],
+        "tags": [
+            "thyroid function",
+            "tsh",
+            "free t4",
+            "free t3",
+            "thyroid panel",
+            "thyroid stimulating hormone",
+            "immunoassay"
+        ],
+        "seo_title": "Thyroid Function Tests SOP | TSH, Free T4, Free T3 Procedure",
+        "focus_keyword": "thyroid function tests",
+        "seo_description": "Standard Operating Procedure for TSH, free T4 and free T3 measurement, including specimen handling, immunoassay procedure, QC and interpretive decision limits.",
+        "faqs": [
+            {
+                "question": "Why is TSH ordered before free T4 and free T3?",
+                "answer": "TSH is the most sensitive marker of primary thyroid dysfunction; free hormone testing adds context and is reserved for abnormal TSH or specific clinical settings such as central hypothyroidism."
+            },
+            {
+                "question": "Why does biotin supplementation disturb thyroid immunoassays?",
+                "answer": "Biotin can compete with labeled haptens in competitive immunoassays and cross-link in sandwich assays, causing falsely low or falsely high TSH and free thyroid hormone results depending on the platform."
+            }
+        ],
+        "reference_ranges": [
+            "tsh-adult",
+            "free-t4-adult",
+            "free-t3-adult"
+        ]
+    }
+]

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PublicSite;
 
 use App\Http\Controllers\Controller;
+use App\Models\Calculator;
 use App\Models\ReferenceRange;
 use App\Services\RecentlyViewedService;
 use Illuminate\Http\Request;
@@ -53,6 +54,22 @@ class ReferenceRangeController extends Controller
             ->limit(5)
             ->get(['sops.id', 'sops.slug', 'sops.name']);
 
+        $relatedCalculators = $referenceRange->parameter_key
+            ? Calculator::query()
+                ->published()
+                ->get(['id', 'slug', 'name', 'output_schema'])
+                ->filter(function (Calculator $calculator) use ($referenceRange) {
+                    foreach ($calculator->output_schema as $field) {
+                        if (($field['reference_key'] ?? null) === $referenceRange->parameter_key) {
+                            return true;
+                        }
+                    }
+
+                    return false;
+                })
+                ->values()
+            : collect();
+
         $pageTitle = $referenceRange->seo_title ?: $referenceRange->name;
         $metaDescription = $referenceRange->seo_description ?: ($referenceRange->short_description ?: "Reference range for {$referenceRange->analyte_name}.");
 
@@ -65,6 +82,7 @@ class ReferenceRangeController extends Controller
             'variations',
             'related',
             'sops',
+            'relatedCalculators',
             'pageTitle',
             'metaDescription',
         ));

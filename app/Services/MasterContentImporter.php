@@ -8,6 +8,7 @@ use App\Models\KnowledgeResource;
 use App\Models\ReferenceRange;
 use App\Models\Sop;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 /**
@@ -213,11 +214,24 @@ class MasterContentImporter
             return;
         }
 
-        $ids = ReferenceRange::query()
-            ->published()
-            ->whereIn('slug', (array) $item['reference_ranges'])
-            ->pluck('id');
+        $requested = array_values(array_unique((array) $item['reference_ranges']));
 
-        $sop->referenceRanges()->sync($ids->all());
+        $resolved = ReferenceRange::query()
+            ->published()
+            ->whereIn('slug', $requested)
+            ->get(['id', 'slug']);
+
+        $unresolved = array_values(array_diff($requested, $resolved->pluck('slug')->all()));
+
+        if ($unresolved !== []) {
+            Log::warning(sprintf(
+                'SOP "%s" references %d unresolved reference range slug(s): %s. Links preserved.',
+                $sop->slug,
+                count($unresolved),
+                implode(', ', $unresolved)
+            ));
+        }
+
+        $sop->referenceRanges()->sync($resolved->pluck('id')->all());
     }
 }
