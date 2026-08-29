@@ -35,6 +35,9 @@ class VerifyController extends Controller
             'status' => $result['status'],
             'certificate' => $result['certificate'],
             'credentialSchema' => $credentialSchema,
+            'holderName' => $result['status'] === 'valid'
+            ? $this->certificates->publicHolderName($result['certificate'])
+            : null,
         ]);
     }
 
@@ -75,7 +78,7 @@ class VerifyController extends Controller
 
         return view('certificates.share', [
             'certificate' => $certificate,
-            'holderName' => $this->publicHolderName($certificate),
+            'holderName' => $this->certificates->publicHolderName($certificate),
             'rank' => $rank,
             'topPercent' => $topPercent,
             'participants' => $participants,
@@ -87,21 +90,5 @@ class VerifyController extends Controller
                 ? "Rank #{$rank} of {$participants} · Top {$topPercent}% · Verified on LabGOTO"
                 : "Verified on LabGOTO",
         ]);
-    }
-
-    private function publicHolderName(Certificate $certificate): string
-    {
-        $profile = $certificate->user?->profile;
-
-        // Privacy opt-out hides the real identity on public share pages.
-        if ($profile !== null && $profile->show_on_leaderboard === false) {
-            return 'A LabGOTO participant';
-        }
-
-        if ($profile !== null && filled($profile->display_name)) {
-            return $profile->display_name;
-        }
-
-        return $certificate->user?->name ?? 'Participant';
     }
 }

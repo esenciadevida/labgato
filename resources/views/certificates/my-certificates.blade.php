@@ -49,30 +49,30 @@
                         </div>
                     </div>
 
-                    <div class="flex shrink-0 gap-2">
+                    <div class="flex w-full gap-2 sm:w-auto sm:shrink-0 sm:justify-end">
                         @unless($certificate->isRevoked())
                             @if($certificate->course)
                                 <a href="{{ route('courses.certificate-download', $certificate->course) }}"
-                                   class="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                   class="inline-flex min-h-[40px] flex-1 items-center justify-center gap-1.5 rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 sm:flex-none">
                                     <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Download
                                 </a>
                                 <a href="{{ route('certificates.share', $certificate->verification_code) }}"
-                                   class="inline-flex min-h-[40px] items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
+                                   class="inline-flex min-h-[40px] flex-1 items-center justify-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800 sm:flex-none">
                                     Share
                                 </a>
                             @else
                                 <a href="{{ route('certificates.download', $certificate->attempt) }}"
-                                   class="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                   class="inline-flex min-h-[40px] flex-1 items-center justify-center gap-1.5 rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 sm:flex-none">
                                     <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Download
                                 </a>
                                 <a href="{{ route('certificates.share-redirect', $certificate->attempt) }}"
-                                   class="inline-flex min-h-[40px] items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
+                                   class="inline-flex min-h-[40px] flex-1 items-center justify-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800 sm:flex-none">
                                     Share
                                 </a>
                             @endif

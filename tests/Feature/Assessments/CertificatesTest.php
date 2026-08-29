@@ -245,6 +245,60 @@ class CertificatesTest extends TestCase
         $this->assertStringContainsString('sharer.php?u=', $content);
     }
 
+    public function test_certificates_use_real_name_not_display_name(): void
+    {
+        $assessment = $this->makeAssessment();
+        $user = User::factory()->member()->create(['name' => 'Maria Santos']);
+        $attempt = $this->makeAttempt($user, $assessment, 85, 85);
+        $certificate = $this->service->issue($attempt);
+
+        $user->profile()->updateOrCreate([], [
+            'display_name' => 'MedNinja42',
+            'show_on_leaderboard' => true,
+        ]);
+
+        $verify = $this->get(route('certificates.verify', $certificate->verification_code))
+            ->assertOk()
+            ->getContent();
+        $this->assertStringContainsString('Maria Santos', $verify);
+        $this->assertStringNotContainsString('MedNinja42', $verify);
+
+        $share = $this->get(route('certificates.share', $certificate->verification_code))
+            ->assertOk()
+            ->getContent();
+        $this->assertStringContainsString('Maria Santos', $share);
+        $this->assertStringNotContainsString('MedNinja42', $share);
+
+        $this->assertSame('Maria Santos', $this->service->viewData($certificate)['holderName']);
+        $this->assertSame('Maria Santos', \App\Support\CertificateTemplateVariables::resolve($certificate)['{name}']);
+    }
+
+    public function test_public_pages_hide_holder_name_when_leaderboard_privacy_opt_out(): void
+    {
+        $assessment = $this->makeAssessment();
+        $user = User::factory()->member()->create(['name' => 'Private Patel']);
+        $attempt = $this->makeAttempt($user, $assessment, 85, 85);
+        $certificate = $this->service->issue($attempt);
+
+        $user->profile()->updateOrCreate([], [
+            'show_on_leaderboard' => false,
+        ]);
+
+        $verify = $this->get(route('certificates.verify', $certificate->verification_code))
+            ->assertOk()
+            ->getContent();
+        $this->assertStringContainsString('A LabGOTO participant', $verify);
+        $this->assertStringNotContainsString('Private Patel', $verify);
+
+        $share = $this->get(route('certificates.share', $certificate->verification_code))
+            ->assertOk()
+            ->getContent();
+        $this->assertStringContainsString('A LabGOTO participant', $share);
+        $this->assertStringNotContainsString('Private Patel', $share);
+
+        $this->assertSame('Private Patel', $this->service->viewData($certificate)['holderName']);
+    }
+
     public function test_admin_revoke_sets_fields_and_enforces_permission(): void
     {
         $assessment = $this->makeAssessment();

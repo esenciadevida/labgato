@@ -239,15 +239,30 @@ class CertificateService
         $certificate->forceFill(['pdf_path' => null])->save();
     }
 
-    private function holderName(Certificate $certificate): string
+    /**
+     * The name embossed on the certificate and its download filename. Uses the
+     * account's real name - the profile's display name is a leaderboard-only
+     * alias and must not leak onto the certificate.
+     */
+    public function holderName(Certificate $certificate): string
+    {
+        return $certificate->user?->name ?? 'Participant';
+    }
+
+    /**
+     * Public-facing holder identity. Honors the leaderboard privacy opt-out:
+     * when the holder disabled leaderboard sharing, their real name is withheld
+     * from public verification and share pages.
+     */
+    public function publicHolderName(Certificate $certificate): string
     {
         $profile = $certificate->user?->profile;
 
-        if ($profile !== null && filled($profile->display_name)) {
-            return $profile->display_name;
+        if ($profile !== null && $profile->show_on_leaderboard === false) {
+            return 'A LabGOTO participant';
         }
 
-        return $certificate->user?->name ?? 'Participant';
+        return $this->holderName($certificate);
     }
 
     /**

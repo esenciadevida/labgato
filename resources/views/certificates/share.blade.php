@@ -10,7 +10,7 @@
         <div class="overflow-hidden rounded-2xl bg-white shadow-panel ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
 
             {{-- Header brand bar --}}
-            <div class="flex items-center justify-between bg-gradient-to-r from-blue-950 via-blue-900 to-slate-900 px-6 py-5 sm:px-8">
+            <div class="flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-blue-950 via-blue-900 to-slate-900 px-6 py-5 sm:px-8">
                 <div class="flex items-center gap-3">
                     <span class="font-display text-xl font-black tracking-tight text-white">LabGOTO</span>
                     <span class="inline-flex items-center gap-1 rounded-full bg-amber-400/20 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-amber-300 ring-1 ring-amber-400/30">
@@ -24,17 +24,17 @@
             {{-- Body --}}
             <div class="px-6 py-8 text-center sm:px-10">
                 <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">Certificate of {{ ucfirst($certificate->type) }}</p>
-                <h1 class="mt-1 font-display text-2xl font-bold text-slate-900 dark:text-white">{{ $certificate->course?->title ?? $certificate->assessment?->title }}</h1>
+                <h1 class="mt-1 font-display text-xl font-bold break-words text-slate-900 dark:text-white sm:text-2xl">{{ $certificate->course?->title ?? $certificate->assessment?->title }}</h1>
                 @if($certificate->course)
                     <p class="mt-2 inline-block rounded-full bg-emerald-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Course Completion</p>
                 @endif
 
                 <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">Proudly presented to</p>
-                <p class="mt-1 text-xl font-bold text-blue-900 dark:text-blue-300">{{ $holderName }}</p>
+                <p class="mt-1 text-lg font-bold break-words text-blue-900 dark:text-blue-300 sm:text-xl [overflow-wrap:anywhere]">{{ $holderName }}</p>
 
                 {{-- Score --}}
                 <div class="mt-7 flex items-end justify-center gap-1">
-                    <p class="font-display text-6xl font-black leading-none text-slate-900 dark:text-white">{{ number_format((float) $certificate->score_percent, 1) }}</p>
+                    <p class="font-display text-5xl font-black leading-none text-slate-900 dark:text-white sm:text-6xl">{{ number_format((float) $certificate->score_percent, 1) }}</p>
                     <p class="mb-1 text-3xl font-semibold text-slate-400">%</p>
                 </div>
 
@@ -59,7 +59,7 @@
                 {{-- Verify --}}
                 <div class="mt-7 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs text-slate-500 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-400">
                     Verify authenticity at
-                    <a href="{{ $certificate->verifyUrl() }}" class="font-semibold text-blue-700 underline underline-offset-2 hover:text-blue-800 dark:text-blue-300">
+                    <a href="{{ $certificate->verifyUrl() }}" class="font-semibold break-all text-blue-700 underline underline-offset-2 hover:text-blue-800 dark:text-blue-300">
                         {{ $certificate->verifyUrl() }}
                     </a>
                 </div>

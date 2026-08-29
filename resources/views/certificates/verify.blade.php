@@ -17,10 +17,7 @@
 
         @if($status === 'valid')
             @php
-                $showName = $certificate->user?->profile?->show_on_leaderboard !== false;
-                $holderName = $showName
-                    ? ($certificate->user?->profile?->display_name ?: $certificate->user?->name)
-                    : 'A LabGOTO participant';
+                $holderName = $holderName ?? ($certificate->user?->name ?? 'Participant');
             @endphp
 
             @if($credentialSchema)
@@ -41,8 +38,8 @@
 
             <!-- The certificate -->
             <div class="relative mx-auto mt-8 max-w-3xl overflow-hidden rounded-xl border-[3px] border-primary-800 bg-[#fffdf6] shadow-xl">
-                <div class="absolute inset-2 rounded-lg border border-amber-400/70 pointer-events-none" aria-hidden="true"></div>
-                <div class="relative p-6 sm:p-10">
+                <div class="absolute inset-1.5 sm:inset-2 rounded-lg border border-amber-400/70 pointer-events-none" aria-hidden="true"></div>
+                <div class="relative p-5 sm:p-8 md:p-10">
                     <div class="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
                         <div class="text-left">
                             <p class="font-display text-lg font-black tracking-widest text-primary-800">LabGOTO</p>
@@ -50,7 +47,7 @@
                         </div>
                         <div class="text-left sm:text-right">
                             <p class="text-xs text-slate-500">Certificate No.</p>
-                            <p class="font-mono text-sm font-bold text-slate-800">{{ $certificate->certificate_number }}</p>
+                            <p class="font-mono text-sm font-bold break-all text-slate-800">{{ $certificate->certificate_number }}</p>
                         </div>
                     </div>
 
@@ -59,7 +56,7 @@
                             {{ $certificate->label() }}
                         </span>
                         <p class="mt-6 text-sm italic text-slate-500">This certificate is proudly presented to</p>
-                        <p class="mt-2 font-serif text-3xl font-bold text-primary-900 sm:text-4xl">
+                        <p class="mx-auto mt-2 max-w-xl font-serif text-2xl font-bold break-words text-primary-900 sm:text-3xl md:text-4xl [overflow-wrap:anywhere]">
                             {{ $holderName }}
                         </p>
                         <div class="mx-auto mt-3 h-px w-40 bg-amber-400"></div>
@@ -84,7 +81,7 @@
                         <p class="mt-4 text-xs text-slate-500">Issued {{ $certificate->issued_at->format('F j, Y') }}</p>
                     </div>
 
-                    <div class="mt-8 flex items-center justify-between border-t border-slate-200 pt-5">
+                    <div class="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-5">
                         <div class="text-left">
                             <p class="text-sm font-bold text-slate-800">Verified</p>
                             <p class="text-[11px] text-slate-500">{{ config('app.name') }} Authenticity Check</p>

@@ -75,9 +75,7 @@ class CertificateAdminController extends Controller
 
         return view('admin.certificates.show', [
             'certificate' => $certificate,
-            'holderName' => $certificate->user?->profile?->display_name
-                ?? $certificate->user?->name
-                ?? 'Participant',
+            'holderName' => $certificate->user?->name ?? 'Participant',
         ]);
     }
 

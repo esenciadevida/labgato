@@ -39,8 +39,7 @@ class CertificateTemplateVariables
      */
     public static function resolve(Certificate $certificate): array
     {
-        $holderName = $certificate->user?->profile?->display_name
-            ?? $certificate->user?->name
+        $holderName = $certificate->user?->name
             ?? 'Participant';
 
         $firstName = explode(' ', $holderName)[0] ?? $holderName;
