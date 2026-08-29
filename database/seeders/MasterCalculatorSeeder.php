@@ -2486,7 +2486,9 @@ class MasterCalculatorSeeder extends Seeder
                     ],
                 ],
                 'interpretation_notes' => 'Corrected chloride = measured chloride × (140 / measured sodium), where 140 mEq/L is the normal sodium used as the standard reference. This correction accounts for the dilutional or concentration effect of abnormal sodium and allows chloride to be interpreted relative to sodium. A low corrected chloride relative to sodium suggests a non-anion gap acidosis (or chloride-responsive alkalosis), while a high corrected chloride is seen with hyperchloremia.',
-                'references' => [],
+                'references' => [
+                    ['title' => 'Adin D, et al. Correction of serum chloride concentration in dogs with congestive heart failure. J Vet Intern Med. 2021;35(1):51-57.', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/33305873/'],
+                ],
                 'categories' => ['Fluids, Electrolytes & Acid-Base'],
                 'tags' => ['chloride', 'sodium', 'correction', 'acid-base'],
                 'seo_title' => 'Corrected Chloride Calculator | LabGoTo',
