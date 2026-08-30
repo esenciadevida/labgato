@@ -1,18 +1,18 @@
 [
     {
         "status": "published",
-        "version": "1.0",
+        "version": "2.0",
         "author_name": "Laboratory Director",
-        "reviewed_date": "2026-08-29",
-        "last_verified_date": "2026-08-29",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
         "reviewed_by": "Dr. [Name]",
-        "last_reviewed_date": "2026-08-29",
+        "last_reviewed_date": "2026-08-30",
         "featured_image": null,
         "name": "Fasting Lipid Profile",
         "slug": "fasting-lipid-profile",
-        "short_description": "SOP for measuring Total Cholesterol, Triglycerides, HDL, and calculated LDL.",
-        "content": "# Standard Operating Procedure: Lipid Profile\n## 1. Purpose: Assess cardiovascular risk and lipid metabolism.\n## 2. Specimen: Fasting serum (9-12 hours fasting preferred). Avoid grossly lipemic samples.\n## 3. Reagents: Enzymatic colorimetric kits for CHOD-PAP (Cholesterol), GPO-PAP (Triglycerides), and direct HDL methods.\n## 4. Procedure:\n- **Total Cholesterol:** Cholesterol esterase + cholesterol oxidase produce H2O2, which reacts with chromogen (measured at 500 nm).\n- **Triglycerides:** Lipase + glycerol kinase + GPO produce H2O2, measured at 500 nm.\n- **HDL:** Direct homogeneous assay using selective polymers to mask non-HDL lipoproteins.\n- **LDL:** Calculated via Friedewald formula: LDL = Total Chol - HDL - (Triglycerides / 5) [valid if TG < 400 mg/dL].\n## 5. Reference Ranges\n- Canonical adult reference intervals are shown in the Reference Ranges panel below.\n\n## Decision Limits (desirable categories)\n- **Total Cholesterol:** < 200 mg/dL\n- **LDL:** < 100 mg/dL (optimal for most adults)\n- **HDL:** > 40 mg/dL (males) / > 50 mg/dL (females)\n- **Triglycerides:** < 150 mg/dL",
-        "principle": "Enzymatic cleavage of cholesterol and triglycerides produces hydrogen peroxide, which is quantified via a peroxidase-coupled colorimetric reaction. HDL is measured directly after precipitating or masking apoB-containing lipoproteins.",
+        "short_description": "SOP for the lipid panel: total cholesterol, triglycerides, HDL, direct or calculated LDL, VLDL, and non-HDL cholesterol.",
+        "content": "# Standard Operating Procedure: Fasting Lipid Profile\n\n## 1. Purpose and Scope\nTo measure total cholesterol, triglycerides, HDL-cholesterol, and LDL-cholesterol (calculated or direct) for cardiovascular risk assessment, dyslipidemia diagnosis, and monitoring of lipid-lowering therapy. Calculated VLDL and non-HDL cholesterol are reported as derived parameters.\n\n## 2. Specimen Requirements\n- **Type:** Serum (or EDTA plasma where validated). Fasting of 9-12 hours is preferred, particularly when triglycerides and calculated LDL are required.\n- **Volume:** Minimum 1.0 mL.\n- **Fasting guidance:** For screening of total cholesterol, HDL, and non-HDL, a non-fasting sample is acceptable in adults; if triglycerides are elevated (> 400 mg/dL) or LDL is to be calculated, a fasting sample is required.\n- **Lipemia:** Grossly lipemic samples must be ultracentrifuged or flagged; extreme lipemia can interfere with turbidimetric and enzymatic reactions.\n- **Stability:** Separate serum within 2 hours. Cholesterol and HDL stable 2-3 days at 2-8°C; triglycerides stable 24-48 h refrigerated if cells are removed.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat, eye protection). All blood samples are potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not pipette by mouth. Use mechanical pipetting devices.\n\n## 4. Equipment and Reagents\n- Automated chemistry analyzer (spectrophotometric).\n- **Total Cholesterol:** Enzymatic CHOD-PAP method (cholesterol esterase + cholesterol oxidase + peroxidase), measured at 500 nm.\n- **Triglycerides:** Enzymatic GPO-PAP method (lipase + glycerol kinase + glycerol phosphate oxidase + peroxidase), measured at 500 nm.\n- **HDL:** Direct homogeneous assay using selective polymers/detergents to mask non-HDL lipoproteins, measured enzymatically.\n- **LDL:** Calculated by the Friedewald equation (valid for triglycerides < 400 mg/dL) or measured directly by a homogeneous (beta-quantification-validated) assay.\n- Two levels of quality control material for each assay.\n\n## 5. Step-by-Step Procedure\n1. Centrifuge the clotted or EDTA specimen at 3000-3500 rpm for 10 minutes.\n2. Load serum/plasma onto the analyzer per instrument instructions, using the correct assay and calibration parameters.\n3. Run two levels of quality control for each assay before patient samples.\n4. Verify calibration linearity; dilute and re-run results above the upper analytical limit.\n5. Calculate LDL using the Friedewald formula: LDL = Total cholesterol - HDL - (Triglycerides / 5) for triglycerides < 400 mg/dL; for triglycerides >= 400 mg/dL, use direct LDL measurement or an extended equation.\n6. Report derived parameters: VLDL = Triglycerides / 5 (when TG < 400 mg/dL), and Non-HDL cholesterol = Total cholesterol - HDL.\n7. Release results after QC acceptance.\n\n## 6. Quality Control\n- Run two levels (normal and abnormal) of control for each assay daily, with every calibration, and with each new reagent lot.\n- Enforce Levey-Jennings rules; investigate trends or shifts before reporting patient results.\n- Participate in an external quality assessment (EQA) program for all lipid analytes, including standardization against CDC (CRMLN) reference methods where available.\n- Verify control values fall within acceptable target ranges before patient reporting.\n\n## 7. Decision limits\nThe cardiovascular-risk categories below are interpretive decision thresholds stated as prose; the canonical adult reference intervals are displayed in the Reference Ranges panel.\n- **Total cholesterol (mg/dL):** < 200 desirable; 200-239 borderline high; >= 240 high.\n- **LDL cholesterol (mg/dL):** < 100 optimal; 100-129 near optimal; 130-159 borderline high; 160-189 high; >= 190 very high.\n- **HDL cholesterol (mg/dL):** < 40 in men and < 50 in women is considered low; >= 60 is protective.\n- **Triglycerides (mg/dL):** < 150 normal; 150-199 borderline high; 200-499 high; >= 500 very high (risk of pancreatitis).\n- **Non-HDL cholesterol (mg/dL):** target is LDL target + 30; generally < 130 desirable for most adults.\n- **Friedewald limitation:** calculated LDL is unreliable when triglycerides >= 400 mg/dL, in chylomicronemia, and in type III dyslipidemia; use direct LDL or an alternate equation in these settings.\n- **Fasting note:** elevated triglycerides are common causes of false high results; confirm borderline elevations on a repeat fasting specimen before change of management.\n\n**Note on units:** conventional units are mg/dL; SI conversion for cholesterol fractions is mg/dL x 0.02586 = mmol/L and for triglycerides mg/dL x 0.01129 = mmol/L.",
+        "principle": "Enzymatic hydrolysis and oxidation of cholesterol and triglycerides generate hydrogen peroxide, which is quantified colorimetrically through a peroxidase-coupled chromogen. HDL is measured directly after selectively masking apoB-containing lipoproteins with polymers or detergents. LDL is typically derived from the other three lipids using the Friedewald equation, which assumes a constant VLDL cholesterol:Tg ratio of 1:5; because the equation is an estimate, it is valid only when triglycerides are below 400 mg/dL.",
         "department": "Clinical Chemistry",
         "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
         "categories": [
@@ -26,6 +26,8 @@
             "triglycerides",
             "hdl",
             "ldl",
+            "non-hdl",
+            "vldl",
             "cardiovascular risk"
         ],
         "seo_title": "Fasting Lipid Profile SOP | Cardiovascular Risk Assessment",
@@ -34,10 +36,18 @@
         "faqs": [
             {
                 "question": "Why is fasting required for a lipid profile?",
-                "answer": "Food intake, especially fats, causes transient elevation in triglycerides and chylomicrons, which can falsely lower calculated LDL and alter results."
+                "answer": "Food intake, especially fat, causes transient elevation of triglycerides and chylomicrons, which makes calculated LDL unreliable. A 9-12 hour fast is required whenever triglycerides and calculated LDL are reported."
+            },
+            {
+                "question": "When should LDL be measured directly instead of calculated?",
+                "answer": "Direct LDL measurement is preferred when triglycerides exceed 400 mg/dL, in suspected chylomicronemia or type III dyslipidemia, and in non-fasting screening where the Friedewald equation is not valid."
+            },
+            {
+                "question": "What is non-HDL cholesterol and why is it reported?",
+                "answer": "Non-HDL cholesterol is total cholesterol minus HDL, and captures all atherogenic apoB-containing particles including VLDL remnants. It is a secondary target that does not require fasting and roughly equals the LDL target plus 30 mg/dL."
             }
         ],
-        "seo_description": "SOP for measuring Total Cholesterol, Triglycerides, HDL, and calculated LDL.",
+        "seo_description": "Standard Operating Procedure for the fasting lipid panel: total cholesterol, triglycerides, HDL, direct or calculated LDL, VLDL, and non-HDL, with risk-category decision limits.",
         "reference_ranges": [
             "total-cholesterol-adult",
             "ldl-cholesterol-adult",

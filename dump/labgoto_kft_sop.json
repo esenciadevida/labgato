@@ -1,0 +1,67 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Kidney Function Tests (KFTs) Panel",
+        "slug": "kidney-function-tests-panel",
+        "short_description": "SOP for the renal panel: urea/BUN, creatinine, eGFR, and core electrolytes, with AKI and CKD decision limits.",
+        "content": "# Standard Operating Procedure: Kidney Function Tests (KFTs) Panel\n\n## 1. Purpose and Scope\nTo measure urea/BUN, creatinine, and the core electrolytes (sodium, potassium, chloride, bicarbonate/CO2, calcium, and uric acid) for the assessment of glomerular filtration, electrolyte balance, and acid-base status in the evaluation of acute kidney injury (AKI), chronic kidney disease (CKD), and fluid/electrolyte disorders.\n\n## 2. Specimen Requirements\n- **Type:** Serum. Use a plain (no additive) tube or serum separator tube (SST).\n- **Volume:** Minimum 1.0 mL.\n- **Hemolysis:** Reject markedly hemolyzed samples for potassium and uric acid; hemolysis falsely raises potassium.\n- **Stability:** Separate serum from cells within 2 hours (critical for potassium). Creatinine and urea stable 24-48 h at 2-8°C; electrolytes stable 24 h refrigerated if cells are removed.\n- **Timing:** Random sampling is acceptable; note timing relative to dialysis or contrast administration when relevant.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat, eye protection). All blood samples are potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not pipette by mouth. Use mechanical pipetting devices.\n\n## 4. Equipment and Reagents\n- Automated chemistry analyzer (spectrophotometric and ion-selective electrode, ISE, capable).\n- **Urea/BUN:** Urease-glutamate dehydrogenase (GLDH) kinetic reagent, measuring NADH consumption at 340 nm.\n- **Creatinine:** Enzymatic creatinine reagent (creatininase cascade, preferred for specificity) or compensated Jaffe (alkaline picrate) kinetic method.\n- **Sodium, Potassium, Chloride:** Indirect (or direct) ion-selective electrodes.\n- **Bicarbonate/CO2:** Enzymatic or ISE method.\n- **Calcium:** Arsenazo III or o-cresolphthalein complexone (OCPC) colorimetric method.\n- **Uric Acid:** Uricase-peroxidase coupled (Trinder) or uricase end-point method.\n- Two levels of quality control material for each assay.\n\n## 5. Step-by-Step Procedure\n1. Centrifuge the clotted specimen at 3000-3500 rpm for 10 minutes.\n2. Load serum onto the analyzer per instrument instructions, using the correct assay, ISE module, and calibration parameters.\n3. Run two levels of quality control for each assay before patient samples.\n4. Automatically calculate eGFR by CKD-EPI (or the laboratory-validated equation) from creatinine, age, and sex.\n5. Verify calibration linearity; dilute and re-run results above the upper analytical limit (e.g., high creatinine).\n6. Confirm hemolysis, lipemia, and icterus indices are within acceptable limits; potassium from a hemolyzed sample must be repeated with a fresh specimen.\n7. Release results after QC acceptance.\n\n## 6. Quality Control\n- Run two levels (normal and abnormal) of control for each assay daily, with every calibration, and with each new reagent lot.\n- Enforce Levey-Jennings rules; investigate trends or shifts before reporting patient results.\n- Participate in an external quality assessment (EQA) program for all panel analytes.\n- Verify control values fall within acceptable target ranges before patient reporting.\n\n## 7. Decision limits\nThe eGFR and CKD/AKI categories below are interpretive decision thresholds and are stated as prose; the canonical adult reference intervals are displayed in the Reference Ranges panel.\n- **CKD staging (KDIGO, by eGFR mL/min/1.73 m2):** G1 >= 90 (normal, with kidney damage markers); G2 60-89 (mildly decreased); G3a 45-59; G3b 30-44; G4 15-29 (severely decreased); G5 < 15 (kidney failure). CKD is defined as eGFR < 60 or markers of kidney damage persisting >= 3 months.\n- **AKI (KDIGO):** increase in serum creatinine >= 0.3 mg/dL (26.5 µmol/L) within 48 hours, or >= 1.5x baseline within 7 days, or urine output < 0.5 mL/kg/h for 6 hours.\n- **BUN/Creatinine ratio:** a ratio > 20:1 typically reflects prerenal states (volume depletion, GI bleed, high-protein intake, catabolism); a ratio well below 10:1 may be seen with liver disease, low protein intake, or rhabdomyolysis-related creatinine rises.\n- **Hyperkalemia:** potassium > 5.5 mEq/L is hyperkalemia; potassium > 6.0 mEq/L with ECG changes or rapid rise is a medical emergency requiring urgent treatment.\n- **eGFR caveats:** eGFR is an estimate, not an exact GFR; interpret with caution in extremes of body composition, the elderly, and in acute settings where creatinine has not reached steady state.\n\n**Note on units:** BUN is reported in mg/dL; urea concentration is approximately 2.14x the BUN value. Always verify which of the two the laboratory reports.",
+        "principle": "Creatinine, produced from muscle creatine at a near-constant rate, is filtered by glomeruli and minimally reabsorbed, making it the primary analyte for estimating GFR. Urea/BUN reflects nitrogen balance and rises earlier in prerenal azotemia than in intrinsic renal disease. Sodium, potassium, chloride, and bicarbonate reflect tubular handling, electrolyte balance, and acid-base regulation; uric acid rises with reduced renal clearance in CKD. The ratio of BUN to creatinine helps distinguish prerenal from intrinsic or postrenal azotemia.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Clinical Chemistry",
+            "Renal",
+            "Metabolic"
+        ],
+        "tags": [
+            "kft",
+            "kidney function",
+            "urea",
+            "bun",
+            "creatinine",
+            "egfr",
+            "electrolytes",
+            "uric acid",
+            "renal panel",
+            "clinical chemistry"
+        ],
+        "seo_title": "Kidney Function Tests (KFTs) Panel SOP | Clinical Chemistry",
+        "focus_keyword": "kidney function tests",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "Why is creatinine preferred over urea for assessing renal function?",
+                "answer": "Creatinine is produced at a relatively constant rate from muscle metabolism and is freely filtered, making its serum level a more reliable steady-state estimate of glomerular filtration than urea, which varies with protein intake, catabolism, and hydration."
+            },
+            {
+                "question": "What limits the accuracy of eGFR?",
+                "answer": "eGFR equations estimate rather than measure filtration. Accuracy falls with extremes of muscle mass, in the acutely ill where creatinine has not equilibrated, in pregnancy, and at very high or very low GFR values."
+            },
+            {
+                "question": "When is the BUN/creatinine ratio clinically useful?",
+                "answer": "A ratio above 20:1 suggests prerenal azotemia (dehydration, reduced renal perfusion, or GI bleeding), whereas a low ratio is seen with intrinsic renal disease, liver disease, or malnutrition."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for the kidney function panel - urea/BUN, creatinine, eGFR, electrolytes, and uric acid - with KDIGO AKI and CKD decision limits.",
+        "reference_ranges": [
+            "bun-adult",
+            "creatinine-adult-male",
+            "creatinine-adult-female",
+            "bun-creatinine-ratio-adult",
+            "sodium-adult",
+            "potassium-adult",
+            "chloride-adult",
+            "co2-bicarbonate-adult",
+            "calcium-adult",
+            "uric-acid-adult-male",
+            "uric-acid-adult-female"
+        ]
+    }
+]
