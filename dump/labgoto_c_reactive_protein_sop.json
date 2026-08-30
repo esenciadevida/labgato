@@ -1,0 +1,51 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "C-Reactive Protein (CRP) Testing",
+        "slug": "c-reactive-protein-testing",
+        "short_description": "SOP for serum CRP measurement - standard and high-sensitivity - for inflammation monitoring and cardiovascular risk stratification.",
+        "content": "# Standard Operating Procedure: C-Reactive Protein (CRP) Testing\n\n## 1. Purpose and Scope\nTo measure serum C-reactive protein (CRP) for the detection and monitoring of inflammation, infection, and tissue injury, and to quantify high-sensitivity CRP (hs-CRP) for cardiovascular risk stratification in otherwise healthy adults.\n\n## 2. Specimen Requirements\n- **Type:** Serum (plain tube or SST) or plasma validated for the method.\n- **Volume:** Minimum 0.5 mL.\n- **Timing:** No fasting required. CRP rises within 6-12 hours of an inflammatory stimulus and peaks around 24-48 hours, so serial measurement spaced 8-12 hours apart captures the peak.\n- **Interference:** Marked lipemia may interfere with turbidimetric methods; borderline samples should be cleared or re-collected.\n- **Stability:** Separated serum is stable 3-7 days at 2-8°C and longer when frozen.\n- **Rejection:** Grossly lipemic, icteric, or grossly hemolyzed samples with unacceptable indices are repeated from a fresh specimen.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat, eye protection). All blood samples are potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not pipette by mouth. Use mechanical pipetting devices.\n\n## 4. Equipment and Reagents\n- Automated chemistry analyzer with immunoturbidimetric or nephelometric capability.\n- **Method:** Immunoturbidimetric assay (anti-CRP antibody coupled particles); high-sensitivity (hs-CRP) variant validated at low concentrations for CV risk.\n- **Calibration:** Multipoint calibration traced to an international reference preparation (ERM-DA474).\n- Two levels of quality control material, including a low control near the hs-CRP decision range.\n\n## 5. Step-by-Step Procedure\n1. Centrifuge the clotted specimen at 3000-3500 rpm for 10 minutes.\n2. Load serum onto the analyzer per instrument instructions with the CRP and hs-CRP protocols.\n3. Run two levels of quality control (including low) before patient samples.\n4. Measure CRP by immunoturbidimetry; verify calibration linearity up to the upper analytical limit.\n5. Dilute and re-run values above the linear range (common in severe infection/sepsis).\n6. Report hs-CRP results for risk stratification using the validated low-range protocol only.\n7. Release results after QC acceptance.\n\n## 6. Quality Control\n- Run two levels (including a low clinical-decision level) daily, with every calibration, each reagent lot, and each shipment.\n- Enforce Levey-Jennings rules; participate in an external quality assessment for CRP.\n- Verify control values fall within acceptable target ranges before reporting.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult upper reference is displayed in the Reference Ranges panel.\n- **Cardiovascular risk (hs-CRP mg/L):** below 1.0 low risk; 1.0-3.0 moderate risk; above 3.0 mg/L high cardiovascular risk. Test on two occasions (2 weeks apart, preferably fasted) and average for risk classification.\n- **Inflammation/infection:** CRP is an acute-phase protein; infection and inflammation typically produce markedly elevated values. A single normal value does not exclude sepsis, and a fall, not absolute value, is used to monitor treatment response.\n- **Non-specificity:** CRP elevation occurs in tissue injury, surgery, malignancy, autoimmune disease, and chronic inflammation; the value is never diagnostic alone and CRP does not identify the cause.\n- **hs-CRP caveats:** any ongoing inflammatory condition invalidates the value as a purely cardiovascular estimate; re-test when the patient is well.",
+        "principle": "CRP is an acute-phase protein synthesized by hepatocytes under the control of IL-6 and other cytokines; plasma levels rise within hours and can increase a thousand-fold in major inflammation. Immunoturbidimetry measures the turbidity of antibody-antigen complexes. High-sensitivity assays extend the analytical range downward to distinguish low from moderate cardiovascular risk in apparently healthy persons.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Clinical Chemistry",
+            "Immunology"
+        ],
+        "tags": [
+            "crp",
+            "c-reactive protein",
+            "inflammation",
+            "acute phase",
+            "hs-crp"
+        ],
+        "seo_title": "C-Reactive Protein (CRP) Testing SOP | hs-CRP Cardiovascular Risk",
+        "focus_keyword": "c-reactive protein testing",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "How is hs-CRP different from standard CRP?",
+                "answer": "Both measure the same protein with the same method; hs-CRP is simply optimized and validated for very low concentrations so that differences below 3 mg/L are meaningful, which is what cardiovascular risk stratification requires."
+            },
+            {
+                "question": "Why are two hs-CRP measurements averaged?",
+                "answer": "CRP varies with minor intercurrent inflammation, so two measurements taken about 2 weeks apart, ideally after any acute illness has resolved, are averaged to classify cardiovascular risk reliably."
+            },
+            {
+                "question": "Can CRP rule out infection?",
+                "answer": "Not alone. CRP is a nonspecific acute-phase marker; a normal value does not exclude bacterial infection or sepsis, especially early in the course, and other markers and culture results are needed."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for CRP testing - standard and high-sensitivity - with inflammation monitoring and cardiovascular risk decision limits.",
+        "reference_ranges": [
+            "crp-adult"
+        ]
+    }
+]

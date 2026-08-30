@@ -1,0 +1,54 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Cardiac Markers Testing (hs-Troponin, CK, CK-MB)",
+        "slug": "cardiac-markers-testing",
+        "short_description": "SOP for high-sensitivity troponin, total CK, and CK-MB in the evaluation of acute coronary syndrome and myocardial injury.",
+        "content": "# Standard Operating Procedure: Cardiac Markers Testing (hs-Troponin, CK, CK-MB)\n\n## 1. Purpose and Scope\nTo measure high-sensitivity cardiac troponin I (hs-cTnI), total creatine kinase (CK), and CK-MB for the evaluation of acute coronary syndrome (ACS), myocardial infarction (MI), and myocardial or skeletal muscle injury.\n\n## 2. Specimen Requirements\n- **Type:** Serum (plain tube or SST).\n- **Volume:** Minimum 1.0 mL per test.\n- **Timing:** Serial sampling is required for MI diagnosis. Common protocols draw at presentation and at 1-3 hours (hs-cTnI) using a rise and/or fall pattern.\n- **Hemolysis:** Reject markedly hemolyzed samples; hemolysis can interfere and CK-MB is unstable with cell contact.\n- **Stability:** Separate serum within 1 hour. Troponin is stable for days refrigerated; CK and CK-MB degrade substantially after 4 hours at room temperature if left on cells.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat, eye protection). All blood samples are potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not pipette by mouth. Use mechanical pipetting devices.\n\n## 4. Equipment and Reagents\n- Automated immunoassay analyzer for hs-cTnI (chemiluminescence or similar) and CK-MB mass assay.\n- Automated chemistry analyzer for total CK (enzymatic, coupled to hexokinase or creatine kinase N-acetyl-L-cysteine activated method, 340 nm).\n- Two levels of quality control material for each assay, including levels near the hs-cTnI 99th percentile.\n\n## 5. Step-by-Step Procedure\n1. Centrifuge the specimen at 3000-3500 rpm for 10 minutes within 1 hour of collection.\n2. Load serum onto the immunoassay and chemistry analyzers per instrument instructions.\n3. Run two levels of control (including a low/normal level near the hs-cTnI decision point) before patient samples.\n4. Measure hs-cTnI by immunoassay and total CK enzymatically; CK-MB by mass immunoassay.\n5. Verify calibration and linearity; repeat results around the 99th percentile per lab reflex rules.\n6. For elevated CK without myocardial suspicion, offer optional CK-MB relative index (CK-MB mass/CK total x 100) to phenotype the muscle source.\n7. Release serial results with delta (change) flags integrated into the report.\n\n## 6. Quality Control\n- Run two levels of QC for each assay daily, with each calibration, and with each new reagent lot.\n- QC around the hs-cTnI 99th percentile is mandatory; a low-control failure in this range invalidates the run.\n- Enforce Levey-Jennings rules; participate in an EQA program for all three analytes.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult intervals are displayed in the Reference Ranges panel.\n- **hs-Troponin I:** the 99th percentile upper reference limit is assay dependent; many modern assays report sex-specific 99th percentiles (approximately 34 ng/L for males and 16 ng/L for females on a common contemporary assay, but verify your own instrument). The laboratory report applies the canonical single adult upper limit of 0.03 ng/mL and flags values above it.\n- **Acute MI (Fourth Universal Definition):** detection of a rise AND/OR fall of cardiac troponin with at least one value above the 99th percentile and at least one supporting feature of myocardial ischemia (symptoms, ECG changes, imaging, coronary thrombus).\n- **CK-MB relative index:** CK-MB mass / total CK x 100 below 3-4% favours a skeletal muscle source; higher relative indices with elevated total CK suggest myocardial origin.\n- **Non-ischemic elevations:** troponin rises in sepsis, renal failure, pulmonary embolism, tachycardia, myocarditis, and cardio-toxic drugs; interpret with the clinical picture, never alone.",
+        "principle": "Cardiac troponin I is a regulatory protein released on myocardial injury; high-sensitivity assays measure it near the 99th percentile with a coefficient of variation of about 10% or less, enabling early detection of small infarcts and dynamic delta changes. CK is a nonspecific muscle enzyme; CK-MB is enriched in myocardium and, combined with total CK, helps separate myocardial from skeletal muscle injury. Serial sampling captures the rise/fall pattern required to diagnose MI.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Clinical Chemistry",
+            "Cardiac"
+        ],
+        "tags": [
+            "troponin",
+            "hs-troponin",
+            "ck",
+            "ck-mb",
+            "myocardial infarction"
+        ],
+        "seo_title": "Cardiac Markers Testing SOP | hs-Troponin, CK, CK-MB",
+        "focus_keyword": "cardiac markers testing",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "Why is serial sampling required for troponin?",
+                "answer": "A single troponin value cannot distinguish acute injury from chronic elevation. Diagnosis of MI requires a rise and/or fall with at least one value above the 99th percentile, which only serial draws (often at 0-1-3 hours) can demonstrate."
+            },
+            {
+                "question": "What are sex-specific 99th percentiles?",
+                "answer": "High-sensitivity troponin assays report lower upper reference limits for women than men (approximately 16 vs 34 ng/L for a common hs-cTnI assay). Using a single sex-combined cutoff would under-detect injury in women."
+            },
+            {
+                "question": "Is elevated troponin diagnostic of a heart attack?",
+                "answer": "No. Troponin elevation indicates myocardial injury, which may be ischemic or non-ischemic (sepsis, renal failure, pulmonary embolism, myocarditis). MI requires injury plus evidence of ischemia and a dynamic pattern."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for cardiac markers - hs-troponin I, total CK, CK-MB - with 99th percentile limits and MI diagnostic decision rules.",
+        "reference_ranges": [
+            "troponin-i-hs-adult",
+            "ck-total-adult-male",
+            "ck-total-adult-female",
+            "ck-mb-adult"
+        ]
+    }
+]

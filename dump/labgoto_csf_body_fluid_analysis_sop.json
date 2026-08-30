@@ -1,0 +1,54 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "CSF and Body Fluid Analysis",
+        "slug": "csf-and-body-fluid-analysis",
+        "short_description": "SOP for cerebrospinal fluid and serous body fluid cell counts, differential, glucose, and protein in meningitis and effusion evaluation.",
+        "content": "# Standard Operating Procedure: CSF and Body Fluid Analysis\n\n## 1. Purpose and Scope\nTo perform macroscopic, cellular, and chemical analysis of cerebrospinal fluid (CSF) and serous cavity fluids (pleural, peritoneal, pericardial) for the evaluation of meningitis, encephalitis, subarachnoid hemorrhage, malignancy, and inflammatory or transudative effusions.\n\n## 2. Specimen Requirements\n- **Type:** CSF collected into 3-4 serial sterile tubes; pleural/peritoneal/pericardial fluids into sterile containers; EDTA tube recommended for cell counts, plain tube for chemistry.\n- **Volume:** Minimum 0.5 mL for chemistry and cell count in adults.\n- **Tube order (CSF):** tube 1 chemistry/microbiology, tube 3 cell count, to avoid contaminating the cell count with a traumatic tap blood.\n- **Timing:** Process within 1 hour of collection; cells disintegrate rapidly. Delay causes falsely low WBC counts and false negatives for malignancy.\n- **Contamination:** Traumatic taps (visible blood) invalidate the RBC-derived differential; note and correct the WBC estimate proportionally.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat, face protection during staining). CSF and body fluids are high-risk specimens (meningococcus, TB).\n- Transport in leak-proof, sealed containers; disinfect surfaces after processing.\n- Dispose of sharps and biohazard waste per laboratory policy.\n\n## 4. Equipment and Reagents\n- Hemocytometer (Neubauer) or automated cell counter validated for body fluids.\n- Centrifuge and cytospin for film preparation and differential.\n- Chemistry module for CSF glucose and protein (same enzymatic methods as serum but with lower range calibration).\n- Stain: Wright or cytocentrifuge Romanowsky stain; gram stain for microbiology as indicated.\n\n## 5. Step-by-Step Procedure\n1. Record macroscopic appearance: clear, xanthochromic, cloudy, bloody, turbid.\n2. Xanthochromia: centrifuge and inspect the supernatant of the first tube; pink/yellow supernatant with a delay of more than 2-4 hours between bleed and tap suggests subarachnoid hemorrhage, whereas a clear supernatant supports a traumatic tap.\n3. Fill the hemocytometer and count WBC and RBC per microliter from tube 3.\n4. Prepare a cytospin/film and perform a 100-cell differential; correct the CSF WBC for a traumatic tap using the ratio of peripheral to CSF RBCs.\n5. Measure CSF glucose and protein; ideally obtain simultaneous serum glucose for the CSF:serum ratio.\n6. Refer suspected infectious or malignant fluids for microbiology and cytology per protocol.\n\n## 6. Quality Control\n- Calibrate the counting chamber and validate the automated body-fluid mode.\n- Run two levels of chemistry control (including low-range protein/glucose) daily.\n- Participate in an external quality assessment for CSF cell count and chemistry.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult reference intervals are displayed in the Reference Ranges panel.\n- **Pleocytosis:** more than 5 WBC per microL in adult CSF is abnormal. Polymorphonuclear (PMN) predominance favours bacterial meningitis; lymphocytic predominance favours viral, TB, or fungal meningitis.\n- **CSF:serum glucose ratio:** normally approximately 0.6; a ratio below 0.4-0.5 suggests bacterial or tuberculous meningitis.\n- **Protein:** CSF protein above 100 mg/dL raises suspicion of suppurative or tuberculous meningitis; markedly high protein with xanthochromia occurs in spinal block (Froin syndrome).\n- **Body fluids:** exudates are distinguished from transudates by protein and LDH criteria (Light criteria) applied at the bedside; the laboratory reports the cell count, differential, and chemical profile for clinical classification.",
+        "principle": "CSF is produced by the choroid plexus and reflects central nervous system kinetics; glucose equilibrates slowly with serum, so the CSF:serum glucose ratio blunts serum variation, while protein is largely excluded by the blood-brain barrier. Cell counts and differentials identify inflammatory, infectious, and neoplastic processes. Accurate interpretation depends on rapid processing and simultaneous serum glucose.",
+        "department": "Urinalysis and Body Fluids",
+        "mandatory_disclaimer": "Template based on standard laboratory body fluid testing practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Urinalysis and Body Fluids",
+            "Clinical Chemistry"
+        ],
+        "tags": [
+            "csf",
+            "cerebrospinal fluid",
+            "pleocytosis",
+            "body fluids",
+            "cell count",
+            "xanthochromia"
+        ],
+        "seo_title": "CSF and Body Fluid Analysis SOP | Meningitis Workup",
+        "focus_keyword": "csf and body fluid analysis",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "Why process CSF within an hour?",
+                "answer": "CSF cells are metabolically labile and disintegrate quickly. Delay falsely lowers the WBC count and can produce false negatives for malignant cells, so cell counts and cytospin preparations must be done promptly."
+            },
+            {
+                "question": "How is a traumatic tap corrected?",
+                "answer": "Estimate the number of WBCs added by blood: multiply the peripheral WBC count by the ratio of CSF RBC to peripheral RBC, then subtract from the CSF WBC. This correction is approximate and most reliable early after the tap."
+            },
+            {
+                "question": "What does xanthochromia indicate?",
+                "answer": "Pink or yellow supernatant after centrifugation reflects hemoglobin breakdown products from a bleed more than 2-4 hours before the tap, supporting subarachnoid hemorrhage. A clear supernatant after centrifugation suggests a procedural traumatic tap."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for CSF and body fluid analysis - cell counts, differential, glucose, protein - with meningitis and effusion decision limits.",
+        "reference_ranges": [
+            "csf-total-cell-count-adult",
+            "csf-glucose-adult",
+            "csf-protein-adult"
+        ]
+    }
+]

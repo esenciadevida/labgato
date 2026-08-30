@@ -1,0 +1,50 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Serum Magnesium Testing",
+        "slug": "serum-magnesium-testing",
+        "short_description": "SOP for serum magnesium measurement in the evaluation of electrolyte disorders and refractory hypokalemia or hypocalcemia.",
+        "content": "# Standard Operating Procedure: Serum Magnesium Testing\n\n## 1. Purpose and Scope\nTo measure serum magnesium for the assessment of magnesium balance in hypomagnesemia and hypermagnesemia, and in patients with refractory hypokalemia or hypocalcemia, cardiac arrhythmias, alcohol use disorder, and renal impairment.\n\n## 2. Specimen Requirements\n- **Type:** Serum (plain tube or SST). Low-magnesium (trace-element) collection is preferred where available for sensitive methods.\n- **Volume:** Minimum 0.5 mL.\n- **Anticoagulants:** Avoid EDTA tubes (chelates magnesium) and sodium citrate; serum or heparinized plasma is acceptable.\n- **Hemolysis:** Reject hemolyzed samples; red cells contain high magnesium and hemolysis falsely raises the result.\n- **Stability:** Separated serum is stable 3-5 days at 2-8°C.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat, eye protection). All blood samples are potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not pipette by mouth. Use mechanical pipetting devices.\n\n## 4. Equipment and Reagents\n- Automated chemistry analyzer (spectrophotometric).\n- **Method:** Colorimetric using calmagite, methylthymol blue, xylidyl blue, or enzymatic dye methods; atomic absorption / ICP-MS is the reference method where available.\n- Two levels of quality control material.\n\n## 5. Step-by-Step Procedure\n1. Centrifuge the clotted specimen at 3000-3500 rpm for 10 minutes.\n2. Load serum onto the analyzer per instrument instructions.\n3. Run two levels of quality control for magnesium before patient samples.\n4. Measure magnesium colorimetrically; verify calibration linearity.\n5. Check hemolysis and lipemia indices; repeat hemolyzed or grossly lipemic samples with a fresh specimen.\n6. For low serum magnesium, optionally reflex to 24-hour urine magnesium to distinguish renal loss from gastrointestinal loss.\n\n## 6. Quality Control\n- Run two levels (normal and abnormal) of control daily, with every calibration, and each new reagent lot.\n- Enforce Levey-Jennings rules; participate in external quality assessment for magnesium.\n- Verify control values fall within acceptable target ranges before reporting.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult reference interval is displayed in the Reference Ranges panel.\n- **Hypomagnesemia:** below 1.7 mg/dL; severe depletion considered below approximately 1.2 mg/dL and associated with arrhythmia risk.\n- **Hypermagnesemia:** toxicity thresholds begin above the upper interval; ECG changes and neuromuscular depression occur typically above 4 mg/dL, and severe toxic effects above 5 mg/dL (institution-defined critical values apply).\n- **Clinical pointers:** magnesium deficiency underlies refractory hypokalemia and hypocalcemia; check magnesium when potassium or calcium fail to correct. A 24-hour urine magnesium above the reference in the setting of hypomagnesemia indicates renal wasting.",
+        "principle": "Magnesium is the most abundant intracellular divalent cation and a cofactor for ATP-dependent processes; serum measures only the small extracellular fraction, which is physiologically regulated by the kidney. The assay forms a colored complex with the dye proportional to magnesium concentration. Because magnesium depletion is common in critical illness and corrects refractory potassium and calcium abnormalities, serum measurement is an essential part of electrolyte evaluation.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Clinical Chemistry",
+            "Metabolic"
+        ],
+        "tags": [
+            "magnesium",
+            "hypomagnesemia",
+            "hypermagnesemia",
+            "electrolytes"
+        ],
+        "seo_title": "Serum Magnesium Testing SOP | Electrolyte Disorders",
+        "focus_keyword": "serum magnesium testing",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "Why check magnesium in refractory hypokalemia?",
+                "answer": "Magnesium deficiency impairs cellular potassium repletion, so potassium remains low (hypokalemia) and calcium low (hypocalcemia) until magnesium is corrected. Refractory deficits should always prompt a magnesium level."
+            },
+            {
+                "question": "How do I distinguish renal from gastrointestinal magnesium loss?",
+                "answer": "A 24-hour urine magnesium above roughly 24 mg/day (institution-dependent) in the presence of hypomagnesemia indicates inappropriate renal wasting; low urine magnesium suggests gastrointestinal loss or inadequate intake."
+            },
+            {
+                "question": "Why is hemolysis a problem for magnesium?",
+                "answer": "Magnesium is concentrated inside red cells more than 2- to 3-fold relative to plasma, so even mild hemolysis can falsely elevate the measured serum magnesium and mask true hypomagnesemia."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for serum magnesium testing with hypomagnesemia and hypermagnesemia decision limits for electrolyte disorders.",
+        "reference_ranges": [
+            "magnesium-adult"
+        ]
+    }
+]

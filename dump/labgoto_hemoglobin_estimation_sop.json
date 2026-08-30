@@ -1,0 +1,51 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Hemoglobin Estimation (Cyanmethemoglobin / Sahli) Procedure",
+        "slug": "hemoglobin-estimation-procedure",
+        "short_description": "SOP for hemoglobin determination by the cyanmethemoglobin reference method and the Sahli/acid-hematin field method.",
+        "content": "# Standard Operating Procedure: Hemoglobin Estimation (Cyanmethemoglobin / Sahli) Procedure\n\n## 1. Purpose and Scope\nTo quantify hemoglobin by the cyanmethemoglobin (HiCN) method, the WHO reference method used by automated analyzers, and by the Sahli (acid hematin) method when automation is unavailable (field/outreach settings), for the detection and grading of anemia.\n\n## 2. Specimen Requirements\n- **Type:** Whole blood anticoagulated with EDTA (lavender-top) preferred; capillary blood acceptable for Sahli field use.\n- **Volume:** Minimum 0.5 mL.\n- **Timing:** Room-temperature EDTA whole blood is stable for 8 hours before measurement.\n- **Rejection:** Clotted samples are rejected; severe lipemia or paraproteins may falsely raise automated optical readings.\n- **Hemolysis:** Not an issue for whole-blood hemoglobin measurement, but grossly lipemic or icteric samples may need blanking correction.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). Blood is potentially infectious.\n- Cyanide and Drabkin reagent are toxic; handle with care, label containers, and dispose per hazardous-waste policy.\n- Dispose of sharps and lancets in puncture-proof containers.\n\n## 4. Equipment and Reagents\n- **HiCN method:** Drabkin reagent (potassium ferricyanide + potassium cyanide), spectrophotometer at 540 nm, calibrated against a HiCN standard (International Cyanmethämoglobin Reference).\n- **Sahli method:** Sahli hemometer tube and comparator block, N/10 hydrochloric acid, stirring rod.\n- Reference standard: certified hemoglobin standard solution.\n\n## 5. Step-by-Step Procedure\n1. **HiCN method:** add 20 µL of mixed whole blood to 5 mL Drabkin reagent (1:251 dilution); mix and allow 5 minutes for conversion to cyanmethemoglobin.\n2. Measure absorbance at 540 nm against the reagent blank; hemoglobin (g/dL) = absorbance x instrument calibration factor derived from the standard.\n3. Verify with the standard daily; accept if within the stated tolerance.\n4. **Sahli method:** place N/10 HCl to the 2 g/dL mark in the Sahli tube; add blood to the 20 µL (0.02 mL) mark with the pipette; rinse and mix; allow acid hematin to develop for 10 minutes.\n5. Add distilled water dropwise and mix until the color matches the comparator; read the value on the tube scale in g/dL.\n6. Record method (HiCN vs Sahli) on the result.\n\n## 6. Quality Control\n- Daily: two-level commercial whole-blood controls for the HiCN method; a fresh low control for the Sahli set-up when used.\n- Weekly: compare Sahli results against the HiCN/analyzer value on de-identified waste blood; Sahli is only acceptable within ±1.0 g/dL agreement.\n- Calibration linearity checked monthly; participate in EQA for hemoglobin.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult reference intervals are displayed in the Reference Ranges panel. Hemoglobin values are sex and age dependent.\n- **Anemia (WHO, adult, sea level):** hemoglobin below 13.0 g/dL in males and below 12.0 g/dL in non-pregnant adult females\n- **Critical value:** institution-defined (commonly below 7 g/dL) triggers an immediate call because of the risk of symptomatic anemia and the need for urgent transfusion evaluation.\n- **Method caveat:** the Sahli acid-hematin method is approximate (reading to 0.5 g/dL), so it is not acceptable for critical values; results near a clinical decision point must be confirmed by the HiCN method or an analyzer.\n- **Elevated hemoglobin:** persistent elevation above the upper interval may indicate polycythemia or dehydration and warrants review.",
+        "principle": "In the cyanmethemoglobin method, potassium ferricyanide oxidizes hemoglobin iron to the ferric state and cyanide forms the stable cyanmethemoglobin chromophore, whose absorbance at 540 nm is proportional to total hemoglobin. The Sahli method converts hemoglobin to brown acid hematin and matches the color against a glass standard; it is simple and field-usable but lacks the precision of the reference method.",
+        "department": "Hematology",
+        "mandatory_disclaimer": "Template based on standard clinical hematology practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Hematology"
+        ],
+        "tags": [
+            "hemoglobin",
+            "cyanmethemoglobin",
+            "sahli",
+            "anemia",
+            "hb"
+        ],
+        "seo_title": "Hemoglobin Estimation Procedure SOP | Cyanmethemoglobin / Sahli",
+        "focus_keyword": "hemoglobin estimation",
+        "reviewer_credentials": "PhD, Hematology",
+        "faqs": [
+            {
+                "question": "Why is the cyanmethemoglobin method the standard?",
+                "answer": "It converts all hemoglobin derivatives to one stable chromophore absorbed at a single wavelength, uses a primary international standard for calibration, and gives results traceable between laboratories."
+            },
+            {
+                "question": "When is the Sahli method acceptable?",
+                "answer": "Only in field or outreach settings without a spectrophotometer or analyzer, as a rapid screen. It is approximate and must never be used for critical values or treatment decisions without confirmatory HiCN measurement."
+            },
+            {
+                "question": "What are the WHO anemia thresholds?",
+                "answer": "Below 13.0 g/dL in adult males and below 12.0 g/dL in non-pregnant adult females (sea level). Thresholds are lower in children and pregnancy and depend on altitude."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for hemoglobin measurement by cyanmethemoglobin and Sahli methods, with WHO anemia and critical-value decision limits.",
+        "reference_ranges": [
+            "hemoglobin-adult-male",
+            "hemoglobin-adult-female"
+        ]
+    }
+]

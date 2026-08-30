@@ -1,0 +1,49 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Widal Test (Febrile Agglutination)",
+        "slug": "widal-febrile-agglutination-testing",
+        "short_description": "SOP for the Widal tube agglutination test for Salmonella Typhi and paratyphi antibodies in suspected enteric fever.",
+        "content": "# Standard Operating Procedure: Widal Test (Febrile Agglutination)\n\n## 1. Purpose and Scope\nTo detect and titer agglutinating antibodies against Salmonella Typhi somatic (O) and flagellar (H) antigens (and paratyphi variants) as adjunctive serologic evidence in suspected enteric fever, always interpreted alongside culture results and clinical features.\n\n## 2. Specimen Requirements\n- **Type:** Serum (plain tube or SST), non-hemolyzed.\n- **Volume:** Minimum 1.0 mL.\n- **Timing:** Ideally collect an acute sample early and a convalescent sample 7-10 days later for a paired rise.\n- **Rejection:** Lipemic, icteric, or grossly hemolyzed samples are rejected or flagged.\n- **Stability:** Serum stable 3-5 days refrigerated; freeze for batched or later testing.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). Serum is potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not mouth-pipette.\n\n## 4. Equipment and Reagents\n- Widal (TO, TH, AH, BH) bacterial agglutination reagents and positive/negative control sera.\n- Kahn tubes or microtitre plates and pipettes.\n- 37°C water bath or incubator and a serology viewer.\n\n## 5. Step-by-Step Procedure\n1. Bring serum and reagents to room temperature; vortex the antigen suspensions gently.\n2. Run the positive and negative control sera before patient samples.\n3. Prepare series of twofold dilutions of patient serum in saline in the tubes (e.g., 1:20 through 1:1280).\n4. Add one drop of the appropriate antigen suspension (TO, TH, AH, BH) to each tube.\n5. Incubate the set for the validated time (typically 12-18 h at room temperature or per the manufacturer protocol at 37°C); read agglutination against a dark background.\n6. Record the highest dilution with definite agglutination (the titer) for each antigen.\n7. Interpret alongside the saline control (which must be negative) and report the titers.\n\n## 6. Quality Control\n- Positive and negative controls with each run; lot-to-lot validation of antigen suspensions.\n- Perform a saline (autoagglutination) control for every serum.\n- Participate in EQA for febrile agglutinins; document endpoint reading criteria.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; a single acute titer is a weak basis for diagnosis.\n- **Significant titer:** a single O (TO) titer of 1:80 or higher, or H (TH) 1:160 or higher, is often regarded as suggestive in endemic settings, but thresholds vary by region and vaccination status.\n- **Fourfold rise:** a fourfold (two-tube) rise between acute and convalescent sera (7-14 days apart) is the most reliable serologic evidence of recent infection.\n- **Caveats:** previous infection, vaccination, and cross-reacting enteric organisms produce false elevations; in endemic regions normal populations may already carry elevated titers; a negative single sample does not exclude typhoid early in the illness.\n- **Culture is confirmatory:** blood culture (early, before antibiotics) and stool culture remain the definitive diagnosis; the Widal test alone is insufficient for management.\n- **Prozone:** very high antibody levels can paradoxically inhibit agglutination at low dilution, so the titer series must include higher dilutions.",
+        "principle": "The Widal test detects agglutinins to S. Typhi/O. Paratyphi. Salmonella O antigens elicit IgM agglutinins which appear early and primarily indicate recent infection, while H antigens elicit IgG agglutinins that persist for years and may respond to vaccination. Titration detects the highest serum dilution that still agglutinates the standardized bacterial suspension, providing a semi-quantitative measure of antibody burden.",
+        "department": "Serology / Immunology",
+        "mandatory_disclaimer": "Template based on standard serology practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Serology / Immunology",
+            "Microbiology"
+        ],
+        "tags": [
+            "widal",
+            "enteric fever",
+            "salmonella",
+            "typhoid",
+            "agglutination"
+        ],
+        "seo_title": "Widal Test (Febrile Agglutination) SOP | Enteric Fever",
+        "focus_keyword": "widal test",
+        "reviewer_credentials": "MD, Consultant Microbiologist",
+        "faqs": [
+            {
+                "question": "Is the Widal test diagnostic alone?",
+                "answer": "No. Serologic agglutinins can be elevated in a vaccinated or previously exposed population and can be negative early in disease. Culture is the confirmatory method; paired fourfold-titer rises are the best the test can offer."
+            },
+            {
+                "question": "Why is a paired sample recommended?",
+                "answer": "A single titer cannot separate recent infection from prior exposure. Comparing an acute and a convalescent sample (7-14 days apart) and demonstrating a fourfold rise strongly supports an active enteric infection."
+            },
+            {
+                "question": "What causes false-negative Widal results?",
+                "answer": "Testing too early (before antibodies rise), prior antibiotic use (which suppresses the antibody response), and the prozone effect of very high titer sera at low dilutions can all yield false negatives."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for the Widal tube agglutination test with typhoid/paratyphoid titer interpretation and limitations vs culture.",
+        "reference_ranges": []
+    }
+]

@@ -1,0 +1,55 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Serum Iron Studies (Iron, TIBC, Ferritin)",
+        "slug": "serum-iron-studies",
+        "short_description": "SOP for serum iron, TIBC, ferritin, and transferrin saturation for anemia workup and iron overload assessment.",
+        "content": "# Standard Operating Procedure: Serum Iron Studies (Iron, TIBC, Ferritin)\n\n## 1. Purpose and Scope\nTo measure serum iron, total iron binding capacity (TIBC), ferritin, and the derived transferrin saturation for the investigation of microcytic anemia, iron deficiency, iron overload (hereditary haemochromatosis), and monitoring of iron-replacement therapy.\n\n## 2. Specimen Requirements\n- **Type:** Serum (plain tube or SST). Do not use EDTA or heparin plasma for iron studies.\n- **Volume:** Minimum 1.0 mL.\n- **Timing:** A fasting (8-12 hour) morning specimen is preferred because serum iron has a marked diurnal variation with peak levels in the morning.\n- **Hemolysis:** Reject hemolyzed samples; hemolysis falsely elevates serum iron.\n- **Stability:** Separate serum from cells within 2 hours. Serum iron, TIBC, and ferritin are stable 3-7 days refrigerated (2-8°C); avoid prolonged contact with cells and freeze only if analysis is delayed.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat, eye protection). All blood samples are potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not pipette by mouth. Use mechanical pipetting devices.\n\n## 4. Equipment and Reagents\n- Automated chemistry analyzer (spectrophotometric).\n- **Iron:** Ferene or bathophenanthroline direct colorimetric method (iron dissociated from transferrin at low pH and reduced to ferrous state).\n- **TIBC:** Saturation of transferrin by excess iron, removal of unbound iron (magnesium carbonate or alumina column), then colorimetric quantitation of bound iron; alternative method–direct TIBC by total transferrin estimation.\n- **Ferritin:** Immunoturbidimetric or immunoassay (ELISA/CLIA) method.\n- **Transferrin saturation:** Calculated as TSAT % = serum iron / TIBC x 100.\n- Two levels of quality control material for each assay.\n\n## 5. Step-by-Step Procedure\n1. Centrifuge the clotted specimen at 3000-3500 rpm for 10 minutes off cells.\n2. Load serum onto the analyzer per instrument instructions with the correct assays and calibration parameters.\n3. Run two levels of quality control for iron, TIBC, and ferritin before patient samples.\n4. Measure serum iron and TIBC colorimetrically; measure ferritin immunologically.\n5. Automatically calculate transferrin saturation from iron and TIBC.\n6. Verify calibration linearity; dilute and re-run results above the analytical range.\n7. Check hemolysis and lipemia indices; repeat hemolyzed samples with a fresh specimen.\n8. Release results after QC acceptance.\n\n## 6. Quality Control\n- Run two levels (normal and abnormal) of control for each assay daily, with every calibration, and with each new reagent lot.\n- Enforce Levey-Jennings rules; investigate trends or shifts before reporting patient results.\n- Participate in an external quality assessment (EQA) program for iron studies.\n- Verify control values fall within acceptable target ranges before patient reporting.\n\n## 7. Decision limits\nThe interpretive thresholds below are stated as clinical decision limits; the canonical adult reference intervals are displayed in the Reference Ranges panel.\n- **Transferrin saturation (TSAT):** below 16% is suggestive of iron deficiency; values above 45-50% (measured on a fasting sample) suggest iron overload, warranting investigation for hereditary haemochromatosis.\n- **Ferritin:** below 12-30 ng/mL is consistent with absent iron stores (iron deficiency); very high ferritin is an acute-phase response and is seen in inflammation, liver disease, and malignancy, so it cannot be used alone to exclude iron deficiency in the inflammatory state.\n- **Caveats:** TSAT calculations assume physiologic transferrin function; misinterpretation occurs with low albumin, liver disease, and recent transfusion. Ferritin is an acute-phase protein — interpret with CRP when infection is suspected.",
+        "principle": "Serum iron measures circulating iron carried on transferrin. TIBC estimates the total iron binding capacity of transferrin. The ratio of iron to TIBC (transferrin saturation) reflects transferrin loading. Ferritin is the storage protein reflecting total body iron stores; because it is also an acute-phase reactant, low levels are diagnostic of deficiency while normal/high levels do not exclude deficiency during inflammation.",
+        "department": "Clinical Chemistry",
+        "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Clinical Chemistry",
+            "Metabolic"
+        ],
+        "tags": [
+            "iron",
+            "tibc",
+            "ferritin",
+            "transferrin saturation",
+            "anemia",
+            "hemochromatosis"
+        ],
+        "seo_title": "Serum Iron Studies (Iron, TIBC, Ferritin) SOP | Anemia Workup",
+        "focus_keyword": "serum iron studies",
+        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "faqs": [
+            {
+                "question": "Why is a fasting morning sample preferred for iron studies?",
+                "answer": "Serum iron shows marked diurnal variation, peaking in the morning and falling through the day, and varies with recent dietary iron. A fasting morning specimen gives the most reproducible baseline for interpreting saturation and iron status."
+            },
+            {
+                "question": "Can ferritin alone rule out iron deficiency?",
+                "answer": "A low ferritin is diagnostic of iron deficiency. However, ferritin is an acute-phase protein, so a normal or high ferritin does not exclude deficiency in inflammation, infection, liver disease, or malignancy."
+            },
+            {
+                "question": "What does a transferrin saturation above 50% indicate?",
+                "answer": "It suggests iron overload with excessive transferrin loading, seen in hereditary haemochromatosis and chronic transfusion. Confirmation uses repeat fasting measurement and genotyping."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for serum iron studies - iron, TIBC, ferritin, and transferrin saturation - with decision limits for anemia and iron overload.",
+        "reference_ranges": [
+            "iron-adult",
+            "tibc-adult",
+            "ferritin-adult",
+            "transferrin-saturation-adult"
+        ]
+    }
+]

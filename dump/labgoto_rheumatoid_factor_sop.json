@@ -1,0 +1,49 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Rheumatoid Factor (RF) Testing",
+        "slug": "rheumatoid-factor-testing",
+        "short_description": "SOP for rheumatoid factor detection and quantitation by latex agglutination or nephelometry for rheumatoid arthritis serology.",
+        "content": "# Standard Operating Procedure: Rheumatoid Factor (RF) Testing\n\n## 1. Purpose and Scope\nTo detect and quantitate rheumatoid factor (RF), autoantibodies to the Fc portion of IgG, for the serologic evaluation of rheumatoid arthritis (RA), and as an aid in other autoimmune and inflammatory disorders.\n\n## 2. Specimen Requirements\n- **Type:** Serum (plain tube or SST).\n- **Volume:** Minimum 0.5 mL.\n- **Interference:** Lipemia, icterus, or hemolysis may interfere with turbidimetric and nephelometric methods; reject grossly impaired samples.\n- **Stability:** Serum stable 3-5 days refrigerated; do not freeze unseparated from cells.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). Serum is potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not mouth-pipette.\n\n## 4. Equipment and Reagents\n- Latex agglutination slide or automated nephelometer/turbidimetric analyzer.\n- RF latex reagent (human IgG-coated latex particles) and positive/negative controls.\n- Reaction buffer.\n\n## 5. Step-by-Step Procedure\n1. Bring reagents and serum to room temperature; mix latex reagent gently.\n2. Run positive and negative controls before patient samples.\n3. For semi-quantitative titering: prepare twofold dilutions of serum, place one drop of each on the slide with one drop of latex reagent, rotate for 2 minutes, and read the endpoint of agglutination.\n4. For automated nephelometry/turbidimetry: load serum, run the calibration curve and controls, and report quantitative RF in IU/mL.\n5. Record the titer or concentration; positive samples are commonly titered to endpoint.\n6. Release results after QC acceptance.\n\n## 6. Quality Control\n- Positive and negative controls with each run; calibrate the nephelometer per manufacturer.\n- Participate in an external quality assessment for RF.\n- Note the prozone effect: very high RF can paradoxically show weak agglutination in undiluted samples, so the semi-quantitative screen includes a dilution series.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult upper reference is reported as a titer or concentration (commonly 15-20 IU/mL).\n- **Positive RF:** supports but does not prove RA. Up to 5% of healthy adults, and a higher fraction of elderly people, have low-level RF positivity.\n- **RF in other diseases:** chronic infection (endocarditis, hepatitis C), mixed cryoglobulinaemia, sarcoidosis, SjOgren syndrome, systemic lupus erythematosus, and other autoimmune or connective-tissue disorders can yield positive RF.\n- **Seronegative RA:** up to 20-30% of RA patients are RF-negative; a negative RF does not exclude RA, and anti-CCP antibodies are more specific when RA is suspected.\n- **Weak/low positives:** a low-titer positive (often 1:20-1:80) carries little diagnostic specificity; report with a caveat for clinical correlation.\n- **Serial monitoring:** in seropositive patients, marked changes in titer can accompany flares or treatment, but RF is not a treatment-response target.",
+        "principle": "Rheumatoid factors are autoantibodies, usually IgM, directed against the Fc constant region of IgG. Agglutination of human IgG-coated latex particles demonstrates the presence of RF; nephelometry and turbidimetry measure the immune-complex turbidity produced by the RF-IgG reaction. Because RF is largely an IgM, agglutination efficiency can be high, and a prozone effect is possible when antibody excess blocks lattice formation.",
+        "department": "Serology / Immunology",
+        "mandatory_disclaimer": "Template based on standard serology practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Serology / Immunology",
+            "Immunology"
+        ],
+        "tags": [
+            "rheumatoid factor",
+            "rf",
+            "rheumatoid arthritis",
+            "latex",
+            "autoantibody"
+        ],
+        "seo_title": "Rheumatoid Factor (RF) Testing SOP | Latex / Nephelometry",
+        "focus_keyword": "rheumatoid factor testing",
+        "reviewer_credentials": "PhD, Immunology",
+        "faqs": [
+            {
+                "question": "Is a positive RF diagnostic of rheumatoid arthritis?",
+                "answer": "No. RF is present in many conditions and in some healthy people. It supports the diagnosis in the right clinical picture, but anti-CCP antibody is more specific and RF can be negative in RA (seronegative RA)."
+            },
+            {
+                "question": "What causes the prozone effect in RF testing?",
+                "answer": "Very high antibody concentrations can block lattice formation and paradoxically reduce agglutination. Titering the sample through a dilution series avoids false-negative results from this effect."
+            },
+            {
+                "question": "Why convert to IU/mL in quantitative methods?",
+                "answer": "Quantitative nephelometry/Turbidimetry reports RF in international units traceable to a reference standard, allowing serial comparisons and clearer decision thresholds than a slide titer alone."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for rheumatoid factor testing with interpretation of positive RF in RA and other autoimmune conditions.",
+        "reference_ranges": []
+    }
+]

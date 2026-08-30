@@ -1,0 +1,50 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Manual Platelet Count Procedure",
+        "slug": "manual-platelet-count-procedure",
+        "short_description": "SOP for manual platelet counting using a hemocytometer for thrombocytopenia verification and flagged automated counts.",
+        "content": "# Standard Operating Procedure: Manual Platelet Count Procedure\n\n## 1. Purpose and Scope\nTo determine the platelet count manually using a hemocytometer when the automated count is flagged (especially low counts and clumped platelet flags), when platelet clumps or giant platelets interfere, and as a confirmatory method for critical values.\n\n## 2. Specimen Requirements\n- **Type:** Whole blood anticoagulated with EDTA (lavender-top).\n- **Volume:** Minimum 1.0 mL; fill to the line to avoid EDTA excess which promotes clumping.\n- **Timing:** Mix gently by inversion for at least 1 minute (never vigorous shaking) before sampling.\n- **Rejection:** Clotted sample, inadequate volume, or sample more than 4 hours old are rejected; EDTA-induced clumps require a citrate re-collection (use the same method with the citrate factor).\n- **Platelets:** Count promptly because platelets swell and approximate within hours.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). All blood samples are potentially infectious.\n- Dispose of lancets, pipettes, and cover glasses as sharps.\n- Do not mouth-pipette; use mechanical pipetting devices.\n\n## 4. Equipment and Reagents\n- Improved Neubauer hemocytometer with cover glass (correct thickness).\n- Diluting pipettes or precision micropipettes.\n- Diluent: 1% ammonium oxalate (Unopette), which lyses red cells and preserves platelets as refractile bodies.\n- Microscope with a 40x objective.\n\n## 5. Step-by-Step Procedure\n1. Gently mix the EDTA specimen for 1-2 minutes by inversion.\n2. With a precision pipette, dilute whole blood 1:20 in 1% ammonium oxalate (e.g., 10 µL blood into 190 µL diluent).\n3. Mix the dilution gently and allow 3-5 minutes for RBC lysis; platelets should remain visibly refractile.\n4. Load the hemocytometer with a small volume of the diluted suspension; allow cells to settle in a humid chamber for 10-15 minutes.\n5. Using the 40x objective, count platelets in 5 middle large (1x1 mm) squares of the central grid (one large square = 0.1 µL volume).\n6. Calculate: platelets/µL = total platelets counted x 1000 (for 1:20 dilution, 5 squares).\n7. Repeat on a second chamber; accept the mean if the two counts agree within acceptable limits (within 10-15%).\n8. Document clumping, giant platelets, and any red cell fragments that interfere.\n\n## 6. Quality Control\n- Verify the hemocytometer grid and cover glass depth at regular intervals.\n- Count exactly 5 squares consistently; record the dilution and arithmetic on the worksheet.\n- Compare manual results periodically with the automated analyzer; investigate persistent discrepancies beyond 15%.\n- Duplicate counts by a second technologist at least weekly as a competency check and for critical results.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult reference interval is displayed in the Reference Ranges panel.\n- **Thrombocytopenia:** platelet count below 150 x10^3/µL. Mild thrombocytopenia (below 150) usually poses low bleeding risk; risk rises progressively below 50 x10^3/µL (institution-defined critical threshold, commonly 50 but some laboratories use 20 x10^3/µL for the critical value).\n- **Critical value:** most institutions answer a critical call below 20-50 x10^3/µL because spontaneous bleeding risk increases substantially.\n- **EDTA-induced pseudothrombocytopenia:** if clumping is seen and the count is paradoxically low, re-collect in a citrate tube and repeat; rechecking with a blood film is mandatory before reporting a low manual count.\n- **Quality check on the film:** the film estimate (1 platelet per oil-immersion field x 20,000 = approximate count) should broadly agree with the chamber count.",
+        "principle": "The hemocytometer method lyses red cells with ammonium oxalate so platelets can be counted in a fixed grid volume. The platelet count is proportional to the number of platelets counted in a known volume of diluted blood, so accurate dilution, representative sampling of the well-mixed tube, and correct chamber depth are critical. The method is technically demanding and operator-dependent but is the traditional confirmatory standard for low or flagged counts.",
+        "department": "Hematology",
+        "mandatory_disclaimer": "Template based on standard clinical hematology practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Hematology"
+        ],
+        "tags": [
+            "platelets",
+            "thrombocytopenia",
+            "manual count",
+            "hemocytometer",
+            "pseudothrombocytopenia"
+        ],
+        "seo_title": "Manual Platelet Count Procedure SOP | Hemocytometer",
+        "focus_keyword": "manual platelet count",
+        "reviewer_credentials": "PhD, Hematology",
+        "faqs": [
+            {
+                "question": "What causes falsely low automated platelet counts?",
+                "answer": "EDTA-induced platelet clumping (pseudothrombocytopenia) is the classic cause; clumps are counted as cells or ignored. Manual review with a blood film, or re-collection in citrate, resolves the discrepancy."
+            },
+            {
+                "question": "What dilution and squares are used for the manual count?",
+                "answer": "Whole blood is diluted 1:20 in 1% ammonium oxalate, and platelets are counted in 5 middle large squares (each 0.1 µL under the 1:20 dilution); an accepted dilution/count yields the count multiplied by 1000."
+            },
+            {
+                "question": "When is the manual count mandatory?",
+                "answer": "When the automated result is flagged low, suspected platelet clumps are present, the instrument gives a critical value, or the film appearance disagrees with the histogram, a manual confirmatory count is required before the result is released."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for manual platelet counting by hemocytometer with thrombocytopenia and pseudothrombocytopenia decision limits.",
+        "reference_ranges": [
+            "platelets-adult"
+        ]
+    }
+]

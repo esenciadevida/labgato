@@ -1,0 +1,49 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Syphilis Serology (VDRL / RPR)",
+        "slug": "syphilis-serology-vdrl-rpr",
+        "short_description": "SOP for nontreponemal (VDRL/RPR) syphilis screening and titering with treponemal confirmation guidance.",
+        "content": "# Standard Operating Procedure: Syphilis Serology (VDRL / RPR)\n\n## 1. Purpose and Scope\nTo perform nontreponemal serologic screening for syphilis (VDRL and RPR) and to quantitate reactive titers for monitoring disease activity and treatment response, with a protocol for confirmation by treponemal tests.\n\n## 2. Specimen Requirements\n- **Type:** Serum (plain tube or SST); fresh, non-hemolyzed.\n- **Volume:** Minimum 1.0 mL.\n- **Interference:** Lipemia and hemolysis interfere with flocculation reading; grossly contaminated sera cause false reactions.\n- **Stability:** Serum stable 3-5 days at 2-8°C; freeze if testing is delayed beyond the validated window.\n- **Timing:** RPR uses warm serum; do not heat inactivate because heat destroys some antibodies and destabilizes the reagent.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). Serum and syphilis reagents are potentially infectious.\n- Dispose of pipettes and slides as biohazard; do not mouth-pipette.\n- RPR/VDRL reagents contain cardiolipin and are alcohol-based; keep away from open flames.\n\n## 4. Equipment and Reagents\n- VDRL flocculation slide or RPR card kit with RPR antigen (carbonized cardiolipin-lectinin-cholesterol).\n- Rotation platform (rotator) at the specified speed and serum dilution pipettes.\n- Syringe or dropper delivering the correct antigen drop size.\n- Positive (weakly reactive) and negative controls provided with the kit.\n\n## 5. Step-by-Step Procedure\n1. Bring serum and RPR card/antigen to room temperature; run weakly reactive positive and negative controls before patient samples.\n2. Place the required amount of serum (or dilution) on the card ring.\n3. Add one drop of antigen, mix with the applicator, and rotate at the specified speed for the validated time.\n4. Read under the card lamp for clumping: record as nonreactive, weak reactive, or reactive.\n5. Titrate reactive sera by twofold dilution (1:2, 1:4, 1:8 ... 1:64 and higher) and report the endpoint titer.\n6. For VDRL, use the flocculation slide method with fresh serum; titrate reactive samples similarly.\n7. Consult the algorithm for treponemal confirmation (TP-PA/FTA-ABS/EIA) on any reactive result before reporting a positive diagnosis.\n\n## 6. Quality Control\n- The weakly reactive control must give a weak positive pattern in the expected low-titer range; the negative control must remain nonreactive.\n- Check antigen uniformity (a flocculent, slightly clumped preparation is discarded).\n- Participate in EQA for syphilis serology; validate batch of cards and rotator timing.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits (there is no canonical reference range for serologic reagents).\n- **Reactive screen:** any reactive (or weak reactive) nontreponemal result must be confirmed with a treponemal test (TP-PA, FTA-ABS, or EIA/CMIA) — a reactive screen alone is never reported as syphilis.\n- **Biological false positives (BFP):** nnon-reactive treponemal test with a reactive nontreponemal screen occurs in pregnancy, autoimmune disease, intravenous drug use, infectious mononucleosis, malaria, and advanced age.\n- **Titer monitoring:** a change of fourfold (two dilutions) between serial titers is considered clinically significant; a falling titer indicates adequate treatment response, a rising titer suggests progression or reinfection.\n- **Prozone effect:** very high antibody titers (secondary syphilis) can produce a false-negative screen; dilute the serum and repeat when clinical suspicion is high.\n- **Primary syphilis:** the nontreponemal screen may be nonreactive in early primary disease because antibody has not yet appeared.",
+        "principle": "Nontreponemal tests detect antibodies (reagins) to lipoidal material released from damaged host cells and possibly from treponemes, using a cardiolipin-lectithin-cholesterol antigen that flocculates when antibody is present. The quantitative titer reflects disease activity and falls with effective treatment. Treponemal tests detect specific antitreponemal antibodies, persist for life once reactive, and are used to confirm the screen.",
+        "department": "Serology / Immunology",
+        "mandatory_disclaimer": "Template based on standard serology practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Serology / Immunology",
+            "Immunology"
+        ],
+        "tags": [
+            "syphilis",
+            "vdrl",
+            "rpr",
+            "treponema",
+            "serology"
+        ],
+        "seo_title": "Syphilis Serology (VDRL / RPR) SOP | Treponemal Confirmation",
+        "focus_keyword": "syphilis serology",
+        "reviewer_credentials": "PhD, Immunology",
+        "faqs": [
+            {
+                "question": "What is the difference between nontreponemal and treponemal tests?",
+                "answer": "Nontreponemal tests (VDRL/RPR) detect cardiolipin-reacting antibodies, titer with disease activity, and fall with treatment. Treponemal tests (TP-PA, FTA-ABS) detect specific antitreponemal antibody and, once reactive, generally remain so for life."
+            },
+            {
+                "question": "How is the prozone effect recognized?",
+                "answer": "A patient with very high antibody (commonly secondary syphilis) can show a nonreactive screen because antigen-antibody excess prevents visible flocculation. Repeating the test on diluted serum reveals reactivity."
+            },
+            {
+                "question": "What makes a titer change clinically significant?",
+                "answer": "A fourfold change (two tube dilutions, e.g., 1:8 to 1:2) is the accepted significant change, used to monitor response to therapy or progression and reinfection."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for VDRL/RPR syphilis serology with titer quantitation, prozone handling, and treponemal confirmation decision rules.",
+        "reference_ranges": []
+    }
+]

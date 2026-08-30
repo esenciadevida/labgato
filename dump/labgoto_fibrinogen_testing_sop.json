@@ -1,0 +1,50 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Fibrinogen Testing (Clauss Method)",
+        "slug": "fibrinogen-testing",
+        "short_description": "SOP for functional fibrinogen by the Clauss method for DIC, dysfibrinogenemia, and hemorrhagic risk assessment.",
+        "content": "# Standard Operating Procedure: Fibrinogen Testing (Clauss Method)\n\n## 1. Purpose and Scope\nTo measure functional (clottable) fibrinogen by the Clauss method for the diagnosis and monitoring of disseminated intravascular coagulation (DIC), inherited hypofibrinogenemia and dysfibrinogenemia, and pre-procedure hemorrhagic risk.\n\n## 2. Specimen Requirements\n- **Type:** Citrated plasma (3.2% sodium citrate, 1:9 ratio), double-centrifuged to obtain platelet-poor plasma.\n- **Volume:** Minimum 1.0 mL (2.7 mL tube filled to the line).\n- **Filling:** Underfilling or overfilling alters the citrate:plasma ratio and is the most common preanalytical error; reject such tubes.\n- **Timing:** The sample must not clot, and transport must avoid platelets; a clotted sample is rejected.\n- **Stability:** Platelet-poor plasma stable 4 hours at room temperature, longer refrigerated, in a capped tube.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). Blood is potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not mouth-pipette.\n\n## 4. Equipment and Reagents\n- Automated coagulation analyzer (optical or electromechanical end-point detection).\n- **Method:** Clauss — high-concentration thrombin reagent added to diluted plasma (standard dilution such as 1:10 in Owren buffer); clotting time is inversely related to fibrinogen concentration, read against a calibration curve.\n- Two levels of quality control material (low and normal fibrinogen).\n\n## 5. Step-by-Step Procedure\n1. Confirm the plasma is platelet-poor and the tube was filled correctly.\n2. Load plasma and reagents on the analyzer per instrument instructions.\n3. Run low and normal fibrinogen controls before patient samples.\n4. Test the diluted plasma (Clauss) with high-concentration thrombin, reading the clot time.\n5. Interpolate the fibrinogen concentration from the calibration curve; verify linearity across the standard range.\n6. For results outside the linear range, re-test with adjusted dilution.\n7. Release results after QC acceptance.\n\n## 6. Quality Control\n- Run low and normal controls daily, with every calibration, and each new reagent lot.\n- Enforce Levey-Jennings rules; participate in an external quality assessment program.\n- The Clauss method is sensitive to reagent thrombin strength and to fibrinogen degradation products; validate each lot.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult reference interval is displayed in the Reference Ranges panel.\n- **Low fibrinogen (below ~150 mg/dL):** associated with bleeding risk; seen in DIC, severe liver disease, massive transfusion, and inherited deficiency.\n- **DIC supportive pattern:** low fibrinogen plus low platelets, prolonged PT and APTT, and elevated D-dimer supports DIC according to the ISTH scoring system.\n- **Elevated fibrinogen:** above the upper interval is a nonspecific acute-phase response (inflammation, pregnancy, malignancy) and reduces hemodilution risk interpretation.\n- **Method note:** the Clauss assay measures functional fibrinogen; in dysfibrinogenemia the functional result may be low while the antigenic (immunologic) fibrinogen is normal. Suspect dysfibrinogenemia when the fibrinogen is low but the PT/APTT are disproportionately prolonged or the thrombin time fails to normalize.",
+        "principle": "The Clauss method measures the rate of fibrin clot formation: at high thrombin concentration, the clotting time of a diluted plasma is inversely proportional to the functional fibrinogen concentration. Because fibrin degradation products inhibit polymerization, the method is also used to detect consumption in DIC. Differential diagnosis with an antigenic assay distinguishes quantitative deficiency from qualitative (dysfibrinogenemia) disease.",
+        "department": "Coagulation",
+        "mandatory_disclaimer": "Template based on standard clinical coagulation practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Coagulation"
+        ],
+        "tags": [
+            "fibrinogen",
+            "clauss",
+            "dic",
+            "dysfibrinogenemia",
+            "factor i"
+        ],
+        "seo_title": "Fibrinogen Testing (Clauss Method) SOP | DIC Workup",
+        "focus_keyword": "fibrinogen testing",
+        "reviewer_credentials": "PhD, Coagulation",
+        "faqs": [
+            {
+                "question": "Why does the Clauss method need diluted plasma?",
+                "answer": "The dilution reduces plasma viscosity and the inhibitory influence of other plasma proteins so the clotting time reflects only the fibrinogen concentration at a fixed thrombin strength."
+            },
+            {
+                "question": "How is dysfibrinogenemia recognized?",
+                "answer": "Functional fibrinogen is low while an immunologic/antigenic fibrinogen assay is normal, and the thrombin time is prolonged. This combination indicates a qualitative defect in fibrin formation."
+            },
+            {
+                "question": "What is the fibrinogen pattern in DIC?",
+                "answer": "Low fibrinogen with low platelets, prolonged PT/APTT, and elevated D-dimer is the classic consumptive pattern. Fibrinogen may be the last to fall and can be normal in early DIC because it is an acute-phase protein."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for functional fibrinogen by the Clauss method with DIC and dysfibrinogenemia decision limits.",
+        "reference_ranges": [
+            "fibrinogen-adult"
+        ]
+    }
+]

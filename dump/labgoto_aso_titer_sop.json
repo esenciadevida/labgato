@@ -1,0 +1,49 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Anti-Streptolysin O (ASO) Testing",
+        "slug": "aso-titer-testing",
+        "short_description": "SOP for ASO titer by latex agglutination for evidence of recent group A streptococcal infection and post-streptococcal sequelae.",
+        "content": "# Standard Operating Procedure: Anti-Streptolysin O (ASO) Testing\n\n## 1. Purpose and Scope\nTo detect and quantitate antibody to streptolysin O (ASO) as evidence of a recent infection by group A (and some other group) beta-haemolytic streptococci, useful in the evaluation of rheumatic fever, post-streptococcal glomerulonephritis, and other suspected post-streptococcal sequelae.\n\n## 2. Specimen Requirements\n- **Type:** Serum (plain tube or SST).\n- **Volume:** Minimum 0.5 mL.\n- **Interference:** Lipemic, icteric, or grossly hemolyzed serum may interfere with turbidimetric reading.\n- **Timing:** ASO titers rise 1-3 weeks after infection and peak at approximately 3-6 weeks; a single acute sample may be falsely low, so serial (paired) samples are preferred when post-streptococcal disease is suspected.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). Serum is potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not mouth-pipette.\n\n## 4. Equipment and Reagents\n- Latex agglutination slide or automated turbidimetric analyzer.\n- ASO latex reagent (streptolysin O-coated latex particles) and positive/negative controls.\n- Isotonic saline or reaction buffer.\n\n## 5. Step-by-Step Procedure\n1. Allow reagents and serum to come to room temperature; mix latex reagent gently (do not shake rigorously to avoid foam).\n2. Run positive and negative controls before patient samples each day.\n3. For semi-quantitative titer: prepare twofold dilutions of serum (e.g., 1:20 to 1:1280), place one drop of each dilution on the slide, add one drop of latex reagent, and rotate; read agglutination at the endpoint.\n4. For automated turbidimetric/nephelometric assay: load serum, run the calibration curve and controls, and report the quantitative concentration and the correlated titer.\n5. Record the reportable titer or concentration; for paired sera, report the acute and convalescent values together.\n\n## 6. Quality Control\n- Positive and negative controls with each run; lot-to-lot validation of the latex reagent.\n- Enforce Levey-Jennings rules for the automated method; participate in EQA.\n- Document the endpoint reading criteria for semi-quantitative methods.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; titers are read as the highest dilution showing agglutination.\n- **Significant elevation:** titers above the laboratory's pediatric/adult upper limits (commonly 200-320 IU/mL or a 1:200 titer) indicate recent streptococcal infection. Children typically have higher normal titers than adults.\n- **Paired sera:** a fourfold (two-tube) rise between acute and convalescent (2-4 weeks apart) samples is the strongest evidence of recent streptococcal infection; a single elevated titer is supportive but less definitive.\n- **Timing:** false negatives occur when only a very early acute sample is tested, before antibodies have risen.\n- **Limitations:** ASO does not prove causation of rheumatic fever or glomerulonephritis; it indicates a recent immune response. Anti-DNase B may be added for skin (impetigo) streptococcal infections where ASO response can be weak.",
+        "principle": "Streptolysin O is an oxygen-labile hemolysin produced by group A streptococci. Infection triggers an IgM/IgG antibody response measured as the ASO titer. Agglutination of streptolysin O-coated latex particles increases with the amount of antibody, allowing semi-quantitative titering; the peak titer lags weeks behind infection, so serial sampling captures the rise.",
+        "department": "Serology / Immunology",
+        "mandatory_disclaimer": "Template based on standard serology practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Serology / Immunology",
+            "Immunology"
+        ],
+        "tags": [
+            "aso",
+            "antistreptolysin",
+            "strep",
+            "rheumatic fever",
+            "serology"
+        ],
+        "seo_title": "Anti-Streptolysin O (ASO) Testing SOP | Post-Strep Sequelae",
+        "focus_keyword": "aso testing",
+        "reviewer_credentials": "PhD, Immunology",
+        "faqs": [
+            {
+                "question": "Why are paired sera better than a single ASO titer?",
+                "answer": "ASO rises weeks after infection; a single acute sample can be below the threshold. A fourfold rise between acute and convalescent samples firmly documents recent streptococcal infection."
+            },
+            {
+                "question": "What if ASO is negative but the patient may have had a streptococcal skin infection?",
+                "answer": "Skin (impetigo) streptococcal infections often produce a weak ASO response. Adding anti-DNase B antibody testing increases sensitivity for cutaneous infections."
+            },
+            {
+                "question": "Does a high ASO titer diagnose rheumatic fever?",
+                "answer": "No. A high titer only confirms a recent immune response to streptococcus; the diagnosis of acute rheumatic fever uses clinical criteria (Jones) supported by the serologic evidence."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for ASO testing by latex agglutination with titer interpretation for recent group A streptococcal infection.",
+        "reference_ranges": []
+    }
+]

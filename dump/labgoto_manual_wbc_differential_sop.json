@@ -1,0 +1,56 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Manual WBC Differential Count Procedure",
+        "slug": "manual-wbc-differential-procedure",
+        "short_description": "SOP for the manual 100-cell leukocyte differential for abnormal cells, left shift, blasts, and NRBC correction.",
+        "content": "# Standard Operating Procedure: Manual WBC Differential Count Procedure\n\n## 1. Purpose and Scope\nTo classify 100 (or 200) leukocytes on a Wright-stained smear for the manual differential count, to detect immature or abnormal cells, to estimate band counts (left shift), and to correct the automated WBC for nucleated red blood cells (NRBCs).\n\n## 2. Specimen Requirements\n- **Type:** Whole blood anticoagulated with EDTA.\n- **Volume:** Minimum 1.0 mL.\n- **Timing:** Prepare the smear within 1-2 hours of collection; smears from older EDTA blood may show artifactual nucleoli and altered morphology.\n- **Smear quality:** Use a well-made wedge smear with a feathered edge on clean glass; the film should be examined in the area of optimal cell distribution (where cells are barely touching).\n- **Rejection:** Clotted, older-than-validity, or unlabeled specimens are rejected.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). Blood films are potentially infectious.\n- Dispose of lancets, spreaders, and slides in sharps/biohazard waste.\n- Do not mouth-pipette.\n\n## 4. Equipment and Reagents\n- Microscope with 100x oil-immersion objective.\n- Wright or Wright-Giemsa stain and buffer (pH 6.4-6.8).\n- Differential counter (10-key) or manual tally sheet.\n\n## 5. Step-by-Step Procedure\n1. Confirm the film is stained well and has a usable monolayer in the feathered edge.\n2. Scan the entire smear at low power (10x) to detect abnormal distribution (blasts at the edges, platelet clumps, parasites).\n3. Count 100 leukocytes (200 when abnormal or requested) in a disciplined back-and-forth (battlement) pattern that samples fields evenly across the monolayer.\n4. Classify each cell as neutrophil (segmented), band, lymphocyte, monocyte, eosinophil, basophil; record immature or abnormal cells (metamyelocytes, myelocytes, promyelocytes, blasts) separately and in total.\n5. Count NRBCs separately per 100 WBC and record for correction of severe NRBC elevations.\n6. Report percentages and, together with the analyzer WBC, calculate the absolute counts (absolute = percentage x WBC).\n7. Add comments for abnormal morphology: toxic granulation, vacuolation, Dohle bodies, hypersegmentation, atypical lymphocytes.\n8. Refer flagged or abnormal films to the senior technologist or pathologist.\n\n## 6. Quality Control\n- Verify stain quality and pH of buffer daily; a control slide can confirm staining of granules.\n- Perform periodic 100-vs-200-cell comparative checks and inter-technologist agreement studies.\n- Correlate manual differentials with automated flags; investigate persistent discrepancies (e.g., automated bands vs manual).\n- Participate in external quality assessment for differential morphology.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult reference intervals are displayed in the Reference Ranges panel.\n- **Left shift:** an increase in band forms with or without metamyelocytes suggests acute bacterial infection or inflammation; massive left shift with Dohle bodies and toxic granulation supports severe itive infection.\n- **Blasts:** any circulating blast is abnormal and should trigger pathologist review; it is associated with acute leukemia or myelodysplasia, not with routine infection.\n- **NRBC correction:** when NRBCs exceed 10 per 100 WBC, correct the automated WBC: corrected WBC = measured WBC x 100/(100 + NRBC per 100 WBC).\n- **Absolute counts:** percentages mislead when the WBC is very high or low; always report absolute values calculated from the analyzer WBC.\n- **Eosinophilia/basophilia:** eosinophils above approximately 6% suggest allergy, parasite, or eosinophilic disorders; basophilia above 2% suggests myeloproliferative processes.",
+        "principle": "The differential classifies leukocytes by lineage and maturity on a stained smear, providing a rapid picture of marrow response. A disciplined sampling path minimizes field-selection bias, and reporting both relative and absolute values accounts for the total WBC. The band-to-segmented ratio reflects neutrophil turnover, while the presence of immature cells reflects marrow stimulation (left shift) or malignancy (blasts).",
+        "department": "Hematology",
+        "mandatory_disclaimer": "Template based on standard clinical hematology practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Hematology"
+        ],
+        "tags": [
+            "differential",
+            "leukocyte",
+            "neutrophils",
+            "bands",
+            "left shift",
+            "blasts",
+            "nrbcs"
+        ],
+        "seo_title": "Manual WBC Differential Count Procedure SOP",
+        "focus_keyword": "manual wbc differential",
+        "reviewer_credentials": "PhD, Hematology",
+        "faqs": [
+            {
+                "question": "Why count a differential with 100 cells?",
+                "answer": "A 100-cell count is the standard clinical compromise balancing speed and precision; 200 cells improve confidence in small populations and are used for abnormal films. Precision improves with the square root of the number counted."
+            },
+            {
+                "question": "How is the absolute count calculated from the differential?",
+                "answer": "Absolute count = percentage divided by 100 multiplied by the total WBC count. For example, 60% neutrophils with a WBC of 8.0 gives an ANC of 4.8 x10^3/µL. Absolute values remove the distortion of a very high or low WBC."
+            },
+            {
+                "question": "How do nucleated red cells affect the WBC?",
+                "answer": "NRBCs are counted as WBC by many analyzers, artificially raising the count. When the NRBC count exceeds about 10 per 100 WBC, the WBC is corrected with the formula: measured WBC x 100/(100 + NRBCs per 100 WBC)."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for the manual WBC differential count with left shift, blasts, and NRBC correction decision limits.",
+        "reference_ranges": [
+            "wbc-adult",
+            "neutrophils-percent-adult",
+            "lymphocytes-percent-adult",
+            "eosinophils-percent-adult",
+            "monocytes-percent-adult"
+        ]
+    }
+]

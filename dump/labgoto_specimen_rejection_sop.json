@@ -1,0 +1,49 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Specimen Collection Quality and Rejection Criteria",
+        "slug": "specimen-collection-rejection-criteria",
+        "short_description": "SOP defining unacceptable specimens, rejection decision rules, and the recollection-request workflow.",
+        "content": "# Standard Operating Procedure: Specimen Collection Quality and Rejection Criteria\n\n## 1. Purpose and Scope\nTo define which specimens are unacceptable for testing, the decision rules for rejection, the documentation and notification workflow, and exceptions for irreplaceable specimens, in order to prevent reporting results based on invalid samples.\n\n## 2. General Specimen Requirements\n- **Identification:** every specimen must carry at least two unique patient identifiers matching the request (name, date of birth, or other unique identifier).\n- **Collection container:** correct tube or container with the correct additive for the requested test.\n- **Volume and filling:** anticoagulated tubes filled to the marked line; containers holding the minimum required volume.\n- **Timing and transport:** collected, transported, and processed within the validated storage window at the validated temperature.\n- **Condition:** must not be clotted when anticoagulated, not hemolyzed beyond the acceptable index, not grossly lipemic or icteric (when the assay requires it), and not leaking or contaminated.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat) when handling all specimens.\n- Leaking or contaminated containers are handled as biohazard; clean surfaces and discard waste per policy.\n- Sharps and lancets are disposed of immediately in puncture-proof containers.\n\n## 4. Equipment and Reagents\n- Labeling system, specimen registration module, and rejection log.\n- Hemolysis, icterus, and lipemia index measurement or a graded visual comparator.\n- Transport temperature validation records (room temperature, refrigerated, frozen) for each test group.\n\n## 5. Step-by-Step Procedure\n1. On receipt, verify specimen identification against the request, container, anticoagulant, age, and transport condition.\n2. Assess hemolysis, lipemia, and icterus visually or by analyzer index, against test-specific limits.\n3. Apply the rejection decision rules: unlabeled or mislabeled specimen; wrong container or wrong additive; clotted anticoagulated specimen; underfilled anticoagulant tube; excessive hemolysis for hemolysis-sensitive analytes; improper transport temperature or beyond acceptable age; contaminated, leaking, or expired containers.\n4. Do NOT silently discard: log the rejection in the system and the rejection record, stating the reason and the tests affected.\n5. Notify the requesting service or collector promptly and request a recollection with clear instruction.\n6. For irreplaceable specimens (e.g., CSF, surgical fluids, samples that cannot be repeated), analyze where clinically justified, add a comment flagging the limitation, and notify the clinician.\n7. Review the rejection log periodically for trends and drive corrective action.\n\n## 6. Quality Control\n- Quantitate and trend the rejection rate (rejections per 1,000 specimens) as a monthly quality indicator.\n- Categorize rejections by reason and by collection site to target education.\n- Audit recollection outcomes (repeat rejection, turnaround) regularly.\n- Maintain a documented consensus for test-specific hemolysis thresholds on the analyzer.\n\n## 7. Decision limits\nThe decision rules below are quality criteria rather than a patient reference range.\n- **Always reject:** unlabeled or misidentified specimens (never proceed with testing); wrong test-container combinations; clotted anticoagulated samples; and grossly contaminated or leaking containers.\n- **Reject with exceptions:** improperly stored or transported samples may be tested only if the analyte is stable enough to give a clinically useful result and the limitation is commented on the result.\n- **Test-specific hemolysis:** potassium, LDH, and AST are the most hemolysis-sensitive chemistry tests; reject or logically flag hemolyzed samples for these.\n- **Consistency:** the target is a transparent, documented rule set so that no specimen is rejected or accepted purely on an individual technologist's discretion.",
+        "principle": "Specimen quality determines result validity more than analytical precision. Applying explicit acceptance and rejection rules standardizes decisions across the laboratory, prevents reporting unrepresentative or contaminated results, and drives improvement through measured rejection rates. Exceptions exist for irreplaceable fluids, where clinical value outweighs the specimen limitation.",
+        "department": "Laboratory Operations",
+        "mandatory_disclaimer": "Template based on standard laboratory preanalytical practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Laboratory Operations",
+            "Preanalytical"
+        ],
+        "tags": [
+            "specimen rejection",
+            "preanalytical",
+            "quality",
+            "hemolysis",
+            "unlabeled specimen"
+        ],
+        "seo_title": "Specimen Collection Quality and Rejection Criteria SOP",
+        "focus_keyword": "specimen rejection criteria",
+        "reviewer_credentials": "Medical Laboratory Scientist",
+        "faqs": [
+            {
+                "question": "Why is an unlabeled specimen never tested?",
+                "answer": "Testing an unlabeled specimen risks reporting a result for the wrong patient, which can cause serious clinical error. The specimen is rejected and a fresh, labeled recollection is mandatory; patient safety overrides convenience."
+            },
+            {
+                "question": "What is the most common correctable rejection reason?",
+                "answer": "Underfilled anticoagulant tubes and hemolyzed samples are the most common. Education on fill volume and gentle handling, plus prompt recollection data, steadily cut rejection rates."
+            },
+            {
+                "question": "Are rejected specimens ever analyzed?",
+                "answer": "Yes, deliberately and under documented exceptions, for irreplaceable fluids such as CSF, when the result adds clinical value despite the limitation, and always flagged with a comment and the clinician notified."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure defining specimen rejection criteria, the recollection-request workflow, and quality indicators for specimen acceptance.",
+        "reference_ranges": []
+    }
+]

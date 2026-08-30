@@ -1,0 +1,50 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Thrombin Time Testing",
+        "slug": "thrombin-time-testing",
+        "short_description": "SOP for the thrombin time to detect hypofibrinogenemia, dysfibrinogenemia, DIC, and heparin contamination.",
+        "content": "# Standard Operating Procedure: Thrombin Time Testing\n\n## 1. Purpose and Scope\nTo measure the thrombin time (TT) as a rapid screen of the final common pathway (fibrinogen conversion to fibrin), used to detect low functional fibrinogen, dysfibrinogenemia, DIC, heparin contamination, and interference from fibrin degradation products or paraproteins.\n\n## 2. Specimen Requirements\n- **Type:** Citrated plasma (3.2% sodium citrate, 1:9), double-centrifuged platelet-poor plasma.\n- **Volume:** Fill the tube to the line; under/over-filling alters the anticoagulant ratio and prolongs the TT.\n- **Rejection:** Clotted or hemolyzed samples are rejected; hemolysis can interfere with optical reading.\n- **Stability:** Test within 4 hours at room temperature or 2-4 hours refrigerated; freeze for delayed batched testing.\n- **Heparin contamination:** a line or port that flushed the patient is a common cause of artefactual TT prolongation.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). Blood is potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not mouth-pipette.\n\n## 4. Equipment and Reagents\n- Automated coagulation analyzer.\n- **Thrombin reagent:** standardized bovine or human thrombin at a defined concentration.\n- **Reptilase reagent:** for the follow-up differentiation of heparin effect (reptilase is unaffected by heparin).\n- Calcium chloride as needed by the method.\n- Two levels of quality control material.\n\n## 5. Step-by-Step Procedure\n1. Confirm correct tube fill and that plasma is platelet-poor.\n2. Load the analyzer with thrombin reagent and controls per instrument instructions.\n3. Run two levels of quality control (including a prolonged low control if available) before patient samples.\n4. Pipette plasma, incubate briefly, add thrombin reagent, and record the clot time.\n5. On a prolonged result, review the sample history for heparin effect, then add a reptilase time to discriminate: prolonged TT with normal reptilase indicates heparin contamination; both prolonged indicates a fibrinogen-level defect.\n6. Release results after QC acceptance, including the reflex reptilase comment where applicable.\n\n## 6. Quality Control\n- Run two levels of control daily, with each calibration, and each new reagent lot.\n- Enforce Levey-Jennings rules; participate in EQA for TT.\n- Note that TT is extremely sensitive to low heparin concentrations, which can make it useful for monitoring heparin in some protocols but also causes preanalytical false prolongation.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult reference interval is displayed in the Reference Ranges panel.\n- **Normal TT:** confirms an intact final common pathway to fibrin formation.\n- **Prolonged TT:** with a normal PT and APTT suggests fibrinogen deficiency, dysfibrinogenemia, heparin contamination, or elevated fibrin degradation products; with a prolonged PT/APTT it supports DIC or liver disease.\n- **Repilase discrimination:** prolonged TT with normal reptilase means heparin effect; prolonged TT with prolonged reptilase means a fibrinogen abnormality (low or abnormal fibrinogen).\n- **Warfarin/anticoagulants:** warfarin and vitamin K antagonists generally do NOT prolong the TT; a prolonged TT on warfarin alone should prompt investigation of another cause.\n- **Paraproteins:** paraprotein interference can artifactually prolong the TT; confirm with a functional fibrinogen and a dilutional check.",
+        "principle": "Thrombin converts fibrinogen to fibrin; the thrombin time measures the speed of this reaction. Because the reagent supplies an excess of exogenous thrombin, the assay is insensitive to upstream coagulation factors (except in test dilution) and reports effectively on fibrinogen quantity and quality. Reptilase (batroxobin) releases fibrinopeptide A but is unaffected by heparin, allowing heparin contamination to be separated from fibrinogen-related causes.",
+        "department": "Coagulation",
+        "mandatory_disclaimer": "Template based on standard clinical coagulation practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Coagulation"
+        ],
+        "tags": [
+            "thrombin time",
+            "reptilase",
+            "heparin",
+            "fibrinogen",
+            "tt"
+        ],
+        "seo_title": "Thrombin Time Testing SOP | Final Common Pathway",
+        "focus_keyword": "thrombin time testing",
+        "reviewer_credentials": "PhD, Coagulation",
+        "faqs": [
+            {
+                "question": "Why is reptilase used with a prolonged thrombin time?",
+                "answer": "Both tests clot fibrinogen, but reptilase is uninhibited by heparin. If the reptilase time is normal, the prolongation is due to heparin contamination; if it is also prolonged, a fibrinogen abnormality is present."
+            },
+            {
+                "question": "Does the thrombin time detect warfarin effect?",
+                "answer": "No. Warfarin reduces factors II, VII, IX, and X but does not directly affect the fibrinogen-to-fibrin step, so the TT is normal on therapeutic warfarin. A prolonged TT in such a patient suggests another cause."
+            },
+            {
+                "question": "What are the main common causes of a prolonged TT?",
+                "answer": "Low functional fibrinogen (DIC, liver disease), dysfibrinogenemia, heparin contamination from line sampling, high fibrin degradation products, and paraprotein interference."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for the thrombin time with heparin contamination and dysfibrinogenemia decision limits via reptilase discrimination.",
+        "reference_ranges": [
+            "thrombin-time-adult"
+        ]
+    }
+]

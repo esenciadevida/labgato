@@ -1,0 +1,51 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "PT/APTT Mixing (Correction) Study",
+        "slug": "pt-aptt-mixing-study",
+        "short_description": "SOP for the 1:1 plasma mixing study to distinguish factor deficiency from circulating inhibitor in prolonged PT or APTT.",
+        "content": "# Standard Operating Procedure: PT/APTT Mixing (Correction) Study\n\n## 1. Purpose and Scope\nTo determine whether a prolonged prothrombin time (PT) or activated partial thromboplastin time (aPTT) is caused by a coagulation factor deficiency (correctable) or by a circulating inhibitor such as a lupus anticoagulant or a specific factor inhibitor (non-correctable), including incubation to expose time-dependent inhibitors.\n\n## 2. Specimen Requirements\n- **Type:** Citrated plasma (3.2% sodium citrate, 1:9), double-centrifuged platelet-poor plasma from both the patient and a healthy normal donor/pooled normal plasma.\n- **Volume:** Sufficient for PT, APTT, mix, and incubation repeats (typically 2-3 mL collected).\n- **Filling:** Tubes must be filled to the line; underfilling prolongs results.\n- **Timing:** Test promptly; freeze only if needed and ensure platelet-poor preparation.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat). Blood is potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not mouth-pipette.\n\n## 4. Equipment and Reagents\n- Automated coagulation analyzer.\n- PT and APTT reagents with the same lot used for the patient run.\n- Pooled normal plasma with a documented normal PT and APTT.\n- Incubation block at 37°C for the 2-hour time-dependent step.\n\n## 5. Step-by-Step Procedure\n1. Run patient PT and APTT and confirm prolongation above the reference interval.\n2. Prepare a 1:1 mix: one part patient plasma mixed with one part pooled normal plasma; mix gently and test immediately.\n3. Repeat the mix testing after incubation at 37°C for 1-2 hours (essential for lupus anticoagulant and factor VIII inhibitors).\n4. Interpret against a correction criterion: apply the laboratory-established rule (e.g., the mix result within a defined correction window of the reference interval/pooled normal, or the Rosner index / correction index calculation).\n5. When the immediate and incubated mixes both correct, a factor deficiency is suggested; when the incubated mix prolongs, a time-dependent inhibitor is suggested; when neither corrects, an immediate inhibitor (lupus anticoagulant) is suggested.\n6. Proceed to factor assays (PT-derived and APTT-derived) and, if indicated, a lupus anticoagulant panel to localize and confirm.\n7. Release results with a written interpretation.\n\n## 6. Quality Control\n- Run two levels of PT/APTT control on the day of testing.\n- Validate the pooled normal plasma against reference values daily; check its platelet-free status.\n- Participate in EQA for mixing studies if available; otherwise, maintain competency records for the interpretation protocol.\n\n## 7. Decision limits\nThe interpretive thresholds below are clinical decision limits; the canonical adult reference intervals are displayed in the Reference Ranges panel.\n- **Correction (immediate mix normalizes or stays within the correction window):** factor deficiency — in the setting of an isolated prolonged APTT, one factor, such as factor VIII, IX, XI, or XII, is deficient; multiple-factor deficiency (DIC, liver disease, vitamin K deficiency, warfarin/supra-therapeutic anticoagulant) also corrects.\n- **No correction (persistently prolonged mix):** circulating inhibitor — lupus anticoagulant prolongs the APTT (often mildly) and does not correct with mixing; a specific factor inhibitor (e.g., anti-factor VIII) is typically time-dependent and lengthens on incubation.\n- **Time-dependent inhibitors:** a normal immediate mix but prolonged 2-hour incubated mix is classic for anti-factor VIII in acquired hemophilia.\n- **Limitations:** factor deficiency below roughly 30-50% may still prolong the mix if the factor level is very low; interpretation is part of a multistep algorithm and never a standalone result.",
+        "principle": "Pooled normal plasma supplies all coagulation factors in adequate amounts. In a 1:1 mix, a simple factor deficiency is corrected to near-normal because the added normal factors restore activity above the threshold needed to clot. A circulating inhibitor neutralizes the added normal factors in proportion to its strength, so the mix stays prolonged. Time-dependent (progressive) inhibitors require incubation at 37°C before their effect becomes detectable, so incubated mix testing is essential.",
+        "department": "Coagulation",
+        "mandatory_disclaimer": "Template based on standard clinical coagulation practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Coagulation"
+        ],
+        "tags": [
+            "mixing study",
+            "correction study",
+            "factor deficiency",
+            "lupus anticoagulant",
+            "inhibitor"
+        ],
+        "seo_title": "PT/APTT Mixing (Correction) Study SOP",
+        "focus_keyword": "pt aptt mixing study",
+        "reviewer_credentials": "PhD, Coagulation",
+        "faqs": [
+            {
+                "question": "What is the purpose of the 1:1 mix test?",
+                "answer": "It distinguishes a factor deficiency, which corrects when normal plasma is added, from a circulating inhibitor, which keeps the clotting time prolonged by neutralizing the added normal factors."
+            },
+            {
+                "question": "Why must the mix be incubated at 37°C for 2 hours?",
+                "answer": "Some inhibitors, especially factor VIII inhibitors, act progressively over time. Immediate mixing looks normal but incubation reveals the prolongation, which is why an incubated mix is essential to detection."
+            },
+            {
+                "question": "Does a deficient patient plasma still show correction?",
+                "answer": "Yes, in most cases a 1:1 mix with normal plasma corrects factor deficiencies, because the normal plasma supplies enough of the missing factor to achieve threshold clot activity. Very low factor levels below about 30-50% may not show full correction."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for PT/APTT mixing studies distinguishing factor deficiency from circulating inhibitors, including time-dependent inhibitor detection.",
+        "reference_ranges": [
+            "pt-adult",
+            "aptt-adult"
+        ]
+    }
+]

@@ -1,0 +1,49 @@
+[
+    {
+        "status": "published",
+        "version": "1.0",
+        "author_name": "Laboratory Director",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
+        "reviewed_by": "Dr. [Name]",
+        "last_reviewed_date": "2026-08-30",
+        "featured_image": null,
+        "name": "Venipuncture and Phlebotomy Procedure",
+        "slug": "venipuncture-phlebotomy-procedure",
+        "short_description": "SOP for routine antecubital venipuncture including patient identification, order of draw, tube selection, and sharps safety.",
+        "content": "# Standard Operating Procedure: Venipuncture and Phlebotomy Procedure\n\n## 1. Purpose and Scope\nTo perform safe and reliable routine venipuncture for blood collection, including patient identification (two identifiers), correct tube selection and order of draw, specimen labeling, and sharps disposal, to minimize hemolysis, contamination, and patient harm.\n\n## 2. Specimen/Patient Requirements\n- **Patient identifiers:** confirm at least two unique identifiers (e.g., full name and date of birth) against the requisition and the wristband; never rely on a room number.\n- **Fasting/timing:** respect documented fasting requirements; note recent medication or transfusion, and the collection time.\n- **Site selection:** prefer the median cubital vein; avoid the arm with an IV line, a fistula, an infected or burned site, and the side after mastectomy unless approved.\n- **Tourniquet:** apply and release within 1 minute to avoid hemoconcentration and altered analytes.\n- **Tubes:** use additive tubes only to their stated fill volume; underfill invalidates anticoagulant ratios.\n\n## 3. Safety and Precautions\n- Wear gloves and a lab coat; antiseptic hand hygiene before and after.\n- Disinfect the puncture site; allow the antiseptic to dry completely to avoid contamination.\n- Never recap needles; dispose of the entire blood-collection device in the puncture-proof sharps container immediately after use.\n- Activate safety-engineered devices as designed; report any needlestick exposure through the institutional protocol.\n\n## 4. Equipment and Reagents\n- Vacutainer holder, needle (or winged butterfly for small veins/children), and correct tubes.\n- Tourniquet, antiseptic (70% alcohol or 2% chlorhexidine for blood culture per policy), gauze, and pressure dressing/plaster.\n- Sharps container, biohazard bags, requisitions, and labeling system.\n\n## 5. Step-by-Step Procedure\n1. Greet the patient, confirm identity with two identifiers, and explain the procedure; confirm fasting/prep status.\n2. Assemble equipment; apply the tourniquet 3-4 inches above the site.\n3. Select the vein; disinfect the site and allow the antiseptic to dry.\n4. Anchor the vein; insert the needle at a 15-30 degree angle into the vein with the bevel up; insert and advance the tube into the holder.\n5. Collect into the tubes in the correct order of draw: blood culture, citrate (light blue), plain/SST (red/gold), heparin (green), EDTA (lavender), fluoride (gray).\n6. Fill each tube to the marked volume; mix tubes with additives by gentle inversion (EDTA and others 8-10 times; citrate 3-4 times).\n7. Withdraw the needle, press with gauze until bleeding stops, and apply a pressure dressing; do not bend the arm to stop bleeding only from the site.\n8. Label the tubes at the bedside immediately (never pre-label) with patient identifiers and the collection time; deliver to the laboratory together with the request.\n9. Dispose of the needle assembly in the sharps container; perform hand hygiene.\n\n## 6. Quality Control\n- Verify each lot of tubes for correct labeling, vacuum, and expiry.\n- Monitor key quality indicators: hemolysis rate, rejected specimens, needle-stick events, and patient identification errors, with monthly review.\n- Annual competency assessment for every phlebotomist; document training on order of draw and pediatric/capillary techniques.\n\n## 7. Decision limits\nThe decision rules below are procedural/quality criteria rather than a patient reference range.\n- **Order of draw:** any deviation risks cross-contamination of additives (e.g., EDTA entering a serum tube causes falsely low calcium/potassium and chelated values).\n- **Hemolysis indicators:** visible hemolysis or elevated hemolysis index should trigger recollection for potassium, LDH, AST, and other cell-content analytes where the hemolysis index exceeds the assay limit.\n- **Rejection:** unlabeled, mislabeled, underfilled anticoagulant tubes, and tubes collected from the IV drip arm are rejected and a recollection is requested through the specimen rejection protocol.\n- **Tourniquet time:** exceeding 1 minute can raise potassium, protein, and lipids; document prolonged tourniquet use when unavoidable.",
+        "principle": "Most preanalytical errors originate in collection: patient misidentification, wrong tube, wrong order of draw, underfilling, and hemolysis. Standardizing site selection, antiseptic handling, tube-fill, gentle mixing, and immediate bedside labeling reduces these errors. The additive type dictates specimen validity for each test, so correct tube selection and order of draw are fundamental to result accuracy.",
+        "department": "Laboratory Operations",
+        "mandatory_disclaimer": "Template based on standard phlebotomy practices. Must be approved by Laboratory Director.",
+        "categories": [
+            "Laboratory Operations",
+            "Preanalytical"
+        ],
+        "tags": [
+            "phlebotomy",
+            "venipuncture",
+            "order of draw",
+            "preanalytical",
+            "blood collection"
+        ],
+        "seo_title": "Venipuncture and Phlebotomy Procedure SOP | Order of Draw",
+        "focus_keyword": "venipuncture procedure",
+        "reviewer_credentials": "Medical Laboratory Scientist",
+        "faqs": [
+            {
+                "question": "Why is the order of draw important?",
+                "answer": "Incorrect order transfers additives between tubes - for example EDTA from a lavender tube contaminating a serum tube causes falsely low calcium and chelated trace-metal values. A fixed order prevents cross-contamination of tube additives."
+            },
+            {
+                "question": "How are tubes mixed after collection?",
+                "answer": "Gently invert EDTA, heparin, and other additive tubes 8-10 times, and citrate tubes 3-4 times. Vigorous shaking causes hemolysis and foaming; inadequate mixing leaves anticoagulant acting on only part of the blood."
+            },
+            {
+                "question": "Why must labels be applied at the bedside?",
+                "answer": "Pre-labeling risks mismatch between the labeled tube and the patient. Bedside labeling immediately after collection with two patient identifiers prevents misidentification, the most common and dangerous preanalytical error."
+            }
+        ],
+        "seo_description": "Standard Operating Procedure for venipuncture and phlebotomy with proper order of draw, tube selection, and sharps safety for reliable specimen quality.",
+        "reference_ranges": []
+    }
+]
