@@ -1,0 +1,1974 @@
+[
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which glucose result range is used to define diabetes mellitus on the 2-hour value in the standard diagnostic classification?",
+        "case_text": "A 55-year-old man has a fasting plasma glucose of 138 mg/dL and a 2-hour post-75 g glucose of 188 mg/dL during a diagnostic oral glucose tolerance test.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "126 mg/dL",
+            "200 mg/dL or higher",
+            "160 mg/dL",
+            "110 mg/dL"
+        ],
+        "explanation": "Diabetes is defined by a fasting glucose of 126 mg/dL or higher, a 2-hour value of 200 mg/dL or higher, random glucose of 200 mg/dL or higher with symptoms, or an HbA1c of 6.5% or higher. Impaired glucose tolerance is 140 to 199 mg/dL, so 188 mg/dL on the 2-hour sample is impaired tolerance, not diabetes.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which of the following values corresponds to an HbA1c diagnostic of diabetes mellitus?",
+        "case_text": "A 38-year-old woman undergoes screening that returns an HbA1c of 6.8%.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "5.4 percent",
+            "6.5% or higher",
+            "6.0 percent",
+            "7.5 percent"
+        ],
+        "explanation": "An HbA1c of 6.5% or higher is the diagnostic cutoff for diabetes mellitus. Values of 5.7% to 6.4% define prediabetes, and 5.4 percent is within normal limits. A single point like 7.5 percent is already diabetic but is not the diagnostic boundary.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which marker best reflects the average blood glucose over the preceding 8 to 12 weeks?",
+        "case_text": "A diabetic patient shows a decline in kidney function on serial creatinine results.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Fasting glucose",
+            "Urine glucose",
+            "Hemoglobin A1c",
+            "Albuminated glycated protein"
+        ],
+        "explanation": "Glycated hemoglobin (HbA1c) integrates glucose exposure over the 120-day lifespan of the red cell, weighted to the most recent 8 to 12 weeks. Fasting glucose reflects a single point in time, urine glucose is an insensitive renal threshold marker, and glycated albumin reflects only the prior 2 to 3 weeks.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The colorimetric glucose oxidase method measures glucose by producing which biochemical product that is then quantitated?",
+        "case_text": "A reagent strip rapidly turns dark blue-black after adding a drop of blood to a glucose oxidase pad.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Hydrogen peroxide",
+            "The glucose-6-phosphate intermediate",
+            "Reduced FAD",
+            "The gluconolactone product"
+        ],
+        "explanation": "Glucose oxidase converts glucose to gluconic acid with the formation of hydrogen peroxide; in the coupled Trinder reaction the peroxide oxidizes a chromogen to produce a colored dye measured spectrophotometrically. The glucose-6-phosphate intermediate and FAD are bacterial-coupled products, and gluconolactone is an intermediate of the glucose dehydrogenase system but is not the coloring species.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which change most likely results from delayed separation of a whole blood glucose sample?",
+        "case_text": "A 50-year-old man with high triglycerides has blood drawn for glucose, and the sample is left at room temperature for 4 hours before separation.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "An artificially high glucose",
+            "No change at all",
+            "An artificially low glucose",
+            "Raised osmolality"
+        ],
+        "explanation": "Glycolysis continues in the unseparated tube and consumes glucose, producing a falsely low result as red cells metabolize glucose at roughly 5 to 7 mg/dL per hour. Fluoride-oxalate tubes inhibit glycolysis when separation is delayed. Hemolysis from storage raises potassium, not the glucose concentration.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A serum osmolality of 300 mOsm/kg with glucose 320 mg/dL, sodium 130 mmol/L, and no ethanol detects a hyperosmolar state caused mainly by which solute?",
+        "case_text": "A 62-year-old patient has a glucose of 30 mg/dL and seizures.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Urea",
+            "Chloride",
+            "Ketones",
+            "Glucose"
+        ],
+        "explanation": "Each 18 mg/dL of glucose adds roughly 1 mOsm/kg and each 10 mg/dL of ethanol adds roughly 2 mOsm/kg to the calculated osmolarity. Here glucose is markedly elevated, providing the osmolal gap. Urea freely distributes and does not contribute an osmolal gap, chloride is an anionic balance ion, and ketones are not measured in the usual equation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which laboratory condition is the most common cause of a spuriously low glucose in a neonate sample collected with EDTA and analyzed late?",
+        "case_text": "A pediatric specimen has a glucose of 65 mg/dL flagged as low and confirmed on a repeat draw with prompt separation.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Cold agglutinin effect",
+            "In vitro glycolysis",
+            "Bacterial contamination",
+            "Inverse chloride shift"
+        ],
+        "explanation": "Neonatal red cells, like adult cells, glycolyze actively in the tube, so a prolonged delay before analysis lowers measured glucose even when the patient value is normal. Prompt centrifugation or a fluoride tube prevents the loss. Cold agglutinins and bacteria do not commonly lower stored blood glucose without other findings.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A fasting plasma glucose of 105 mg/dL with a 2-hour value of 152 mg/dL is best classified as which diagnostic state?",
+        "case_text": "A 44-year-old man completes a 75 g glucose tolerance test performed for gestational-like screening after bariatric surgery.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Diabetes mellitus",
+            "Normal glucose tolerance",
+            "Impaired glucose tolerance",
+            "Reactive hypoglycemia"
+        ],
+        "explanation": "Impaired glucose tolerance is defined by a 2-hour glucose of 140 to 199 mg/dL after a glucose load. Diabetes requires 200 mg/dL or higher, and normal tolerance is below 140 mg/dL. Reactive hypoglycemia describes postprandial drops well below fasting values, which is not the case here.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which patient factor causes a spuriously low glucose result on a glucose oxidase meter?",
+        "case_text": "A 60-year-old man with type 2 diabetes has glucose meter readings that do not correlate with laboratory glucose.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Elevated uric acid",
+            "High bilirubin",
+            "Long-chain fatty acids",
+            "Low hematocrit"
+        ],
+        "explanation": "Whole blood glucose meters are calibrated to plasma; severe anemia produces a low hematocrit and a lower whole blood glucose than the plasma reference, so values read low. High uric acid and bilirubin can falsely raise some oxidase methods, and lipid does not lower electrochemical oxidase readings.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which enzyme is more specific for acute pancreatitis and rises later but remains elevated longer than pancreatic amylase?",
+        "case_text": "A 58-year-old man with epigastric pain and heavy drinking has an amylase of 320 U/L and a lipase of 1100 U/L.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Total amylase",
+            "The GGT enzyme",
+            "The lipase enzyme",
+            "The CK-MB fraction"
+        ],
+        "explanation": "The lipase enzyme is the most specific serum marker for acute pancreatitis, staying elevated for days while amylase normalizes earlier. Total amylase rises from both pancreas and salivary glands, The GGT enzyme marks hepatobiliary disease, and The CK-MB fraction reflects myocardial injury.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "An elevated ALP with a normal GGT most often points toward which source of the enzyme?",
+        "case_text": "A 45-year-old woman presents with right upper quadrant pain, fever, and a markedly elevated alkaline phosphatase.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Hepatobiliary damage",
+            "A bone source",
+            "Small intestine",
+            "Red blood cells"
+        ],
+        "explanation": "GGT arises from hepatobiliary membranes; a normal GGT with a raised ALP points to a non-hepatic source such as bone disease (Paget disease, healing fractures, osteomalacia). Cholestatic liver injury raises both ALP and GGT together. Intestine contributes a small fraction, and ALP is not produced by red cells in significant amounts.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which isoenzyme is expected to constitute the dominant fraction of the cardiac CK pattern in this consecutive sample?",
+        "case_text": "A 30-year-old athlete is hospitalized with rhabdomyolysis after extreme exercise; total CK is 40,000 U/L.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "The CK-MM isoform",
+            "The CK-MB isoform",
+            "The CK-BB isoform",
+            "A macro-CK complex"
+        ],
+        "explanation": "Skeletal muscle is almost entirely The CK-MM isoform, so in rhabdomyolysis the mass fraction is overwhelmingly The CK-MM isoform; the 2% to 4% The CK-MB isoform normally seen may also rise because regenerating muscle expresses MB. The CK-BB isoform dominates brain and smooth muscle, and macro-CK is a rare circulating complex.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The elevated AST with ALT near normal in this setting most likely reflects release from which tissue?",
+        "case_text": "A 62-year-old man on a statin complains of muscle pain; laboratory workup shows an ALT of 45 U/L and AST of 74 U/L.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Liver only",
+            "Biliary tract",
+            "Skeletal muscle",
+            "The pancreas tissue"
+        ],
+        "explanation": "AST is present in skeletal muscle, cardiac muscle, liver, and red cells, so statin myopathy raises AST without a parallel rise in liver-derived ALT. An elevated AST with ALT normal should trigger a CK check. Biliary and pancreatic disease do not preferentially raise AST.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Elevated gamma-glutamyl transferase with normal ALP, ALT, and AST is most characteristic of induction by which class of agent?",
+        "case_text": "A 35-year-old patient has an isolated slightly elevated GGT found on screening and denies alcohol use.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "The insulin level",
+            "Microsomal enzyme-inducing drugs",
+            "Loop diuretics",
+            "Proton pump inhibitors"
+        ],
+        "explanation": "Microsomal enzyme inducers such as phenytoin, carbamazepine, and barbiturates raise GGT with otherwise normal liver tests. GGT reflects hepatobiliary enzyme induction as well as cholestasis. The other drugs listed do not routinely produce an isolated GGT elevation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The mechanism for the rising troponin in myocardial necrosis is primarily which biochemical event?",
+        "case_text": "A 45-year-old man has chest pain; serial high-sensitivity troponin I rises from 8 to 540 ng/L over 3 hours.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Release of vitamin K",
+            "Alkaline shift of pH",
+            "Reduction of creatine",
+            "Disruption of the sarcomere membrane"
+        ],
+        "explanation": "Ischemia disrupts the myocardial cell membrane so troponin subunits leak from the cytoplasm and, later, from the myofibrillar pool into blood. Troponin I and T are structural regulatory proteins of the sarcomere, not clotting or energy metabolites.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which isoenzyme fraction study would best confirm a bone origin for this total ALP elevation?",
+        "case_text": "A 70-year-old woman with bone pain has an alkaline phosphatase of 480 U/L with a normal calcium.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Heat-denaturation at 4 C",
+            "Heat-inactivation at 56 C and wheat germ lectin precipitation",
+            "Cold electrophoresis at 0 C",
+            "Alcohol fractionation"
+        ],
+        "explanation": "Bone (liver-bone-kidney) ALP is partially heat labile, losing activity at 56 C, whereas liver ALP is relatively heat stable; wheat germ lectin also precipitates the bone fraction. Total ALP alone cannot distinguish sources. The other manipulations are not standard validations for bone isoenzyme.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The most common cause of an elevated CK-MB fraction out of proportion to total CK is which condition?",
+        "case_text": "A 28-year-old woman on furosemide has a CK of 120 U/L with a raised CK-MB fraction of 25%.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Acute myocardial infarct",
+            "Pulmonary infarction",
+            "Skeletal muscle regeneration or macro-CK",
+            "Hemolytic anemia"
+        ],
+        "explanation": "A CK-MB percentage up to 20% to 25% is seen in skeletal muscle regeneration (myositis, muscular dystrophy, vigorous exercise) because regenerating muscle re-expresses the fetal MB isoform, and in macro-CK type 1 complexes with immunoglobulins. True acute MI usually shows a rising pattern rather than a chronically high fraction with normal total CK.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The laboratory pattern of conjugated hyperbilirubinemia with marked ALP and GGT points to which category of hepatobiliary disorder?",
+        "case_text": "A 41-year-old man has jaundice, and his conjugated bilirubin is 4.2 mg/dL with ALP 900 U/L and GGT 720 U/L.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Prehepatic hemolysis",
+            "Biliary obstruction",
+            "Hepatocellular parenchymal injury",
+            "Iron overload"
+        ],
+        "explanation": "Biliary obstruction from stone, stricture, or mass produces conjugated hyperbilirubinemia with strong ALP and GGT elevation reflecting cholestasis. Hemolysis produces unconjugated hyperbilirubinemia with normal enzymes, and pure hepatocellular injury usually shows transaminases higher than ALP.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "An elevation of cerebrospinal fluid LDH in bacterial meningitis results mainly from the presence of which cell?",
+        "case_text": "A 52-year-old patient has CSF studies drawn for encephalopathy; CSF LDH equals serum LDH.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "Neutrophils",
+            "Monocytes",
+            "Ependymal cells",
+            "Fibroblasts"
+        ],
+        "explanation": "Neutrophils are the dominant CSF cell in bacterial meningitis and are rich in LDH, raising CSF LDH into the serum range. Lymphocytic and monocytic populations produce less LDH, which is why viral meningitis shows smaller CSF LDH elevations.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Macroamylase is best confirmed by demonstrating what property of the circulating enzyme complex?",
+        "case_text": "A 33-year-old woman has macroamylasemia suspected after an elevated amylase with normal lipase and negative abdominal imaging.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Heat lability below 56 C",
+            "Inhibition by urea",
+            "Large molecular size seen by gel filtration or PEG precipitation",
+            "Sensitivity to EDTA"
+        ],
+        "explanation": "Macroamylase is large amylase bound to immunoglobulin or polysaccharide that cannot be filtered by the kidney; gel filtration or polyethylene glycol precipitation shows a predominantly high-molecular-weight complex. The large size explains normal renal clearance despite high serum activity.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which preanalytic factor most likely explains the isolated CK elevation after the recent race?",
+        "case_text": "A 25-year-old marathon runner is screened in the laboratory and found to have a moderately elevated CK of 900 U/L with normal liver tests.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "The statin therapy",
+            "An acute infection",
+            "Biliary colic",
+            "Strenuous exercise"
+        ],
+        "explanation": "Eccentric endurance exercise transiently releases CK from skeletal muscle, and levels peak 24 to 48 hours after the event before returning to baseline within days. The statin therapy cause a similar release but the timing here points to the race.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Using the Friedewald equation, the calculated LDL cholesterol is approximately which value?",
+        "case_text": "A 48-year-old man has a fasting lipid panel showing total cholesterol 260 mg/dL, HDL 35 mg/dL, triglycerides 300 mg/dL.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "165 mg/dL",
+            "144 mg/dL",
+            "190 mg/dL",
+            "210 mg/dL"
+        ],
+        "explanation": "Friedewald LDL = total cholesterol - HDL - triglycerides/5, so 260 - 35 - 300/5 = 260 - 35 - 60 = 165 mg/dL. The equation is valid only when triglycerides are below 400 mg/dL.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which reason makes the Friedewald equation invalid at this triglyceride concentration?",
+        "case_text": "A sample submitted for a lipid panel arrives with triglyceride 850 mg/dL and the laboratory cannot calculate LDL.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "HDL saturates the assay",
+            "Chylomicron presence distorts the very low density fraction ratio",
+            "LDL becomes electronegative",
+            "Apolipoprotein A drops"
+        ],
+        "explanation": "At triglycerides above 400 mg/dL the ratio of triglycerides to very low density cholesterol is no longer a constant 5:1, so Friedewald underestimates LDL; a direct homogeneous LDL assay or ultracentrifugation is required.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which lipid fraction is least affected by the non-fasting state?",
+        "case_text": "A 55-year-old woman has an The LDL fraction of 170 mg/dL and a lipid panel ordered without fasting.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The triglyceride level",
+            "The VThe LDL fraction particles",
+            "The LDL fraction",
+            "The chylomicron remnants"
+        ],
+        "explanation": "The LDL fraction is minimally affected by recent meals while triglycerides rise and the The VThe LDL fraction particles and chylomicron fractions swell with postprandial lipemia. Non-HDL cholesterol also remains stable and is recommended in the non-fasting setting.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The apolipoprotein measured specifically to estimate the number of atherogenic particles in the circulation is which protein?",
+        "case_text": "A 60-year-old man with ischemic heart disease has apoB-100 particles measured for residual risk.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Apolipoprotein A-I",
+            "Apolipoprotein B-100",
+            "Apolipoprotein C-II",
+            "Apolipoprotein E"
+        ],
+        "explanation": "ApoB-100 is present on LDL, VLDL, and IDL, so total apoB counts every atherogenic particle; LDL cholesterol measures cholesterol content, not particle number. Apo A-I is the HDL apolipoprotein, apo C-II activates lipoprotein lipase, and apo E mediates remnant clearance.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The receptor defect most strongly associated with classic familial hypercholesterolemia involves which protein?",
+        "case_text": "A 30-year-old may have familial hypercholesterolemia with an LDL of 210 mg/dL and tendon xanthomata.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Lipoprotein lipase",
+            "The LCAT enzyme",
+            "LDL receptor",
+            "HMG-CoA reductase regulator"
+        ],
+        "explanation": "Familial hypercholesterolemia is caused by loss-of-function mutations of the LDL receptor, decreasing clearance of LDL from plasma and producing very high LDL from birth. Lipoprotein lipase defects cause hypertriglyceridemia, and The LCAT enzyme defects cause low HDL and corneal opacity.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A narrow homogeneous peak on serum protein electrophoresis is most characteristic of which disorder?",
+        "case_text": "A 68-year-old man is evaluated for fatigue; serum protein electrophoresis shows a tall narrow spike in the gamma region.",
+        "difficulty": "easy",
+        "correct": "D",
+        "options": [
+            "Chronic inflammation",
+            "The cirrhosis pattern",
+            "Nephrotic syndrome",
+            "Monoclonal gammopathy"
+        ],
+        "explanation": "A tall narrow gamma spike represents a single M-protein clone, seen in multiple myeloma or monoclonal gammopathy of undetermined significance. Inflammation gives a broad diffuse polyclonal increase, cirrhosis raises beta-gamma bridging, and nephrotic syndrome lowers gamma globulin while alpha-2 rises.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Immunofixation electrophoresis classifies the monoclonal spike by using antibodies specific to which proteins?",
+        "case_text": "A spiked SPE pattern is then subjected to immunofixation to identify the heavy and light chains.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Complement proteins",
+            "Immunoglobulin heavy and light chain classes",
+            "Acute phase alpha globulins",
+            "Haptoglobin variants"
+        ],
+        "explanation": "Immunofixation uses antisera against IgG, IgA, IgM heavy chains and kappa and lambda light chains to identify the clone. Complement and haptoglobin are not used to subclassify M-proteins.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The loss of which protein explains the alpha-2 globulin increase seen on serum protein electrophoresis in nephrotic syndrome?",
+        "case_text": "A 45-year-old patient with kidney disease has a urinalysis showing heavy protein; total protein and albumin are low.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Alpha-2 macroglobulin",
+            "The transferrin protein",
+            "The ceruloplasmin protein",
+            "The IgM fraction"
+        ],
+        "explanation": "In nephrotic syndrome, small proteins like albumin, alpha-1 antitrypsin, transferrin, and IgG are lost in urine while the large alpha-2 macroglobulin and apolipoprotein-containing beta fraction rise relatively, giving the characteristic low albumin with a prominent alpha-2 band.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The rise in alpha-1 and alpha-2 globulins in acute inflammation reflects an increase in which pair of proteins?",
+        "case_text": "A 70-year-old man has an acute infection; serum protein electrophoresis shows an elevated alpha-1 and alpha-2 fraction with a normal gamma region.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "IgM and C3",
+            "Albumin and transferrin",
+            "Alpha-1 antitrypsin and haptoglobin",
+            "Fibrinogen and LDL"
+        ],
+        "explanation": "Acute phase reactants migrating in the alpha region include alpha-1 antitrypsin, alpha-1 acid glycoprotein, haptoglobin, ceruloplasmin, and alpha-2 macroglobulin. Fibrinogen migrates in the beta-gamma area and is high in heparinized plasma artifact rather than a separate band.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A BUN to creatinine ratio near 20:1 is classically associated with which clinical state?",
+        "case_text": "A 63-year-old diabetic has a serum creatinine of 2.3 mg/dL and BUN of 48 mg/dL, ratio 21:1.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Acute tubular necrosis",
+            "Prerenal azotemia",
+            "Chronic dialysis",
+            "The rhabdomyolysis state"
+        ],
+        "explanation": "Prerenal azotemia from dehydration or heart failure reduces renal blood flow, so urea is reabsorbed more avidly than creatinine, raising the ratio to 20:1 or higher. ATN typically shows a ratio near 10:1, and rhabdomyolysis elevates creatinine out of proportion to urea.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The creatinine clearance estimate using a timed 24-hour urine requires which additional measurements?",
+        "case_text": "A 40-year-old healthy woman has a serum creatinine of 0.8 mg/dL in a clearance study.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Serum BUN and chloride",
+            "Urine protein and osmolality",
+            "Urine creatinine, urine volume, and serum creatinine",
+            "Hemoglobin and hematocrit"
+        ],
+        "explanation": "Clearance = urine creatinine x urine volume / (serum creatinine x time), so a timed volume and a urine creatinine are required along with the serum creatinine. BUN, osmolality, and protein do not enter the classic clearance formula.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The rise in creatinine from massive muscle breakdown out of proportion to urea occurs because creatinine is produced at a rate that depends mainly on which factor?",
+        "case_text": "A 29-year-old man has rhabdomyolysis after crush injury with a rising creatinine and myoglobinuria.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Muscle mass",
+            "Protein intake",
+            "The dehydration state",
+            "Hepatic function"
+        ],
+        "explanation": "Creatinine is generated from creatine in skeletal muscle, so individuals with large muscle mass or destructive muscle injury produce creatinine at a higher rate. Prerenal states raise BUN, protein intake alters urea, and hepatic function changes urea synthesis.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The elevated serum bicarbonate with hypochloremia and hypokalemia is best interpreted as which acid-base disturbance?",
+        "case_text": "A 35-year-old man is vomiting repeatedly; serum sodium 142, potassium 3.0, chloride 90, HCO3 38 mEq/L.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Respiratory acidosis",
+            "Lactic acidosis",
+            "Diabetic ketoacidosis",
+            "Metabolic alkalosis"
+        ],
+        "explanation": "Loss of gastric hydrochloric acid raises plasma bicarbonate and chloride falls to balance charge, producing hypokalemic hypochloremic metabolic alkalosis. Lactic acidosis and DKA lower bicarbonate, and respiratory acidosis produces hypercapnia rather than a primary bicarbonate rise.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The plasma anion gap of 26 mEq/L in diabetic ketoacidosis is caused by accumulation of which unmeasured anions?",
+        "case_text": "A 55-year-old woman with type 1 diabetes has vomiting, glucose 490 mg/dL, pH 7.15, HCO3 8, and a strong urine ketone reaction.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "The chloride ion",
+            "The urea waste product",
+            "Ketone bodies",
+            "The ammonium ion"
+        ],
+        "explanation": "Beta-hydroxybutyrate and acetoacetate are the unmeasured anions producing the elevated gap. After insulin therapy, ketones clear and a hyperchloremic pattern may appear as bicarbonate is regenerated.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A low measured sodium with a normal osmolality most often reflects which cause in this clinical scenario?",
+        "case_text": "A 30-year-old marathon runner collapses during a race with sodium 118 mEq/L and normal serum osmolality measured at 298 mOsm/kg.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "True hypotonic hyponatremia",
+            "Hypertriglyceridemia or hyperproteinemia artifact",
+            "Addison disease",
+            "Diuretic excess"
+        ],
+        "explanation": "Severe lipemia or paraproteinemia displaces plasma water, giving a pseudohyponatremia with normal measured osmolality because ion-selective electrodes dilute the fatty sample. Exercise hyponatremia from water overload is typically hypotonic with low osmolality, so the normal osmolality points to the artifact.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A normal anion gap metabolic acidosis with hyperchloremia is most characteristic of which disorder?",
+        "case_text": "A 40-year-old man has Na 140, Cl 112, HCO3 16 mEq/L; the calculated anion gap is 12.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Rental tubular acidosis or diarrhea",
+            "Lactic acidosis",
+            "Ethylene glycol poisoning",
+            "Salicylate overdose"
+        ],
+        "explanation": "Hyperchloremic normal-anion-gap acidosis occurs with GI bicarbonate loss (diarrhea) and renal tubular acidosis; the chloride rises to occupy the lost bicarbonate. High-gap causes like lactate, methanol, and salicylate lower the gap only after chloride-normal compensation phase is excluded.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The measured-minus-calculated osmolal gap in ethylene glycol intoxication is attributable mainly to which solute?",
+        "case_text": "A 47-year-old man ingests antifreeze; laboratories show an osmolal gap of 35 mOsm/kg and a high anion gap acidosis with calcium oxalate crystals in urine.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "The formate ion",
+            "Ethylene glycol itself",
+            "The acetoacetate radical",
+            "Hydrochloric acid"
+        ],
+        "explanation": "Ethylene glycol is a small nonelectrolyte that contributes to measured osmolality but not to calculated osmolarity (2CNa, glucose, BUN), producing a wide osmolal gap before the acid metabolites (glycolate, oxalate) dominate. Late in treatment this gap closes as the alcohol is metabolized.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Pseudohyperkalemia must first be excluded in this specimen by checking which preanalytic condition?",
+        "case_text": "A 68-year-old woman on an ACE inhibitor has serum potassium 6.9 mEq/L with peaked T waves on ECG.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Sample lipemia",
+            "Sample hemoconcentration",
+            "Contamination with saline",
+            "Hemolysis in the collection tube"
+        ],
+        "explanation": "In vitro hemolysis releases potassium from red cells, causing a spuriously high value that does not reflect the patient; a repeat non-hemolyzed draw is the standard first step. Lipemia and saline dilution affect sodium-like markers and chemistry, but hemolysis is the classic preanalytic potassium spike.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Hyponatremia with hyperkalemia and mild acidosis in adrenal insufficiency results from deficiency of which hormone axis?",
+        "case_text": "A 29-year-old woman has fatigue and postural dizziness; labs show Na 128, K 5.8, HCO3 18 mEq/L, and low cortisol.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Insulin",
+            "Growth hormone",
+            "Aldosterone and cortisol",
+            "Thyroxine"
+        ],
+        "explanation": "Adrenal insufficiency lacks aldosterone, causing renal sodium loss, potassium retention, and mild acidosis, together with cortisol deficiency. The combination of low sodium and high potassium with low cortisol is the classic biochemical triad of Addison disease.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which cell population produces the excess calcitriol in sarcoidosis and other granulomas?",
+        "case_text": "A 33-year-old patient has hypercalcemia of 12.2 mg/dL with a low serum PTH; age-adjusted screening shows elevated 1,25 dihydroxyvitamin D from granulomatous disease.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "Activated macrophages",
+            "Parathyroid chief cells",
+            "Renal tubular cells",
+            "The hepatocyte cells"
+        ],
+        "explanation": "Activated macrophages contain 1-alpha hydroxylase and synthesize calcitriol locally, raising intestinal calcium absorption and producing hypercalcemia with suppressed PTH. Parathyroid cells make PTH, and the kidney makes 1,25(OH)2D in health but is suppressed in sarcoid.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Using the standard correction, the corrected calcium is approximately which value?",
+        "case_text": "A renal patient has a serum calcium of 8.0 mg/dL with albumin 2.2 g/dL.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "9.4 mg/dL",
+            "8.0 mg/dL",
+            "7.2 mg/dL",
+            "10.8 mg/dL"
+        ],
+        "explanation": "Corrected calcium = measured total calcium + 0.8 x (4.0 - albumin), so 8.0 + 0.8 x (4.0 - 2.2) = 8.0 + 0.8 x 1.8 = 9.4 mg/dL. The correction reveals that the low total calcium is due to hypoalbuminemia rather than true hypocalcemia.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The phosphate elevation in advanced renal failure results primarily from which mechanism?",
+        "case_text": "A patient with chronic kidney disease has a serum phosphate of 7.1 mg/dL and calcium 8.4 mg/dL.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Increased dietary PTH",
+            "Vitamin D overactivity",
+            "Decreased renal phosphate excretion with secondary hyperparathyroidism",
+            "Increased calcitonin"
+        ],
+        "explanation": "As eGFR falls, phosphate excretion declines and rising PTH (from hypocalcemia and low calcitriol) cannot normalize it, producing hyperphosphatemia with secondary hyperparathyroidism. Calcitonin is not the driving force, and calcitriol is low, not overactive.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Hypocalcemia that fails to correct until magnesium is replaced occurs because magnesium deficiency impairs which process?",
+        "case_text": "A 45-year-old man is found to have a serum magnesium of 0.9 mg/dL with intractable hypocalcemia unresponsive to calcium therapy.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Renal 1-hydroxylation only",
+            "GI calcium absorption",
+            "Bone buffering",
+            "PTH secretion and action"
+        ],
+        "explanation": "Severe hypomagnesemia suppresses PTH secretion and blunts target organ response, so calcium stays low until magnesium is repleted. Renal 1-hydroxylase activity is also reduced, but the dominant reversible block is in PTH synthesis and peripheral PTH action.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The ferritin measured in iron overload reflects mainly which form of stored iron?",
+        "case_text": "A 52-year-old man on repeated red cell transfusions for refractory anemia has a markedly elevated ferritin.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Free plasma iron",
+            "Iron stored as ferritin and hemosiderin",
+            "Iron in transferrin",
+            "Heme iron"
+        ],
+        "explanation": "Ferritin is the intracellular storage protein of iron; its serum concentration correlates with total body stores in uncomplicated iron overload. Transferrin is the transport protein, and the reference range expands with inflammation because ferritin is an acute phase reactant.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The transferrin saturation in this classic iron deficiency picture is approximately which percent?",
+        "case_text": "A 3-year-old with a microcytic anemia has iron 20 ug/dL, TIBC 480 ug/dL, and ferritin 6 ng/mL.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "8 percent",
+            "2 percent",
+            "4 percent",
+            "12 percent"
+        ],
+        "explanation": "Transferrin saturation is serum iron divided by TIBC times 100; 20/480 is about 4 percent. A saturation below 16% supports iron deficiency, and combined with the low ferritin it confirms depleted stores.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The specimen of choice for blood lead analysis must be collected in which type of tube to avoid environmental contamination?",
+        "case_text": "An occupational clinic screens workers for inorganic lead exposure using venous blood.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Trace element free royal blue with EDTA",
+            "Plain red top",
+            "Sodium fluoride gray top",
+            "Plain lavender tube"
+        ],
+        "explanation": "Lead-free royal blue tubes (metal-free EDTA) are required for trace metals including lead; ordinary lavender EDTA and plain tubes can leach metals from rubber stoppers and contaminate the sample. Fluoride tubes are for glucose.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "An immunoassay positive for amphetamine caused by an over-the-counter decongestant is best confirmed by which technique?",
+        "case_text": "Urine drug testing returns positive for amphetamine on an initial immunoassay from a patient taking pseudoephedrine for congestion.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Repeat immunoassay with the same kit",
+            "Urine pH adjustment",
+            "Gas chromatography mass spectrometry",
+            "Creatinine correction alone"
+        ],
+        "explanation": "GC-MS is the confirmatory technique that separates structurally similar drugs (pseudoephedrine) from amphetamine, eliminating the false positive. Repeating the same immunoassay cannot distinguish cross-reactants, and pH adjustment is a validity check rather than a confirmation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Interference from propylene glycol in an enzymatic alcohol measurement typically produces which direction of error?",
+        "case_text": "A trauma patient has an ethylene glycol level performed by an enzymatic alcohol assay that also detects propylene glycol.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Falsely low alcohol",
+            "Falsely high alcohol",
+            "No change",
+            "Depressed glycerol blank"
+        ],
+        "explanation": "Enzymatic alcohol assays using alcohol dehydrogenase also oxidize other primary/secondary alcohols and glycols such as propylene glycol and methanol, falsely raising the reported ethanol. Gas chromatography is the specific method in these cases.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Therapeutic drug monitoring of valproic acid is most often performed on what type of specimen collected at what time?",
+        "case_text": "A patient on valproic acid has a therapeutic drug monitoring result reported in mg/L.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Serum collected at trough before the next dose",
+            "Urine 2 hours after the dose",
+            "Saliva hourly",
+            "Whole blood at peak 30 minutes"
+        ],
+        "explanation": "Trough serum or plasma drawn just before the next dose best reflects the minimum steady-state concentration used to guide dosing and toxicity decisions. Peak and untimed samples are inconsistent guides for drugs dosed chronically.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Carboxyhemoglobin determination by co-oximetry is preferred over the older oxyhemoglobin technique because co-oximetry directly measures which parameter set?",
+        "case_text": "A 21-year-old student has a carboxyhemoglobin of 18% measured by co-oximetry after smoke exposure.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "pH and pCO2",
+            "Base excess only",
+            "Oxyhemoglobin, deoxyhemoglobin, methemoglobin, and carboxyhemoglobin fractions",
+            "Lactate and glucose"
+        ],
+        "explanation": "Co-oximetry resolves distinct hemoglobin species by multiwavelength spectroscopy so carboxyhemoglobin and methemoglobin are measured directly rather than derived. The older two-wavelength oximetry cannot separate carboxyhemoglobin and cannot be calibrated for the CO fraction.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A direct bilirubin dominating the total with near-normal unconjugated bilirubin suggests which clinical category?",
+        "case_text": "A 6-month-old is screened after prolonged jaundice; total bilirubin is 22 mg/dL, and the conjugated fraction is 19 mg/dL.",
+        "difficulty": "easy",
+        "correct": "D",
+        "options": [
+            "Physiologic jaundice",
+            "Breast milk jaundice",
+            "The hemolysis process",
+            "Biliary obstruction or hepatocellular disease"
+        ],
+        "explanation": "Conjugated hyperbilirubinemia reflects impaired excretion, seen in biliary atresia, hepatitis, and cholestasis; physiologic, breast milk, and hemolytic jaundice are all predominantly unconjugated.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The greatest risk of severe unconjugated neonatal hyperbilirubinemia is which condition?",
+        "case_text": "A newborn has a rapidly rising total bilirubin and the laboratory is asked for a risk assessment.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Anemia only",
+            "Kernicterus with brain damage",
+            "The cholestasis state",
+            "Cystic fibrosis"
+        ],
+        "explanation": "Severely elevated free unconjugated bilirubin crosses an immature blood-brain barrier and deposits in basal ganglia, causing kernicterus. Conjugated hyperbilirubinemia in older patients does not carry the same brain risk, and anemia is a consequence of hemolysis rather than the primary risk of the bilirubin level itself.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Unconjugated hyperbilirubinemia with a normal blood count and no hemolysis is classically associated with which condition?",
+        "case_text": "A 25-year-old woman has an elevated total bilirubin with a normal CBC, normal LDH, and negative reticulocytosis, plus fasting-induced worsening.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Gilbert syndrome",
+            "Dubin Johnson syndrome",
+            "Crigler Najjar severe disease",
+            "Biliary colic"
+        ],
+        "explanation": "Gilbert syndrome is a benign mild unconjugated hyperbilirubinemia from reduced UDP glucuronyl transferase activity that worsens with fasting or stress; conjugated bilirubin and liver enzymes normal. Dubin-Johnson has conjugated hyperbilirubinemia, and Crignler-Najjar is severe and neonatal.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A low free-to-total PSA ratio raises suspicion for which disorder of the prostate?",
+        "case_text": "A 58-year-old man with prostatic symptoms has a PSA of 18 ng/mL with a free PSA of 6%.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Benign prostatic hypertrophy",
+            "The prostatitis process",
+            "Prostate cancer",
+            "Prostatic infarction"
+        ],
+        "explanation": "Low free PSA fraction (below about 25%) with an elevated total PSA increases the probability of prostate cancer, while BPH tends to produce a higher free fraction. The prostatitis process can raise total PSA but generally not via the same free-to-total shift.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A markedly elevated hCG with a disproportionally high free beta subunit supports which diagnostic entity?",
+        "case_text": "A pregnant woman at 12 weeks has an elevated hCG of 180,000 mIU/mL with a subsequent ultrasound showing an abnormal placenta.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Ectopic pregnancy",
+            "Twin gestation",
+            "Normal first trimester",
+            "Gestational trophoblastic disease"
+        ],
+        "explanation": "Gestational trophoblastic neoplasia produces very high hCG with an elevated free beta fraction and hyperglycosylated forms compared with normal or ectopic pregnancy. Extremely high hCG requires dilution of the sample because hook effect can falsely lower results on two-site immunoassays.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "This pattern is most consistent with which thyroid disorder?",
+        "case_text": "A 32-year-old woman has an elevated TSH of 11 uIU/mL with a normal free T4 at the low end of range and positive TPO antibodies.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Graves disease",
+            "Subclinical or autoimmune hypothyroidism",
+            "Toxic multinodular goiter",
+            "Pituitary adenoma"
+        ],
+        "explanation": "High TSH with normal free T4 defines subclinical hypothyroidism, and positive TPO antibodies with a normal free T4 point to autoimmune Hashimoto thyroiditis. Graves disease shows low TSH with elevated free T4, and a pituitary adenoma with high TSH would show elevated, not normal, free T4.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The antibody most directly responsible for the hyperthyroid state of Graves disease binds to which receptor?",
+        "case_text": "A low TSH with a high free T4 and positive TSH receptor antibodies is detected in a 24-year-old woman with palpitations and heat intolerance.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "TSH receptor",
+            "TSH beta subunit",
+            "Thyroglobulin only",
+            "Sodium iodide transporter"
+        ],
+        "explanation": "Thyroid stimulating immunoglobulins bind the TSH receptor and mimic TSH, driving autonomous thyroid hormone synthesis and release. TPO and thyroglobulin antibodies mark autoimmunity but do not stimulate the gland.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Suppression testing for Cushing syndrome is designed to demonstrate lack of which feedback relationship?",
+        "case_text": "A 45-year-old woman has an incidentally elevated cortisol; the laboratory performs a midnight salivary collection and an overnight dexamethasone suppression test.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "ACTH stimulating aldosterone",
+            "Cortisol stimulating PTH",
+            "Cortisol failing to suppress ACTH",
+            "ACTH failing to suppress cortisol"
+        ],
+        "explanation": "In normal physiology, dexamethasone suppresses pituitary ACTH; cortisol excess from any cause fails to suppress, which is the basis of the overnight 1 mg dexamethasone test. The other pairings do not describe the feedback loop under evaluation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The undiluted patient glucose is which value?",
+        "case_text": "A technologist prepares a 1:10 dilution of serum and analyzes a glucose that reads 135 mg/dL on the analyzer.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "13.5 mg/dL",
+            "1350 mg/dL",
+            "135 mg/dL",
+            "675 mg/dL"
+        ],
+        "explanation": "A 1:10 dilution multiplies the measured concentration by the dilution factor, so 135 x 10 = 1350 mg/dL. Failing to multiply is the classic student error.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The volume of stock standard required for this dilution is approximately which amount?",
+        "case_text": "A stock standard of 200 mg/dL is used to prepare 3 mL of a 40 mg/dL working standard.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "0.6 mL",
+            "1.5 mL",
+            "0.2 mL",
+            "2.0 mL"
+        ],
+        "explanation": "C1V1 = C2V2 gives 200 x V1 = 40 x 3, so V1 = 120/200 = 0.6 mL, then diluted to 3 mL with diluent.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Two consecutive QC values exceeding the 2s limit on the same side of the mean is detected by which Westgard rule?",
+        "case_text": "A chemistry analyzer reports an out-of-control value on the level 1 control for sodium two days in a row in the same direction.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "R4s",
+            "2-2s",
+            "4-1s",
+            "10-x"
+        ],
+        "explanation": "The 2-2s rule flags two consecutive observations beyond the same 2-sigma limit, indicating systematic error, whereas R4s (range across two controls within a run) detects random error. A 10-x trend rule needs a run of ten sequential values on the same side of the mean.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A slope consistently fixed above 1.00 indicates what type of error relative to the reference method?",
+        "case_text": "A laboratory validates a sodium method: y = 1.04x - 0.5 with r = 0.998 against the reference method across the reportable range.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Random error",
+            "Constant error",
+            "Proportional error",
+            "Precision failure"
+        ],
+        "explanation": "The slope reflects proportional error, so a slope of 1.04 means the method reads 4% high at every concentration. The intercept (constant error) is near zero, and the high correlation coefficient confirms good linearity rather than random scatter.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The standard deviation at this level is approximately which value?",
+        "case_text": "A glucose method has a within-run coefficient of variation of 1.0% at a mean of 100 mg/dL.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "1.0 mg/dL",
+            "10 mg/dL",
+            "0.1 mg/dL",
+            "100 mg/dL"
+        ],
+        "explanation": "SD = CV x mean / 100 = 1.0 x 100 / 100 = 1.0 mg/dL. The CV quantifies imprecision relative to the mean, so small CV with moderate mean gives a small SD.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The reportable range of an assay is defined as which span of values?",
+        "case_text": "A laboratory technician serial dilutes a sample to assess linearity, and results fall outside the assay reportable range.",
+        "difficulty": "easy",
+        "correct": "D",
+        "options": [
+            "Amount verified by CV only",
+            "All values the manufacturer ever reported",
+            "Calibrator range only",
+            "Range of values verified by linearity and precision studies"
+        ],
+        "explanation": "The reportable range is the interval, generally validated by linearity and imprecision studies, over which results may be reported without additional dilution or concentration. Values above it require dilution, and below it require concentration or reflex.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Before reporting a sodium of 128 mEq/L from a grossly lipemic sample, the laboratory should take which action?",
+        "case_text": "A 59-year-old man has a random glucose of 95 mg/dL on an iso-osmotic sodium sample with a high lipemic index and wet-mount lipid film.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Repeat without dilution",
+            "Ultracentrifuge and re-analyze or note displacement effect",
+            "Add albumin to the sample",
+            "Use a urine strip"
+        ],
+        "explanation": "Lipemia displaces plasma water in indirect ion-selective electrode analyzers producing pseudohyponatremia; ultracentrifugation or a direct ISE reading corrects the artifact. Redilution with sample water instead of the displaced fraction is not sufficient.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Photodegradation of bilirubin in a sample left on the bench in light is best prevented by which preanalytic practice?",
+        "case_text": "A neonatal bilirubin is reported as 19.0 mg/dL but a repeat on the same analyzer converts the result to 14.5 mg/dL.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Freezing at 20 C for an hour",
+            "Adding sodium fluoride",
+            "Protecting the tube from light and analyzing promptly",
+            "Adding ascorbic acid"
+        ],
+        "explanation": "Bilirubin is photolabile, so tubes must be wrapped or run within 30 minutes in reduced light to prevent false lowering. Adding ascorbic acid reduces interference from ascorbate-inhibited strips rather than preventing bilirubin photolysis.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "In the Jaffe alkaline picrate reaction, a common spurious elevation of creatinine is produced by which interferent class?",
+        "case_text": "A patient sample has a creatinine of 1.2 mg/dL, but the Jaffe method gives a higher value than an enzymatic method because of which interference?",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "Cephalosporins and ketones",
+            "The EDTA anticoagulant",
+            "Bilirubin only",
+            "Uric acid only"
+        ],
+        "explanation": "Jaffe non-creatinine chromogens include cephalosporins, acetone, acetoacetate, glucose, and pyruvate, all of which react with picrate; enzymatic methods avoid these interferences. Bilirubin may falsely lower creatinine in some Jaffe assays, and urate contributes only mildly.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A single instrument reporting these three tests is described by which laboratory term?",
+        "case_text": "A clinician asks the laboratory to add a point-of-care glucose, troponin, and INR to a patient card system.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Batatch analyzer",
+            "Reflex testing",
+            "Multiplexed or multi-analyte point of care",
+            "Auxiliary device"
+        ],
+        "explanation": "Multiplexed testing refers to measuring multiple analytes simultaneously, including multi-test point-of-care platforms that combine glucose, cardiac markers, and coagulation on one disposable cartridge system. Reflex testing adds tests based on prior results, and batch analyzers process but do not define multi-analyte panels.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A serum hCG below 25 mIU/mL below the analytical cutoff is best reported in which way?",
+        "case_text": "A 28-year-old female medical student has a urine pregnancy test that is negative, and quantitative hCG on an automated immunoassay returns 25 mIU/mL.",
+        "difficulty": "easy",
+        "correct": "D",
+        "options": [
+            "Positive with a note",
+            "The order cancelled without a result",
+            "Repeat stat",
+            "Negative, with the numeric low value when requested"
+        ],
+        "explanation": "Values below the analytical sensitivity cutoff are reported as negative; many laboratories reflex report the numeric value only if the physician asks, because detecting very low hCG creates follow-up questions. A value within the negative range should not be called positive.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Warfarin prolongs the prothrombin time through reduction of which vitamin-dependent process?",
+        "case_text": "A 66-year-old woman on warfarin has an INR of 5.8 with no bleeding; the laboratory result is directly related to which plasma protein process?",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Platelet aggregation",
+            "Gamma carboxylation of clotting factors II, VII, IX, X",
+            "The fibrinolytic pathway",
+            "Von Willebrand factor multimerization"
+        ],
+        "explanation": "Warfarin inhibits vitamin K epoxide reductase, blocking the gamma-carboxylation that renders factors II, VII, IX, and X functional. Without gamma carboxylation these factors cannot bind calcium or phospholipid to assemble clotting complexes.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Using the standard correction of 1.6 mEq/L per 100 mg/dL of glucose above 100 mg/dL, the corrected sodium is approximately which value?",
+        "case_text": "A 52-year-old man has a serum sodium of 150 mEq/L with glucose 900 mg/dL on admission for diabetic ketoacidosis.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "163 mEq/L",
+            "150 mEq/L",
+            "138 mEq/L",
+            "158 mEq/L"
+        ],
+        "explanation": "The elevated glucose osmotically pulls water from cells into plasma, diluting sodium, so the corrected value is higher: 900 minus 100 gives 800 mg/dL of excess glucose, divided by 100 and multiplied by 1.6 = 12.8 mEq/L added to 150, giving about 163 mEq/L. Reporting the uncorrected or a lower value misclassifies the interpretation of the admission sodium.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The calculated osmolality by the formula 2 x Na + glucose/18 + BUN/2.8 is approximately which value?",
+        "case_text": "A 50-year-old woman has a serum osmolality of 302 mOsm/kg with Na 146, glucose 200, and BUN 20 mOsm/kg.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "300 mOsm/kg",
+            "280 mOsm/kg",
+            "320 mOsm/kg",
+            "310 mOsm/kg"
+        ],
+        "explanation": "2 x 146 = 292, plus glucose 200/18 ~ 11, plus BUN 20/2.8 ~ 7, giving about 310 mOsm/kg; the formula 2Na + glucose/18 + BUN/2.8 is the standard equation, and 292 + 11 + 7 = 310.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "An osmolal gap of 20 mOsm/kg that resolves as ethanol is metabolized is attributed almost entirely to which solute?",
+        "case_text": "A 40-year-old man has a measured osmolality of 340 mOsm/kg with a calculated value of 320 mOsm/kg after ethanol ingestion for binge drinking.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "The lactate acid",
+            "The ethanol alcohol",
+            "The formate ion",
+            "The ammonium ion"
+        ],
+        "explanation": "Each 4.6 mg/dL of ethanol adds ~1 mOsm/kg to measured osmolality; a gap proportional to the ethanol concentration points to alcohol intake. The lactate acid and formate are acids that contribute to an anion gap rather than an osmolal gap in this setting, and the gap closes as ethanol is cleared.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Which statement about lithium monitoring is correct?",
+        "case_text": "A 62-year-old man is on lithium for bipolar disorder and the laboratory monitors trough levels.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Peak blood 1 hour after dose",
+            "Random urine",
+            "Trough serum 12 hours after dose",
+            "Saliva collected at noon"
+        ],
+        "explanation": "Lithium has a narrow therapeutic window; trough serum drawn 12 hours after the last evening dose gives the most reproducible steady-state level, usually 0.6-1.2 mmol/L. Random or peak sampling produces misleading values.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Uric acid generated during purine turnover is measured most accurately when urine is alkalinized because, at low pH, what happens to uric acid in solution?",
+        "case_text": "A 35-year-old man with a creatinine of 0.9 mg/dL and a history of gout has a uric acid of 10.4 mg/dL.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "It evaporates",
+            "It precipitates as phosphate",
+            "It oxidizes to allantoin",
+            "Crystals form and drop out of solution"
+        ],
+        "explanation": "At low urine pH uric acid is poorly soluble and crystallizes, lowering the recovered concentration; alkaline collection keeps urate in solution for accurate measurement. Allantoin formation by uricase is an enzymatic route, not pH-driven, and evaporation is prevented by refrigeration.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A laboratory reporting a transcription error of units has committed which category of error?",
+        "case_text": "A patient with hereditary pancreatitis has a serum amylase measured in mg/dL units from a method previously validated in U/L.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Systematic error",
+            "Random error",
+            "Clerical error with no method bias",
+            "Calibration drift"
+        ],
+        "explanation": "Mixing units (U/L reported as mg/dL) is a clerical or interpretation error rather than an analytical one, since the measurement itself was not biased. Unit conversion errors are transcription errors and must be caught by unit sanity checks in the report.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Hyperviscosity syndrome producing mucosal bleeding is most commonly associated with markedly elevated concentrations of which immunoglobulin class?",
+        "case_text": "A 70-year-old man has a serum total protein of 9.6 g/dL with a narrow gamma spike; a serum viscosity is ordered.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "The IgM pentamer",
+            "The IgD monomer",
+            "IgG only",
+            "The IgE molecule"
+        ],
+        "explanation": "The IgM pentamer pentamers are the largest immunoglobulins and raise serum viscosity disproportionately at the same molar concentration, classically in Waldenstrom macroglobulinemia. IgG myeloma can also raise viscosity but usually at much higher protein concentrations than The IgM pentamer.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A high RDW with a normal to low hemoglobin indicates which pattern of red cell size variation?",
+        "case_text": "A 48-year-old woman has a hemoglobin of 9.8 g/dL and the laboratory reports an RDW of 19%.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Uniform macrocytosis",
+            "High anisocytosis",
+            "Uniform normocytosis",
+            "Low MCV artifact"
+        ],
+        "explanation": "RDW measures red cell size variability (anisocytosis). A widened RDW with a mixture of cell sizes is typical of iron deficiency and early deficiency states, whereas uniform populations such as anemia of chronic disease may show a normal RDW.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The combination of normocytic indices with an elevated reticulocyte response most strongly supports which mechanism of anemia?",
+        "case_text": "A patient has an MCV of 92 fL, MCH of 31 pg, and a corrected reticulocyte count of 3.4%.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Hemoglobin synthesis block",
+            "Bone marrow failure",
+            "Compensated hemolysis or recent blood loss",
+            "Iron deficiency"
+        ],
+        "explanation": "A robust reticulocyte response with normocytic indices indicates the marrow is replacing cells, pointing to hemolysis or acute blood loss. Iron deficiency and synthetic blocks produce a low reticulocyte response, and marrow failure fails to mount young cells.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The elevated hemoglobin with a normal MCV and normal WBC/platelet counts, plus low erythropoietin, is characteristic of which disorder?",
+        "case_text": "A 23-year-old athlete has a hemoglobin of 18.2 g/dL and hematocrit of 54% during a pre-season screen.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Polycythemia from hypoxia",
+            "Chronic myeloid leukemia",
+            "Leukemoid reaction",
+            "Polycythemia vera"
+        ],
+        "explanation": "Polycythemia vera is a JAK2-driven myeloproliferative neoplasm with an elevated red cell mass, low EPO, and often elevation of additional cell lines; hypoxia-driven secondary polycythemia shows supraphysiologic EPO. CML presents with leukocytosis and splenomegaly rather than isolated erythrocytosis.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "This normocytic, hypoproliferative anemia is driven mainly by a relative deficiency of which hormone?",
+        "case_text": "A 68-year-old man with chronic kidney disease has an anemia with hemoglobin 8.9 g/dL, normal MCV, and low reticulocytes.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "The aldosterone hormone",
+            "The erythropoietin hormone",
+            "The testosterone hormone",
+            "The thyroxine hormone"
+        ],
+        "explanation": "Renal EPO production falls as renal mass declines, producing a normocytic, hypoproliferative anemia with low reticulocytes; replacement with recombinant erythropoietin is standard. The aldosterone hormone and thyroxine do not directly drive red cell production.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Macrocytic anemia with ovalomacrocytes and hypersegmented neutrophils suggests which deficiency state that requires a specific assay?",
+        "case_text": "A 40-year-old woman has a hemoglobin of 6.0 g/dL with an MCV of 112 fL and oval macrocytes on the smear.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Iron deficiency",
+            "Hemoglobin E",
+            "Cobalamin or folate deficiency",
+            "Chronic disease"
+        ],
+        "explanation": "Oval macrocytes and hypersegmented neutrophils are the blood film signature of megaloblastic anemia from B12 or folate deficiency; confirm with serum B12, folate, and methylmalonic acid/homocysteine. Iron deficiency yields microcytes, and chronic disease is typically normocytic.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "An elevated hemoglobin A2 fraction on cellulose acetate or HPLC electrophoresis is diagnostic of which hemoglobinopathy?",
+        "case_text": "A 30-year-old woman of Asian descent has a lifelong mild microcytic anemia with a normal ferritin and an elevated HbA2 on electrophoresis.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Alpha thalassemia trait",
+            "Beta thalassemia trait",
+            "Sickle cell disease",
+            "Hemoglobin C disease"
+        ],
+        "explanation": "HbA2 (alpha2 delta2) is elevated in beta thalassemia trait; alpha thalassemia trait produces a normal or low A2. Sickle cell and HbC disease are identified by abnormal variant bands rather than isolated A2 elevation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The genotype consistent with a pattern of HbS with no detectable HbA on neonatal sickle screening is which condition?",
+        "case_text": "A neonate blood spot screen suggests sickle cell disease; hemoglobin electrophoresis confirms HbS with no HbA.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Homozygous sickle cell disease",
+            "Sickle trait",
+            "HbS beta thalassemia plus",
+            "Hemoglobin SS with fetal switch"
+        ],
+        "explanation": "HbS plus absence of HbA indicates homozygous sickle cell disease; the neonate was tested before HbA could appear or the sample shows SS. Sickle trait shows substantial HbA (approximately 60%).",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "An increased osmotic fragility result means the red cells lyse at which sodium chloride concentration relative to normal cells?",
+        "case_text": "A technician performs an osmotic fragility test on a patient with suspected hereditary spherocytosis.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Higher hypothetical only",
+            "Lower sodium chloride concentration",
+            "The same concentration",
+            "Higher sodium chloride concentration"
+        ],
+        "explanation": "Spherocytes have a decreased surface-to-volume ratio and lyse prematurely, so they hemolyze at a higher saline concentration than normal cells, producing increased fragility. The test is positive when 50% hemolysis occurs at a saline concentration above the normal range.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A spuriously normal G6PD screen during active hemolysis occurs because the enzyme activity is highest in which red cell population?",
+        "case_text": "A 45-year-old man develops dark urine after taking sulfa drugs; a G6PD screen on a specimen drawn during the hemolytic episode reads normal.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Old cells",
+            "The reticulocyte pool",
+            "The spherocyte forms",
+            "Membrane fragments"
+        ],
+        "explanation": "The reticulocyte pool are young red cells with near-normal G6PD activity; during a hemolytic crisis the deficient older cells are destroyed, leaving a population that tests falsely normal. Repeating the assay weeks after recovery or testing family members detects the deficiency.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Heinz bodies are visualized with which supravital stain?",
+        "case_text": "A 3-year-old boy has episodic jaundice after fava bean ingestion, and the blood shows bite cells and Heinz bodies.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Crystal violet",
+            "The Wright-Giemsa smear",
+            "Prussian blue",
+            "Periodic acid Schiff"
+        ],
+        "explanation": "Heinz bodies are denatured hemoglobin inclusions best seen with supravital stains such as crystal violet or brilliant cresyl blue. The Wright-Giemsa smear does not reliably show them, Prussian blue stains iron, and PAS stains glycogen.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "TdT (terminal deoxynucleotidyl transferase) positivity is used in hematopathology primarily as a marker of which cell lineage and stage?",
+        "case_text": "A patient has a new ALL diagnosis; the bone marrow flow cytometry is requested for immunophenotyping.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Mature B cells",
+            "Erythroid precursors",
+            "Early lymphoid precursor lymphoblasts",
+            "The megakaryocyte lineage"
+        ],
+        "explanation": "TdT is a nuclear enzyme present in early (immature) B and T lymphoblasts and is a key marker of ALL and precursor lymphomas. It is absent in mature lymphocytes and non-lymphoid leukemias, helping separate ALL from AML.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The BCR-ABL translocation characteristic of chronic myeloid leukemia is which chromosomal translocation?",
+        "case_text": "A 60-year-old man has splenomegaly and a WBC of 180 x10^9/L with a left shift, basophilia, and thrombocytosis; a BCR-ABL fusion is detected.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "The t(8;14) translocation",
+            "The t(9;22) translocation",
+            "The t(15;17) translocation",
+            "The t(4;11) translocation"
+        ],
+        "explanation": "CML is defined by The t(9;22) translocation creating the Philadelphia chromosome and the BCR-ABL oncogene. The t(8;14) translocation marks Burkitt lymphoma, The t(15;17) translocation marks acute promyelocytic leukemia, and The t(4;11) translocation is associated with infant ALL.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "t(15;17) is the molecular hallmark of which specific acute leukemia that requires emergency care?",
+        "case_text": "A 35-year-old patient with leukemia is found to have the t(15;17) translocation by conventional cytogenetics.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Acute promyelocytic leukemia",
+            "AML M4 with eosinophilia",
+            "Acute megakaryoblastic leukemia",
+            "B-cell ALL"
+        ],
+        "explanation": "t(15;17) produces the PML-RARA fusion that blocks myeloid differentiation and causes acute promyelocytic leukemia, which carries a high bleeding risk because of disseminated coagulopathy; it responds to all-trans retinoic acid.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The combination of severe thrombocytopenia with giant platelets and ultralarge von Willebrand multimers points toward which disorder?",
+        "case_text": "A 25-year-old woman has severe epistaxis and petechiae with a platelet count of 3 x10^9/L and giant platelets on the smear.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Immune thrombocytopenia (ITP)",
+            "Thrombotic thrombocytopenia (TTP)",
+            "Bernard Soulier syndrome",
+            "Bernard Soulier syndrome"
+        ],
+        "explanation": "Bernard-Soulier syndrome is a defect of the GPIb-IX-V complex causing giant platelets, thrombocytopenia, and defective platelet adhesion and is the classic finding on the smear. Thrombotic thrombocytopenia (TTP) shows schistocytes rather than giant platelets, and Immune thrombocytopenia (ITP) usually shows normal sized platelets as the count falls.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The platelet-type binding function of von Willebrand factor that is assayed with ristocetin agglutination measures interaction with which platelet receptor?",
+        "case_text": "A 30-year-old woman is evaluated for easy bruising; von Willebrand disease is suspected.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "GPIIb IIIa receptor",
+            "GPIb receptor",
+            "GPVI receptor",
+            "Thromboxane receptor"
+        ],
+        "explanation": "vWF binds platelet glycoprotein Ib (with ristocetin bridging) to initiate adhesion; ristocetin-induced platelet agglutination is abnormal in vWD and Bernard-Soulier syndrome while the aggregated GPIIb-IIIa complex is the defect in Glanzmann thrombasthenia.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A platelet aggregation study showing lack of aggregation with ADP, collagen, and epinephrine but normal ristocetin agglutination is characteristic of which disorder?",
+        "case_text": "A 45-year-old woman with episodic bruising has a normal platelet count with prolonged bleeding and abnormal closure times; factor VIII and vWD testing is normal.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "Glanzmann thrombasthenia",
+            "Bernard Soulier syndrome",
+            "Von Willebrand disease",
+            "Storage pool disease"
+        ],
+        "explanation": "Defective aggregation to multiple agonists with preserved ristocetin response indicates GPIIb-IIIa failure (Glanzmann thrombasthenia), the final common aggregation pathway. Ristocetin tests the GPIb-vWF adhesion arm, which is intact here.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The low ADAMTS13 activity points to which primary problem in thrombotic thrombocytopenic purpura?",
+        "case_text": "A 28-year-old woman has microangiopathic anemia with schistocytes, thrombocytopenia, renal failure, fever, and fluctuating neurologic signs; ADAMTS13 activity is severely reduced.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Platelet autoantibodies",
+            "Clotting factor inhibitors",
+            "Failure to cleave von Willebrand factor multimers",
+            "Fibrinolysis shutdown"
+        ],
+        "explanation": "ADAMTS13 is the vWF cleaving metalloprotease; severe deficiency leaves ultra-large multimers that aggregate platelets in capillaries producing thrombocytopenia and ischemic organ damage. Plasmapheresis replaces the enzyme and removes the inhibitor.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The coagulopathy pattern of consumption with elevated D-dimer is most characteristic of which condition?",
+        "case_text": "A 55-year-old man with sepsis has a prolonged PT and APTT, thrombocytopenia of 60 x10^9/L, low fibrinogen, and elevated D-dimer.",
+        "difficulty": "easy",
+        "correct": "D",
+        "options": [
+            "Liver disease alone",
+            "Vitamin K deficiency",
+            "The hemophilia state",
+            "Disseminated intravascular coagulation"
+        ],
+        "explanation": "DIC consumes platelets and clotting factors while activating fibrinolysis, so PT/APTT prolong, fibrinogen falls, and D-dimer rises. Vitamin K deficiency prolongs PT without the thrombocytopenia and D-dimer elevation, and hemophilia shows a single factor defect.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The thrombin time in heparinized plasma is prolonged while the reptilase time is normal because reptilase is insensitive to which inhibitor?",
+        "case_text": "A patient on iv heparin has an APTT of 95 seconds; the laboratory confirms heparin effect with thrombin time and reptilase testing.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Tissue factor",
+            "Heparin-antithrombin complex",
+            "Protein C",
+            "Fibrinogen degradation product"
+        ],
+        "explanation": "Reptilase (batroxobin) clots fibrinogen directly without the heparin-antithrombin target of thrombin, so heparin prolongs the thrombin time but not the reptilase time. This distinction separates heparin contamination from fibrinogen disorders, which prolong both.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A low factor VIII with previous male family bleeding history is the hallmark of which disorder?",
+        "case_text": "A 30-year-old man has bleeding after tooth extraction with a prolonged APTT and normal PT and platelet count; factor VIII activity is 4%.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Factor XI deficiency",
+            "Von Willebrand disease",
+            "Hemophilia A",
+            "Hemophilia C"
+        ],
+        "explanation": "Hemophilia A is X-linked factor VIII deficiency producing a prolonged APTT with normal PT and normal platelets; factor VIII level classifies severity. Hemophilia B is factor IX deficiency and hemophilia C is factor XI.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A corrected mixing study indicates the prolongation is caused by which mechanism?",
+        "case_text": "A 20-year-old female is pre-operative; her APTT is prolonged but a mixing study corrects with normal plasma at zero time and after one hour.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Factor deficiency correctable by normal plasma",
+            "An inhibitor such as lupus anticoagulant",
+            "Heparin contamination",
+            "Warfarin therapy"
+        ],
+        "explanation": "If normal plasma corrects the APTT, the patient lacks a factor that the added plasma restores; inhibitors leave the APTT prolonged after mixing. Heparin and lupus anticoagulant keep the mix prolonged, though heparin also prolongs the thrombin time.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A persistent mix-resistant APTT with recurrent thrombosis and delayed phospholipid-dependent clotting is characteristic of which antibody?",
+        "case_text": "A 70-year-old woman has a prolonged APTT that does not correct with a 1:1 mix and a history of fetal loss and venous thromboembolism.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Factor VIII inhibitor",
+            "Lupus anticoagulant",
+            "Rheumatoid factor",
+            "IgM cold agglutinin"
+        ],
+        "explanation": "The lupus anticoagulant prolongs phospholipid-dependent tests that do not correct with mixing and paradoxically is associated with thrombosis and fetal loss, not bleeding. Its diagnosis uses dilute Russell viper venom time confirmation and platelet neutralization procedures.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The single most sensitive laboratory test for dabigatran (a direct thrombin inhibitor) is which assay?",
+        "case_text": "A patient requires routine monitoring of a direct oral anticoagulant for a research protocol; the laboratory must choose a test sensitive to the drug class.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Prothrombin time",
+            "The fibrinogen assay",
+            "Thrombin time calibrated to the drug",
+            "Diluted thrombin time or ecarin-based assay"
+        ],
+        "explanation": "Direct thrombin inhibitors prolong the thrombin time profoundly; the diluted thrombin time and ecarin-based assays provide calibrated quantitative monitoring. PT is poorly sensitive and The fibrinogen assay is unaffected, so neither can guide this drug.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Severe isolated thrombocytopenia with a normal film and otherwise intact CBC is the typical presentation of which disorder?",
+        "case_text": "A 5-year-old has a platelet count of 22 x10^9/L with a normal smear except for a paucity of platelets; a platelet antibody test is pending.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Leukemic marrow infiltration",
+            "Immune thrombocytopenic purpura",
+            "The TTP syndrome",
+            "Sepsis consumption"
+        ],
+        "explanation": "Immune thrombocytopenic purpura causes isolated thrombocytopenia with normal or increased megakaryocytes and no schistocytes; the marrow produces platelets but antibodies destroy them. The TTP syndrome adds microangiopathic hemolysis, and marrow infiltration and sepsis change multiple cell lines.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Smudge cells with persistent lymphocytosis in an older adult is the classic blood picture of which disease?",
+        "case_text": "A 58-year-old man with fatigue has a WBC of 25 x10^9/L with 60% lymphocytes, an elevated absolute lymphocyte count, and smear showing smudge cells.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Acute lymphoblastic leukemia",
+            "Hairy cell leukemia",
+            "Chronic lymphocytic leukemia",
+            "The mononucleosis picture"
+        ],
+        "explanation": "CLL presents with absolute lymphocytosis and smudge cells (fragile lymphocytes) in older adults, expressing CD5 and CD23. ALL is a pediatric blast crisis, hairy cell leukemia shows villous cytoplasmic projections, and mononucleosis favors younger patients with atypical pleomorphic lymphocytes.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Target cells and Howell-Jolly bodies in a post-splenectomy blood film appear because the spleen normally performs which functions?",
+        "case_text": "A 42-year-old woman has a blood film with target cells, Howell-Jolly bodies, and acanthocyte-like fragments after splenectomy.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Pitting inclusions and conditioning the membrane",
+            "Producing HbA",
+            "Synthesizing factor VIII",
+            "Storing calcium"
+        ],
+        "explanation": "The spleen pities inclusions (Howell-Jolly bodies, Heinz bodies) and remodels the red cell membrane, so splenectomy leaves target cells and nuclear remnants in circulating cells. HbA and factor VIII are not splenic products.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The corrected reticulocyte count and reticulocyte production index use which mathematical correction for anemia?",
+        "case_text": "A technologist performs a reticulocyte count and reports 2.5% with a hematocrit of 25%.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Multiply by the WBC",
+            "Multiply by the ratio of patient hematocrit to a normal 45%",
+            "Divide by the MCV",
+            "Subtract the platelet count"
+        ],
+        "explanation": "A corrected reticulocyte count multiplies the percentage by the patient hematocrit divided by 45; the production index further divides by the maturation shift when the hematocrit is low. The ratio method accounts for hemodilution of the young cell percentage.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The most important contributor to the elevated erythrocyte sedimentation rate in this patient is which blood constituent?",
+        "case_text": "A 60-year-old man with multiple myeloma has rouleaux and a markedly elevated ESR.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Low albumin",
+            "High fibrinogen alone",
+            "High globulins from the plasma protein spike",
+            "High platelet cofactor"
+        ],
+        "explanation": "The ESR is driven by large asymmetrical proteins that accelerate rouleaux; the myeloma M-protein raises the ESR through the gamma globulin. Fibrinogen does the same in inflammation but the dominant cause here is the paraprotein, and hypoalbuminemia is a minor contributor.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Cold agglutinins affecting the complete blood count in this disorder are detected as clumping on the blood film and cause what instrument effect?",
+        "case_text": "A 34-year-old woman has cold-inducible symptoms with acrocyanosis; the CBC shows a spurious low platelet count and a high MCV on storage.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "A spurious drop in the RBC count with a rise in the MCV",
+            "A spurious rise in the hemoglobin",
+            "A spurious drop in the WBC",
+            "A spurious drop in the hemoglobin"
+        ],
+        "explanation": "Agglutinated red cells are counted as single larger cells, dropping the RBC and raising the MCV; warming the sample at 37 C reverses the artifact and restores true values. Hemoglobin is measured from lysed cells and stays accurate.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "A spuriously elevated hemoglobin and hematocrit from dehydration with a normal red cell mass is best identified by which additional study?",
+        "case_text": "A 19-year-old man on anabolic steroids has a hemoglobin of 19.2 g/dL; plasma volume contraction is suspected.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Reticulocyte count",
+            "The ferritin level",
+            "Radioactive-labeled red cell mass quantification",
+            "Platelet count"
+        ],
+        "explanation": "Only an independent measurement of red cell mass, such as chromium-labeled red cells, distinguishes a true erythrocytosis from hemoconcentration; the hematology analyzer measures concentration, which rises with lost plasma. Reticulocytes and ferritin do not quantify total mass.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The confirmatory iron measurement most useful to exclude iron deficiency in the setting of inflammation is which value?",
+        "case_text": "A 47-year-old woman has an elevated ferritin but a normal transferrin saturation, and the laboratory suspects the ferritin is an acute phase reactant.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Iron alone",
+            "TIBC alone",
+            "MCV alone",
+            "Transferrin saturation and soluble transferrin receptor"
+        ],
+        "explanation": "In inflammation ferritin rises as an acute phase protein, so a ferritin in the low normal range can still reflect depletion; the soluble transferrin receptor rises with true deficiency, and a low transferrin saturation together with it helps separate anemia of chronic disease from combined deficiency.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "An abnormal kappa:lambda free light chain ratio is used mainly to detect or monitor which clinical scenario?",
+        "case_text": "A 65-year-old man has monoclonal gammopathy; the laboratory measures serum free light chains and the kappa:lambda ratio.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Iron overload",
+            "Light chain restricted plasma cell proliferation",
+            "Factor deficiency",
+            "Mast cell disease"
+        ],
+        "explanation": "Free light chain measurement detects the monoclonal light chain population, which is especially valuable for light chain myeloma, AL amyloidosis, and monitoring monoclonal gammopathy; the ratio is abnormal when one light chain class dominates.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Cold agglutinins are classically composed of which immunoglobulin isotype that preferentially fixes complement at low temperature?",
+        "case_text": "A direct Coombs positive autoimmune hemolytic anemia is evaluated; the patient has cold agglutinin disease after Mycoplasma infection.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "The IgG class",
+            "The IgA class",
+            "The IgM class",
+            "The IgD class"
+        ],
+        "explanation": "Cold agglutinins are The IgM class antibodies that bind red cell I antigens at low temperatures and activate complement on rewarming, producing a positive complement DAT. Warm The IgG class antibodies cause the usual direct antiglobulin reactions in warm AIHA.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Peripheral destruction of antibody- and complement-coated red cells that produces this picture is classified as which type of hemolytic mechanism?",
+        "case_text": "A 24-year-old woman has macrocytic anemia, jaundice, and a positive direct antiglobulin test after taking a new drug.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Fragmentation hemolysis",
+            "Immune-mediated extravascular hemolysis",
+            "Membrane enzyme loss",
+            "Osmotic lysis"
+        ],
+        "explanation": "Bound immunoglobulin and complement target red cells for splenic macrophage phagocytosis in the intravascular/extravascular immune pathway, giving a positive DAT with reticulocytosis; drug-induced immune hemolysis follows this mechanism. Fragmentation hemolysis is mechanical (schistocytes) and lacks a Coombs conversion.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "The combination of spherocytes, raised MCHC, and a negative direct antiglobulin test most strongly supports which diagnosis?",
+        "case_text": "A 31-year-old man has anemia with a blood film showing spherocytes, an increased MCHC, and a negative DAT.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Autoimmune hemolysis",
+            "Sickle cell disease",
+            "Hereditary spherocytosis",
+            "Paroxysmal nocturnal hemoglobinuria"
+        ],
+        "explanation": "Hereditary spherocytosis is a membrane cytoskeleton defect producing spherocytes, increased osmotic fragility, and elevated MCHC with a negative DAT. AIHA shows a positive DAT, sickle disease shows irreversibly sickled cells, and PNH is diagnosed by flow cytometry for GPI anchor proteins.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Fragmentation hemolysis from turbulent blood flow through a prosthetic valve produces red cell damage in which pattern on the film?",
+        "case_text": "A technologist sees many schistocytes, polychromasia, and a left shift in a CBC from a patient with mechanical valve hemolysis.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "The schistocyte fragments",
+            "Target cells",
+            "Burr cells",
+            "The acanthocyte cells"
+        ],
+        "explanation": "Turbulent flow shears red cells into helmet-shaped fragments called schistocytes; the same microangiopathic pattern is seen in TTP and DIC. Target cells imply membrane redundancy, burr cells suggest renal failure, and acanthocytes are the spiculated cells of liver disease and abetalipoproteinemia.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Irreversibly sickled cells on the blood film in this patient are produced primarily by which mechanical-biochemical process?",
+        "case_text": "A 22-year-old African American male has recurrent painful crises; neonatal screen had shown HbS, and his hemoglobin electrophoresis confirms HbSS.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Membrane cholesterol loading",
+            "Polymerization of deoxygenated HbS with membrane distortion",
+            "Autoimmune coating",
+            "Iron crystal deposition"
+        ],
+        "explanation": "Deoxygenated HbS polymerizes into rigid tactoids that distort the cell into a sickled shape; repeated sickling irreversibly deforms the membrane. This is the molecular basis of vaso-occlusive pain crises.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Clinical Chemistry",
+        "type": "case",
+        "stem": "Iron overload with high saturation and ferritin, combined with abnormal hepatic enzyme tests, is the classic pattern of which diagnosis?",
+        "case_text": "A 45-year-old woman has an elevated serum iron, transferrin saturation of 88%, ferritin 1200 ng/mL, and a history of fatigue and arthritis.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Iron deficiency",
+            "The thalassemia state",
+            "Hereditary hemochromatosis",
+            "Lead poisoning"
+        ],
+        "explanation": "Hereditary hemochromatosis produces high iron, high percent saturation (over 45%), and high ferritin with deposition in liver, heart, and joints; confirm by HFE genotyping (C282Y). Iron deficiency is the reciprocal picture, and thalassemia shows low iron indices.",
+        "source_type": "original",
+        "status": "active"
+    }
+]

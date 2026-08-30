@@ -1,0 +1,1872 @@
+[
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which patient result pattern identifies an over-anticoagulated state requiring urgent reversal, and which process is being monitored?",
+        "case_text": "A 41-year-old man on warfarin has an INR of 6.2 and active gum bleeding. The laboratory records the result and notifies the clinician immediately.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Platelet count monitored for aggregation",
+            "Prothrombin time monitored through the vitamin K dependent extrinsic pathway",
+            "Fibrinogen monitored for reserve",
+            "D-dimer monitored for lysis"
+        ],
+        "explanation": "INR prolongation reflects reduced vitamin K dependent factor VII, II, IX, and X activity, and an INR over 5 carries major bleeding risk; warfarin therapy is monitored through the extrinsic pathway PT/INR. Platelets and fibrinogen do not drive the INR.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which laboratory principle explains why the HbA1c result is independent of a recent single glucose reading on the same day?",
+        "case_text": "A 59-year-old man with type 2 diabetes has an HbA1c performed for monitoring.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "The assay measures fasting insulin",
+            "Glucose is cleared by the kidney",
+            "Glycation accumulates over the red cell lifespan",
+            "Insulin release is pulsatile"
+        ],
+        "explanation": "HbA1c integrates glucose exposure across the 120-day red cell lifespan, so an acute glucose spike does not change the current A1c. Fasting glucose reflects only the moment of sampling.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The microcytic hypochromic anemia with absent iron stores is characteristic of which diagnosis?",
+        "case_text": "A 26-year-old woman with heavy menstrual bleeding has hemoglobin 9.2 g/dL, MCV 74 fL, ferritin 8 ng/mL, and TIBC 460 ug/dL.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Iron deficiency anemia",
+            "Beta thalassemia trait",
+            "Anemia of chronic disease",
+            "Sideroblastic anemia"
+        ],
+        "explanation": "Low ferritin with low MCV and high TIBC confirms iron deficiency from menstrual loss. Beta thalassemia trait usually shows a normal ferritin and an elevated RBC count; anemia of chronic disease has a normal or high ferritin, and sideroblastic anemia has ring sideroblasts on marrow iron stain.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The blood film findings plus low cobalamin point to which deficiency state requiring specific treatment?",
+        "case_text": "A 32-year-old vegetarian presents with fatigue and a blood film showing oval macrocytes and hypersegmented neutrophils; serum cobalamin is 180 pg/mL below the accepted reference.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Iron deficiency",
+            "Vitamin B12 deficiency",
+            "Folate deficiency only",
+            "Chronic disease"
+        ],
+        "explanation": "Oval macrocytes with hypersegmented neutrophils are the hallmark of megaloblastic anemia; low cobalamin confirms deficiency, which is common in strict vegan diet and pernicious anemia. Folate deficiency produces the same marrow picture but this result points to B12 as the primary deficiency.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Using the corrected WBC formula, a raw WBC of 15.0 x10^9/L with 12 NRBC per 100 WBC gives a corrected white cell count of approximately which value?",
+        "case_text": "A manual hematology differential counts 300 WBC; 12 NRBCs are seen.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "13.4 x10^9/L",
+            "13.4 x10^9/L",
+            "16.9 x10^9/L",
+            "14.0 x10^9/L"
+        ],
+        "explanation": "Corrected WBC = raw WBC x 100/(100 + NRBC), so 15.0 x 100/(100 + 12) = 15.0 x 0.893 = 13.4 x10^9/L. Counting NRBC as white cells inflates the raw count, so the correction removes their contribution.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Anemia, thrombocytopenia, and leukopenia together are described by which single term and direction of marrow activity?",
+        "case_text": "A 47-year-old woman has a WBC of 3.1 x10^9/L with a platelet count of 122 x10^9/L and hemoglobin 10.2 g/dL across all three cell lines.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Isolated cytopenia with recovery",
+            "Paroxysmal nadir",
+            "Pancytopenia with hypoproliferative marrow",
+            "Leukemoid reaction"
+        ],
+        "explanation": "Suppression of all three marrow lineages produces pancytopenia, typical of marrow failure, aplastic anemia, or infiltrative disease. Isolated cytopenias and recovery phases do not describe all-lineage depression, and a leukemoid reaction is a very high white count.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The corrected reticulocyte count (reticulocyte percentage adjusted for the degree of anemia) is approximately which value?",
+        "case_text": "A reticulocyte count of 5.5% is reported on a patient with a hemoglobin of 8.2 g/dL and hematocrit of 24%.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "2.9%",
+            "5.5%",
+            "1.8%",
+            "6.4%"
+        ],
+        "explanation": "Corrected reticulocyte count = reticulocyte % x patient hematocrit/45, so 5.5% x 24/45 = 5.5% x 0.533 = 2.9%. The corrected value distinguishes a real marrow response from one that is only apparent because of hemoconcentration.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A platelet estimate from the blood film using approximately 10 platelets per oil immersion field corresponds to an estimated count near which value?",
+        "case_text": "A 20-year-old man has immune thrombocytopenic purpura and a platelet count of 8 x10^9/L with occasional giant platelets on the smear.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "50 x10^9/L",
+            "10 x10^9/L",
+            "500 x10^9/L",
+            "200 x10^9/L"
+        ],
+        "explanation": "About 8 to 10 platelets per oil immersion field represent roughly 150,000 to 200,000 per uL; one platelet per field is about 15,000 to 20,000. With the count this low, fields show only rare platelets, making smear estimates unreliable in severe thrombocytopenia.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The phenomenon of EDTA induced platelet clumping producing a spuriously low count is best described by which term?",
+        "case_text": "A 5-year-old child has a platelet count of 20 x10^9/L; the CBC performed on an EDTA tube shows clumps on the film that resolve in a citrate tube with a count of 210 x10^9/L.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "True thrombocytopenia",
+            "The pseudothrombocytopenia pattern",
+            "Bleeding diathesis",
+            "A sequestration state"
+        ],
+        "explanation": "The pseudothrombocytopenia pattern is an in vitro artifact in which EDTA dependent antibodies cause platelet clumping or satellitosis; recounting in citrate or mixing resolves it and confirms a normal platelet mass. True thrombocytopenia would remain low in citrate and correlate with bleeding.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The phospholipid dependent prolongation that resists correction and is associated with thrombosis is identified by which confirmatory test?",
+        "case_text": "A 30-year-old woman with systemic lupus has the antiphospholipid syndrome; a prolonged APTT does not correct with a 1:1 mix.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Betaglobulin assay",
+            "Platelet count recovery",
+            "Dilute Russell viper venom time with phospholipid neutralization",
+            "Fibrinogen assay"
+        ],
+        "explanation": "Lupus anticoagulant is confirmed by a phospholipid dependent test such as the dilute Russell viper venom time that shows correction by excess phospholipid (platelet neutralization or hexagonal phase). The rVVT screen-to-confirm ratio demonstrates phospholipid dependence.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "An acquired factor inhibitor that suppresses factor activity is most classically seen in which patient group or condition?",
+        "case_text": "A 62-year-old man has easy bruising, normal platelet count, and a prolonged APTT with an acquired bleeding history and a factor VIII inhibitor on mixing.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "Older adults with autoimmune disease or malignancy",
+            "Newborn hemolytic disease",
+            "Adolescent athletes",
+            "Chronic vegetarian states"
+        ],
+        "explanation": "Acquired factor VIII inhibitors develop in older adults with autoimmune conditions, malignancy, or postpartum states and cause severe bleeding with a prolonged APTT; mixing shows a time dependent inhibitor rather than correction by normal plasma.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The prolonged coagulation tests in liver disease are best explained by which mechanism?",
+        "case_text": "A 50-year-old with cirrhosis has a prolonged PT and APTT, low fibrinogen, and normal D-dimer on a stable chronic course.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Consumption of platelets alone",
+            "Vitamin K excess",
+            "Factor VIII loss",
+            "Decreased hepatic synthesis of clotting factors and fibrinogen"
+        ],
+        "explanation": "The hepatocyte synthesizes most coagulation factors, so cirrhosis reduces factor production and prolongs both PT and APTT with a low fibrinogen but without the consumption markers of DIC. Vitamin K deficiency contributes when bile flow is impaired but does not lower fibrinogen.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "D-dimer formation reflects which coagulation process that is elevated in thrombosis?",
+        "case_text": "A 28-year-old woman has a venous thromboembolism and abnormal D-dimer testing during routine screening.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Primary platelet plug",
+            "Crosslinked fibrin degradation by plasmin",
+            "Complement cascade activation",
+            "Protein C consumption"
+        ],
+        "explanation": "D-dimer is a crosslinked fibrin degradation product; it rises when thrombin generates fibrin that is crosslinked by factor XIII and then lysed by plasmin. Platelet plugs and complement do not produce D-dimer.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The principal laboratory effect of low molecular weight heparin is an inhibition of which target that is monitored using which assay?",
+        "case_text": "A 70-year-old man is on a low molecular weight heparin for prophylaxis and the laboratory is asked to monitor.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Prothrombin measured by PT",
+            "Platelet function by aggregation",
+            "Factor Xa inhibition measured by an anti Xa assay",
+            "Protein C by chromogenic assay"
+        ],
+        "explanation": "LMWH primarily accelerates antithrombin inhibition of activated factor X, so anti-Xa chromogenic assays are the monitoring method. PT and APTT are insensitive to LMWH, and protein C measurement does not guide dosing.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which dye or chemistry interference can spuriously affect automated platelet counts through cell clumping or interference on certain analyzers?",
+        "case_text": "A 40-year-old man has a platelet count of 60 x10^9/L and elevated liver enzymes with a spurious result on the analyzer.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Large red cell fragments counted as platelets",
+            "Low hemoglobin invalidating the count",
+            "Elevated bilirubin correcting the count",
+            "Nonfasting glucose shifting the histogram"
+        ],
+        "explanation": "Red cell fragments, microcytes, and schistocytes overlap the platelet channel and artifactually inflate the platelet count; a stained film review is required when the histogram is abnormal. Hemoglobin and bilirubin do not move the platelet histogram.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The low reticulocyte response in severe B12 deficiency reflects failure of which marrow step?",
+        "case_text": "A 33-year-old man with fatigue has an MCV of 130 fL, vitamin B12 of 60 pg/mL, and megaloblastic marrow; reticulocytes are inappropriately low.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Platelet maturation",
+            "Nuclear maturation causing ineffective erythropoiesis",
+            "Iron uptake",
+            "Hemoglobin chain pairing"
+        ],
+        "explanation": "B12 deficiency impairs thymidylate synthesis, causing megaloblastic nuclear-cytoplasmic dyssynchrony and ineffective erythropoiesis; young red cells are destroyed in the marrow so few reticulocytes reach blood. Platelet and iron steps are unaffected by the primary defect.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Hemolytic disease of the newborn from ABO incompatibility most often involves which maternal antibody and target?",
+        "case_text": "A newborn has jaundice and a positive direct antiglobulin test with maternal ABO incompatibility; the neonate develops hemolysis and hyperbilirubinemia.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Maternal anti D targeting fetal D",
+            "Maternal anti K",
+            "Maternal anti A or anti B targeting fetal A/B red cells",
+            "Maternal anti M"
+        ],
+        "explanation": "ABO HDN arises when group O mothers form IgG anti-A and anti-B that cross the placenta and coat fetal red cells producing a positive DAT and hemolytic jaundice. Rh anti-D causes more severe disease but is the subject of RhIg prophylaxis rather than the typical ABO picture.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The combination of tear drop cells and nucleated red cells in an older adult with anemia is classically associated with which process?",
+        "case_text": "A blood film from a 65-year-old man with anemia shows many nucleated red cells, teardrop cells, and a leukoerythroblastic response.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Iron deficiency marrow",
+            "Megaloblastic change",
+            "Acute viral illness",
+            "Myelophthisic marrow infiltration by tumor or fibrosis"
+        ],
+        "explanation": "Leukoerythroblastic blood with teardrop cells marks marrow infiltration by fibrosis (myelofibrosis) or metastatic tumor, disrupting normal egress of marrow cells. Iron deficiency and megaloblastic change do not produce this mixture of immature cells and tear drops.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The triad of high WBC, basophilia, and a low leukocyte alkaline phosphatase (LAP) score is classic for which myeloproliferative disorder that is confirmed by BCR-ABL testing?",
+        "case_text": "A 55-year-old man has splenomegaly, mild anemia, and a WBC of 45 x10^9/L with many basophils, left-shifted gran Marcy cells, and thrombocytosis; the bone marrow shows a hypercellular picture and the leukocyte alkaline phosphatase score is low.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "Chronic myeloid leukemia",
+            "Polycythemia vera",
+            "Essential thrombocythemia",
+            "Acute myeloid leukemia"
+        ],
+        "explanation": "CML presents with a leukemoid picture, basophilia, splenomegaly, and a low LAP score; the Philadelphia translocation t(9;22) with BCR-ABL confirms it. PV and ET show high LAP scores typically, and AML is a blast-phase emergency rather than a chronic leukocytosis.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The dimorphic red cell population on the film of a patient suspected of a marrow dysplasia most often reflects what type of change?",
+        "case_text": "A 30-year-old woman with myelodysplastic syndrome has a peripheral smear showing dimorphic red cell populations, oval macrocytes, and a slightly elevated RDW.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Uniform spherocytosis",
+            "Mixo of hypochromic microcytes and macrocytes from ring sideroblasts and megaloblastic change",
+            "Uniformly lysed cells",
+            "Parasitized cells"
+        ],
+        "explanation": "MDS often pairs sideroblastic microcytic clones with macrocytic dysplastic precursors, producing a dimorphic population with elevated RDW, best seen with a marrow iron stain that shows ring sideroblasts. Spherocytosis, hemolysis, and parasites do not create the dimorphic picture.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A low erythropoietin with an elevated red cell mass points to a primary marrow disorder, best classified by which laboratory finding?",
+        "case_text": "A 45-year-old man presents with erythrocytosis; his hematocrit is 60% with a normal arterial oxygen saturation and a low serum erythropoietin.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "High folate",
+            "Microcytic indices",
+            "High transferrin",
+            "JAK2 V617F mutation positivity"
+        ],
+        "explanation": "Polycythemia vera is a JAK2-driven myeloproliferative neoplasm with low endogenous EPO; the JAK2 V617F mutation is found in the majority of cases and confirms the clonal basis. Hypoxia-driven erythrocytosis shows high EPO, and the other markers do not define the clonal disorder.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A spuriously normal G6PD result during an acute hemolytic episode occurs because the deficient enzyme is preferentially lost with which cells?",
+        "case_text": "A 22-year-old African American female has intermittent dark urine after infection and a normal CBC between episodes; a G6PD screen performed during the acute episode is normal.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Reticulocyte pool",
+            "Young red cells only",
+            "Old red blood cells that are destroyed",
+            "Membrane ghosts"
+        ],
+        "explanation": "G6PD is lowest in the oldest red cells, which are selectively destroyed during acute hemolysis, leaving the reticulocyte-rich blood with normal enzyme activity. Retesting weeks later, after hemolysis resolves, reveals the deficiency.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which supravital stain is used to detect the Heinz bodies of oxidant hemolysis?",
+        "case_text": "A 3-year-old child with fava bean induced hemolysis has bite cells, Heinz bodies, and a low G6PD confirmed on repeat testing.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Prussian blue",
+            "Crystal violet",
+            "Wright Giemsa",
+            "Oil red O"
+        ],
+        "explanation": "Heinz bodies are best shown with supravital stains such as crystal violet or brilliant cresyl blue that stain denatured hemoglobin; Wright-Giemsa smears miss them and Prussian blue stains iron.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Warming the sample to 37 C for 30 minutes corrects the red cell indices in cold agglutinin disease by what mechanism?",
+        "case_text": "A 48-year-old woman has cold agglutinin disease; her CBC shows a falsely elevated MCV and a falsely lowered red cell count that reverses on warming.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Dissociating red cell clumps that the analyzer counts as single large cells",
+            "Restoring hemoglobin color",
+            "Increasing platelet survival",
+            "Reducing viscosity only"
+        ],
+        "explanation": "Cold agglutinins agglutinate red cells at room temperature, so the analyzer counts clumps as one large cell, raising MCV and dropping the RBC; warming dissociates the clumps and restores accurate indices. Hemoglobin, released on lysis, is not disturbed by clumping.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Severely reduced ADAMTS13 with normal von Willebrand factor and schistocytes is diagnostic of which microangiopathy?",
+        "case_text": "A 70-year-old man has progressive anemia; the smear shows many schistocytes, and ADAMTS13 activity is markedly reduced with a very high von Willebrand factor antigen.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Hemolytic uremic syndrome",
+            "Disseminated intravascular coagulation",
+            "Thrombotic thrombocytopenic purpura",
+            "Hereditary spherocytosis"
+        ],
+        "explanation": "TTP is a thrombotic microangiopathy with severe ADAMTS13 deficiency leading to unchecked vWF-platelet aggregation, schistocytes, thrombocytopenia, and organ ischemia. HUS usually has near-normal ADAMTS13 and follows Shiga toxin infection, and DIC shows consumption of coagulants rather than the ADAMTS13 defect.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The mechanical hemolysis in this patient produces which red cell morphology that is also seen in pure TTP?",
+        "case_text": "A 40-year-old woman has red cell fragmentation and anemia after a mechanical prosthetic aortic valve replacement.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Schistocytes",
+            "Target cells",
+            "Acanthocytes",
+            "Spherocytes"
+        ],
+        "explanation": "Mechanical shear fragments red cells into schistocytes, the same microangiopathic morphology seen in TTP, DIC, and malignant hypertension. Target cells reflect membrane redundancy, acanthocytes are the spiky cells of liver disease, and spherocytes come from immune or membrane injury.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which oxygen related change polymerizes hemoglobin S and distorts the cell into the sickle shape seen on the film?",
+        "case_text": "A 29-year-old man has sickle cell disease with a painful crisis; the smear shows irreversibly sickled cells and target cells.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Carbon dioxide binding",
+            "Carbon monoxide binding",
+            "Oxygen saturation rising",
+            "Deoxygenation of HbS"
+        ],
+        "explanation": "Deoxygenated HbS polymerizes into rigid fibers that deform the red cell; the irreversibly sickled morphology persists even after reoxygenation. Exposure to carbon monoxide and high oxygen prevent polymerization, which is why sickling is reversible early in the steady state.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "On cellulose acetate electrophoresis at alkaline pH, sickle cell trait (HbAS) separates into which pattern of bands?",
+        "case_text": "A 34-year-old woman with sickle cell trait has a blood film that shows no significant abnormal cells, but hemoglobin electrophoresis is ordered.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Single HbA band",
+            "HbA and HbS bands with A greater than S",
+            "HbS only",
+            "HbF and HbA"
+        ],
+        "explanation": "Sickle trait shows roughly 60% HbA and 40% HbS on alkaline electrophoresis, producing two bands with HbA predominating; HbSS shows a large HbS band and no HbA, and HbF is prominent in newborn and hereditary persistence patterns.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which statement about the Kleihauer-Betke acid elution test is correct?",
+        "case_text": "An investigator measures hemoglobin F elevation in a child with beta thalassemia major; the distribution of HbF in red cells is examined by the acid elution technique.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "It identifies adult cells",
+            "It stains platelets",
+            "It establishes fetal versus adult red cell populations by acid resistance of HbF",
+            "It measures only HbA2"
+        ],
+        "explanation": "Acid elution removes adult hemoglobin from red cells while fetal hemoglobin resists elution, so fetal cells appear dark against pale adult cells; the test is used to quantitate fetomaternal hemorrhage for RhIg dosing. HbA2 and platelet markers do not participate in the elution.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which immunoglobulin class is most potent at raising serum viscosity and is classically associated with mucosal ischemia and bleeding in Waldenstrom macroglobulinemia?",
+        "case_text": "A 60-year-old woman has an M-protein spike and symptoms of hyperviscosity; serum viscosity is elevated.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "The IgA class",
+            "The IgG class",
+            "The IgD class",
+            "The IgM class"
+        ],
+        "explanation": "The IgM class pentamers and their high molecular weight raise viscosity at lower concentrations than other classes; hyperviscosity produces bleeding, visual change, and neurologic symptoms in macroglobulinemia. The IgG class myeloma raises viscosity only when protein is very high.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The most direct measurement of the antibody coated red cells in warm AIHA is provided by which test?",
+        "case_text": "A 26-year-old woman has a warm autoimmune hemolytic anemia with a strongly positive DAT for IgG.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Direct antiglobulin test",
+            "Reticulocyte count",
+            "Coombs indirect test on serum",
+            "Cold agglutinin panel"
+        ],
+        "explanation": "The direct antiglobulin test detects immunoglobulin and complement bound to the patient red cells, confirming immune coating; the indirect test detects antibody in serum. The reticulocyte count and cold panel do not directly measure the coating of the patient cells.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A negative DAT with spherocytes and increased osmotic fragility is the classic combination for which red cell membrane disorder?",
+        "case_text": "A 52-year-old woman has hemolytic anemia with spherocytes, a negative direct antiglobulin test, and an increased osmotic fragility.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Warm autoimmune hemolysis",
+            "Sickle cell disease",
+            "Hereditary spherocytosis",
+            "Paroxysmal cold hemoglobinuria"
+        ],
+        "explanation": "Hereditary spherocytosis is a membrane cytoskeletal defect that produces spherocytes with increased osmotic fragility and a normal DAT because no antibody is present. AIHA requires a positive DAT, and PCH is a cold paroxysmal DAT-positive hemolysis.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Hemoglobinuria with no red cells on the smear indicates which mechanism of red cell loss during acute hemolysis?",
+        "case_text": "A 12-year-old boy develops dark urine after a respiratory infection; the urine is positive for blood by dipstick but shows no red cells on the film.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Extravascular macrophage lysis only",
+            "Intravascular hemolysis releasing free hemoglobin and haptoglobin binding",
+            "Platelet consumption",
+            "Marrow suppression"
+        ],
+        "explanation": "Intravascular hemolysis releases free hemoglobin directly into plasma which binds haptoglobin; once haptoglobin is saturated, free hemoglobin passes into urine producing a positive dipstick without intact cells. Extravascular lysis in the spleen rarely produces free urinary hemoglobin.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Hypogranular neutrophils and nuclear hyposegmentation (pseudo-Pelger-Huet) on the film are most characteristic of which marrow disease?",
+        "case_text": "A 40-year-old man with myelodysplasia has a peripheral blood evaluation; the smear shows hypogranular neutrophils and pseudo-Pelger-Huet cells.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Iron deficiency",
+            "Polycythemia vera",
+            "Infectious mononucleosis",
+            "Myelodysplastic syndrome"
+        ],
+        "explanation": "Dysplastic lineage changes including hypogranulation and hyposegmented bilobed nuclei are hallmarks of MDS, often with an unexplained cytopenia. Iron deficiency and mononucleosis do not produce this dysplastic neutrophil morphology, and PV is a myeloproliferative state.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Beyond hemoglobin and MCV, which pair of tests separates vitamin B12 deficiency from folate deficiency in ambiguous cases?",
+        "case_text": "A 68-year-old woman has anemia, an elderly history of B12 deficiency, and evidence of subacute combined degeneration is questioned.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Irreversible ferritin and TIBC",
+            "Methylmalonic acid and homocysteine",
+            "LDH and haptoglobin",
+            "Bilirubin and reticulocytes"
+        ],
+        "explanation": "Methylmalonic acid rises in B12 deficiency and is normal in folate deficiency, while homocysteine rises in both; the pair separates the two causes of megaloblastic anemia when serum levels are borderline. LDH and bilirubin mark hemolysis and are not specific for the deficiency state.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which mechanism best explains the elevated platelet count after splenectomy?",
+        "case_text": "A 55-year-old woman has a platelet count of 950 x10^9/L with a history of splenectomy for trauma; the film shows giant platelets and the automated count is stable.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Increased marrow destruction",
+            "Platelet clumping",
+            "Loss of splenic sequestration and pooling",
+            "Antibody formation"
+        ],
+        "explanation": "About one third of the platelet mass is sequestered in the spleen; removal abolishes that pool, raising the circulating count. The marrow produces platelets, and no clumping or antibody is driving the elevation in this clinical context.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A low circulating count with adequate marrow megakaryocytes indicates which pathophysiologic category of thrombocytopenia?",
+        "case_text": "A 35-year-old man on valproate has a platelet count of 40 x10^9/L with a normal bone marrow biopsy showing abundant megakaryocytes.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Decreased production",
+            "Increased peripheral destruction or sequestration",
+            "Marrow infiltration",
+            "Iron block"
+        ],
+        "explanation": "When the marrow produces enough megakaryocytes but the platelet count is low, peripheral destruction (immune) or sequestration (splenic) is the mechanism; drug-induced immune destruction of platelets is consistent with adequate marrow precursors. Decreased production would show reduced megakaryocytes on biopsy.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The megaloblastic picture with low B12 and normal folate is consistent with which diagnosis, confirmed by which autoantibody?",
+        "case_text": "A 72-year-old woman has anemia with an MCV of 118 fL and the smear shows oval macrocytes, macro-ovalocytes, and hypersegmented neutrophils; folate is normal and B12 is low.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Hemolysis confirmed by haptoglobin",
+            "Sideroblastic marrows",
+            "Pernicious anemia confirmed by anti intrinsic factor antibody",
+            "Thalassemia confirmed by HbA2"
+        ],
+        "explanation": "Pernicious anemia is autoimmune destruction of gastric parietal cells causing B12 malabsorption; anti-intrinsic factor and anti-parietal cell antibodies confirm it, and the megaloblastic film with low B12 and normal folate fits. HbA2 and haptoglobin do not address the B12 mechanism.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Markedly reduced CD55 and CD59 on red cells and neutrophils by flow cytometry is diagnostic of which acquired stem cell disorder?",
+        "case_text": "A 28-year-old woman with refractory hemolysis and a negative DAT is evaluated by flow cytometry for the GPI linked markers CD55 and CD59.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Immune thrombocytopenia",
+            "Paroxysmal nocturnal hemoglobinuria",
+            "Cold agglutinin disease",
+            "A mastocytosis picture"
+        ],
+        "explanation": "PNH arises from a GPI anchor deficient clone and is detected by loss of CD55 and CD59 on flow cytometry; the complement sensitive red cells cause hemoglobinuria and thrombosis. AIHA and ITP have different serologic and flow features.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The mature lymphocytosis with smudge cells and a CD5/CD23 phenotype is classic for which disorder?",
+        "case_text": "A 61-year-old man with fatigue has a WBC of 120 x10^9/L and the differential shows mostly small mature lymphocytes with smudge cells; CD5 and CD23 are positive on flow.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Hairy cell leukemia",
+            "Splenic marginal zone lymphoma",
+            "Chronic lymphocytic leukemia",
+            "Prolymphocytic leukemia"
+        ],
+        "explanation": "CLL is a mature B-cell lymphocytosis of older adults with smudge cells and a CD5+ CD23+ phenotype; hairy cell leukemia is CD5 negative and strongly positive for CD103 and TRAP, and marginal zone and prolymphocytic lymphomas have distinct phenotypes and films.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Myeloperoxidase positive blasts with Auer rods classify the acute leukemia as which lineage and subtype?",
+        "case_text": "A 33-year-old woman has fatigue and a WBC count of 28 x10^9/L with 70% blasts with Auer rods; the blasts are MPO positive on cytochemistry.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Acute myeloid leukemia",
+            "B-cell acute lymphoblastic leukemia",
+            "Hairy cell leukemia",
+            "Chronic lymphocytic leukemia"
+        ],
+        "explanation": "MPO positivity and Auer rods are specific to granulocytic blasts, establishing AML; ALL blasts are MPO negative with PAS and TdT positivity, and the mature leukemias have no circulating blasts. Auer rods are a classic AML inclusion.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which flow cytometric marker pair best separates AML (myeloid) from ALL (lymphoid) blasts?",
+        "case_text": "A 27-year-old man presents with a high WBC and blasts; flow cytometry is used to distinguish acute myeloid from acute lymphoblastic leukemia.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "CD20 and CD45",
+            "CD13/CD33 (myeloid) versus CD19/CD10 (lymphoid)",
+            "CD34 and CD38",
+            "CD3 and CD7"
+        ],
+        "explanation": "Myeloid blasts express CD13 and CD33 while precursor B ALL blasts express CD19 and CD10; CD34 and CD38 are primitive markers present on both. The lineage specific pair is required to classify the leukemia for therapy.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A block pattern PAS positivity with TdT identifies which leukemia lineage most strongly?",
+        "case_text": "A 40-year-old man has acute leukemia with blasts that are negative for MPO and Sudan black B, positive for PAS in a block pattern, and positive for TdT.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Monocytic leukemia",
+            "The erythroleukemia variant",
+            "Megakaryoblastic leukemia",
+            "Lymphoblastic leukemia"
+        ],
+        "explanation": "Lymphoblasts stain with PAS in coarse blocks and are TdT positive, distinguishing ALL from MPO-positive AML; the monocytic variants are positive for non-specific esterase and negative for PAS blocks, and megakaryoblastic leukemia shows cytoplasmic blebbing with CD61.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A markedly abnormal serum free light chain ratio with a normal serum protein electrophoresis points toward which clinical entity that is well detected by this assay?",
+        "case_text": "A 68-year-old man has urine monoclonal free light chains with a normal serum protein electrophoresis and a kappa:lambda ratio of 20:1.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Polyclonal inflammation",
+            "Type III hyperlipidemia",
+            "Light chain myeloma or AL amyloidosis",
+            "The macroglobulinemia state"
+        ],
+        "explanation": "Free light chain quantification detects the excess of one light chain class even when the total serum protein is normal, making it essential for light chain myeloma and AL amyloidosis monitoring. Polyclonal inflammation would keep the ratio normal, and macroglobulinemia involves intact IgM.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Sodium urate and calcium pyrophosphate dihydrate crystals are distinguished on the smear by which shape and polarizing birefringence features?",
+        "case_text": "A 30-year-old woman with a new knee effusion has crystals examined under compensated polarized light microscopy.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Star shaped crystals with positive sign",
+            "Needle shaped negatively birefringent urate versus rhomboid positively birefringent CPPD",
+            "Cube shaped with multicolored rim",
+            "Round droplets without birefringence"
+        ],
+        "explanation": "Urate crystals are thin needles with strong negative birefringence; CPPD crystals are short rhomboids or rods with weak positive birefringence, and the compensated polarizer color shift separates them. The other shapes describe lipid droplets and artifacts.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "In the anemia of chronic disease, the block in iron supply to the marrow is mediated by which iron regulatory hormone that rises with inflammation?",
+        "case_text": "A 45-year-old woman has anemia in heart failure with the anemia of chronic disease pattern: low iron, normal or low TIBC, normal ferritin, and a low transferrin saturation.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "The hepcidin block",
+            "The erythropoietin response",
+            "Transferrin receptor",
+            "C-reactive protein"
+        ],
+        "explanation": "The hepcidin block, induced by inflammatory cytokines, binds ferroportin and blocks iron export from macrophages and enterocytes, trapping iron and producing the low saturation with adequate stores typical of chronic disease. The erythropoietin response falls with marrow suppression but does not trap iron, and ferritin is the storage protein not the regulator.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Ring sideroblasts visible on the Perl Prussian blue marrow stain represent iron accumulation in which cell organelle and disorder class?",
+        "case_text": "A 62-year-old man with an unexplained anemia has a marrow iron stain that shows ring sideroblasts.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Cytoplasm in normal granulocytes",
+            "Perinuclear mitochondria of erythroid precursors defining sideroblastic anemia",
+            "Nucleus of lymphocytes",
+            "Membrane of platelets"
+        ],
+        "explanation": "Ring sideroblasts are erythroid precursors with iron laden mitochondria encircling the nucleus; they define sideroblastic anemia within the myelodysplastic syndromes and have a dimorphic blood film. The stain shows hemosiderin and the perinuclear ring of basophilic granules.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "An extremely low transferrin saturation with low ferritin confirms which diagnosis and mechanism of the microcytic anemia?",
+        "case_text": "A 30-year-old woman has iron studies: iron 20, TIBC 480, transferrin saturation 4%, ferritin 5 ng/mL, consistent with classic iron deficiency.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Bleeding with adequate marrow iron",
+            "Iron depletion limiting hemoglobin synthesis",
+            "Thalassemia overload",
+            "B12 malabsorption"
+        ],
+        "explanation": "Iron deficiency deprives the erythron of substrate, producing microcytic hypochromic cells; the empty iron stores on ferritin and the low saturation prove depletion. Thalassemia shows normal iron, and B12 deficiency is macrocytic, not microcytic.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Secondary erythrocytosis from an EPO producing renal tumor is distinguished from polycythemia vera by which finding?",
+        "case_text": "A 51-year-old man has a JAK2 negative erythrocytosis and a normal arterial oxygen with an elevated EPO; a renal ultrasound finds a mass.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Normal platelet count",
+            "Elevated D-dimer",
+            "High erythropoietin with a recognizable secondary cause",
+            "Low leukocyte count"
+        ],
+        "explanation": "Secondary polycythemia shows inappropriately or appropriately high EPO from hypoxia or tumor, while PV is JAK2 mutated with low EPO; documenting the EPO level and the renal mass separates the two. Platelet and D-dimer values do not differentiate them.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A normocytic normochromic anemia with a normal RDW in this patient is most consistent with which mechanism?",
+        "case_text": "A CBC on a 55-year-old man reads hemoglobin 10.1 g/dL, MCV 96 fL, RDW 12.5%, and the film is unremarkable except for normocytic normochromic cells.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Acute iron deficiency",
+            "Hypoproliferative marrow or chronic disease",
+            "Early vitamin B12 loss",
+            "Recovery from acute bleed"
+        ],
+        "explanation": "Uniform normocytosis with normal RDW suggests a stable, hypoproliferative process such as anemia of chronic disease or renal (EPO) anemia, in which cells are made in small numbers but uniform size. Iron deficiency and early B12 loss show anisocytosis early, and hemorrhage recovery shows reticulocytosis and polychromasia.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The anemia of chronic kidney disease is corrected by which hormone the kidney normally produces?",
+        "case_text": "A 46-year-old man on chronic dialysis has an anemia; his reticulocyte count is low and EPO is low.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "The erythropoietin hormone",
+            "The aldosterone hormone",
+            "The cortisol hormone",
+            "The renin hormone"
+        ],
+        "explanation": "EPO is produced by peritubular renal cells and drives erythropoiesis; as eGFR falls, EPO drops and anemia appears, corrected by recombinant EPO or HIf-PHIs. The aldosterone hormone, cortisol, and renin do not stimulate red cell production.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Normal methylmalonic acid with elevated homocysteine and megaloblastic changes points to which specific deficiency?",
+        "case_text": "A 20-year-old woman has fatigue; her hemoglobin is 9.0 g/dL with an MCV of 108 fL and the smear shows macro-ovalocytes, but methylmalonic acid is normal.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Vitamin B12 deficiency",
+            "Iron deficiency",
+            "Folate deficiency",
+            "The hypothyroid state"
+        ],
+        "explanation": "Methylmalonic acid is elevated only in B12 deficiency; normal MMA with a raised homocysteine in a megaloblastic picture indicates folate deficiency, so serum and red cell folate confirm the cause of the macrocytosis. Iron deficiency is microcytic and hypothyroidism shows a mild macrocytosis without megaloblastic changes.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The most common cause of an isolated mild macrocytosis with normal B12, folate, and no hypersegmentation is which condition?",
+        "case_text": "A 43-year-old woman has a mildly elevated MCV of 102 fL with normal B12 and folate, a normal LDH, and no hypersegmented neutrophils.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Megaloblastic leukemia",
+            "Severe hemolysis",
+            "The myelofibrosis picture",
+            "Alcohol use, liver disease, or medication effect with a macrocytic film"
+        ],
+        "explanation": "Ethanol, liver disease, and drugs such as methotrexate and azathioprine produce a mild non-megaloblastic macrocytosis without hypersegmentation and with normal B12 and folate. True megaloblastic disease shows the nuclear changes and hypersegmented neutrophils.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "In massive hemorrhage, the initial replacement of red cells alone risks dilution of which critical coagulation component best supplied by clotting components?",
+        "case_text": "A 24-year-old man sustains a traumatic large hemothorax; the laboratory crossmatches four units of red cells for an emergency laparotomy.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "The albumin fraction",
+            "Platelets and coagulation factors diluted by crystalloid and cells",
+            "Calcium only",
+            "Fibrin split products"
+        ],
+        "explanation": "Resuscitation with crystalloid and packed red cells dilutes platelets and factors, producing a dilutional coagulopathy; massive transfusion protocols add plasma and platelets in a balanced ratio. The albumin fraction and calcium are secondary, and fibrin split products are generated, not depleted, by dilution.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A dry marrow aspirate with teardrop cells and a leukoerythroblastic film in a 50-year-old suggests which diagnosis?",
+        "case_text": "A 50-year-old woman has a platelet count of 550 x10^9/L, mild anemia, splenomegaly, and the peripheral smear shows teardrop cells, nucleated red cells, and immature granulocytes; marrow aspirate is dry.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Chronic lymphocytic leukemia",
+            "Acute lymphoblastic leukemia",
+            "Primary myelofibrosis",
+            "Iron deficiency"
+        ],
+        "explanation": "Primary myelofibrosis is a myeloproliferative neoplasm with marrow fibrosis causing a dry tap; extramedullary hematopoiesis produces teardrop cells, nucleated red cells, and immature WBC in blood with splenomegaly. CLL and ALL do not produce the myelofibrotic tap, and iron deficiency has no dry tap.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which solid phase assay is used together with the clotting tests to detect antiphospholipid antibody in the lupus anticoagulant evaluation?",
+        "case_text": "A 30-year-old woman is evaluated for recurrent fetal losses and thrombosis; antiphospholipid antibody testing is ordered.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Platelet aggregation",
+            "Enzyme immunoassay for anticardiolipin and anti-beta2-glycoprotein I",
+            "Hemoglobin A1c",
+            "Prothrombin time with reptilase"
+        ],
+        "explanation": "The antiphospholipid syndrome is confirmed by lupus anticoagulant clotting tests plus ELISA for anticardiolipin and anti-beta2-glycoprotein I IgG/IgM; the combination is needed because no single test is sensitive. Aggregation measures platelet function and A1c is unrelated.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A marrow with more than 10% clonal plasma cells plus end-organ evidence establishes which diagnosis?",
+        "case_text": "A 63-year-old man has anemia and the marrow shows 30% plasma cells with a serum M-protein and hypercalcemia; a skeletal survey shows lytic lesions.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Waldenstrom macroglobulinemia",
+            "Monoclonal gammopathy of undetermined significance",
+            "Heavy chain disease",
+            "Multiple myeloma"
+        ],
+        "explanation": "Multiple myeloma requires 10% or more clonal marrow plasma cells together with a CRAB feature (hypercalcemia, renal failure, anemia, lytic bone disease); the findings here meet the definition. MGUS has less than 10% plasma cells and no end-organ damage, and macroglobulinemia is the IgM variant.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which antibody class is the most frequent isotype among multiple myeloma M-proteins?",
+        "case_text": "A 45-year-old woman has multiple lesions on imaging and the laboratory confirms a monoclonal spike in the gamma region paired with a heavy chain type.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "The IgM class",
+            "The IgG class",
+            "IgA only",
+            "The IgD class"
+        ],
+        "explanation": "The IgG class is the most common heavy chain in myeloma, followed by IgA; The IgM class is typical of Waldenstrom macroglobulinemia, and The IgD class and IgE myeloma are rare. The spike on SPE is typed by immunofixation accordingly.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Progression of myelodysplasia toward acute leukemia is defined by a marrow blast percentage at which threshold?",
+        "case_text": "A 37-year-old man with refractory cytopenias has a bone marrow with prominent ring sideroblasts and more than 15% blasts with Auer rods in blood.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "Greater than 20% blasts",
+            "Greater than 10% blasts",
+            "Greater than 5% blasts",
+            "Greater than 1% blasts"
+        ],
+        "explanation": "Myelodysplastic syndromes progress to AML when blasts exceed 20% in marrow or blood; lower blast percentages with dysplasia define MDS categories. The 20% threshold also triggers AML-directed therapy rather than MDS hypomethylator treatment.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The blasts of precursor B ALL are distinguished from AML blasts by which cytochemical pattern observed here?",
+        "case_text": "A 5-year-old presents with fever, bone pain, anemia, thrombocytopenia, and circulating blasts that are PAS positive with block positivity and MPO negative.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Sudan black positive",
+            "Non-specific esterase positive",
+            "PAS block positivity with MPO negativity",
+            "Periodic lipid fluorescence"
+        ],
+        "explanation": "ALL lymphoblasts show coarse or block PAS positivity and are negative for MPO and Sudan black, while AML blasts are MPO positive; the PAS block pattern with MPO negativity is characteristic of lymphoblasts. Esterase positivity marks the monocytic lineage.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The molecular test that monitors the residual tumor burden in CML quantifies which product of the t(9;22) fusion?",
+        "case_text": "A 55-year-old man with a CML follow-up has the BCR-ABL transcript measured by quantitative RT-PCR during treatment.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Protein C messenger",
+            "BCR-ABL fusion messenger RNA transcript",
+            "JAK2 mutation load",
+            "Immunoglobulin gene rearrangement"
+        ],
+        "explanation": "Quantitative RT-PCR measures the BCR-ABL mRNA transcript and expresses the result on the international scale to monitor molecular response to tyrosine kinase inhibitors. JAK2 and immunoglobulin markers are not the CML tumor transcript.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "An elevated HbA2 fraction that identifies beta thalassemia trait is accompanied in this patient by which red cell index relative to iron deficiency?",
+        "case_text": "A 30-year-old woman has a mild microcytic anemia with an elevated RBC count, normal ferritin, and increased HbA2 on HPLC.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "High RDW",
+            "High RBC count with low MCV and normal RDW",
+            "Low reticulocyte count",
+            "Normal MCHC"
+        ],
+        "explanation": "Beta thalassemia trait shows an absolute increase in RBC count with a low MCV and near-normal RDW, whereas iron deficiency lowers the RBC count and raises the RDW; the elevated HbA2 confirms the diagnosis when ferritin is normal. Reticulocytes and MCHC do not separate the two.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The presence of HbA on a neonatal HPLC with a small S variant band identifies which genotype?",
+        "case_text": "A neonate has a positive hemoglobin fraction pattern on HPLC showing HbF (major) and a small atypical band; newborn screening suspects sickle disease.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Homozygous SS",
+            "HbSS with HPFH",
+            "Sickle cell trait with a substantial HbA band",
+            "HbC disease"
+        ],
+        "explanation": "In newborns with sickle trait, normal HbA is present in proportions with a small HbS band; homozygous SS has no HbA and HbS predominates with higher HbF. Quantifying the bands by HPLC resolves the genotype without relying on adult findings.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A normal or mildly elevated HbA2 with a normal variant scan in a microcytic patient suggests which hemoglobinopathy category that electrophoresis cannot exclude?",
+        "case_text": "An adult with persistent microcytic anemia has hemoglobin electrophoresis with HbA2 of 3.2% and HbF of 4%, low normal ferritin, and a normal HPLC variant scan.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Beta thalassemia major",
+            "Hemoglobin SS",
+            "Hemoglobin C disease",
+            "Alpha thalassemia trait with a normal electrophoretic pattern"
+        ],
+        "explanation": "Alpha thalassemia trait reduces alpha chain synthesis so no abnormal variant appears on electrophoresis; it is suspected when microcytosis persists with a normal HbA2 and HbF and no variant band, often confirmed by DNA testing. Beta thalassemia trait elevates A2 and the beta variants produce identifiable bands.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Sickle trait cells resist sickling in the standard sickle screen when oxygen is present; the confirmatory procedure for HbS polymerization uses which agent?",
+        "case_text": "A 28-year-old Black woman has intermittent jaundice; a reticulocyte count is 6% and the DAT is negative with overhydration of red cells during fragility testing.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Sodium chloride",
+            "Acid elution",
+            "Sodium metabisulfite reduced blood",
+            "Crystal violet"
+        ],
+        "explanation": "The sickle prep uses fresh blood mixed with 2% sodium metabisulfite, a reducing agent that deoxygenates HbS and induces sickling in minutes; a negative result with oxygenated cells misses the trait. Acid elution and crystal violet address HbF and Heinz bodies, not HbS polymerization.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The direct assessment that definitively separates a peripheral destructive anemia from reduced marrow production uses which study?",
+        "case_text": "A 65-year-old man has normochromic normocytic anemia with an MCV of 92 fL, low reticulocytes, and a negative DAT; his myeloma is suspected of marrow depression.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Bone marrow aspirate and biopsy with iron and cellularity",
+            "The D-dimer level",
+            "Osmotic fragility",
+            "Erythrocyte sedimentation rate"
+        ],
+        "explanation": "Marrow aspirate with biopsy directly displays cellularity, lineage maturation, and iron stores, separating hypoproliferation from peripheral destruction. The reticulocyte count is an indirect screen, while The D-dimer level, fragility, and ESR do not assess production.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Severe isolated thrombocytopenia with retained platelet size and otherwise intact cell lines is most consistent with which mechanism?",
+        "case_text": "A 42-year-old woman has a platelet count of 35 x10^9/L with an otherwise normal CBC and a smear showing plentiful normal size platelets with mild anisocytosis.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Marrow aplasia",
+            "Immune peripheral destruction in ITP",
+            "Leukemic infiltrate",
+            "The DIC picture"
+        ],
+        "explanation": "ITP destroys platelets through antibody, so the marrow produces platelets but the count falls; cell lines and platelet size are preserved, and the film shows normal sized platelets. Marrow aplasia and leukemia would suppress the whole marrow, and The DIC picture consumes other factors with a prolonged PT/APTT.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "After exercise-induced hemoglobinuria, which laboratory test pair distinguishes myoglobinuria from hemoglobinuria?",
+        "case_text": "A 22-year-old college athlete presents after prolonged running with red-brown urine and a positive urine blood dipstick with normal microscopic red cells.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Iron and TIBC",
+            "Reticulocyte and MCV",
+            "Plasma pink-to-red color and haptoglobin level",
+            "Bilirubin and alkaline phosphatase"
+        ],
+        "explanation": "Myoglobin binds less to haptoglobin and stains less plasma, so the plasma stays clear with myoglobinuria while hemoglobinuria colors the plasma and depletes haptoglobin; specific assays confirm each. Iron studies and bilirubin do not address the pigment source.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The reticulocytosis with polychromasia and a normal MCV suggest which mechanism for the anemia?",
+        "case_text": "A 30-year-old woman has fatigue and shortness of breath; the CBC shows hemoglobin 8.4 g/dL, hematocrit 27%, and a reticulocyte count of 8.2% with polychromasia on the film.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Iron block",
+            "Hemolysis or recent hemorrhage with marrow compensation",
+            "Marrow aplasia",
+            "The myelophthisis process"
+        ],
+        "explanation": "A brisk reticulocyte response with polychromasia (young RNA-rich cells) marks a regenerating marrow compensating for hemolysis or blood loss; aplastic and infiltrated marrows cannot mount this response. Iron deficiency blocks synthesis, not response.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Warm autoimmune hemolysis complicating CLL is monitored using which red cell parameter that directly reflects the antibody-mediated destruction?",
+        "case_text": "A 60-year-old man with chronic lymphocytic leukemia has a hemoglobin of 9.5 g/dL and the DAT is strongly positive.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Platelet count",
+            "The fibrinogen level",
+            "DAT strength and reticulocyte response",
+            "Transferrin saturation"
+        ],
+        "explanation": "In CLL-associated AIHA the DAT documents immune coating and the reticulocyte count gauges the marrow response to hemolysis; a fall in hemoglobin with a rising DAT and reticulocytes confirms active immune destruction. Platelets and fibrinogen do not track the hemolytic response.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which answer describes the expected pattern of the acute phase protein response in active giant cell arteritis?",
+        "case_text": "A 74-year-old man has an elevated ESR of 130 mm/hr and a new localized headache; giant cell arteritis is clinically suspected.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Elevated CRP and fibrinogen with a raised ESR",
+            "Normal CRP and a low fibrinogen",
+            "Low haptoglobin with a normal ESR",
+            "High iron with a normal ESR"
+        ],
+        "explanation": "Large vessel inflammation raises CRP and fibrinogen as acute phase reactants, mechanically raising the erythrocyte sedimentation rate; the ESR is a nonspecific but useful marker of the systemic inflammation. Iron falls and haptoglobin stays normal in non-hemolytic inflammation, so the other patterns are inconsistent.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The nitroblue tetrazolium test detects chronic granulomatous disease by demonstrating a failure of neutrophils to perform which function?",
+        "case_text": "A 29-year-old man with chronic granulomatous disease presents with recurrent catalase-positive infections; oxidative burst defects are suspected.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "The chemotaxis step",
+            "Respiratory burst with superoxide and hydrogen peroxide production",
+            "The adhesion step",
+            "The phagocytosis step"
+        ],
+        "explanation": "CGD neutrophils fail the respiratory burst, so the NBT dye is not reduced to blue formazan by superoxide; the test demonstrates the oxidase defect. The chemotaxis step and adhesion defects (LAD) are separate disorders measured by other assays, and phagocytosis is intact.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Severe reduction of CD19 B cells with absent serum immunoglobulins and recurrent bacterial infection defines which primary immune defect?",
+        "case_text": "A 40-year-old woman has recurrent sinopulmonary infections and a flow study shows very low CD19 B cells with near normal T cells and immunoglobulins absent.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Chronic granulomatous disease",
+            "Severe combined immunodeficiency",
+            "Common variable immunodeficiency or B-cell disorder",
+            "Myeloperoxidase deficiency"
+        ],
+        "explanation": "Common variable immunodeficiency and related B-cell defects reduce CD19 B cells and immunoglobulin production causing pyogenic infections; the quantitative immunoglobulin panel and B-cell enumeration establish the diagnosis. CGD is a neutrophil oxidase defect, SCID affects T cells, and MPO deficiency is neutrophil specific.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The diagnostic hallmark of chronic granulomatous disease is a negative result on which neutrophil functional test?",
+        "case_text": "A 5-year-old child presents with recurrent, severe, staphylococcal infections requiring drainage; a white blood cell oxidative test is requested and returns abnormal.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "CD19 count",
+            "Migration assay",
+            "Immunoglobulin level",
+            "Dihydrorhodamine oxidation demonstrating absent respiratory burst"
+        ],
+        "explanation": "The dihydrorhodamine or NBT flow test shows defective hydrogen peroxide generation in CGD, the neutrophil oxidase defect, while the phagocytic and chemotactic steps are intact. Immunoglobulins and CD markers address humoral immunity, not the oxidase.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Failure of ristocetin induced agglutination with a low vWF antigen is the laboratory signature of which disorder?",
+        "case_text": "A 34-year-old man has a prolonged bleeding time and a normal platelet count; his platelets fail to aggregate with ristocetin and the von Willebrand antigen is low.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Bernard Soulier syndrome",
+            "Von Willebrand disease",
+            "Glanzmann thrombasthenia",
+            "Platelet storage pool defect"
+        ],
+        "explanation": "Ristocetin agglutination requires vWF and platelet GPIb; a low vWF antigen with abnormal ristocetin aggregation defines vWD, and mixing with normal plasma corrects the response. Bernard-Soulier shows a normal vWF but defective GPIb, Glanzmann normalizes ristocetin yet fails other agonists, and storage pool disease aggregates normally with ristocetin.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A primary wave that does not progress to secondary aggregation suggests a defect in which platelet granular release process or target?",
+        "case_text": "A patient with a suspected platelet function abnormality has aggregation studies performed; the trace with adenosine diphosphate shows only a single wave of aggregation.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "GPIb adhesion",
+            "Fibrinogen binding site",
+            "ADP release and the secondary activation pathway",
+            "vWF binding"
+        ],
+        "explanation": "Full ADP aggregation requires release of granular ADP that recruits additional platelet activation; isolated primary wave aggregation without secondary response appears in storage pool disease and aspirin-like defects of the thromboxane/ADP release pathway. GPIb and fibrinogen defects produce different aggregation patterns with other agonists.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which answer best describes the expected aggregation pattern for a P2Y12 receptor antagonist?",
+        "case_text": "A 44-year-old man takes prasugrel and has a new spontaneous bleeding episode; platelet aggregometry is requested.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Normal with all agonists",
+            "Impaired ristocetin only",
+            "Impaired collagen only",
+            "Impaired ADP induced aggregation across concentrations"
+        ],
+        "explanation": "P2Y12 antagonists block the ADP receptor, so ADP induced aggregation is reduced and the secondary wave is lost while other agonists and adhesion remain intact. Ristocetin and collagen effects are preserved unless another defect coexists.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A low MCV with a normal RDW and a normal iron panel in an adult with no variant band suggests which globin disorder category pending DNA confirmation?",
+        "case_text": "A 60-year-old man has anemia and the automated analyzer flags an MCV of 74 fL with a histogram showing a shoulder; iron studies are normal and no thalassemia variant is found.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Megaloblastic anemia",
+            "Alpha thalassemia trait",
+            "Sideroblastic anemia",
+            "Autoimmune hemolysis"
+        ],
+        "explanation": "Microcytosis with a normal RDW and normal iron studies in a non-megaloblastic patient points to alpha thalassemia trait, which produces no electrophoretic variant; DNA testing confirms the genotype. Sideroblastic anemia shows a dimorphic population and ring sideroblasts, and megaloblastic anemia is macrocytic.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The spurious CBC findings of cold agglutinins that normalize on warming at 37 C include which combination?",
+        "case_text": "A 28-year-old woman has painful red digits in cold weather with a positive cold agglutinin titer and a spurious CBC; the laboratory determines an IgM cold agglutinin.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "High RBC with low MCV",
+            "Low hemoglobin with high RBC",
+            "Low RBC count with high MCV and low MCHC artifact",
+            "High platelets with low MCHC"
+        ],
+        "explanation": "Agglutinated cells are counted as one large cell so the RBC falls and the MCV rises; warming dissociates the clumps and restores accurate red cell indices and counts. Hemoglobin from lysed cells is usually stable, and platelet counts are not the primary disturbance.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A prolonged closure time with a normal count that corrects with DDAVP points to which diagnosis in the bleeding workup?",
+        "case_text": "A 33-year-old woman has moderate bleeding during a dental procedure and a normal platelet count with an abnormal PFA-100 closure time that corrects after giving desmopressin-responsive vWF elevation.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Hemophilia A",
+            "Mild von Willebrand disease, often type 1",
+            "Vitamin K deficiency",
+            "Fibrinogen defect"
+        ],
+        "explanation": "Type 1 vWD is a quantitative deficiency of a normal vWF that responds to DDAVP with release of stored vWF; the prolonged closure time and bleeding with a normal platelet count fit. Hemophilia A has a prolonged APTT with a normal platelet plug function, and vitamin K deficiency prolongs the PT.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A correcting immediate mix that proceeds to identify a mild factor deficiency is most consistent with which stepwise use of the APTT mixing study?",
+        "case_text": "A 58-year-old man has a prolonged APTT discovered preoperatively; repeat with an immediate mix corrects, and he has a family history of excessive bruising but no major bleeding with prior surgeries.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Confirm an inhibitor",
+            "Diagnose DIC",
+            "Quantitate fibrinogen",
+            "Localize the deficient factor before factor assays"
+        ],
+        "explanation": "When normal plasma corrects the prolonged APTT the defect is factor deficiency; the mix first distinguishes deficiency from inhibitor, then factor-specific assays localize which factor (VIII, IX, XI, XII) is low. Inhibitors keep the mix prolonged, and fibrinogen and DIC follow different tests.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The distinction between liver disease and DIC as the cause of low fibrinogen relies on which additional laboratory combination?",
+        "case_text": "A 45-year-old man with liver disease has a prolonged PT and APTT with a normal D-dimer; his fibrinogen is low because hepatocyte failure reduces synthesis.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Reticulocyte and MCV",
+            "Platelet trend with fibrinogen turnover and D-dimer",
+            "Cryoglobulin and complement",
+            "ApoB and triglycerides"
+        ],
+        "explanation": "DIC consumes fibrinogen and platelets acutely with an elevated D-dimer, while chronic liver disease shows stable fibrinogen and platelet counts with a normal D-dimer; trending the platelet count and D-dimer separates consumption from synthesis failure. The other marker pairs do not address consumption.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Whether the prolonged closure time is factor, vWF, or platelet driven is sorted by which pair of assays on the panel?",
+        "case_text": "A 30-year-old man has menorrhagia investigation; estrogen and iron studies are normal and a bleeding time with a normal platelet count but prolonged closure time is corrected by mixing with normal plasma.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Fibrinogen and D-dimer",
+            "PT and thrombin time",
+            "Ristocetin aggregation and vWF antigen",
+            "Protein C and S"
+        ],
+        "explanation": "The closure time screens platelet-vWF interaction; adding ristocetin aggregation and vWF antigen separates von Willebrand disease (low vWF with abnormal ristocetin) from platelet disorders such as Bernard-Soulier (normal vWF, abnormal ristocetin) and Glanzmann (normal ristocetin, abnormal other agonists). PT, fibrinogen, and natural anticoagulants do not drive the closure time.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The post-infusion factor VIII level measures which therapeutic parameter that guides dosing?",
+        "case_text": "A 22-year-old male has hemophilia A and receives factor VIII concentrate for a knee bleed; factor VIII is measured 30 minutes after the dose.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Recovery and provisional dosing success",
+            "Residual factor IX",
+            "Platelet recovery",
+            "Haptoglobin recovery"
+        ],
+        "explanation": "A 30-minute post-dose factor VIII measurement calculates the percent recovery, verifying that the dose achieved the target and that no inhibitor is consuming it. Factor IX and platelet recovery address other products, and haptoglobin measures hemolysis, not factor replacement.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A normal factor VIII with a low factor IX and a prolonged APTT in a male child establishes which diagnosis?",
+        "case_text": "A 5-year-old boy has bleeding after circumcision and a prolonged APTT with a low factor IX activity and a normal factor VIII.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Hemophilia A",
+            "Hemophilia B",
+            "Factor X deficiency",
+            "Von Willebrand disease"
+        ],
+        "explanation": "Hemophilia B is inherited factor IX deficiency with a prolonged APTT and normal factor VIII, distinguishing it from hemophilia A; both are X-linked. Factor X deficiency prolongs both PT and APTT, and vWD shows a low vWF with prolonged closure time.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The laboratory confirmation of a lupus anticoagulant in this setting uses which confirmatory reaction that reverses the phospholipid dependence?",
+        "case_text": "A 47-year-old woman has a prolonged APTT with thrombosis and late pregnancy loss; functional protein C, protein S, and antithrombin were ordered before anticoagulation and are normal; a lupus anticoagulant is confirmed.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Addition of factor VIII",
+            "Neutralization of calcium",
+            "Excess phospholipid in a confirmatory Russell viper venom test",
+            "Warming to 37 C"
+        ],
+        "explanation": "The lupus anticoagulant is a phospholipid consuming antibody; a confirmatory assay that repeats the prolonged test with excess phospholipid shows correction, proving phospholipid dependence. Factor addition and warming do not remove the antibody, and calcium neutralization is not the confirmatory step.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "In disseminated intravascular coagulation the elevated fibrin degradation products arise from plasmin clearing what substrate that differs from the graded stabilization in normal fibrinolysis?",
+        "case_text": "A 38-year-old sepsis patient has a rising D-dimer and a falling platelet count with prolonged clotting and an elevated APTT that suggests consumption.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Fibrinogen monomers",
+            "Crosslinked fibrin formed and degraded systemically",
+            "Soluble clotting factor V",
+            "Vitamin K dependent complexes"
+        ],
+        "explanation": "DIC generates systemic thrombin that produces crosslinked fibrin across the microvasculature; plasmin lyses that crosslinked fibrin producing D-dimer, while simple fibrinogen degradation products (from primary fibrinolysis) do not contain the D-dimer epitope. The D-dimer distinguishes secondary from primary fibrinolysis.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "An acutely low protein C measured during warfarin therapy more likely reflects what mechanism?",
+        "case_text": "A 70-year-old man on long-term warfarin has an INR of 2.5; the laboratory measures protein C during an acute thromboembolic event before starting heparin.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Consumption by thrombosis",
+            "Laboratory fibrinogen binding",
+            "Platelet effect of warfarin",
+            "Vitamin K dependent synthesis reduction by warfarin itself"
+        ],
+        "explanation": "Warfarin reduces all vitamin K dependent proteins including protein C, so a low protein C in a warfarin-treated patient reflects the drug rather than inherited deficiency; retest off anticoagulation for a valid functional assay. Consumption plays a small role compared with warfarin lowering of the vitamin K dependent pool.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A low functional antithrombin with normal platelet, PT, and APTT indicates a hypercoagulable state from loss of which anticoagulant function?",
+        "case_text": "A 33-year-old woman has recurrent deep vein thromboses and a functional antithrombin measured before anticoagulation is 40%.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Factor II excess",
+            "Inhibition of thrombin and activated factor X",
+            "The fibrinolytic state",
+            "von Willebrand multimer assembly"
+        ],
+        "explanation": "Antithrombin neutralizes thrombin and factor Xa in complex with heparin; its deficiency heightens thrombotic risk and is screened functionally before the patient starts anticoagulation, which would confound the result. The other options do not describe antithrombin activity.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which inherited natural anticoagulant deficiency is most strongly suspected when antithrombin, protein C, or protein S measurement returns low in an untreated patient after acute thrombosis resolves?",
+        "case_text": "A 21-year-old woman taking an estrogen containing oral contraceptive develops a cerebral vein thrombosis; APS and factor V Leiden have been ruled out.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "High factor VIII",
+            "Factor XIII deficiency",
+            "Antithrombin, protein C, or protein S deficiency",
+            "Fibronectin excess"
+        ],
+        "explanation": "Natural anticoagulant deficiency unmasks venous thrombosis in younger patients especially with estrogen exposure; functional assay of these inhibitors performed after the acute phase and off anticoagulants identifies the defect if others are excluded. High factor VIII is transient rather than a clear genetic deficiency, and factor XIII defects more often bleed than clot.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The blood film target cells in beta thalassemia trait arise from which imbalance that reduces globin chain overall?",
+        "case_text": "A 52-year-old man has an incidental finding of a mild Hb elevation and the peripheral film shows target cells; a beta thalassemia trait is suspected by the lab.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Excess alpha-gamma tetramers",
+            "Relative excess of unpaired beta-chain precursor producing reduced effective synthesis with normal or high RBC counts",
+            "Excess delta chains",
+            "Iron toxicity"
+        ],
+        "explanation": "In beta thalassemia trait, reduced beta chain synthesis leaves excess alpha chains that precipitate, damaging membrane and producing target cells, while the RBC count is often raised as the marrow compensates for mild microcytosis; HbA2 rises because delta synthesis is relatively spared.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A hemoglobin pattern of homozygous HbC (no HbA, HbC band) confirms which diagnosis that presents with target cells and mild hemolysis?",
+        "case_text": "A 25-year-old West African woman has gallstones and chronic mild anemia; the film shows many target cells, and alkaline electrophoresis shows a single HbC band with no HbA.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "HbS disease",
+            "Homozygous HbSS",
+            "Homozygous hemoglobin C disease",
+            "Delta-beta thalassemia"
+        ],
+        "explanation": "Homozygous HbC produces numerous target cells, mild chronic hemolysis, and a single HbC band with no HbA; HbC interacts with S in SC disease where a double band appears. Sickle disease shows HbS bands and HbA2 applies to beta thalassemia.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Specimen handling for cold agglutinin disease that restores reliable CBC indices includes which action before analysis?",
+        "case_text": "A 44-year-old man with cold agglutinin disease has had a hemoglobin of 8.5 g/dL; his samples must be handled specially because the blood film aggregates at room temperature.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Warming the sample to 37 C before counting",
+            "Refrigeration prolonged to lyse clumps",
+            "Adding a cold promoting reagent",
+            "Centrifuging at 4 C"
+        ],
+        "explanation": "Warming at 37 C for 15 to 30 minutes dissociates the agglutinated red cells so the analyzer measures true counts; a 37 C pre-warm step is mandatory whenever cold antibody is suspected. Refrigeration worsens the clumping and the other manipulations do not restore accurate indices.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The elevated HbA2 with target cells and a mild hemolytic anemia pattern fits which diagnosis that needs genetic counseling?",
+        "case_text": "A 38-year-old woman has a mild anemia and her blood film shows many target cells with the reticulocyte count slightly elevated; hemoglobin electrophoresis shows HbA2 raised and HbF normal.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Hemolytic globin excess",
+            "Beta thalassemia trait",
+            "Hemoglobin H disease",
+            "Sickle trait"
+        ],
+        "explanation": "Beta thalassemia trait presents with mild anemia, target cells, and elevated HbA2 with normal HbF, requiring family screening because offspring of two carriers can inherit beta thalassemia major. HbH is alpha thalassemia deletional with a fast band, and sickle trait shows HbS.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Hemoglobin H inclusions that appear as Heinz body-like precipitates on brilliant cresyl blue identify which alpha thalassemia form?",
+        "case_text": "A 42-year-old man from the Mediterranean has chronic hemoglobin 9.0 g/dL with HbH inclusions visible on brilliant cresyl blue staining.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Silent carrier state",
+            "Beta thalassemia major",
+            "Hemoglobin SS",
+            "Hemoglobin H disease (three alpha genes deleted)"
+        ],
+        "explanation": "HbH disease is alpha thalassemia with three alpha gene deletions leaving excess beta chains that form HbH tetramers; the near-hemoglobin precipitates stain as inclusions on supravital brilliant cresyl blue. Silent carriers have one deletion and no HbH, and the beta disorders show different bands.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Sickle cell disease with a prominent HbF elevation that raises HbF by hereditary persistence reduces severity by which mechanism?",
+        "case_text": "A 20-year-old woman has severe anemia and the blood film shows irreversibly sickled cells plus a hemoglobin electrophoresis with HbS predominant and markedly elevated HbF; HbA2 is below 3.5%.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Raising HbA2 translation",
+            "Increasing oxygen affinity of HbS",
+            "Preventing HbS polymerization through fetal hemoglobin dilution",
+            "Inhibiting globin switch to adult only"
+        ],
+        "explanation": "Hereditary persistence of fetal hemoglobin raises HbF enough to dilute HbS within each cell, inhibiting polymerization and lessening crisis severity; the same principle underlies hydroxyurea therapy. HbA2 does not rise, and oxygen affinity changes are not the operating mechanism.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Uremic platelet dysfunction is quantified clinically by which test that measures platelet adhesion and aggregation under flow?",
+        "case_text": "A 55-year-old man with renal failure has an emergent platelet count of 12 x10^9/L and a creatinine of 9.0 mg/dL; uremic platelet dysfunction is suspected.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Reticulocyte index",
+            "Bleeding time or closure time with abnormal results at normal platelet numbers",
+            "Ristocetin factor VIII",
+            "Osmotic fragility"
+        ],
+        "explanation": "Uremia impairs platelet function through retained toxins, so a bleeding time or closure time at a normal platelet count shows prolongation; the dysfunction corrects with dialysis, DDAVP, or cryoprecipitate. The other tests measure vWF, fragility, and marrow response rather than uremic platelet-vessel interaction.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The most sensitive screen for immune destruction in ITP, and the one subject to spuriously positive results, is the measurement of which antibody?",
+        "case_text": "A 39-year-old woman has thrombocytopenia of 70 x10^9/L with an otherwise negative evaluation; a platelet antibody test is ordered and returned positive.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Anti-eRAA",
+            "Antithrombin antibody",
+            "Platelet associated immunoglobulin",
+            "Cold agglutinin"
+        ],
+        "explanation": "Platelet associated immunoglobulin is elevated in ITP but is also positive in sepsis, SLE, and drug reactions, limiting specificity; the diagnosis remains clinical, and other thrombocytopenic causes must be excluded. Antithrombin and cold agglutinin assays address other disorders.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Warfarin induced skin necrosis in protein C deficiency arises because warfarin lowers which anticoagulant first, before the procoagulant IV factors fall?",
+        "case_text": "A 47-year-old woman has skin necrosis of the breast during warfarin initiation; protein C is low while on warfarin.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "The fibrinogen level",
+            "Factor V",
+            "Platelet aggregation",
+            "Protein C and protein S with their short half lives"
+        ],
+        "explanation": "Protein C and protein S have short half lives, so warfarin suppresses them before factors II, VII, IX, X reach a low level, creating a transient prothrombotic window that causes the dermal microthrombosis. Neither fibrinogen nor the platelet pool behaves this way.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Which assay monitors the tumor burden during therapy with a molecular technique that reports on the international scale?",
+        "case_text": "A 33-year-old man with splenomegaly and a WBC of 80 x10^9/L has a chronic myelogenous picture with matched Philadelphia chromosome cytogenetics; he starts a tyrosine kinase inhibitor.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Reticulocyte count",
+            "BCR-ABL quantitative RT-PCR",
+            "Serum protein electrophoresis",
+            "JAK2 mutation PCR"
+        ],
+        "explanation": "BCR-ABL transcript quantification by RT-PCR on blood tracks the residual disease and defines major molecular response thresholds on the international scale; cytogenetics no longer needs repeat marrow study once the transcript is used. SPE and JAK2 evaluate different disease processes.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "An erythropoietin level below the expected range for a given hemoglobin is used to support which therapeutic decision?",
+        "case_text": "A 49-year-old man has persistent anemia after chemotherapy for MDS, and the laboratory is asked to confirm a suspected erythropoietin deficiency before therapy.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "That EPO replacement is likely to benefit this hypoproliferative anemia",
+            "That iron restriction is needed",
+            "That hemolysis is active",
+            "That a marrow transplant is required"
+        ],
+        "explanation": "When EPO is low relative to the anemia, exogenous EPO may stimulate the marrow; the inappropriately low hormone identifies an EPO responsive hypoproliferative anemia. Hemolysis and iron states do not determine the EPO dosing decision.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "The combination of microcytic anemia, low ferritin, and a slightly reactive platelet elevation is best explained by iron deficiency driving which mechanism?",
+        "case_text": "A 40-year-old woman has palpitations and fatigue; her hemoglobin is 11.0 g/dL, MCV 76 fL, and the ferritin is 6 ng/mL, with a WBC and platelet count that are mildly elevated.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Marrow hyperplasia with macrocytosis",
+            "Stimulated thrombopoiesis along with ineffective erythropoiesis",
+            "Hemolytic consumption",
+            "Basophilic degeneration"
+        ],
+        "explanation": "Iron deficiency anemia stimulates EPO-driven marrow activity and is accompanied by reactive thrombocytosis; the microcytic indices with an empty ferritin confirm depletion rather than a myeloproliferative clonal process. The high platelet count corrects once iron is replaced.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Factor VIII selective deficiency with normal vWF and ristocetin cofactor supports which diagnosis in a previously well woman?",
+        "case_text": "A 58-year-old woman has a mild anemia and her bleeding work shows a normal prothrombin time, prolonged APTT, and a factor VIII activity of 21% with normal vWF antigen and normal ristocetin activity.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Von Willebrand disease",
+            "Acquired factor deficiency from DIC",
+            "Acquired factor VIII inhibitor or mild hemophilia A carrier",
+            "Factor XII deficiency"
+        ],
+        "explanation": "Isolated factor VIII deficiency with a normal vWF distinguishes hemophilia A or an acquired inhibitor from vWD, where all vWF measures fall together; a mixing study and inhibitor titer separate inherited deficiency from an acquired antibody. Factor XII deficiency would not lower factor VIII.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Factor XIII deficiency escapes detection by normal PT and APTT because factor XIII acts at which coagulation step that screening tests do not measure?",
+        "case_text": "A 24-year-old man with an intact family history has a PT of 14.5 s and an APTT of 33 s; a pre-surgical factor XIII measurement is requested despite normal screening tests.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Primary hemostasis",
+            "Crosslinking of fibrin monomers after clot formation",
+            "Platelet adhesion",
+            "Fibrinogen synthesis"
+        ],
+        "explanation": "Factor XIII crosslinks fibrin polymers after the clot forms, stabilizing it; PT and APTT stop measuring once thrombin generates fibrinogen-soluble fibrin, so factor XIII deficiency is diagnosed by a urea or acetic acid clot solubility test or direct chromogenic assay. The screening assays cannot reveal its absence.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "Both thrombin time and reptilase time prolonged with correction on normal plasma indicate an abnormality in which component?",
+        "case_text": "A 36-year-old man has a bleeding disorder and a prolonged, slowly adding thrombin time that corrects after adding normal plasma; reptilase time is prolonged as well.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Heparin effect",
+            "Lupus anticoagulant",
+            "Factor VIII",
+            "Fibrinogen quantity or quality"
+        ],
+        "explanation": "Thrombin time abnormalities from fibrinogen defects are shown when both the thrombin and reptilase times are prolonged and correct with added plasma; a prolonged thrombin time with a normal reptilase time points to heparin, whose inhibition reptilase ignores. Lupus anticoagulant and factor VIII do not prolong the thrombin time.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A normal reptilase time with a prolonged thrombin time in a patient with a heparin flush confirms which cause?",
+        "case_text": "A 67-year-old woman has a prolonged thrombin time that shortens on Reptilase testing; the laboratory suspects heparin contamination from a central line flush.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Fibrinogen abnormality",
+            "Heparin contamination interacting with antithrombin",
+            "Factor XIII deficiency",
+            "Warfarin effect"
+        ],
+        "explanation": "Heparin accelerates antithrombin against thrombin, prolonging the thrombin time; Reptilase converts fibrinogen to fibrin without the heparin-antithrombin target, so a normal reptilase time with a prolonged thrombin time localizes the problem to heparin. Fibrinogen defects prolong both, and factor XIII and warfarin do not affect the thrombin time.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "An underfilled citrate tube changes hemostasis results through which mechanism?",
+        "case_text": "A 33-year-old woman on warfarin has a coagulation specimen submitted in an underfilled tube; the laboratory repeats the draw on a proper full tube.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Clotting factor activation",
+            "Platelet aggregation",
+            "Excess citrate binding insufficient calcium relative to the blood volume",
+            "Fibrinolysis stimulation"
+        ],
+        "explanation": "A normal 3.2% citrate maintains a fixed ratio with blood calcium; underfilling leaves excess citrate that binds extra calcium, falsely prolonging PT and APTT values. Correct fill volume keeps the calcium-citrate balance, and the other mechanisms do not come into play with sample volume.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A verified low count with clumping is best resolved by re-collecting in which anticoagulant tube?",
+        "case_text": "A 55-year-old man has a platelet count of 30 x10^9/L for evaluation; the film shows platelet clumping that impairs the count while the clinical picture is inconsistent with severe thrombocytopenia.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Sodium fluoride",
+            "Sodium citrate",
+            "Plain serum with clot activator",
+            "Lithium heparin"
+        ],
+        "explanation": "EDTA-dependent clumping is resolved by drawing into sodium citrate, which does not trigger the platelet antibody, or by adding EDTA to a major glucose tube; the citrate sample then gives the true count. Fluoride and clot activator tubes do not solve the platelet clumping, and heparin may refractor the count.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A normal PT/APTT with impaired platelet plug formation and giant platelets fits which primary hemostatic disorder?",
+        "case_text": "A 41-year-old man has postsurgical bleeding and the laboratory reports a normal PT and APTT but prolonged bleeding from the incision site; the platelet count is 100 x10^9/L with large platelets on the film.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Factor VIII deficiency",
+            "Warfarin effect",
+            "The DIC picture",
+            "Bernard Soulier syndrome"
+        ],
+        "explanation": "Bernard-Soulier syndrome shows thrombocytopenia with giant platelets and abnormal ristocetin aggregation because of defective GPIb-vWF adhesion, while the PT and APTT stay normal; the bleeding is primarily platelet-driven. Factor, warfarin, and consumption states alter the clotting times rather than producing giant platelets in isolation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Hematology",
+        "type": "case",
+        "stem": "A suspicious histogram with a low count correlation on the smear is best finalized by which primary verification step?",
+        "case_text": "A 47-year-old woman is having a routine camera-laboratory review and the platelet count histogram is abnormal; only a running count is reported after smear review.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Repeat by the same automated channel once",
+            "Multiply the count by a constant",
+            "Manual or reference method platelet estimate on the stained film",
+            "Report the analyzer value with a disclaimer"
+        ],
+        "explanation": "When the automated platelet channel is suspect, the stained film estimate by an experienced reviewer, or an alternate method such as a reference thrombocyte count, verifies the result before release. Repeating the same possibly faulty channel does not verify accuracy.",
+        "source_type": "original",
+        "status": "active"
+    }
+]

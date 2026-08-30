@@ -1,0 +1,1243 @@
+[
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A paraprotein (M protein) is most directly detected and quantitated by which technique?",
+        "case_text": "A serum protein electrophoresis shows a tall, narrow homogeneous spike in the gamma region and the clinical picture is that of a plasma cell dyscrasia.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "SDS-PAGE with Coomassie only",
+            "Western blot with a single antibody",
+            "Serum protein electrophoresis followed by immunofixation to class the band",
+            "Rapid agglutination card"
+        ],
+        "explanation": "Electrophoresis separates the M spike, and immunofixation identifies the heavy and light chain class (IgG kappa, IgA lambda); nephelometry then quantitates the protein. The other methods do not provide the pattern-based detection or class identification.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A peripheral (rim) pattern of ANA on HEp-2 cells is most associated with which clinical antibody specificity?",
+        "case_text": "A technologist reviews an IFA on HEp-2 cells and sees a peripheral (rim) pattern at the nuclear rim.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The anti-histone antibody",
+            "The anti-Sm antibody",
+            "The anti-dsDNA antibody",
+            "The anti-Scl-70 antibody"
+        ],
+        "explanation": "The peripheral/rim ANA pattern reflects nuclear envelope binding and correlates with anti-dsDNA (lupus) and also anti-lamin; high anti-dsDNA titers track with active nephritis in systemic lupus. Histones give a homogeneous pattern, Sm a speckled pattern, and Scl-70 a fine speckled list.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A coarse speckled ANA pattern with Sm and RNP antibodies is found in which disorders?",
+        "case_text": "A positive ANA at 1:320 shows a coarse speckled pattern; the sample also contains an antibody to a spliceosome component.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Pure polymyositis",
+            "Systemic lupus erythematosus (anti-Sm) and mixed connective tissue disease (high-titer anti-RNP)",
+            "Primary Sjogren",
+            "The scleroderma variant"
+        ],
+        "explanation": "Anti-Sm is highly specific for lupus, while high-titer anti-RNP with MCTD features produces the coarse speckled pattern; both antibodies are directed to RNA-protein (spliceosomal) particles. Polymyositis, Sjogren, and scleroderma carry other specificities such as Jo-1, Ro/SS-A, and Scl-70.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A nucleolar pattern of ANA and anti-Scl-70 (topoisomerase I) antibody are most associated with which condition?",
+        "case_text": "A patient with chronic cough and interstitial lung disease has a nucleolar ANA pattern and a sclerodactyly.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Systemic sclerosis (diffuse)",
+            "Systemic lupus",
+            "Rheumatoid arthritis",
+            "Behcet disease"
+        ],
+        "explanation": "Anti-Scl-70 predicts diffuse cutaneous systemic sclerosis with interstitial lung disease; the nucleolar pattern on HEp-2 is the classic speckled-descent companion. Topoisomerase I antibody is highly specific for the diffuse form of scleroderma and less often its limited (CREST) variant.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The Ro/SS-A antibody associated with the sicca syndrome is most strongly linked to which ANA speckled new-world pattern?",
+        "case_text": "A patient has tearless dry eyes, dry mouth, and a positive Ro/SS-A antibody.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "The rim pattern",
+            "The centromere pattern",
+            "Discrete dots",
+            "Fine speckled with cytoplasmic fluorescence (SS-A/Ro and SS-B/La)"
+        ],
+        "explanation": "Anti-Ro and anti-La give a fine speckled pattern with a cytoplasmic component on HEp-2 and are the classic markers of Sjogren syndrome; they also appear in subacute cutaneous lupus and neonatal lupus (congenital heart block). The rim pattern, centromere, and dot patterns carry different specificities such as dsDNA, CENP-B, and Sp100.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Anticentromere antibody is the laboratory hallmark of which form of systemic sclerosis?",
+        "case_text": "A patient with Raynaud phenomenon has centromere antibodies and telangiectasias with calcinosis.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Diffuse cutaneous systemic sclerosis",
+            "Juvenile arthritis",
+            "Limited cutaneous systemic sclerosis (CREST)",
+            "Mixed connective tissue"
+        ],
+        "explanation": "Anticentromere (CENP-B) antibody is associated with limited cutaneous systemic sclerosis, the CREST variant marked by calcinosis, Raynaud, esophageal dysmotility, sclerodactyly, and telangiectasias, with a lower risk of interstitial lung disease. Anti-Scl-70 marks the diffuse form.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The perinuclear (p-ANCA) pattern most often corresponds to antibody against which antigen?",
+        "case_text": "An immunofluorescence assay for ANCA shows a perinuclear pattern of fluorescence on ethanol-fixed neutrophils.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Proteinase-3 (PR-3)",
+            "Myeloperoxidase (MPO)",
+            "Lactoferrin alone",
+            "Cathepsin G"
+        ],
+        "explanation": "p-ANCA on ethanol-fixed neutrophils is usually anti-MPO and associates with microscopic polyangiitis, and a fraction with eosinophilic granulomatosis with polyangiitis (Churg-Strauss); c-ANCA (PR-3) marks granulomatosis with polyangiitis. The perinuclear artifact appears because the antigen moves around the nucleus during fixation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A cytoplasmic ANCA that is antibody to PR-3 is most specifically associated with which diagnosis?",
+        "case_text": "A heavily immunosuppressed patient has a granular c-ANCA pattern and pulmonary-renal syndrome.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Microscopic polyangiitis",
+            "Goodpasture syndrome",
+            "Granulomatosis with polyangiitis (Wegener)",
+            "The polymyositis process"
+        ],
+        "explanation": "c-ANCA directed to proteinase 3 is the marker of granulomatosis with polyangiitis; PR-3 ANCA also occurs in a minority of other vasculitides but the cytoplasmic pattern and the pulmonary-renal picture point to granulomatosis with polyangiitis. MPO and anti-GBM antibodies produce distinct patterns and diseases.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The low specificity of a positive antinuclear antibody titer in older age groups reflects which property of the test?",
+        "case_text": "A screening test for an autoantibody is positive in a large number of healthy elderly patients; the physician questions the specificity.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "A high analytical sensitivity so weak autoantibodies are detected in healthy individuals at low titer",
+            "A poor analytical method",
+            "Contamination of the cells",
+            "A defective conjugate"
+        ],
+        "explanation": "ANA detects low-titer autoantibodies in a proportion of healthy older people and in drug-exposed patients; the pattern and the titer (e.g., 1:40 is common) together with the clinical picture determine disease association. The test is analytically sensitive, not contaminated, and the specificity is a clinical-population feature.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A dense fine speckled pattern with anti-DFS70 (LEDGF/p75) antibody is useful because it argues against which condition?",
+        "case_text": "A patient has a positive ANA but the pattern is densely fine speckled and the antibody profile shows DFS70.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Rheumatoid arthritis",
+            "Systemic lupus erythematosus in healthy individuals with positive ANA",
+            "Sjogren syndrome",
+            "Thyroid disease"
+        ],
+        "explanation": "Anti-DFS70 is common in healthy people and in a range of conditions but only rarely in SLE, so a positive ANA with isolated anti-DFS70 weighs against active lupus in an appropriate clinical setting. The marker helps avoid overdiagnosis of SLE when the patient is otherwise well.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Rheumatoid factor is an antibody of which class acting against which target?",
+        "case_text": "A technologist performs a rheumatoid factor test; the result is high in a patient with a chronic hepatitis C infection.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "IgG against albumin",
+            "IgD against C3",
+            "IgM (and some IgG/IgA) against the Fc portion of IgG",
+            "IgA against complement"
+        ],
+        "explanation": "Rheumatoid factor is most often an IgM directed to the Fc region of IgG; it is positive in rheumatoid arthritis but also in chronic infection, mixed cryoglobulinemia, and other inflammatory states. Albumin, C3, and complement are not the targets of the classic RF.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The recommended screening cascade for celiac disease requires which conditions to be met?",
+        "case_text": "A symptomatic patient is screened for celiac disease; the testing strategy includes tissue transglutaminase IgA.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "IgA-tTG with a total IgA to avoid false negatives in IgA deficiency and confirmation by duodenal biopsy in appropriate cases",
+            "IgG-tTG alone",
+            "Only EMA IgA",
+            "A skin test"
+        ],
+        "explanation": "IgA-class tissue transglutaminase antibody is the screening test, but IgA deficiency, which is common in celiac patients, produces a false negative; total IgA is measured and IgG-based tests are used when deficient, with EMA and biopsy as confirmatory steps. Relying on a single class assay misses the deficiency issue.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "In dermatitis herpetiformis, the direct immunofluorescence finding is which pattern?",
+        "case_text": "A patient with dermatitis herpetiformis is tested and the immunoglobulin is found in the dermal papilla.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Linear IgG along the basement membrane",
+            "Granular IgM in the mesangium",
+            "Anti-keratin deposit",
+            "Granular IgA deposits in the dermal papillae"
+        ],
+        "explanation": "Dermatitis herpetiformis shows granular IgA in the dermal papillae by direct IF, the cutaneous marker of gluten sensitivity. Linear IgG along the basement membrane indicates bullous pemphigoid, and the mesangial finding is renal rather than dermal.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Bullous pemphigoid is characterized by which serologic immunologic finding?",
+        "case_text": "A blistering disease in an elderly patient has an enzyme-linked immunoassay positive for antibodies to BP180 and BP230.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Anti-desmoglein 1",
+            "IgG autoantibodies against BP180 and BP230 with a linear C3 or IgG basement membrane deposit",
+            "The anti-EMA antibody",
+            "Anti-Dsg3 only"
+        ],
+        "explanation": "Bullous pemphigoid produces IgG (often with C3) against the hemidesmosomal proteins BP180 and BP230 and a linear deposit at the epidermal basement membrane, differing from pemphigus where desmogleins are the targets. Pemphigus vulgaris and foliaceus are the desmoglein conditions with acantholysis.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Pemphigus vulgaris is associated with antibodies to which structural protein of the desmosome?",
+        "case_text": "A patient with an erosive oral and skin blistering condition is evaluated; acantholysis is seen on biopsy.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The laminin protein",
+            "The fibronectin protein",
+            "Desmoglein 3 (and 1 in foliaceus)",
+            "The elastin protein"
+        ],
+        "explanation": "Pemphigus autoantibodies target the desmosomal cadherin desmogleins; anti-Dsg3 dominates in mucosal pemphigus vulgaris while anti-Dsg1 (and Dsg3 in some variants) characterize the skin-dominant form and foliaceus. The laminin protein, fibronectin, and elastin are not the pemphigus targets.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "In a monoclonal gammopathy the immunoglobulin is evaluated by which combination of techniques?",
+        "case_text": "A patient has a B-cell lymphoma and a cold agglutinin hemolytic anemia; total immunoglobulins are measured.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "RBC count",
+            "Single radial diffusion alone",
+            "Western with anti-kappa only",
+            "Serum protein electrophoresis with immunofixation and nephelometric quantitation of the heavy and light chains"
+        ],
+        "explanation": "The monoclonal protein is detected by SPE, classed by immunofixation, and quantitated by nephelometry/turbidimetry; the free light chain ratio and the urine light chains complete the myeloma evaluation. A red cell count and single diffusion do not resolve the clonal class or burden.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Type I cryoglobulinemia is composed of which immunoglobulin and is most associated with which condition?",
+        "case_text": "A patient with neuropathy and skin purpura has a serum cryoglobulin; the laboratory confirms the type with the cryoprecipitate.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "A single monoclonal immunoglobulin, typically with lymphoplasmacytic disease",
+            "Mixed IgM with anti-IgG",
+            "IgA and complement",
+            "All polyclonal IgA"
+        ],
+        "explanation": "Type I cryoglobulin is a monoclonal immunoglobulin (often IgM kappa) seen with plasma cell and lymphoproliferative disease; the mixed types II and III pair IgM RF with polyclonal IgG and are linked to infection (hepatitis C) and autoimmune disease. The type is defined by the clonal composition of the precipitate.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Mixed cryoglobulinemia (Type II) with hepatitis C is characterized by which immunologic composition?",
+        "case_text": "A patient with a vasculitic rash and hepatitis C has a cryocrit; the cryoglobulin is quantitatively issued.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Monoclonal light chains only",
+            "IgG autoantibodies to dsDNA",
+            "IgA against gliadin",
+            "A monoclonal IgM rheumatoid factor together with polyclonal IgG in the cryoprecipitate"
+        ],
+        "explanation": "Type II cryoglobulins are immune complexes of a monoclonal IgM rheumatoid factor and polyclonal IgG, the classic cryoglobulinemia of hepatitis C, producing purpura and glomerulonephritis. Type I is a single monoclonal immunoglobulin, and Type III is entirely polyclonal.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Primary antibody deficiency (common variable immunodeficiency) shows which laboratory pattern?",
+        "case_text": "A patient has recurrent sinopulmonary infections and very low immunoglobulin levels; the immune workup is initiated.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Elevated IgM with normal T cells only",
+            "Low IgG (and often low IgA and IgM) with impaired vaccine response and appropriate B cells",
+            "High IgE",
+            "Normal immunoglobulins"
+        ],
+        "explanation": "CVID is defined by hypogammaglobulinemia with failure of specific antibody production despite the presence of B cells, producing recurrent encapsulated bacterial infections; some patients also have reduced IgA and autoimmune features. Elevated IgM and isolated high IgE do not describe the syndrome.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "X-linked agammaglobulinemia results from a defect in which key cell population and produces which immunoglobulin pattern?",
+        "case_text": "A child with recurrent bacterial infections since infancy and absent tonsils has a very low gamma globulin fraction.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Excess plasma cells",
+            "T cell depletion",
+            "A defect in early B-cell development with an almost complete absence of immunoglobulins",
+            "NK cell failure"
+        ],
+        "explanation": "XLA results from a Bruton tyrosine kinase mutation that halts B-cell maturation, so there is near absence of circulating B cells and all immunoglobulin isotypes; the child presents with recurrent bacterial sinopulmonary and invasive infection starting after maternal immunity wanes. T and NK cell populations remain normal.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Hyper-IgE (Job) syndrome is characterized by which laboratory and clinical pairing?",
+        "case_text": "A patient with eczema and recurrent staphylococcal abscesses has an extremely high serum IgE.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Very high IgE with recurrent staphylococcal skin abscesses, pneumonia, and eosinophilia",
+            "Low IgE with recurrent viral infection",
+            "High IgM only",
+            "Absent neutrophils"
+        ],
+        "explanation": "Hyper-IgE syndrome pairs extreme serum IgE elevation with staphylococcal skin abscesses and pneumatoceles, in part due to STAT3 or DOCK8 defects; eosinophilia is common. The pattern is not seen in selective deficiencies of other isotypes.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A deficiency of which complement component class predisposes specifically to recurrent disseminated meningococcal and gonococcal infection?",
+        "case_text": "A technologist runs a complement panel in a patient with recurrent Neisseria infection.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "C4 deficiency alone",
+            "C2 deficiency",
+            "Factor B excess",
+            "Defects of the terminal complement components (C5-C9, the membrane attack complex)"
+        ],
+        "explanation": "Terminal complement (C5b-9) defects impair the lytic pathway that clears Neisseria species, so patients develop recurrent meningococcal and gonococcal disease; the classic pathway deficiencies (C1, C4, C2, C3) present differently with immune complex and pyogenic infection. The complement screening test (CH50 and AH50) confirms the defect.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A low CH50 result reflects which part of the complement system and which measurement principle?",
+        "case_text": "A patient with autoimmune hemolysis has a workup that includes the function of the classical complement pathway.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "The antibody only",
+            "The lytic activity of the classical pathway that lyses antibody-sensitized sheep red cells",
+            "Only the C3 split",
+            "The mannose-binding lectin pathway"
+        ],
+        "explanation": "CH50 measures the intact classical pathway by titrating the serum dilution that lyses 50% of antibody-sensitized sheep erythrocytes; a low CH50 means a component shortage (C1-C9) or consumption, while a normal CH50 excludes a classic pathway deficiency. AH50 measures the alternative pathway with rabbit cells.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Hereditary angioedema is confirmed by which laboratory pattern in the classic form?",
+        "case_text": "A patient with hereditary angioedema has laryngeal edema and low C4; the diagnosis is being refined.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "High C4 and normal C1 inhibitor",
+            "Elevated C1q",
+            "Low CH50 with high C3",
+            "Low C4 with low C1 inhibitor function (and often low C1-INH antigen for type I)"
+        ],
+        "explanation": "Hereditary angioedema (type I) shows reduced C1 inhibitor and low C4, and the functional (type II) variant has normal antigenic C1-INH with defective function; the C4 is chronically low because the inhibitor deficiency allows C1 activation. C3 and the other results reflect the specific defect rather than the pattern described in the wrong options.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The analytic limitation of an allergen-specific IgE immunoassay when total IgE is very high is referred to as what effect?",
+        "case_text": "An allergy clinic patient is tested with the allergen-specific IgE method; the result is borderline and the total IgE is extremely high.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "The lysis effect",
+            "Hapten interference",
+            "The adsorption effect",
+            "The hook effect or competing high-total-IgE interference by IgG and IgE that can falsely suppress specific results"
+        ],
+        "explanation": "Very high total IgE or high specific titers can falsely lower the measured specific IgE by saturating the solid phase or by high-dose hook in the sandwich assay; diluting the sample or confirming with a second technique, such as component testing, resolves the discordance. Low total IgE with a high specific result is the usual signal of genuine sensitization.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The high-dose hook (prozone-like) effect in a two-site immunometric assay produces which phenomenon when the analyte concentration is very high?",
+        "case_text": "A serum sample for a quantitative assay on an analyzer produces a falsely low value because the antigen is greatly in excess of the labeled antibody.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Falsely elevated values",
+            "A falsely low or even negative result at very high analyte concentrations",
+            "No change",
+            "A linear curve"
+        ],
+        "explanation": "In one-step sandwich assays, an excess of analyte saturates both the capture and the label antibodies, preventing the sandwich complex and giving a falsely low signal; laboratories dilute samples with suspicion of a hook (e.g., tumor markers, prolactin, ferritin, beta-hCG in molar pregnancy). The competitive reversal confirms the effect.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The limitation of the initial immunoassay screen, which requires a confirmatory test for medicolegal testing, is best described as which concept?",
+        "case_text": "A urine drug screen immunometric assay at a hospital is positive for amphetamines in a patient on a cold remedy.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Cross-reactivity with structurally related compounds producing false-positive screens",
+            "An unstable sample",
+            "Colored urine only",
+            "A calibration drift that never occurs"
+        ],
+        "explanation": "Presumptive immunoassay screens exploit antibody binding and cross-react with structurally similar compounds (pseudoephedrine, ranitidine, some metabolites), so the confirmation is performed by gas chromatography-mass spectrometry or liquid chromatography-tandem mass spectrometry. The window of detection and matrix effects also contribute, but the cross-reactivity is the core limitation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The confirmatory test for a positive drug screen is based on which analytic principle?",
+        "case_text": "A forensic scientist confirms the presence of a drug and its metabolite using a mass spectrometer and reports the ratio.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The agglutination reaction",
+            "Fluorescence polarization only",
+            "Chromatography coupled to mass spectrometry (GC-MS or LC-MS/MS) with quantitation and ion ratio confirmation",
+            "The Ouchterlony method"
+        ],
+        "explanation": "Chromatography and mass spectrometry are required for definitive identification, since the retention time and the mass transitions together with ion ratios provide specific evidence; immunoassays alone cannot separate the parent drug from cross-reacting molecules. This is the standard chain for workplace and forensic programs.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The free versus bound fraction of an antiepileptic drug influences the clinical interpretation, and a low albumin shifts the proportion of the drug in which direction?",
+        "case_text": "A patient with seizures has a mildly elevated valproate on the initial immunoassay; the confirmation shows a much lower free concentration.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Decreases the free fraction",
+            "No shift",
+            "Only binds protein",
+            "Increases the free fraction, raising pharmacologic effect at the same total concentration"
+        ],
+        "explanation": "When albumin is low (or uremia), more drug circulates free and unbound, so the same total concentration represents greater unbound (active) drug; free drug levels are ordered for phenytoin and valproate in such settings. The total level then misleads and the free result guides the dose.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The tacrolimus immunoassay measurement is influenced by which cross-reacting species in a transplanted patient?",
+        "case_text": "A liver transplant patient has tacrolimus measured by an immunoassay; the clinician notes a discrepancy with the LC-MS result.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Cyclosporine only",
+            "Mycophenolate",
+            "Metabolites of tacrolimus, so the trough by immunoassay can be higher than the mass spec result",
+            "Albumin"
+        ],
+        "explanation": "Tacrolimus immunoassays cross-react with the 14-methoxy and other metabolites of the drug, inflating the result compared with the LC-MS/MS method that measures the parent drug alone; the laboratory should note the method difference when interpreting troughs. Cyclosporine and mycophenolate do not cross-react in the same way.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "In flow cytometry the identification of the lymphocyte subsets relies on which principle of the measurement?",
+        "case_text": "A patient with suspected lymphoma has an immunophenotypic analysis by flow cytometry; the CD19 B cells are quantitated.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Absorbance at 340 nm",
+            "Scatter and fluorescence of cells labeled with fluorochrome-conjugated antibodies",
+            "Refraction index",
+            "Nephelometric rate"
+        ],
+        "explanation": "Flow cytometry measures light scatter (size and granularity) combined with the fluorescence of antibody-labeled cells, allowing gating of the T cell (CD3, CD4, CD8), B cell (CD19, CD20), and NK cell (CD16/56) subsets. The other physics principles describe the clinical chemistry analyzers, not the cell counter.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Surrogate light chain (kappa and lambda) analysis of a B-cell clone by flow cytometry is based on which property?",
+        "case_text": "A flow cytometry panel is used to investigate a lymphocytosis; the lymphocytes are clonal B cells.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "The cell diameter",
+            "The chromosome content",
+            "Forward scatter alone",
+            "Surface immunoglobulin light chain restriction (kappa or lambda) on the abnormal population"
+        ],
+        "explanation": "The classic evidence of a B-cell clone in flow cytometry is surface immunoglobulin light chain restriction, where > a 3:1 lambda to kappa (or kappa to lambda) ratio indicates the clonal population; the antibody panel also marks CD19/CD5/CD23 for the maturation stage. The other parameters do not define clonality.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The CD4 count used for the management decision is most directly provided by which flow cytometric procedure?",
+        "case_text": "A CD4 count is ordered for a patient with HIV; the result is 220 cells per microliter.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "A manual smear",
+            "An ELISA",
+            "Absolute CD4 T-cell count by flow cytometry with a reference of the total lymphocyte count",
+            "An agglutination card"
+        ],
+        "explanation": "Flow cytometry combines the percentages of CD4-positive T cells with the automated white cell and differential count to produce an absolute CD4 count, which drives opportunistic infection prophylaxis and treatment thresholds. Manual smears and ELISA do not give the subset enumeration.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The screening and confirmation algorithm for HIV in current practice follows which sequence?",
+        "case_text": "A patient is screened for HIV with a fourth-generation assay; the result is reactive, and the algorithm proceeds to the antibody differentiation.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "A fourth-generation antigen-antibody immunoassay, then a second assay to differentiate HIV-1 from HIV-2, with nucleic acid testing when discordant",
+            "Western blot as the only test",
+            "A single rapid test",
+            "Viral culture"
+        ],
+        "explanation": "The algorithm uses a sensitive p24 + antibody screening assay followed by an HIV-1/HIV-2 antibody differentiation immunoassay; discordant or indeterminate results go to nucleic acid amplification. The older Western blot alone is no longer the primary confirmation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A screening-positive, differentiation-negative result with a positive HIV-1 RNA identifies which phase of infection?",
+        "case_text": "A person has a reactive screening test for HIV but a negative confirmatory antibody differentiation and a detectable viral load.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Chronic infection",
+            "A false screen",
+            "Acute (recent seroconversion) HIV-1 infection where the antibody is not yet produced",
+            "HIV-2 infection"
+        ],
+        "explanation": "During the acute seroconversion phase, RNA is positive while the antibody differentiation is still negative or indeterminate because the antibody has not yet developed; the result identifies recent infection and guides immediate treatment. Chronic infection and the other options would already be antibody positive.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The diagnosis of HIV infection in the infant of an HIV-positive mother relies on which test to avoid the passively transferred maternal antibody?",
+        "case_text": "A newborn is tested after an HIV-positive mother; the algorithm uses the amplification assay.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "IgG ELISA",
+            "Nucleic acid amplification (HIV DNA or RNA) in the first weeks of life",
+            "Western blot",
+            "Heterophile antibody"
+        ],
+        "explanation": "Infants passively carry maternal IgG, so serology is unreliable; the diagnosis rests on HIV nucleic acid tests (DNA PCR or RNA) performed early after birth and repeated, with two positive results defining infection. The maternal antibody prevents serologic diagnosis.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The two-step syphilis testing strategy uses a nontreponemal test (RPR) and a treponemal test to separate active disease from prior treated infection on which basis?",
+        "case_text": "A patient with a positive syphilis screen is differentiated by the treponemal test; the RPR was reactive.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "RPR detects the Treponema directly",
+            "The treponemal test is cheaper",
+            "Only one is used",
+            "The RPR is quantitative and can fall with treatment, while the treponemal antibody remains positive for life"
+        ],
+        "explanation": "The nontreponemal tests (RPR, VDRL) measure antibody to cardiolipin and their titer falls with adequate therapy, whereas the treponemal tests (FTA-ABS, TP-PA, EIA) remain reactive regardless of treatment; the combination separates active infection (RPR rising with treponemal positive) from a past treated or false-positive pattern (RPR falling). The treponemal-only positive with an RPR low titer reflects treated disease, not active.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The interferon-gamma release assay detects the immune response to tuberculosis by measuring what product after stimulation?",
+        "case_text": "A patient with suspected TB has a positive QuantiFERON; the physician asks about the principle.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Tuberculin binding",
+            "Interferon-gamma released by the patient T cells after stimulation by M. tuberculosis-specific antigens",
+            "IgM antibodies",
+            "Mycobacterial DNA alone"
+        ],
+        "explanation": "IGRAs measure the interferon-gamma secreted by sensitized T cells when blood is incubated with ESAT-6 and CFP-10 that are present in M. tuberculosis but not in most environmental mycobacteria or BCG; the result is unaffected by BCG vaccination. The tuberculin skin test reflects the same immune response but with intact mycobacterial PPD.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The serum free light chain assay detects which finding and complements the SPEP in which way?",
+        "case_text": "A patient with a paraprotein and lytic bone lesions has a markedly elevated free light chain ratio.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "The free kappa and lambda ratio that can signal a clonal light chain, catching disease missed by SPEP",
+            "The total immunoglobulins only",
+            "The heavy chain",
+            "The C3 level"
+        ],
+        "explanation": "The FLC assay measures unbound kappa and lambda and their ratio; an abnormal ratio spots a clonal population when SPEP shows no visible band (as in light chain-only and oligosecreting disease) and follows response to therapy in AL amyloidosis and myeloma. SPEP detects the intact monoclonal protein but misses light chains that are excreted and rapidly cleared.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Smooth muscle antibody (anti-F actin) on IFA is the marker typically associated with which autoimmune condition?",
+        "case_text": "A chronic liver disease patient has an antibody panel; the smooth muscle antibody is measured by IFA.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Primary biliary cholangitis",
+            "Celiac disease",
+            "Autoimmune hepatitis type 1",
+            "The Goodpasture disease"
+        ],
+        "explanation": "Smooth muscle antibodies, particularly anti-smooth muscle with F-actin specificity, are the hallmark of autoimmune hepatitis type 1, often with ANA; primary biliary cholangitis (PBC) instead shows antimitochondrial antibodies, and The Goodpasture disease   disease shows anti-GBM. The SMA pattern on the smooth muscle substrate distinguishes the autoimmune hepatitis type.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Antimitochondrial antibody, specifically against pyruvate dehydrogenase complex E2, is the diagnostic marker of which disease?",
+        "case_text": "A patient with a cholestatic liver picture has a strongly positive antimitochondrial antibody (AMA).",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Autoimmune hepatitis type 2",
+            "Sclerosing cholangitis",
+            "Hepatitis C",
+            "Primary biliary cholangitis"
+        ],
+        "explanation": "AMA type M2, often against PDC-E2, is the serologic hallmark of primary biliary cholangitis with a sensitivity approaching 95%; autoimmune hepatitis type 2 uses liver kidney microsomal (LKM-1) antibodies, and the other conditions carry different serologies. The assay format and substrate define the specificity.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The ASO titer measures antibodies to which bacterial product, and which paired test helps in a skin infection?",
+        "case_text": "A patient with a recent streptococcal infection has a rising antistreptolysin O titer.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Group A carbohydrate",
+            "Streptolysin O, with anti-DNase B when the infection is from the skin",
+            "Clumping factor",
+            "M protein alone"
+        ],
+        "explanation": "ASO detects antibody to the streptolysin O hemolysin and is the marker of a recent group A streptococcal upper respiratory infection; when the source is impetigo (skin), the anti-DNase B is more reliable because the antistreptolysin rise is less prominent. The carbohydrate and the M protein have different testing significance.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "In the diagnosis of acute rheumatic fever the erythrocyte sedimentation rate and C-reactive protein serve which purpose?",
+        "case_text": "A rheumatic fever workup in a child with arthritis shows an elevated ASO; the physician asks about acute phase reactants.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "As nonspecific acute-phase markers that supplement the supporting major criteria (arthritis and carditis)",
+            "As specific streptococcal markers",
+            "As replacement for throat culture",
+            "As confirmation of the organism"
+        ],
+        "explanation": "The ESR and CRP are major Jones criteria subfeatures that reflect inflammation during the acute episode and are used with the Jones criteria; they are not specific for the streptococcus, which is documented by the ASO, the throat culture, or anti-DNase B. Their elevation supports, and normal levels reduce the likelihood of, active disease.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The extractable nuclear antigen (ENA) antibody panel is screened and confirmed by which method, in the current format?",
+        "case_text": "A patient with a suspected connective tissue disease has an extractable nuclear antigen panel ordered; the laboratory includes Ro, La, Sm, RNP, Scl-70, and Jo-1.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Western blot only",
+            "Passive hemagglutination only",
+            "A multiplex fluorescence immunoassay (Luminex) or immunoassay with confirmation of specificities",
+            "Ouchterlony only"
+        ],
+        "explanation": "ENA testing moved from the historical immunodiffusion and counterimmunoelectrophoresis to multiplex bead immunoassays that simultaneously report each specificity (Ro, La, Sm, RNP, Scl-70, Jo-1); when the pattern is unclear, line or Western blot formats complement. The multiplex format provides the profile in a single sample.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The histidyl-tRNA synthetase antibody anti-Jo-1 is the most common myositis-specific antibody and is associated with which syndrome?",
+        "case_text": "A patient with myositis has anti-Jo-1 antibody and an interstitial pneumonia.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Scleroderma renal crisis",
+            "Lupus nephritis",
+            "The polymyalgia rheumatica pattern",
+            "Antisynthetase syndrome with mechanic hands, myositis, and interstitial lung disease"
+        ],
+        "explanation": "Anti-Jo-1 targets histidyl-tRNA synthetase and defines the antisynthetase syndrome, a myositis overlap marked by interstitial lung disease, Raynaud phenomenon, and mechanic hands. Scleroderma and lupus have distinct autoantibody spectra.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The lupus anticoagulant is detected by which functional method, and the risk of the anticardiolipin enzyme immunoassay is to miss which class?",
+        "case_text": "A thrombotic patient is investigated for a hypercoagulable state; the antiphospholipid panel includes the lupus anticoagulant.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "The hemagglutination reaction",
+            "A prolonged aPTT or dilute Russell viper venom time that does not correct with mixing but corrects with phospholipid, detecting primarily IgG and IgM antiphospholipid antibodies",
+            "An ANA",
+            "A cryo test"
+        ],
+        "explanation": "Lupus anticoagulant testing uses phospholipid-dependent clotting tests (dRVVT with confirm ratio and aPTT-based test) because the antibody prolongs the coagulation functions; the anticardiolipin and anti-beta2-glycoprotein I enzyme immunoassays detect the IgG and IgM as the other branch of the antiphospholipid syndrome criteria. The functional and solid-phase tests are complementary, not interchangeable.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The diagnosis of the lupus anticoagulant is supported by which laboratory finding sequence?",
+        "case_text": "A pregnant patient with a history of thrombosis and recurrent pregnancy loss is evaluated; the aPTT is prolonged and corrects after mixing plus phospholipid.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "A normal dRVVT",
+            "A positive DAT",
+            "A prolonged phospholipid-dependent clotting time that shortens with added phospholipid",
+            "A falling platelet count only"
+        ],
+        "explanation": "The lupus anticoagulant needs a prolonged screening test (dRVVT or aPTT) that does not shorten with donor plasma in the mixing study but does shorten when phospholipid is added, confirming the antibody; the corrector distinguishes it from factor deficiency. The solid-phase anticardiolipin or beta2 glycoprotein tests independently confirm the antiphospholipid syndrome.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The post-transplant lymphoproliferative disorder is driven by which virus and monitored by which assay?",
+        "case_text": "A liver transplant recipient develops a lymphoproliferative disorder; the EBV viral load is markedly elevated.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Epstein-Barr virus, monitored by the EBV DNA load by PCR",
+            "Cytomegalovirus, monitored by the CMV antigenemia count",
+            "HHV-6, monitored by complement fixation",
+            "JC virus, monitored by the urine cytology"
+        ],
+        "explanation": "PTLD arises after transplantation when immunosuppression permits uncontrolled EBV replication in B cells; quantitative EBV DNA is used to monitor the load and guide reduction of immunosuppression and antiviral strategies. CMV, HHV-6, and JC cause different post-transplant syndromes with different monitors.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "Cytomegalovirus infection in the neutropenic transplant recipient is detected and tracked most directly by which method, with the direction of the trend?",
+        "case_text": "A recipient has a rising CMV load on a PCR assay after a transplant; prophylaxis is reviewed.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Viral culture of urine only",
+            "Antibody seroconversion only",
+            "Lymphocyte count",
+            "Quantitative nucleic acid testing (viral load), rising during active replication and falling with effective antiviral therapy"
+        ],
+        "explanation": "Quantitative CMV DNA or mRNA tests track the replicative burden and the response to ganciclovir-type therapy, while the detection of the point of the active phase is earlier and more reliable than culture and serology. Because serology is noninformative in the immunosuppressed patient, the load is the management tool.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "After hepatitis B vaccination, the desired immunity is documented by which single laboratory marker?",
+        "case_text": "A hepatitis B surface antibody result is reviewed after a vaccination series.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "The HBsAg marker",
+            "Hepatitis B surface antibody (anti-HBs) at a level of 10 IU/mL or more",
+            "The HBeAg marker",
+            "The HBcIgM marker"
+        ],
+        "explanation": "The immune response to the hepatitis B vaccine is confirmed when the anti-HBs titer reaches 10 IU/L or greater; a positive The HBsAg marker indicates infection rather than protection, The HBeAg marker reflects replication, and HBc antibodies mark exposure or chronic infection. The anti-HBs alone certifies the seroconversion.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "In chronic hepatitis B, which combination of serologic markers best indicates active viral replication and highest infectivity?",
+        "case_text": "A patient is HBsAg positive with detectable HBeAg and a high HBV DNA level; the physician asks about infectivity.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Anti-HBc and anti-HBs",
+            "HBsAg only",
+            "Anti-HBe only",
+            "HBeAg (or its absence with high DNA) together with HBsAg and DNA detects the replicative phase"
+        ],
+        "explanation": "The replicative phase of chronic hepatitis B is HBeAg positive (or pre-core mutants with high DNA but anti-HBe), with HBsAg and high HBV DNA; the HBeAg to anti-HBe seroconversion correlates with the fall in the DNA. Antibody-only combinations reflect immunity or resolution rather than replication.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "For hepatitis C, the screening antibody test combined with the confirmatory test and the genotype defines the management by which scheme?",
+        "case_text": "A patient with a positive HCV antibody and a detectable viral load is evaluated; the genotype results guide therapy.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The antibody alone predicts the subtype",
+            "The viral load alone picks the therapy",
+            "Antibody screening plus HCV RNA to confirm active infection and viral genotype for the treatment choice",
+            "A single PCR at baseline only"
+        ],
+        "explanation": "The HCV antibody identifies exposure, the RNA confirms active ongoing viremia, and the genotype determines the direct-acting antiviral regimen duration and agents; the viral load also monitors the treatment response with cure defined by a sustained virologic response at 12 weeks. The antibody alone cannot distinguish a resolved from an active state.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A presumptive positive opiate screen after poppy seed ingestion is explained by which mechanism, and which step resolves it?",
+        "case_text": "A urinary drug screen has an exercise-probler positive opiate result in a patient on a poppy seed bagel; the confirmation is requested.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Cross-reactivity of the immunoassay with the plant alkaloid that also reaches trace levels; confirmation by LC-MS/MS with appropriate cutoffs resolves it",
+            "A laboratory coding error",
+            "The screen poisoning",
+            "A calibration artifact in the automated analyzer waste line"
+        ],
+        "explanation": "Poppy seed dietary exposure produces small amounts of morphine and codeine, so the presumptive screen may be positive near the cutoff; the GC-MS and LC-MS/MS confirmation with quantitative thresholds above the dietary range definitively separates drug use from ingestion. The mass spec confirmation is the standard answer to the false-positive screen.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The limit of detection and the %CV at the clinically relevant concentration determine the test performance for a high-sensitivity troponin assay by which definition?",
+        "case_text": "A hospital laboratory validates a new antigen-antibody assay for the cardiac troponin at the low end of the measuring range.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "The specificity at 50%",
+            "The slope",
+            "The calibrator count",
+            "The LOD and the precision at the 99th percentile, so hs-cTn assays meet a %CV of at or below 10% at that limit"
+        ],
+        "explanation": "High-sensitivity troponin is defined by the analytic ability to measure the 99th percentile with a coefficient of variation of 10% or better and by the detection of values above the limit of detection in a healthy sex-specific population; the lower percentiles then drive rapid rule-out algorithms. Ordinary troponin assays fail these thresholds at low concentrations.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The accelerated diagnostic algorithm for myocardial infarction relies on the serial change (delta) and timing of the high-sensitivity troponin in which fashion?",
+        "case_text": "A patient with chest pain has a slightly elevated hs-cTn measured in the emergency department; rapid triage is needed.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "A single static value",
+            "A value at 12 hours",
+            "A low value at presentation and a small change within 1 to 2 hours to rule out, or a rise beyond the diagnostic thresholds to rule in",
+            "The value at 18 hours"
+        ],
+        "explanation": "High-sensitivity algorithms rule out MI when the presenting and the 1-2 hour troponin values are low with no significant rise, and rule in when the delta or the absolute level passes the diagnostic threshold; the fast rule-out reduces the observation time. A single or a late static measurement misses the required kinetics.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "In a quantitative beta-hCG assay used for tumor monitoring, the high-dose hook effect causes the reported result to be what?",
+        "case_text": "The laboratory receives a sample for beta-human chorionic gonadotropin in a woman with a suspected molar pregnancy; the value is very high.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "A true very high value",
+            "Falsely low or normal, so the sample must be diluted when the clinical suspicion is strong",
+            "Normal in every case",
+            "A negative result reliably"
+        ],
+        "explanation": "The one-step sandwich assay shows the hook at extremely high beta-hCG (molar pregnancy, choriocarcinoma, germinoma) and reports a misleadingly low or normal value; dilution demonstrates the expected high value and is standard whenever the hook is suspected. The diluted result then guides the clinical judgment.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The fasting serum gastrin is interpreted together with which measurement to exclude the hypochlorhydric cause of hypergastrinemia?",
+        "case_text": "A patient with an unexplained neuroendocrine syndrome has an elevated serum gastrin; the achlorhydric state is checked.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "Gastric acid secretion (pH) and the secretin stimulation test for Zollinger-Ellison",
+            "Platelet count",
+            "Electrolyte panel",
+            "A cholesterol value"
+        ],
+        "explanation": "Elevated fasting gastrin occurs with gastrinoma but also with atrophic gastritis and acid suppression; measuring the gastric pH or performing the secretin test separates the autonomous tumor from the reactive hypergastrinemia because the gastrinoma paradoxically rises after secretin while the hypoacidity responds to acid testing. The other values do not resolve the cause.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A monoclonal band that migrates into the beta region is most suspicious for which heavy chain type, and requires immunofixation to confirm?",
+        "case_text": "A monoclonal protein is suspected in a patient; the serum protein electrophoresis shows a band in the beta region.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The IgE class",
+            "The IgD class",
+            "IgA (and sometimes IgM in beta mobility) plus fibrinogen",
+            "The IgG class"
+        ],
+        "explanation": "IgA and IgM commonly migrate in the beta region on agarose electrophoresis, and fibrinogen creates a benign beta spurious band; immunofixation identifies the clonal class and rules out a noncausal fibrinogen or protein artifact. A gamma-region band is more typical of The IgG class.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The complication associated with transfusion in a patient with IgA deficiency is which adverse reaction?",
+        "case_text": "A patient with chronic diarrhea and recurrent infection has a low IgA; the total IgA approach is explained to the clinician.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Febrile non-hemolytic reaction",
+            "TRALI",
+            "Intravascular hemolysis",
+            "Anaphylaxis due to anti-IgA against the transfused IgA"
+        ],
+        "explanation": "Patients with selective IgA deficiency may form anti-IgA and develop anaphylaxis to components that contain IgA, so washed red cells and IgA-deficient plasma or platelets are used for such recipients. Febrile, TRALI, and hemolytic reactions have different mechanisms and preventives.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The specific antibody response to polysaccharide vaccines is used to assess which part of the adaptive immune system?",
+        "case_text": "A vaccine response is assessed by measuring the antibody titer against the pneumococcal polysaccharide; the result is interpreted for a suspected humoral defect.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "The T-cell receptor",
+            "Antibody production by B cells (humoral immunity), especially for encapsulated organisms without T-cell help",
+            "The complement cascade",
+            "Natural killer proteins"
+        ],
+        "explanation": "Antibody responses to pure polysaccharide antigens (pneumococcal, meningococcal, Haemophilus) depend on B cells without strong T cell help; impaired titers suggest a humoral deficiency, while the T-dependent protein vaccines typically elicit a response that poor humoral states may still mount partially. The monitoring guides IVIG and vaccine therapy.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The distinction between an antibody deficiency and a combined immune defect in the laboratory rests on which evaluation?",
+        "case_text": "An immunologist reviews a child with recurrent infection who has a low immunoglobulin and normal B and T cell numbers; the response to the killed vaccine is being evaluated.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The ESR",
+            "The CH50",
+            "Lymphocyte subset numbers together with functional mitogen and vaccine responses and immunoglobulin classes",
+            "The bilirubin"
+        ],
+        "explanation": "The immunologic evaluation pairs the cell counts (CD3, CD4, CD8, CD19, NK) with the function: the response to mitogens, proliferation, and the antibody titers to vaccines (tetanus, diphtheria, pneumococcus) indicate the capacity of the effector system. Immunoglobulin quantitation alone misses functional impairment and the T-cell side.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The immunoreactive trypsinogen neonatal screening test for cystic fibrosis is followed by which second-tier analysis?",
+        "case_text": "A patient with hereditary pancreatitis has a low trypsinogen report from an immunoassay; the screening rationale for cystic fibrosis is being explained.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "The IgA fraction",
+            "RBC folate",
+            "A complement",
+            "A sweat chloride test and/or CFTR gene panel according to the program"
+        ],
+        "explanation": "Newborn screening starts with immunoreactive trypsinogen on a dried blood spot and then runs DNA panels and a sweat chloride confirmatory test; the sweat chloride remains the diagnostic standard, while the gene panel defines the genotype for cascade and prenatal work. The other markers do not confirm the CFTR diagnosis.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The anemia of chronic disease differs from iron deficiency by which iron-status measurement pattern?",
+        "case_text": "An anemia of chronic inflammation is being evaluated; the ferritin is within limits in the low range and the transferrin saturation is low.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "A high transferrin saturation",
+            "Normal-to-high ferritin with a low serum iron and low transferrin, while iron deficiency shows a low ferritin and high transferrin",
+            "A very high ferritin",
+            "A normal transferrin"
+        ],
+        "explanation": "In the anemia of inflammation, hepcidin traps iron so the serum iron and transferrin are low with a preserved or elevated ferritin, whereas iron deficiency pairs the low ferritin with the high transferrin and low saturation; the soluble transferrin receptor assay and the TSAT distinguish the two when the result is borderline. Ferritin above the usual iron-deficiency cutoff points to the inflammatory type.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The transferrin saturation consistently above 45-50% combined with a high ferritin and the relevant gene test is used to diagnose which disorder?",
+        "case_text": "A patient with a high ferritin is suspected of having significant iron overload; the index and the imaging request are reviewed.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Iron deficiency",
+            "Macrocytic anemia",
+            "Hereditary hemochromatosis",
+            "Pernicious anemia"
+        ],
+        "explanation": "Hereditary hemochromatosis shows an elevated transferrin saturation (usually above 45-50%) with a rising ferritin and is confirmed by the HFE (C282Y, H63D) genotype; the diagnostic pathway also includes phlebotomy response and the MRI-based liver iron quantitation. The low saturation and low ferritin instead point to deficiency.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "In a diagnostic flow cytometry panel for lymphoma, the neoplastic clone is distinguished by which combination of features?",
+        "case_text": "A flow cytometry immunophenotyping run is performed on a lymph node biopsy in an immunologic assay for a lymphoma; the gating strategy is explained.",
+        "difficulty": "advanced",
+        "correct": "A",
+        "options": [
+            "Light chain restriction with the altered, often aberrant, expression of the normal lineage markers (CD5, CD23, CD10, CD38)",
+            "Only the cell size",
+            "The granularity alone",
+            "The hemoglobin content"
+        ],
+        "explanation": "Malignant B cells show kappa or lambda restriction and the abnormal acquisition (loss) of normally expressed antigens, so a panel that includes CD5, CD23, CD10, CD19, and CD20 with light chains recognizes the clonal shift; small lymphocytic and mantle cell lymphomas differ by the combination (CD23 versus CD5 and cyclin D1). Light chain restriction plus the aberrant immunophenotype is the clonal signature.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The analytical sensitivity (limit of quantitation) and the clinical negative predictive value of an immunoassay are related in which way for a rule-out strategy?",
+        "case_text": "An assay for a cardiac marker is developed and validated with a line of recombinant antigen; the laboratory then compares the clinical performance.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "They are never linked",
+            "A low limit of quantitation with high precision at the decision limit gives a high negative predictive value for the rapid rule-out classification",
+            "The alkaliticity changes",
+            "The positive rate is fixed"
+        ],
+        "explanation": "When the assay reports reliable values down to a low concentration (and precisely at the 99th percentile), the negative predictive value for the rule-out becomes high enough to discharge a low-risk chest pain patient after a single or dual measurement; the analytic performance at the cutoff directly determines the clinical classification.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The functional antibody deficiency is documented by measuring the antibody response to which vaccines and correlating the result?",
+        "case_text": "A patient with recurrent otitis media and a low total antibody has a suspected specific antibody deficiency; the functional assay is ordered.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "MMR",
+            "Trivalent influenza only",
+            "Hepatitis A only",
+            "Pneumococcal conjugate and polysaccharide titers (with IgG subclasses and protective tetanus and diphtheria antibody levels)"
+        ],
+        "explanation": "To establish a humoral defect the laboratory measures the specific pneumococcal serotype titers before and after the vaccine, the tetanus and diphtheria IgG as the protein-antigen response, and the IgG subclasses; a poor pneumococcal response despite protective tetanus indicates the specific antibody deficiency that IVIG replaces. A single routine vaccine does not assess the humoral arm properly.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The immunoparesis (suppression of the uninvolved immunoglobulins) in a monoclonal gammopathy is best evaluated with which result?",
+        "case_text": "A patient with suspected multiple myeloma has a serum IgA restriction and an unusually low uninvolved immunoglobulin.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The calcium",
+            "The beta-2 microglobulin",
+            "Quantitative immunoglobulins by nephelometry that show the uninvolved classes below the reference range",
+            "The SPEP total"
+        ],
+        "explanation": "The nephelometric quantitation of IgG, IgA, and IgM documents the suppression of the uninvolved classes (immunoparesis) that accompanies many monoclonal gammopathies and helps separate an M-spike from polyclonal stimulation; the pattern supports the clonal process and has prognostic value. The SPEP total does not discriminate the classes.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The opportunistic infections that arise when the CD4 count falls below approximately 200 cells per microliter are the reason for which monitoring standard?",
+        "case_text": "A patient with a suspected immunodeficiency has a markedly low CD4 count and a normal CD8 count; the viral load is checked.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Prophylaxis against Pneumocystis jirovecii pneumonia is started at that CD4 threshold while monitoring the count every 3-6 months",
+            "No monitoring is needed",
+            "Just the viral load monthly",
+            "Only the CBC"
+        ],
+        "explanation": "When the CD4 count drops below 200 cells per microliter, the risk of Pneumocystis pneumonia rises to the point that prophylaxis is indicated, and the absolute CD4 by flow is monitored with the HIV RNA to guide the regimen; the CD4 nadir and the trend drive the indications. The viral load alone does not capture the actual immune state.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "A spuriously negative rapid influenza antigen result in early disease is best explained by which operational factor?",
+        "case_text": "A patient has a positive rapid antigen test for influenza while the culture is negative; the physician wishes to understand the assay limitation.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Excess enzyme",
+            "Low viral load (insufficient antigen) in the early phase and the variable performance of the lateral flow, as well as strain drift",
+            "The dye",
+            "The buffer salt"
+        ],
+        "explanation": "Rapid antigen tests detect the nucleoprotein or antigen in the nasal swab, and their sensitivity is limited by the amount of virus shed, which peaks around day 2-3 of illness; nucleic acid tests and culture are the comparison reference and catch the lower viral burdens. Strain variation and the sampling site add to the variable sensitivity.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The laboratory diagnosis of C. difficile infection is made most reliably by which testing strategy?",
+        "case_text": "A laboratory implements a true online typing for a toxigenic Clostridium difficile assay; the algorithm is reviewed.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "A single antitoxin antibody",
+            "Only the toxin A enzyme immunoassay",
+            "A viral culture",
+            "A two-step algorithm combining the glutamate dehydrogenase antigen with the toxin enzyme immunoassay or nucleic acid amplification for the toxin genes"
+        ],
+        "explanation": "The prudent practice is the GDH screen (sensitive) with a toxin test (toxin A/B EIA or PCR for toxin B and binary toxin), and the toxin detection is the current reference definition for the disease; the PCR is very sensitive but detects colonization too, so the combination prevents overdiagnosis. Single assays either overdetect (PCR) or underdetect (toxin EIA).",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The diagnostic serologic finding for the rickettsial diseases (Rocky Mountain spotted fever, ehrlichiosis) is which pattern?",
+        "case_text": "A patient with a recurrent fever after a tick bite has a positive IFA for a rickettsial serology; the paragon of the titer rise is reviewed.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "A single low titer",
+            "A negative conjugate",
+            "A four-fold or greater rise in the IgG titer between acute and convalescent samples (and IgMa in early ehrlichiosis)",
+            "A fixed titer over time"
+        ],
+        "explanation": "Because the acute sample is often negative, the diagnostic criterion is a four-fold IgG titer rise in the paired convalescent sample collected 2-4 weeks later (with IgM support early); treatment starts clinically because the titers lag the illness. A single point titer and the late samples misidentify recent past infection.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Immunology",
+        "type": "case",
+        "stem": "The confirmation that a surprisingly low immunoassay result is due to the hook effect is achieved by which procedure?",
+        "case_text": "A patient in the immunoassay laboratory has a specimen with a known discrepancy between the automated analyzer and a repeat by dilution; the hook is being confirmed.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Diluting the sample and finding that the value rises proportionally or into range",
+            "Freezing the sample",
+            "Repeating in undiluted mode",
+            "Using a different lot"
+        ],
+        "explanation": "Dilution is the definitive hook test: a false low-undiluted value climbs and, after the correct dilution factor, returns the expected high concentration, proving the excess-analyte effect in the one-step sandwich assay. Repeated undiluted runs reproduce the falsely low value and are not informative.",
+        "source_type": "original",
+        "status": "active"
+    }
+]

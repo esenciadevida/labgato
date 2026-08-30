@@ -1,0 +1,2178 @@
+[
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Which organism is the most likely agent of shellfish-associated gastroenteritis in this patient?",
+        "case_text": "A 40-year-old woman develops diarrhea after eating raw oysters; the specimen grows non-lactose-fermenting colonies and the oxidase test is positive.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Escherichia coli pathotype",
+            "Vibrio parahaemolyticus",
+            "Salmonella typhi",
+            "Campylobacter jejuni"
+        ],
+        "explanation": "Vibrio parahaemolyticus is a halophilic marine vibrio acquired from raw shellfish that causes watery diarrhea; it is oxidase positive and grows on TCBS. Salmonella does not grow from oyster exposure, and Campylobacter requires microaerophilic incubation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Bipolar safety pin staining of a bacillus in bubo fluid is the clue to which organism?",
+        "case_text": "A 30-year-old man has a painful inguinal bubo and fever after a sexual exposure; a Gram stain of the aspirate shows safety-pin bipolar staining rods.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Neisseria gonorrhoeae",
+            "Treponema pallidum",
+            "Yersinia pestis",
+            "Haemophilus ducreyi"
+        ],
+        "explanation": "Yersinia pestis shows bipolar (safety pin) staining with Gram or Wayson stain and causes bubonic plague with an acutely tender bubo. Gonococcus is a gram-negative diplococcus, Haemophilus ducreyi is a small pleomorphic rod without safety pin morphology, and syphilis cannot be seen on Gram stain.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A bluish-green pigment-producing, oxidase positive gram-negative rod from sputum characterizes which organism?",
+        "case_text": "A 45-year-old man with chronic lung disease has a pneumonia and the sputum Gram stain shows many gram-negative rods that are oxidase positive and produce a bluish-green pigment.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Klebsiella pneumoniae",
+            "Pseudomonas aeruginosa",
+            "Proteus mirabilis",
+            "Escherichia coli"
+        ],
+        "explanation": "Pseudomonas aeruginosa produces pyocyanin (blue-green pigment) and is oxidase positive, which together distinguish it. Klebsiella is a large encapsulated rod that is oxidase negative, Proteus swarms on agar, and E. coli is a lactose-fermenting oxidase negative rod.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Gray pseudomembranes with gram-positive rods in a child throat most strongly suggest which organism?",
+        "case_text": "A 6-year-old child has a painful red throat with gray pseudomembranes covering the tonsils; the throat culture reveals gram-positive rods.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Corynebacterium diphtheriae",
+            "Streptococcus pyogenes",
+            "Staphylococcus aureus",
+            "Haemophilus influenzae"
+        ],
+        "explanation": "The pseudomembrane of diphtheria is caused by toxigenic Corynebacterium diphtheriae, a club-shaped gram-positive rod; the toxin membrane blocks the airway and causes myocarditis. S. pyogenes and S. aureus cause suppurative rather than pseudomembranous pharyngitis and are cocci.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Oxidase positive, curved gram-negative rods that form a darting S shape under the microscope and grow on Campy blood agar identify which agent of spontaneous bacterial peritonitis?",
+        "case_text": "A 50-year-old man with cirrhotic ascites is tapped; the fluid has cloudy color, 30,000 WBC, and grows a single organism on the blood culture bottle within 12 hours that is oxidase positive.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Klebsiella pneumoniae",
+            "Pseudomonas aeruginosa",
+            "Campylobacter species with darting corkscrew motility",
+            "Acinetobacter species"
+        ],
+        "explanation": "Campylobacter species are curved or S-shaped gram-negative rods with darting motility that are oxidase positive and grow microaerophilically on Campy selective media; Campylobacter bacteremia can complicate cirrhosis. Klebsiella, Pseudomonas, and Acinetobacter are straight rods or short cocobacilli without the S-shaped darting morphology.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A hydrogen sulfide producing gram-negative rod with this culture pattern is most consistent with which enteric pathogen?",
+        "case_text": "A 35-year-old food-borne outbreak causes watery diarrhea in many patrons of one restaurant; cultures grow a motile organism that does not ferment lactose and produces hydrogen sulfide on TSI.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Shigella species",
+            "Salmonella species",
+            "Cholera vibrio",
+            "Yersinia enterocolitica"
+        ],
+        "explanation": "Salmonella is a lactose-negative, H2S-producing, motile enteric rod that causes food-borne gastroenteritis; the hydrogen sulfide on triple sugar iron and the association with a common meal are the classic clues. Shigella is non-motile and H2S negative, and Vibrio and Yersinia do not produce hydrogen sulfide on TSI.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Typhoid fever due to Salmonella typhi is suggested by which laboratory feature of the blood culture isolate?",
+        "case_text": "A 22-year-old man returns from a mission trip with high fever and rose spots on the trunk; blood cultures grow a gram-negative rod with a Vi antigen.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Non-motile and hydrogen sulfide negative",
+            "Oxidase positive and lactose fermenting",
+            "Motile with no hydrogen sulfide",
+            "Hydrogen sulfide positive with a Vi capsule antigen"
+        ],
+        "explanation": "Salmonella typhi produces H2S but grows slowly, and the Vi capsular antigen is a typing feature for the typhoid serovar; blood cultures early in the classic typhoid fever with rose spots confirm it. Other Salmonella species lack the Vi antigen, and the organism is motile and H2S positive.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Rapid urease production that alkalinizes the urine and produces struvite stones is a signature of which organism?",
+        "case_text": "A 55-year-old man has a urinary tract infection; the isolate is a gram-negative rod that produces a strong urease and gives a urea agar color change.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Proteus mirabilis",
+            "Pseudomonas aeruginosa",
+            "Klebsiella oxytoca",
+            "Serratia marcescens"
+        ],
+        "explanation": "Proteus mirabilis splits urea rapidly to ammonia, raising urine pH and driving struvite stone formation, and it swarms on blood agar. Pseudomonas produces pyocyanin, Klebsiella is a non-swarming large rod, and Serratia is the red pigment species; none of them is strongly urease positive in this scenario.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "An intrinsic multi-drug resistant, violet-pigmented environmental rod from a central line culture is which organism?",
+        "case_text": "A bloodstream isolate is a gram-negative rod that produces violacein pigment and grows from a contaminated central line, and the laboratory notes it is intrinsically resistant to many antibiotics.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Pseudomonas stutzeri",
+            "Chromobacterium violaceum",
+            "Acinetobacter baumannii",
+            "Stenotrophomonas maltophilia"
+        ],
+        "explanation": "Chromobacterium violaceum is a tropical water organism that produces violet pigment and carries intrinsic resistance, causing sepsis from skin breaks and contaminated devices. Acinetobacter is an oxidase negative cocco-bacillus without pigment, S. maltophilia is an oxidase weak lactose negative rod, and P. stutzeri is weakly pigmented with different colonies.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A fruity odor, weak oxidase, and carbapenem resistance pattern on the blood isolate from a neutropenic host identifies which organism?",
+        "case_text": "A 68-year-old neutropenic patient on broad-spectrum antibiotics grows a weakly oxidase positive, gram-negative rod from blood that is resistant to imipenem and produces a fruity odor.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Pasteurella multocida",
+            "Pseudomonas aeruginosa",
+            "Stenotrophomonas maltophilia",
+            "Burkholderia cepacia"
+        ],
+        "explanation": "Stenotrophomonas maltophilia is intrinsically resistant to imipenem, grows in the neutropenic host, and produces a distinctive fruity odor, which alerts the lab to suspect the species. Pseudomonas is imipenem susceptible clinically, Burkholderia is another opportunistic rod without that signature resistance pattern, and Pasteurella is a fastidious zoonotic organism.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The mucoid colony on agar from a cystic fibrosis sputum that is resistant to many antibiotics and spreads in the CF clinic suggests which organism?",
+        "case_text": "A 30-year-old woman with cystic fibrosis has a sputum culture that repeatedly grows a gram-negative rod that is oxidase positive and grows on Burkholderia cepacia select agar.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Haemophilus influenzae",
+            "Burkholderia cepacia complex",
+            "Neisseria meningitidis",
+            "Moraxella catarrhalis"
+        ],
+        "explanation": "B. cepacia complex colonizes cystic fibrosis lungs, is highly resistant, and spreads patient-to-patient; it grows on selective media and requires enhanced precautions. H. influenzae grows on chocolate agar, N. meningitidis is a fastidious diplococcus, and M. catarrhalis is a cocco-bacillus with different ecology.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "An enterococcus with resistance to high-level vancomycin is classified as which mechanism of resistance?",
+        "case_text": "A 70-year-old nursing home resident develops a urinary infection; the isolate is a gram-positive enterococcus with a high-level MIC to vancomycin and it carries the vanA gene.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Beta-lactamase production",
+            "Efflux pump",
+            "Altered peptidoglycan terminus D-alanine-D-alanine to D-lactate",
+            "Ribosomal target methylation"
+        ],
+        "explanation": "vanA enterococci replace the D-alanine-D-alanine terminus with D-alanine-D-lactate, abolishing vancomycin binding; high-level resistance is a laboratory-confirmed species with public health implications. Beta-lactamase and efflux do not explain vancomycin resistance, and methylation is the oxazolidinone mechanism.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Methicillin resistance in Staphylococcus aureus is detected by which laboratory strategy?",
+        "case_text": "A 24-year-old athlete has an infected knee abrasion; the gram-positive cocci in clusters are catalase positive and coagulase positive, and the oxacillin disk shows intermediate zone with a positive PBP2a reaction.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Oxacillin zone read as susceptible regardless of growth",
+            "Cefoxitin disk or PBP2a detection for the mecA resistance",
+            "Catalase negativity",
+            "Coagulase negativity"
+        ],
+        "explanation": "Methicillin resistance is most reliably screened by the cefoxitin disk or confirmed by PBP2a detection and mecA PCR; the oxacillin disk alone is unreliable. Catalase and coagulase identify the organism but not the oxacillin mechanism.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The biochemical profile of yellow mannitol salt, catalase positive, coagulase positive cocci identifies which organism as the cause of endocarditis?",
+        "case_text": "A 35-year-old IV drug user has tricuspid valve endocarditis; blood cultures grow gram-positive cocci in clusters that are catalase positive, coagulase positive, and grow on mannitol salt agar with yellow colonies.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Staphylococcus aureus",
+            "Staphylococcus epidermidis",
+            "Enterococcus faecalis",
+            "Micrococcus luteus"
+        ],
+        "explanation": "S. aureus ferments mannitol (yellow colonies on MSA) and is coagulase positive, causing IV drug use endocarditis. S. epidermidis is coagulase negative and does not ferment mannitol, enterococci are catalase negative and grow on bile esculin, and Micrococcus is a soil coccus.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Growth on bile esculin agar with 6.5% NaCl and a negative catalase identifies which group of organisms?",
+        "case_text": "A 38-year-old patient on intravenous drugs develops fever, and blood cultures grow gram-positive cocci in pairs and chains with negative catalase that grow on 6.5% NaCl bile esculin agar.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Viridans streptococci",
+            "Group D enterococci",
+            "Staphylococcus epidermidis",
+            "Streptococcus pneumoniae"
+        ],
+        "explanation": "Enterococci grow on bile esculin and in 6.5% NaCl, are catalase negative, and are gram-positive cocci in pairs or chains; they cause urinary and endocarditis infections in compromised hosts. Viridans streptococci are bile esculin negative and fail 6.5% NaCl, pneumococcus is bile soluble and optochin sensitive, and staphylococci are catalase positive.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Colorless colonies on sorbitol MacConkey agar that are Shiga toxin positive identify which agent of hemorrhagic colitis?",
+        "case_text": "A 60-year-old man on cephalosporins develops bloody diarrhea; the stool culture is negative for routine enterics, and a specialized test shows Shiga toxin production in colonies that grow on sorbitol-MacConkey agar as colorless.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Escherichia coli O157:H7",
+            "Salmonella enteritidis",
+            "Shigella sonnei",
+            "Vibrio cholerae"
+        ],
+        "explanation": "O157:H7 does not ferment sorbitol rapidly, so the sorbitol MacConkey colony is colorless, and the Shiga toxin test confirms enterohemorrhagic E. coli as the cause of bloody diarrhea; the organism may cause hemolytic uremic syndrome. Salmonella ferments sorbitol, and Shigella and Vibrio require different screening and confirmation steps.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A non-motile, lactose-negative enteric rod causing bloody diarrhea is most characteristic of which genus?",
+        "case_text": "A 2-year-old child has fever and bloody stools; the stool grows a non-lactose-fermenting, non-motile organism that is associated with reactive arthritis in older children.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "The Salmonella genus",
+            "The Shigella genus",
+            "The Vibrio genus",
+            "The Campylobacter genus"
+        ],
+        "explanation": "The Shigella genus is non-motile and does not ferment lactose, causing dysentery that can be followed by reactive arthritis and hemolytic uremic syndrome; it is the classic non-motile invasive enteric rod. The Salmonella genus is motile and H2S positive, The Vibrio genus is curved and oxidase positive, and The Campylobacter genus is a curved microaerophilic rod.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Curved gram-negative rods that dart like corkscrews on a Gram stain and grow microaerophilically at 42 C are characteristic of which organism?",
+        "case_text": "A 20-year-old woman has severe crampy diarrhea after undercooked chicken; the stool develops a microaerophilic culture on Campy agar, and the Gram stain shows curved gram-negative rods.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Vibrio cholerae",
+            "Bacteroides fragilis",
+            "Campylobacter jejuni",
+            "Yersinia enterocolitica"
+        ],
+        "explanation": "Campylobacter jejuni is an oxidase positive, curved or S-shaped rod with darting motility that grows microaerophilically at 42 C; poultry is the main reservoir and bloody diarrhea or Guillain-Barre is a complication. Vibrio is oxidase positive but halophilic and grows aerobically, Bacteroides is an obligate anaerobe, and Yersinia grows at 25 C with different colony morphology.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A fastidious gram-negative rod that grows on chocolate agar but not blood agar and causes osteomyelitis in children is most consistent with which organism?",
+        "case_text": "A 5-year-old child has avascular bone pain and a fever; the blood culture grows a fastidious organism that colonies coordinate as cough-meal tiny gram-negative rods that grow on chocolate agar but not on blood agar.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Kingella kingae",
+            "Neisseria meningitidis",
+            "Haemophilus parainfluenzae",
+            "Moraxella catarrhalis"
+        ],
+        "explanation": "Kingella kingae is a fastidious gram-negative rod that grows on chocolate agar, requires feeder factors, and now is a leading cause of osteoarticular infection in young children; colonies show a characteristic spreading-corneal morphology. Meningococcus and H. parainfluenzae also grow on chocolate but cause other syndromes, and Moraxella grows on blood agar.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Requirement for both factor X (hemin) and factor V (NAD), and growth on chocolate agar, identifies which organism as the cause of epiglottitis?",
+        "case_text": "A 4-year-old child with epiglottitis has a visible obstruction; a blood culture grows a pleomorphic gram-negative rod that requires factors X and V, ruled out by X-V factor strip on chocolate agar.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Haemophilus parainfluenzae",
+            "Haemophilus influenzae",
+            "Neisseria meningitidis",
+            "Klebsiella pneumoniae"
+        ],
+        "explanation": "Haemophilus influenzae is the classic cause of acute epiglottitis in young children and requires both X and V growth factors, so it grows on chocolate agar but not on blood agar; the X-V disk pattern is required for speciation. H. parainfluenzae needs only V, meningococcus needs no factors, and Klebsiella grows on blood agar.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A glucose and maltose positive, sucrose negative oxidase positive diplococcus is characteristic of which organism?",
+        "case_text": "A 1-year-old with shock and petechial rash has a blood culture that grows a fastidious oxidase positive diplococcus that ferments glucose and maltose but not sucrose.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Neisseria gonorrhoeae",
+            "Moraxella catarrhalis",
+            "Neisseria meningitidis",
+            "Haemophilus influenzae"
+        ],
+        "explanation": "N. meningitidis ferments glucose and maltose but not sucrose, distinguishing it from N. gonorrhoeae (glucose only) and M. catarrhalis (which does not use sugars and is DNase positive). Meningococcemia presents with fever and a petechial rash.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Intracellular gram-negative diplococci in neutrophils from an endocervical sample are diagnostic of which infection?",
+        "case_text": "A 45-year-old woman has a mucoid discharge and cervical pain; the endocervical Gram stain shows gram-negative intracellular diplococci within neutrophils.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Neisseria gonorrhoeae",
+            "Chlamydia trachomatis",
+            "Haemophilus ducreyi",
+            "Trichomonas vaginalis"
+        ],
+        "explanation": "Gram-negative intracellular diplococci in polymorphonuclear cells are the classic appearance of gonococcal cervicitis, which together with the specific culture on Thayer-Martin agar confirms gonorrhea. Chlamydia cannot be seen on Gram stain, and Trichomonas is a parasite that is motile on wet mount.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A painless chancre with spirochetes visible by dark-field microscopy is diagnostic of which sexually transmitted disease?",
+        "case_text": "A 25-year-old man has a painless ulcer on the penis and the dark-field examination shows spirochetes.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "The gonorrhea chancre",
+            "The syphilis chancre",
+            "The chancroid ulcer",
+            "Herpes simplex"
+        ],
+        "explanation": "The painless chancre of primary syphilis contains Treponema pallidum, which is a thin spirochete seen on dark-field examination of exudate; the organism cannot grow on routine culture. The gonorrhea chancre gives a purulent discharge with intracellular diplococci, chancroid is a painful soft ulcer, and herpes produces clustered vesicles.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The organism that causes mucopurulent cervicitis and is detected by NAAT because it will not grow on regular agar is which species?",
+        "case_text": "A 20-year-old woman has a cervical swab that is screened by nucleic acid amplification for a slow-growing intracellular pathogen that cannot grow on routine media.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Neisseria gonorrhoeae",
+            "Mycoplasma genitalium option",
+            "Chlamydia trachomatis",
+            "Ureaplasma urealyticum"
+        ],
+        "explanation": "Chlamydia trachomatis is an obligate intracellular bacterium detected by NAT because it requires cell culture; it is a leading cause of cervicitis, urethritis, and pelvic inflammatory disease. Gonococcus grows on selective agar, and Mycoplasma and Ureaplasma require special media but are not obligate intracellular.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The cold agglutinin positive, culture-negative atypical pneumonia is caused by which cell wall deficient organism?",
+        "case_text": "A 30-year-old woman has pneumonia with a dry cough; a cold agglutinin test is positive, and the respiratory culture grows no bacteria on routine media.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Streptococcus pneumoniae",
+            "Mycoplasma pneumoniae",
+            "Haemophilus influenzae",
+            "Legionella pneumophila"
+        ],
+        "explanation": "Mycoplasma pneumoniae causes walking pneumonia, is cell wall deficient, and cannot grow on blood agar; chest cold agglutinins and NAT or culture on Eaton agar confirm it. Pneumococcus grows on blood agar, and Legionella requires buffered charcoal yeast extract agar with iron and cysteine.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Growth on BCYE agar with a positive direct fluorescent antibody identifies which organism as the cause of the atypical pneumonia?",
+        "case_text": "A 60-year-old smoker develops pneumonia after aerosol exposure during a hotel stay; the sputum fluorescent antibody test is positive, and the organism grows on BCYE agar.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Legionella pneumophila",
+            "Mycoplasma pneumoniae",
+            "Klebsiella pneumoniae",
+            "Staphylococcus aureus"
+        ],
+        "explanation": "L. pneumophila requires L-cysteine and iron, so it grows only on BCYE (buffered charcoal yeast extract) agar; antigenuria and DFA confirm. Mycoplasma does not grow on BCYE, and Klebsiella and Staphylococcus grow on routine blood agar.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A mucoid, oxidase positive, fastidious gram-negative rod that grows only on chocolate agar from a patient with bronchiectasis or asthma suggests which organism?",
+        "case_text": "A 40-year-old woman with asthma has a chronic cough and sputum that grows a mucoid oxidase positive rod; the \u2265 culture is repeatedly positive and requires chocolate agar at 35 C with 5% CO2.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Klebsiella pneumoniae",
+            "Pseudomonas aeruginosa",
+            "Haemophilus influenzae",
+            "Bordetella bronchiseptica"
+        ],
+        "explanation": "B. bronchiseptica is an oxidase positive coccobacillus that grows on chocolate or Bordet-Gengou agar and colonizes the airways of patients with structural lung disease, causing a cough illness. Klebsiella and Pseudomonas proliferate on blood agar, and Haemophilus is an X-and-V dependent isolate with different disease association.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The critical preanalytic requirement for detecting the agent of whooping cough is obtaining the sample from which site and culturing on which medium?",
+        "case_text": "A 4-week-old infant has paroxysmal coughing and the cough ends in an inspiratory whoop; a nasopharyngeal aspirate is collected for culture.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Sputum on blood agar",
+            "Nasopharyngeal swab on Bordet-Gengou or charcoal amphotericin media with prompt inoculation",
+            "Throat swab on chocolate agar",
+            "Blood on BCYE"
+        ],
+        "explanation": "Bordetella pertussis colonizes the ciliated respiratory epithelium, so nasopharyngeal sampling and immediate inoculation on Bordet-Gengou or Regan-Lowe charcoal media maximize recovery; PCR has largely replaced culture. Sputum does not represent the organism, and blood agar does not support its growth.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Small narrow-necked budding yeast in a lung biopsy from the desert Southwest identifies which organism?",
+        "case_text": "A 30-year-old man returns from the American Southwest with a pneumonia and a lung nodule; a silver stain of the biopsy shows small yeast cells with a narrow-necked bud.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Cryptococcus neoformans",
+            "Candida albicans",
+            "Coccidioides immitis",
+            "Histoplasma capsulatum"
+        ],
+        "explanation": "C. immitis appears in tissue as spherules, but in the sub-tropical variant the yeast form may show narrow-necked budding; the geographic clue points to coccidioidomycosis in the Southwestern desert. Histoplasma grows as small intracellular yeast in the Midwest, Cryptococcus develops a thick capsule, and Candida is the germ tube positive commensal.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "An India ink prep that shows a wide clear halo around budding yeast in the CSF indicates which meningitis agent?",
+        "case_text": "A 45-year-old man with HIV and a CD4 count of 60 has a chronic headache; the CSF India ink preparation shows budding yeast with a wide clear capsule.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Candida albicans",
+            "Cryptococcus neoformans",
+            "Histoplasma capsulatum",
+            "Aspergillus fumigatus"
+        ],
+        "explanation": "Cryptococcus neoformans in the CSF has a thick polysaccharide capsule that excludes the India ink and appears as a clear halo; the cryptococcal antigen test is the more sensitive and specific screen. Candida does not produce a defining capsule, Histoplasma is intracellular, and Aspergillus has septate hyphae rather than yeast.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Germ tube positivity in serum at 37 C for 3 hours identifies which yeast as a cause of bloodstream infection?",
+        "case_text": "A germ tube test is performed on a yeast isolate and the germ tube forms within 3 hours in serum at 37 C.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Candida albicans",
+            "Candida glabrata",
+            "Cryptococcus neoformans",
+            "Saccharomyces cerevisiae"
+        ],
+        "explanation": "Candida albicans forms germ tubes in serum within 2 to 4 hours, a screening method for invasive candidiasis; C. glabrata and other non-albicans species do not produce germ tubes and require additional testing such as the chromogenic medium or cornmeal agar. Cryptococcus is capsule positive and grows as a yeast with no germ tube.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Narrow septate hyphae with 45 degree branching in a tissue biopsy indicate which mold?",
+        "case_text": "A 62-year-old leukemia patient has pulmonary nodules and sinusitis; the tissue biopsy shows acutely branching narrow septate hyphae with 45 degree angle branching that grow at 37 C.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Mucor species",
+            "Aspergillus fumigatus",
+            "Fusarium species",
+            "Rhizopus species"
+        ],
+        "explanation": "Aspergillus produces narrow septate hyphae that branch at acute 45 degree angles and grows at 37 C in the immunocompromised lung. Mucor and Rhizopus are broad, ribbon-like, sparsely septate, and branch at 90 degrees. Fusarium is a hyalohyphomycete with distinct phialides.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Broad non-septate ribbon hyphae branching at 90 degrees characterize which group of molds?",
+        "case_text": "A 60-year-old diabetic with sinusitis and necrotic eschar on the face has a biopsy with broad, non-septate, ribbon-like hyphae branching at right angles.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Aspergillus fumigatus",
+            "Pseudallescheria boydii",
+            "Mucorales (Rhizopus or Mucor)",
+            "Penicillium species"
+        ],
+        "explanation": "The Mucorales produce broad, sparsely septate, ribbon-like hyphae that branch at right angles and cause aggressive rhino-orbital mucormycosis in diabetics. Aspergillus branching is acute, Pseudallescheria shows septate hyphae with cleistothecia, and Penicillium is a green mold with conidiophores.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A pink salmon mold with canoe-shaped macroconidia from a neutropenic patient identifies which fungus?",
+        "case_text": "A 75-year-old with neutropenia develops a hand infection; the culture grows a pink to salmon colored mold that produces macroconidia shaped like a canoe under the microscope.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Cladosporium species",
+            "Fusarium species",
+            "Rhizopus species",
+            "Exophiala species"
+        ],
+        "explanation": "Fusarium grows as a salmon-pink mold and produces canoe-shaped macroconidia, causing disseminated fusariosis in neutropenic patients with skin lesions and fungemia. Cladosporium is a dematiaceous mold with different conidia, Rhizopus is mucor-like and ribboned, and Exophiala is a black yeast.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Tuberculate macroconidia and small intracellular yeast that grow as a slow mold at 25 C and yeast at 37 C on blood agar identify which organism?",
+        "case_text": "A 40-year-old spelunker develops pneumonia after exploring a bat cave; the sputum smear and tissue stain show small oval yeast inside macrophages.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Coccidioides immitis",
+            "Blastomyces dermatitidis",
+            "Histoplasma capsulatum",
+            "Sporothrix schenckii"
+        ],
+        "explanation": "H. capsulatum is a thermally dimorphic fungus: it grows as a mold with tuberculate macroconidia at 25 C and as an intracellular yeast at 37 C; bat or bird guano exposure is the classic history. Coccidioides forms barrel-shaped arthroconidia, Blastomyces forms broad-based buds, and Sporothrix gives cigar-shaped yeast with rose gardener exposure.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Cigar-shaped budding yeast with a history of rose gardening is diagnostic of which organism?",
+        "case_text": "A 35-year-old gardener has a skin ulcer on the hand with lymphangitic streaks; biopsy shows budding yeast shaped like cigars.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Sporothrix schenckii",
+            "Blastomyces dermatitidis",
+            "Cryptococcus neoformans",
+            "Candida tropicalis"
+        ],
+        "explanation": "S. schenckii, the rose gardener fungus, is thermally dimorphic and produces cigar-shaped budding yeast in tissue along lymphatics in sporotrichosis. Blastomyces has broad-based buds, Cryptococcus has a capsule, and Candida species show small buds with germ tube negative results.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Broad-based budding yeast in tissue, grown from a pulmonary isolate as a mold with lollipop conidiophores, identifies which dimorphic fungus?",
+        "case_text": "A 45-year-old man with lung nodules has a skin test and serology positive for a dimorphic fungus; the organism grows as basket-like thick-walled yeast consistent with blastomycosis.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Histoplasma capsulatum",
+            "Blastomyces dermatitidis",
+            "Coccidioides immitis",
+            "Paracoccidioides brasiliensis"
+        ],
+        "explanation": "B. dermatitidis is a thermally dimorphic fungus with broad-based budding yeast in tissue and a mold phase with single round conidia on short conidiophores resembling lollipops; it causes endemic North American blastomycosis. Histoplasma is intracellular and small, and Paracoccidioides has a ship wheel appearance.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Multinucleated giant cells on a Tzanck smear of a vesicle are the cytologic hallmark of which viral infection?",
+        "case_text": "A 5-year-old child in a daycare has chronic vesicular rash over the trunk; the Tzanck smear shows multinucleated giant cells.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Measles encephalitis",
+            "Herpes simplex or varicella virus",
+            "Rubella",
+            "Mumps"
+        ],
+        "explanation": "Herpesviruses caused by HSV and varicella-zoster produce intranuclear inclusions and multinucleated giant cells (Tzanck cells) in vesicle scrapings. Measles and rubella show cytoplasmic inclusion patterns in different cells, and mumps gives no multinucleate vesicular cellular response.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A positive heterophile antibody test with atypical lymphocytes on the smear confirms infection with which virus?",
+        "case_text": "A 30-year-old woman has fever, pharyngitis, and posterior cervical lymphadenopathy; hematology shows atypical lymphocytes and the mono spot test is positive.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Cytomegalovirus",
+            "Human herpesvirus 6",
+            "Epstein-Barr virus",
+            "Influenza virus"
+        ],
+        "explanation": "The heterophile (monospot) test detects immunoglobulin M antibodies typical of EBV infectious mononucleosis, which often produces atypical lymphocytes on the blood film. CMV and HHV-6 cause a viral infection with atypical lymphocytes but a negative heterophile antibody.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Owl eye inclusions in cytomegalovirus infection are best detected in the laboratory by which method?",
+        "case_text": "A transplant patient develops pneumonitis and the bronchial wash is positive by shell vial culture within 48 hours; the infected cells show owl eye intranuclear inclusions.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Shell vial culture with early antigen detection",
+            "Gram stain",
+            "India ink test",
+            "Dark-field microscopy"
+        ],
+        "explanation": "CMV grows slowly in tube culture but can be detected in 24 to 48 hours by shell vial technique stained for the early antigen; the cytopathic effect of owl eye inclusions appears later. CMV does not stain on Gram, India ink, or dark field.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The laboratory confirmation of the adenoviral pharyngoconjunctival fever is best provided by which method?",
+        "case_text": "A 10-year-old with sore throat and conjunctivitis has a respiratory illness; the pharyngeal specimen grows an adenovirus on cell culture that shows a cytopathic effect.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Gram stain",
+            "Cell culture with immunofluorescence or NAT",
+            "India ink preparation",
+            "Ziehl-Neelsen stain"
+        ],
+        "explanation": "Adenovirus is cultured on epithelial cells and identified by fluorescent antibody or nucleic acid amplification; the pharyngoconjunctival presentation pairs with this viral testing. Adenovirus cannot be Gram stained, inked, or acid-fast stained in the routine lab setting.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The rapid antigen test for respiratory syncytial virus that returns positive has which limitation the laboratory recognizes?",
+        "case_text": "A 2-month-old infant with a new cough and poor feeding during the respiratory season has nasal wash submitted for rapid antigen test.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "It detects only live virus",
+            "It requires a live vector",
+            "It is less sensitive than PCR but remains specific for the virus in the appropriate season",
+            "It cross-reacts with bacteria"
+        ],
+        "explanation": "Rapid RSV antigen tests detect the viral antigen quickly but are less sensitive than RT-PCR, especially in older children, while retaining good specificity in the respiratory season. They do not detect live virus selectively or cross-react with bacterial antigens.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "An HIV-1 RNA by PCR of 88,000 copies/mL confirms active viremia after ART interruption by which laboratory approach?",
+        "case_text": "A 50-year-old woman on immunosuppression has a positive quantitative HIV-1 RNA viral load after ART interruption; the confirmatory assay uses which principle?",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Quantitative nucleic acid amplification targeting conserved regions of the viral genome",
+            "Antibody detection alone",
+            "Western blot only",
+            "Culture on routine media"
+        ],
+        "explanation": "HIV-1 RNA viral load by RT-PCR (or NAT) measures circulating viral copies using conserved primer target sequences and is the standard monitor of ART failure. Antibody and Western blot tests detect seroconversion but not viremia, and the virus cannot be cultured on routine media.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The laboratory interpretation of dengue testing when both antibody and antigen assays are used reflects which rule for the timing of detection?",
+        "case_text": "A 45-year-old man with fever and a new maculopapular rash has a positive dengue IgM and a negative NS1 antigen during the late febrile window.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "NS1 remains positive after IgM appears",
+            "IgM becomes detectable before acute viremia",
+            "Antigen and antibody are interchangeable",
+            "NS1 antigen is detectable early in the febrile phase, while IgM appears later and persists"
+        ],
+        "explanation": "Dengue NS1 antigen is present during the first 5 days of fever, while IgM antibodies rise after day 3 and persist for months; combining the two targets maximizes detection across the clinical course. The other timing statements reverse the correct sequence.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Banana-shaped gametocytes in the thick film identify which Plasmodium species?",
+        "case_text": "A 5-year-old African child with fever has a thick blood film that shows ring forms with multiple rings per red cell and occasional banana-shaped gametocytes.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Plasmodium vivax",
+            "Plasmodium falciparum",
+            "Plasmodium ovale",
+            "Plasmodium malariae"
+        ],
+        "explanation": "P. falciparum produces crescent or banana-shaped gametocytes and tiny rings with multiple rings per cell; these morphology features distinguish it from the other human plasmodia. P. vivax and ovale give larger rings and Schuffner dots, and P. malariae shows band forms and a distinguishing rosette arrangement.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Schuffner dots and enlarged infected red cells with ameboid ring forms identify which relapsing Plasmodium species?",
+        "case_text": "A 30-year-old traveler has a fever after a trip to Southeast Asia; the blood film ring forms are large with Schuffner dots and infected cells are enlarged.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Plasmodium falciparum",
+            "Plasmodium malariae",
+            "Plasmodium vivax or ovale",
+            "Babesia microti"
+        ],
+        "explanation": "P. vivax and P. ovale have enlarged host cells with Schuffner dots and enlarged ameboid trophozoites; they relapse from liver hypnozoites requiring radical cure. Falciparum rings are small with no Schuffner dots, P. malariae forms band trophozoites, and Babesia forms pleomorphic tetrads in normal-size cells.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The tetrad or maltese cross formation inside a red cell is the definitive morphology of which parasite?",
+        "case_text": "A 45-year-old woman has a blood film from a suspected Babesia infection; the trophozoites are small ring forms that can be confused with malaria.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Plasmodium ovale",
+            "Babesia microti",
+            "Toxoplasma gondii",
+            "Trypanosoma brucei"
+        ],
+        "explanation": "Babesia microti forms tetrads (maltese crosses) within red cells, a feature not seen in Plasmodium, and the clinical setting of splenectomy or tick exposure supports the diagnosis. Trypanosomes are extracellular flagellates, and Toxoplasma is a tissue cyst form.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "C-shaped trypomastigotes with a large kinetoplast in the blood identify which parasite?",
+        "case_text": "A 30-year-old man in a tropical setting has fever and swelling; the thick film shows trypomastigote parasites that are C-shaped and undulating in a fluid medium.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Plasmodium falciparum",
+            "Entamoeba histolytica",
+            "Trypanosoma cruzi",
+            "Leishmania donovani"
+        ],
+        "explanation": "T. cruzi trypomastigotes are C- or U-shaped, flagellated blood forms with a prominent kinetoplast characteristic of Chagas disease. Leishmania amastigotes are intracellular without a free flagellum, and Plasmodium is an intraerythrocytic ring.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The presence of an amoeba with a single nucleus and central small nucleolus that does not ingest red cells is most characteristic of which organism?",
+        "case_text": "A student has an asymptomatic stool survey; a wet mount shows an organism with pseudopodia, and the stool is formed and negative for blood.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Entamoeba histolytica",
+            "Entamoeba coli",
+            "Naegleria fowleri",
+            "Giardia lamblia"
+        ],
+        "explanation": "E. coli is a non-pathogenic amoeba with one nucleus, coarse peripheral chromatin, and a central small nucleolus that does not ingest red cells; distinguishing it from E. histolytica prevents false treatment. E. histolytica ingests red cells when invasive, and the other two organisms have different morphology.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A flagellate that spins with a falling leaf tumbling motion in a fresh stool wet mount is characteristic of which parasite?",
+        "case_text": "A 25-year-old traveler has explosive watery diarrhea with no blood during a trek in Nepal; the stool specimen contains an organism that spins on a wet mount.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Entamoeba histolytica",
+            "Trichomonas vaginalis",
+            "Giardia lamblia",
+            "Cryptosporidium parvum"
+        ],
+        "explanation": "Giardia trophozoites have a distinctive falling leaf or spinning motion on a fresh wet mount, and the pear-shaped bilaterally symmetric flagellate confirms the diagnosis. Trichomonas is a genital flagellate, Cryptosporidium is an acid-fast coccidian, and E. histolytica is an amoeba.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The acid-fast oocysts of Cryptosporidium appear on the modified acid-fast stain as which finding in the stool?",
+        "case_text": "A 3-year-old in daycare has watery diarrhea and the stool cryptosporidium stain is orange on an acid-fast smear.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Bright pink to orange spherical oocysts",
+            "Blue ovoid cysts with a median body",
+            "Large cystic eggs with a heavy outer shell",
+            "Colorless refractile trophozoites"
+        ],
+        "explanation": "Cryptosporidium oocysts stain pink to orange on a modified acid-fast (Kinyoun) stain and are round; they appear in immunosuppressed and daycare-associated diarrhea. Giardia cysts do not acid fast, and the ovoid median body describes the cyst internal structure only with the wet mount iodine stain.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A wet mount showing a pear-shaped flagellate with an undulating membrane in a vaginal discharge is diagnostic of which parasite?",
+        "case_text": "A 20-year-old woman has urinary frequency and a malodorous discharge; a wet mount shows a flagellate with an undulating membrane that moves with jerky motility.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Giardia lamblia",
+            "Trichomonas vaginalis",
+            "Entamoeba histolytica",
+            "Balantidium coli"
+        ],
+        "explanation": "Trichomonas vaginalis is a motile flagellate with an undulating membrane and a jerky motion seen in a fresh saline wet mount of vaginal discharge or urine. Giardia is a stool flagellate, and the amoeba and ciliate forms do not produce vaginal discharge with undulating membrane motility.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Barrel-shaped eggs with bipolar plugs and a terminal spine indicate infection with which organism?",
+        "case_text": "A 40-year-old immigrant has chronic abdominal pain and the stool shows barrel-shaped eggs with a terminal spine on the filter paper concentration.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Ascaris lumbricoides",
+            "Enterobius vermicularis",
+            "Trichuris trichiura",
+            "Strongyloides stercoralis"
+        ],
+        "explanation": "T. trichiura lays barrel-shaped eggs with bipolar mucus plugs and causes the chronic dysentery with a leading causes of malnourishment in endemic areas. Ascaris has thick mammillated eggs, Enterobius eggs are ovoid and flattened on one side, and Strongyloides larvae are the infectious stage rather than eggs.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Ovoid eggs with a flat side on the cellophane tape preparation indicate infection with which pinworm?",
+        "case_text": "A 5-year-old complains of perianal itching at night; the parent collects a cellophane tape preparation in the morning before a bath.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Enterobius vermicularis",
+            "Trichuris trichiura",
+            "Necator americanus",
+            "Diphyllobothrium latum"
+        ],
+        "explanation": "E. vermicularis is the pinworm that lays ovoid eggs with one flattened side on the perianal skin, which is why the morning cellophane tape or perianal swab before bath is the specimen of choice. The other eggs have different shapes and sites, and hookworm eggs are ellipsoid with thin shells.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A worm with broad proglottids and a scolex with two rows of hooks identifies which cestode?",
+        "case_text": "A 30-year-old woman passes a large flat worm that resembles a ribbon; the proglottids are broad and the scolex has a single rostellum with double rows of hooks.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Diphyllobothrium latum",
+            "Taenia solium",
+            "Hymenolepis nana",
+            "Echinococcus granulosus"
+        ],
+        "explanation": "T. solium is the pork tapeworm with a scolex bearing a rostellum with two rows of hooks and unarmed proglottids, causing human neurocysticercosis when eggs are ingested. D. latum has a terminal spine and proglottid rosette, H. nana is the dwarf tapeworm with three hooks, and Echinococcus hydatid cysts occur in liver tissue.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A creeping eruption or larva migrans cutaneous lesion is caused by which larva that migrates through the skin?",
+        "case_text": "A traveler returns with a red swelling on the skin and a raised serpentine tract; a biopsy gram stain shows a filariform larva.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Ancylostoma braziliense (hookworm)",
+            "Ascaris lumbricoides",
+            "Trichuris trichiura",
+            "Enterobius vermicularis"
+        ],
+        "explanation": "Cutaneous larva migrans is produced by zoonotic hookworm larvae (A. braziliense) that cannot complete the human cycle and tunnel in the skin leaving a serpentine track. Ascaris traverses the lung, Trichuris stays in the bowel, and Enterobius lays perianal eggs without dermal migration.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The organism that produces the heterogeneous latent infection with a rapidly rising titer in this lymphadenopathy is which intracellular protozoan?",
+        "case_text": "A 25-year-old with a new cat in the household has a lymph node swelling and mild fever; serology shows toxoplasma IgG and IgM both positive with a rise on repeat.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Leishmania donovani",
+            "Trypanosoma cruzi",
+            "Toxoplasma gondii",
+            "Babesia microti"
+        ],
+        "explanation": "Toxoplasma gondii, spread by cat feces and undercooked meat, causes acute lymphadenopathy with rising IgG/IgM serology; the same organism is dangerous in pregnancy and immunocompromised hosts. Leishmania and Trypanosoma give systemic syndromes with different travel histories, and Babesia is tick-borne.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "An infectious conjunctivitis in newborns with gram-negative rods and growth factor needs that suggest Haemophilus is best confirmed by which laboratory observation?",
+        "case_text": "A newborn has an eye discharge and conjunctivitis; the Gram stain of the exudate shows gram-negative rods, a finding that is clarified by culture on chocolate agar with a confirmatory growth factor requirement.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Gram stain showing many gram-positive cocci",
+            "Oxidase positive diplococci",
+            "Lactose positive coliforms",
+            "Culture on chocolate agar aided by X-factor requirement of Haemophilus, differentiating it from more resistant rods"
+        ],
+        "explanation": "Neonatal Haemophilus conjunctivitis grows on chocolate agar and the isolate requires factor X or V for growth on the disk concentration method; the X-V dependent pattern distinguishes it from enteric gram-negative rods that grow freely. The other descriptions do not fit a fastidious gram-negative rod.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The preferred specimen for neonatal gonococcal conjunctivitis is an eye swab immediately plated on Thayer-Martin or equivalent selective media, and for chlamydial conjunctivitis a swab submitted to which test?",
+        "case_text": "A neonatologist submits an eye swab from conjunctivitis and requests gonococcal and chlamydial testing; the sample is collected by swabbing the lower lid.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Ampicillin disk on blood agar",
+            "Chlamydia NAAT or culture on the appropriate cell line",
+            "Gram stain reading on the conjugate antibody",
+            "Indian ink capsule"
+        ],
+        "explanation": "Gonococcal ophthalmia is cultured on selective Thayer-Martin or chocolate media and the culture is fastidious, while chlamydial conjunctivitis is detected by NAAT or cell culture because the organism is obligate intracellular. Gram stain detects the diplococci but cannot detect Chlamydia, which requires the nucleic acid or tissue culture route.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Clue cells on the wet mount with an elevated vaginal pH diagnose which condition?",
+        "case_text": "A 25-year-old woman with a vaginal discharge has a saline wet mount showing many clue cells, and the pH is greater than 4.5.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "The trichomoniasis infection",
+            "Yeast vaginitis",
+            "Bacterial vaginosis",
+            "Gonococcal cervicitis"
+        ],
+        "explanation": "Clue cells are vaginal epithelial cells studded with coccobacilli and are the hallmark of bacterial vaginosis, accompanying an elevated pH and a fishy amine odor on a whiff test. The trichomoniasis infection shows motile flagellates, yeast vaginitis shows budding cells, and gonorrhea is an endocervical intracellular diplococcus.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Which indicator is used to verify that the anaerobic atmosphere is achieved before reading the culture plates?",
+        "case_text": "A 50-year-old man with aspiration pneumonia has the sputum grow a mixed anaerobic flora; anaerobic culture is performed in an anaerobic jar.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Methylene blue in a dried strip turns colorless",
+            "Bromcresol purple turns blue",
+            "Cresol green turns yellow",
+            "Phenol red turns magenta"
+        ],
+        "explanation": "Methylene blue is used as an Eh indicator in anaerobic systems: it is colorless in a reduced (anaerobic) environment and blue when oxygen is present, so the strip confirms that anaerobic conditions prevail. The other dyes indicate pH and are not breath monitors.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A foul-smelling wound with a strict anaerobe that is a gram-negative rod and the most common anaerobe in mixed flora suggests which organism?",
+        "case_text": "A 35-year-old woman with postoperative fever and wound abscess has a foul-smelling discharge; a butterfly culture grows a gram-negative rod that is strict anaerobe.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Clostridium perfringens",
+            "Bacteroides fragilis",
+            "Fusobacterium nucleatum",
+            "Peptostreptococcus species"
+        ],
+        "explanation": "Bacteroides fragilis group is the most common anaerobic gram-negative rod in intra-abdominal and postoperative mixed infections and ferments sugars with a foul odor. Clostridium is a gram-positive spore rod, Peptostreptococcus is a coccus, and Fusobacterium is a slender fusiform rod with a pointed end.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A gram-positive spore-forming rod with double zone hemolysis (lecithinase) that causes surgical clostridial myonecrosis is identified by which character?",
+        "case_text": "A 40-year-old man has a deep leg wound after a motor vehicle accident and develops crepitus; the wound culture is anaerobic and the Gram stain shows gram-positive rods with subterminal spores.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Clostridium perfringens with lecithinase on egg yolk agar",
+            "Clostridium tetani",
+            "Clostridium difficile",
+            "Clostridium botulinum"
+        ],
+        "explanation": "C. perfringens is a boxcar-shaped, spore-forming gram-positive rod that produces double-zone hemolysis, swirls with lecithinase on egg yolk agar, and is the classic tissue gas gangrene agent after trauma. Tetanus is neurotoxin-mediated, C. difficile causes colitis antibiotics, and botulism is a food-borne neurotoxin without the wound gangrene picture.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The profuse watery diarrhea after antibiotics with stool toxin positivity is caused by which organism?",
+        "case_text": "A 60-year-old patient on broad-spectrum antibiotics develops profuse watery diarrhea; a rapid assay detects both toxin A and toxin B in the stool.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Clostridium perfringens",
+            "Salmonella enteritidis",
+            "Clostridioides difficile",
+            "Staphylococcus aureus"
+        ],
+        "explanation": "C. difficile is the antibiotic-associated colitis agent whose toxins A and B produce the watery diarrhea; the toxicogenic culture and toxin immunoassay or PCR confirm it. Salmonella follows food exposure, C. perfringens is alpha toxin driven food poisoning, and S. aureus toxin is an enterotoxin.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Branching filamentous gram-positive rods from a soil wound that grow aerobically are most consistent with which organism?",
+        "case_text": "A gardener sustains a puncture wound and 10 days later has soft tissue swelling; the tissue grows a filamentous, branching gram-positive organism on blood agar.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Clostridium species",
+            "Nocardia species",
+            "Actinomyces israelii",
+            "Candida species"
+        ],
+        "explanation": "Nocardia is an aerobic, branching filamentous (partially acid-fast present) actinomycete found in soil that causes cutaneous and pulmonary infections in immunocompromised hosts. Actinomyces is anaerobic with sulfur granules, Clostridia are anaerobic spore rods, and Candida is a yeast.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A branching, partially acid-fast organism that is the cause of the chronic pulmonary infection is which species?",
+        "case_text": "A 35-year-old woman has chronic cough with hemoptysis and the sputum culture grows slowly on blood agar with small chalky white colonies; the modified acid-fast stain is positive.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Streptomyces species",
+            "Actinomyces israelii",
+            "Nocardia species",
+            "Mycobacterium tuberculosis"
+        ],
+        "explanation": "Nocardia species are modified acid-fast positive (with 1% sulfuric acid decolorization), grow as chalky aerial colonies, and cause pulmonary and systemic nocardiosis in immunocompromised patients; the partial acid-fastness distinguishes them from Actinomyces, which is non-acid-fast. M. tuberculosis is strongly acid-fast but does not branch as filamentous aerial hyphae.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Sulfur granules in pus from a chronic sinus tract that contain branching gram-positive filaments are characteristic of which organism?",
+        "case_text": "A 60-year-old man with chronic mastoiditis has a draining sinus tract with sulfur granules in the exudate; the culture grows a slow anaerobic filamentous organism encrypted in the granule.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Nocardia asteroides",
+            "Actinomyces israelii",
+            "Staphylococcus aureus",
+            "Candida albicans"
+        ],
+        "explanation": "A. israelii produces the characteristic sulfur granules of actinomycosis, plated as anaerobic branching gram-positive rods in the chronic draining sinus tracts of the neck and jaw. Nocardia is aerobic and partially acid-fast without sulfur granules, and the other organisms do not form granules.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The antistreptolysin O titer is used clinically to support the diagnosis of which complication?",
+        "case_text": "A 10-year-old with fever and arthritis after strep throat has an ASO titer that rises in paired sera.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Streptococcus carriage only",
+            "Rheumatic fever or post-streptococcal glomerulonephritis",
+            "Scarlet fever exotoxin",
+            "Invasive streptococcal disease"
+        ],
+        "explanation": "The ASO titer rises after group A streptococcal infection and is used to support the diagnosis of rheumatic fever and post-streptococcal glomerulonephritis; a single elevated titer is less informative than a paired rise. Scarlet fever is a disease of the rash exotoxin, and carriage does not produce the antibody rise.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A beta-hemolytic coccus that is bacitracin sensitive and PYR positive identifies which organism as the cause of the impetigo?",
+        "case_text": "A 25-year-old with a fresh impetigo lesion has a culture growing gram-positive cocci in chains that are bacitracin sensitive and PYR positive.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Streptococcus pyogenes",
+            "Streptococcus agalactiae",
+            "Enterococcus faecalis",
+            "Streptococcus pneumoniae"
+        ],
+        "explanation": "S. pyogenes (group A) is bacitracin sensitive and PYR positive and is an impetigo and pharyngitis pathogen. Group B streptococcus is bacitracin resistant and CAMP positive, enterococci are PYR positive but bile esculin positive and Group D, and pneumococcus is optochin sensitive and alpha hemolytic.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A CAMP positive, bacitracin resistant beta-hemolytic coccus from a neonatal blood culture identifies which organism?",
+        "case_text": "A newborn develops sepsis on day 1; the blood culture grows a gram-positive coccus in chains with a narrow zone of hemolysis that is CAMP positive and resistant to bacitracin.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Streptococcus pyogenes",
+            "Streptococcus agalactiae",
+            "Staphylococcus aureus",
+            "Enterococcus faecium"
+        ],
+        "explanation": "S. agalactiae (group B) is the major neonatal sepsis agent; it is CAMP positive, bacitracin resistant, hippurate positive, and beta-hemolytic. Group A is bacitracin sensitive, staphylococci are catalase positive, and enterococci are bile esculin positive.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Optochin sensitive, bile soluble lancet-shaped diplococci are the classic cause of which infection?",
+        "case_text": "A 60-year-old with hyposplenism develops a pneumonia; the sputum Gram stain shows lancet-shaped gram-positive diplococci, and the culture is optochin sensitive.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Staphylococcal pneumonia",
+            "Haemophilus epiglottitis",
+            "Pneumococcal pneumonia",
+            "Group B sepsis"
+        ],
+        "explanation": "S. pneumoniae is a lancet-shaped gram-positive diplococcus that is optochin sensitive and bile soluble, causing lobar pneumonia, especially after splenectomy; the capsule is a key virulence factor and quellung reaction types it. The other organisms do not show lancet pairs or optochin sensitivity.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A fastidious oxidase positive coccobacillus that causes otitis and is very similar to Neisseria is which organism?",
+        "case_text": "A 30-year-old man with sinusitis grows a gram-negative coccobacillus that is commensal in the upper respiratory tract and often beta lactamase positive.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Moraxella catarrhalis",
+            "Neisseria gonorrhoeae",
+            "Haemophilus influenzae",
+            "Branhamella catarrhalis"
+        ],
+        "explanation": "M. catarrhalis is a oxidase positive gram-negative coccobacillus (former Branhamella) that is a frequent cause of otitis media and sinusitis and produces beta-lactamase; it is bile resistant and DNase positive, distinguishing it from Neisseria, which ferments glucose.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Oxidase positive gram-negative diplococci from COPD sputum that are not sugar fermenters are most consistent with which organism?",
+        "case_text": "A 60-year-old man with chronic obstructive pulmonary disease has a sputum culture that grows gram-negative diplococci that are oxidase positive and serum-resistant.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Neisseria meningitidis",
+            "Moraxella catarrhalis",
+            "Neisseria gonorrhoeae",
+            "Kingella kingae"
+        ],
+        "explanation": "M. catarrhalis does not ferment glucose, maltose, or sucrose, is DNase positive and bile resistant, and is recovered frequently in COPD exacerbations; the non-fermenter pattern with oxidase positivity plus a strong Gram stain morphology identifies it. N. meningitidis ferments glucose and maltose, and gonococcus ferments glucose only.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The laboratory explains the rapid antigen test result with which limitation in children and adults?",
+        "case_text": "A 20-year-old with acute pharyngitis has a rapid antigen test that is negative on a swab with clinical suspicion of strep throat.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The test cannot be repeated",
+            "The test detects only group B antigen",
+            "The rapid test has lower sensitivity than culture, so confirmatory culture is recommended when suspicion is high",
+            "The test requires live virus"
+        ],
+        "explanation": "Rapid antigen detection tests for group A streptococcus sacrifice sensitivity for speed, so culture confirmation is recommended in patients with high clinical suspicion and a negative antigen result. The test is specific for group A Carbohydrate and does not require culture media, but its sensitivity is below culture.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A motile gram-positive rod from a wound or meat exposure that is not a spore former identifies which organism?",
+        "case_text": "A 60-year-old meat packer develops a fever with a wound; the Gram stain shows a gram-positive rod that grows on routine media and is motile.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Clostridium perfringens",
+            "Listeria monocytogenes",
+            "Corynebacterium diphtheriae",
+            "Bacillus anthracis"
+        ],
+        "explanation": "L. monocytogenes is a motile, non-spore-forming gram-positive rod with tumbling motility that causes food-borne listeriosis, sepsis in pregnancy, and meningitis in the elderly and immunocompromised; it grows on routine media and shows a narrow band of beta hemolysis. Clostridia are spore formers, C. diphtheriae is non-motile, and B. anthracis is non-motile and large-capsule forming.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A Neisseria species that reduces glucose but not maltose is characteristic of which clinically significant species?",
+        "case_text": "A 35-year-old woman with a male partner with urethritis has a cervical swab; the culture is set up on Martin-Lewis agar and the oxidase positive colony with an acid from glucose only appears.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Neisseria gonorrhoeae",
+            "Neisseria meningitidis",
+            "Neisseria lactamica",
+            "Moraxella catarrhalis"
+        ],
+        "explanation": "N. gonorrhoeae ferments glucose only; N. meningitidis ferments glucose and maltose, and N. lactamica additionally ferments lactose, so the sugar utilization pattern together with the cervical source confirms gonorrhea. Moraxella is a non-fermenter and DNase positive.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The early detection of the cause of this child respiratory illness is aided best by which method that is faster than tube culture?",
+        "case_text": "A 5-year-old child has diffuse maculopapular rash after conjunctivitis; a nasopharyngeal aspirate is sent for viral culture and the laboratory uses a rapid shell vial technique.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Shell vial centrifugation with fluorescent antibody",
+            "Gram stain with catapult",
+            "Dark-field detection",
+            "India ink confirmation"
+        ],
+        "explanation": "Shell vial culture uses centrifugation to speed viral detection and is detected by early antigen fluorescent antibody within days, much faster than tube culture; this technique applies to CMV, RSV, and adenovirus detection. The Gram, dark-field, and India ink methods are not viral culture techniques.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Rubella-specific IgM in a pregnant patient indicates recent infection and requires which laboratory interpretation?",
+        "case_text": "A 25-year-old female student has rash and lymphadenopathy with a positive rubella-specific IgM; the pool of mothers being tested in an outbreak setting is asked about the risk.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "The IgM result alone excludes maternal infection",
+            "IgM plus a rising paired IgG confirms recent infection and is interpreted together with clinical picture",
+            "IgG persistence identifies acute infection",
+            "A single negative rubella IgM rules out the infection"
+        ],
+        "explanation": "Rubella IgM appears early and can be detected for weeks, so paired IgG seroconversion with the IgM result establishes recent infection; a single IgM may be a false positive, and an isolated negative IgM does not exclude infection very early. IgG positivity alone indicates past immunity.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The laboratory endorsement of a two-step algorithm for Lyme disease diagnoses infection using which combination of tests?",
+        "case_text": "A 45-year-old with a tick bite has an erythema migrans lesion; serology is ordered by a two-step testing algorithm.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Direct blood smear",
+            "Gram stain with Gray",
+            "ELISA followed by Western blot confirmation on a positive or equivocal result",
+            "Culture on general media"
+        ],
+        "explanation": "The CDC two-step approach uses a sensitive ELISA/IgG screening and confirms a positive or equivocal result with a Western blot; this two-tier combination improves specificity. Direct smears and culture are not the recommended diagnostic tests for early Lyme disease.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A titered VDRL or RPR that is followed by a treponemal-specific test such as the FTA to confirm the diagnosis is an example of which laboratory testing principle?",
+        "case_text": "A 60-year-old woman has new fever and a reactive VDRL on screening; the RPR is titered at 1:32 and the FTA-ABS is also reactive.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Nontreponemal screen with a treponemal confirmatory assay",
+            "Culture confirmation",
+            "Direct immunofluorescent only",
+            "Genetic amplification only"
+        ],
+        "explanation": "Syphilis screening uses nontreponemal tests (RPR, VDRL) that are sensitive but nonspecific, so a treponemal-specific test (FTA-ABS, TP-PA) confirms exposure; the paired strategy is standard. The confirmatory step increases specificity and excludes the biologic false positives of the screen.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A nontreponemal test with a low titer and no clinical signs is interpreted with which caution?",
+        "case_text": "A 35-year-old man arrives at the clinic with a reactive RPR but no clinical signs and a weakly reactive nontreponemal titer of 1:1.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "The result confirms active syphilis immediately",
+            "A low titer may reflect a biologic false positive, so a treponemal-specific confirmatory test is required",
+            "The titer is diagnostic of neurosyphilis",
+            "A negative treponemal test would still confirm the disease"
+        ],
+        "explanation": "Nontreponemal tests can yield biologic false positives (pregnancy, autoimmune disease, vaccination), so low-titer results without clinical pearls must be confirmed by a treponemal-specific test, which remains positive for life after infection. A negative confirmatory assay excludes syphilis despite the nontreponemal screen.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Spirochetes seen on a dark-field or stained blood film from an episodic relapsing fever are those of which organism?",
+        "case_text": "A 48-year-old man returns from Africa with a relapsing fever and a blood smear shows spirochetes mixed with red cells that cannot be cultured on routine media.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Treponema pallidum",
+            "Borrelia burgdorferi",
+            "Borrelia recurrentis",
+            "Leptospira interrogans"
+        ],
+        "explanation": "B. recurrentis is the louse-borne spirochete of relapsing fever with spirochetes visible in the blood during febrile peaks; dark-field or stained films show them. T. pallidum is in chancre exudate, B. burgdorferi is diagnosed serologically, and Leptospira is detected in early blood and later urine cultures.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A motile, oxidase positive, microaerophilic gram-negative rod from blood with a rat exposure is most consistent with which zoonosis?",
+        "case_text": "A 60-year-old man with a rat exposure develops sudden high fever, headache, and an influenza-like illness with renal failure; the blood culture grows a fastidious gram-negative rod that is motile and requires increased CO2.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Brucella species",
+            "Francisella tularensis",
+            "Bartonella henselae",
+            "Streptobacillus moniliformis or Leptospira compatible"
+        ],
+        "explanation": "Rat-bite fever from S. moniliformis grows as a pleomorphic rod under microaerophilic conditions from a rat bite, and Leptospira is an airborne spirochete; both produce an acute sepsis with renal findings. Brucella is a slow-growing non-motile coccobacillus, and Bartonella henselae grows on blood agar with a characteristic needle culture.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Small slow-growing gram-negative coccobacilli that appear as a weak urease positive, oxidase positive isolate from prolonged blood culture in a raw milk drinker are classic for which organism?",
+        "case_text": "A 40-year-old raw milk drinker develops a flu-like illness with hepatosplenomegaly; the blood culture is held for 6 weeks and eventually grows small gram-negative coccobacilli.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Bartonella henselae",
+            "Brucella species",
+            "Bordetella bronchiseptica",
+            "Francisella tularensis"
+        ],
+        "explanation": "Brucella is a slow-growing facultative intracellular gram-negative coccobacillus acquired from unpasteurized dairy that causes undulant fever; cultures are held 6 weeks and handled under safety precautions, and the urease reaction is rapid. Bartonella grows with a different morphology, and Tularemia is a zoonotic gram-negative rod of rapid cattle contacts rather than dairy.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A slow-growing gram-negative rod that produces a characteristic needle-shaped colony after several weeks on blood agar in a cat-scratch patient is which organism?",
+        "case_text": "A 25-year-old pet-store worker has regional lymphadenopathy and a cat scratch; the lymph node receives culture on chocolate agar and the isolate grows slowly with a typical needle colony.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Francisella tularensis",
+            "Brucella abortus",
+            "Bartonella henselae",
+            "Pasteurella multocida"
+        ],
+        "explanation": "B. henselae grows slowly on chocolate or blood agar over 2 to 4 weeks with a small needle-shaped colony and produces cat-scratch disease, bacillary angiomatosis, and peliosis in the immunocompromised; Warthin-Starry staining shows the clustered bacilli. The other species have other morphologies and reservoirs.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Warthin-Starry silver staining of the lymph node tissue from a kitten-exposed child supports which infection?",
+        "case_text": "A 4-year-old girl is scratched by a kitten and has a regional lymph node swelling; a prompt empirical Warthin-Starry stain of the node reveals clumps of bacilli.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Cat-scratch disease by Bartonella henselae",
+            "Tuberculous lymphadenitis",
+            "Toxocariasis",
+            "Cytomegalovirus"
+        ],
+        "explanation": "Warthin-Starry silver impregnation stains the clustered Bartonella bacilli of cat-scratch disease, a diagnosis with a typical kitten exposure and granulomatous lymphadenitis. Mycobacteria need acid-fast staining, and the viral and nematode causes have different histology.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A fastidious gram-negative rod that requires cysteine for growth and causes ulceroglandular disease after rabbit exposure is which organism?",
+        "case_text": "A 30-year-old hunter develops a skin ulcer at the site of a rabbit carcass contact; the lesion is ulceroglandular and the blood agar culture grows slowly, requiring cysteine.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Brucella species",
+            "Francisella tularensis",
+            "Bartonella henselae",
+            "Pasteurella multocida"
+        ],
+        "explanation": "F. tularensis requires cysteine-enriched media (for growth on glucose-cysteine blood agar) and the classic rabbit or tick exposure produces the ulceroglandular form of tularemia; it is a high-risk select agent that demands safety precautions. Brucella, Bartonella, and Pasteurella do not require cysteine or give the rabbit-tick history.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "An oxidase positive, indole positive fastidious gram-negative rod from an animal bite is most consistent with which organism?",
+        "case_text": "A 40-year-old dog-owner has an animal-bite infected wound and the culture grows a gram-negative rod that is oxidase positive, indole positive, and grows on blood agar as a fastidious rod whose colonies are coarsely speckled.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Eikenella corrodens",
+            "Pseudomonas aeruginosa",
+            "Pasteurella multocida",
+            "Escherichia coli"
+        ],
+        "explanation": "P. multocida is a zoonotic gram-negative rod of dog and cat bites that is oxidase and indole positive and grows on blood agar, causing rapidly progressive cellulitis; the animal bite exposure is the clue. E. corrodens is a HACEK organism that grows slowly with a pit, and E. coli is a lactose-fermenting coliform.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A gram-negative rod that grows slowly on blood agar, produces hydrogen sulfide, and pits the agar identifies which organism of the HACEK group?",
+        "case_text": "A 45-year-old with endocarditis grows a slow gram-negative rod on blood culture that requires factor X and V for hydrogen sulfide production and produces a pit in the agar.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Cardiobacterium hominis",
+            "Haemophilus aphrophilus",
+            "Aggregatibacter actinomycetemcomitans",
+            "Eikenella corrodens"
+        ],
+        "explanation": "E. corrodens is a HACEK organism that is oxidase positive, produces H2S on TSI, and corrodes (pits) the agar surface; it requires factor X (hemin) for growth and is part of the fastidious endocarditis group. C. hominis does not pit agar, and H. aphrophilus and A. actinomycetemcomitans have different morphologic markers.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Which laboratory feature is common to the HACEK group of fastidious oral flora that require extended blood culture incubation?",
+        "case_text": "A 35-year-old woman develops endocarditis with a slow growing gram-negative rod; the HACEK group is suspected.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "They are strong lactose fermenters",
+            "They grow slowly and require CO2 or blood-enriched media with extended culture time",
+            "They are anaerobic spore formers",
+            "They are viruses"
+        ],
+        "explanation": "The HACEK organisms (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) are fastidious gram-negative rods that demand CO2-enriched, moisture-added atmospheres and may need 5 to 7 days of incubation on blood culture; this extended incubation is the laboratory hallmark. They are not fermenters of lactose or anaerobes.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The optimal specimen processing for mycobacterial culture involves which decontamination and concentration step?",
+        "case_text": "A 30-year-old man has a positive PPD conversion during contact tracing; the laboratory is asked to collect a sputum for mycobacterial culture.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "N-acetyl-L-cysteine with sodium hydroxide decontamination followed by concentration",
+            "Direct plating without treatment",
+            "Formalin fixation",
+            "Gravity sedimentation only"
+        ],
+        "explanation": "The NALC-NaOH method digests mucus and decontaminates the specimen, then the concentrated pellet is cultured on selective media; this step improves recovery while reducing contamination. Formalin fixation renders the sample unusable, and direct plating introduces overgrowth.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The definitive identification of Mycobacterium tuberculosis complex versus other mycobacteria uses which approach?",
+        "case_text": "A 55-year-old man has a sputum that is smear positive; a Ziehl-Neelsen or Kinyoun stain shows acid-fast organisms.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Gram stain morphology",
+            "Bile solubility",
+            "Nucleic acid amplification and biochemical or MALDI identification",
+            "Capsular quellung"
+        ],
+        "explanation": "NAT (e.g., PCR for IS6110) and later speciation via biochemical or MALDI-TOF tests identify M. tuberculosis complex, while nontuberculous mycobacteria require species-level workup; culture on Lowenstein-Jensen with pigment and growth rate augments the identification. Gram stain and bile solubility are not mycobacterial species tests.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A photochromogen that turns yellow on light exposure after fish tank exposure is the classic presentation of which organism?",
+        "case_text": "A 25-year-old woman has a skin lesion with a fish tank exposure; the mycobacterial culture grows a slowly pigmenting, yellowish photochromogen at room temperature.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Mycobacterium tuberculosis",
+            "Mycobacterium avium",
+            "Mycobacterium kansasii",
+            "Mycobacterium marinum"
+        ],
+        "explanation": "M. marinum is a photochromogen (Runyon group I) isolated from aquariums and fish that causes granulomatous skin nodules; the colony turns yellow only after exposure to light. M. tuberculosis is not pigment-producing, M. avium is a scotochromogen or slow grower with different ecology, and M. kansasii is a photochromogen but with a different reservoir.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A scotochromogen that produces pigment without light exposure and is a common colonizer of water systems is which organism?",
+        "case_text": "A 40-year-old man on immunosuppression has a pulmonary nodule; the mycobacterial culture grows a slowly growing scotochromogen with yellow pigmentation even in the dark.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Mycobacterium tuberculosis",
+            "Mycobacterium gordonae",
+            "Mycobacterium fortuitum",
+            "Mycobacterium ulcerans"
+        ],
+        "explanation": "M. gordonae, the tap water bacillus, is the classic scotochromogen that produces pigment in the dark and is usually a laboratory contaminant or colonizer with minimal pathogenicity. M. tuberculosis is nonpigmenting, M. fortuitum is a rapid grower, and M. ulcerans causes Buruli ulcers.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Heat fixation of the smear before Gram staining accomplishes which purpose?",
+        "case_text": "A microbiology technologist prepares a Gram stain; the smear is heat fixed before staining.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "It lyses all bacteria",
+            "It thickens the smear",
+            "It adheres the specimen to the slide and preserves morphology",
+            "It decolorizes background"
+        ],
+        "explanation": "Heat fixation kills the organisms and affixes the smear to the slide so the washing step does not wash it off, preserving cellular morphology. Lysis, thickening, and decolorization are not the purpose of fixation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The Gram stain correct order of reagents is which sequence?",
+        "case_text": "A microbiology laboratory technician prepares the smear from a sputum sample and is asked to make a Gram stain.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Crystal violet, iodine mordant, alcohol decolorizer, safranin counterstain",
+            "Safranin, alcohol, iodine, crystal violet",
+            "Iodine, crystal violet, safranin, alcohol",
+            "Alcohol, safranin, iodine, crystal violet"
+        ],
+        "explanation": "The gram stain follows crystal violet (primary), iodine (mordant), alcohol or acetone (decolorizer), and safranin (counterstain); organisms that retain the crystal violet-iodine complex are gram positive. The other orders reverse or misplace the important steps.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Quantitative urine culture interpretation uses 10^5 colony forming units per milliliter as the traditional threshold, but that apparatus is being replaced by which reporting standard in many laboratories?",
+        "case_text": "A 30-year-old woman with a urinary tract infection has a urine culture yielding more than 100,000 CFU/mL of a single isolate.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Report the growth as uncertain",
+            "Report growth as more than 100,000 or more than 10,000 with the new midstream guidelines and the single versus mixed isolate count",
+            "Report all growth including confluent as negative",
+            "Refuse the culture"
+        ],
+        "explanation": "Modern UTI culture reporting uses the quantitative count of a single uropathogen, commonly calling 10^5 CFU/mL the classic threshold with lower counts for symptomatic patients; reporting the number clarifies the distinction from contamination or mixed flora. Confluent growth is reported as mixed rather than a single organism, and the count is quantified.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The major preanalytic hazard of a urine or wound sample left at room temperature before anaerobic culture is which effect?",
+        "case_text": "A specimen arrives in the microbiology lab delayed by 2 hours at room temperature for anaerobic culture.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Enhanced aerobic recovery only",
+            "Loss of bacterial morphology",
+            "Overgrowth of fast-growing aerobes and loss of fastidious anaerobes",
+            "Loss of the Gram stain"
+        ],
+        "explanation": "Delayed transport allows rapid aerobes to proliferate and consumes oxygen, while fastidious anaerobes decline, so prompt transport in anaerobic transport medium is required; the delay biases the culture result. Morphology and Gram stain quality also deteriorate but the quantitative mix is the key loss.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A gray, pitted colony on anaerobic blood agar in a mixed pelvic infection is characteristic of which Bacteroides species?",
+        "case_text": "A 30-year-old woman has pelvic inflammatory disease and grows a colony that is a gram-negative rod that appears gray and pitted on anaerobic blood agar.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Bacteroides fragilis",
+            "Prevotella melaninogenica",
+            "Fusobacterium necrophorum",
+            "Bacteroides ureolyticus"
+        ],
+        "explanation": "B. ureolyticus produces a gray colony that pits the agar and is urease positive; it is part of the mixed anaerobic flora in pelvic and soft tissue infections. B. fragilis grows non-pitting and is resistant to bile, Prevotella produces black pigment, and Fusobacterium has pointed slender rods.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Anaerobic gram-positive cocci such as Peptostreptococcus species in a mixed wound that cannot be classified by Gram stain are identified most reliably by which method?",
+        "case_text": "A 25-year-old partially treated patient has a blood culture growing an anaerobic gram-positive coccus; the isolate is resistant to metronidazole.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "India ink testing",
+            "MALDI-TOF or 16S sequencing to species level",
+            "Sugar fermentation only",
+            "Bile solubility"
+        ],
+        "explanation": "MALDI-TOF mass spectrometry and molecular methods such as 16S sequencing accurately speciate the slow-growing anaerobic gram-positive cocci that sugar fermentation and traditional reactions identify poorly. The genus-level Gram morphology is not sufficient for treatment decisions.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A HACEK organism that produces H2S, grown after extended incubation, and requires factor X is identified as which fastidious rod?",
+        "case_text": "A 40-year-old man whose blood culture bottle turns positive after 3 days with a small gram-negative rod that is H2S positive and requires chocolate but not blood, is evaluated for fitness.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "Kingella kingae",
+            "Cardiobacterium hominis",
+            "Aggregatibacter actinomycetemcomitans",
+            "Haemophilus parainfluenzae"
+        ],
+        "explanation": "A. actinomycetemcomitans is a small cocco-bacillary HACEK organism that is H2S positive, grows slowly on chocolate agar, and is associated with periodontitis and endocarditis; it requires extended incubation. E. corrodens pits agar, Cardio and Kingella differ in oxidase and carbohydrate use, and H. parainfluenzae requires V factor alone.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The rapid application of which test supplements the Gram stain and cell count for meningococcal meningitis?",
+        "case_text": "A laboratory receives a CSF specimen from a patient with suspected bacterial meningitis; the cell count shows a markedly elevated WBC with a Gram stain showing gram-negative diplococci.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Latex agglutination for bacterial capsular antigens on CSF",
+            "India ink for yeast",
+            "Urease breath test",
+            "Gonococcal nucleic acid screening of blood"
+        ],
+        "explanation": "Bacterial antigen latex agglutination of CSF provides a rapid answer for the common triad (N. meningitidis, S. pneumoniae, H. influenzae b) alongside the Gram stain and culture. India ink addresses cryptococcus, and the other tests do not target the meningococcal capsule.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Biphasic illness with a petechial rash is characteristic of meningococcemia, and laboratory detection of the organism on CSF Gram stain has which priority?",
+        "case_text": "A 35-year-old with rapidly fatal meningococcemia has clinical sepsis and the laboratory reports abundant gram-negative diplococci on the CSF Gram stain.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Culture is delayed despite Gram stain",
+            "Gram stain with antigen and PCR supplements culture because the organism is fastidious",
+            "Treatment cannot be started until culture is positive",
+            "Gram stain requires 7 days"
+        ],
+        "explanation": "N. meningitidis is fastidious and may die rapidly, especially if antibiotics are started, so the CSF Gram stain, latex antigen, and PCR supplement and precede culture; therapy must begin empirically. Culture remains the confirmation but cannot be waited for.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The interpretation of mixed flora urine culture to predict contamination versus infection requires which piece of clinical-laboratory information?",
+        "case_text": "A urine culture grows 20,000 CFU/mL of a mixed gram-negative and gram-positive flora with chronic symptoms of dysuria.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The count alone is diagnostic",
+            "The species alone decides",
+            "In women with symptoms, 10^2 to 10^5 CFU/mL single uropathogen may be significant; mixed flora suggests contamination",
+            "Culture never distinguishes"
+        ],
+        "explanation": "Symptomatic women can have significant urinary tract infection at lower colony counts (10^2-10^5 CFU/mL), whereas an admixture of multiple species usually signals contamination; combining the count, the number of species, and the clinical picture guides therapy. A single count alone is not decisive.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The classic uropathogenic coliform that is lactose positive, indole positive, and motile by the flagella test is which organism?",
+        "case_text": "A 20-year-old female has dysuria and the urine culture grows a lactose-fermenting, indole positive, motile gram-negative rod that is oxidase negative and produces red colonies on MacConkey.",
+        "difficulty": "easy",
+        "correct": "D",
+        "options": [
+            "Klebsiella pneumoniae",
+            "Proteus mirabilis",
+            "Enterobacter cloacae",
+            "Escherichia coli"
+        ],
+        "explanation": "E. coli is the leading uropathogen: lactose positive, indole positive, motile, oxidase negative, and produces pink colonies on MacConkey. Klebsiella is non-motile and indole variable, Proteus swarms and is urease positive, and Enterobacter is motile but indole negative and citrate positive.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A lactose negative, motile gram-negative rod with a positive urease that grows in catheter associated bacteriuria is most likely which organism?",
+        "case_text": "A 70-year-old man with a urinary catheter and fever grows a gram-negative rod from urine that is lactose negative, motile, and sonicated black colonies on some selective agar.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Escherichia coli",
+            "Proteus mirabilis",
+            "Klebsiella pneumoniae",
+            "Enterobacter cloacae"
+        ],
+        "explanation": "P. mirabilis does not ferment lactose, is vigorously motile with swarming, is strongly urease positive, and is a leading catheter-associated uropathogen causing stone formation. E. coli ferments lactose, Klebsiella is non-motile and lactose positive, and Enterobacter is citrate positive and laxative-associated.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "KOH preparation that digests cellular debris and leaves the yeast cell wall, paired with a germ tube positive culture, identifies which cause of vaginal candidiasis?",
+        "case_text": "A 45-year-old woman with a compatible exposure has a vaginal specimen; KOH preparation shows many yeast and culture grows a germ tube positive yeast.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Candida albicans",
+            "Candida krusei",
+            "Candida glabrata",
+            "Candida tropicalis"
+        ],
+        "explanation": "The KOH prep dissolves epithelial cells to reveal the yeast and hyphae, and a germ tube positive culture confirms C. albicans as the agent of vaginal thrush. C. krusei is germ tube negative and intrinsically azole resistant, C. glabrata is a small, germ tube negative yeast, and C. tropicalis is germ tube negative with different colonizing patterns.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The chromogenic agar medium identifies Candida species by colony color, and the collective results are used to guide therapy for which reason?",
+        "case_text": "A 70-year-old ICU patient with candidemia has a blood culture yeast identified as Candida from the chromagar showing a specific colony color pattern.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "It replaces susceptibility testing",
+            "It is an early identification that triages empiric azole therapy while susceptibility is set",
+            "It counts colonies only",
+            "It detects viruses"
+        ],
+        "explanation": "Chromogenic media provide species-level presumptive identification (color patterns for C. albicans, C. tropicalis, C. krusei) that guides initial azole choice, while true susceptibility testing still confirms the minimum inhibitory concentration. Species identification triages therapy.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The ability of MALDI-TOF mass spectrometry to identify organisms depends primarily on which property of the microorganism?",
+        "case_text": "A 60-year-old immunocompromised patient has a bloodstream yeast that is identified by a rapid MALDI-TOF instrument.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Its capsular lipids",
+            "Its Gram reaction",
+            "Its carbohydrate utilization",
+            "Its protein profile forming a characteristic mass spectral fingerprint"
+        ],
+        "explanation": "MALDI-TOF ionizes ribosomal and cellular proteins from a colony and matches the protein mass spectrum against a reference library, producing species-level identification in minutes independent of biochemical usage. Carbohydrate use, capsular and Gram properties do not drive the spectral fingerprint.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The encapsulated gram-negative diplococcus that causes acute otitis media and is identified by sugar fermentation and oxidase reactions is which organism?",
+        "case_text": "A 5-year-old child has acute otitis media and the Gram stain of the middle ear aspirate shows gram-negative intracellular diplococci with a capsule that the laboratory notes are serum resistant.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Neisseria gonorrhoeae",
+            "Haemophilus influenzae",
+            "Moraxella catarrhalis",
+            "Streptococcus pneumoniae"
+        ],
+        "explanation": "H. influenzae is the gram-negative rod that appears as a small coccobacillus and is the second most common cause of otitis media, confirmed by its growth on chocolate with X-V requirement. Pneumococcus is the gram-positive lancet diplococcus, and gonorrhea is not an otitis pathogen.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "An optochin sensitive, bile soluble isolate from the middle ear is best reported as which organism and with which typing method?",
+        "case_text": "A 40-year-old man has a middle ear swab and the culture grows gram-positive diplococci that are optochin sensitive and bile soluble; the same lab rules apply to pneumococcal typing.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Streptococcus pneumoniae identified and typed by quellung reaction",
+            "Streptococcus pyogenes",
+            "Group B streptococcus",
+            "Haemophilus influenzae"
+        ],
+        "explanation": "S. pneumoniae is optochin sensitive and bile soluble, and the capsular serotype is determined by the quellung (capsular swelling) reaction with specific antisera; typing guides vaccination and epidemiology. The other organisms fail optochin sensitivity and bile solubility testing.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The purpose of the selective MacConkey medium is to select which group and to distinguish which fermenter?",
+        "case_text": "A 55-year-old man has a respiratory specimen processed on a Lab Cormack-MacConkey plate; the mnemonic is asked by residents.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Gram-positive cocci and oxidative rods",
+            "Fungi and anaerobes",
+            "Gram-negative bacilli while distinguishing lactose fermenters from non-fermenters",
+            "Viruses and parasites"
+        ],
+        "explanation": "MacConkey agar contains bile salts and crystal violet to inhibit gram-positive organisms while allowing gram-negative rods, and the lactose indicator divides fermenters (pink) from non-fermenters (colorless). This is the workhorse of the clinical enteric isolation.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Enrichment of the vaginal-rectal swab in LIM broth before plating improves detection of group B streptococcus by which mechanism?",
+        "case_text": "A laboratory is asked to improve recovery of group B streptococcus from a vagino-rectal swab in pregnancy screening.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "It decolorizes the specimen",
+            "It enriches low numbers of the organism while suppressing competing flora",
+            "It kills all gram-positive cocci",
+            "It lyses the RBCs"
+        ],
+        "explanation": "LIM broth is a selective enrichment that allows small numbers of group B streptococcus to multiply while antibiotics suppress competing flora, raising the culture sensitivity for maternal screening. The enrichment does not kill group B, decolorize, or lyse cells by itself.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "An equivocal first-tier Lyme ELISA should be reflexed to which confirmatory test per the two-step algorithm?",
+        "case_text": "A 30-year-old with a tick bite and no rash but joint pain has a two-step serology; the first test is ELISA and returns equivocal.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "A second ELISA",
+            "A urine antigen",
+            "Western blot for IgM and IgG bands",
+            "Culture on Campy agar"
+        ],
+        "explanation": "The two-step algorithm requires that a positive OR equivocal first-tier test be followed by a Western blot (IgM and IgG), and interpretation requires specific band criteria; a negative first-tier test stops the algorithm. Repeating the ELISA does not confirm the equivocal result.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Measles-specific IgM serology is used for diagnosis, and the laboratory interpretation compares it with which dynamic?",
+        "case_text": "A 6-year-old girl has a fever and a diffuse rash; the rapid diagnostic test is positive for measles IgM in the appropriate clinical and exposure context.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "IgG rises before IgM",
+            "IgM appears within days of rash and confirms acute infection, while paired IgG documents convalescence",
+            "IgM persists for years",
+            "A single negative IgM excludes measles"
+        ],
+        "explanation": "Measles IgM becomes positive within about 3 days of rash and wanes over weeks, making it the acute diagnostic marker; a very early single negative specimen does not exclude measles and should be followed by paired IgG. IgG appears later during convalescence.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Interferon gamma release assays detect tuberculosis infection by measuring which cellular response?",
+        "case_text": "A 50-year-old woman has a positive tuberculosis IFN-gamma release assay on an IGRA platform; the laboratory evaluates the quantiferon result.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "T-cell release of interferon gamma after stimulation with specific MTB antigens",
+            "Antibody titer",
+            "Neutrophil oxidative burst",
+            "Complement consumption"
+        ],
+        "explanation": "IGRAs stimulate T cells with ESAT-6 and CFP-10 antigens and quantitate the released interferon-gamma, indicating a cellular immune memory response to M. tuberculosis; BCG does not confer this reactivity for these antigens. Antibody, neutrophil, and complement assays are not part of IGRA methodology.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The laboratory distinguishes Nocardia from Actinomyces by which critical differential feature?",
+        "case_text": "A 60-year-old man with a chronic leg ulcer has a culture that grows thin, filamentous, branching gram-positive rods that are partially acid-fast, growing as chalky colonies.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Capsule presence",
+            "Aerobic growth with partial acid fastness identifies Nocardia; anaerobic, non-acid-fast growth identifies Actinomyces",
+            "Lack of branching",
+            "Catalase negativity"
+        ],
+        "explanation": "Nocardia grows aerobically, is partially acid-fast with 1% sulfuric acid decolorization, and produces chalky colonies, whereas Actinomyces is anaerobic and non-acid-fast with sulfur granules; the oxygen requirement and acid-fastness are the differentiating tests.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The identifying structure of an Aspergillus species cultured from sinus material includes which morphologic feature?",
+        "case_text": "A 30-year-old man with a chronic sinus infection has a culture that grows a fungus with septate hyphae and pear-shaped conidia in chains on the tips of phialides.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "Broad ribbon hyphae",
+            "Alcove-like conidia",
+            "Septate hyphae with a conidial head of phialides producing uniseriate chains",
+            "Sporangia with rhizoids"
+        ],
+        "explanation": "Aspergillus shows septate hyphae in tissue and, in culture, a conidial head formed by phialides that produce chains of conidia, either uniseriate or biseriate; the direct hyphal diameter and angle distinguish it from the broad aseptate Mucorales. Sporangia and rhizoids are features of Rhizopus, and nonseptate ribbon hyphae are mucoraceous.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A mold with bulbous vesicles and a large metula that produces brown flask-shaped phialides whose colonies are olive to black is most consistent with which species?",
+        "case_text": "A 5-year-old child has a deep skin infection and the culture grows a mold with a black-to-olive coloration, borne on a hyaline conidiophore, with a bulbous vesicle.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Aspergillus fumigatus",
+            "Penicillium species",
+            "Rhizopus arrhizus",
+            "Aspergillus niger"
+        ],
+        "explanation": "A. niger is the black Aspergillus whose conidiophores have a distinctive large vesicle, and colonies are olive to black; it is a common agent of otomycosis and sinus and pulmonary aspergillosis. Penicillium has a brush (penicillus) of phialides without vesicles, Rhizopus has rhizoids and sporangia, and A. fumigatus is gray-green and flask-shaped with a smaller vesicle.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The laboratory diagnosis of primary syphilis at the chancre stage most often relies on which method?",
+        "case_text": "A 25-year-old male with a genital sore has a primary chancre serology evaluation; RPR is nonreactive but the spirochete is seen on dark-field microscopy.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Serology only",
+            "Dark-field microscopy of the chancre exudate",
+            "Urine culture",
+            "Heterophile antibody"
+        ],
+        "explanation": "In primary syphilis, nontreponemal serology may still be nonreactive for 1 to 3 weeks, so dark-field microscopy of the exudate, which shows the motile spirochetes, is the definitive early diagnostic method. Serology becomes the mainstay after the primary stage.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Stellate necrotizing granulomas in a lymph node biopsy with the cat exposure are characteristic of which disease?",
+        "case_text": "A 30-year-old woman has a swollen inguinal node with a probable cat scratch; the node histology shows stellate abscesses with granulomas.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The tularemia infection",
+            "The brucellosis infection",
+            "Cat-scratch disease",
+            "The tuberculosis infection"
+        ],
+        "explanation": "Cat-scratch disease shows the characteristic stellate necrotizing granulomas of the node; the tissue Gram, Warthin-Starry, or special stains reveal the bacilli, and the exposure history and serology confirm Bartonella henselae. The tularemia infection, brucellosis, and TB are distinguished by their exposure and culture results.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A heavily encapsulated, urease positive, oxidase positive gram-negative rod that grows a mucoid colony and ferments maltose is consistent with which organism?",
+        "case_text": "A patient with a chronic cough has a bronchial wash that grows a gram-negative cocco-bacillus with a capsule, producing mucoid colonies; the organism is urease positive and grows on Bordet-Gengou.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Klebsiella pneumoniae",
+            "Escherichia coli",
+            "Moraxella catarrhalis",
+            "Bordetella pertussis"
+        ],
+        "explanation": "B. pertussis is an encapsulated, oxidase positive cocco-bacillus that grows as a small mucoid droplet on Bordet-Gengou agar and is urease negative in classic isolates; the urease positivity is more typical of B. bronchiseptica, but the Bordet-Gengou growth and maltose fermentation fit the genus. The other species fail the selective and biochemical requirement.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Nucleic acid amplification for Borderella pertussis on a nasopharyngeal specimen offers which advantage over culture?",
+        "case_text": "A 4-week-old infant has whoop-like coughing and the parent is immunized; the laboratory validates the nasopharyngeal specimen for pertussis PCR.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Greater sensitivity and faster detection, especially after antibiotic exposure",
+            "Requires prolonged incubation",
+            "Detects only organisms grown on agar",
+            "Lower specificity in treated patients"
+        ],
+        "explanation": "Pertussis PCR detects the single-copy insertion element from the nasopharyngeal swab with greater sensitivity than culture and remains positive longer, especially when prior antibiotics have rendered culture unreliable. Culture requires fastidious handling, and PCR specificity relies on the target sequences.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The quellung reaction types pneumococci by detecting which phenomenon?",
+        "case_text": "A 40-year-old with recurrent pneumonia has a sputum that grows gram-positive diplococci with a capsule; the laboratory orders a quellung reaction for typing.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "Hemolysis of sheep red cells",
+            "Capsular swelling followed by antiserum agglutination",
+            "Gram variability",
+            "Oxidase reactivity"
+        ],
+        "explanation": "Quellung is the capsular swelling seen when type-specific antipneumococcal antiserum combines with the capsular polysaccharide, producing a clear halo around the organism under phase contrast; it serotypes the pneumococcus. Hemolysis, Gram variation, and oxidase do not identify the serotype.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "Listeria monocytogenes meningitis may be seen poorly on the CSF Gram stain because the organism does what with the standard procedure?",
+        "case_text": "A student asks why the CSF Gram stain cannot uniformly detect Listeria; the laboratory responds with which explanation?",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "It is routinely encapsulated",
+            "It decolorizes rapidly",
+            "It can be pleomorphic and weakly gram-positive, and is frequently intracellular or present in low numbers",
+            "It stains gram-negative"
+        ],
+        "explanation": "Listeria is a small pleomorphic gram-positive rod that may decolorize easily, appears intracellular, and may be present in very low numbers in CSF, so the Gram stain is unreliable and culture and PCR are required; blood culture is often positive in the same patient. Capsulation and uniform gram-negative staining do not describe the organism.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "The cryptococcal antigen lateral flow assay detects which component?",
+        "case_text": "A 50-year-old with a fever and a severe headache has a CSF sample; the India ink test shows a wide capsule and the cryptococcal antigen test is ordered.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "The cell wall carbohydrate chitin",
+            "The polysaccharide glucuronoxylomannan capsule antigen",
+            "The cytoplasmic mannoprotein",
+            "The ribosomal subunit"
+        ],
+        "explanation": "The cryptococcal antigen test detects the capsular polysaccharide glucuronoxylomannan, which is released into CSF and serum during infection; the lateral flow immunoassay is rapid and highly sensitive. Chitin, mannoproteins, and ribosomal markers are not the captured target.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A slow lactose fermenter that is urease negative but indole positive and produces a distinctive problem in catheter patients is which organism pair?",
+        "case_text": "A 25-year-old woman has recurrent urinary infections; the urine culture grows a gram-negative rod that is motile, urease positive, and ferments lactose slowly; biochemicals confirm a second coliform.",
+        "difficulty": "advanced",
+        "correct": "D",
+        "options": [
+            "Proteus and Morganella",
+            "Escherichia and Klebsiella",
+            "Enterobacter and Hafnia",
+            "Providencia rettgeri and Morganella morganii"
+        ],
+        "explanation": "Providencia and Morganella are urease positive (in the most common species) non-lactose or slow-lactose fermenters implicated in catheter-associated infections and stones; their urease (not indole) is the key trait. E. coli and Klebsiella ferment lactose strongly, and Enterobacter is not strongly urease positive.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Microbiology",
+        "type": "case",
+        "stem": "A grape-like odor-producing, oxidase positive, non-lactose fermenting gram-negative rod from burns is most characteristic of which organism?",
+        "case_text": "A 45-year-old burns patient develops sepsis; the blood culture grows gram-negative rods that are non-lactose fermenting, oxidase positive, and grow on MacConkey producing a sweetish grape odor.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Klebsiella pneumoniae",
+            "Pseudomonas aeruginosa",
+            "Acinetobacter species",
+            "Proteus mirabilis"
+        ],
+        "explanation": "Pseudomonas produces the characteristic grape-like aroma of aminoacetophenone and 2-aminoacetophenone, is oxidase positive, and colonizes burns; the blue-green pigment with a pyocyanin test confirms it. Klebsiella is oxidase negative, Acinetobacter is oxidase negative, and Proteus smells decayed and swarms.",
+        "source_type": "original",
+        "status": "active"
+    }
+]

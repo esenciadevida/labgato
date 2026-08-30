@@ -1,0 +1,478 @@
+[
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The document that identifies the hazards, the protective measures, and the first aid for a laboratory chemical is which one?",
+        "case_text": "A hazardous chemical is delivered to the laboratory and the staff prepare the handling area.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "The clinical report",
+            "The chain of custody",
+            "The safety data sheet (SDS) supplied with the chemical",
+            "The proficiency summary"
+        ],
+        "explanation": "The safety data sheet (formerly the material safety data sheet) describes the physical, health, and environmental hazards, the safe handling, the storage, and the emergency and first aid measures for a chemical; the employer keeps the current SDS accessible to the staff and the hazard communication program trains the workers. The other documents carry operational, not chemical safety, information.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The correct action when a received specimen and its labeling do not match the request is to do which of the following?",
+        "case_text": "A patient specimen labeled in a way that disagrees with the requisition is received; the technologist decides on the action.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "Test it and correct the labels later",
+            "Reject the specimen and request a redraw with the labeled tube matching the requisition",
+            "Test and flag it",
+            "Ignore the mismatch"
+        ],
+        "explanation": "Specimen mislabeling and the request discrepancies are the major preanalytic errors, and the specimen must be rejected (or recollected) because results tied to the wrong patient endanger the care; the incident is logged and the ordering area is notified. Testing a mismatched sample corrupts the result linkage.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "When a quality control value exceeds the acceptable control limits, the laboratory practice is to do which of the following?",
+        "case_text": "A laboratory run has a control value that falls outside the control ranges; the technologist follows the quality control policy.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "Stop the test, troubleshoot the cause, and do not report patient results until the control is within limits",
+            "Report the results and correct the control later",
+            "Average the control out",
+            "Ignore the excursion"
+        ],
+        "explanation": "Quality control failure means the run is not under statistical control, so the patient results are not reported until the problem is found and corrected and the control repeats acceptably; the Westgard rules and the review of the run identify systematic and random errors. Releasing results against the failed control risks the unsuspected error.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "A gradual drift of the control values in one direction over several days is best detected by which quality control tool?",
+        "case_text": "A technologist plots the daily glucose control values and notices a slow rise over several days before the values exceed the limit.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "A single value check",
+            "The proficiency report",
+            "The calibration curve only",
+            "The Levey-Jennings chart with the multirule (Westgard) interpretation that flags the trend and the shifts"
+        ],
+        "explanation": "The Levey-Jennings plot with the control limits and the Westgard rules detects the trends (6-8 consecutive rising points) and the shifts (sudden mean change) that a single out-of-range check misses; the trending pattern points to the drift in the reagent or the calibration. The proficiency testing evaluates the accuracy against the peer groups rather than the run-to-run drift.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "In a hemolyzed specimen the serum potassium reads in which direction, and how should an unexpectedly low potassium in a hemolyzed sample be handled?",
+        "case_text": "A laboratory result for a potassium is extremely low in a patient with no clinical reason; the sample shows hemolysis.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Potassium loss by freezing",
+            "Hemolysis releases intracellular potassium so the reported value rises, and the low value in a hemolyzed tube prompts a redraw or an alternative sample",
+            "The additive binds potassium",
+            "The separator gel adsorbs potassium"
+        ],
+        "explanation": "Hemolysis releases the red cell potassium into the serum and inflates the result rather than lowering it, so a very low potassium in a hemolyzed sample should be re-considered for the hemolysis index and the redraw; the direction of the interference (high for potassium, AST, LDH) must be known to interpret the result correctly.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The key element of the laboratory quality management system that a surveyor verifies during an inspection includes which component?",
+        "case_text": "A hospital laboratory is inspected under the laboratory accreditation program; the surveyor inspects the records and the quality system.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The building color",
+            "The vendor list",
+            "The documented policies for the personnel competency, the quality control, the procedure manuals, and the document control with the proficiency testing records",
+            "The furniture"
+        ],
+        "explanation": "All accreditation programs (CAP, TJC, ISO 15189) evaluate the quality management: the written procedures, the competency assessment, the QC records, the PT performance, the document control, the equipment maintenance and the corrective action; the survey evidence must demonstrate the practice rather than the presence of the documents alone. The physical facilities matter only as part of the broader system.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "A CLIA-waived point-of-care test is characterized by which feature of the regulatory framework?",
+        "case_text": "A laboratory under the CLIA regulations performs a point-of-care glucose testing by the nursing staff; the program is reviewed.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "It is approved as simple and low risk, so the laboratory meets the waived requirements with the manufacturer instructions and the basic quality practices",
+            "It requires a full moderate complexity validation",
+            "It needs a pathologist in the room",
+            "It cannot be performed at the bedside"
+        ],
+        "explanation": "CLIA-waived tests are simple, low error-risk devices (glucose meters, some rapid tests) subject to the manufacturer-reviewed instructions, the user training, and the site quality practices; they still require the certificate and the policies. Moderate and high complexity tests carry the validation, the proficiency and the personnel requirements that the waived category does not.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The recommended order of draw for the evacuated tube collection begins with which tube type?",
+        "case_text": "A blood collection tube set includes the various colored tops; the phlebotomist sets the order of draw.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "The EDTA tube",
+            "The blood culture (sterile) tubes, then the citrate, the serum, the heparin, and the EDTA tubes",
+            "The heparin tube",
+            "The fluoride tube"
+        ],
+        "explanation": "The order of draw prevents the additive contamination: the blood culture (and the coagulation) are collected first so the bacteriostatic and the potassium-transferring additives do not contaminate the subsequent tubes; the sequence the CLSI guidelines describe runs the sterile, the light blue, the red, the SST, the green, the lavender, the gray. Any deviation carries the additive into the next tube and alters the results.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The anticoagulant in the light-blue top tube for the coagulation testing, and the ratio of the blood to the additive, is which?",
+        "case_text": "A specimen for a prothrombin time is collected into the wrong tube type; the result is unusable.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "EDTA at 1:9 with the fluoride",
+            "Heparin at 1:4",
+            "Sodium citrate (3.2%) at a 9:1 blood-to-citrate ratio",
+            "Oxalate at 1:10"
+        ],
+        "explanation": "The sodium citrate at 3.2% with a 9:1 blood-to-citrate ratio chelates the calcium for the coagulation assays, and the tube must be filled accurately because the excess citrate with an underfilled tube prolongs the clotting times; the EDTA and the heparin tubes have different actions and are unsuitable for the PT and APTT. The fill volume is part of the result reliability.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "When an automated platelet count is unexpectedly low and the technologist checks the smear, the classic finding of platelet clumping is best evaluated by which approach?",
+        "case_text": "A patient with a low platelet count receives a report from the automated analyzer that differs from the expected clinical picture.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "Reporting the clumped count",
+            "Repeating the sample at the same temperature",
+            "Deleting the result",
+            "Reviewing the smear for the clumps and the large platelets, then recollecting into a different anticoagulant and counting the blood by another method where indicated"
+        ],
+        "explanation": "Platelet clumping (often from the EDTA-dependent agglutinins) and the giant platelets are underestimated by the impedance counters, so the smear review with the manual or the optical count and a citrate (or a fingerstick) sample corrects the pseudothrombocytopenia; the impedance method counts the clumped as too few. The automated value alone would under-report the true count.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The critical value reporting policy for a laboratory is followed in which way?",
+        "case_text": "A stat serum potassium arrives at 2.0 mmol/L; the clinical team is contacted.",
+        "difficulty": "easy",
+        "correct": "B",
+        "options": [
+            "The result is filed without notification",
+            "The result is immediately reported to the caregiver according to the established critical (panic) value list, documenting the receipt and the responder",
+            "The result waits for the routine report",
+            "The result is repeated"
+        ],
+        "explanation": "Critical values (severe potassium, glucose, troponin, PT/INR, cultures, etc.) require immediate notification of the responsible caregiver and the documented communication (result, time, and the responder identity) so the risk is mitigated; the routine path is insufficient and the notification timeliness is a quality indicator. The repeat analysis is separate from the notification duty.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The delta check compares the current value with the previous result within a defined interval to detect which type of error?",
+        "case_text": "A test result is received from the instrument that is flagged for the automated delta check; the technologist reviews the previous value.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "A calibration error only",
+            "A sampling error only",
+            "A mislabeled specimen or a transcription error (as well as a genuine clinical change) when the difference exceeds the threshold",
+            "A reagent expiry"
+        ],
+        "explanation": "The delta check compares the current and the recent historical result for the same patient and flags a change beyond the acceptable limit, prompting the check for the specimen mix-ups and the critical change that the physician must know; it catches the preanalytic and the transcription errors and the acute deterioration. Calibration and reagent issues are detected by the QC rather than the delta.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The linearity study of a quantitative method demonstrates which property of the measurement?",
+        "case_text": "A laboratory measures the same glucose sample across the linear range of the analyzer and evaluates the results on the calibration curve.",
+        "difficulty": "easy",
+        "correct": "A",
+        "options": [
+            "That the response vs. concentration is a stable straight line across the stated measuring range",
+            "The precision at a single point",
+            "The slope of the standard curve",
+            "The number of tests per run"
+        ],
+        "explanation": "Linearity establishes the measuring range over which the result is proportional to the true concentration and, combined with the calibration, gives the reportable range; outside the linear limits the value must be diluted or flagged. Precision, specificity, and the calibration each test a different property of the assay.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "When the prevalence of a disease falls, the positive predictive value of a screening test changes in which direction, and why?",
+        "case_text": "A test is evaluated for its clinical usefulness in a low-prevalence population; the predictive values are reviewed.",
+        "difficulty": "intermediate",
+        "correct": "D",
+        "options": [
+            "The PPV rises",
+            "The PPV is fixed",
+            "The specificity falls",
+            "The positive predictive value falls, because a smaller proportion of the positive results are from the truly affected individuals"
+        ],
+        "explanation": "The positive predictive value depends on the prevalence: as the disease becomes rare, more of the positive results are false positives and the PPV falls, while the negative predictive value rises; the sensitivity and the specificity remain the test properties and do not change with the prevalence. The physician applies the prevalence-adjusted numbers to the individual result.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "A test with a 99% sensitivity and specificity used in a low-prevalence population produces a positive result whose probability of disease is approximately which value?",
+        "case_text": "A new screening assay has a sensitivity of 99% and a specificity of 99% in a condition with a 1% prevalence; the clinician interprets a positive result.",
+        "difficulty": "advanced",
+        "correct": "C",
+        "options": [
+            "99%",
+            "1",
+            "About 50% (the false positives outnumber the true positives when the prevalence is low)",
+            "100%"
+        ],
+        "explanation": "With a 1% prevalence, the 99% specificity creates a false positive rate of 1 in 100 negatives, and the true positives (about 1% of the tested) are roughly matched by the false positives (about 1% of the negatives), so the positive predictive value is near 50%; the intuition that a 99% specific test means a near-certain result fails in the low-prevalence setting. The prevalence impacts the PPV calculation directly.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "A reference interval for a laboratory analyte is established according to which approach?",
+        "case_text": "A laboratory implements the expected range of a chemistry analyte and reviews the reference versus the decision limits.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "The manufacturer single value",
+            "A population-based interval produced from the sampling of a healthy reference group with the specified statistics (often the 2.5th to 97.5th percentile)",
+            "A single clinician preference",
+            "The lowest observed"
+        ],
+        "explanation": "The reference interval is defined from a healthy reference population using the central 95% (2.5th to 97.5th percentile) of the distribution after the outlier handling; the laboratory validates or derives the interval for its local population and the method. The decision limits (e.g., for the glycemic or the lipid therapy) are a separate clinical concept from the population interval.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The total turnaround time for a laboratory test includes which segments of the process?",
+        "case_text": "A stat order is placed for a high-sensitivity troponin and the laboratory runs the sample on the high-throughput analyzer; the TAT is reviewed.",
+        "difficulty": "easy",
+        "correct": "C",
+        "options": [
+            "Only the run time",
+            "Only the collection time",
+            "The preanalytic (order to sample), the analytic (run), and the postanalytic (result to the caregiver) time",
+            "The verification time"
+        ],
+        "explanation": "The total turnaround time is the sum of the preanalytic (requisition and the transport), the analytic (instrument run), and the postanalytic (result transmission) segments, and the laboratory monitors the TAT to meet the clinical deadlines; a reduction improves the emergency care. The measured TAT captures the whole workflow, not just the instrument.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "Elevated troponin in the absence of an acute coronary syndrome is recognized in which situations?",
+        "case_text": "A technologist is asked about the causes that produce a falsely elevated serum cardiac troponin in a patient without myocardial infarction; the lab investigates.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Renal failure, sepsis, tachyarrhythmia, pulmonary embolism, and heart failure (the nonischemic causes of the myocardial injury)",
+            "A calibration error only",
+            "A normal result",
+            "Only the sampling in the patient fasting"
+        ],
+        "explanation": "Troponin is highly tissue-specific but not disease-specific: the renal failure, the sepsis, myocardial strain, heart failure, arrhythmia, pulmonary embolism, and myocarditis produce the elevated values that the clinician interprets with the presentation and the kinetics; the current term is the myocardial injury rather than the MI. The laboratory interpretation must incorporate these nonischemic elevations.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "Proficiency testing (external quality assessment) evaluates the accuracy of a participant by which mechanism?",
+        "case_text": "A laboratory sends a set of the glucose samples to a peer group and receives a result within the consensus limits.",
+        "difficulty": "easy",
+        "correct": "D",
+        "options": [
+            "An internal control run",
+            "A calibration curve",
+            "An instrument self-check",
+            "Comparing the unknown samples to the peer group consensus (and the assigned values) reported by the PT agency"
+        ],
+        "explanation": "Proficiency testing distributes the blind unknowns to the laboratories, which analyze and report the values that the provider grades against the peer consensus (the EQA assignment); the acceptable performance is required by CLIA and the accreditation bodies and detects the systematic bias across sites. The internal QC monitors the stability but not the inter-laboratory accuracy.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "A chain-of-custody specimen is distinguished from a routine specimen by which requirement?",
+        "case_text": "A specimen is received for a forensic alcohol determination; the chain of custody requirements must be followed.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "A faster analysis",
+            "A smaller volume",
+            "A documented, unbroken sequence of the possession, transfer, and identity of the sample from collection to the result",
+            "A warmer storage"
+        ],
+        "explanation": "Chain of custody documents every handoff and the identity of the sample (with the seal, the signatures, and the time) so the result is defensible in the legal or the regulatory setting; the forensic and the drug testing samples use the typed sample, the witnessed collection, and the sealed container. The routine patient sample lacks the legal chain.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The preferred method of correcting a systematic instrument problem identified by the quality control is which sequence?",
+        "case_text": "A laboratory investigates an out-of-range control that persists after the recalibration; the root cause analysis is performed.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Repeating the samples and doing nothing",
+            "Corrective action: identify the root cause (reagent lot, calibration, the instrument), correct it, verify the control, and document the event",
+            "Deleting the control",
+            "Restarting and ignoring"
+        ],
+        "explanation": "The corrective action pathway investigates the cause of the failed control (reagent and buffer lot, calibration, the photometry), fixes the specific problem, verifies the control and if needed the patient impact, and records the corrective action; the investigation is documented for the quality record. Blind repeats and deletions do not fix or capture the bias.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The decision to reject a specimen for testing is determined by which factors?",
+        "case_text": "A laboratory policy for the specimen rejection includes the definition of a clotted and hemolyzed sample across the assays.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "The sample type, the hemolysis and the icterus and the lipemia index, the clot, the volume, and the transport conditions, with the action documented",
+            "Only the patient age",
+            "Only the tube color",
+            "Only the test name"
+        ],
+        "explanation": "Each assay defines the acceptable specimen (the anticoagulant, the volume, the time to transport, the allowable hemolysis) so the rejection decision is test-specific and documented; the hemolysis, icterus, and lipemia indices quantify the interference. A blanket rejection is not appropriate because some tests tolerate the conditions that others do not.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The competency assessment of a testing personnel member is documented through which combination of activities?",
+        "case_text": "An employee performs an annual competency assessment for the microscopy; the checklist and the observation are used.",
+        "difficulty": "easy",
+        "correct": "D",
+        "options": [
+            "A verbal review only",
+            "A single quiz",
+            "Random anecdote",
+            "Direct observation, a written or verbal test, and the review of the previous results with the corrective action as needed"
+        ],
+        "explanation": "Personnel competency is demonstrated by the direct observation of the testing, the monitoring of the results and the records, the review of the intermediate patient results, the written challenges (including the unknown samples), and the assessment of the problem-solving, performed at the defined frequency per the laboratory policy. The assessment must be documented and acted upon.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The document control system for a procedure manual requires which practice?",
+        "case_text": "A laboratory reviews its procedure manual after an inspection cites an outdated test method; the document control process is applied.",
+        "difficulty": "intermediate",
+        "correct": "B",
+        "options": [
+            "Keeping all versions in the laboratory",
+            "A review and approval of the current version with the outdated pages removed and the changes dated",
+            "A single paper copy anywhere",
+            "The uncontrolled electronic file"
+        ],
+        "explanation": "Document control ensures that only the current, reviewed and approved procedures are in use, with the dates and the signatures and the distribution, and the superseded versions archived but not used; the policy updates the manual whenever the method, the reagent, or the reference changes. Old sheets in circulation produce the errors the control prevents.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The common sources of a spuriously elevated potassium in the preanalytic phase include which combination?",
+        "case_text": "A medical technologist reviews the preanalytical causes of a spurious hyperkalemia in a patient sample.",
+        "difficulty": "intermediate",
+        "correct": "C",
+        "options": [
+            "The refrigeration artifact",
+            "The sitting in the chair",
+            "Hemolysis, a prolonged tourniquet and the forearm exercise, the delay in the separation, and the EDTA contamination",
+            "Overfilling the tube"
+        ],
+        "explanation": "Potassium is easily distorted before the analysis: the hemolysis, the clenching or the prolonged tourniquet (tissue ischemia), the delayed centrifugation, the excessive cooling of the whole blood and the wrong additive all raise the serum potassium; the collection and the transport steps and the hemolysis index identify the finding. The preanalytic honesty of the potassium value often depends on the blood collection rather than the analyzer.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The validation that a point-of-care glucose meter provides results comparable to the central laboratory uses which approach?",
+        "case_text": "A point-of-care glucose meter is used by a nurse on a ward; the quality program requires a comparison.",
+        "difficulty": "intermediate",
+        "correct": "A",
+        "options": [
+            "Duplicate testing of the same patient sample on the meter and the core analyzer and a correlation check against the acceptable difference",
+            "A single meter reading",
+            "A visual inspection",
+            "A manufacturer leaflet"
+        ],
+        "explanation": "Concurrent duplicate testing of a patient venous sample on the meter and the central laboratory analyzer, with the results within the set total allowable error, validates the device for the site; the program also reviews the operator competency and the lot-specific QC. Without the comparison the meter results drift out of the clinical acceptance without notice.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "The first step in the investigation of a prolonged turnaround time is to do which of the following?",
+        "case_text": "A laboratory receives a complaint from the emergency department about a delayed result; the investigation begins with the TAT data.",
+        "difficulty": "easy",
+        "correct": "D",
+        "options": [
+            "Change the analyzer",
+            "Blame the courier",
+            "Ignore the complaint",
+            "Review the TAT data by the phase (order, transport, analysis, report) to identify the bottleneck"
+        ],
+        "explanation": "The TAT investigation examines the segmented times (ordering to collection, transport, analysis, and result transmission) and the statistics (median, 90th percentile) to localize the delay, then applies the corrective action and the remeasurement; the systematic trace replaces an assumption. The outcome is the documented improvement of the offending phase.",
+        "source_type": "original",
+        "status": "active"
+    },
+    {
+        "category": "Laboratory Operations",
+        "type": "case",
+        "stem": "A single control point beyond the 2 standard deviation limit on the Levey-Jennings chart can indicate a spurious alarm when interpreted alone; the multirule approach handles this how?",
+        "case_text": "An instrument calibration curve for a substrate assay has drifted, and the analyzer flags the control across the Westgard rule 1:2s.",
+        "difficulty": "advanced",
+        "correct": "B",
+        "options": [
+            "The result is reported",
+            "The 1:2s flag is examined with the other rules and the repeat, and the run is rejected only when the pattern (such as the 1:3s, the R4s, the 2:2s, or the trend) supports the error",
+            "The control is always in range",
+            "The instrument is recalibrated every run"
+        ],
+        "explanation": "The Westgard multirule strategy uses 1:3s and 2:2s with the 1:2s so that the single 2s excursion, which occurs 5% of runs by chance alone, is not discarded as a reject unless confirmed by the stronger rules; the combination maximizes the error detection with a low false rejection. A lone 1:2s is reviewed rather than automatically failing the run.",
+        "source_type": "original",
+        "status": "active"
+    }
+]
