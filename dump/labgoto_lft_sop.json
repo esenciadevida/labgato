@@ -1,18 +1,18 @@
 [
     {
         "status": "published",
-        "version": "1.0",
+        "version": "2.0",
         "author_name": "Laboratory Director",
-        "reviewed_date": "2026-08-29",
-        "last_verified_date": "2026-08-29",
+        "reviewed_date": "2026-08-30",
+        "last_verified_date": "2026-08-30",
         "reviewed_by": "Dr. [Name]",
-        "last_reviewed_date": "2026-08-29",
+        "last_reviewed_date": "2026-08-30",
         "featured_image": null,
         "name": "Liver Function Tests (LFTs) Panel",
         "slug": "liver-function-tests-panel",
-        "short_description": "SOP for measuring ALT, AST, ALP, Bilirubin, Total Protein, and Albumin.",
-        "content": "# Standard Operating Procedure: Liver Function Tests\n## 1. Purpose: Assess hepatic integrity, synthetic function, and biliary excretion.\n## 2. Specimen: Serum (non-hemolyzed).\n## 3. Reagents: Specific kinetic/colorimetric reagents for each analyte.\n## 4. Procedure (Automated Analyzer):\n- **ALT/AST:** UV kinetic methods (IFCC) measuring NADH oxidation at 340 nm.\n- **ALP:** Kinetic method using p-nitrophenyl phosphate (pNPP) substrate, measuring p-nitrophenol at 405 nm.\n- **Bilirubin:** Diazo method (Total and Direct).\n- **Total Protein:** Biuret method (540 nm).\n- **Albumin:** Bromocresol green (BCG) or purple (BCP) dye-binding method (600 nm).\n## 5. QC: Run 2 levels of control daily for each assay.",
-        "principle": "Each test uses specific enzymatic or colorimetric reactions. ALT/AST indicate hepatocellular damage; ALP and Bilirubin indicate cholestasis; Albumin and Total Protein reflect hepatic synthetic function.",
+        "short_description": "SOP for the full hepatic panel: ALT, AST, ALP, GGT, total and direct bilirubin, total protein, and albumin.",
+        "content": "# Standard Operating Procedure: Liver Function Tests (LFTs) Panel\n\n## 1. Purpose and Scope\nTo measure the full liver panel (ALT, AST, ALP, GGT, total/direct bilirubin, total protein, and albumin) for the detection, differentiation, and monitoring of hepatocellular injury, cholestasis, biliary obstruction, and impairment of hepatic synthetic function.\n\n## 2. Specimen Requirements\n- **Type:** Serum. Use a plain (no additive) tube or serum separator tube (SST).\n- **Volume:** Minimum 1.0 mL per ordered analyte group.\n- **Hemolysis:** Reject markedly hemolyzed samples for AST/ALT and bilirubin; hemolysis falsely raises these analytes.\n- **Light protection:** Protect bilirubin samples from light after collection; place in amber containers or wrap immediately. Bilirubin is photosensitive.\n- **Stability:** Separate serum from cells within 2 hours. ALT and AST are stable 24-48 h at 2-8°C; ALP and GGT are stable 2-3 days refrigerated; bilirubin is stable 24 h refrigerated if protected from light.\n- **Fasting:** Fasting 8-12 hours is preferred for bilirubin, though non-fasting specimens are generally acceptable for ALT/AST.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat, eye protection). All blood samples are potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not pipette by mouth. Use mechanical pipetting devices.\n\n## 4. Equipment and Reagents\n- Automated chemistry analyzer (spectrophotometric, temperature-regulated to 37°C).\n- **ALT/AST:** IFCC-recommended UV kinetic reagents (with or without pyridoxal phosphate), measuring NADH oxidation at 340 nm.\n- **ALP:** Kinetic method using p-nitrophenyl phosphate (pNPP), measuring p-nitrophenol formation at 405 nm.\n- **GGT:** Szasz method using gamma-glutamyl-3-carboxy-4-nitroanilide as substrate, measuring release of p-nitroaniline at 405 nm.\n- **Total and Direct Bilirubin:** Diazo (Jendrassik-Grof) method; total bilirubin with accelerator, direct bilirubin measured after addition of diazo reagent without accelerator.\n- **Total Protein:** Biuret method, measured at 540 nm.\n- **Albumin:** Bromocresol green (BCG) or bromocresol purple (BCP) dye-binding method, measured at 600 nm.\n- Two levels of quality control material for each assay.\n\n## 5. Step-by-Step Procedure\n1. Centrifuge the clotted specimen at 3000-3500 rpm for 10 minutes. Protect bilirubin aliquots from light throughout.\n2. Load serum onto the analyzer per instrument instructions, ensuring the correct assay and calibration parameters for each analyte.\n3. Run two levels of quality control for each assay before patient samples.\n4. Verify calibration linearity and within-assay precision; dilute and re-run results above the upper analytical limit.\n5. Confirm hemolysis, lipemia, or icterus indices are within acceptable analyzer limits; flag or repeat samples exceeding them.\n6. Release results after QC acceptance.\n\n## 6. Quality Control\n- Run two levels (normal and abnormal) of control for each assay daily, with every calibration, and with each new reagent lot.\n- Enforce Levey-Jennings rules; investigate trends or shifts before reporting patient results.\n- Participate in an external quality assessment (EQA) program for all panel analytes.\n- Verify control values fall within acceptable target ranges before patient reporting.\n\n## 7. Decision limits\nDecision thresholds for the liver panel are interpretive patterns rather than single adult intervals; the canonical reference intervals are displayed in the Reference Ranges panel.\n- **Severe (massive) hepatocellular injury:** AST and/or ALT above 10x the upper reference limit, often with ALT > 1000 U/L, suggests acute ischemic, toxic, or viral hepatitis; ALT > 1000 U/L is rarely caused by cirrhosis or obstruction alone.\n- **R ratio (DILI pattern):** R = (ALT/ULN)/(ALP/ULN). R >= 5 = hepatocellular injury; R <= 2 = cholestatic; 2 < R < 5 = mixed.\n- **De Ritis ratio:** AST/ALT > 2 is associated with alcohol-associated liver disease; AST/ALT < 1 is typical of most other hepatocellular conditions.\n- **ALP with normal GGT:** Raised ALP with a normal GGT points toward non-hepatic sources (bone, placenta, pregnancy); a raised GGT with raised ALP confirms a hepatobiliary origin.\n- **Neonatal jaundice:** Total bilirubin thresholds for phototherapy and exchange transfusion are age (hour-of-life) and risk-factor dependent; apply the AAP (Bhutani) nomogram for term and near-term infants.\n- **Albumin:** Persistently low albumin (< 3.0 g/dL) with prolonged coagulation indicates reduced hepatic synthetic capacity in chronic liver disease; acute hepatitis commonly retains normal albumin synthesis.\n- **GGT as screening enzyme:** GGT is non-specific and may rise with alcohol intake and many hepatotoxic medications; do not use an isolated GGT elevation in isolation for diagnosis.\n\n**Note on dietary and pre-analytical interference:** bilirubin falls during prolonged fasting and is affected by food; grossly lipemic samples should be ultracentrifuged before analysis.",
+        "principle": "The panel triages three liver functions: (1) Hepatocellular integrity - ALT and AST, cytosolic/mitochondrial enzymes released into serum when hepatocytes are damaged; (2) Cholestasis and excretion - ALP and GGT (membrane-bound enzymes) and conjugated bilirubin, which rise when biliary excretion is impaired; (3) Synthetic function - albumin and total protein, which fall when hepatic protein synthesis is reduced. ALT is liver-specific; AST distributes across liver, heart, and muscle. GGT is cholestasis-sensitive and helps confirm a hepatic origin for ALP elevation. Direct bilirubin is conjugated (water-soluble) and rises in hepatocellular and cholestatic disease; indirect bilirubin reflects unconjugated bilirubin from hemolysis or conjugation defects.",
         "department": "Clinical Chemistry",
         "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
         "categories": [
@@ -26,27 +26,43 @@
             "alt",
             "ast",
             "alp",
+            "ggt",
             "bilirubin",
             "albumin",
+            "total protein",
             "clinical chemistry"
         ],
-        "seo_title": "Liver Function Tests (LFTs) SOP | Clinical Chemistry",
+        "seo_title": "Liver Function Tests (LFTs) Panel SOP | Clinical Chemistry",
         "focus_keyword": "liver function tests",
         "reviewer_credentials": "PhD, Clinical Chemistry",
         "faqs": [
             {
-                "question": "What is the most sensitive marker for acute hepatocellular injury?",
-                "answer": "ALT is more specific to the liver than AST, making it a more sensitive marker for acute hepatic injury."
+                "question": "Why is ALT preferred over AST as a marker of hepatocellular injury?",
+                "answer": "ALT is predominantly liver-specific and cytosolic, while AST is present in liver, cardiac muscle, and skeletal muscle. A rise in ALT therefore better reflects hepatocyte damage, whereas isolated AST elevation may be extrahepatic in origin."
+            },
+            {
+                "question": "What does an AST/ALT ratio above 2 suggest?",
+                "answer": "A De Ritis ratio above 2 is classically associated with alcohol-associated liver disease, where mitochondrial AST (mAST) is released and pyridoxine deficiency lowers liver ALT content."
+            },
+            {
+                "question": "When GGT is normal but ALP is raised, what should be considered?",
+                "answer": "A normal GGT with raised ALP suggests a non-hepatobiliary source of ALP, such as bone disease, pregnancy (placental ALP), or malignancy; GGT rise confirms a hepatic or biliary origin."
             }
         ],
-        "seo_description": "SOP for measuring ALT, AST, ALP, Bilirubin, Total Protein, and Albumin.",
+        "seo_description": "SOP for the full liver panel: ALT, AST, ALP, GGT, bilirubin, and proteins, including hepatocellular vs cholestatic interpretation patterns.",
         "reference_ranges": [
+            "alt-adult",
+            "ast-adult",
+            "alp-adult",
+            "ggt-adult-male",
+            "ggt-adult-female",
+            "bilirubin-total-adult",
+            "bilirubin-direct-adult",
+            "indirect-bilirubin-adult",
             "total-protein-adult",
             "albumin-adult",
-            "bilirubin-total-adult",
-            "alp-adult",
-            "ast-adult",
-            "alt-adult"
+            "globulin-adult",
+            "ag-ratio-adult"
         ]
     }
 ]
