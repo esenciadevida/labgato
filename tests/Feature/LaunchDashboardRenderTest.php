@@ -33,7 +33,7 @@ class LaunchDashboardRenderTest extends TestCase
             'answer_review_status' => 'available',
             'leaderboard_status' => 'available',
             'opens_at' => null,
-            'closes_at' => null,
+            'closes_at' => now()->addDay(),
         ]);
 
         LaunchSetting::query()->firstOrFail()->update([
@@ -50,6 +50,8 @@ class LaunchDashboardRenderTest extends TestCase
         $response->assertSee('Your Challenges', false);
         $response->assertSee('Start Exam', false);
         $response->assertSee('Engine Smoke Test', false);
+        $response->assertSee('Challenge expires in', false);
+        $response->assertSee('assessmentCountdown(' . now()->addDay()->timestamp . ',', false);
         $response->assertDontSee('data-tour="navigation"', false); // member nav bar removed
     }
 }

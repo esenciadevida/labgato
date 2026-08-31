@@ -62,6 +62,28 @@
                                             {{ ucfirst($assessment->type) }} &middot; {{ $assessment->total_questions }} questions &middot; {{ $assessment->duration_minutes }} min &middot;
                                             <span class="{{ $canBegin ? 'text-success-300' : 'text-white/60' }}">{{ $statusLabel }}</span>
                                         </p>
+                                        @if($assessment->closes_at)
+                                            <p class="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-amber-300/90">
+                                                <svg class="h-3.5 w-3.5 shrink-0 text-amber-300" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                                <span>Challenge expires in</span>
+                                                <span class="inline-flex items-center gap-1 font-mono font-bold tabular-nums text-white"
+                                                      x-data="assessmentCountdown({{ $assessment->closes_at->timestamp }}, {{ (int) now()->timestamp }})"
+                                                      role="timer"
+                                                      aria-label="Time remaining until the challenge expires">
+                                                    <template x-if="!expired">
+                                                        <span class="inline-flex flex-wrap items-center gap-x-1.5">
+                                                            <span><span x-text="days" class="tabular-nums"></span><span class="text-slate-400">d</span></span>
+                                                            <span><span x-text="hours" class="tabular-nums"></span><span class="text-slate-400">h</span></span>
+                                                            <span><span x-text="minutes" class="tabular-nums"></span><span class="text-slate-400">m</span></span>
+                                                            <span><span x-text="seconds" class="tabular-nums"></span><span class="text-slate-400">s</span></span>
+                                                        </span>
+                                                    </template>
+                                                    <template x-if="expired">
+                                                        <span class="font-medium text-amber-300">Expiring now</span>
+                                                    </template>
+                                                </span>
+                                            </p>
+                                        @endif
                                     </div>
                                     @if($cta)
                                         <a href="{{ $cta['href'] }}"
