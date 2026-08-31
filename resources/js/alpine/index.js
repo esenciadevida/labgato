@@ -226,4 +226,48 @@ document.addEventListener('alpine:init', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         },
     }));
+
+    // Live countdown to an assessment's own deadline (closes_at), independent
+    // of the global launch countdown. `target` is a UTC epoch (seconds), and
+    // `serverNow` anchors the browser clock so it stays accurate on throttled
+    // or slow-clocked devices.
+    window.Alpine.data('assessmentCountdown', (target, serverNow) => {
+        const targetMs = (Number(target) || 0) * 1000;
+        const skew = (Number(serverNow) || Math.floor(Date.now() / 1000)) * 1000 - Date.now();
+
+        return {
+            expired: targetMs <= 0,
+            left: 0,
+            init() {
+                this.update();
+                this._timer = setInterval(() => this.update(), 1000);
+            },
+            destroy() {
+                if (this._timer) {
+                    clearInterval(this._timer);
+                }
+            },
+            update() {
+                if (targetMs <= 0) {
+                    this.expired = true;
+                    this.left = 0;
+                    return;
+                }
+                this.left = Math.max(0, Math.floor((targetMs - (Date.now() + skew)) / 1000));
+                this.expired = this.left <= 0;
+            },
+            get days() {
+                return String(Math.floor(this.left / 86400)).padStart(2, '0');
+            },
+            get hours() {
+                return String(Math.floor((this.left % 86400) / 3600)).padStart(2, '0');
+            },
+            get minutes() {
+                return String(Math.floor((this.left % 3600) / 60)).padStart(2, '0');
+            },
+            get seconds() {
+                return String(this.left % 60).padStart(2, '0');
+            },
+        };
+    });
 });

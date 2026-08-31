@@ -282,7 +282,7 @@ class LaunchIntegrationTest extends TestCase
         );
 
         $this->assertStringContainsString(
-            'data-countdown="'.$scheduled->opens_at->toIso8601String().'"',
+            'assessmentCountdown('.$scheduled->opens_at->timestamp.',',
             $guest
         );
         $this->assertStringNotContainsString($draft->title, $guest);

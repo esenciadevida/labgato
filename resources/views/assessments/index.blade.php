@@ -77,6 +77,29 @@
                         </div>
                     @endif
 
+                    @if($assessment->status === 'open' && $assessment->closes_at)
+                        <p class="mt-4 flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-300">
+                            <svg class="h-4 w-4 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Closes in
+                            <span class="inline-flex items-center gap-1 font-mono font-bold tabular-nums text-blue-800 dark:text-blue-300"
+                                  x-data="assessmentCountdown({{ $assessment->closes_at->timestamp }}, {{ (int) now()->timestamp }})"
+                                  role="timer"
+                                  aria-label="Time remaining until the assessment closes">
+                                <template x-if="!expired">
+                                    <span class="inline-flex flex-wrap items-center gap-x-1.5">
+                                        <span><span x-text="days" class="tabular-nums"></span><span class="text-slate-400">d</span></span>
+                                        <span><span x-text="hours" class="tabular-nums"></span><span class="text-slate-400">h</span></span>
+                                        <span><span x-text="minutes" class="tabular-nums"></span><span class="text-slate-400">m</span></span>
+                                        <span><span x-text="seconds" class="tabular-nums"></span><span class="text-slate-400">s</span></span>
+                                    </span>
+                                </template>
+                                <template x-if="expired">
+                                    <span class="font-medium text-amber-600 dark:text-amber-400">Closing now</span>
+                                </template>
+                            </span>
+                        </p>
+                    @endif
+
                     <div class="mt-5 flex flex-wrap items-center gap-3">
                         @if($assessment->status === 'open')
                             @guest
@@ -98,9 +121,39 @@
                                 @endif
                             @endguest
                         @elseif($assessment->status === 'scheduled')
-                            <time data-countdown="{{ $assessment->opens_at?->toIso8601String() }}" class="text-sm font-medium text-blue-700 dark:text-blue-300">
-                                Opens {{ $assessment->opens_at?->timezone(config('app.timezone'))->format('D, M j Y \a\t H:i') ?? 'soon' }}
-                            </time>
+                            <div class="rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 dark:border-blue-800 dark:bg-blue-900/30">
+                                <p class="text-xs font-semibold uppercase tracking-wide text-blue-800 dark:text-blue-300">
+                                    @if($assessment->opens_at)
+                                        Opens {{ $assessment->opens_at->timezone(config('app.timezone'))->format('D, M j Y \a\t H:i') }}
+                                    @else
+                                        Opens soon
+                                    @endif
+                                </p>
+
+                                @if($assessment->opens_at)
+                                    <p class="mt-1.5 text-xs text-blue-700 dark:text-blue-300">Opens in:</p>
+                                    <div class="mt-1 flex items-center gap-1 font-mono text-sm font-bold tabular-nums text-blue-900 dark:text-blue-100"
+                                         x-data="assessmentCountdown({{ $assessment->opens_at->timestamp }}, {{ (int) now()->timestamp }})"
+                                         role="timer"
+                                         aria-label="Time remaining until the assessment opens">
+                                        <template x-if="!expired">
+                                            <span class="inline-flex flex-wrap items-center gap-x-1.5">
+                                                <span><span x-text="days" class="tabular-nums"></span><span class="text-blue-500 dark:text-blue-400">d</span></span>
+                                                <span><span x-text="hours" class="tabular-nums"></span><span class="text-blue-500 dark:text-blue-400">h</span></span>
+                                                <span><span x-text="minutes" class="tabular-nums"></span><span class="text-blue-500 dark:text-blue-400">m</span></span>
+                                                <span><span x-text="seconds" class="tabular-nums"></span><span class="text-blue-500 dark:text-blue-400">s</span></span>
+                                            </span>
+                                        </template>
+                                        <template x-if="expired">
+                                            <span class="text-sm font-medium text-emerald-700 dark:text-emerald-300">Opening now</span>
+                                        </template>
+                                    </div>
+                                @endif
+
+                                @if($assessment->closes_at)
+                                    <p class="mt-2 text-xs text-blue-700/80 dark:text-blue-300/80">Closes {{ $assessment->closes_at->timezone(config('app.timezone'))->format('D, M j Y \a\t H:i') }}</p>
+                                @endif
+                            </div>
                         @else
                             @if($attempt && in_array($attemptStatus, ['submitted', 'auto_submitted'], true))
                                 <a href="{{ route('exams.result', $attempt) }}" class="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">My Result</a>
