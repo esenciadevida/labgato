@@ -294,6 +294,12 @@ class LaunchIntegrationTest extends TestCase
 
         $this->assertStringContainsString(route('exams.result', $attempt), $memberView);
         $this->assertStringContainsString('Next challenge coming soon.', $memberView);
+
+        // An open assessment must render a live countdown to its own close time.
+        $this->assertStringContainsString(
+            'assessmentCountdown('.$open->closes_at->timestamp.',',
+            $memberView
+        );
     }
 
     /* -------------------------------------------------------------- Task 4 */
