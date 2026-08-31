@@ -6,16 +6,20 @@
 
 @section('content')
 <div class="space-y-6">
-    <div>
-        <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Analytics Dashboard</h2>
-        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Real-time and historical analytics for your platform.</p>
-    </div>
-
     @include('admin.partials.analytics.kpi-cards')
 
-    @if(!empty($pendingItems))
-        <x-ui.card title="Pending Review" class="mt-6">
-            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Items awaiting publication. You can publish them directly from here.</p>
+    <section class="bg-white rounded-xl border border-slate-200 shadow-card dark:bg-slate-800 dark:border-slate-700">
+        <div class="px-4 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-700 flex flex-wrap items-center justify-between gap-2">
+            <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Pending Review</h2>
+            @if(!empty($pendingItems))
+                <x-ui.badge variant="warning">{{ count($pendingItems) }} to review</x-ui.badge>
+            @endif
+        </div>
+
+        @if(empty($pendingItems))
+            <x-ui.empty-state title="Nothing pending" description="All resources have been published or reviewed." />
+        @else
+            <p class="text-sm text-slate-500 dark:text-slate-400 px-4 sm:px-6 py-3 border-b border-slate-200 dark:border-slate-700">Items awaiting publication. You can publish them directly from here.</p>
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
                     <thead class="bg-slate-50 dark:bg-slate-700/50">
@@ -49,7 +53,7 @@
                                     default => '#',
                                 };
                             @endphp
-                            <tr>
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/40">
                                 <td class="px-4 py-3 text-sm text-slate-500 dark:text-slate-400">{{ $type }}</td>
                                 <td class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-slate-100">{{ $item->name }}</td>
                                 <td class="px-4 py-3 text-sm">
@@ -79,8 +83,8 @@
                     </tbody>
                 </table>
             </div>
-        </x-ui.card>
-    @endif
+        @endif
+    </section>
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
         @include('admin.partials.analytics.resource-growth')
@@ -88,18 +92,22 @@
     </div>
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        @include('admin.partials.analytics.question-bank-health')
         @include('admin.partials.analytics.exam-metrics')
-        @include('admin.partials.analytics.certificate-metrics')
     </div>
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        @include('admin.partials.analytics.question-bank-health')
+        @include('admin.partials.analytics.certificate-metrics')
         @include('admin.partials.analytics.ai-utilization')
     </div>
 
-    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        @include('admin.partials.analytics.search-insights')
-        @include('admin.partials.analytics.activity-feed')
+    <div class="grid grid-cols-1 gap-6 xl:grid-cols-3">
+        <div class="xl:col-span-2">
+            @include('admin.partials.analytics.search-insights')
+        </div>
+        <div>
+            @include('admin.partials.analytics.activity-feed')
+        </div>
     </div>
 </div>
 @endsection

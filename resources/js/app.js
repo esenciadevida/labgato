@@ -1,5 +1,6 @@
 import './bootstrap';
 import './alpine';
+import { initCharts } from './alpine/charts';
 import { registerTours } from './onboarding/tour';
 import { Livewire } from '../../vendor/livewire/livewire/dist/livewire.esm.js';
 import {
@@ -37,6 +38,8 @@ window.Chart = Chart;
 
 window.Livewire = Livewire;
 Livewire.start();
+
+initCharts();
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', registerTours);

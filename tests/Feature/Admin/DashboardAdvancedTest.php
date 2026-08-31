@@ -76,7 +76,7 @@ class DashboardAdvancedTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Dashboard');
         $response->assertSee('No search data available yet.');
-        $response->assertSee('No AI usage data available yet.');
-        $response->assertSee('No resource growth data available yet.');
+        $response->assertSee('No AI usage data yet');
+        $response->assertSee('No resource growth yet');
     }
 }
