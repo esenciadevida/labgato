@@ -8,7 +8,7 @@
 <div class="space-y-6">
     <div>
         <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Analytics Dashboard</h2>
-        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Real-time and historical analytics for your content platform.</p>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Real-time and historical analytics for your platform.</p>
     </div>
 
     @include('admin.partials.analytics.kpi-cards')
@@ -84,9 +84,22 @@
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
         @include('admin.partials.analytics.resource-growth')
+        @include('admin.partials.analytics.user-metrics')
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        @include('admin.partials.analytics.exam-metrics')
+        @include('admin.partials.analytics.certificate-metrics')
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        @include('admin.partials.analytics.question-bank-health')
         @include('admin.partials.analytics.ai-utilization')
     </div>
 
-    @include('admin.partials.analytics.search-insights')
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        @include('admin.partials.analytics.search-insights')
+        @include('admin.partials.analytics.activity-feed')
+    </div>
 </div>
 @endsection

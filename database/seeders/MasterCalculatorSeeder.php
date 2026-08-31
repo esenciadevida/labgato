@@ -1508,7 +1508,7 @@ class MasterCalculatorSeeder extends Seeder
                 'seo_description' => 'Adjust total serum calcium for serum albumin.',
             ],
             [
-                'name' => 'Estimated GFR (CKD-EPI 2021) Calculator',
+                'name' => 'eGFR (CKD-EPI 2021) Calculator',
                 'slug' => 'egfr-ckd-epi-2021-calculator',
                 'short_description' => 'Estimate glomerular filtration rate using the race-free CKD-EPI 2021 creatinine equation.',
                 'formula_display' => 'eGFR = 142 × min(SCr/κ, 1)^α × max(SCr/κ, 1)^-1.200 × 0.9938^Age × 1.012 (if female)',
@@ -1561,11 +1561,11 @@ class MasterCalculatorSeeder extends Seeder
                 ],
                 'categories' => ['Renal'],
                 'tags' => ['egfr', 'gfr', 'ckd-epi', 'kidney', 'renal-function'],
-                'seo_title' => 'Estimated GFR (CKD-EPI 2021) Calculator | LabGoTo',
+                'seo_title' => 'eGFR (CKD-EPI 2021) Calculator | LabGoTo',
                 'seo_description' => 'Estimate glomerular filtration rate with the race-free CKD-EPI 2021 equation.',
             ],
             [
-                'name' => 'Estimated GFR (CKD-EPI 2009) Calculator',
+                'name' => 'eGFR (CKD-EPI 2009) Calculator',
                 'slug' => 'egfr-ckd-epi-2009-calculator',
                 'short_description' => 'Estimate glomerular filtration rate using the CKD-EPI 2009 creatinine equation.',
                 'formula_display' => 'eGFR = 141 × min(SCr/κ, 1)^α × max(SCr/κ, 1)^-1.209 × 0.993^Age × 1.018 (if female) × 1.159 (if Black)',
@@ -1627,7 +1627,7 @@ class MasterCalculatorSeeder extends Seeder
                 ],
                 'categories' => ['Renal'],
                 'tags' => ['egfr', 'gfr', 'ckd-epi', 'kidney', 'renal-function'],
-                'seo_title' => 'Estimated GFR (CKD-EPI 2009) Calculator | LabGoTo',
+                'seo_title' => 'eGFR (CKD-EPI 2009) Calculator | LabGoTo',
                 'seo_description' => 'Estimate glomerular filtration rate with the CKD-EPI 2009 equation.',
             ],
             [

@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "canvas": "^3.2.3",
+        "chart.js": "^4.5.1",
         "driver.js": "^1.8.0"
     }
 }

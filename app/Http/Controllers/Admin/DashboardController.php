@@ -15,6 +15,11 @@ class DashboardController extends Controller
             'searchInsights' => $analyticsService->getSearchInsights(),
             'aiUtilization' => $analyticsService->getAiUtilization(),
             'pendingItems' => $analyticsService->getPendingItems(20),
+            'userMetrics' => $analyticsService->getUserMetrics(),
+            'examMetrics' => $analyticsService->getExamMetrics(),
+            'certificateMetrics' => $analyticsService->getCertificateMetrics(),
+            'questionBankHealth' => $analyticsService->getQuestionBankHealth(),
+            'recentActivity' => $analyticsService->getRecentActivity(15),
         ];
 
         return view('admin.dashboard-advanced', $data);

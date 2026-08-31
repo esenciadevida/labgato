@@ -24,6 +24,66 @@
 @section('content')
 @can('questions.view')
 <div class="space-y-6">
+    @if($errors->any())
+        <x-ui.alert type="error">{{ $errors->first() }}</x-ui.alert>
+    @endif
+
+    <div class="flex flex-wrap items-center justify-between gap-3">
+        <nav class="inline-flex items-center gap-1 rounded-xl bg-slate-100 p-1 dark:bg-slate-800" aria-label="Status filter">
+            @foreach($statusTabs as $value => $label)
+                @php
+                    $count = match($value) {
+                        'active' => $stats['active'],
+                        'draft' => $stats['draft'],
+                        'archived' => $stats['archived'],
+                        default => $stats['total'],
+                    };
+                    $active = $status === $value;
+                    $isDraft = $value === 'draft';
+                    $isArchived = $value === 'archived';
+                @endphp
+                <a href="{{ $filterUrl($value) }}"
+                    class="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors
+                        @if($active)
+                            bg-white text-primary-700 shadow-card dark:bg-slate-900 dark:text-primary-300
+                        @elseif($isDraft)
+                            text-amber-700 hover:bg-amber-100/70 dark:text-amber-300 dark:hover:bg-amber-900/40
+                        @elseif($isArchived)
+                            text-slate-600 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:bg-slate-700
+                        @else
+                            text-slate-500 hover:bg-slate-200/70 dark:text-slate-400 dark:hover:bg-slate-700
+                        @endif"
+                    @if($active) aria-current="page" @endif
+                >
+                    {{ $label }}
+                    <span class="inline-flex min-w-[1.25rem] items-center justify-center rounded-full px-1.5 py-0.5 text-[11px] font-bold
+                        @if($active)
+                            bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300
+                        @elseif($isDraft)
+                            bg-amber-200/70 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300
+                        @elseif($isArchived)
+                            bg-slate-300/70 text-slate-600 dark:bg-slate-600 dark:text-slate-200
+                        @else
+                            bg-slate-200 text-slate-500 dark:bg-slate-700 dark:text-slate-300
+                        @endif"
+                    >{{ number_format($count) }}</span>
+                </a>
+            @endforeach
+        </nav>
+
+        <div class="flex flex-wrap items-center gap-2">
+            @if(auth()->user()->hasPermission('questions.import'))
+                <x-ui.button href="{{ route('admin.questions.import') }}" variant="secondary">Import CSV</x-ui.button>
+            @endif
+            @if(auth()->user()->hasPermission('categories.manage'))
+                <x-ui.button href="{{ route('admin.question-categories.index') }}" variant="secondary">Subjects</x-ui.button>
+            @endif
+            @if(auth()->user()->hasPermission('questions.manage'))
+                <x-ui.button href="{{ route('admin.questions.create') }}">New Question</x-ui.button>
+            @endif
+        </div>
+    </div>
+
     <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <x-ui.card class="!p-4">
             <p class="text-xs font-medium uppercase tracking-wide text-slate-400">Total</p>
@@ -41,34 +101,6 @@
             <p class="text-xs font-medium uppercase tracking-wide text-slate-400">Archived</p>
             <p class="mt-1 text-2xl font-bold text-slate-500 dark:text-slate-400">{{ number_format($stats['archived']) }}</p>
         </x-ui.card>
-    </div>
-
-    @if($errors->any())
-        <x-ui.alert type="error">{{ $errors->first() }}</x-ui.alert>
-    @endif
-
-    <div class="flex flex-wrap items-center justify-between gap-3">
-        <nav class="flex flex-wrap gap-1" aria-label="Status filter">
-            @foreach($statusTabs as $value => $label)
-                <a href="{{ $filterUrl($value) }}"
-                    class="rounded-lg px-3 py-1.5 text-sm font-medium transition-colors
-                        {{ $status === $value ? 'bg-primary-500 text-white shadow-card' : 'text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800' }}"
-                    @if($status === $value) aria-current="page" @endif
-                >{{ $label }}</a>
-            @endforeach
-        </nav>
-
-        <div class="flex flex-wrap items-center gap-2">
-            @if(auth()->user()->hasPermission('questions.import'))
-                <x-ui.button href="{{ route('admin.questions.import') }}" variant="secondary">Import CSV</x-ui.button>
-            @endif
-            @if(auth()->user()->hasPermission('categories.manage'))
-                <x-ui.button href="{{ route('admin.question-categories.index') }}" variant="secondary">Subjects</x-ui.button>
-            @endif
-            @if(auth()->user()->hasPermission('questions.manage'))
-                <x-ui.button href="{{ route('admin.questions.create') }}">New Question</x-ui.button>
-            @endif
-        </div>
     </div>
 
     <form method="GET" action="{{ route('admin.questions.index') }}" class="flex flex-col gap-3 sm:flex-row sm:items-center" role="search">

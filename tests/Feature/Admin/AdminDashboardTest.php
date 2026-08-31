@@ -56,6 +56,5 @@ class AdminDashboardTest extends TestCase
         $response->assertDontSee('Total Samples');
         $response->assertDontSee('Total Tests');
         $response->assertDontSee('Pending Results');
-        $response->assertDontSee('chart');
     }
 }

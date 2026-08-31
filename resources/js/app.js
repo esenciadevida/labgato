@@ -2,6 +2,38 @@ import './bootstrap';
 import './alpine';
 import { registerTours } from './onboarding/tour';
 import { Livewire } from '../../vendor/livewire/livewire/dist/livewire.esm.js';
+import {
+    Chart,
+    LineController,
+    BarController,
+    DoughnutController,
+    ArcElement,
+    LineElement,
+    BarElement,
+    PointElement,
+    CategoryScale,
+    LinearScale,
+    Tooltip,
+    Legend,
+    Filler,
+} from 'chart.js';
+
+Chart.register(
+    LineController,
+    BarController,
+    DoughnutController,
+    ArcElement,
+    LineElement,
+    BarElement,
+    PointElement,
+    CategoryScale,
+    LinearScale,
+    Tooltip,
+    Legend,
+    Filler
+);
+
+window.Chart = Chart;
 
 window.Livewire = Livewire;
 Livewire.start();
