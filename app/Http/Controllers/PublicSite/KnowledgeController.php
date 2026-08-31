@@ -27,6 +27,15 @@ class KnowledgeController extends Controller
             ->where('slug', $slug)
             ->firstOrFail();
 
+        if (auth()->check()) {
+            app(RecentlyViewedService::class)->track(auth()->user(), 'knowledge', $knowledge->id);
+        }
+
+        return $this->renderShow($knowledge);
+    }
+
+    public function renderShow(KnowledgeResource $knowledge)
+    {
         $related = app(RelatedResourceService::class)->relatedFor($knowledge);
 
         $content = RichTextSanitizer::render($knowledge->content);
@@ -55,10 +64,6 @@ class KnowledgeController extends Controller
 
         $pageTitle = $knowledge->effectiveSeoTitle();
         $metaDescription = $knowledge->effectiveSeoDescription();
-
-        if (auth()->check()) {
-            app(RecentlyViewedService::class)->track(auth()->user(), 'knowledge', $knowledge->id);
-        }
 
         return view('public.knowledge.show', compact(
             'knowledge',

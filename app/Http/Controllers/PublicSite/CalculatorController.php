@@ -26,6 +26,15 @@ class CalculatorController extends Controller
             ->where('slug', $slug)
             ->firstOrFail();
 
+        if (auth()->check()) {
+            app(RecentlyViewedService::class)->track(auth()->user(), 'calculator', $calculator->id);
+        }
+
+        return $this->renderShow($calculator);
+    }
+
+    public function renderShow(Calculator $calculator)
+    {
         $pageTitle = $calculator->seo_title ?: $calculator->name;
         $metaDescription = $calculator->seo_description ?: ($calculator->short_description ?: 'Clinical calculator for laboratory professionals.');
 
@@ -52,10 +61,6 @@ class CalculatorController extends Controller
             ->orderByDesc('published_at')
             ->limit(3)
             ->get();
-
-        if (auth()->check()) {
-            app(RecentlyViewedService::class)->track(auth()->user(), 'calculator', $calculator->id);
-        }
 
         return view('public.calculators.show', compact(
             'calculator',

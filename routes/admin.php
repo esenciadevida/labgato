@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\QuestionImportController;
 use App\Http\Controllers\Admin\ReferenceRangeController;
 use App\Http\Controllers\Admin\ReferenceRangeImportController;
+use App\Http\Controllers\Admin\ResourcePreviewController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\SopController;
@@ -70,6 +71,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
 
     Route::middleware('permission:calculators.view')->group(function () {
         Route::get('/calculators', [CalculatorController::class, 'index'])->name('calculators.index');
+        Route::get('/calculators/{calculator}/preview', [ResourcePreviewController::class, 'calculator'])->name('calculators.preview');
     });
 
     Route::middleware('permission:calculators.create')->group(function () {
@@ -182,6 +184,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
 
     Route::middleware('permission:interpretation.view')->group(function () {
         Route::get('/interpretation', [InterpretationController::class, 'index'])->name('interpretation.index');
+        Route::get('/interpretation/{interpretation}/preview', [ResourcePreviewController::class, 'interpretation'])->name('interpretation.preview');
     });
 
     Route::middleware('permission:interpretation.create')->group(function () {
@@ -202,6 +205,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
 
     Route::middleware('permission:knowledge.view')->group(function () {
         Route::get('/knowledge', [KnowledgeController::class, 'index'])->name('knowledge.index');
+        Route::get('/knowledge/{knowledge}/preview', [ResourcePreviewController::class, 'knowledge'])->name('knowledge.preview');
     });
 
     Route::middleware('permission:knowledge.create')->group(function () {
@@ -244,6 +248,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'active.use
         Route::get('/sops', [SopController::class, 'index'])->name('sops.index');
         Route::get('/sops/{sop}/versions', [SopVersionController::class, 'index'])->name('sops.versions.index');
         Route::get('/sops/{sop}/versions/{version}', [SopVersionController::class, 'show'])->name('sops.versions.show');
+        Route::get('/sops/{sop}/preview', [ResourcePreviewController::class, 'sop'])->name('sops.preview');
     });
 
     Route::middleware('permission:contributions.review')->group(function () {

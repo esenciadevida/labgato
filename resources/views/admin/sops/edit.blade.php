@@ -5,9 +5,12 @@
 @section('header', 'Edit SOP')
 
 @section('content')
-<div class="mb-6">
+<div class="mb-6 flex items-center justify-between gap-3">
     <x-ui.button href="{{ route('admin.sops.index') }}" variant="ghost" size="sm">
         &larr; Back
+    </x-ui.button>
+    <x-ui.button href="{{ route('admin.sops.preview', $sop) }}" variant="secondary" size="sm" target="_blank">
+        Preview
     </x-ui.button>
 </div>
 <div class="mx-auto max-w-3xl">

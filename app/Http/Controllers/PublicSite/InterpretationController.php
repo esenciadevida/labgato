@@ -27,6 +27,15 @@ class InterpretationController extends Controller
             ->where('slug', $slug)
             ->firstOrFail();
 
+        if (auth()->check()) {
+            app(RecentlyViewedService::class)->track(auth()->user(), 'interpretation', $interpretation->id);
+        }
+
+        return $this->renderShow($interpretation);
+    }
+
+    public function renderShow(InterpretationResource $interpretation)
+    {
         $related = app(RelatedResourceService::class)->relatedFor($interpretation);
 
         $content = RichTextSanitizer::render($interpretation->content);
@@ -52,10 +61,6 @@ class InterpretationController extends Controller
 
         $pageTitle = $interpretation->effectiveSeoTitle();
         $metaDescription = $interpretation->effectiveSeoDescription();
-
-        if (auth()->check()) {
-            app(RecentlyViewedService::class)->track(auth()->user(), 'interpretation', $interpretation->id);
-        }
 
         return view('public.interpretation.show', compact(
             'interpretation',

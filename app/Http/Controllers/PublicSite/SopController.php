@@ -27,6 +27,15 @@ class SopController extends Controller
             ->where('slug', $slug)
             ->firstOrFail();
 
+        if (auth()->check()) {
+            app(RecentlyViewedService::class)->track(auth()->user(), 'sop', $sop->id);
+        }
+
+        return $this->renderShow($sop);
+    }
+
+    public function renderShow(Sop $sop)
+    {
         $related = app(RelatedResourceService::class)->relatedFor($sop);
 
         $content = RichTextSanitizer::render($sop->content);
@@ -56,10 +65,6 @@ class SopController extends Controller
 
         $pageTitle = $sop->effectiveSeoTitle();
         $metaDescription = $sop->effectiveSeoDescription();
-
-        if (auth()->check()) {
-            app(RecentlyViewedService::class)->track(auth()->user(), 'sop', $sop->id);
-        }
 
         return view('public.sops.show', compact(
             'sop',
