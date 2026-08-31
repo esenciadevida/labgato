@@ -25,7 +25,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Elevated liver enzymes may reflect hepatic injury, biliary obstruction, medication effects, or extrahepatic sources. Interpretation always requires correlation with the full clinical picture.',
                 'related_analytes' => ['ALT', 'AST', 'ALP', 'GGT', 'Bilirubin'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 6,
             ],
             [
@@ -36,7 +36,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Anemia is a laboratory diagnosis that requires integration with symptoms, iron studies, and additional markers to determine the underlying cause.',
                 'related_analytes' => ['Hemoglobin', 'Hematocrit', 'MCV', 'MCH', 'MCHC', 'RDW'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 7,
             ],
             [
@@ -47,7 +47,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Interpretation of serum sodium requires assessment of volume status, osmolality, and concurrent electrolyte results.',
                 'related_analytes' => ['Sodium', 'Potassium', 'Chloride', 'Osmolality', 'Glucose'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 5,
             ],
             [
@@ -58,7 +58,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Acid-base interpretation requires simultaneous sodium, chloride, bicarbonate, and an assessment of the respiratory response. The anion gap and delta ratio localize the anion responsible for the acidosis.',
                 'related_analytes' => ['Sodium', 'Chloride', 'CO2', 'Albumin', 'Lactate', 'Osmolality'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 8,
             ],
             [
@@ -69,7 +69,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Serum potassium is tightly regulated. A single elevated value must first exclude preanalytic artifact, then be interpreted through redistribution versus renal excretion, with severity tied to the ECG.',
                 'related_analytes' => ['Potassium', 'Creatinine', 'Sodium', 'Chloride', 'Glucose'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 7,
             ],
             [
@@ -80,7 +80,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Calcium is protein-bound, filtered by the kidney, and regulated by PTH and vitamin D. Interpretation couples the corrected total calcium with PTH and phosphate to separate parathyroid from non-parathyroid causes.',
                 'related_analytes' => ['Calcium', 'Albumin', 'Phosphate', 'Magnesium', 'PTH', 'Creatinine'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 8,
             ],
             [
@@ -91,7 +91,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Low MCV anemia is common; iron deficiency dominates and must be distinguished from thalassemia trait before committing a patient to supplemental iron or family screening.',
                 'related_analytes' => ['Hemoglobin', 'MCV', 'RDW', 'Iron', 'TIBC', 'Ferritin', 'Transferrin Saturation'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 7,
             ],
             [
@@ -102,7 +102,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Thyroid patterns are inferred from the TSH-to-free-T4 relationship. Recognizing primary, central, and non-thyroidal patterns prevents misdiagnosis in critical illness and pregnancy.',
                 'related_analytes' => ['TSH', 'Free T4', 'Free T3', 'TPO Antibody'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 7,
             ],
             [
@@ -113,7 +113,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Lipid results stratify cardiovascular risk and guide statin therapy. Fasting status, lab measurement, and the 2018 ACC/AHA risk framework determine how the numbers are read.',
                 'related_analytes' => ['Total Cholesterol', 'LDL', 'HDL', 'Triglycerides', 'Non-HDL'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 6,
             ],
             [
@@ -124,7 +124,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Prolonged PT/APTT results are common; a logical sequence of repeat sampling, mixing, and factor assays separates inherited deficiency from acquired inhibitor or DIC.',
                 'related_analytes' => ['PT', 'INR', 'APTT', 'Fibrinogen', 'D-Dimer', 'Platelets'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 8,
             ],
             [
@@ -135,7 +135,7 @@ class InterpretationResourceSeeder extends Seeder
                 'clinical_context' => 'Interpreting high or low counts hinges on the blood film and the relationships between cell lines. Pattern-based reading directs confirmatory testing and hematology referral.',
                 'related_analytes' => ['WBC', 'Neutrophils', 'Lymphocytes', 'Eosinophils', 'Platelets', 'Reticulocytes'],
                 'mandatory_disclaimer' => self::DEFAULT_DISCLAIMER,
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 8,
             ],
         ];

@@ -41,9 +41,19 @@ class StoreAssessmentRequest extends FormRequest
             ->filter(fn ($row) => (int) ($row['include'] ?? 0) === 1)
             ->sum('question_count');
 
-        $this->merge([
-            'total_questions' => max(1, min(500, (int) $planned)),
-        ]);
+        // Auto mode (default): total is derived from blueprint counts. Manual mode
+        // (auto_total = 0) lets the admin set an explicit total_questions override.
+        $autoTotal = ! $this->has('auto_total') || $this->boolean('auto_total');
+
+        if ($autoTotal) {
+            $this->merge([
+                'total_questions' => max(1, min(500, (int) $planned)),
+            ]);
+        } else {
+            $this->merge([
+                'total_questions' => max(1, min(500, (int) $this->input('total_questions', 10))),
+            ]);
+        }
 
         // Per-assessment certificate overrides: blank means "inherit global".
         $plainFields = [
@@ -143,14 +153,18 @@ class StoreAssessmentRequest extends FormRequest
                 }
             }
 
-            $planned = (int) $included->sum('question_count');
-            $total = (int) $this->input('total_questions');
+            $autoTotal = ! $this->has('auto_total') || $this->boolean('auto_total');
 
-            if ($planned !== $total) {
-                $validator->errors()->add(
-                    'blueprints',
-                    "Blueprint question counts add up to {$planned}, but the assessment expects {$total}."
-                );
+            if ($autoTotal) {
+                $planned = (int) $included->sum('question_count');
+                $total = (int) $this->input('total_questions');
+
+                if ($planned !== $total) {
+                    $validator->errors()->add(
+                        'blueprints',
+                        "Blueprint question counts add up to {$planned}, but the assessment expects {$total}."
+                    );
+                }
             }
         });
     }

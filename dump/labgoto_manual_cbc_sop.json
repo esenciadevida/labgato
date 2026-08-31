@@ -8,7 +8,7 @@
         "principle": "The manual Complete Blood Count (CBC) relies on the principles of visual haemocytometry and spectrophotometry. White blood cells, red blood cells, and platelets are diluted in specific isotonic or lysing fluids to achieve optimal counting concentrations and then enumerated manually using a calibrated Neubauer hemocytometer chamber under a light microscope. Hemoglobin concentration is determined via the cyanmethemoglobin method, where hemoglobin is converted to a stable colored complex measured spectrophotometrically at 540 nm. Packed Cell Volume (PCV) is measured by centrifuging blood to separate cellular components from plasma, allowing direct volumetric reading.",
         "department": "Hematology",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This Standard Operating Procedure (SOP) is provided as a template based on WHO and CLSI guidelines. It must be reviewed, adapted to your specific laboratory's equipment and reagents, and formally approved by your Laboratory Director before clinical use.",
@@ -43,8 +43,8 @@
         "seo_title": "Manual Complete Blood Count (CBC) SOP | Step-by-Step Procedure",
         "focus_keyword": "manual complete blood count",
         "seo_description": "Comprehensive Standard Operating Procedure (SOP) for performing a manual Complete Blood Count (CBC), including WBC, RBC, Platelet, Hb, PCV, and differential counts.",
-        "reviewed_by": "Dr. [Laboratory Director Name]",
-        "reviewer_credentials": "MD, Pathology / PhD, Laboratory Medicine",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {

@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "2.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-31",
         "last_verified_date": "2026-08-31",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-31",
         "featured_image": null,
         "name": "Serum Electrolytes (Na, K, Cl)",
@@ -32,7 +32,7 @@
         ],
         "seo_title": "Serum Electrolytes SOP | ISE Testing Procedure",
         "focus_keyword": "serum electrolytes",
-        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "Why does hemolysis affect potassium results?",

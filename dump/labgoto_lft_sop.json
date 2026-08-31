@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "3.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-31",
         "last_verified_date": "2026-08-31",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-31",
         "featured_image": null,
         "name": "Liver Function Tests (LFTs) Panel",
@@ -34,7 +34,7 @@
         ],
         "seo_title": "Liver Function Tests (LFTs) Panel SOP | Clinical Chemistry",
         "focus_keyword": "liver function tests",
-        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "Why is ALT preferred over AST as a marker of hepatocellular injury?",

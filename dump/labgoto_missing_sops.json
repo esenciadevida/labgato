@@ -8,7 +8,7 @@
         "principle": "The test detects the characteristic reduced solubility of haemoglobin S under validated reducing conditions.",
         "department": "Haematology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "Positive screening results should be confirmed using an appropriate validated haemoglobin identification method.",
@@ -25,8 +25,8 @@
         "seo_title": "Sickling Solubility Test SOP | LabGOTO",
         "focus_keyword": "Sickling Solubility Test SOP",
         "seo_description": "Laboratory SOP for haemoglobin S solubility screening.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -48,7 +48,7 @@
         "principle": "Different haemoglobin fractions migrate at different rates during electrophoresis under controlled analytical conditions.",
         "department": "Haematology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "Follow the validated method and manufacturer's instructions. Some haemoglobin variants may require confirmatory methods.",
@@ -65,8 +65,8 @@
         "seo_title": "Hemoglobin Electrophoresis SOP | LabGOTO",
         "focus_keyword": "Hemoglobin Electrophoresis SOP",
         "seo_description": "Laboratory SOP for haemoglobin fraction separation by electrophoresis.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -88,7 +88,7 @@
         "principle": "The procedure historically assessed the duration of bleeding after a standardized superficial skin injury.",
         "department": "Haematology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "Bleeding time is obsolete or restricted in many settings. Do not implement this procedure without current institutional approval, ethical governance and validated clinical policy.",
@@ -104,8 +104,8 @@
         "seo_title": "Bleeding Time SOP | LabGOTO",
         "focus_keyword": "Bleeding Time SOP",
         "seo_description": "Laboratory reference SOP describing bleeding time and its modern limitations.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -127,7 +127,7 @@
         "principle": "The procedure measures the time required for whole blood to form a visible clot under defined conditions.",
         "department": "Haematology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "Use only where the method remains locally approved and validated. Modern coagulation assays may be more appropriate.",
@@ -143,8 +143,8 @@
         "seo_title": "Clotting Time SOP | LabGOTO",
         "focus_keyword": "Clotting Time SOP",
         "seo_description": "Laboratory SOP for manual whole-blood clotting time testing.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -166,7 +166,7 @@
         "principle": "Accurate microbiological diagnosis depends on obtaining an appropriate specimen from the correct site, preventing contamination and deterioration, and transporting it under conditions suitable for the intended examination.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -183,8 +183,8 @@
         "seo_title": "Specimen Collection and Transport for Microbiology SOP | LabGOTO",
         "focus_keyword": "Specimen Collection and Transport for Microbiology SOP",
         "seo_description": "Professional SOP for safe collection, labelling, packaging and transport of microbiology specimens.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -206,7 +206,7 @@
         "principle": "A modified acid-fast staining system uses altered decolorization or staining conditions to demonstrate organisms with partial or modified acid-fast characteristics.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -224,8 +224,8 @@
         "seo_title": "Modified Ziehl-Neelsen Staining SOP | LabGOTO",
         "focus_keyword": "Modified Ziehl-Neelsen Staining SOP",
         "seo_description": "Laboratory SOP for performing Modified Ziehl-Neelsen Staining using validated staining and microscopy procedures.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -247,7 +247,7 @@
         "principle": "Albert staining differentially demonstrates cellular morphology and characteristic granules in organisms for which the method is validated.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -265,8 +265,8 @@
         "seo_title": "Albert Staining SOP | LabGOTO",
         "focus_keyword": "Albert Staining SOP",
         "seo_description": "Laboratory SOP for performing Albert Staining using validated staining and microscopy procedures.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -288,7 +288,7 @@
         "principle": "A standardized organism inoculum is exposed to a series of antimicrobial concentrations in broth, allowing assessment of growth inhibition.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -305,8 +305,8 @@
         "seo_title": "Broth Dilution Method SOP | LabGOTO",
         "focus_keyword": "Broth Dilution Method SOP",
         "seo_description": "Laboratory SOP for Broth Dilution Method using standardized and validated AST methodology.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -328,7 +328,7 @@
         "principle": "The MIC is determined from standardized exposure of an organism to defined antimicrobial concentrations using an approved reference or validated method.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -345,8 +345,8 @@
         "seo_title": "Minimum Inhibitory Concentration (MIC) SOP | LabGOTO",
         "focus_keyword": "Minimum Inhibitory Concentration MIC SOP",
         "seo_description": "Laboratory SOP for Minimum Inhibitory Concentration (MIC) using standardized and validated AST methodology.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -368,7 +368,7 @@
         "principle": "Each dilution is prepared by transferring a defined portion of material into a defined volume of diluent, producing a predictable sequential reduction in concentration.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -385,8 +385,8 @@
         "seo_title": "Serial Dilution Technique SOP | LabGOTO",
         "focus_keyword": "Serial Dilution Technique SOP",
         "seo_description": "Laboratory SOP for preparing sequential serial dilutions using validated dilution procedures.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -408,7 +408,7 @@
         "principle": "Under appropriate culture conditions, viable organisms form visible colonies that can be counted within the validated quantitative range of the method.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -425,8 +425,8 @@
         "seo_title": "Colony Counting SOP | LabGOTO",
         "focus_keyword": "Colony Counting SOP",
         "seo_description": "Professional laboratory SOP for microbial colony counting and quantitative calculation.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -448,7 +448,7 @@
         "principle": "Recovery of microorganisms from blood depends on appropriate aseptic collection, adequate specimen volume as specified by the validated system, prompt incubation and appropriate investigation of positive signals.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -465,8 +465,8 @@
         "seo_title": "Blood Culture SOP | LabGOTO",
         "focus_keyword": "Blood Culture SOP",
         "seo_description": "Professional laboratory SOP for blood culture processing and microbiological culture.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -488,7 +488,7 @@
         "principle": "Selective and differential culture systems support recovery and differentiation of enteric pathogens while specimen quality and clinical information guide work-up.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -505,8 +505,8 @@
         "seo_title": "Stool Culture SOP | LabGOTO",
         "focus_keyword": "Stool Culture SOP",
         "seo_description": "Professional laboratory SOP for stool culture processing and microbiological culture.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -528,7 +528,7 @@
         "principle": "Microscopic specimen quality assessment and appropriate culture processing help distinguish suitable lower-respiratory material from heavily contaminated upper-airway material.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -545,8 +545,8 @@
         "seo_title": "Sputum Culture SOP | LabGOTO",
         "focus_keyword": "Sputum Culture SOP",
         "seo_description": "Professional laboratory SOP for sputum culture processing and microbiological culture.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -568,7 +568,7 @@
         "principle": "Recovery of pathogens depends on collecting representative material while minimizing superficial contamination and using suitable culture media.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -585,8 +585,8 @@
         "seo_title": "Wound/Swab Culture SOP | LabGOTO",
         "focus_keyword": "Wound/Swab Culture SOP",
         "seo_description": "Professional laboratory SOP for wound/swab culture processing and microbiological culture.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -608,7 +608,7 @@
         "principle": "Culture seeks clinically significant microorganisms in semen while controlling for contamination and correlating findings with microscopy and clinical information.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -625,8 +625,8 @@
         "seo_title": "Semen Culture SOP | LabGOTO",
         "focus_keyword": "Semen Culture SOP",
         "seo_description": "Professional laboratory SOP for semen culture processing and microbiological culture.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -648,7 +648,7 @@
         "principle": "Because CSF is a critical normally sterile-site specimen, prompt processing and appropriate culture methods are essential for recovery of clinically significant organisms.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -665,8 +665,8 @@
         "seo_title": "Cerebrospinal Fluid (CSF) Culture SOP | LabGOTO",
         "focus_keyword": "Cerebrospinal Fluid (CSF) Culture SOP",
         "seo_description": "Professional laboratory SOP for cerebrospinal fluid (csf) culture processing and microbiological culture.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -688,7 +688,7 @@
         "principle": "Appropriate sampling and selective culture methods support recovery of clinically relevant throat pathogens while limiting interference from normal flora.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -705,8 +705,8 @@
         "seo_title": "Throat Swab Culture SOP | LabGOTO",
         "focus_keyword": "Throat Swab Culture SOP",
         "seo_description": "Professional laboratory SOP for throat swab culture processing and microbiological culture.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -728,7 +728,7 @@
         "principle": "Direct microscopy and appropriate culture methods may demonstrate inflammatory cells, microorganisms and clinically relevant growth patterns in vaginal specimens.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -746,8 +746,8 @@
         "seo_title": "High Vaginal Swab HVS Examination SOP | LabGOTO",
         "focus_keyword": "High Vaginal Swab Examination SOP",
         "seo_description": "Laboratory SOP for microscopy and culture examination of high vaginal swab specimens.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -765,7 +765,7 @@
         "principle": "Direct microscopy, culture or other validated testing methods are selected according to the requested clinical investigation and organism-specific workflow.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -781,8 +781,8 @@
         "seo_title": "Endocervical Swab Examination SOP | LabGOTO",
         "focus_keyword": "Endocervical Swab Examination SOP",
         "seo_description": "Professional laboratory SOP for validated examination of endocervical swab specimens.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -800,7 +800,7 @@
         "principle": "Potassium hydroxide helps clear background cellular and keratinous material, improving microscopic visualization of fungal structures when present.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -818,8 +818,8 @@
         "seo_title": "KOH Preparation SOP | LabGOTO",
         "focus_keyword": "KOH Preparation SOP",
         "seo_description": "Laboratory SOP for KOH direct microscopy preparation for fungal examination.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -837,7 +837,7 @@
         "principle": "Lactophenol cotton blue provides contrast and preserves fungal structures sufficiently for morphological observation in validated laboratory workflows.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -854,8 +854,8 @@
         "seo_title": "LPCB Mount SOP | LabGOTO",
         "focus_keyword": "Lactophenol Cotton Blue Mount SOP",
         "seo_description": "Laboratory SOP for fungal microscopic examination using lactophenol cotton blue.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -873,7 +873,7 @@
         "principle": "Appropriate culture media and incubation conditions support recovery of fungi, followed by macroscopic and microscopic assessment using validated identification methods.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -890,8 +890,8 @@
         "seo_title": "Fungal Culture SOP | LabGOTO",
         "focus_keyword": "Fungal Culture SOP",
         "seo_description": "Professional laboratory SOP for culture and validated identification of fungi.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -909,7 +909,7 @@
         "principle": "A fresh preparation allows observation of cells, microorganisms or structures without fixation, preserving features relevant to the intended examination.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -925,8 +925,8 @@
         "seo_title": "Wet Mount Preparation SOP | LabGOTO",
         "focus_keyword": "Wet Mount Preparation SOP",
         "seo_description": "Laboratory SOP for preparing fresh wet mounts for microscopic examination.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -944,7 +944,7 @@
         "principle": "Organisms with tryptophan metabolism capable of producing indole can generate a characteristic reaction with an appropriate detection reagent.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -962,8 +962,8 @@
         "seo_title": "Indole Test SOP | LabGOTO",
         "focus_keyword": "Indole Test SOP",
         "seo_description": "Professional laboratory SOP for Indole Test in bacterial identification.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -985,7 +985,7 @@
         "principle": "Organisms able to utilize citrate under the validated test conditions produce characteristic growth or indicator changes.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -1003,8 +1003,8 @@
         "seo_title": "Citrate Utilization Test SOP | LabGOTO",
         "focus_keyword": "Citrate Utilization Test SOP",
         "seo_description": "Professional laboratory SOP for Citrate Utilization Test in bacterial identification.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -1026,7 +1026,7 @@
         "principle": "Urease-producing organisms hydrolyze urea, producing a detectable change in the validated test system.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -1044,8 +1044,8 @@
         "seo_title": "Urease Test SOP | LabGOTO",
         "focus_keyword": "Urease Test SOP",
         "seo_description": "Professional laboratory SOP for Urease Test in bacterial identification.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -1067,7 +1067,7 @@
         "principle": "Differential metabolism of carbohydrates and production of gas or hydrogen sulfide can produce characteristic reactions in TSI medium.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -1085,8 +1085,8 @@
         "seo_title": "Triple Sugar Iron (TSI) Test SOP | LabGOTO",
         "focus_keyword": "Triple Sugar Iron (TSI) Test SOP",
         "seo_description": "Professional laboratory SOP for Triple Sugar Iron (TSI) Test in bacterial identification.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -1108,7 +1108,7 @@
         "principle": "Persistent acidic metabolic end products may be demonstrated by an appropriate pH indicator reaction.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -1126,8 +1126,8 @@
         "seo_title": "Methyl Red Test SOP | LabGOTO",
         "focus_keyword": "Methyl Red Test SOP",
         "seo_description": "Professional laboratory SOP for Methyl Red Test in bacterial identification.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -1149,7 +1149,7 @@
         "principle": "Detection of specific neutral metabolic products is achieved through a validated reagent reaction.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -1167,8 +1167,8 @@
         "seo_title": "Voges-Proskauer Test SOP | LabGOTO",
         "focus_keyword": "Voges-Proskauer Test SOP",
         "seo_description": "Professional laboratory SOP for Voges-Proskauer Test in bacterial identification.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -1190,7 +1190,7 @@
         "principle": "A combined medium may demonstrate sulfide production, indole production and motility using validated observation and reagent steps.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -1209,8 +1209,8 @@
         "seo_title": "SIM Test SOP | LabGOTO",
         "focus_keyword": "SIM Test SOP",
         "seo_description": "Professional laboratory SOP for SIM Test in bacterial identification.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -1232,7 +1232,7 @@
         "principle": "Organisms capable of hydrolyzing esculin under bile-containing conditions produce a characteristic reaction in the validated medium.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -1250,8 +1250,8 @@
         "seo_title": "Bile Esculin Test SOP | LabGOTO",
         "focus_keyword": "Bile Esculin Test SOP",
         "seo_description": "Professional laboratory SOP for Bile Esculin Test in bacterial identification.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -1273,7 +1273,7 @@
         "principle": "A standardized antimicrobial disk or validated system is used to assess the characteristic phenotypic response of selected organisms.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -1291,8 +1291,8 @@
         "seo_title": "Novobiocin Susceptibility Test SOP | LabGOTO",
         "focus_keyword": "Novobiocin Susceptibility Test SOP",
         "seo_description": "Laboratory SOP for novobiocin susceptibility testing as a bacterial identification aid.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {
@@ -1310,7 +1310,7 @@
         "principle": "A standardized optochin disk or validated system produces a characteristic growth response in selected organisms under controlled test conditions.",
         "department": "Microbiology",
         "version": "1.0",
-        "author_name": "LabGOTO Editorial Team",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-28",
         "last_verified_date": "2026-08-28",
         "mandatory_disclaimer": "This SOP is a professional educational and laboratory workflow resource. It must be locally validated, approved, risk-assessed and adapted to the laboratory's equipment, reagents, accreditation requirements and current authoritative guidance before clinical implementation.",
@@ -1328,8 +1328,8 @@
         "seo_title": "Optochin Susceptibility Test SOP | LabGOTO",
         "focus_keyword": "Optochin Susceptibility Test SOP",
         "seo_description": "Laboratory SOP for optochin susceptibility testing as an aid to bacterial identification.",
-        "reviewed_by": "Samuel Ogundare Editorial Team",
-        "reviewer_credentials": "B.MLS",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-28",
         "faqs": [
             {

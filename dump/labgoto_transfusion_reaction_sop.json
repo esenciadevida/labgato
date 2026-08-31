@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-29",
         "last_verified_date": "2026-08-29",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-29",
         "featured_image": null,
         "name": "Transfusion Reaction Investigation",
@@ -27,7 +27,7 @@
         ],
         "seo_title": "Transfusion Reaction Investigation SOP",
         "focus_keyword": "transfusion reaction investigation",
-        "reviewer_credentials": "MD, Transfusion Medicine",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "What is the first step when a reaction is reported?",

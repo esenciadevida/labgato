@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-30",
         "last_verified_date": "2026-08-30",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-30",
         "featured_image": null,
         "name": "Thrombin Time Testing",
@@ -27,7 +27,7 @@
         ],
         "seo_title": "Thrombin Time Testing SOP | Final Common Pathway",
         "focus_keyword": "thrombin time testing",
-        "reviewer_credentials": "PhD, Coagulation",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "Why is reptilase used with a prolonged thrombin time?",

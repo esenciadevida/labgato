@@ -8,7 +8,7 @@
         "principle": "Reticulocytes are immature, anucleate red blood cells that have recently been released from the bone marrow. They contain residual ribosomal RNA (rRNA) and organelles. The manual reticulocyte count utilizes a supravital staining technique (using basic dyes like New Methylene Blue or Brilliant Cresyl Blue) which penetrates the intact cell membrane of living cells. The dye precipitates the residual rRNA, forming a dark blue, reticular network, granules, or filaments visible under a light microscope. By counting the proportion of these stained cells relative to mature red blood cells, the laboratory can quantify the rate of erythropoiesis (red blood cell production).",
         "department": "Hematology",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-29",
         "last_verified_date": "2026-08-29",
         "mandatory_disclaimer": "This Standard Operating Procedure (SOP) is provided as a template based on WHO and CLSI guidelines. It must be reviewed, adapted to your specific laboratory's equipment, reagents, and patient demographics, and formally approved by your Laboratory Director before clinical use.",
@@ -40,8 +40,8 @@
         "seo_title": "Manual Reticulocyte Count SOP | Step-by-Step Procedure & Calculations",
         "focus_keyword": "manual reticulocyte count",
         "seo_description": "Comprehensive Standard Operating Procedure (SOP) for performing a manual reticulocyte count using supravital staining, the Miller disc method, and microscopy.",
-        "reviewed_by": "Dr. [Laboratory Director Name]",
-        "reviewer_credentials": "MD, Pathology / PhD, Laboratory Medicine",
+        "reviewed_by": "Labgoto Team",
+        "reviewer_credentials": null,
         "last_reviewed_date": "2026-08-29",
         "faqs": [
             {

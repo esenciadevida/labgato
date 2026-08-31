@@ -11,6 +11,11 @@
 
     $globalSetting = fn (string $key, mixed $default) => setting($key, $default);
 
+    $storedTotal = (int) $oldValue('total_questions', 10);
+    $blueprintTotal = $assessment ? $assessment->blueprintQuestionCount() : 0;
+    // Default to auto mode unless the stored total intentionally differs from the blueprint.
+    $autoTotalDefault = $assessment === null || $blueprintTotal === 0 || $storedTotal === $blueprintTotal;
+
     $existingBlueprints = $assessment?->relationLoaded('blueprints')
         ? $assessment->blueprints->keyBy('question_category_id')
         : $assessment?->blueprints->keyBy('question_category_id');
@@ -44,6 +49,8 @@
 
 <form method="POST" action="{{ $action }}" class="space-y-6" x-data="{
     rows: [],
+    autoTotal: {{ $autoTotalDefault ? 'true' : 'false' }},
+    manualTotal: {{ $storedTotal }},
     init() {
         this.rows = JSON.parse(this.$root.dataset.rows || '[]');
     },
@@ -52,8 +59,10 @@
     },
     get included() { return this.rows.filter(r => r.include); },
     get grandTotal() { return this.included.reduce((sum, r) => sum + (parseInt(r.question_count) || 0), 0); },
+    get effectiveTotal() { return this.autoTotal ? this.grandTotal : (parseInt(this.manualTotal) || 0); },
     get rowsValid() { return this.included.length > 0 && this.included.every(r => this.rowSum(r) === 100); },
-    get totalsValid() { return this.grandTotal >= 1; },
+    get totalsValid() { return this.effectiveTotal >= 1; },
+    syncManual() { this.manualTotal = this.grandTotal; },
 }" data-rows="{{ json_encode($initialRows) }}">
     @csrf
     @if($method !== 'POST')
@@ -118,9 +127,20 @@
                 </div>
 
                 <div>
-                    <x-form.label for="total_questions">Total questions (auto)</x-form.label>
-                    <x-ui.input type="number" id="total_questions" name="total_questions" min="1" max="500" x-bind:value="grandTotal" readonly aria-readonly="true" />
-                    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Auto-calculated from the blueprint counts below.</p>
+                    <div class="flex items-center justify-between">
+                        <x-form.label for="total_questions">Total questions</x-form.label>
+                        <label class="inline-flex items-center gap-1.5 cursor-pointer text-xs text-slate-500 dark:text-slate-400 select-none">
+                            <input type="checkbox" x-model="autoTotal" @change="syncManual()" class="rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600">
+                            Auto from blueprints
+                        </label>
+                    </div>
+                    <input type="number" id="total_questions" name="total_questions" min="1" max="500"
+                           x-model.number="autoTotal ? grandTotal : manualTotal"
+                           :readonly="autoTotal"
+                           :class="autoTotal ? 'bg-slate-50 cursor-not-allowed text-slate-600 dark:bg-slate-800/60 dark:text-slate-400 shadow-none' : ''"
+                           class="block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/25 focus:border-primary-500 sm:text-sm shadow-card dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder-slate-500 dark:focus:border-primary-500">
+                    <input type="hidden" name="auto_total" :value="autoTotal ? 1 : 0">
+                    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400" x-text="autoTotal ? 'Auto-calculated from the blueprint counts below.' : 'Manually entered total. Blueprint counts should match this value.'"></p>
                 </div>
             </div>
         </x-form.section>

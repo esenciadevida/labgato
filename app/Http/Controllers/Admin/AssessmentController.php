@@ -125,21 +125,26 @@ class AssessmentController extends Controller
 
     public function destroy(Assessment $assessment)
     {
-        if ($assessment->attempts()->exists()) {
-            return back()->with('error', 'This assessment already has attempts. Archive it instead of deleting.');
-        }
-
         if ($assessment->status === 'open') {
             return back()->with('error', 'Close this assessment before deleting it.');
         }
 
         $title = $assessment->title;
-        $assessment->blueprints()->delete();
-        $assessment->delete();
+        $attemptCount = $assessment->attempts()->count();
+
+        DB::transaction(function () use ($assessment) {
+            // Foreign keys cascade: attempts -> answers / integrity events / certificates,
+            // and assessment -> blueprints / attempts. Delete the assessment row to clean all.
+            $assessment->delete();
+        });
+
+        $message = $attemptCount > 0
+            ? "Assessment \"{$title}\" and its {$attemptCount} attempt(s), answers, and certificates deleted."
+            : "Assessment \"{$title}\" deleted.";
 
         return redirect()
             ->route('admin.assessments.index')
-            ->with('success', "Assessment \"{$title}\" deleted.");
+            ->with('success', $message);
     }
 
     private function uniqueSlug(string $base): string

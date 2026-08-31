@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-29",
         "last_verified_date": "2026-08-29",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-29",
         "featured_image": null,
         "name": "Serum Creatinine Testing",
@@ -30,7 +30,7 @@
         ],
         "seo_title": "Serum Creatinine Testing SOP | Renal Function",
         "focus_keyword": "serum creatinine testing",
-        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "Why is enzymatic creatinine preferred over Jaffe?",

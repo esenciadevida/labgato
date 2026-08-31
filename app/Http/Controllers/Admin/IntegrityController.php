@@ -24,8 +24,7 @@ class IntegrityController extends Controller
             })
             ->orderByRaw("CASE integrity_status WHEN 'high_risk' THEN 0 WHEN 'review' THEN 1 ELSE 2 END")
             ->orderByDesc('id')
-            ->paginate(config('labgoto.pagination.per_page'))
-            ->withQueryString();
+            ->get();
 
         $counts = ExamAttempt::query()
             ->selectRaw('count(*) as all_count')
@@ -34,8 +33,22 @@ class IntegrityController extends Controller
             ->selectRaw("sum(case when integrity_status = 'high_risk' then 1 else 0 end) as high_risk_count")
             ->first();
 
+        $grouped = $attempts->groupBy(fn ($attempt) => $attempt->assessment_id);
+
+        $groups = $grouped->map(function ($groupAttempts, $assessmentId) {
+            $first = $groupAttempts->first();
+
+            return [
+                'assessment' => $first?->assessment,
+                'attempts' => $groupAttempts,
+                'total' => $groupAttempts->count(),
+                'review' => $groupAttempts->where('integrity_status', 'review')->count(),
+                'high_risk' => $groupAttempts->where('integrity_status', 'high_risk')->count(),
+            ];
+        })->values();
+
         return view('admin.integrity.index', [
-            'attempts' => $attempts,
+            'groups' => $groups,
             'status' => $status,
             'search' => $search,
             'counts' => [

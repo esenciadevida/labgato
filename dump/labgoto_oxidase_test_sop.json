@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-29",
         "last_verified_date": "2026-08-29",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-29",
         "featured_image": null,
         "name": "Oxidase Test for Bacterial Identification",
@@ -28,7 +28,7 @@
         ],
         "seo_title": "Oxidase Test SOP | Bacterial Identification Procedure",
         "focus_keyword": "oxidase test",
-        "reviewer_credentials": "MD, Microbiology",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "Why avoid nickel/chrome loops for this test?",

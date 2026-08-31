@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-30",
         "last_verified_date": "2026-08-30",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-30",
         "featured_image": null,
         "name": "Venipuncture and Phlebotomy Procedure",
@@ -28,7 +28,7 @@
         ],
         "seo_title": "Venipuncture and Phlebotomy Procedure SOP | Order of Draw",
         "focus_keyword": "venipuncture procedure",
-        "reviewer_credentials": "Medical Laboratory Scientist",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "Why is the order of draw important?",

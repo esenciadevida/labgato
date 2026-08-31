@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "2.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-31",
         "last_verified_date": "2026-08-31",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-31",
         "featured_image": null,
         "name": "Kidney Function Tests (KFTs) Panel",
@@ -34,7 +34,7 @@
         ],
         "seo_title": "Kidney Function Tests (KFTs) Panel SOP | Clinical Chemistry",
         "focus_keyword": "kidney function tests",
-        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "Why is creatinine preferred over urea for assessing renal function?",

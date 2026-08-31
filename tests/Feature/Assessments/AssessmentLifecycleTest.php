@@ -231,7 +231,7 @@ class AssessmentLifecycleTest extends TestCase
         $response->assertSee(setting('hub.practice_title', 'Practice makes perfect'));
     }
 
-    public function test_destroy_blocks_when_attempts_exist(): void
+    public function test_destroy_cascades_attempts_when_they_exist(): void
     {
         $assessment = $this->makeAssessment(['status' => 'closed']);
         $admin = $this->admin();
@@ -249,10 +249,11 @@ class AssessmentLifecycleTest extends TestCase
 
         $this->actingAs($admin)
             ->delete(route('admin.assessments.destroy', $assessment))
-            ->assertRedirect()
-            ->assertSessionHas('error');
+            ->assertRedirect(route('admin.assessments.index'))
+            ->assertSessionHas('success');
 
-        $this->assertDatabaseHas('assessments', ['id' => $assessment->id]);
+        $this->assertDatabaseMissing('assessments', ['id' => $assessment->id]);
+        $this->assertDatabaseMissing('exam_attempts', ['assessment_id' => $assessment->id]);
     }
 
     public function test_destroy_blocks_while_open(): void

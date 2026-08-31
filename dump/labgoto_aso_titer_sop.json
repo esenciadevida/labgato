@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-30",
         "last_verified_date": "2026-08-30",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-30",
         "featured_image": null,
         "name": "Anti-Streptolysin O (ASO) Testing",
@@ -28,7 +28,7 @@
         ],
         "seo_title": "Anti-Streptolysin O (ASO) Testing SOP | Post-Strep Sequelae",
         "focus_keyword": "aso testing",
-        "reviewer_credentials": "PhD, Immunology",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "Why are paired sera better than a single ASO titer?",

@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-30",
         "last_verified_date": "2026-08-30",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-30",
         "featured_image": null,
         "name": "Manual WBC Differential Count Procedure",
@@ -29,7 +29,7 @@
         ],
         "seo_title": "Manual WBC Differential Count Procedure SOP",
         "focus_keyword": "manual wbc differential",
-        "reviewer_credentials": "PhD, Hematology",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "Why count a differential with 100 cells?",

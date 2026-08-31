@@ -23,7 +23,7 @@ class KnowledgeResourceSeeder extends Seeder
                 'topic_category' => 'Hematology',
                 'difficulty_level' => 'Beginner',
                 'learning_objectives' => "By the end of this resource you should be able to:\n\n- Describe the major components of blood.\n- Identify the primary parameters reported in a complete blood count.\n- Explain why reference ranges vary by demographic group.",
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 8,
             ],
             [
@@ -34,7 +34,7 @@ class KnowledgeResourceSeeder extends Seeder
                 'topic_category' => 'Clinical Chemistry',
                 'difficulty_level' => 'Intermediate',
                 'learning_objectives' => "By the end of this resource you should be able to:\n\n- List the major groups of analytes in clinical chemistry.\n- Describe common analytical principles used in chemistry testing.",
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 10,
             ],
             [
@@ -45,7 +45,7 @@ class KnowledgeResourceSeeder extends Seeder
                 'topic_category' => 'Laboratory Practice',
                 'difficulty_level' => 'Intermediate',
                 'learning_objectives' => "By the end of this resource you should be able to:\n\n- Explain the purpose of quality control materials.\n- Read a Levey-Jennings chart.\n- Recognize common Westgard rule violations.",
-                'author_name' => 'Labgoto Education Team',
+                'author_name' => 'Labgoto Team',
                 'reading_time_minutes' => 9,
             ],
         ];

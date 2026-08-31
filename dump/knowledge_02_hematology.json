@@ -5,7 +5,7 @@
   "description": "LabGoTo Knowledge Hub — List 02: Hematology. Expanded educational drafts for editorial and clinical review before publication.",
   "defaults": {
     "status": "draft",
-    "authorName": "LabGoTo Editorial Team",
+    "authorName": "Labgoto Team",
     "clinicalReviewRequired": true
   },
   "records": [
@@ -24,7 +24,7 @@
         "Identify common preanalytical and analytical sources of CBC error.",
         "Explain the general purpose of manual review rules for CBC results."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 7,
       "featuredImage": null,
       "categories": [
@@ -80,7 +80,7 @@
         "Identify common supporting laboratory investigations for anemia.",
         "Explain why classification alone does not establish a diagnosis."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 7,
       "featuredImage": null,
       "categories": [
@@ -134,7 +134,7 @@
         "Identify what is assessed in red cells, white cells, and platelets on a film.",
         "Describe general quality considerations for blood-film review."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 7,
       "featuredImage": null,
       "categories": [
@@ -186,7 +186,7 @@
         "Describe general patterns associated with increases or decreases in each cell line.",
         "Explain the concept of a left shift and its general significance."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 7,
       "featuredImage": null,
       "categories": [
@@ -238,7 +238,7 @@
         "Explain why correcting the reticulocyte percentage for anemia matters.",
         "Identify general clinical and laboratory uses of the reticulocyte count."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 7,
       "featuredImage": null,
       "categories": [
@@ -290,7 +290,7 @@
         "Describe the general laboratory approach to investigating a suspected hemoglobinopathy.",
         "Explain why iron studies are relevant when investigating microcytic anemia."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 7,
       "featuredImage": null,
       "categories": [

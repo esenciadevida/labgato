@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-29",
         "last_verified_date": "2026-08-29",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-29",
         "featured_image": null,
         "name": "Blood Urea / BUN Testing",
@@ -29,7 +29,7 @@
         ],
         "seo_title": "Blood Urea / BUN Testing SOP | Renal Function",
         "focus_keyword": "blood urea testing",
-        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "What is the difference between Urea and BUN?",

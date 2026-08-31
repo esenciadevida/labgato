@@ -56,7 +56,7 @@
                                 default => [['draft', 'Restore to draft', 'default', "Restore \"{$assessment->title}\" to draft?"]],
                             };
 
-                            $deletable = $assessment->participants_count === 0 && ! in_array($assessment->status, ['open'], true);
+                            $deletable = ! in_array($assessment->status, ['open'], true);
                         @endphp
                         <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/60">
                             <td class="px-4 py-3">
@@ -126,7 +126,9 @@
 
                                     @if($deletable)
                                         <form method="POST" action="{{ route('admin.assessments.destroy', $assessment) }}"
-                                              data-confirm="Permanently delete this assessment and its blueprint? This cannot be undone.">
+                                              data-confirm="{{ $assessment->participants_count > 0
+                                                  ? 'This assessment has ' . $assessment->participants_count . ' attempt(s). Deleting will PERMANENTLY remove all attempts, answers, and integrity data. This cannot be undone.'
+                                                  : 'Permanently delete this assessment and its blueprint? This cannot be undone.' }}">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" title="Delete"

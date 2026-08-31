@@ -8,7 +8,7 @@
     "principle": "A manual CBC evaluates major blood cellular parameters using validated manual measurement, enumeration and microscopic examination methods.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "This SOP is an educational and laboratory workflow resource and must be locally validated, approved and adapted before clinical implementation.",
@@ -26,8 +26,8 @@
     "seo_title": "Manual Complete Blood Count CBC/FBC SOP | LabGOTO",
     "focus_keyword": "Manual Complete Blood Count SOP",
     "seo_description": "Professional laboratory SOP for performing a manual complete blood count, including specimen checks, cell counts and quality control.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -53,7 +53,7 @@
     "principle": "Microscopic examination of a properly prepared and stained peripheral blood film allows assessment of red-cell, white-cell and platelet morphology.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "This procedure must be adapted to the laboratory's validated staining system, microscope configuration, reporting policy and quality-management requirements before clinical use.",
@@ -71,8 +71,8 @@
     "seo_title": "Peripheral Blood Film Examination SOP | LabGOTO",
     "focus_keyword": "Peripheral Blood Film Examination SOP",
     "seo_description": "Laboratory SOP for preparation, staining and microscopic examination of peripheral blood films with standardized morphology reporting.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -94,7 +94,7 @@
     "principle": "A thick blood film concentrates blood within a small area, increasing the likelihood of detecting malaria parasites by light microscopy.",
     "department": "Parasitology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "This procedure must be performed by trained personnel using validated reagents, staining methods and microscopy quality-assurance systems. Follow applicable WHO guidance and local laboratory procedures.",
@@ -114,8 +114,8 @@
     "seo_title": "Thick Blood Film for Malaria Parasites SOP | LabGOTO",
     "focus_keyword": "Thick Blood Film Malaria SOP",
     "seo_description": "Professional SOP for preparation and microscopic examination of thick blood films for malaria parasite detection using validated procedures.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -141,7 +141,7 @@
     "principle": "A thin blood film preserves parasite and red-cell morphology, supporting microscopic identification and assessment of malaria parasites.",
     "department": "Parasitology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "This SOP must be implemented using validated staining, microscopy and quality-assurance procedures.",
@@ -161,8 +161,8 @@
     "seo_title": "Thin Blood Film for Malaria Parasites SOP | LabGOTO",
     "focus_keyword": "Thin Blood Film Malaria SOP",
     "seo_description": "Laboratory SOP for preparing and examining thin blood films for malaria parasite identification using validated microscopy procedures.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -184,7 +184,7 @@
     "principle": "Residual RNA within immature red blood cells can be demonstrated by supravital staining, allowing reticulocyte enumeration.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Use locally validated staining, counting and calculation procedures before clinical implementation.",
@@ -200,8 +200,8 @@
     "seo_title": "Reticulocyte Count SOP | LabGOTO",
     "focus_keyword": "Reticulocyte Count SOP",
     "seo_description": "Professional laboratory SOP for manual or validated reticulocyte counting.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -223,7 +223,7 @@
     "principle": "The rate at which erythrocytes sediment in a standardized column of anticoagulated blood is measured under controlled conditions.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Use validated Westergren equipment, specimen preparation and timing requirements.",
@@ -239,8 +239,8 @@
     "seo_title": "ESR Westergren Method SOP | LabGOTO",
     "focus_keyword": "ESR Westergren Method SOP",
     "seo_description": "Standard operating procedure for erythrocyte sedimentation rate testing using the Westergren method.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -262,7 +262,7 @@
     "principle": "Centrifugation separates and packs erythrocytes, allowing determination of the proportion of blood volume occupied by red cells.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Follow locally validated centrifugation, specimen handling and reading procedures.",
@@ -278,8 +278,8 @@
     "seo_title": "Packed Cell Volume PCV Hematocrit SOP | LabGOTO",
     "focus_keyword": "Packed Cell Volume SOP",
     "seo_description": "Laboratory SOP for determining packed cell volume and haematocrit.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -301,7 +301,7 @@
     "principle": "Haemoglobin concentration is determined using a validated analytical method appropriate to the laboratory's approved testing system.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Follow the manufacturer's instructions and the laboratory's validated haemoglobin procedure.",
@@ -317,8 +317,8 @@
     "seo_title": "Hemoglobin Estimation SOP | LabGOTO",
     "focus_keyword": "Hemoglobin Estimation SOP",
     "seo_description": "Standard operating procedure for laboratory haemoglobin estimation using a validated method.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -340,7 +340,7 @@
     "principle": "Morphological classification of leukocytes on a stained peripheral blood film provides the differential leukocyte distribution.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Use validated morphology criteria, competency requirements and laboratory-approved counting procedures.",
@@ -357,8 +357,8 @@
     "seo_title": "Differential Leukocyte Count SOP | LabGOTO",
     "focus_keyword": "Differential Leukocyte Count SOP",
     "seo_description": "Laboratory SOP for performing a microscopic differential leukocyte count.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -380,7 +380,7 @@
     "principle": "Reduced oxygen conditions may induce characteristic sickling in susceptible red blood cells containing significant haemoglobin S.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "A screening result must be interpreted with clinical information and confirmed using an appropriate validated haemoglobin identification method where required.",
@@ -397,8 +397,8 @@
     "seo_title": "Sickling Test SOP | LabGOTO",
     "focus_keyword": "Sickling Test SOP",
     "seo_description": "Laboratory SOP for performing a microscopic sickling screening test.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -420,7 +420,7 @@
     "principle": "The test detects the characteristic reduced solubility of haemoglobin S under validated reducing conditions.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Positive screening results should be confirmed using an appropriate validated haemoglobin identification method.",
@@ -437,8 +437,8 @@
     "seo_title": "Sickling Solubility Test SOP | LabGOTO",
     "focus_keyword": "Sickling Solubility Test SOP",
     "seo_description": "Laboratory SOP for haemoglobin S solubility screening.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -460,7 +460,7 @@
     "principle": "Different haemoglobin fractions migrate at different rates during electrophoresis under controlled analytical conditions.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Follow the validated method and manufacturer's instructions. Some haemoglobin variants may require confirmatory methods.",
@@ -477,8 +477,8 @@
     "seo_title": "Hemoglobin Electrophoresis SOP | LabGOTO",
     "focus_keyword": "Hemoglobin Electrophoresis SOP",
     "seo_description": "Laboratory SOP for haemoglobin fraction separation by electrophoresis.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -500,7 +500,7 @@
     "principle": "Addition of thromboplastin and calcium to citrated plasma initiates clot formation, allowing measurement of prothrombin time.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Follow validated reagent manufacturer instructions, including analyser-specific procedures and INR calculation requirements.",
@@ -517,8 +517,8 @@
     "seo_title": "Prothrombin Time PT INR SOP | LabGOTO",
     "focus_keyword": "Prothrombin Time PT INR SOP",
     "seo_description": "Laboratory SOP for prothrombin time and INR testing using a validated coagulation method.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -540,7 +540,7 @@
     "principle": "Activation of the intrinsic coagulation pathway in citrated plasma allows measurement of clotting time following calcium addition.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Follow validated reagent and analyser instructions for specimen processing and result interpretation.",
@@ -557,8 +557,8 @@
     "seo_title": "Activated Partial Thromboplastin Time APTT SOP | LabGOTO",
     "focus_keyword": "APTT SOP",
     "seo_description": "Laboratory SOP for activated partial thromboplastin time testing.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -580,7 +580,7 @@
     "principle": "The procedure historically assessed the duration of bleeding after a standardized superficial skin injury.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Bleeding time is obsolete or restricted in many settings. Do not implement this procedure without current institutional approval, ethical governance and validated clinical policy.",
@@ -596,8 +596,8 @@
     "seo_title": "Bleeding Time SOP | LabGOTO",
     "focus_keyword": "Bleeding Time SOP",
     "seo_description": "Laboratory reference SOP describing bleeding time and its modern limitations.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -619,7 +619,7 @@
     "principle": "The procedure measures the time required for whole blood to form a visible clot under defined conditions.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Use only where the method remains locally approved and validated. Modern coagulation assays may be more appropriate.",
@@ -635,8 +635,8 @@
     "seo_title": "Clotting Time SOP | LabGOTO",
     "focus_keyword": "Clotting Time SOP",
     "seo_description": "Laboratory SOP for manual whole-blood clotting time testing.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -658,7 +658,7 @@
     "principle": "The assay determines fibrinogen concentration or functional activity using a validated coagulation analytical method.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "Follow the validated assay manufacturer's instructions and laboratory quality-management requirements.",
@@ -675,8 +675,8 @@
     "seo_title": "Fibrinogen Assay SOP | LabGOTO",
     "focus_keyword": "Fibrinogen Assay SOP",
     "seo_description": "Laboratory SOP for determining plasma fibrinogen using a validated assay.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {
@@ -698,7 +698,7 @@
     "principle": "Immunological detection of fibrin degradation products containing D-dimer-related structures provides a quantitative or qualitative result depending on the validated assay.",
     "department": "Haematology",
     "version": "1.0",
-    "author_name": "LabGOTO Editorial Team",
+    "author_name": "Labgoto Team",
     "reviewed_date": "2026-08-28",
     "last_verified_date": "2026-08-28",
     "mandatory_disclaimer": "D-dimer methods and reporting units vary by assay. Follow the specific manufacturer's instructions and validated clinical interpretation pathway.",
@@ -715,8 +715,8 @@
     "seo_title": "D-Dimer Testing SOP | LabGOTO",
     "focus_keyword": "D-Dimer Testing SOP",
     "seo_description": "Laboratory SOP for D-dimer testing using validated immunological assay methods.",
-    "reviewed_by": "Samuel Ogundare Editorial Team",
-    "reviewer_credentials": "B.MLS",
+    "reviewed_by": "Labgoto Team",
+    "reviewer_credentials": null,
     "last_reviewed_date": "2026-08-28",
     "faqs": [
       {

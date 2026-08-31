@@ -2,10 +2,10 @@
     {
         "status": "published",
         "version": "1.0",
-        "author_name": "Laboratory Director",
+        "author_name": "Labgoto Team",
         "reviewed_date": "2026-08-30",
         "last_verified_date": "2026-08-30",
-        "reviewed_by": "Dr. [Name]",
+        "reviewed_by": "Labgoto Team",
         "last_reviewed_date": "2026-08-30",
         "featured_image": null,
         "name": "Serum Iron Studies (Iron, TIBC, Ferritin)",
@@ -29,7 +29,7 @@
         ],
         "seo_title": "Serum Iron Studies (Iron, TIBC, Ferritin) SOP | Anemia Workup",
         "focus_keyword": "serum iron studies",
-        "reviewer_credentials": "PhD, Clinical Chemistry",
+        "reviewer_credentials": null,
         "faqs": [
             {
                 "question": "Why is a fasting morning sample preferred for iron studies?",

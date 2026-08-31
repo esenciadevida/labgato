@@ -5,7 +5,7 @@
   "description": "LabGoTo Knowledge Hub — List 01: General Laboratory Knowledge. Expanded educational drafts for editorial and clinical review before publication.",
   "defaults": {
     "status": "draft",
-    "authorName": "LabGoTo Editorial Team",
+    "authorName": "Labgoto Team",
     "clinicalReviewRequired": true
   },
   "records": [
@@ -23,7 +23,7 @@
         "Describe the pre-analytical, analytical, and post-analytical phases.",
         "Explain why laboratory quality affects clinical usefulness."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 4,
       "featuredImage": null,
       "categories": [
@@ -71,7 +71,7 @@
         "Explain the role of bone marrow in blood-cell production.",
         "Describe the role of laboratory hematology testing."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 5,
       "featuredImage": null,
       "categories": [
@@ -120,7 +120,7 @@
         "Identify major circulating white-cell populations.",
         "Explain why blood components are measured in laboratory medicine."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 4,
       "featuredImage": null,
       "categories": [
@@ -167,7 +167,7 @@
         "Recognize common chemistry specimen types.",
         "Explain how analytical and pre-analytical factors affect chemistry results."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 4,
       "featuredImage": null,
       "categories": [
@@ -217,7 +217,7 @@
         "Explain why specimen quality is important.",
         "Explain the role of antimicrobial susceptibility testing."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 5,
       "featuredImage": null,
       "categories": [
@@ -263,7 +263,7 @@
         "Identify common serological testing methods.",
         "Explain why assay-specific criteria are important when interpreting serology."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 4,
       "featuredImage": null,
       "categories": [
@@ -307,7 +307,7 @@
         "Explain the purpose of compatibility testing.",
         "Explain why traceability and quality systems are essential."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 5,
       "featuredImage": null,
       "categories": [
@@ -350,7 +350,7 @@
         "Describe common chemical and microscopic examinations.",
         "Explain why urine specimen quality affects results."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 4,
       "featuredImage": null,
       "categories": [
@@ -396,7 +396,7 @@
         "Describe the broad stages of a molecular testing workflow.",
         "Explain the purpose of controls and contamination prevention."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 5,
       "featuredImage": null,
       "categories": [
@@ -442,7 +442,7 @@
         "Describe major post-analytical activities.",
         "Explain how errors in one phase can affect the final result."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 5,
       "featuredImage": null,
       "categories": [
@@ -487,7 +487,7 @@
         "Identify common examples of errors in each phase.",
         "Explain why quality management must cover the complete testing pathway."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 5,
       "featuredImage": null,
       "categories": [
@@ -533,7 +533,7 @@
         "Explain how a method can be precise but not sufficiently accurate.",
         "Recognize why method-specific evaluation criteria are needed."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 4,
       "featuredImage": null,
       "categories": [
@@ -579,7 +579,7 @@
         "Explain the purpose of investigating QC failure.",
         "Recognize why QC acceptance criteria are method-specific."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 6,
       "featuredImage": null,
       "categories": [
@@ -630,7 +630,7 @@
         "Identify common pre-analytical specimen problems.",
         "Explain why transport and stability requirements are test-specific."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 5,
       "featuredImage": null,
       "categories": [
@@ -679,7 +679,7 @@
         "Explain the importance of method and specimen context.",
         "Distinguish critical values from ordinary reference intervals."
       ],
-      "authorName": "LabGoTo Editorial Team",
+      "authorName": "Labgoto Team",
       "readingTimeMinutes": 5,
       "featuredImage": null,
       "categories": [
