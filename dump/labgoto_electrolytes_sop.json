@@ -1,18 +1,18 @@
 [
     {
         "status": "published",
-        "version": "1.0",
+        "version": "2.0",
         "author_name": "Laboratory Director",
-        "reviewed_date": "2026-08-29",
-        "last_verified_date": "2026-08-29",
+        "reviewed_date": "2026-08-31",
+        "last_verified_date": "2026-08-31",
         "reviewed_by": "Dr. [Name]",
-        "last_reviewed_date": "2026-08-29",
+        "last_reviewed_date": "2026-08-31",
         "featured_image": null,
         "name": "Serum Electrolytes (Na, K, Cl)",
         "slug": "serum-electrolytes-na-k-cl",
-        "short_description": "SOP for measuring sodium, potassium, and chloride using Ion-Selective Electrodes (ISE).",
-        "content": "# Standard Operating Procedure: Serum Electrolytes\n## 1. Purpose: Assess fluid, electrolyte, and acid-base balance.\n## 2. Specimen: Serum, plasma (lithium heparin), or whole blood. Avoid hemolysis (falsely elevates K+).\n## 3. Reagents: ISE inner/outer reference solutions, diluent.\n## 4. Procedure (Indirect ISE):\n- Sample is automatically diluted with high-ionic-strength buffer.\n- Passed over specific ion-selective membranes (Na+, K+, Cl-).\n- Potential difference generated is measured against a reference electrode and converted to concentration via the Nernst equation.\n## 5. Reference Ranges\n- See the Reference Ranges panel below for adult reference intervals.\n## 6. QC: Run 2 levels of control daily.",
-        "principle": "Ion-selective electrodes generate a voltage potential proportional to the logarithm of the ion activity in the sample, as described by the Nernst equation.",
+        "short_description": "SOP for measuring sodium, potassium, and chloride using Ion-Selective Electrodes (ISE), with per-analyte procedures.",
+        "content": "# Standard Operating Procedure: Serum Electrolytes (Na, K, Cl)\n\n## 1. Purpose and Scope\nTo measure serum sodium, potassium, and chloride using ion-selective electrodes (ISE) for the assessment of fluid, electrolyte, and acid-base balance, and for the calculation of the anion gap.\n\n## 2. Specimen Requirements\n- **Type:** Serum, plasma (lithium heparin), or whole blood.\n- **Volume:** Minimum 0.5 mL serum or 1.0 mL blood.\n- **Hemolysis:** Avoid hemolysis; RBC rupture releases intracellular potassium, falsely elevating K+.\n- **Stability:** Separate serum from cells within 2 hours (critical for potassium); store capped at 2-8°C and analyze within 24 h.\n- **Timing:** Random sampling is acceptable; note hemolysis, lipemia, and icterus indices on the report.\n\n## 3. Safety and Precautions\n- Standard PPE (gloves, lab coat, eye protection). All blood samples are potentially infectious.\n- Dispose of sharps and biohazard waste per laboratory policy.\n- Do not pipette by mouth. Use mechanical pipetting devices.\n\n## 4. Equipment and Reagents\n- Automated chemistry analyzer with an ISE module (indirect or direct measurement).\n- Sodium-selective, potassium-selective (valinomycin), and chloride-selective electrodes.\n- Internal reference electrode and reference/salt-bridge solution.\n- High-ionic-strength diluent buffer (for indirect ISE).\n- Two levels of quality control material (normal and abnormal).\n\n## 5. Per-Analyte Procedures\n### 5.1 Sodium (Na+) Procedure - Indirect ISE\n1. Prime the ISE module and flush lines with internal reference solution; discard the first aliquot if air bubbles are present.\n2. Calibrate with two level standards (low and high) and verify electrode slope against the Nernst equation.\n3. Auto-dilute serum 1:30 in high-ionic-strength buffer to minimize protein and lipid matrix effects.\n4. Pass the diluted sample over the sodium-selective electrode; record the potential difference against the reference electrode.\n5. Derive the Na+ concentration in mEq/L using the calibration curve; run two levels of control and release after acceptance.\n\n### 5.2 Potassium (K+) Procedure - Indirect ISE\n1. Calibrate the potassium electrode (valinomycin membrane) with low and high standards.\n2. Auto-dilute serum 1:30 in buffer; pass over the potassium-selective membrane.\n3. Record the potential difference against the reference electrode; convert to mEq/L by the Nernst equation.\n4. Repeat critical values (> 6.0 or < 2.5 mEq/L) on a fresh, non-hemolyzed specimen before reporting.\n5. Run two levels of control; reject samples flagged as hemolyzed.\n\n### 5.3 Chloride (Cl-) Procedure - Indirect ISE\n1. Calibrate the chloride electrode with low and high ion standards.\n2. Auto-dilute serum 1:30 in buffer; pass over the chloride-selective membrane.\n3. Record the potential against the reference electrode; convert to mEq/L.\n4. Correlate chloride with sodium and CO2/bicarbonate for anion-gap interpretation.\n5. Run controls; flag samples with abnormal hemolysis, lipemia, or icterus indices.\n\n## 6. Anion Gap (derived)\n- **Anion gap = Na+ - (Cl- + HCO3-).** Normal reference interval is approximately 8-16 mEq/L (non-Farr method), stated as a decision threshold in prose; verify the laboratory-specific interval.\n- A high anion-gap metabolic acidosis (e.g., lactic acidosis, ketoacidosis, uremia, toxin ingestion) is suggested when the gap is elevated; a normal-gap (hyperchloremic) acidosis is suggested by a low bicarbonate with a normal gap.\n\n## 7. Quality Control\n- Run two levels (normal and abnormal) of control daily, with every calibration, and with each new electrode or reagent lot.\n- Enforce Levey-Jennings rules; investigate trends, shifts, or electrode drift before reporting patient results.\n- Perform electrode conditioning and maintenance (flushing, membrane care) per the manufacturer schedule.\n- Participate in an external quality assessment (EQA) program for all three electrolytes.\n\n## 8. Decision limits\nDecision thresholds for critical electrolyte values are stated as prose; the canonical adult reference intervals are shown in the Reference Ranges panel.\n- **Critical hypokalemia:** K+ < 2.5 mEq/L; **critical hyperkalemia:** K+ > 6.5 mEq/L - both require urgent clinical notification.\n- **Critical hyponatremia:** Na+ < 120 mEq/L; **critical hypernatremia:** Na+ > 160 mEq/L - both require urgent clinical notification.\n- **Chloride:** a disproportionate fall with a normal gap suggests a hyperchloremic (normal anion gap) acidosis.\n\n**Note on pseudohyponatremia:** with indirect (dilutional) ISE, marked hyperproteinemia or hyperlipidemia can lower measured sodium (pseudohyponatremia); direct ISE on whole blood avoids this effect.",
+        "principle": "Ion-selective electrodes generate an electrode potential proportional to the logarithm of the ion activity in the sample, as described by the Nernst equation. Indirect ISE dilutes the sample with a high-ionic-strength buffer before the potential is measured against a reference electrode, correcting for variations in sample volume and viscosity.",
         "department": "Clinical Chemistry",
         "mandatory_disclaimer": "Template based on standard clinical chemistry practices. Must be approved by Laboratory Director.",
         "categories": [
@@ -27,6 +27,7 @@
             "potassium",
             "chloride",
             "ise",
+            "anion gap",
             "clinical chemistry"
         ],
         "seo_title": "Serum Electrolytes SOP | ISE Testing Procedure",
@@ -36,9 +37,13 @@
             {
                 "question": "Why does hemolysis affect potassium results?",
                 "answer": "Intracellular potassium concentration is ~20x higher than extracellular. RBC rupture releases K+, causing falsely elevated serum potassium."
+            },
+            {
+                "question": "What causes pseudohyponatremia?",
+                "answer": "Marked hyperproteinemia or hyperlipidemia displaces plasma water. With indirect (dilutional) ISE, the sodium concentration falls spuriously; direct ISE on whole blood avoids this."
             }
         ],
-        "seo_description": "SOP for measuring sodium, potassium, and chloride using Ion-Selective Electrodes (ISE).",
+        "seo_description": "SOP for measuring sodium, potassium, and chloride using Ion-Selective Electrodes (ISE), including per-analyte procedures, anion gap, and critical decision limits.",
         "reference_ranges": [
             "sodium-adult",
             "potassium-adult",
