@@ -22,6 +22,7 @@ use App\Services\Calculators\Engines\BmiCalculator;
 use App\Services\Calculators\Engines\BodySurfaceAreaCalculator;
 use App\Services\Calculators\Engines\BunCreatinineRatioCalculator;
 use App\Services\Calculators\Engines\BunUreaConverterCalculator;
+use App\Services\Calculators\Engines\CalciumPhosphateProductCalculator;
 use App\Services\Calculators\Engines\CfuPerMlCalculator;
 use App\Services\Calculators\Engines\CkdEpi2009Calculator;
 use App\Services\Calculators\Engines\CkdEpi2021Calculator;
@@ -29,6 +30,7 @@ use App\Services\Calculators\Engines\CockcroftGaultCalculator;
 use App\Services\Calculators\Engines\ColonyCountCalculator;
 use App\Services\Calculators\Engines\CorrectedCalciumCalculator;
 use App\Services\Calculators\Engines\CorrectedChlorideCalculator;
+use App\Services\Calculators\Engines\CorrectedPhenytoinCalculator;
 use App\Services\Calculators\Engines\CorrectedReticulocyteCountCalculator;
 use App\Services\Calculators\Engines\CorrectedSodiumCalculator;
 use App\Services\Calculators\Engines\CorrectedTotalProteinCalculator;
@@ -57,6 +59,7 @@ use App\Services\Calculators\Engines\McFarlandTurbidityCalculator;
 use App\Services\Calculators\Engines\MchCalculator;
 use App\Services\Calculators\Engines\MchcCalculator;
 use App\Services\Calculators\Engines\McvCalculator;
+use App\Services\Calculators\Engines\MeldThreeCalculator;
 use App\Services\Calculators\Engines\MentzerIndexCalculator;
 use App\Services\Calculators\Engines\MicDilutionCalculator;
 use App\Services\Calculators\Engines\MonocyteLymphocyteRatioCalculator;
@@ -76,12 +79,14 @@ use App\Services\Calculators\Engines\ReticulocyteProductionIndexCalculator;
 use App\Services\Calculators\Engines\SerialDilutionCalculator;
 use App\Services\Calculators\Engines\SerumOsmolalityCalculator;
 use App\Services\Calculators\Engines\ShineLalIndexCalculator;
+use App\Services\Calculators\Engines\SmearPlateletEstimateCalculator;
 use App\Services\Calculators\Engines\SrivastavaIndexCalculator;
 use App\Services\Calculators\Engines\StrongIonDifferenceCalculator;
 use App\Services\Calculators\Engines\SystemicImmuneInflammationIndexCalculator;
 use App\Services\Calculators\Engines\TotalCholesterolHdlRatioCalculator;
 use App\Services\Calculators\Engines\TriglycerideHdlRatioCalculator;
 use App\Services\Calculators\Engines\UrineAnionGapCalculator;
+use App\Services\Calculators\Engines\WintersFormulaCalculator;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -4207,6 +4212,284 @@ class MasterCalculatorSeeder extends Seeder
                 'tags' => ['mic', 'minimum-inhibitory-concentration', 'antimicrobial', 'microbiology'],
                 'seo_title' => 'MIC Dilution Calculator | LabGoTo',
                 'seo_description' => 'Calculate two-fold dilution concentrations for minimum inhibitory concentration (MIC) testing.',
+            ],
+            [
+                'name' => 'Winters Formula Calculator',
+                'slug' => 'winters-formula-calculator',
+                'short_description' => 'Estimate the anticipated arterial PaCO2 that should accompany a given serum bicarbonate in pure metabolic acidosis.',
+                'formula_display' => 'Anticipated PaCO₂ = 1.5 × [HCO₃⁻] + 8 ± 2',
+                'engine' => WintersFormulaCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'bicarbonate',
+                        'label' => 'Serum bicarbonate (HCO₃⁻)',
+                        'type' => 'number',
+                        'unit' => 'mmol/L',
+                        'required' => true,
+                        'min' => 0,
+                        'max' => 60,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'anticipated_paco2',
+                        'label' => 'Anticipated PaCO₂',
+                        'unit' => 'mmHg',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                    [
+                        'key' => 'paco2_lower',
+                        'label' => 'PaCO₂ lower limit',
+                        'unit' => 'mmHg',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                    [
+                        'key' => 'paco2_upper',
+                        'label' => 'PaCO₂ upper limit',
+                        'unit' => 'mmHg',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'Winters formula predicts the expected respiratory (PaCO2) response to a primary metabolic acidosis. In pure metabolic acidosis the measured PaCO2 should fall within the anticipated value plus or minus 2 mmHg. A measured PaCO2 above the expected range indicates a superimposed respiratory acidosis (inadequate compensation); a measured PaCO2 below it indicates a respiratory alkalosis. In the presence of another acid-base disturbance the derivation does not apply.',
+                'references' => [
+                    ['title' => 'StatPearls — Winters Formula', 'url' => 'https://www.ncbi.nlm.nih.gov/books/NBK597384/'],
+                    ['title' => 'Merck Manual Professional — Acid-Base Disorders', 'url' => 'https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders/acid-base-disorders'],
+                ],
+                'categories' => ['Clinical Chemistry'],
+                'tags' => ['acid-base', 'metabolic-acidosis', 'winters-formula', 'paco2', 'blood-gas'],
+                'seo_title' => 'Winters Formula Calculator | LabGoTo',
+                'seo_description' => 'Estimate the anticipated PaCO2 response to a metabolic acidosis using the Winters formula.',
+            ],
+            [
+                'name' => 'MELD 3.0 Calculator',
+                'slug' => 'meld-3.0-calculator',
+                'short_description' => 'Calculate the Model for End-Stage Liver Disease 3.0 score for adult liver transplant prioritisation.',
+                'formula_display' => 'MELD 3.0 = 1.33·(female) + 4.56·ln(Bili) + 0.82·(137−Na) − 0.24·(137−Na)·ln(Bili) + 9.09·ln(INR) + 11.14·ln(Cr) + 1.85·(3.5−Alb) − 1.83·(3.5−Alb)·ln(Cr) + 6',
+                'engine' => MeldThreeCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'sex',
+                        'label' => 'Sex',
+                        'type' => 'select',
+                        'required' => true,
+                        'options' => [
+                            ['value' => 'female', 'label' => 'Female'],
+                            ['value' => 'male', 'label' => 'Male'],
+                        ],
+                    ],
+                    [
+                        'key' => 'creatinine',
+                        'label' => 'Serum creatinine',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 0.1,
+                        'max' => 15,
+                        'step' => 0.01,
+                    ],
+                    [
+                        'key' => 'bilirubin',
+                        'label' => 'Total bilirubin',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 0.1,
+                        'max' => 40,
+                        'step' => 0.1,
+                    ],
+                    [
+                        'key' => 'inr',
+                        'label' => 'INR',
+                        'type' => 'number',
+                        'unit' => 'ratio',
+                        'required' => true,
+                        'min' => 0.5,
+                        'max' => 15,
+                        'step' => 0.01,
+                    ],
+                    [
+                        'key' => 'sodium',
+                        'label' => 'Serum sodium',
+                        'type' => 'number',
+                        'unit' => 'mmol/L',
+                        'required' => true,
+                        'min' => 100,
+                        'max' => 160,
+                        'step' => 0.1,
+                    ],
+                    [
+                        'key' => 'albumin',
+                        'label' => 'Serum albumin',
+                        'type' => 'number',
+                        'unit' => 'g/dL',
+                        'required' => true,
+                        'min' => 0.5,
+                        'max' => 6,
+                        'step' => 0.1,
+                    ],
+                    [
+                        'key' => 'dialysis',
+                        'label' => 'Dialysis ≥ 2 times in the past week',
+                        'type' => 'select',
+                        'required' => true,
+                        'options' => [
+                            ['value' => 'no', 'label' => 'No'],
+                            ['value' => 'yes', 'label' => 'Yes'],
+                        ],
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'meld_3',
+                        'label' => 'MELD 3.0 score',
+                        'unit' => 'points',
+                        'rounding' => 'round_half_up',
+                        'precision' => 0,
+                    ],
+                ],
+                'interpretation_notes' => 'MELD 3.0 (Kim et al. 2021) predicts 90-day mortality for adults on the liver transplant wait list and was adopted by OPTN/UNOS for allocation in July 2023, replacing MELD-Na. It adds serum albumin and female sex to bilirubin, INR, creatinine and sodium. Bilirubin, INR and creatinine below 1.0 are floored to 1.0; creatinine is capped at 3.0 mg/dL (forced to 3.0 if dialysed twice or more in the past week); sodium is clamped to 125-137 mmol/L; albumin to 1.5-3.5 g/dL. The score is rounded to an integer and bounded to 6-40.',
+                'references' => [
+                    ['title' => 'Kim et al. — MELD 3.0: The Model for End-Stage Liver Disease Updated for the Modern Era (Gastroenterology 2021)', 'url' => 'https://www.sciencedirect.com/science/article/abs/pii/S0016508521034697'],
+                    ['title' => 'OPTN/UNOS — MELD 3.0 Policy Changes', 'url' => 'https://optn.transplant.hrsa.gov/policies-bylaws/policies/'],
+                ],
+                'categories' => ['Clinical Chemistry'],
+                'tags' => ['meld', 'meld-3.0', 'liver', 'cirrhosis', 'transplant', 'prognosis'],
+                'seo_title' => 'MELD 3.0 Score Calculator | LabGoTo',
+                'seo_description' => 'Calculate the MELD 3.0 score for adult liver transplant wait-list prioritisation.',
+            ],
+            [
+                'name' => 'Calcium-Phosphate Product Calculator',
+                'slug' => 'calcium-phosphate-product-calculator',
+                'short_description' => 'Calculate the calcium-phosphate product, used to assess the risk of metastatic calcification in renal failure.',
+                'formula_display' => 'Calcium-Phosphate Product = Serum Calcium (mg/dL) × Serum Phosphate (mg/dL)',
+                'engine' => CalciumPhosphateProductCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'calcium',
+                        'label' => 'Serum calcium',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 1,
+                        'max' => 20,
+                        'step' => 0.1,
+                    ],
+                    [
+                        'key' => 'phosphate',
+                        'label' => 'Serum phosphate',
+                        'type' => 'number',
+                        'unit' => 'mg/dL',
+                        'required' => true,
+                        'min' => 0.5,
+                        'max' => 15,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'calcium_phosphate_product',
+                        'label' => 'Calcium-Phosphate Product',
+                        'unit' => 'mg²/dL²',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'The calcium-phosphate product (serum calcium in mg/dL multiplied by serum phosphate in mg/dL) is used to estimate the risk of metastatic vascular and soft-tissue calcification, particularly in chronic kidney disease. A product above about 55 mg²/dL² is associated with increasing calcification and mortality risk, though contemporary CKD-MBD guidelines (KDIGO) emphasise controlling the individual calcium and phosphate values rather than targeting a specific product.',
+                'references' => [
+                    ['title' => 'KDIGO Clinical Practice Guideline for the Management of CKD-MBD', 'url' => 'https://kdigo.org/guidelines/ckd-mbd/'],
+                    ['title' => 'National Kidney Foundation — Calcium-Phosphate Product', 'url' => 'https://www.kidney.org/kidney-topics/mineral-and-bone-disorder'],
+                ],
+                'categories' => ['Clinical Chemistry'],
+                'tags' => ['calcium', 'phosphate', 'calcium-phosphate-product', 'ckd-mbd', 'mineral-bone'],
+                'seo_title' => 'Calcium-Phosphate Product Calculator | LabGoTo',
+                'seo_description' => 'Calculate the calcium-phosphate product to assess metastatic calcification risk in renal failure.',
+            ],
+            [
+                'name' => 'Corrected Phenytoin Calculator',
+                'slug' => 'corrected-phenytoin-calculator',
+                'short_description' => 'Correct a serum phenytoin concentration for hypoalbuminaemia using the Sheiner-Tozer equation.',
+                'formula_display' => 'Corrected Phenytoin = Measured Phenytoin / (0.2 × Albumin + 0.1)',
+                'engine' => CorrectedPhenytoinCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'measured_phenytoin',
+                        'label' => 'Measured serum phenytoin',
+                        'type' => 'number',
+                        'unit' => 'µg/mL',
+                        'required' => true,
+                        'min' => 0.1,
+                        'max' => 100,
+                        'step' => 0.1,
+                    ],
+                    [
+                        'key' => 'albumin',
+                        'label' => 'Serum albumin',
+                        'type' => 'number',
+                        'unit' => 'g/dL',
+                        'required' => true,
+                        'min' => 0.5,
+                        'max' => 6,
+                        'step' => 0.1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'corrected_phenytoin',
+                        'label' => 'Corrected Phenytoin',
+                        'unit' => 'µg/mL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 1,
+                    ],
+                ],
+                'interpretation_notes' => 'The Sheiner-Tozer equation corrects a measured total phenytoin concentration for the reduced protein binding seen in hypoalbuminaemia. Phenytoin is highly protein-bound (about 90%), primarily to albumin; with low albumin the free (pharmacologically active) fraction rises while the measured total stays normal or low. The correction allows comparison against the standard therapeutic total range of about 10-20 µg/mL. It assumes normal renal function; in renal failure the correction is not as reliable because a structurally altered albumin binds phenytoin less well.',
+                'references' => [
+                    ['title' => 'StatPearls — Therapeutic Drug Monitoring for Phenytoin', 'url' => 'https://www.ncbi.nlm.nih.gov/books/NBK557723/'],
+                    ['title' => 'Sheiner LB, Tozer TN et al. — Clinical Pharmacology of Phenytoin', 'url' => 'https://pubmed.ncbi.nlm.nih.gov/'],
+                ],
+                'categories' => ['Clinical Chemistry'],
+                'tags' => ['phenytoin', 'therapeutic-drug-monitoring', 'albumin', 'anti-epileptic', 'pharmacology'],
+                'seo_title' => 'Corrected Phenytoin Calculator | LabGoTo',
+                'seo_description' => 'Correct a serum phenytoin level for hypoalbuminaemia with the Sheiner-Tozer equation.',
+            ],
+            [
+                'name' => 'Smear Platelet Estimate Calculator',
+                'slug' => 'smear-platelet-estimate-calculator',
+                'short_description' => 'Estimate the platelet count from the average number of platelets per high-power (oil immersion) field.',
+                'formula_display' => 'Estimated Platelets = Average Platelets per Oil Immersion Field × 20,000',
+                'engine' => SmearPlateletEstimateCalculator::class,
+                'input_schema' => [
+                    [
+                        'key' => 'platelets_per_field',
+                        'label' => 'Average platelets per oil immersion field',
+                        'type' => 'number',
+                        'unit' => 'per HPF',
+                        'required' => true,
+                        'min' => 0,
+                        'max' => 200,
+                        'step' => 1,
+                    ],
+                ],
+                'output_schema' => [
+                    [
+                        'key' => 'estimated_platelets',
+                        'label' => 'Estimated Platelet Count',
+                        'unit' => '/µL',
+                        'rounding' => 'round_half_up',
+                        'precision' => 0,
+                    ],
+                ],
+                'interpretation_notes' => 'A manual estimate of the platelet count from a peripheral blood smear correlates the number of platelets per oil immersion field (1000×, high-power field) with the automated count. The most common convention multiplies the average platelets per field by 20,000, so that roughly 8-20 platelets per field correspond to a normal count (about 150,000-400,000/µL) and fewer than 5 per field suggests significant thrombocytopenia. The estimate is useful when an automated count is unavailable or unreliable (for example with platelet clumping or giant platelets).',
+                'references' => [
+                    ['title' => 'StatPearls — Complete Blood Count (CBC) — Platelet Estimation', 'url' => 'https://www.ncbi.nlm.nih.gov/books/NBK541070/'],
+                ],
+                'categories' => ['Hematology'],
+                'tags' => ['platelets', 'peripheral-smear', 'manual-count', 'cbc', 'hematology'],
+                'seo_title' => 'Smear Platelet Estimate Calculator | LabGoTo',
+                'seo_description' => 'Estimate the platelet count from platelets per oil immersion field on a peripheral blood smear.',
             ],
         ];
     }

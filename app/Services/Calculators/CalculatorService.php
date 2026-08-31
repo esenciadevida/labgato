@@ -14,6 +14,7 @@ use App\Services\Calculators\Engines\ApriCalculator;
 use App\Services\Calculators\Engines\AtherogenicIndexPlasmaCalculator;
 use App\Services\Calculators\Engines\BacterialConcentrationCalculator;
 use App\Services\Calculators\Engines\BasalMetabolicRateCalculator;
+use App\Services\Calculators\Engines\CalciumPhosphateProductCalculator;
 use App\Services\Calculators\Engines\BicarbonateGapCalculator;
 use App\Services\Calculators\Engines\BilirubinRatioCalculator;
 use App\Services\Calculators\Engines\BmiCalculator;
@@ -31,6 +32,7 @@ use App\Services\Calculators\Engines\CorrectedReticulocyteCountCalculator;
 use App\Services\Calculators\Engines\CorrectedSodiumCalculator;
 use App\Services\Calculators\Engines\CorrectedTotalProteinCalculator;
 use App\Services\Calculators\Engines\CorrectedWbcCalculator;
+use App\Services\Calculators\Engines\CorrectedPhenytoinCalculator;
 use App\Services\Calculators\Engines\DeltaGapCalculator;
 use App\Services\Calculators\Engines\DeltaRatioCalculator;
 use App\Services\Calculators\Engines\DeRitisRatioCalculator;
@@ -55,6 +57,7 @@ use App\Services\Calculators\Engines\McFarlandTurbidityCalculator;
 use App\Services\Calculators\Engines\MchCalculator;
 use App\Services\Calculators\Engines\MchcCalculator;
 use App\Services\Calculators\Engines\McvCalculator;
+use App\Services\Calculators\Engines\MeldThreeCalculator;
 use App\Services\Calculators\Engines\MentzerIndexCalculator;
 use App\Services\Calculators\Engines\MicDilutionCalculator;
 use App\Services\Calculators\Engines\MonocyteLymphocyteRatioCalculator;
@@ -74,12 +77,14 @@ use App\Services\Calculators\Engines\ReticulocyteProductionIndexCalculator;
 use App\Services\Calculators\Engines\SerialDilutionCalculator;
 use App\Services\Calculators\Engines\SerumOsmolalityCalculator;
 use App\Services\Calculators\Engines\ShineLalIndexCalculator;
+use App\Services\Calculators\Engines\SmearPlateletEstimateCalculator;
 use App\Services\Calculators\Engines\SrivastavaIndexCalculator;
 use App\Services\Calculators\Engines\StrongIonDifferenceCalculator;
 use App\Services\Calculators\Engines\SystemicImmuneInflammationIndexCalculator;
 use App\Services\Calculators\Engines\TotalCholesterolHdlRatioCalculator;
 use App\Services\Calculators\Engines\TriglycerideHdlRatioCalculator;
 use App\Services\Calculators\Engines\UrineAnionGapCalculator;
+use App\Services\Calculators\Engines\WintersFormulaCalculator;
 use App\Services\ReferenceRangeService;
 use App\Support\NumberFormatter;
 
@@ -162,6 +167,11 @@ class CalculatorService
         BacterialConcentrationCalculator::class => 'Bacterial Concentration (OD600) Calculator',
         AntibioticDilutionCalculator::class => 'Antibiotic Dilution Calculator',
         MicDilutionCalculator::class => 'MIC Dilution Calculator',
+        WintersFormulaCalculator::class => 'Winters Formula (Anticipated PaCO2) Calculator',
+        MeldThreeCalculator::class => 'MELD 3.0 Calculator',
+        CalciumPhosphateProductCalculator::class => 'Calcium-Phosphate Product Calculator',
+        CorrectedPhenytoinCalculator::class => 'Corrected Phenytoin Calculator',
+        SmearPlateletEstimateCalculator::class => 'Smear Platelet Estimate Calculator',
     ];
 
     private const ENGINE_TYPE = 'php_class';
