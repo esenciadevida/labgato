@@ -1,0 +1,596 @@
+{
+    "source": "https://www.labtestsguide.com",
+    "generated": "2026-08-31T09:47:08+00:00",
+    "total_sitemap_urls": 2642,
+    "mapping_type": "1:1 labgoto page -> labtestsguide individual test",
+    "entries": [
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "ag-ratio-adult",
+            "labgoto_name": "A/G (Albumin/Globulin) Ratio - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/a-g-ratio",
+            "labtestsguide_slug": "a-g-ratio"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "aec-adult",
+            "labgoto_name": "AEC (Absolute Eosinophil Count) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/eosinophils",
+            "labtestsguide_slug": "eosinophils"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "alc-adult",
+            "labgoto_name": "ALC (Absolute Lymphocyte Count) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/lymphocytes",
+            "labtestsguide_slug": "lymphocytes"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "alp-adult",
+            "labgoto_name": "ALP (Alkaline Phosphatase) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/alp",
+            "labtestsguide_slug": "alp"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "alt-adult",
+            "labgoto_name": "ALT (Alanine Aminotransferase) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/alt",
+            "labtestsguide_slug": "alt"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "anc-adult",
+            "labgoto_name": "ANC (Absolute Neutrophil Count) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/neutrophils",
+            "labtestsguide_slug": "neutrophils"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "ast-adult",
+            "labgoto_name": "AST (Aspartate Aminotransferase) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/ast",
+            "labtestsguide_slug": "ast"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "amc-adult",
+            "labgoto_name": "Absolute Monocyte Count - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/monocytes",
+            "labtestsguide_slug": "monocytes"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "albumin-adult",
+            "labgoto_name": "Albumin - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/albumin",
+            "labtestsguide_slug": "albumin"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "amylase-adult",
+            "labgoto_name": "Amylase - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/amylase",
+            "labtestsguide_slug": "amylase"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "bun-adult",
+            "labgoto_name": "BUN (Blood Urea Nitrogen) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/bun",
+            "labtestsguide_slug": "bun"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "bun-creatinine-ratio-adult",
+            "labgoto_name": "BUN/Creatinine Ratio - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/bun-creatinine-ratio",
+            "labtestsguide_slug": "bun-creatinine-ratio"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "bilirubin-total-adult",
+            "labgoto_name": "Bilirubin (Total) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/total-bilirubin",
+            "labtestsguide_slug": "total-bilirubin"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "co2-bicarbonate-adult",
+            "labgoto_name": "CO2 (Bicarbonate) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/tco2",
+            "labtestsguide_slug": "tco2"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "crp-adult",
+            "labgoto_name": "CRP (C-Reactive Protein) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/crp",
+            "labtestsguide_slug": "crp"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "csf-glucose-adult",
+            "labgoto_name": "CSF Glucose - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/cerebrospinal-fluid-csf",
+            "labtestsguide_slug": "cerebrospinal-fluid-csf"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "csf-total-cell-count-adult",
+            "labgoto_name": "CSF Total Cell Count - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/cerebrospinal-fluid-csf",
+            "labtestsguide_slug": "cerebrospinal-fluid-csf"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "csf-protein-adult",
+            "labgoto_name": "CSF Total Protein - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/cerebrospinal-fluid-csf",
+            "labtestsguide_slug": "cerebrospinal-fluid-csf"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "calcium-adult",
+            "labgoto_name": "Calcium - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/calcium",
+            "labtestsguide_slug": "calcium"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "chloride-adult",
+            "labgoto_name": "Chloride - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/urine-chloride",
+            "labtestsguide_slug": "urine-chloride"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "creatinine-adult-female",
+            "labgoto_name": "Creatinine - Adult Female",
+            "labtestsguide_url": "https://www.labtestsguide.com/creatinine",
+            "labtestsguide_slug": "creatinine"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "creatinine-adult-male",
+            "labgoto_name": "Creatinine - Adult Male",
+            "labtestsguide_url": "https://www.labtestsguide.com/creatinine",
+            "labtestsguide_slug": "creatinine"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "bilirubin-direct-adult",
+            "labgoto_name": "Direct (Conjugated) Bilirubin - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/direct-bilirubin",
+            "labtestsguide_slug": "direct-bilirubin"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "esr-adult-female-under-50",
+            "labgoto_name": "ESR (Westergren) - Adult Female < 50 yrs",
+            "labtestsguide_url": "https://www.labtestsguide.com/esr",
+            "labtestsguide_slug": "esr"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "esr-adult-female-over-50",
+            "labgoto_name": "ESR (Westergren) - Adult Female ≥ 50 yrs",
+            "labtestsguide_url": "https://www.labtestsguide.com/esr",
+            "labtestsguide_slug": "esr"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "esr-adult-male-under-50",
+            "labgoto_name": "ESR (Westergren) - Adult Male < 50 yrs",
+            "labtestsguide_url": "https://www.labtestsguide.com/esr",
+            "labtestsguide_slug": "esr"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "esr-adult-male-over-50",
+            "labgoto_name": "ESR (Westergren) - Adult Male ≥ 50 yrs",
+            "labtestsguide_url": "https://www.labtestsguide.com/esr",
+            "labtestsguide_slug": "esr"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "eosinophils-percent-adult",
+            "labgoto_name": "Eosinophils (Differential) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/eosinophils",
+            "labtestsguide_slug": "eosinophils"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "ferritin-adult",
+            "labgoto_name": "Ferritin - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/ferritin",
+            "labtestsguide_slug": "ferritin"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "fibrinogen-adult",
+            "labgoto_name": "Fibrinogen - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/fibrinogen-test-procedure",
+            "labtestsguide_slug": "fibrinogen-test-procedure"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "free-t3-adult",
+            "labgoto_name": "Free T3 (Triiodothyronine) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/free-t3",
+            "labtestsguide_slug": "free-t3"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "free-t4-adult",
+            "labgoto_name": "Free T4 (Thyroxine) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/free-t4",
+            "labtestsguide_slug": "free-t4"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "globulin-adult",
+            "labgoto_name": "Globulin - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/globulin",
+            "labtestsguide_slug": "globulin"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "glucose-fasting-adult",
+            "labgoto_name": "Glucose (Fasting) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/fasting-glucose",
+            "labtestsguide_slug": "fasting-glucose"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "hdl-cholesterol-adult-female",
+            "labgoto_name": "HDL Cholesterol - Adult Female",
+            "labtestsguide_url": "https://www.labtestsguide.com/hdl",
+            "labtestsguide_slug": "hdl"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "hdl-cholesterol-adult-male",
+            "labgoto_name": "HDL Cholesterol - Adult Male",
+            "labtestsguide_url": "https://www.labtestsguide.com/hdl",
+            "labtestsguide_slug": "hdl"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "hba1c-adult",
+            "labgoto_name": "HbA1c (Glycated Hemoglobin) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/hba1c",
+            "labtestsguide_slug": "hba1c"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "hematocrit-adult-female",
+            "labgoto_name": "Hematocrit - Adult Female",
+            "labtestsguide_url": "https://www.labtestsguide.com/hct-test-procedure",
+            "labtestsguide_slug": "hct-test-procedure"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "hematocrit-adult-male",
+            "labgoto_name": "Hematocrit - Adult Male",
+            "labtestsguide_url": "https://www.labtestsguide.com/hct-test-procedure",
+            "labtestsguide_slug": "hct-test-procedure"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "hemoglobin-adult-female",
+            "labgoto_name": "Hemoglobin - Adult Female",
+            "labtestsguide_url": "https://www.labtestsguide.com/hb-test-procedures",
+            "labtestsguide_slug": "hb-test-procedures"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "hemoglobin-adult-male",
+            "labgoto_name": "Hemoglobin - Adult Male",
+            "labtestsguide_url": "https://www.labtestsguide.com/hb-test-procedures",
+            "labtestsguide_slug": "hb-test-procedures"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "troponin-i-hs-adult",
+            "labgoto_name": "High-Sensitivity Troponin I - Adult (99th Percentile)",
+            "labtestsguide_url": "https://www.labtestsguide.com/troponin-i",
+            "labtestsguide_slug": "troponin-i"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "indirect-bilirubin-adult",
+            "labgoto_name": "Indirect (Unconjugated) Bilirubin - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/indirect-bilirubin",
+            "labtestsguide_slug": "indirect-bilirubin"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "iron-adult",
+            "labgoto_name": "Iron (Serum) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/iron",
+            "labtestsguide_slug": "iron"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "ldl-cholesterol-adult",
+            "labgoto_name": "LDL Cholesterol - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/ldl",
+            "labtestsguide_slug": "ldl"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "lipase-adult",
+            "labgoto_name": "Lipase - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/lipase",
+            "labtestsguide_slug": "lipase"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "lymphocytes-percent-adult",
+            "labgoto_name": "Lymphocytes (Differential) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/lymphocytes",
+            "labtestsguide_slug": "lymphocytes"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "mch-adult",
+            "labgoto_name": "MCH (Mean Corpuscular Hemoglobin) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/mch",
+            "labtestsguide_slug": "mch"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "mchc-adult",
+            "labgoto_name": "MCHC - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/mchc",
+            "labtestsguide_slug": "mchc"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "mcv-adult",
+            "labgoto_name": "MCV (Mean Corpuscular Volume) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/mcv",
+            "labtestsguide_slug": "mcv"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "monocytes-percent-adult",
+            "labgoto_name": "Monocytes (Differential) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/monocytes",
+            "labtestsguide_slug": "monocytes"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "neutrophils-percent-adult",
+            "labgoto_name": "Neutrophils (Differential) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/neutrophils",
+            "labtestsguide_slug": "neutrophils"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "pt-adult",
+            "labgoto_name": "PT (Prothrombin Time) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/ptt",
+            "labtestsguide_slug": "ptt"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "platelets-adult",
+            "labgoto_name": "Platelets - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/platelets",
+            "labtestsguide_slug": "platelets"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "potassium-adult",
+            "labgoto_name": "Potassium - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/urine-potassium",
+            "labtestsguide_slug": "urine-potassium"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "rbc-adult-female",
+            "labgoto_name": "RBC (Red Blood Cells) - Adult Female",
+            "labtestsguide_url": "https://www.labtestsguide.com/rbc",
+            "labtestsguide_slug": "rbc"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "rbc-adult-male",
+            "labgoto_name": "RBC (Red Blood Cells) - Adult Male",
+            "labtestsguide_url": "https://www.labtestsguide.com/rbc",
+            "labtestsguide_slug": "rbc"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "rdw-adult",
+            "labgoto_name": "RDW (Red Cell Distribution Width) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/rbc-indices",
+            "labtestsguide_slug": "rbc-indices"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "reticulocyte-adult",
+            "labgoto_name": "Reticulocyte Count - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/retic-count",
+            "labtestsguide_slug": "retic-count"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "sodium-adult",
+            "labgoto_name": "Sodium - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/urine-sodium",
+            "labtestsguide_slug": "urine-sodium"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "tibc-adult",
+            "labgoto_name": "TIBC (Total Iron Binding Capacity) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/transferrin",
+            "labtestsguide_slug": "transferrin"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "tsh-adult",
+            "labgoto_name": "TSH (Thyroid Stimulating Hormone) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/tsh",
+            "labtestsguide_slug": "tsh"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "total-cholesterol-adult",
+            "labgoto_name": "Total Cholesterol - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/cholesterol",
+            "labtestsguide_slug": "cholesterol"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "total-protein-adult",
+            "labgoto_name": "Total Protein - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/total-protein",
+            "labtestsguide_slug": "total-protein"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "transferrin-saturation-adult",
+            "labgoto_name": "Transferrin Saturation - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/transferrin",
+            "labtestsguide_slug": "transferrin"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "uric-acid-adult-female",
+            "labgoto_name": "Uric Acid - Adult Female",
+            "labtestsguide_url": "https://www.labtestsguide.com/uric-acid",
+            "labtestsguide_slug": "uric-acid"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "uric-acid-adult-male",
+            "labgoto_name": "Uric Acid - Adult Male",
+            "labtestsguide_url": "https://www.labtestsguide.com/uric-acid",
+            "labtestsguide_slug": "uric-acid"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "wbc-adult",
+            "labgoto_name": "WBC (White Blood Cells) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/wbc",
+            "labtestsguide_slug": "wbc"
+        },
+        {
+            "labgoto_type": "reference_range",
+            "labgoto_slug": "aptt-adult",
+            "labgoto_name": "aPTT (Activated Partial Thromboplastin Time) - Adult",
+            "labtestsguide_url": "https://www.labtestsguide.com/aptt",
+            "labtestsguide_slug": "aptt"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "amylase-lipase-testing",
+            "labgoto_name": "Amylase and Lipase Testing",
+            "labtestsguide_url": "https://www.labtestsguide.com/amylase",
+            "labtestsguide_slug": "amylase"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "aso-titer-testing",
+            "labgoto_name": "Anti-Streptolysin O (ASO) Testing",
+            "labtestsguide_url": "https://www.labtestsguide.com/asot",
+            "labtestsguide_slug": "asot"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "c-reactive-protein-testing",
+            "labgoto_name": "C-Reactive Protein (CRP) Testing",
+            "labtestsguide_url": "https://www.labtestsguide.com/crp",
+            "labtestsguide_slug": "crp"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "csf-and-body-fluid-analysis",
+            "labgoto_name": "CSF and Body Fluid Analysis",
+            "labtestsguide_url": "https://www.labtestsguide.com/cerebrospinal-fluid-csf",
+            "labtestsguide_slug": "cerebrospinal-fluid-csf"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "cardiac-markers-testing",
+            "labgoto_name": "Cardiac Markers Testing (hs-Troponin, CK, CK-MB)",
+            "labtestsguide_url": "https://www.labtestsguide.com/troponin-i",
+            "labtestsguide_slug": "troponin-i"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "fibrinogen-testing",
+            "labgoto_name": "Fibrinogen Testing (Clauss Method)",
+            "labtestsguide_url": "https://www.labtestsguide.com/fibrinogen-test-procedure",
+            "labtestsguide_slug": "fibrinogen-test-procedure"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "hemoglobin-estimation-procedure",
+            "labgoto_name": "Hemoglobin Estimation (Cyanmethemoglobin / Sahli) Procedure",
+            "labtestsguide_url": "https://www.labtestsguide.com/hb-test-procedures",
+            "labtestsguide_slug": "hb-test-procedures"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "manual-platelet-count-procedure",
+            "labgoto_name": "Manual Platelet Count Procedure",
+            "labtestsguide_url": "https://www.labtestsguide.com/platelets",
+            "labtestsguide_slug": "platelets"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "manual-wbc-differential-procedure",
+            "labgoto_name": "Manual WBC Differential Count Procedure",
+            "labtestsguide_url": "https://www.labtestsguide.com/differential-wbc-count",
+            "labtestsguide_slug": "differential-wbc-count"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "pt-aptt-mixing-study",
+            "labgoto_name": "PT/APTT Mixing (Correction) Study",
+            "labtestsguide_url": "https://www.labtestsguide.com/aptt",
+            "labtestsguide_slug": "aptt"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "rheumatoid-factor-testing",
+            "labgoto_name": "Rheumatoid Factor (RF) Testing",
+            "labtestsguide_url": "https://www.labtestsguide.com/rf-latex-test",
+            "labtestsguide_slug": "rf-latex-test"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "serum-iron-studies",
+            "labgoto_name": "Serum Iron Studies (Iron, TIBC, Ferritin)",
+            "labtestsguide_url": "https://www.labtestsguide.com/iron",
+            "labtestsguide_slug": "iron"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "syphilis-serology-vdrl-rpr",
+            "labgoto_name": "Syphilis Serology (VDRL / RPR)",
+            "labtestsguide_url": "https://www.labtestsguide.com/vdrl",
+            "labtestsguide_slug": "vdrl"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "venipuncture-phlebotomy-procedure",
+            "labgoto_name": "Venipuncture and Phlebotomy Procedure",
+            "labtestsguide_url": "https://www.labtestsguide.com/blood-group",
+            "labtestsguide_slug": "blood-group"
+        },
+        {
+            "labgoto_type": "sop",
+            "labgoto_slug": "widal-febrile-agglutination-testing",
+            "labgoto_name": "Widal Test (Febrile Agglutination)",
+            "labtestsguide_url": "https://www.labtestsguide.com/widal-test",
+            "labtestsguide_slug": "widal-test"
+        }
+    ]
+}

@@ -181,6 +181,8 @@
                     </x-ui.card>
                 @endif
 
+                <x-public.external-resource :entry="app(\App\Services\LabTestsGuideService::class)->findForSlug('sop', $sop->slug)" />
+
                 <x-public.related-resources :resources="$related" :currentType="'SOP'" stacked />
             </aside>
         </div>

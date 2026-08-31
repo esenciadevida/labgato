@@ -14,6 +14,7 @@
         . ($upper !== null ? $fmt($upper) : '')
     );
     $copyValue = $referenceRange->name . ($rangeLabel !== '' ? ': ' . $rangeLabel . ($unit ? ' ' . $unit : '') : '');
+    $labTestsGuideEntry = app(\App\Services\LabTestsGuideService::class)->findForSlug('reference_range', $referenceRange->slug);
 @endphp
 
 <x-public.resource-hero
@@ -233,6 +234,8 @@
                         </ul>
                     </x-ui.card>
                 @endif
+
+                <x-public.external-resource :entry="$labTestsGuideEntry" />
 
                 <x-public.related-resources :resources="$related" :currentType="'Reference Range'" stacked />
             </aside>
