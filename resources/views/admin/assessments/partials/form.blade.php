@@ -213,7 +213,7 @@
     </x-ui.card>
 
     <x-ui.card>
-        <x-form.section title="Attach Certificate" description="Give every passing participant a verifiable certificate. These fields override the global certificate template for this assessment; leave blank to inherit the global design.">
+        <x-form.section title="Attach Certificate" description="Give every passing participant a verifiable certificate. The colors and details below are locked to this assessment; leave a field blank to inherit the global design for that field.">
             <div class="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-lg bg-slate-50 px-4 py-3 dark:bg-slate-800/60">
                 <label class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
                     <input type="hidden" name="certificate_enabled" value="0">

@@ -43,9 +43,6 @@
                         <p class="mt-1 font-serif text-2xl font-bold" style="color: {{ $preview['primaryColor'] }};">{{ $preview['sample']['{name}'] }}</p>
                         <div class="mt-1 h-px w-2/3" style="background: {{ $preview['secondaryColor'] }};"></div>
                         <p class="mt-2 text-xs text-slate-600">{!! $preview['bodyHtml'] !!}</p>
-                        @if($preview['passPercentage'] !== null)
-                            <p class="mt-2 text-[11px] text-slate-500">Score <strong>92.5%</strong> &middot; Pass mark {{ $preview['passPercentage'] }}%</p>
-                        @endif
                         <div class="absolute bottom-3 left-3 right-3 flex items-end justify-between border-t pt-2">
                             <div class="text-[9px] text-slate-400">
                                 <div class="font-serif font-bold text-slate-600">{{ $preview['signatoryName'] }}</div>

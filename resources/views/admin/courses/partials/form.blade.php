@@ -166,7 +166,14 @@
     </x-ui.card>
 
     <x-ui.card>
-        <x-form.section title="Certificate" description="Optional per-course certificate overrides. Leave fields blank to inherit the global certificate template settings.">
+        <x-form.section title="Certificate" description="Award a certificate on course completion. The colors and details below are locked to this course; leave a field blank to inherit the global design for that field.">
+            @if($course?->exists)
+                <div class="mb-4 flex flex-wrap items-center justify-end gap-3">
+                    <x-ui.button href="{{ route('admin.courses.certificate-preview', $course) }}" variant="secondary" size="sm" target="_blank">
+                        Preview certificate
+                    </x-ui.button>
+                </div>
+            @endif
             <div class="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
                 <div class="sm:col-span-2">
                     <x-form.label for="cert_body_text">Body Text</x-form.label>

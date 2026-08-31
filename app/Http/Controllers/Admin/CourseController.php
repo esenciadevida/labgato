@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\StoreCourseRequest;
 use App\Http\Requests\Admin\UpdateCourseRequest;
 use App\Models\Assessment;
 use App\Models\Course;
+use App\Services\CertificateService;
 use Illuminate\Support\Str;
 
 class CourseController extends Controller
@@ -58,6 +59,14 @@ class CourseController extends Controller
         return redirect()
             ->route('admin.courses.index')
             ->with('success', "Course \"{$course->title}\" updated.");
+    }
+
+    public function certificatePreview(Course $course)
+    {
+        return view('admin.courses.certificate-preview', [
+            'course' => $course,
+            'preview' => app(CertificateService::class)->coursePreviewData($course),
+        ]);
     }
 
     public function destroy(Course $course)

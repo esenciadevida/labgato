@@ -182,7 +182,6 @@
                                     <p id="preview-holder" class="mt-1 font-serif text-2xl font-bold" style="color: #1e3a8a;">Maria Santos</p>
                                     <div id="preview-holder-rule" class="mt-1 h-px w-2/3" style="background: #d4af37;"></div>
                                     <p id="preview-body" class="mt-2 text-xs text-slate-600">for successfully completing the <strong>Hematology Proficiency Exam</strong></p>
-                                    <p id="preview-score" class="mt-2 text-[11px] text-slate-500">Score <strong>92.5%</strong></p>
                                     <div class="absolute bottom-3 left-3 right-3 flex items-end justify-between border-t pt-2" id="preview-footer-border">
                                         <div class="text-[9px] text-slate-400">
                                             <div class="font-serif font-bold text-slate-600" id="preview-signatory">Program Director</div>

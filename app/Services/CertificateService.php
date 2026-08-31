@@ -248,6 +248,53 @@ class CertificateService
     }
 
     /**
+     * Preview data for a course certificate, resolving per-course overrides
+     * then falling back to the global certificate template settings. Used by
+     * the admin "Preview certificate" action on the course edit page.
+     *
+     * @return array<string, mixed>
+     */
+    public function coursePreviewData(Course $course): array
+    {
+        $sample = CertificateTemplateVariables::$sample;
+        $sample['{course}'] = $course->title;
+
+        $primaryColor = (string) ($course->cert_primary_color
+            ?? setting('certificate.primary_color', '#1e3a8a'));
+        $secondaryColor = (string) ($course->cert_secondary_color
+            ?? setting('certificate.secondary_color', '#d4af37'));
+
+        $customBody = (string) $course->cert_body_text
+            ?? (string) setting('certificate.body_text', '');
+        $bodyHtml = $customBody !== ''
+            ? nl2br(e(CertificateTemplateVariables::replace($customBody, $sample)))
+            : 'for successfully completing the <strong>' . e($course->title) . '</strong> course';
+
+        $customDisclaimer = (string) $course->cert_disclaimer_text
+            ?? (string) setting('certificate.disclaimer_text', '');
+        $disclaimerHtml = $customDisclaimer !== ''
+            ? nl2br(e(CertificateTemplateVariables::replace($customDisclaimer, $sample)))
+            : 'This certificate acknowledges completion of the ' . e($course->title)
+            . ' course at LabGOTO. It is not an ASCP certification nor an official ASCP credential.';
+
+        return [
+            'primaryColor' => $primaryColor,
+            'secondaryColor' => $secondaryColor,
+            'bodyHtml' => $bodyHtml,
+            'disclaimerHtml' => $disclaimerHtml,
+            'signatoryName' => (string) ($course->cert_signatory_name
+                ?? setting('certificate.signatory_name', 'Program Director')),
+            'signatoryTitle' => (string) ($course->cert_signatory_title
+                ?? setting('certificate.signatory_title', 'Program Director, LabGOTO')),
+            'showLogo' => $course->cert_show_logo
+                ?? setting_bool('certificate.show_logo', true),
+            'showQr' => $course->cert_show_qr
+                ?? setting_bool('certificate.show_qr', true),
+            'enabled' => (bool) $course->certificate_enabled,
+            'sample' => $sample,
+        ];
+    }
+    /**
      * @return array{status: string, certificate: ?Certificate}
      */
     public function verify(string $code): array

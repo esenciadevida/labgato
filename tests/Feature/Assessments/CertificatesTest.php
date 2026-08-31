@@ -394,6 +394,20 @@ class CertificatesTest extends TestCase
         );
     }
 
+    public function test_certificate_pdf_does_not_display_score(): void
+    {
+        $assessment = $this->makeAssessment();
+        $user = User::factory()->member()->create();
+        $attempt = $this->makeAttempt($user, $assessment, 85, 85);
+
+        $certificate = $this->service->issue($attempt);
+        $html = view('certificates.pdf', $this->service->viewData($certificate))->render();
+
+        $this->assertStringNotContainsString('Score', $html);
+        $this->assertStringNotContainsString('92.5%', $html);
+        $this->assertStringContainsString('for successfully completing', $html);
+    }
+
     public function test_my_certificates_lists_own_certificates_only(): void
     {
         $assessment = $this->makeAssessment(['slug' => 'mine-only']);

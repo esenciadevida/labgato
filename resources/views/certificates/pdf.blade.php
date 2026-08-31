@@ -68,9 +68,6 @@
         .completion { margin-top: 4mm; font-size: 10.5px; color: #374151; line-height: 1.5; text-align: center; }
         .completion .title { font-weight: 700; color: {{ $primaryColor }}; }
 
-        .score-line { margin-top: 3mm; font-size: 9.5px; color: #475569; text-align: center; }
-        .score-line strong { color: #111827; }
-
         .footer { width: 100%; margin-top: 13mm; padding-top: 4mm; border-top: 1px solid {{ $secondaryColor }}; border-collapse: collapse; }
         .signature-cell { text-align: left; width: 55%; vertical-align: bottom; padding: 0; }
         .verify-cell { text-align: right; width: 45%; vertical-align: bottom; padding: 0; }
@@ -129,15 +126,6 @@
             <div class="completion">
                 {!! $completionText !!}
             </div>
-
-            @if($certificate->type !== 'participation')
-                <div class="score-line">
-                    Score <strong>{{ number_format($certificate->score_percent, 1) }}%</strong>
-                    @if($certificate->rank_at_issue !== null)
-                        &nbsp;&middot;&nbsp; Rank <strong>#{{ $certificate->rank_at_issue }}</strong>
-                    @endif
-                </div>
-            @endif
 
             <table class="footer">
                 <tr>
