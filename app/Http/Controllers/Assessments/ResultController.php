@@ -47,11 +47,15 @@ class ResultController extends Controller
 
         $released = $this->results->isReleased($attempt->assessment);
 
+        $breakdown = $released ? $this->results->subjectBreakdown($attempt) : null;
+        $summary = $released ? $this->results->summary($attempt) : null;
+
         return view('assessments.result', [
             'attempt' => $attempt,
             'released' => $released,
-            'summary' => $released ? $this->results->summary($attempt) : null,
-            'breakdown' => $released ? $this->results->subjectBreakdown($attempt) : null,
+            'summary' => $summary,
+            'breakdown' => $breakdown,
+            'insights' => $released ? $this->results->performanceInsights($breakdown, $summary['percent'] !== null ? (int) $summary['percent'] : null) : null,
             'reviewItems' => $released ? collect($this->results->review($attempt)) : null,
         ]);
     }

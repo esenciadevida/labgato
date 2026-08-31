@@ -92,6 +92,64 @@ class ResultsService
             ->values();
     }
 
+    /**
+     * Derive professional strengths, improvement areas, and actionable advice
+     * from a subject-level breakdown, so the result page reads like an exam
+     * coaching report rather than a bare score table.
+     *
+     * @return array{strengths: list<array>, weaknesses: list<array>, overall: string}
+     */
+    public function performanceInsights(Collection $breakdown, ?int $overallPercent = null): array
+    {
+        $insight = function (array $subject, bool $isStrength) {
+            $name = $subject['name'];
+
+            return [
+                'name' => $name,
+                'correct' => $subject['correct'],
+                'total' => $subject['total'],
+                'percent' => $subject['percent'],
+                'advice' => $isStrength
+                    ? "Consistent performance in {$name}. To keep it sharp, reinforce with spaced review and increasingly difficult questions."
+                    : "Below expected in {$name}. Review the fundamentals, then work targeted {$name} questions and read our {$name} study resources before retaking.",
+            ];
+        };
+
+        $sized = $breakdown->filter(fn ($s) => $s['total'] >= 2)->values();
+
+        $strengths = $sized
+            ->filter(fn ($s) => $s['percent'] >= 70)
+            ->sortByDesc('percent')
+            ->map(fn ($s) => $insight($s, true))
+            ->values()
+            ->all();
+
+        $weaknesses = $sized
+            ->filter(fn ($s) => $s['percent'] < 70)
+            ->sortBy('percent')
+            ->map(fn ($s) => $insight($s, false))
+            ->values()
+            ->all();
+
+        if ($overallPercent === null || $breakdown->isEmpty()) {
+            $overall = 'Complete an assessment with results released to see a detailed coaching breakdown across subjects.';
+        } elseif ($overallPercent >= 85) {
+            $overall = "Outstanding performance at {$overallPercent}%. You are demonstrating mastery-level readiness - maintain it with full practice assessments and timed runs.";
+        } elseif ($overallPercent >= 70) {
+            $overall = "Solid overall performance at {$overallPercent}%. You are on track. Sharpen the areas below to push into mastery territory.";
+        } elseif ($overallPercent >= 50) {
+            $overall = "A passing foundation at {$overallPercent}%. Your weaker subjects below are where the fastest score gains are waiting.";
+        } else {
+            $overall = "A challenging result at {$overallPercent}%. Use the breakdown below to prioritise rebuilding fundamentals subject by subject.";
+        }
+
+        return [
+            'strengths' => $strengths,
+            'weaknesses' => $weaknesses,
+            'overall' => $overall,
+        ];
+    }
+
     public function review(ExamAttempt $attempt): array
     {
         $questionIds = array_map(intval(...), $attempt->question_ids ?? []);

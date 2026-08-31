@@ -22,9 +22,10 @@
 
     $oldRows = collect(old('blueprints', []));
 
-    $initialRows = $categories->map(function (App\Models\QuestionCategory $category) use ($oldRows, $existingBlueprints) {
+    $initialRows = $categories->map(function (App\Models\QuestionCategory $category) use ($oldRows, $existingBlueprints, $availability) {
         $oldRow = $oldRows->firstWhere('question_category_id', $category->id);
         $blueprint = $existingBlueprints?->get($category->id);
+        $avail = $availability[$category->id] ?? ['total' => 0, 'easy' => 0, 'intermediate' => 0, 'advanced' => 0];
 
         return [
             'question_category_id' => $category->id,
@@ -34,6 +35,10 @@
             'easy' => (int) ($oldRow['easy_percent'] ?? $blueprint?->easy_percent ?? ((bool) ($oldRow['include'] ?? null) || $blueprint !== null ? 30 : 0)),
             'intermediate' => (int) ($oldRow['intermediate_percent'] ?? $blueprint?->intermediate_percent ?? ((bool) ($oldRow['include'] ?? null) || $blueprint !== null ? 40 : 0)),
             'advanced' => (int) ($oldRow['advanced_percent'] ?? $blueprint?->advanced_percent ?? ((bool) ($oldRow['include'] ?? null) || $blueprint !== null ? 30 : 0)),
+            'available_total' => (int) $avail['total'],
+            'available_easy' => (int) $avail['easy'],
+            'available_intermediate' => (int) $avail['intermediate'],
+            'available_advanced' => (int) $avail['advanced'],
         ];
     })->values()->all();
 
@@ -62,6 +67,8 @@
     get effectiveTotal() { return this.autoTotal ? this.grandTotal : (parseInt(this.manualTotal) || 0); },
     get rowsValid() { return this.included.length > 0 && this.included.every(r => this.rowSum(r) === 100); },
     get totalsValid() { return this.effectiveTotal >= 1; },
+    setPreset(row, easy, intermediate, advanced) { row.easy = easy; row.intermediate = intermediate; row.advanced = advanced; },
+    overBudget(row) { return row.include && (parseInt(row.question_count) || 0) > (parseInt(row.available_total) || 0); },
     syncManual() { this.manualTotal = this.grandTotal; },
 }" data-rows="{{ json_encode($initialRows) }}">
     @csrf
@@ -167,15 +174,20 @@
                     </thead>
                     <tbody>
                         <template x-for="(row, index) in rows" :key="row.question_category_id">
-                            <tr class="border-t border-slate-100 dark:border-slate-800">
+                            <tr class="border-t border-slate-100 dark:border-slate-800"
+                                :class="!row.include ? 'opacity-50' : ''">
                                 <td class="py-2 pr-3 align-middle">
                                     <input type="checkbox" x-model="row.include" class="rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600" aria-label="Include subject">
                                     <input type="hidden" :name="'blueprints[' + index + '][question_category_id]'" :value="row.question_category_id">
                                     <input type="hidden" :name="'blueprints[' + index + '][include]'" :value="row.include ? 1 : 0">
                                 </td>
-                                <td class="py-2 pr-3 align-middle font-medium text-slate-700 dark:text-slate-200" x-text="row.name"></td>
+                                <td class="py-2 pr-3 align-middle">
+                                    <div class="font-medium text-slate-700 dark:text-slate-200" x-text="row.name"></div>
+                                    <div class="text-[11px] text-slate-400 dark:text-slate-500" x-text="row.available_total + ' active available'"></div>
+                                </td>
                                 <td class="py-2 pr-3 align-middle">
                                     <input type="number" min="0" max="500" x-model.number="row.question_count" :name="'blueprints[' + index + '][question_count]'" class="w-20 rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100" :disabled="!row.include">
+                                    <div x-show="overBudget(row)" class="mt-1 text-[11px] font-medium text-amber-600 dark:text-amber-400" x-text="'Only ' + row.available_total + ' available'"></div>
                                 </td>
                                 <td class="py-2 pr-3 align-middle">
                                     <input type="number" min="0" max="100" x-model.number="row.easy" :name="'blueprints[' + index + '][easy_percent]'" class="w-16 rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100" :disabled="!row.include">
@@ -186,14 +198,25 @@
                                 <td class="py-2 pr-3 align-middle">
                                     <input type="number" min="0" max="100" x-model.number="row.advanced" :name="'blueprints[' + index + '][advanced_percent]'" class="w-16 rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100" :disabled="!row.include">
                                 </td>
-                                <td class="py-2 text-right align-middle font-semibold tabular-nums">
-                                    <span x-text="rowSum(row)" :class="(!row.include || rowSum(row) === 100) ? 'text-emerald-600 dark:text-emerald-400' : 'text-danger-600 dark:text-danger-400'"></span>
-                                    <span x-text="(!row.include || rowSum(row) === 100) ? '\u2713' : '\u2717'" :class="(!row.include || rowSum(row) === 100) ? 'text-emerald-600 dark:text-emerald-400' : 'text-danger-600 dark:text-danger-400'"></span>
+                                <td class="py-2 text-right align-middle">
+                                    <div class="font-semibold tabular-nums">
+                                        <span x-text="rowSum(row)" :class="(!row.include || rowSum(row) === 100) ? 'text-emerald-600 dark:text-emerald-400' : 'text-danger-600 dark:text-danger-400'"></span>
+                                        <span x-text="(!row.include || rowSum(row) === 100) ? '\u2713' : '\u2717'" :class="(!row.include || rowSum(row) === 100) ? 'text-emerald-600 dark:text-emerald-400' : 'text-danger-600 dark:text-danger-400'"></span>
+                                    </div>
+                                    <div x-show="row.include" class="mt-1 flex gap-1">
+                                        <button type="button" @click="setPreset(row, 30, 40, 30)" :disabled="!row.include" class="rounded bg-slate-100 px-1 text-[10px] font-medium text-slate-500 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600">30/40/30</button>
+                                        <button type="button" @click="setPreset(row, 25, 50, 25)" :disabled="!row.include" class="rounded bg-slate-100 px-1 text-[10px] font-medium text-slate-500 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600">25/50/25</button>
+                                        <button type="button" @click="setPreset(row, 20, 50, 30)" :disabled="!row.include" class="rounded bg-slate-100 px-1 text-[10px] font-medium text-slate-500 hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600">20/50/30</button>
+                                    </div>
                                 </td>
                             </tr>
                         </template>
                     </tbody>
                 </table>
+            </div>
+
+            <div x-show="included.some(overBudget)" class="mt-3 rounded-lg border border-amber-300 bg-amber-50 px-4 py-2.5 text-sm text-amber-800 dark:border-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+                Warning: one or more subject counts exceed the number of active questions available. The exam will backfill the shortfall from other subjects, which alters the intended subject distribution.
             </div>
 
             <div class="mt-3 flex items-center justify-between rounded-lg bg-slate-50 px-4 py-2.5 text-sm dark:bg-slate-800/60">
@@ -307,7 +330,12 @@
         </x-form.section>
     </x-ui.card>
 
-    <div class="flex items-center justify-end gap-3">
+    <div class="flex flex-col items-end gap-2 sm:flex-row sm:items-center sm:justify-end">
+        <p x-show="rows.length > 0 && (!rowsValid || !totalsValid)" class="text-xs text-amber-600 dark:text-amber-400">
+            {{-- Reason for the disabled submit button --}}
+            <span x-show="!rowsValid">Every included subject's difficulty must sum to 100%.</span>
+            <span x-show="rowsValid && !totalsValid">Set at least one question count on an included subject.</span>
+        </p>
         <x-ui.button href="{{ route('admin.assessments.index') }}" variant="ghost">
             Cancel
         </x-ui.button>

@@ -65,6 +65,86 @@
         @endif
 
         <section class="mt-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Performance Coaching</h2>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                    <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    Personalized analysis
+                </span>
+            </div>
+
+            <p class="mt-3 rounded-lg bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                {{ $insights['overall'] }}
+            </p>
+
+            <div class="mt-6 grid gap-6 lg:grid-cols-2">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </span>
+                        <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-100">Strengths</h3>
+                        <span class="text-xs text-slate-400 dark:text-slate-500">({{ count($insights['strengths']) }})</span>
+                    </div>
+
+                    @forelse($insights['strengths'] as $strength)
+                        <div class="mt-4 rounded-lg border border-emerald-100 bg-emerald-50/60 p-4 dark:border-emerald-900/40 dark:bg-emerald-900/10">
+                            <div class="flex items-center justify-between gap-2">
+                                <p class="font-semibold text-slate-800 dark:text-slate-100">{{ $strength['name'] }}</p>
+                                <span class="rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-slate-800 dark:text-emerald-300">{{ $strength['percent'] }}%</span>
+                            </div>
+                            <div class="mt-1 text-xs text-slate-500 dark:text-slate-400">{{ $strength['correct'] }}/{{ $strength['total'] }} correct</div>
+                            <p class="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">{{ $strength['advice'] }}</p>
+                        </div>
+                    @empty
+                        <p class="mt-4 rounded-lg bg-slate-50 px-4 py-3 text-xs text-slate-500 dark:bg-slate-800 dark:text-slate-400">No subjects above 70% yet. Solid, consistent review across all areas will build your first strengths.</p>
+                    @endforelse
+                </div>
+
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        </span>
+                        <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-100">Focus Areas</h3>
+                        <span class="text-xs text-slate-400 dark:text-slate-500">({{ count($insights['weaknesses']) }})</span>
+                    </div>
+
+                    @forelse($insights['weaknesses'] as $weakness)
+                        <div class="mt-4 rounded-lg border border-amber-100 bg-amber-50/60 p-4 dark:border-amber-900/40 dark:bg-amber-900/10">
+                            <div class="flex items-center justify-between gap-2">
+                                <p class="font-semibold text-slate-800 dark:text-slate-100">{{ $weakness['name'] }}</p>
+                                <span class="rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-amber-700 dark:bg-slate-800 dark:text-amber-300">{{ $weakness['percent'] }}%</span>
+                            </div>
+                            <div class="mt-1 text-xs text-slate-500 dark:text-slate-400">{{ $weakness['correct'] }}/{{ $weakness['total'] }} correct</div>
+                            <p class="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">{{ $weakness['advice'] }}</p>
+                        </div>
+                    @empty
+                        <p class="mt-4 rounded-lg bg-emerald-50 px-4 py-3 text-xs text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-300">No focus areas flagged - strong, balanced performance across all subjects.</p>
+                    @endforelse
+                </div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-3 border-t border-slate-100 pt-5 dark:border-slate-800">
+                <a href="{{ route('public.knowledge.index') }}"
+                   class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    Browse Knowledge
+                </a>
+                <a href="{{ route('public.sops.index') }}"
+                   class="inline-flex items-center gap-2 rounded-lg border border-blue-200 px-4 py-2 text-sm font-semibold text-blue-700 transition hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-blue-800 dark:text-blue-300 dark:hover:bg-blue-900/30">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    Review SOPs
+                </a>
+                <a href="{{ route('assessments.my-results') }}"
+                   class="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                    Retake or Practice
+                </a>
+            </div>
+        </section>
+
+        <section class="mt-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
             <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Subject Performance</h2>
 
             <div class="mt-5 space-y-4">

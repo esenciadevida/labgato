@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\StoreAssessmentRequest;
 use App\Http\Requests\Admin\UpdateAssessmentRequest;
 use App\Models\Assessment;
 use App\Models\AssessmentBlueprint;
+use App\Models\Question;
 use App\Models\QuestionCategory;
 use App\Services\CertificateService;
 use Illuminate\Http\Request;
@@ -43,6 +44,7 @@ class AssessmentController extends Controller
         return view('admin.assessments.create', [
             'assessment' => new Assessment(['status' => 'scheduled', 'duration_minutes' => 60, 'total_questions' => 10]),
             'categories' => $this->activeCategories(),
+            'availability' => $this->questionAvailability(),
         ]);
     }
 
@@ -63,6 +65,7 @@ class AssessmentController extends Controller
         return view('admin.assessments.edit', [
             'assessment' => $assessment,
             'categories' => $this->activeCategories(),
+            'availability' => $this->questionAvailability(),
         ]);
     }
 
@@ -132,11 +135,22 @@ class AssessmentController extends Controller
         $title = $assessment->title;
         $attemptCount = $assessment->attempts()->count();
 
+        // Capture certificate PDF paths before the DB cascade deletes the rows,
+        // so we can remove the orphaned files from disk.
+        $certPdfPaths = \App\Models\Certificate::query()
+            ->where('assessment_id', $assessment->id)
+            ->whereNotNull('pdf_path')
+            ->pluck('pdf_path');
+
         DB::transaction(function () use ($assessment) {
             // Foreign keys cascade: attempts -> answers / integrity events / certificates,
             // and assessment -> blueprints / attempts. Delete the assessment row to clean all.
             $assessment->delete();
         });
+
+        if ($certPdfPaths->isNotEmpty()) {
+            \Illuminate\Support\Facades\Storage::disk('public')->delete($certPdfPaths->all());
+        }
 
         $message = $attemptCount > 0
             ? "Assessment \"{$title}\" and its {$attemptCount} attempt(s), answers, and certificates deleted."
@@ -177,5 +191,35 @@ class AssessmentController extends Controller
             ->orderBy('sort_order')
             ->orderBy('name')
             ->get();
+    }
+
+    /**
+     * Active question counts per category, split by difficulty, so the blueprint
+     * form can warn the admin when a requested count exceeds what the bank holds.
+     *
+     * @return array<int, array<string, int>>
+     */
+    private function questionAvailability()
+    {
+        $rows = Question::query()
+            ->active()
+            ->selectRaw('question_category_id, difficulty, count(*) as total')
+            ->groupBy('question_category_id', 'difficulty')
+            ->get();
+
+        $byCategory = [];
+
+        foreach ($rows as $row) {
+            $byCategory[$row->question_category_id][$row->difficulty] = (int) $row->total;
+        }
+
+        foreach ($byCategory as $categoryId => $difficulties) {
+            $byCategory[$categoryId]['total'] = array_sum(array_values($difficulties));
+            $byCategory[$categoryId]['easy'] = $difficulties['easy'] ?? 0;
+            $byCategory[$categoryId]['intermediate'] = $difficulties['intermediate'] ?? 0;
+            $byCategory[$categoryId]['advanced'] = $difficulties['advanced'] ?? 0;
+        }
+
+        return $byCategory;
     }
 }

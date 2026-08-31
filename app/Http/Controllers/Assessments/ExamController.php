@@ -71,7 +71,31 @@ class ExamController extends Controller
             'canBegin' => $check['ok'],
             'blockReason' => $this->humanReason($check['reason']),
             'canPractice' => $this->practiceAvailable($request, $assessment, null),
+            'actualQuestionCount' => $this->actualQuestionCount($assessment),
         ]);
+    }
+
+    /**
+     * The largest realistically drawable question total, respecting how many
+     * active questions each blueprint subject actually holds. Falls back to the
+     * configured total when that is lower or feasibility cannot be computed.
+     */
+    private function actualQuestionCount(Assessment $assessment): int
+    {
+        $requested = (int) $assessment->total_questions;
+        $available = 0;
+
+        foreach ($assessment->blueprints as $blueprint) {
+            $available += min(
+                (int) $blueprint->question_count,
+                Question::query()
+                    ->where('question_category_id', $blueprint->question_category_id)
+                    ->active()
+                    ->count()
+            );
+        }
+
+        return max(1, min($requested > 0 ? $requested : $available, $available > 0 ? $available : $requested));
     }
 
     public function show(Request $request, ExamAttempt $attempt)

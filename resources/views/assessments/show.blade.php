@@ -8,7 +8,7 @@
         <div class="flex flex-wrap items-center gap-2 text-xs font-medium">
             <span class="rounded-full bg-white/15 px-3 py-1 uppercase tracking-wide">{{ ucfirst($assessment->type) }}</span>
             <span class="rounded-full bg-white/15 px-3 py-1">{{ $assessment->duration_minutes }} minutes</span>
-            <span class="rounded-full bg-white/15 px-3 py-1">{{ $assessment->total_questions ?? $assessment->blueprintQuestionCount() }} questions</span>
+            <span class="rounded-full bg-white/15 px-3 py-1">{{ $actualQuestionCount }} questions</span>
         </div>
 
         <h1 class="mt-4 text-3xl font-bold">{{ $assessment->title }}</h1>
