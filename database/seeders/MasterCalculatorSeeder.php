@@ -24,7 +24,6 @@ use App\Services\Calculators\Engines\BunCreatinineRatioCalculator;
 use App\Services\Calculators\Engines\BunUreaConverterCalculator;
 use App\Services\Calculators\Engines\CalciumPhosphateProductCalculator;
 use App\Services\Calculators\Engines\CfuPerMlCalculator;
-use App\Services\Calculators\Engines\CkdEpi2009Calculator;
 use App\Services\Calculators\Engines\CkdEpi2021Calculator;
 use App\Services\Calculators\Engines\CockcroftGaultCalculator;
 use App\Services\Calculators\Engines\ColonyCountCalculator;
@@ -1510,7 +1509,7 @@ class MasterCalculatorSeeder extends Seeder
             [
                 'name' => 'eGFR (CKD-EPI 2021) Calculator',
                 'slug' => 'egfr-ckd-epi-2021-calculator',
-                'short_description' => 'Estimate glomerular filtration rate using the race-free CKD-EPI 2021 creatinine equation.',
+                'short_description' => 'Estimate eGFR (estimated glomerular filtration rate, GFR) using the race-free CKD-EPI 2021 creatinine equation.',
                 'formula_display' => 'eGFR = 142 × min(SCr/κ, 1)^α × max(SCr/κ, 1)^-1.200 × 0.9938^Age × 1.012 (if female)',
                 'engine' => CkdEpi2021Calculator::class,
                 'input_schema' => [
@@ -1563,72 +1562,6 @@ class MasterCalculatorSeeder extends Seeder
                 'tags' => ['egfr', 'gfr', 'ckd-epi', 'kidney', 'renal-function'],
                 'seo_title' => 'eGFR (CKD-EPI 2021) Calculator | LabGoTo',
                 'seo_description' => 'Estimate glomerular filtration rate with the race-free CKD-EPI 2021 equation.',
-            ],
-            [
-                'name' => 'eGFR (CKD-EPI 2009) Calculator',
-                'slug' => 'egfr-ckd-epi-2009-calculator',
-                'short_description' => 'Estimate glomerular filtration rate using the CKD-EPI 2009 creatinine equation.',
-                'formula_display' => 'eGFR = 141 × min(SCr/κ, 1)^α × max(SCr/κ, 1)^-1.209 × 0.993^Age × 1.018 (if female) × 1.159 (if Black)',
-                'engine' => CkdEpi2009Calculator::class,
-                'input_schema' => [
-                    [
-                        'key' => 'sex',
-                        'label' => 'Sex',
-                        'type' => 'select',
-                        'required' => true,
-                        'options' => [
-                            ['value' => 'male', 'label' => 'Male'],
-                            ['value' => 'female', 'label' => 'Female'],
-                        ],
-                    ],
-                    [
-                        'key' => 'race_black',
-                        'label' => 'Black race',
-                        'type' => 'select',
-                        'required' => true,
-                        'options' => [
-                            ['value' => 'no', 'label' => 'No'],
-                            ['value' => 'yes', 'label' => 'Yes'],
-                        ],
-                    ],
-                    [
-                        'key' => 'age',
-                        'label' => 'Age',
-                        'type' => 'number',
-                        'unit' => 'years',
-                        'required' => true,
-                        'min' => 18,
-                        'max' => 120,
-                        'step' => 1,
-                    ],
-                    [
-                        'key' => 'serum_creatinine',
-                        'label' => 'Serum creatinine',
-                        'type' => 'number',
-                        'unit' => 'mg/dL',
-                        'required' => true,
-                        'min' => 0.1,
-                        'max' => 15,
-                        'step' => 0.01,
-                    ],
-                ],
-                'output_schema' => [
-                    [
-                        'key' => 'egfr',
-                        'label' => 'Estimated GFR',
-                        'unit' => 'mL/min/1.73 m²',
-                        'rounding' => 'round_half_up',
-                        'precision' => 0,
-                    ],
-                ],
-                'interpretation_notes' => 'The 2009 CKD-EPI creatinine equation (κ = 0.7 female / 0.9 male; α = −0.329 female / −0.411 male) includes a race coefficient (× 1.159 for Black race) that the 2021 update removed due to concerns about equity. The 2021 equation is now generally preferred; results of the two equations differ mainly at higher GFR.',
-                'references' => [
-                    ['title' => 'NIDDK — eGFR Equations for Adults', 'url' => 'https://www.niddk.nih.gov/research-funding/research-programs/kidney-clinical-research-epidemiology/laboratory/glomerular-filtration-rate-equations/adults'],
-                ],
-                'categories' => ['Renal'],
-                'tags' => ['egfr', 'gfr', 'ckd-epi', 'kidney', 'renal-function'],
-                'seo_title' => 'eGFR (CKD-EPI 2009) Calculator | LabGoTo',
-                'seo_description' => 'Estimate glomerular filtration rate with the CKD-EPI 2009 equation.',
             ],
             [
                 'name' => 'Creatinine Clearance (Cockcroft-Gault) Calculator',
