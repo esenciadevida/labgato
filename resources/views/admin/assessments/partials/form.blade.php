@@ -198,7 +198,6 @@
                     ['shuffle_questions', 'Shuffle questions', true],
                     ['shuffle_options', 'Shuffle options', true],
                     ['fullscreen_required', 'Fullscreen required', false],
-                    ['certificate_enabled', 'Issue certificates', true],
                     ['results_available', 'Results released', false],
                     ['answer_review_available', 'Answer review released', false],
                     ['leaderboard_visible', 'Leaderboard visible', false],
@@ -214,7 +213,20 @@
     </x-ui.card>
 
     <x-ui.card>
-        <x-form.section title="Certificate" description="Optional per-assessment certificate overrides. Leave fields blank to inherit the global certificate template settings.">
+        <x-form.section title="Attach Certificate" description="Give every passing participant a verifiable certificate. These fields override the global certificate template for this assessment; leave blank to inherit the global design.">
+            <div class="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-lg bg-slate-50 px-4 py-3 dark:bg-slate-800/60">
+                <label class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+                    <input type="hidden" name="certificate_enabled" value="0">
+                    <input type="checkbox" name="certificate_enabled" value="1" @checked((bool) $toggle('certificate_enabled', true)) class="rounded border-slate-300 text-primary-600 focus:ring-primary-500 dark:border-slate-600">
+                    Issue certificates to passing participants
+                </label>
+                @if($assessment?->exists)
+                    <x-ui.button href="{{ route('admin.assessments.certificate-preview', $assessment) }}" variant="secondary" size="sm" target="_blank">
+                        Preview certificate
+                    </x-ui.button>
+                @endif
+            </div>
+
             <div class="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
                 <div class="sm:col-span-2">
                     <x-form.label for="cert_body_text">Body Text</x-form.label>

@@ -8,6 +8,7 @@ use App\Http\Requests\Admin\UpdateAssessmentRequest;
 use App\Models\Assessment;
 use App\Models\AssessmentBlueprint;
 use App\Models\QuestionCategory;
+use App\Services\CertificateService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -62,6 +63,14 @@ class AssessmentController extends Controller
         return view('admin.assessments.edit', [
             'assessment' => $assessment,
             'categories' => $this->activeCategories(),
+        ]);
+    }
+
+    public function certificatePreview(Assessment $assessment)
+    {
+        return view('admin.assessments.certificate-preview', [
+            'assessment' => $assessment,
+            'preview' => app(CertificateService::class)->assessmentPreviewData($assessment),
         ]);
     }
 

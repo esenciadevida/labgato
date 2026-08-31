@@ -198,6 +198,56 @@ class CertificateService
     }
 
     /**
+     * Preview data for an assessment certificate, resolving per-assessment
+     * overrides then falling back to the global certificate template settings.
+     * Used by the admin "Preview certificate" action to show what members will
+     * receive before the assessment is opened.
+     *
+     * @return array<string, mixed>
+     */
+    public function assessmentPreviewData(Assessment $assessment): array
+    {
+        $sample = CertificateTemplateVariables::$sample;
+        $sample['{assessment}'] = $assessment->title;
+
+        $primaryColor = (string) ($assessment->cert_primary_color
+            ?? setting('certificate.primary_color', '#1e3a8a'));
+        $secondaryColor = (string) ($assessment->cert_secondary_color
+            ?? setting('certificate.secondary_color', '#d4af37'));
+
+        $customBody = (string) $assessment->cert_body_text
+            ?? (string) setting('certificate.body_text', '');
+        $bodyHtml = $customBody !== ''
+            ? nl2br(e(CertificateTemplateVariables::replace($customBody, $sample)))
+            : 'for successfully completing the <strong>' . e($assessment->title) . '</strong>';
+
+        $customDisclaimer = (string) $assessment->cert_disclaimer_text
+            ?? (string) setting('certificate.disclaimer_text', '');
+        $disclaimerHtml = $customDisclaimer !== ''
+            ? nl2br(e(CertificateTemplateVariables::replace($customDisclaimer, $sample)))
+            : 'This certificate acknowledges achievement in the ' . e($assessment->title)
+            . ' administered by LabGOTO. It is not an ASCP certification nor an official ASCP credential.';
+
+        return [
+            'primaryColor' => $primaryColor,
+            'secondaryColor' => $secondaryColor,
+            'bodyHtml' => $bodyHtml,
+            'disclaimerHtml' => $disclaimerHtml,
+            'signatoryName' => (string) ($assessment->cert_signatory_name
+                ?? setting('certificate.signatory_name', 'Program Director')),
+            'signatoryTitle' => (string) ($assessment->cert_signatory_title
+                ?? setting('certificate.signatory_title', 'Program Director, LabGOTO')),
+            'showLogo' => $assessment->cert_show_logo
+                ?? setting_bool('certificate.show_logo', true),
+            'showQr' => $assessment->cert_show_qr
+                ?? setting_bool('certificate.show_qr', true),
+            'enabled' => (bool) $assessment->certificate_enabled,
+            'passPercentage' => $assessment->pass_percentage,
+            'sample' => $sample,
+        ];
+    }
+
+    /**
      * @return array{status: string, certificate: ?Certificate}
      */
     public function verify(string $code): array

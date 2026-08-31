@@ -1,4 +1,4 @@
-<x-ui.card title="User Registrations (Last 30 Days)" class="flex flex-col">
+<x-ui.card title="New Users (Last 30 Days)" class="flex flex-col">
     @php
         $totalRegistrations = collect($userMetrics['daily_registrations'])->sum('count');
         $regDelta = $userMetrics['total_users'] > 0
@@ -22,16 +22,8 @@
     @else
         <div class="space-y-4">
             <div class="grid grid-cols-3 gap-4">
-                <div>
-                    <p class="text-sm font-medium text-slate-500 dark:text-slate-400">7-Day Active</p>
-                    <p class="text-xl font-bold text-slate-900 dark:text-slate-100">{{ number_format($userMetrics['last_7d_active']) }}</p>
-                </div>
-                <div>
-                    <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Onboarded</p>
-                    <p class="text-xl font-bold text-slate-900 dark:text-slate-100">{{ number_format($userMetrics['onboarding_rate'], 1) }}%</p>
-                </div>
-                <div>
-                    <p class="text-sm font-medium text-slate-500 dark:text-slate-400">New (30d)</p>
+                <div class="col-span-3 lg:col-span-1">
+                    <p class="text-sm font-medium text-slate-500 dark:text-slate-400">New in last 30 days</p>
                     <p class="text-xl font-bold text-slate-900 dark:text-slate-100">{{ number_format($totalRegistrations) }}</p>
                 </div>
             </div>
@@ -45,13 +37,21 @@
                 ></canvas>
             </div>
 
-            <div class="pt-3 border-t border-slate-200 dark:border-slate-700">
-                <div class="flex items-center justify-between text-sm">
-                    <span class="text-slate-500 dark:text-slate-400">New users as share of total</span>
-                    <span class="font-semibold text-slate-900 dark:text-slate-100">{{ number_format($regDelta, 1) }}%</span>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-slate-200 dark:border-slate-700">
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-700/40 p-3">
+                    <p class="text-xs font-medium text-slate-500 dark:text-slate-400">All-time Onboarded</p>
+                    <p class="text-xl font-bold text-slate-900 dark:text-slate-100">{{ number_format($userMetrics['onboarding_rate'], 1) }}%</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">{{ number_format($userMetrics['onboarded_users']) }} of {{ number_format($userMetrics['total_users']) }} users</p>
                 </div>
-                <div class="mt-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                    <div class="bg-cyan-500 h-2 rounded-full" style="width: {{ min(100, $regDelta) }}%"></div>
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-700/40 p-3">
+                    <p class="text-xs font-medium text-slate-500 dark:text-slate-400">Active last 7 days</p>
+                    <p class="text-xl font-bold text-slate-900 dark:text-slate-100">{{ number_format($userMetrics['last_7d_active']) }}</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Users with a login this week</p>
+                </div>
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-700/40 p-3">
+                    <p class="text-xs font-medium text-slate-500 dark:text-slate-400">New (30d) share of all users</p>
+                    <p class="text-xl font-bold text-slate-900 dark:text-slate-100">{{ number_format($regDelta, 1) }}%</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">{{ number_format($totalRegistrations) }} of {{ number_format($userMetrics['total_users']) }} total users</p>
                 </div>
             </div>
         </div>

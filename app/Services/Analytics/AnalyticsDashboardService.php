@@ -200,6 +200,7 @@ class AnalyticsDashboardService
                 'daily_registrations' => $dailyRegistrations,
                 'total_users' => $totalUsers,
                 'active_users' => $activeUsers,
+                'onboarded_users' => $onboardedUsers,
                 'onboarding_rate' => $onboardingRate,
                 'last_7d_active' => $last7dActive,
             ];

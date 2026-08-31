@@ -33,20 +33,27 @@
                 <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
                     @forelse($assessments as $assessment)
                         @php
-                            $statusClasses = match ($assessment->status) {
-                                'open' => 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300',
-                                'scheduled' => 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300',
-                                'closed' => 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300',
-                                default => 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300',
+                            $statusMeta = match ($assessment->status) {
+                                'open' => ['bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300', 'Accepting attempts', 'Live'],
+                                'scheduled' => ['bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300', 'Scheduled, not yet live', 'Scheduled'],
+                                'closed' => ['bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300', 'Stopped - no new attempts', 'Closed'],
+                                'archived' => ['bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300', 'Archived - hidden from members', 'Archived'],
+                                default => ['bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300', 'Draft - not yet live', 'Draft'],
                             };
 
-                            // Contextual lifecycle transitions per status.
+                            // Contextual lifecycle actions per status: [toStatus, label, style, confirm].
                             $transitions = match ($assessment->status) {
-                                'draft' => [['open', 'Open now']],
-                                'scheduled' => [['open', 'Open now'], ['archived', 'Archive']],
-                                'open' => [['closed', 'Close now']],
-                                'closed' => [['open', 'Reopen'], ['archived', 'Archive']],
-                                default => [['draft', 'Restore to draft']],
+                                'draft' => [['open', 'Open now', 'success', "Open \"{$assessment->title}\" so members can take it? It becomes live immediately."]],
+                                'scheduled' => [
+                                    ['open', 'Open now', 'success', "Open \"{$assessment->title}\" for attempts now?"],
+                                    ['archived', 'Archive', 'default', "Archive \"{$assessment->title}\"? Members will no longer see it."],
+                                ],
+                                'open' => [['closed', 'Stop attempts', 'danger', "Stop \"{$assessment->title}\" now? Members can no longer start it, but submitted results are kept."]],
+                                'closed' => [
+                                    ['open', 'Reopen', 'success', "Reopen \"{$assessment->title}\" for attempts?"],
+                                    ['archived', 'Archive', 'default', "Archive \"{$assessment->title}\"? Members will no longer see it."],
+                                ],
+                                default => [['draft', 'Restore to draft', 'default', "Restore \"{$assessment->title}\" to draft?"]],
                             };
 
                             $deletable = $assessment->participants_count === 0 && ! in_array($assessment->status, ['open'], true);
@@ -59,7 +66,8 @@
                                 <span class="mt-0.5 block text-xs capitalize text-slate-500 dark:text-slate-400">{{ $assessment->type }} &middot; {{ $assessment->total_questions }} questions &middot; {{ $assessment->duration_minutes }} min</span>
                             </td>
                             <td class="px-4 py-3">
-                                <span class="inline-flex rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wide {{ $statusClasses }}">{{ $assessment->status }}</span>
+                                <span class="inline-flex rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wide {{ $statusMeta[0] }}">{{ $statusMeta[2] }}</span>
+                                <span class="mt-1 block text-xs text-slate-500 dark:text-slate-400">{{ $statusMeta[1] }}</span>
                             </td>
                             <td class="px-4 py-3 text-xs text-slate-500 dark:text-slate-400">
                                 {{ $assessment->opens_at?->format('M j, Y H:i') ?? 'Any time' }}
@@ -77,14 +85,24 @@
                             </td>
                             <td class="px-4 py-3">
                                 <div class="flex flex-wrap items-center justify-end gap-1.5">
-                                    @foreach($transitions as [$toStatus, $label])
+                                    @foreach($transitions as [$toStatus, $label, $btnStyle, $confirmText])
                                         <form method="POST" action="{{ route('admin.assessments.status', $assessment) }}"
-                                              @if($toStatus === 'archived') data-confirm="Archive this assessment? Members will no longer see it in the hub." @endif>
+                                              @if($confirmText) data-confirm="{{ $confirmText }}" @endif>
                                             @csrf
                                             <input type="hidden" name="status" value="{{ $toStatus }}">
-                                            <button type="submit" class="rounded-lg border border-slate-300 px-2.5 py-1.5 text-xs font-medium text-slate-600 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800">
-                                                {{ $label }}
-                                            </button>
+                                            @if($btnStyle === 'success')
+                                                <button type="submit" class="rounded-lg bg-emerald-600 px-2.5 py-1.5 text-xs font-semibold text-white transition hover:bg-emerald-700">
+                                                    {{ $label }}
+                                                </button>
+                                            @elseif($btnStyle === 'danger')
+                                                <button type="submit" class="rounded-lg bg-danger-600 px-2.5 py-1.5 text-xs font-semibold text-white transition hover:bg-danger-700">
+                                                    {{ $label }}
+                                                </button>
+                                            @else
+                                                <button type="submit" class="rounded-lg border border-slate-300 px-2.5 py-1.5 text-xs font-medium text-slate-600 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800">
+                                                    {{ $label }}
+                                                </button>
+                                            @endif
                                         </form>
                                     @endforeach
 
