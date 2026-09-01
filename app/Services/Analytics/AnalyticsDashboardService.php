@@ -368,11 +368,9 @@ class AnalyticsDashboardService
 
     public function getRecentActivity(int $limit = 15): \Illuminate\Support\Collection
     {
-        return Cache::remember('analytics:recent-activity', 300, function () use ($limit) {
-            return AuditLog::with('user:id,name')
-                ->orderByDesc('created_at')
-                ->limit($limit)
-                ->get();
-        });
+        return AuditLog::with('user:id,name')
+            ->orderByDesc('created_at')
+            ->limit($limit)
+            ->get();
     }
 }

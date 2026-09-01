@@ -8,6 +8,7 @@ use App\Models\Traits\HasResourceLifecycle;
 use App\Models\Traits\Searchable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class Calculator extends Model
 {
@@ -33,6 +34,21 @@ class Calculator extends Model
         'seo_title',
         'seo_description',
     ];
+
+    protected static function booted(): void
+    {
+        // Keep the reference-range "related calculators" cache in sync when a
+        // calculator's referenced parameters change.
+        static::saved(fn (Calculator $calculator) => $calculator->flushRelatedReferenceRangeCache());
+        static::deleted(fn (Calculator $calculator) => $calculator->flushRelatedReferenceRangeCache());
+    }
+
+    public function flushRelatedReferenceRangeCache(): void
+    {
+        foreach (collect($this->output_schema ?? [])->pluck('reference_key')->filter() as $key) {
+            Cache::forget("reference-range-calculators:{$key}");
+        }
+    }
 
     protected function casts(): array
     {

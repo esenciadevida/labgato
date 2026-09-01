@@ -119,10 +119,14 @@ Required production settings:
 - `APP_ENV=production`
 - `APP_DEBUG=false`
 - `SESSION_SECURE_COOKIE=true`
-- `SESSION_DRIVER=database`
-- `CACHE_STORE=database`
+- `SESSION_DRIVER=file`
+- `CACHE_STORE=file`
 - `QUEUE_CONNECTION=database`
 - `LOG_CHANNEL=stack`
+
+> `SESSION_DRIVER=file` and `CACHE_STORE=file` avoid a MySQL round-trip on every cache/session
+> read — important on shared hosting where the database is the main bottleneck. If you later gain
+> a Redis instance, prefer `redis` for both.
 
 See [deploy/03-configure.md](deploy/03-configure.md) for details.
 

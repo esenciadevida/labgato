@@ -62,9 +62,8 @@ class FacetService
             $query->whereHas('tags', fn (Builder $q) => $q->whereIn('tags.id', $tagIds));
         }
 
-        $resourceIds = $query->pluck((new $modelClass)->getKeyName());
-
-        $counts = $this->pivotCounts($pivot['table'], $pivot['fk'], $resourceIds, 'category_id');
+        $resourceTable = (new $modelClass)->getTable();
+        $counts = $this->pivotCounts($pivot['table'], $pivot['fk'], $resourceTable, $query, 'category_id');
 
         return Category::query()
             ->where('is_active', true)
@@ -86,9 +85,8 @@ class FacetService
             $query->whereHas('categories', fn (Builder $q) => $q->whereIn('categories.id', $catIds));
         }
 
-        $resourceIds = $query->pluck((new $modelClass)->getKeyName());
-
-        $counts = $this->pivotCounts($pivot['tag_table'], $pivot['tag_fk'], $resourceIds, 'tag_id');
+        $resourceTable = (new $modelClass)->getTable();
+        $counts = $this->pivotCounts($pivot['tag_table'], $pivot['tag_fk'], $resourceTable, $query, 'tag_id');
 
         return Tag::query()
             ->select('tags.*')
@@ -98,14 +96,17 @@ class FacetService
             ->get();
     }
 
-    private function pivotCounts(string $pivotTable, string $resourceColumn, Collection $resourceIds, string $groupColumn): QueryBuilder
+    private function pivotCounts(string $pivotTable, string $resourceColumn, string $resourceTable, Builder $resourceQuery, string $groupColumn): QueryBuilder
     {
-        return DB::table($pivotTable)
-            ->select($groupColumn)
-            ->selectRaw("COUNT(DISTINCT {$resourceColumn}) AS count")
-            ->whereIn($resourceColumn, $resourceIds)
-            ->whereNotNull($groupColumn)
-            ->groupBy($groupColumn);
+        $matching = $resourceQuery
+            ->selectRaw("{$resourceTable}.id AS resource_id");
+
+        return DB::table("{$pivotTable} AS p")
+            ->joinSub($matching, 'r', 'r.resource_id', '=', "p.{$resourceColumn}")
+            ->select("p.{$groupColumn}")
+            ->selectRaw("COUNT(DISTINCT p.{$resourceColumn}) AS count")
+            ->whereNotNull("p.{$groupColumn}")
+            ->groupBy("p.{$groupColumn}");
     }
 
     public function results(

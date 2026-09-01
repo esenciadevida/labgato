@@ -7,6 +7,7 @@ use App\Models\Calculator;
 use App\Models\ReferenceRange;
 use App\Services\RecentlyViewedService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class ReferenceRangeController extends Controller
 {
@@ -55,19 +56,21 @@ class ReferenceRangeController extends Controller
             ->get(['sops.id', 'sops.slug', 'sops.name']);
 
         $relatedCalculators = $referenceRange->parameter_key
-            ? Calculator::query()
-                ->published()
-                ->get(['id', 'slug', 'name', 'output_schema'])
-                ->filter(function (Calculator $calculator) use ($referenceRange) {
-                    foreach ($calculator->output_schema as $field) {
-                        if (($field['reference_key'] ?? null) === $referenceRange->parameter_key) {
-                            return true;
+            ? Cache::remember("reference-range-calculators:{$referenceRange->parameter_key}", 3600, function () use ($referenceRange) {
+                return Calculator::query()
+                    ->published()
+                    ->get(['id', 'slug', 'name', 'output_schema'])
+                    ->filter(function (Calculator $calculator) use ($referenceRange) {
+                        foreach ($calculator->output_schema as $field) {
+                            if (($field['reference_key'] ?? null) === $referenceRange->parameter_key) {
+                                return true;
+                            }
                         }
-                    }
 
-                    return false;
-                })
-                ->values()
+                        return false;
+                    })
+                    ->values();
+            })
             : collect();
 
         $pageTitle = $referenceRange->seo_title ?: $referenceRange->name;
