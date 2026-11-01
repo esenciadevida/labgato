@@ -21,9 +21,10 @@ RBAC admin, AI drafting, and analytics.
 
 > See `.env.example` for AI (Groq) and Google OAuth configuration.
 
-## License
+## Copyright
 
-Source-available under the [PolyForm Noncommercial License 1.0.0](LICENSE): you may
-read, study, and modify the code for any noncommercial purpose. Commercial use,
-including hosting this as a service, requires a separate license - contact
-[admin@smevolve.tech](mailto:admin@smevolve.tech).
+© 2026 Samuel Ogundare. All rights reserved.
+
+This source is published for portfolio and reference purposes only. No permission
+is granted to copy, modify, redistribute, or deploy it, in whole or in part.
+Licensing enquiries: [admin@smevolve.tech](mailto:admin@smevolve.tech).
