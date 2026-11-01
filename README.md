@@ -20,3 +20,10 @@ RBAC admin, AI drafting, and analytics.
 - Settings, Roles/Permissions, Reference Range data, and a Super Admin are seeded.
 
 > See `.env.example` for AI (Groq) and Google OAuth configuration.
+
+## License
+
+Source-available under the [PolyForm Noncommercial License 1.0.0](LICENSE): you may
+read, study, and modify the code for any noncommercial purpose. Commercial use,
+including hosting this as a service, requires a separate license - contact
+[admin@smevolve.tech](mailto:admin@smevolve.tech).
