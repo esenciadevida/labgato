@@ -5,8 +5,8 @@ SOPs, interpretation guides, and a knowledge hub — with community contribution
 RBAC admin, AI drafting, and analytics.
 
 ## Stack
-- Laravel 11 · PHP 8.2+ · MySQL
-- Tailwind CSS (Abyss Blue theme, dark mode) · Alpine.js · Livewire
+- Laravel 13 · PHP 8.4 · MySQL
+- Tailwind CSS 4 (Abyss Blue theme, dark mode) · Alpine.js · Livewire 4
 - Laravel Socialite (Google OAuth) · Groq AI
 
 ## Local Setup
