@@ -52,8 +52,12 @@ jobs:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
+      # --no-scripts: package:discover boots the framework, and SettingServiceProvider
+      # queries the database on boot. Running it here would use Laravel's default
+      # credentials (root, no password) before .env exists, which the MySQL service
+      # rejects. It is re-run in "Prepare Environment" once .env is in place.
       - name: Install Composer Dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress
+        run: composer install --prefer-dist --no-interaction --no-progress --no-scripts
 
       # 5. Install NPM dependencies and build Vite assets
       - name: Install NPM Dependencies & Build Assets
@@ -78,6 +82,10 @@ jobs:
           # Ensure external services don't fire during tests
           sed -i 's/MAIL_MAILER=.*/MAIL_MAILER=log/' .env
           sed -i 's/QUEUE_CONNECTION=.*/QUEUE_CONNECTION=sync/' .env
+
+          # Packages were not discovered during composer install (see --no-scripts
+          # above); do it now that .env points at a live database.
+          php artisan package:discover --ansi
 
       # 7. Run Migrations (Verifies the schema works on MySQL)
       - name: Run Database Migrations

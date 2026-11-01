@@ -18,5 +18,8 @@
         "canvas": "^3.2.3",
         "chart.js": "^4.5.1",
         "driver.js": "^1.8.0"
+    },
+    "overrides": {
+        "postcss-selector-parser": "^6.1.5"
     }
 }
